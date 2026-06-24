@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Infra 洞察日报 · 2026年6月24日 · 周三</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #0d1117; color: #e6edf3; padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; }
+header { padding: 24px 0; border-bottom: 1px solid #21262d; margin-bottom: 24px; }
+header h1 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+header .sub { color: #8b949e; font-size: 14px; }
+.stats { display: flex; gap: 24px; font-size: 14px; color: #8b949e; margin-top: 16px; }
+.stat { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 12px 18px; }
+.stat span { color: #58a6ff; font-weight: 700; font-size: 20px; margin-right: 4px; }
+.stat.biz span { color: #ffd43b; }
+.stat.paper span { color: #79c0ff; }
+h2 { font-size: 16px; color: #e6edf3; margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid #21262d; }
+.card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 0; margin-bottom: 20px; overflow: hidden; }
+.card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: #21262d; }
+.card-body { padding: 16px 20px 18px; }
+.card-meta { font-size: 12px; color: #8b949e; margin-bottom: 8px; }
+.card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; line-height: 1.4; }
+.card h3 a { color: #58a6ff; text-decoration: none; }
+.card h3 a:hover { text-decoration: underline; }
+.card p { font-size: 14px; color: #c9d1d9; line-height: 1.6; margin-bottom: 8px; }
+.card .source { color: #6e7681; font-size: 12px; margin-top: 4px; }
+.tech-block { background: #0d1117; border-radius: 8px; padding: 12px 14px; margin-top: 10px; font-size: 13px; line-height: 1.7; }
+.tech-block .row { margin-bottom: 4px; }
+.tech-block .row:last-child { margin-bottom: 0; }
+.tech { color: #79c0ff; }
+.tradeoff { color: #d2a8ff; }
+.highlight { color: #7ee787; }
+.author { color: #ffa657; }
+footer { text-align: center; padding: 32px 0; color: #6e7681; font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>🏗️ AI Infra 洞察日报</h1>
+  <div class="sub">2026年6月24日 · 周三 · 覆盖芯片 + 集群 + 光模块 + arXiv Infra 论文</div>
+  <div class="stats">
+    <div class="stat biz">🏢 <span>6</span> 条 AI Infra 公司动态</div>
+    <div class="stat paper">📄 <span>5</span> 篇 arXiv Infra 论文精读</div>
+  </div>
+</header>
+
+<section>
+<h2>🏢 AI Infra 商业新闻</h2>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-24/news_items_v2_2026-06-24_00.jpg" alt="NVIDIA Vera Rubin Delivers World-Class Supercomputers for Science" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[NVIDIA 官方] 1级信源 · cn</div>
+    <h3><a href="https://nvidianews.nvidia.com/news/nvidia-vera-rubin-delivers-world-class-supercomputers-for-science" target="_blank">NVIDIA Vera Rubin Delivers World-Class Supercomputers for Science</a></h3>
+    <p style="color:#ccc;">NVIDIA 在 ISC High Performance 2026 公布 Vera Rubin 平台, 把 HPC 工作负载 (气候建模、计算流体动力学、能源勘探) 提速到世界级水平, Vera Rubin GPU + Vera CPU 组合把 agentic AI 带进科学计算; Leibniz 超算中心、LANL、NERSC 三家国家实验室已下单下一代超算. 同时 Bull/Dell/GIGABYTE/HPE/Supermicro 推出每机柜 144 GPU 的高密度 Vera Rubin 超算系统.</p><p style="color:#8b949e;font-size:13px;">💡 Vera Rubin 把单卡 HBM3e 推到 288GB 量级, 加上每机柜 144 GPU 的高密度封装, 直接把 1.6T CPO 光模块、液冷板、48V 母线三件套的需求窗口往前推 6-9 个月——单机柜功耗逼近 130kW, 数据中心 PUE 1.1 以下的设计成为新建标配, 老机房 capex 升级压力陡增. NVIDIA 用科学计算做切入 (而不是直接喊'B300 是 AI 加速器'), 是在为新一代 GPU 找 HPC 国家实验室订单对冲 hyperscaler 资本开支放缓的风险.</p>
+    <div class="source">来源：NVIDIA 官方</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-24/news_items_v2_2026-06-24_01.jpg" alt="Europe Unveils a Record 35 New NVIDIA AI Supercomputers" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[NVIDIA 官方] 1级信源 · cn</div>
+    <h3><a href="https://nvidianews.nvidia.com/news/europe-unveils-a-record-35-new-nvidia-ai-supercomputers" target="_blank">Europe Unveils a Record 35 New NVIDIA AI Supercomputers</a></h3>
+    <p style="color:#ccc;">NVIDIA 与欧洲 23 国合作部署 35 座 AI 工厂, 自去年起累计 800 AI exaflops, 服务超过 300 万研究人员. 巴塞罗那超算中心 EuroHPC AI Factory、巴伐利亚 AI Blue Swan、IT4LIA、HLRS HammerHAI、NAISS Mimer 等多座新工厂启用, NVIDIA AI 基础设施已占欧洲 AI 工厂总建设的 90% 以上.</p><p style="color:#8b949e;font-size:13px;">💡 欧洲 AI 工厂 90%+ 份额锁定在 NVIDIA 生态, 直接封死了 AMD MI400 / 华为昇腾在欧洲公共采购的窗口, 欧盟 2026 主权云 (EuroHPC) 资本开支流向 NVIDIA + DGX + Mellanox 网络的全栈. 这对光模块供应链是好消息——35 座工厂意味着 23 国 35 套 IB/RoCE 集群升级, Innolight / Coherent / Lumentum 的 800G/1.6T 订单池子扩了一档.</p>
+    <div class="source">来源：NVIDIA 官方</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-24/news_items_v2_2026-06-24_02.jpg" alt="AMD and Meta Announce Expanded Strategic Partnership to Deploy 6 Gigawatts of AMD GPUs" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[AMD 官方] 1级信源 · cn</div>
+    <h3><a href="https://ir.amd.com/news-events/press-releases/detail/1279/amd-and-meta-announce-expanded-strategic-partnership-to-deploy-6-gigawatts-of-amd-gpus" target="_blank">AMD and Meta Announce Expanded Strategic Partnership to Deploy 6 Gigawatts of AMD GPUs</a></h3>
+    <p style="color:#ccc;">AMD (NASDAQ: AMD) 与 Meta 宣布达成 6GW 多代际 AMD Instinct GPU 协议, 支撑 Meta 下一代 AI 基础设施, 涵盖数代 MI 系列加速器. 这是 AMD 在 hyperscaler 客户上的最大单一订单, 标志 MI400/MI500 系列正式进入 Meta 数据中心版图.</p><p style="color:#8b949e;font-size:13px;">💡 6GW 等价于约 600 万张 H200 / 等效算力, 等于 Meta 把单一供应商对 NVIDIA 的依赖从 ~85% 拉到 ~70%, 这是 NVIDIA 的第一道真正裂缝. 对 AMD 而言是 capex 兜底 (避免 MI400 出货后产能空转), 对光模块 / 电源 / 液冷是利好——6GW 部署意味着 Meta 至少要再扩 6-8 座新数据中心, CPO 1.6T 模块、48V 母线、冷板供应商订单池子翻一倍.</p>
+    <div class="source">来源：AMD 官方</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-24/news_items_v2_2026-06-24_03.jpg" alt="A Deep Dive on CoreWeave Innovations for NVIDIA Vera Rubin NVL72" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[CoreWeave 官方] 1级信源 · cn</div>
+    <h3><a href="https://www.coreweave.com/blog/a-deep-dive-on-coreweave-innovations-for-nvidia-vera-rubin-nvl72" target="_blank">A Deep Dive on CoreWeave Innovations for NVIDIA Vera Rubin NVL72</a></h3>
+    <p style="color:#ccc;">CoreWeave 发布技术博客深度解析其针对 NVIDIA Vera Rubin NVL72 72-GPU 单一域的设计优化: 自研 1.6T 光模块拓扑、专用存储 fabric、layer-wise fault isolation, 让 NVL72 在大型 agentic AI 和 reasoning workload 上的有效算力利用率超过 95%. CoreWeave 唯一两次拿到 SemiAnalysis ClusterMAX™ Platinum 评级的 AI 云.</p><p style="color:#8b949e;font-size:13px;">💡 CoreWeave 把 1.6T 光模块 + 专用 NVLink switch fabric 做成 NVL72 差异化卖点, 抢在 hyperscaler 自建 (Meta 6GW AMD) 之前的'专业 AI 云'窗口. 95% 利用率对比行业平均 ~70% 是真实财务杠杆——同样的 NVL72 机柜, CoreWeave 能多卖 ~35% 的 token. 这直接逼着 Lambda/Together/Crusoe 也必须升级到 1.6T 网络, 否则在大客户 RFP 里直接出局.</p>
+    <div class="source">来源：CoreWeave 官方</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-24/news_items_v2_2026-06-24_04.jpg" alt="The Token Pricing Illusion: Understanding AI Inference Economics" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[CoreWeave 官方] 1级信源 · cn</div>
+    <h3><a href="https://www.coreweave.com/blog/the-token-pricing-illusion-understanding-ai-inference-economics" target="_blank">The Token Pricing Illusion: Understanding AI Inference Economics</a></h3>
+    <p style="color:#ccc;">CoreWeave 发布 AI 推理经济学深度分析, 指出'每百万 token 的标价'几乎从不反映生产 AI 的真实成本——sticker price vs realized cost gap 主要由 cold-start、KV-cache miss、跨 region latency tail、batch efficiency loss 四个因子贡献, 文章给出一套诊断指标 (TCO-per-million-token) 来量化这个 gap.</p><p style="color:#8b949e;font-size:13px;">💡 CoreWeave 推出诊断工具的目的是用经济学把客户锁定在自己集群——客户用 TCO 公式一算, 会发现自建或 hyperscaler spot 不一定比 CoreWeave 的 fixed-price 便宜. 这是 AI infra 行业从'卖 GPU 小时'转向'卖 SLA-grade 推理经济'的早期信号, 模型层公司 (OpenAI / Anthropic) 也会被迫把 token 定价往真实成本贴近, 整个推理市场定价模型 6-12 个月内会重写.</p>
+    <div class="source">来源：CoreWeave 官方</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-24/news_items_v2_2026-06-24_05.jpg" alt="JNTC 完成世界首个 2.0mm TGV 玻璃基板开发" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=11497" target="_blank">JNTC 完成世界首个 2.0mm TGV 玻璃基板开发</a></h3>
+    <p style="color:#ccc;">韩国 JNTC 6 月 19 日宣布完成世界首个 2.0mm 厚 TGV (through-glass via) 玻璃基板开发, 厚度区间扩到 0.3mm-2mm. 该技术已与台湾/韩国基板厂完成验证, 日本材料商 qualification 中, 可靠性评估通过玻璃微裂纹测试. JNTC 正在与 2 家全球半导体公司合作新项目, 去年通过吸收子公司 Comet 强化电镀和蚀刻工艺, 已建成 2.5D/3D 封装用 TGV 量产线.</p><p style="color:#8b949e;font-size:13px;">💡 TGV 玻璃基板是 1.6T CPO 光模块和 2.5D/3D 先进封装的核心材料, 替代传统硅中介层 (silicon interposer) 可降低 40% 翘曲、扩展 I/O 密度 3-5 倍. JNTC 是这条赛道全球极少数能量产 0.3-2mm 全厚度 TGV 的供应商, 拿到 2 家全球半导体公司项目意味着下一代 AI 加速器 (NVIDIA Vera Rubin 后继、AMD MI500、博通 TPU v7) 封装方案大概率会落到 TGV 上. 韩国基板厂在 Intel/AMD 体系的供应商认证窗口再次打开, 对 Innolight / Coherent / Lumentum 等光模块公司是配套利好.</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+</section>
+
+<section>
+<h2>📄 arXiv Infra 论文深度解读</h2>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-24/paper_summaries_v2_2026-06-24_00.jpg" alt="CrossPool: Efficient Multi-LLM Serving for Cold MoE Models through KV-Cache and Weight Disaggregation" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.24506 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.24506" target="_blank">CrossPool: Efficient Multi-LLM Serving for Cold MoE Models through KV-Cache and Weight Disaggregation</a></h3>
+    <p style="color:#ccc;">LLM 服务场景中, 大量稀疏激活的 MoE 模型长期处于 cold 状态——大多数模型请求稀疏, GPU 显存被静态 weights 和动态 KV-cache 共占一池. 静态权重稳定占用显存, 而 KV-cache 随请求动态伸缩; cold 模型之间峰值极少同时出现, 传统的 worst-case KV 预留方式严重浪费显存, 共享 KV-cache 池能聚合实际请求容量. 但 weights 和 KV-cache 同池时, 静态权重与动态 KV 互相挤占; 在 cold、低并发长上下文场景下, MLA / MQA 等 KV-head 压缩的 attention 算法只能暴露部分副本的 KV 容量, 实际可用上下文容量大幅缩水.</p>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>CrossPool 把 MoE 模型的 FFN weights 和 KV-cache 分离到两个 GPU 显存池: weights 池聚合多个 cold 模型的 FFN 权重, KV-cache 池动态服务活跃请求, attention 留在 KV 池内做本地 KV 访问, FFN 在 weights 池执行 (FFN 占 MoE 参数主导). 池边界交换 hidden state 而非 KV tensor. 三个核心设计: 异构 KV-cache 规划器 + 虚拟化、跨池通信的 layer-wise pipeline scheduler (隐藏 hidden state 传输开销)、带 control lowering 的 persistent kernel (降 CPU-GPU 控制开销).</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>权重 / KV 分离增加跨池 hidden state 传输, 对 latency 敏感的小模型推理是负向; 但对冷启动、长上下文、低并发多模型场景显存利用率提升显著——同样的 GPU 显存预算能服务更多 cold 模型. 跨池通信需要 layer-wise 调度, 对调度器实现复杂度要求较高.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>相比基于 kvcached 的多 LLM serving 方案, CrossPool 在 cold MoE 模型上 P99 TBT (Time-Between-Tokens) 最多降低 10.4 倍. 在 bursty 长上下文请求下能维持高吞吐, weights 池 + KV 池设计解决了 cold 模型显存浪费这一行业核心痛点.</div>
+      <div class="row"><span class="author">🏢 团队：</span>Zhuoren Ye, Tianyu Wo, Dinghao Xue, Mingming Zhang, Yuchen Teng, Chunming Hu, Renyu Yang → Beihang University, School of Software</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-24/paper_summaries_v2_2026-06-24_01.jpg" alt="Aquifer: Hierarchical Memory Pooling with CXL and RDMA for MicroVM Snapshots" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.24079 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.24079" target="_blank">Aquifer: Hierarchical Memory Pooling with CXL and RDMA for MicroVM Snapshots</a></h3>
+    <p style="color:#ccc;">生产云集群里 25-35% 的 DRAM 处于 stranded 状态 (内存插着但 CPU 已满订阅). 内存池化 (memory pooling) 是缓解办法, 但单靠 CXL 或 RDMA 都不够: CXL 提供低延迟 load/store 透明访问但局限于 pod 内 (8-16 socket), 缺乏跨主机硬件一致性; RDMA 集群范围可达但每次访问要 software interposition, page fault / kernel 介入开销大. 两者结合是未来方向, 但在 MicroVM serverless 场景 (snapshot restore 是 cold-start 主导瓶颈) 还未被探索. Aquifer 填补这一空白.</p>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>Aquifer 是首个用 CXL+RDMA 分层内存池服务 MicroVM snapshot 的系统. 关键观察: snapshot 页面绝大多数是 zero page 或 cold page——hotness-based snapshot 格式消除 zero page, 只把 hot working set 放 CXL 池, cold page 放 RDMA 池. CXL 2.0 multi-headed devices 缺乏硬件 cache coherence, Aquifer 设计 ownership-based coherence protocol 保证正确性. Copy-based page serving: MicroVM resume 前预装 hot page from CXL, 异步 demand-page cold page from RDMA.</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>CXL 域限制在 8-16 socket, 跨 pod 必须走 RDMA, 路径分两层导致 cold-page 访问延迟比纯 CXL 高; 但比纯 Firecracker (无池化) 快, 比纯 RDMA 池化便宜. Hot/cold 区分需要 snapshot 分析, 对 snapshot 内页分布均匀的 workload 收益有限. Ownership coherence 协议增加一致性开销但避免全硬件 coherence 复杂度.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 emulated CXL+RDMA 硬件上, Aquifer 端到端 invocation time 几何均值加速: 比 Firecracker 快 2.2 倍, 比次优方案快 1.1 倍. 解决了 Microsoft Azure / Google / Meta / 阿里 25-45% DRAM 浪费问题, 在 warehouse scale 单百分点改进可省上亿美元.</div>
+      <div class="row"><span class="author">🏢 团队：</span>Junliang Hu, Huaicheng Li, Ming-Chang Yang → The Chinese University of Hong Kong, Department of Computer Science and Engineering; Virginia Tech, Department of Computer Science</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-24/paper_summaries_v2_2026-06-24_02.jpg" alt="The Serialized Bridge: Understanding and Recovering LLM Serving Performance under Blackwell GPU Confidential Computing" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.23969 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.23969" target="_blank">The Serialized Bridge: Understanding and Recovering LLM Serving Performance under Blackwell GPU Confidential Computing</a></h3>
+    <p style="color:#ccc;">GPU Confidential Computing (GPU-CC) 在 GPU-local 性能上几乎零损失: NVIDIA B300 上 BF16 matmul 跑出 0.998x 非机密性能. 但端到端 LLM serving 在 Intel TDX + GPU-CC 下吞吐仍损失 13-27%, KV-cache restore 延迟翻倍. 本文在 RTX Pro 6000 和 B300 HGX 两个 Blackwell 平台上定位这个 gap 的根因——不是 GPU compute 而是 confidential VM-GPU bridge. GPU-CC 把 host/device 移动变成串行、高 setup cost 的通道, secure copies 在 CUDA context 内无法并发, 异步传输在 runtime boundary block, 小规模 crossing 还要付固定 toll.</p>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>论文用一个机制解释全部损失: GPU-CC 下 confidential VM-GPU bridge 串行化. 三个性质定义行为: (1) context 内无并发 (16 CUDA stream 同时 32-byte device-to-host copy 仍 0 parallelism), (2) async transfer block, (3) 小 crossing 固定 toll. 实验工具: vLLM dense decode 跑 44x slower 小 alloc-and-copy 操作, 用 targeted patches 排除其他解释. 两个恢复方案: scheduling flag 恢复 57% gap, worker-thread drain 在高并发场景恢复 92%.</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>GPU-CC 启用后所有 GPU-local optimization (CUDA stream concurrency, async DMA, persistent kernel) 都被 secure bridge 的串行化抵消; 即便 GPU 算力本身几乎无损失, 端到端 inference 仍退步 13-27%. Blackwell 让 confidential tax 占比上升 (相同 vLLM stack 在 RTX Pro 6000 损失 ~10%, 在 B300 损失 ~26%). KV-restore 慢 +131%, model load 慢 34x.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>B300 上 BF16 matmul 0.998x non-CC, 96K matmul CUDA graph 1.0012x. 但 dense LLM decode 损失 13-22%, MoE serving 损失最高 25%, KV-cache restore 延迟上升 131%, GPT-OSS-120B 加载默认 287 秒. Worker-thread drain 在 qualified 高并发场景恢复 92% gap. 同时评估了 B300 上 confidential multi-GPU NVSwitch tenants (510 GB/s NVLink P2P inside CVM, 并发 isolated tenants), 找出 fabric-attestation gap 是产品化最大拦路虎.</div>
+      <div class="row"><span class="author">🏢 团队：</span>Hang Yin, Kevin Wang → Phala Network</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-24/paper_summaries_v2_2026-06-24_03.jpg" alt="FP8 is All You Need (Part 2): Efficient Ozaki-Bailey Style FFT Through Tensor-core Garner Reformulation and Kulisch Escape Route" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.23698 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.23698" target="_blank">FP8 is All You Need (Part 2): Efficient Ozaki-Bailey Style FFT Through Tensor-core Garner Reformulation and Kulisch Escape Route</a></h3>
+    <p style="color:#ccc;">NVIDIA Blackwell Ultra (B300) 把 FP64 vector 吞吐降到约 1.3 TFLOPS/GPU, 相比 B200 砍 30 倍, 远低于 bandwidth-limited FP64 workload 保持 memory-bound 的阈值. Ozaki Scheme II (Ozaki-II) 仿真框架在 B300 上通过把 dense matrix multiply 仿真到 FP8 tensor core + mantissa-sliced Chinese-remainder reconstruction 恢复 FP64 等效吞吐. Companion paper Part (1) 已覆盖 dense GEMM、batched GEMV、structured stencils、SpMV; 本文补足第五个原语: 3D FFT, 两篇合起来构成 post-FP64 stack 的端到端 kernel 覆盖审计.</p>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>Ozaki-Bailey FFT——通过 Bailey six-step decomposition 把 3D FFT 拆为 1D FFT GEMMs, 所有 GEMM 都跑在 FP8 tensor core. Bailey factorization 暴露一个 dense GEMM 没有的 regime: per-output Garner reconstruction cost 按 r^2/k scale (k 是 Bailey 内维度), 当 k=32 时 η-roof (三参数 TME model 的第三个 roofline) 成为 binding constraint. Garner reconstruction 拆 Phase A (FP8/INT8 tensor core 内积, 1024^3 on B300 ~1ms) 和 Phase B (per-output 归约). Kulisch fixed-point complete-arithmetic accumulator 是 Phase B 改革——维持全 FP64 精度但跑在 INT32 SIMT pipe (避开 FP64 silicon 退化).</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>Ozaki 仿真要在 FP8 tensor core 上重写原 FP64 算法, 编程模型复杂, kernel 优化工作大; 但相比 B300 砍 30x 的原生 FP64, 仿真后 ~1.36 PFLOPS FP8 throughput 让科学计算再次可行. Bailey factorization 增加 Phase B (Garner reduction) 开销, 但 Kulisch INT32 SIMT pipe 足够快 (B300 ~75 TOPS vs floor 66 TOPS, 余 14% margin). Rubin 33 TF @ 22 TB/s 才是真正的 FP64 roof, B300 离 roof 差 10 倍.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>B300 FP64 1.3 TF vs 12.5 TF memory roof, 差 10x. Rubin 33 TF @ 22 TB/s 落在 roof 4% 内. B300 INT32 ~75 TOPS > Kulisch floor 66 TOPS, FP8 tensor ~5 PFLOPS > FP8 floor 1.36 PFLOPS by 3.7x. 1024^3 3D FFT 投影 ~18 ms wall time at full FP64 accuracy (vs naive FP64 sum 准确性更优). A-Roof analysis + Kulisch escape route 把 post-FP64 era 的带宽 parity floor 定在 O_FP64 = O_I × B_HBM ≥ 1.56 B_HBM.</div>
+      <div class="row"><span class="author">🏢 团队：</span>Satoshi Matsuoka → RIKEN Center for Computational Science (R-CCS), Kobe, Hyogo, Japan (Director)</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-24/paper_summaries_v2_2026-06-24_04.jpg" alt="Accelerating Disaggregated RL for Visual Generative LLMs with Diffusion-Based Parallelism and Trainer-Assisted Generation" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.24369 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.24369" target="_blank">Accelerating Disaggregated RL for Visual Generative LLMs with Diffusion-Based Parallelism and Trainer-Assisted Generation</a></h3>
+    <p style="color:#ccc;">强化学习 (RL) 已成为后训练主流范式, 推动了 veRL 等高性能 RL 系统出现, 服务自回归 LLM. 同时, diffusion-oriented RL 算法 (DanceGRPO, FlowGRPO) 把 RL 从语言推理扩展到 diffusion 视觉/流式生成. 但面向 diffusion generative LLM 的高效 RL 系统仍是空白——现有实现如 veRL-Omni 仍依赖 colocated execution, 简化了同步但把 rollout 和 training 紧耦合, 难以扩展到大模型/大 batch 场景.</p>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>提出针对 diffusion generative LLM 的 disaggregated RL 架构, 核心创新是 diffusion-based parallelism: rollout 阶段使用 diffusion model 的并行去噪 (而非自回归), trainer-assisted generation 用单独的 trainer 模型辅助 rollout 模型生成, 降低单步决策的方差. Rollout 和 trainer 解耦到独立 worker 池, 通过异步通信 + 共享 KV-cache 复用实现高吞吐.</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>Disaggregation 增加 rollout-trainer 通信开销, 但通过 KV-cache 复用和异步流水线把通信隐藏在 diffusion 迭代时间内. Colocated 版本同步简单但无法弹性扩展, 难以支撑百亿参数 diffusion LLM 的 RL 训练. Diffusion rollout 比 autoregressive 更易并行但采样质量略低, trainer-assisted generation 弥补这一 gap.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 diffusion generative LLM 的 RL 训练上, disaggregated 架构相比 colocated baseline 在同样 GPU 预算下吞吐提升显著 (具体数字见论文 benchmark), 把 RL 后训练从语言推理扩展到视觉生成, 为下一代多模态 RL 训练铺路. Huawei 提供算力支持, 哈工深 + 港科广 + 华为三方合作体现中国 RL infra 系统研究的产业纵深.</div>
+      <div class="row"><span class="author">🏢 团队：</span>Sijie Wang, Zhengyu Qing, Zhiqiang Tan, Yiming Yin, Yeqing Zhang, Yaoyuan Wang, Qiang Wang → Harbin Institute of Technology, Shenzhen (School of Computer Science and Technology); The Hong Kong University of Science and Technology (Guangzhou), Data Science and Analytics Thrust; Huawei Technologies Ltd.</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer>
+  <p>Generated by Hermes Agent · AI Infra Daily Report</p>
+  <p>https://github.com/ZenHatesCoding/ai-infra-reports</p>
+  <p>2026-06-24 17:34</p>
+</footer>
+</div>
+</body>
+</html>
