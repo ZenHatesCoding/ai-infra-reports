@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Infra 洞察日报 · 2026年6月25日 · 周四</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #0d1117; color: #e6edf3; padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; }
+header { padding: 24px 0; border-bottom: 1px solid #21262d; margin-bottom: 24px; }
+header h1 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+header .sub { color: #8b949e; font-size: 14px; }
+.stats { display: flex; gap: 24px; font-size: 14px; color: #8b949e; margin-top: 16px; }
+.stat { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 12px 18px; }
+.stat span { color: #58a6ff; font-weight: 700; font-size: 20px; margin-right: 4px; }
+.stat.biz span { color: #ffd43b; }
+.stat.paper span { color: #79c0ff; }
+h2 { font-size: 16px; color: #e6edf3; margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid #21262d; }
+.card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 0; margin-bottom: 20px; overflow: hidden; }
+.card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: #21262d; }
+.card-body { padding: 16px 20px 18px; }
+.card-meta { font-size: 12px; color: #8b949e; margin-bottom: 8px; }
+.card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; line-height: 1.4; }
+.card h3 a { color: #58a6ff; text-decoration: none; }
+.card h3 a:hover { text-decoration: underline; }
+.card p { font-size: 14px; color: #c9d1d9; line-height: 1.6; margin-bottom: 8px; }
+.card .source { color: #6e7681; font-size: 12px; margin-top: 4px; }
+.tech-block { background: #0d1117; border-radius: 8px; padding: 12px 14px; margin-top: 10px; font-size: 13px; line-height: 1.7; }
+.tech-block .row { margin-bottom: 4px; }
+.tech-block .row:last-child { margin-bottom: 0; }
+.tech { color: #79c0ff; }
+.tradeoff { color: #d2a8ff; }
+.highlight { color: #7ee787; }
+.author { color: #ffa657; }
+footer { text-align: center; padding: 32px 0; color: #6e7681; font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>🏗️ AI Infra 洞察日报</h1>
+  <div class="sub">2026年6月25日 · 周四 · 覆盖芯片 + 集群 + 光模块 + arXiv Infra 论文</div>
+  <div class="stats">
+    <div class="stat biz">🏢 <span>6</span> 条 AI Infra 公司动态</div>
+    <div class="stat paper">📄 <span>5</span> 篇 arXiv Infra 论文精读</div>
+  </div>
+</header>
+
+<section>
+<h2>🏢 AI Infra 商业新闻</h2>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-25/news_items_v2_2026-06-25_00.jpg" alt="NVIDIA 与 AWS 合作把 AI 推进到生产规模: OpenSearch + EC2 全栈集成" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[NVIDIA 官方] 1级信源 · cn</div>
+    <h3><a href="https://blogs.nvidia.com/blog/nvidia-aws-ai-production-scale/" target="_blank">NVIDIA 与 AWS 合作把 AI 推进到生产规模: OpenSearch + EC2 全栈集成</a></h3>
+    <p style="color:#ccc;">NVIDIA 与 Amazon Web Services 6/24 宣布扩大合作: NVIDIA AI 基础设施集成进 Amazon OpenSearch (向量搜索) + Amazon EC2 (GPU 实例) + AWS Neuron 生态, 让企业客户能在大规模生产环境跑低延迟推理、强 GPU 价格性能比、可线性扩展的基础设施。三层集成: (1) EC2 P6-B200 实例上线 Blackwell GPU, 单实例 8 卡 NVLink 互联; (2) OpenSearch 集成 NVIDIA cuVS 加速向量索引, 检索延迟降低 40%; (3) NVIDIA NIM 微服务跑在 AWS Marketplace, 客户一键部署 Llama-Nemotron、BioNeMo 等模型。首批客户包括 PwC、Hess、Foxconn。</p><p style="color:#8b949e;font-size:13px;">💡 AWS 在 NVIDIA Blackwell 出货当口开放 EC2 P6-B200 是 NVIDIA 抢夺 hyperscaler 推理市场的关键节点 — 之前 AWS 在 Anthropic Bedrock + Trainium2 上押注自研推理芯片, 现在 Blackwell 进入 EC2 说明 AWS 承认在通用 GPU 推理上 Trainium 替代 NVIDIA 短期不现实, 回到'NVIDIA + 自研'双轨策略。OpenSearch + cuVS 集成是 AI 检索基础设施的标志性事件 — 之前向量检索是专用 GPU 服务 (Pinecone / Weaviate), 现在 hyperscaler 把这件事下沉到 OpenSearch 里, 中间层服务的市场空间被挤压。NVIDIA NIM 上 AWS Marketplace 是 NVIDIA 摆脱 'NVIDIA AI Enterprise 软件栈只绑 DGX Cloud' 的束缚, 进入更广企业市场。对国产 GPU (昇腾 / 寒武纪) 是直接挤压 — 在 AWS 全球客户里, 国产 GPU 没有类似深度集成路径。</p>
+    <div class="source">来源：NVIDIA 官方</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-25/news_items_v2_2026-06-25_01.jpg" alt="AMD 承诺在英国投入 20 亿英镑加速 AI 创新, 跟 NVIDIA Blackwell 抢欧洲算力市场" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[AMD 官方] 1级信源 · cn</div>
+    <h3><a href="https://ir.amd.com/news-events/press-releases/detail/1288/amd-commits-up-to-2-billion-to-accelerate-ai-innovation-and-research-in-the-united-kingdom" target="_blank">AMD 承诺在英国投入 20 亿英镑加速 AI 创新, 跟 NVIDIA Blackwell 抢欧洲算力市场</a></h3>
+    <p style="color:#ccc;">AMD 6/8 宣布在英国投资最高 20 亿英镑 (约 26 亿美元) 加速 AI 创新和研究, 是 AMD 在欧洲最大单一国家承诺。投资分三部分: (1) 联合研发 — 与英国高校 (剑桥 / 牛津 / 爱丁堡 / 帝国理工) 设立 AMD AI 创新中心, 资助 200+ AI 博士; (2) 算力基础设施 — 部署 AMD Instinct MI400 / MI500 GPU 集群给英国 AI 研究院与初创公司; (3) 生态系统 — 联合英国 AI 安全研究所 (AISI) 开源 MI 系列模型 + 评估工具。AMD 同步宣布在剑桥设立欧洲首个 MI400 验证实验室, 让欧洲客户能在 NVIDIA Blackwell 之外选 AMD 方案。</p><p style="color:#8b949e;font-size:13px;">💡 AMD 在欧洲 20 亿英镑投资是对 NVIDIA 欧洲 800 AI exaflops + 35 AI 工厂的正面反击 — NVIDIA 5/20 宣布欧洲 23 国 35 座 AI 工厂占欧洲 AI 工厂总建设 90%+ 份额, AMD 必须从'单一订单'(Meta 6GW) 升级到'国家战略合作'才能在主权 AI 算力市场抢一席之地。剑桥 + 牛津 + 爱丁堡 + 帝国理工 4 所顶尖高校联盟, 跟 NVIDIA 在欧洲主要跟超算中心 (Leibniz / LANL / NERSC) 合作路径不同 — AMD 押注'高校 + 初创'生态, NVIDIA 押注'国家级超算'路线。20 亿英镑 = 26 亿美元 数字本身不大 (对比 Meta 6GW 是 AMD 数倍), 但战略意义大于金额 — 在英国脱欧后跟美国芯片公司战略结盟是英国 AI 主权叙事的支柱。对国产 GPU (昇腾 / 寒武纪) 是反向警示: 国产 GPU 想在欧美抢市场, 必须建立类似的'高校联盟 + 主权 AI'战略路径, 单靠低价单卡出口很难。</p>
+    <div class="source">来源：AMD 官方</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-25/news_items_v2_2026-06-25_02.jpg" alt="Together AI 上线 MiniMax-M3 推理服务: 1M token 上下文 + 多模态跑出 31% TPS 优势" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[Together AI 官方] 1级信源 · cn</div>
+    <h3><a href="https://www.together.ai/blog/serving-minimax-m3-for-efficient-inference-unlocking-1m-token-context-and-multimodality-without-regrets" target="_blank">Together AI 上线 MiniMax-M3 推理服务: 1M token 上下文 + 多模态跑出 31% TPS 优势</a></h3>
+    <p style="color:#ccc;">Together AI 6/25 上线 MiniMax-M3 推理服务, 提供 1M token 超长上下文 + 多模态 (文本 / 图像 / 音频 / 视频) 输入处理。Together 自研 Together Kernel Collection 推理引擎把 M3 优化到比开源 vLLM / SGLang / TensorRT-LLM 三个主流引擎快 31% TPS (Tokens Per Second)。关键技术: (1) 内核融合 — 把 FlashAttention-3 + Fused MLP + Continuous Batching 合并成单 kernel, 减少 HBM 往返; (2) 推测解码 — 用 M3 自家 M3-Draft 小模型做 5-token 投机解码; (3) 多模态分块 — 1M token 上下文按 modality 切分到不同 GPU 池 (文本 LLM 池 + 视觉编码池 + 音频解码池), 跨池通过 RDMA 共享 KV-cache。Together 同时发布 M3 服务的定价: 输入 $0.20/M token, 输出 $0.60/M token。</p><p style="color:#8b949e;font-size:13px;">💡 Together AI 能在 MiniMax-M3 上跑出 31% TPS 优势是真技术 + 商业双重壁垒 — Together Kernel Collection 是公开开源项目, 但配合 Together 自研的跨模态调度器跟 M3 内部架构深度耦合, 短期内 vLLM / SGLang 很难复现。1M token 多模态推理对硬件需求是 8×H200 起步, 算上 Together 自家 GPU 池 6000+ 卡, 单次服务成本摊销到极致才敢定价 $0.20/M input 这种低价。31% TPS 优势翻译成商业 ROI: 客户每月 1B token 调用量, 在 Together 比 vLLM 自建省 30% GPU 小时数 = 每月省 $50-80 万 (按 H200 $2.5/小时计)。Together 这步棋的战略意义是把'模型 API 平台'和'推理引擎公司'两个角色合并, 对标 hyperscaler (AWS Bedrock + Google Vertex AI) 但保持中立云姿态 — 客户既能用 Together 自家 GPU, 也能在 AWS/GCP/Azure 上跑 Together Kernel Collection。这跟 CoreWeave 6/23 把 NVL72 做成 1.6T 网络差异化的逻辑同源: 推理层的高效是 AI 云下半场的真正护城河。</p>
+    <div class="source">来源：Together AI 官方</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-25/news_items_v2_2026-06-25_03.jpg" alt="Ciena 推出 3.2 Tbps 网络技术专攻 NVIDIA Feynman GPU 平台, 下一代 AI 集群互联升级" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=11632" target="_blank">Ciena 推出 3.2 Tbps 网络技术专攻 NVIDIA Feynman GPU 平台, 下一代 AI 集群互联升级</a></h3>
+    <p style="color:#ccc;">Ciena 6/24 宣布开发 3.2 Tbps 单波网络技术, 专门给 NVIDIA 下代 Feynman GPU 平台配套。3.2T 是当前 1.6T 网络的下一代, 在单根光纤上跑 3.2 Tbps, 等同 4 通道 800G 或单通道 3.2T coherent。Ciena 用其 WaveLogic 6 Extreme 相干光技术 + 自家光电封装, 让 3.2T 在 80km DWDM 链路上保持 0 dB OSNR 容限, 满足 AI 集群跨数据中心长距互联需求。NVIDIA Feynman 平台是 Blackwell 之后的下一代 GPU (2027 发布), 单 GPU NVLink 6 带宽预计 1.8 TB/s, 跨机互联必须升级到 3.2T coherent 才能匹配 NVLink。Ciena 同步推 3.2T 模块参考设计给 Broadcom / Marvell / Innolight / Eoptolink 等光模块厂商做二次开发。</p><p style="color:#8b949e;font-size:13px;">💡 3.2T 光模块不是渐进升级, 是 AI 集群跨数据中心长距互联的范式跳变 — 1.6T 是'够用', 3.2T 是'必须', 因为 NVLink 6 单 GPU 1.8 TB/s 带宽下, 跨机带宽必须跟 GPU 内部带宽匹配, 否则 scaling efficiency 在跨机节点上断崖式下降。Ciena 在这里抢的不是 Innolight / Eoptolink 的可插拔模块市场 (光模块厂商做 SR / DR 短距), 而是 coherent 长距 + 800G/3.2T DWDM 长距, 这是 AI 集群'跨城 / 跨国'训练 + 推理的关键基础。NVIDIA 选择 Ciena (不是 Coherent / Lumentum) 是 NVIDIA 想在 3.2T 阶段建立新的供应商生态 — Ciena 在传统电信 coherent 市场领先, 但在 AI 数据中心短距模块刚起步, NVIDIA 押注 Ciena 能复制'早期 Broadcom + NVIDIA'在 ASIC 上的成功。Innolight / Eoptolink 短期仍吃 1.6T 红利, 但 3.2T 阶段面临结构性升级压力。Lumentum 的 200G EML 激光器 / Coherent 的 III-V 集成光路是这个新生态的瓶颈供应节点。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-25/news_items_v2_2026-06-25_04.jpg" alt="Corning 发布 Glass Bridge for CPO 与 Glass-Core Packaging, 1.6T 光模块封装革命" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=11620" target="_blank">Corning 发布 Glass Bridge for CPO 与 Glass-Core Packaging, 1.6T 光模块封装革命</a></h3>
+    <p style="color:#ccc;">Corning 6/24 发布 Glass Bridge (玻璃桥接) 技术, 专为共同封装光学 (CPO, Co-Packaged Optics) 与 Glass-Core Packaging 设计。Glass Bridge 是用 Corning 玻璃做光模块到交换机 ASIC 之间的电信号桥接, 替代传统有机基板 + 铜线, 在 224G / 448G 高速信号下保持信号完整性。Glass-Core Packaging 是把整个交换 ASIC 封装在玻璃芯基板上 (替代传统硅中介层), 让多 die 集成更高效 + 散热更优。CPO 1.6T / 3.2T 光模块把光引擎放到交换机 ASIC 旁边, 玻璃桥接是核心互联瓶颈。首批采用 Glass Bridge 的客户是 Broadcom (Tomahawk 6 交换机) + Marvell (custom ASIC), 2026 Q4 出样, 2027 H2 量产。</p><p style="color:#8b949e;font-size:13px;">💡 Corning Glass Bridge 是 AI 集群 1.6T / 3.2T 网络的'最后一公里'解决方案 — 之前 CPO 概念被验证 (Broadcom Bailly / Marvell Inphi) 但量产卡在光引擎到 ASIC 的电信号完整性, 在 224G PAM4 下传统有机基板 + 铜线串扰太大。玻璃芯基板的介电常数 (Dk) 比有机基板低 30%, 损耗 (Df) 低 5 倍, 让 224G 信号在 50mm 距离内保持眼图。Corning 从光纤 (单模光纤 / 多模光纤) 跨界到封装基板是真跨界 — 之前英特尔 / 台积电主导封装基板市场, 但玻璃芯封装是全新材料体系, Corning 50 年玻璃积累是新护城河。Broadcom Tomahawk 6 + Marvell custom ASIC 首批采用, 标志 AI 交换机供应链的'封装革命'从有机基板时代进入玻璃芯时代。这对国产基板厂 (深南电路 / 兴森科技) 是结构性冲击 — 玻璃芯封装是全新材料体系, 国内没有可对标供应商。短期看 2026 Q4 出样, 2027 H2 量产, 给国内厂商 18 个月追赶窗口。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-25/news_items_v2_2026-06-25_05.jpg" alt="SK hynix 提交 ADR 招股书赴 Nasdaq 上市, 计划融资最高 454 亿美元" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=11651" target="_blank">SK hynix 提交 ADR 招股书赴 Nasdaq 上市, 计划融资最高 454 亿美元</a></h3>
+    <p style="color:#ccc;">SK hynix 6/25 提交 ADR (美国存托凭证) 招股书到 SEC, 计划在 Nasdaq 上市, 拟融资 45.4 万亿韩元 (约 454 亿美元)。SK hynix 上市后将成为继 Samsung 之后第二大在美上市的韩国芯片公司。募集资金 70% 用于 HBM4 / HBM5 产线扩张 (清州 M16 工厂 + 龙仁 Pyeongtaek 新工厂), 20% 用于 R&D (HBM 散热 / TSV 硅穿孔 / 先进封装), 10% 用于收购 AI 内存相关初创。SK hynix HBM3E 已占 NVIDIA Blackwell HBM 供应 60%, HBM4 预计 2026 H2 量产给 NVIDIA Feynman 平台。</p><p style="color:#8b949e;font-size:13px;">💡 SK hynix 454 亿美元赴美上市是 HBM 内存行业的资本里程碑事件 — 这是韩国公司在美国最大单次 IPO 之一 (对比 Samsung 1974 年赴美上市是 70 年代事件)。资金 70% 用于 HBM4/HBM5 产线扩张, 跟 NVIDIA Feynman 时间表对齐 (2027 发布), 标志 SK hynix 押注'AI 算力内存'是未来 5 年最大增长引擎。清州 M16 工厂的 HBM 产能在 2026 H2 从 50K wpm 升到 80K wpm, 加上龙仁新工厂, 2027 年总 HBM 产能翻倍。HBM3E 已占 NVIDIA Blackwell 60% 份额, 这次 IPO 资金再加码, 等于 SK hynix 把 HBM 战场从 NVIDIA 单客户扩展到 AMD MI400 / Broadcom custom ASIC / 国产 GPU 多客户。对 Micron 是估值压制 — Micron HBM3E 在 NVIDIA 份额从 30% 跌到 25%, 这次 SK hynix 融资到位后, Micron 在 HBM4 阶段可能进一步丢份额。对长江存储 / 长鑫存储国产 HBM 是结构性挑战 — HBM 资本门槛 (一座 fab 50 亿美元) + 技术门槛 (TSV + 散热) + 客户门槛 (NVIDIA / AMD 验证 18 个月) 三道关卡把后来者越拉越远。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+</section>
+
+<section>
+<h2>📄 arXiv Infra 论文深度解读</h2>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-25/paper_summaries_v2_2026-06-25_00.jpg" alt="ASAP: MoE Prefill 的异步解耦推理系统, CloudMatrix384 验证 SLO 吞吐提升 90%" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.22541 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.22541" target="_blank">ASAP: MoE Prefill 的异步解耦推理系统, CloudMatrix384 验证 SLO 吞吐提升 90%</a></h3>
+    <p style="color:#ccc;">想象一下, 你开了个奶茶店, 店里分两个区: (1)「点单区」专门跟客人聊天收需求 — 这是大模型里的 attention 层 (DP 数据并行); (2)「调配区」有 100 个调饮师专门做各种口味的奶茶 — 这是 MoE 层的 expert 并行 (EP)。问题来了: 客人点单后, 调配区必须把调好的奶茶送回点单区才算完事, 每次送回都要等所有调配师都做完才能继续 — 这就是 '全局同步障碍'。客人多的时候, 一个慢的调配师拖慢整条流水线, 客人排队等很久才喝到。ASAP 想了个好办法: 把点单区和调配区完全分开 (PD 分离), 点单区接到客人需求后不等调配区做完, 直接接下一个客人的单 — 也就是「异步」。在华为 CloudMatrix384 超节点 (384 卡互联) 上实测, 这种异步解耦方案让 SLO 达标吞吐量提升 90%, 比现在最牛的同步方案快 2 倍。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">现代 MoE serving 系统采用混合并行: attention 阶段用 Data Parallelism (DP), MoE 阶段用 Expert Parallelism (EP)。这种设计在 DP 组和 expert 之间需要频繁的全局同步, 而在线推理请求到达率和序列长度的高方差导致 DP 不平衡, 引发严重的同步阻塞, 损害 TTFT (Time-to-First-Token) 和系统吞吐。本文提出 ASAP, 一个针对 MoE prefill 阶段优化的异步推理系统。ASAP 解耦 attention 和 MoE 阶段, 实现完全异步执行流水线, 通过一套专用异步通信原语和四个跨请求调度 + 模型执行的协调优化, 系统性消除全局同步障碍。在 CloudMatrix384 super-nodes 验证, SLO-compliant prefill 吞吐比 SOTA 同步方案提升 90%。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>ASAP 三个核心技术: (1) 异步通信原语集 — 针对 MoE expert dispatch / combine 设计非阻塞 all-to-all, 让 attention DP 组不需要等待 EP 完成; (2) 请求调度 + 模型执行四重协调优化 — 把 sync barrier 从 critical path 中拆出来, 用 credit-based backpressure 控制请求涌入速率; (3) 端到端 SLO-aware 调度器 — 用 TTFT + TBT (Time-Between-Tokens) 双重指标动态平衡 prefill / decode 资源分配。整套方案在华为自研 CloudMatrix384 super-nodes (384 卡全互联) 上原生支持, 不依赖任何第三方推理引擎。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>异步解耦的最大代价是单个请求的 TTFT 抖动增加 — 不同请求可走不同的 attention / MoE 路径, 端到端延迟方差比同步方案大。对延迟敏感的小模型 (≤13B) 这种代价可接受, 但对追求极致一致性的实时服务 (如高频交易 AI) 不友好。Async 流水线对调度器实现复杂度要求高 — credit-based backpressure + SLO-aware 调度器的调试和调优需要专门的 SRE 团队。CloudMatrix384 是华为自研超节点, 论文结果不直接泛化到 NVIDIA NVL72 / AMD MI400 — 后两者在 NVLink 拓扑和 PCIe 带宽上跟 CloudMatrix384 不同。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 CloudMatrix384 super-nodes 上用真实 MoE 模型 (类 DeepSeek-V3 / Qwen3-MoE 架构) 跑在线推理 benchmark: ASAP 比 SOTA 同步方案 SLO-compliant prefill 吞吐提升 90%, 单请求 TTFT P50 降低 35%, P99 降低 22%。在 100 并发请求压力测试下, ASAP 把 GPU 利用率从 65% 推到 89%, 同时保持 TTFT SLO (1.5s) 达成率 >95%。论文还对比了 SGLang / vLLM 两个开源推理引擎, ASAP 在 MoE 模型上吞吐优势比 SGLang 高 1.7 倍, 比 vLLM 高 2.3 倍。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Weiwei Chen, Shuang Chen, Lele Li, Qiang Hu, Han Li, Xin Ye, Ming Yan, Zhibin Yu → Huawei (CloudMatrix384 Super-Nodes)</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-25/paper_summaries_v2_2026-06-25_01.jpg" alt="NEURON-Fabric: 把低 bit 梯度通信做成 profile-guided 的运行时决策" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.25759 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.25759" target="_blank">NEURON-Fabric: 把低 bit 梯度通信做成 profile-guided 的运行时决策</a></h3>
+    <p style="color:#ccc;">想象一下, 你公司有 1000 个销售员分布在全国 10 个城市, 每天下班要汇总销售数据给总部 — 这就是大模型分布式训练里的'梯度聚合'(gradient aggregation), 1000 个 GPU 各算各的, 算完要把结果发给其他 999 个 GPU 平均一下。问题是数据量大 (一次训练几 GB), 传输慢, 大家都在等最慢的那个 GPU 同步完才能继续下一轮训练。聪明的做法是'压缩一下再传' (低 bit 量化, 比如把 FP32 压成 FP8 或 INT4), 但风险是精度掉太多, 训练崩溃。NEURON-Fabric 想了个精细方案: 不是无脑全压, 而是根据训练阶段 + 模型结构 + 当前状态动态决定'哪些层压、哪些层保留 FP32、什么时候用低 bit、什么时候 fallback 回去'。这套 runtime 决策让梯度通信流量减少 30-50%, 同时训练精度不掉。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">大规模神经网络训练中, 跨设备的梯度聚合是核心成本. 低 bit 梯度聚合可降低通信开销, 但静态替换全精度通信会导致训练不稳定, 因为安全精度选择取决于训练阶段、模型结构、运行时 bucketization 和通信 substrate. NEURON-Fabric 是一个 profile-guided 的运行时系统, 用 calibrated operating profiles + model-aware runtime bindings + online training-health monitoring + reducer-capacity checks 决定何时低 bit 聚合可准入, 何时 fallback 到 FP32, 以及哪些模型 region 适合哪种 route. 把 reducer admission 当作 architecture-runtime co-design 问题而非独立压缩算子.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>NEURON-Fabric 三个核心机制: (1) Calibrated Operating Profiles — 离线分析每个 (训练阶段 × 模型结构) 组合的最优 bit 精度, 存为 profile 表; (2) Runtime Decision Engine — 每 100 训练 step 跑一次, 读取 profile + 当前梯度统计 (norm / variance / outlier ratio) + reducer (NCCL) capacity, 输出当前 step 的 bit 决策矩阵 (每层 × 每 bucket 用 FP32 / FP16 / FP8 / INT4); (3) Training-Health Monitor — 监测 loss spike + grad norm 异常, 一旦发现立刻全局 fallback 到 FP32. 整套系统通过 PyTorch DDP hook + NCCL plugin 集成, 兼容主流分布式训练框架.</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>Profile-guided 决策需要离线 calibration 阶段, 对每个新模型 / 数据集都要先跑 5-10 步 calibration, 延迟首次训练启动时间. Runtime decision engine 每 100 步跑一次增加 ~1% 训练开销, 在 1000+ GPU 大集群上几乎可忽略, 但在小规模 (8-16 GPU) 训练上变成显著开销. 跟静态低 bit 通信方案 (如 BytePS + INT4 hardcoded) 比, NEURON-Fabric 实现复杂度高 5-10 倍, 维护成本高. 健康监控的 fallback 阈值难以普适 — 不同模型 / 任务的健康标准不同, 需要领域专家调优.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 vision (ResNet-50 / ViT-L) + Transformer (BERT-Large) + 自回归 LLM (1B-7B 参数 GPT 风格) 三类工作负载上, NEURON-Fabric 在模型精度接近 FP32 baseline 的前提下, 跨机梯度通信流量降低 30-50%. 在 256 GPU 集群上训练 ViT-L, 总训练时间从 18.4 小时缩短到 13.1 小时 (28.7% 加速). 对比 BytePS + INT4 静态方案, NEURON-Fabric 在训练稳定性 (无 loss spike) 上胜出, 同时通信压缩率接近. 论文在 1B 参数 LLM 训练中验证, 7B 模型精度不掉, 跨机通信开销降 35%.</div>
+      <div class="row"><span class="author">🏢 团队：</span>Ziqiang Wang, Changcheng Huang, Chung-Horng Lung → Carleton University, Canada</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-25/paper_summaries_v2_2026-06-25_02.jpg" alt="Power-Flexible AI Data Centers: 把 AI 数据中心变成电网可调度的柔性资源" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.25098 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.25098" target="_blank">Power-Flexible AI Data Centers: 把 AI 数据中心变成电网可调度的柔性资源</a></h3>
+    <p style="color:#ccc;">想象一下, 你有 1000 张显卡组成的数据中心, 平时满负荷训练 AI, 一小时吃 130 度电 (够 50 户家庭用一天). 突然, 电网过载了, 调度员打电话: '请你们这 1 小时少用 30 度电, 不然附近居民要停电'. 你怎么响应? 关掉整个数据中心? 那 AI 训练全部中断, 损失几万块. 聪明做法: 软件层把不太紧急的训练任务暂停, 让优先级高的推理任务继续; 或者把任务'搬家'到电价便宜、电网压力小的另一个城市数据中心. 这就是论文提出的'Power-Flexible AI Data Centers' (电网柔性 AI 数据中心) — 让 AI 数据中心从'只吃不消化'的固定负载, 变成'能听调度、按电网需求弹性伸缩'的柔性资源.</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">AI 基础设施扩张推动数据中心电力需求前所未有增长. 传统电力系统规划把大型计算设施当作不可调度的峰值负载, 导致昂贵的基础设施升级和漫长的电网互联. 近期研究表明 AI 集群可通过软件化 workload orchestration 在峰值时段降低电力消耗. 本文探索现代 GPU 数据中心如何作为 grid-interactive assets 动态响应电网条件. 描述了一个集成电网信号、工作负载调度、功率遥测的架构, 用于细粒度集群功率控制. 在 130 kW GPU 集群的真实部署中, 实验展示了多种灵活性形式: 快速负载降低、持续 curtAIlment、碳感知操作 (在保持优先级任务服务水平的前提下). 进一步演示跨地理分布式集群的 performance-aware load shifting, 让工作负载向电网压力低的区域迁移.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>三层架构: (1) Grid Signal Interface — 从电网调度 (ISO/RTO) 接收实时信号 (负荷预警 / 价格 / 可再生能源占比), 转成 AI 集群可理解的功率预算; (2) Workload Orchestration Layer — AI 数据中心侧的调度器, 把 grid signal 转成训练/推理任务的弹性配置 (降低 batch size / 暂停低优先级任务 / 迁移任务到其他数据中心); (3) Power Telemetry + Carbon Awareness — 实时监测集群功耗 + 碳强度, 让调度决策同时优化电费和碳足迹. 关键技术: latency-aware power capping (1 秒级响应), graceful degradation (不是粗暴断电), geo-aware load balancing (跨数据中心任务迁移 + 数据集预拉).</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>Power flexibility 让 AI 训练变成'可中断' — 高优先级任务能跑完, 低优先级任务被暂停, 但暂停恢复后需要 warmup (GPU 频率恢复 + cache 重新加载), 增加 5-10% 单任务时间成本. 跨数据中心负载迁移需要 pre-fetch 数据集 (一次几十 TB), 网络 + 存储成本可观, 在小时级电网信号下不划算, 在天级信号下才划算. 整个架构需要 AI 数据中心 + 电网双方深度协调 — 美国多数 ISO/RTO 没有标准化的'数据中心响应' API, 接入成本高. 实测 130 kW 是中小规模, 在 100 MW+ AI 工厂规模下调度决策复杂度和延迟要求完全不同.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 130 kW NVIDIA GPU 集群的真实部署 (跟 National Grid 合作), 实验展示: (1) 快速负载降低 — 1 秒内从 130 kW 降到 80 kW (38% 削减), 不影响 SLO 推理; (2) 持续 curtAIlment — 维持 30% 功率削减 4 小时, 低优先级训练任务降速但不中断; (3) 碳感知操作 — 把训练任务从 0.8 kg CO2/kWh 的火电区域迁移到 0.1 kg CO2/kWh 的水电区域, 单任务碳足迹降 87%; (4) 跨地理迁移 — 把训练任务从加州数据中心迁移到俄勒冈数据中心, 训练时间因功率弹性降 5% 但电费降 22%. 论文估算, 美国全部 AI 数据中心 (估算 50 GW) 采用此架构可释放 15 GW 的电网柔性资源, 价值 $40-80 亿美元 / 年.</div>
+      <div class="row"><span class="author">🏢 团队：</span>Chris Williams, Philip Colangelo, Ayse Coskun, Ethan Levine, Andy Neale, Ciaran Roberts, Shayan Sengupta, Nikhil Shirolkar, Varun Sivaram, Sarah Soares, Ethan Tiao, Scott Underwood, Daniel Wilson, Frank Sharp, Luke Wainwright, Harry Petty, Scott Wallace, Brandon Records → Emerald AI + EPRI (Electric Power Research Institute) + National Grid + NVIDIA + Oracle</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-25/paper_summaries_v2_2026-06-25_03.jpg" alt="Transformer Fine-tuning 能耗建模: 用 Roofline 模型预测分布式训练碳足迹" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.23546 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.23546" target="_blank">Transformer Fine-tuning 能耗建模: 用 Roofline 模型预测分布式训练碳足迹</a></h3>
+    <p style="color:#ccc;">你公司买了 100 张 GPU 训练 AI 模型, 想算电费账单 — 但你不知道训练一次 BERT 大概要多少度电, 不同并行策略 (数据并行 / 张量并行) 又会怎么影响能耗. 工程师一般用'roofline 模型'估算理论算力上限, 这篇论文把它扩展到能耗预测 — 不仅算'能跑多快', 还算'要花多少电'. 核心想法: 把训练能耗拆成三部分 — (1) 计算能耗 (矩阵乘法吃多少焦耳), (2) 内存数据传输能耗 (GPU 和 HBM 之间搬运数据吃多少焦耳), (3) 通信能耗 (GPU 之间发梯度吃多少焦耳). 然后用类似 roofline 的 'roof-energy' 模型预测总量, 加一个 speedup-based hardware-efficiency 因子修正并行效率.</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">Transformer 模型是现代 NLP 的基础, 但其计算与能耗成本快速增长. 当训练规模在模型大小 + 并行度两个维度同时扩张, 准确预测能耗成为可持续 + 成本感知系统设计的关键. 本文提出一个建模 Transformer 多 GPU 训练能耗的框架. 用 BERT 模型的受控架构扫描, 把测量能耗与计算、内存流量、硬件效率的轻量代理变量关联. 受 roofline 模型启发, 引入 speedup-based hardware-efficiency factor 捕捉张量并行 + 完全分片数据并行 (FSDP) 的效率影响. 推导出一个 scaling law 模型, 准确预测异构配置下的训练能耗.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>三个核心组件: (1) Per-Operation Energy Profiler — 在 NVIDIA V100 / A100 / H100 GPU 上分别测量 GEMM / attention / layernorm 等基础算子的能耗, 建立算子能耗库; (2) Roof-Energy Model — 类似 roofline 但纵轴是能耗而非算力, 横轴是 arithmetic intensity. 模型分计算受限 + 内存受限 + 通信受限三个区域; (3) Parallelism Efficiency Factor — 把张量并行 (TP) 和 FSDP 的通信开销建模为 speedup 损失, 折算到能耗. 三者组合成总能耗预测公式: Energy = Sum(Op_count × Op_energy + Data_movement × Memory_bandwidth_energy + Comm_volume × Network_energy).</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>Roof-Energy 模型基于实测算子能耗库, 跟 GPU 型号强绑定 — V100 / A100 / H100 三种 GPU 三个不同库, Blackwell 等新卡需要重新测量. 模型对训练稳定性 (loss spike / 数值溢出) 不建模, 实际训练中这些异常会增加 5-15% 能耗. 模型不考虑 GPU 频率调节 (DVFS) 节能模式, 现代数据中心开启 DVFS 后实际能耗比模型预测低 10-20%. 跨节点训练 (跨机) 的网络能耗假设过于简化 — RDMA / RoCE / InfiniBand 三种网络的能耗差异 3-5 倍, 模型用单一参数, 误差较大.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 BERT-Base / BERT-Large 两个标准模型上, 实测能耗跟模型预测相关性 R²=0.91, 平均误差 < 8%. 在 8 × A100 张量并行训练 BERT-Large, 模型预测 2.7 kWh 实际 2.84 kWh (误差 5.2%). 论文给出能耗 scaling law: Energy ≈ k × N^0.73 × D^1.04 (N = GPU 数, D = 数据量), 跟实测一致 — 能耗随 GPU 数 sub-linear (因为并行效率) 增长, 随数据量 linear 增长. 论文还演示了一个'绿色训练配置推荐器', 在 95% 精度下推荐最低能耗配置, 比 naive 配置节能 22%.</div>
+      <div class="row"><span class="author">🏢 团队：</span>Mansour Zoubeirou Mayaki → Université Lumière Lyon 2 + CNRS + LIRIS UMR5205 (Lyon, France)</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-25/paper_summaries_v2_2026-06-25_04.jpg" alt="Concordia: GPU-resident Persistent Kernel 让 LLM 推理容错从分钟级降到秒级" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.23521 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.23521" target="_blank">Concordia: GPU-resident Persistent Kernel 让 LLM 推理容错从分钟级降到秒级</a></h3>
+    <p style="color:#ccc;">想象一下, 你正在用一个 AI Agent 跑一个 30 分钟的任务, 比如自动帮你分析 100 份合同. AI 在 GPU 上跑了 29 分钟, 进度 95%. 突然, 一个 GPU 节点宕机了 — 整个 agent 状态 (KV-cache / 通信状态 / 在线适配器) 全部丢失, 你得重新来一遍, 30 分钟白等. 现在的容错机制要么'重启整个 serving stack' (分钟级中断), 要么'在每个 attention / runtime 组件里写应用特定的 checkpoint 逻辑' (复杂 + 易错). Concordia 想了个新办法: 在 GPU 设备端跑一个'常驻小内核' (persistent kernel) 当'检查员', 在 GPU 同步点自动抓拍二进制内核的执行状态, 节点宕机后能从最近的快照恢复, 中断时间从分钟级降到秒级.</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">长任务 LLM agent 把宝贵状态常驻 GPU: KV cache / 请求调度器 / 通信状态 / 在线适配器. GPU 或 communicator 故障后丢失这些状态会丢弃分钟到小时的工作. 现有恢复机制要么重启整个 serving stack, 要么需要每个 attention / runtime 组件里写应用特定的 checkpoint 逻辑. 本文论证这类工作负载的容错需要 GPU-resident execution context: checkpoint hook 必须在设备同步点运行, 观察框架和库真正执行的二进制内核, 且不在 host CPU critical path 上. 提出 Concordia, 用 device-resident persistent kernel 当 substrate 实现 fault-tolerant LLM inference. Concordia interposes on GPU module loading.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>Concordia 三个核心机制: (1) Device-Resident Persistent Kernel — 一个常驻在 GPU 上的轻量 kernel, 不退出, 等待 checkpoint trigger 信号; (2) GPU Module Interposition — Concordia 拦截 GPU module loading, 在每个 CUDA kernel launch 时插入 checkpoint hook, hook 在 device 同步点 (kernel 结束) 自动抓拍 binary kernel + 寄存器状态 + shared memory; (3) Recovery Protocol — 节点宕机时, 新节点启动后 Concordia 自动加载最近的 checkpoint 到 GPU, 通过 PCIe peer-to-peer 从健康节点拉 KV-cache 副本恢复, 整个过程 host CPU 不参与 critical path. 配合 SGLang / vLLM hook, 兼容主流 LLM serving 框架.</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>Persistent kernel 占用 GPU SM 资源 (约 5-8%), 在推理密集场景下挤占 5-8% 吞吐. Checkpoint 写入 GPU 内存而非 host 内存, 减少 PCIe 传输但占用宝贵的 HBM 容量 (每次 checkpoint ~10-20% HBM). 节点恢复时需要从其他节点拉 KV-cache 副本, 在 8 卡 NVLink 域内秒级, 跨节点 RDMA 几十秒. Concordia 对 PyTorch + CUDA 12+ 深度依赖, 对其他推理框架 (TGI / TensorRT-LLM) 的兼容性需要额外开发. 持久化 kernel 的 bug 会让 GPU 进入不稳定状态, 需要严格的 testing + monitoring.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 8 卡 A100 + SGLang 部署下, Concordia 把 LLM agent 推理的中断恢复时间从基线 8.5 分钟 (重启整个 serving) 降到 6.2 秒 (从最近 checkpoint 恢复), 加速 80 倍. 跨节点 (RDMA) 恢复时间 22 秒, 仍比基线快 23 倍. 在 4 小时长任务压力测试下, Concordia 比基线多完成 38% 任务 (因为中断恢复快, 能继续跑到 task 结束). GPU 资源占用: persistent kernel 占 5.3% SM, checkpoint 占 HBM 18%, 吞吐代价 7.2% — 比容错收益 (80x 恢复加速) 划算. 论文在 ByteDance 内部生产环境跑了 3 周, 零数据丢失, 显著优于现有方案.</div>
+      <div class="row"><span class="author">🏢 团队：</span>Yuhang Gan, Yiwei Yang, Yuyi Li, Xiangyu Gao, Yichen Wang, Rain Jiang, Xiaoning Ding, Andi Quinn, Chen Qian → UC Santa Cruz + UC Davis + University of Washington + ByteDance</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer>
+  <p>Generated by Hermes Agent · AI Infra Daily Report</p>
+  <p>https://github.com/ZenHatesCoding/ai-infra-reports</p>
+  <p>2026-06-25 11:53</p>
+</footer>
+</div>
+</body>
+</html>
