@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Infra 洞察日报 · 2026年6月26日 · 周五</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #0d1117; color: #e6edf3; padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; }
+header { padding: 24px 0; border-bottom: 1px solid #21262d; margin-bottom: 24px; }
+header h1 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+header .sub { color: #8b949e; font-size: 14px; }
+.stats { display: flex; gap: 24px; font-size: 14px; color: #8b949e; margin-top: 16px; }
+.stat { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 12px 18px; }
+.stat span { color: #58a6ff; font-weight: 700; font-size: 20px; margin-right: 4px; }
+.stat.biz span { color: #ffd43b; }
+.stat.paper span { color: #79c0ff; }
+h2 { font-size: 16px; color: #e6edf3; margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid #21262d; }
+.card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 0; margin-bottom: 20px; overflow: hidden; }
+.card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: #21262d; }
+.card-body { padding: 16px 20px 18px; }
+.card-meta { font-size: 12px; color: #8b949e; margin-bottom: 8px; }
+.card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; line-height: 1.4; }
+.card h3 a { color: #58a6ff; text-decoration: none; }
+.card h3 a:hover { text-decoration: underline; }
+.card p { font-size: 14px; color: #c9d1d9; line-height: 1.6; margin-bottom: 8px; }
+.card .source { color: #6e7681; font-size: 12px; margin-top: 4px; }
+.tech-block { background: #0d1117; border-radius: 8px; padding: 12px 14px; margin-top: 10px; font-size: 13px; line-height: 1.7; }
+.tech-block .row { margin-bottom: 4px; }
+.tech-block .row:last-child { margin-bottom: 0; }
+.tech { color: #79c0ff; }
+.tradeoff { color: #d2a8ff; }
+.highlight { color: #7ee787; }
+.author { color: #ffa657; }
+footer { text-align: center; padding: 32px 0; color: #6e7681; font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>🏗️ AI Infra 洞察日报</h1>
+  <div class="sub">2026年6月26日 · 周五 · 覆盖芯片 + 集群 + 光模块 + arXiv Infra 论文</div>
+  <div class="stats">
+    <div class="stat biz">🏢 <span>6</span> 条 AI Infra 公司动态</div>
+    <div class="stat paper">📄 <span>5</span> 篇 arXiv Infra 论文精读</div>
+  </div>
+</header>
+
+<section>
+<h2>🏢 AI Infra 商业新闻</h2>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-26/news_items_v2_2026-06-26_02.jpg" alt="NVIDIA Powers 81% of TOP500 + 90% of New Systems at ISC 2026" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[NVIDIA 官方] 1级信源 · cn</div>
+    <h3><a href="https://blogs.nvidia.com/blog/top500-green500-supercomputers-isc-2026/" target="_blank">NVIDIA Powers 81% of TOP500 + 90% of New Systems at ISC 2026</a></h3>
+    <p style="color:#ccc;">ISC 2026 高性能大会上 TOP500/Green500 最新排名发布: NVIDIA 技术支持全球 500 台最快超算中的 81% (408 台), 新上榜系统中 90% 基于 NVIDIA。TOP500 中 26 台采用 NVIDIA Grace CPU (环比+8), Green500 前 8 全部 NVIDIA GPU, 第 1 名 KAIROS 用单颗 NVIDIA Grace Hopper Superchip, 376 台超算互联采用 NVIDIA Quantum InfiniBand。</p><p style="color:#8b949e;font-size:13px;">💡 TOP500 81% 份额是 NVIDIA 在 AI + HPC 融合时代的统治性证明: 加速计算 + 高带宽网络 + Grace CPU 三件套一体化交付, 把传统 HPC 客户 (国家实验室/大学) 一步步拖入 NVIDIA 生态。Green500 第 1 名用单颗 Grace Hopper 拿到能效第一, 显示 Grace Hopper 的能效设计已超越传统 x86 + GPU 组合。对国产超算而言, 单一路线 (如纯 SW26010 或纯自研加速器) 已难追上 NVIDIA 全栈节奏。</p>
+    <div class="source">来源：NVIDIA 官方</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-26/news_items_v2_2026-06-26_03.jpg" alt="NVIDIA Launches BioNeMo Agent Toolkit for Life Sciences" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[NVIDIA 官方] 1级信源 · cn</div>
+    <h3><a href="https://nvidianews.nvidia.com/news/nvidia-launches-bionemo-agent-toolkit-giving-ai-agents-the-tools-to-accelerate-scientific-discovery" target="_blank">NVIDIA Launches BioNeMo Agent Toolkit for Life Sciences</a></h3>
+    <p style="color:#ccc;">NVIDIA 发布 BioNeMo Agent Toolkit, 为生命科学领域的 Agent 提供领域专属工具集与技能, 覆盖蛋白质设计 / 分子动力学 / 化学反应 / 基因组学等场景, 整合 BioNeMo NIM 微服务 + Clara 工具链。这是 NVIDIA 把 Agent 框架从通用领域延伸到垂直行业 (生命科学) 的首批商业化落地。</p><p style="color:#8b949e;font-size:13px;">💡 BioNeMo Agent 是 NVIDIA "垂直行业 Agent 工具栈" 战略的开端, 把 GPU + NIM 微服务 + 行业数据集打包成可订阅服务, 锁住药企 / Biotech 客户的算力需求。这意味着 AI infra 厂商的下一战场从 "卖卡" 转向 "卖框架 + 卖垂直微服务", 竞争维度从 FLOPS 转到 workflow 整合能力。对国内 Biotech AI 公司而言, 垂直微服务 + 中文生物医药数据集 + 合规部署是差异化的机会窗口。</p>
+    <div class="source">来源：NVIDIA 官方</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-26/news_items_v2_2026-06-26_04.jpg" alt="Together AI Coding Agent Benchmarks: 31% TPS + 2x TTFT Advantage" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[Together AI 官方] 1级信源 · cn</div>
+    <h3><a href="https://www.together.ai/blog/coding-agent-benchmarks" target="_blank">Together AI Coding Agent Benchmarks: 31% TPS + 2x TTFT Advantage</a></h3>
+    <p style="color:#ccc;">Together AI 发布 Coding Agent 推理基准结果: 在生产级 coding agent workload (长输入 + 高并发) 下, Together Inference Engine 比次快 OSS 引擎 (同一硬件) 高 31% TPS (每秒 token 数), 饱和状态下 TTFT (首个 token 时延) 保持 2x 优势。增益来自全栈优化: ThunderMLA + 自研 kernel 重写 + 真实流量端到端 profiling。</p><p style="color:#8b949e;font-size:13px;">💡 Together AI 把 coding agent 作为 "production 推理基准" 的突破口, 直击 vLLM / SGLang 在高并发长上下文场景下的 TTFT 退化痛点。对 AI infra 而言, "长上下文 + 高并发" 已经是 coding agent / RAG / 多步 agent 的标配, 单一 batch 优化的老基准已经过时。31% TPS + 2x TTFT 是 kernel 优化 (MLA decode) + scheduler 优化 (prefill/decode 调度) + profiling-driven tuning 的组合拳, 比单纯靠 MoE 解码快 1.25x 的 vLLM 更接近真实 workload。</p>
+    <div class="source">来源：Together AI 官方</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-26/news_items_v2_2026-06-26_05.jpg" alt="Oracle AI Database@AWS Now Available in Spain Region" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[Oracle 官方] 1级信源 · cn</div>
+    <h3><a href="https://www.oracle.com/news/announcement/oracle-ai-database-at-aws-now-available-in-spain-2026-06-22/" target="_blank">Oracle AI Database@AWS Now Available in Spain Region</a></h3>
+    <p style="color:#ccc;">Oracle 与 AWS 联合宣布 Oracle AI Database@AWS 在西班牙 AWS Europe (Spain) Region 上线。客户可在 AWS 内运行 Oracle Exadata Database Service + Oracle Autonomous AI Database + Oracle Autonomous AI Lakehouse, 客户案例包括巴塞罗那大都会交通局 (ATM) 与 Helvetia Caser。这是 Oracle Database 进入 AWS 数据中心的第 4 个欧洲国家。</p><p style="color:#8b949e;font-size:13px;">💡 Oracle + AWS 的 "cross-cloud database" 模式 (Oracle Database 跑在 AWS 数据中心内) 是 hyperscaler 时代最反直觉的合作: Oracle 把 Exadata 卖给 AWS 用户, AWS 把底层 OCI 接入 AWS 控制台。底层逻辑是: 企业级客户既要用 AWS 的弹性, 又不愿迁离 Oracle 数据库, 双方共同锁定 workload。对 AI infra 而言, 这种跨云模式意味着 GPU 算力也会出现类似的 "异构混部", 跨云调度与存算分离将成下一战场。</p>
+    <div class="source">来源：Oracle 官方</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-26/news_items_v2_2026-06-26_00.jpg" alt="Broadcom + OpenAI Jalapeño Custom AI Inference Chip" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=11692" target="_blank">Broadcom + OpenAI Jalapeño Custom AI Inference Chip</a></h3>
+    <p style="color:#ccc;">Broadcom 与 OpenAI 在 6 月 24 日 (当地时间) 联合发布 Jalapeño 定制 AI 推理芯片。该 ASIC 针对 OpenAI 推理 workload 优化, 采用 Broadcom 3nm/2nm 工艺 + OpenAI 自研网络架构, 瞄准超大规模 LLM 推理的成本与延迟拐点。这是 Broadcom 与 OpenAI 在 2024 年百亿美金合作框架下的首个公开产品化里程碑。</p><p style="color:#8b949e;font-size:13px;">💡 Jalapeño 是 AI 推理 ASIC 战场的分水岭: 它把 "GPU 通用 + 软件栈宽" 与 "ASIC 专用 + 单 token 成本低" 的争论拉向后者, 给 AMD MI400 + Intel Gaudi 3 之外开辟了第三路线 (Marvell / Broadcom 系)。对国内 GPU 厂而言, 推理 ASIC + 3nm 先进工艺 + 软件栈深度定制 = 单一客户 workload 优化的护城河, 比做 "通用 GPU" 路径更可行。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-26/news_items_v2_2026-06-26_01.jpg" alt="Qualcomm Dragonfly Data Center AI Platform Wins Meta Deal" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=11687" target="_blank">Qualcomm Dragonfly Data Center AI Platform Wins Meta Deal</a></h3>
+    <p style="color:#ccc;">Qualcomm 正式发布 Dragonfly 数据中心 AI 平台, 拿下 Meta 大单。Dragonfly 基于 Qualcomm 自研 NPU + ARM CPU, 面向 LLM 推理 + 推荐系统 + 多模态场景。这是 Qualcomm 从移动 SoC 转型数据中心的关键一步, 也是 Meta 继 AMD GPU 6GW 大单后, 在 AI 基础设施多元化上的第二招。</p><p style="color:#8b949e;font-size:13px;">💡 Meta 同时部署 NVIDIA GPU + AMD GPU + Qualcomm Dragonfly + 自研 MTIA, 是 hyperscaler 内部 "四套栈" 多源化的典型样本。对 AI infra 供应链意味着: 大客户的 "全栈冗余" 采购策略会让每一类芯片 (通用 GPU + 数据中心 NPU + 推理 ASIC) 都有持续订单, 而非零和博弈, 整个蛋糕比想象中更大。Qualcomm 加入数据中心战局, 也让 ARM Neoverse + 自研 NPU 路线获得新背书。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+</section>
+
+<section>
+<h2>📄 arXiv Infra 论文深度解读</h2>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-26/paper_summaries_v2_2026-06-26_00.jpg" alt="RolloutPipe: Overlapping Pipelined Rollout and Training in Disaggregated On-Policy LLM Reinforcement Learning" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.26997 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.26997" target="_blank">RolloutPipe: Overlapping Pipelined Rollout and Training in Disaggregated On-Policy LLM Reinforcement Learning</a></h3>
+    <p style="color:#ccc;">想象你开了一家奶茶店, 店里分两条线: 一边是「调饮师」做新口味的试喝 (rollout, 让 AI 模型尝试不同回答), 一边是「配方师」根据调饮师的反馈调整配方 (training, 更新模型权重)。问题来了——传统做法是调饮师把所有口味都试完, 配方师才开始改配方, 配方师常常在空等。RolloutPipe 这篇论文做的就是把这两条线流水线重叠起来: 调饮师做完一小批口味, 配方师立刻就开始改这一批的配方, 同时调饮师继续试下一批, 互不耽误。在 Qwen3-1.7B 上, rollout 到 train 端到端时间能省 30% 到 42%。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">LLM 推理型训练 (reasoning RL) 越来越依赖可验证奖励的强化学习 (RLVR)。现代 RLVR 系统采用 disaggregated 架构, rollout 与 policy training 解耦到独立 GPU 池。同步 on-policy GRPO 系统 rollout 完才训练, trainer GPU 空等; 异步流水线重叠两端但训练数据陈旧。RolloutPipe 提出 complete-group pipelining (CGP) + frontier-group dispatch (FGD), 让 trainable complete groups 边生成边送往 trainer, 同时 rollout 节点优先准入下一批 frontier group。设计保留 on-policy 正确性, 在 Qwen3-1.7B 四个推理 + 科学 benchmark + 12 个 rollout 配置下, rollout-to-train 时间缩短 30.7-42.3%, trainer waiting ratio 降低 37-76% 对比 Slime。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>CGP 把 rollout 输出切成 complete groups, 每个 group 生成完毕立刻 FIFO 送往 trainer 节点, 不必等整批 rollout 结束。FGD 是 rollout 节点的准入策略, 优先准入能组成下一批训练 batch 的 frontier groups, 让 trainer-ready groups 更早更稳到达。两项技术组合让 trainer 在 rollout 完成前就开始训练, 同时保持 on-policy 正确性。系统级设计: rollout pool (生成) + trainer pool (更新) + dispatcher (调度), 各 pool 异构 GPU 配置。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>流水线重叠带来内存与同步复杂度上升: rollout 节点需要保留 frontier group 的中间状态, trainer 节点需要处理不完整 batch。对 stale data 容忍度低的 workload (如对超长 chain-of-thought 训练) 仍同步更安全。比起纯异步流水线 (Async RL), RolloutPipe 的 CGP 保留了 "完成一个 group 立即训练" 的同步性, 折中 stale 与空闲两端。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>Qwen3-1.7B 模型 + 四个推理/科学 benchmark (数学/逻辑/科学任务) + 12 种 rollout 设置下, rollout-to-train 端到端时间缩短 30.7%–42.3%, trainer waiting ratio 降低 37%–76% 对比 SOTA 基线 Slime。设计保持 on-policy 正确性, 不需要牺牲数据新鲜度。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Rongjian Chen, Jianmin Hu, Kejiang Ye, Minxian Xu → 深圳先进技术研究院 (中科院 SIAT) + 中国科学院大学 + 南方科技大学</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-26/paper_summaries_v2_2026-06-26_01.jpg" alt="Moebius: Serving Mixture-of-Expert Models with Seamless Runtime Parallelism Switch" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.26607 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.26607" target="_blank">Moebius: Serving Mixture-of-Expert Models with Seamless Runtime Parallelism Switch</a></h3>
+    <p style="color:#ccc;">MoE 模型 (混合专家, 一个大问题拆给多个「专家」GPU 分头跑) 跑服务的时候有个老难题: 高并发时专家并行 (EP) 快, 低并发时张量并行 (TP) 快, 但你不能等流量变了重启服务。Moebius 这篇做的就是「不重启引擎、不丢正在服务的请求」的前提下, 让系统在 EP 和 TP 之间无缝切换。实现的核心洞察是: EP 和 TP 其实是同一模型的两种切法, 切的是「同一份专家权重 + 同一份对话缓存 KV-cache 的归属关系」, 移动这些归属关系就够了, 不必搬数据。8 卡 H200 跑 Qwen3-235B-A22B, 切换只要 215-434ms, 显存多占 2.4%。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">MoE 大模型推理需要在张量并行 (TP) 和专家并行 (EP) 间选择, 取决于并发度: 低并发 TP 优, 高并发 EP 优。生产 workload 持续穿越这一边界 (在线服务突发访问 / RL rollout 高并发峰值后回落长尾)。固定任一布局都跨边界时牺牲性能。Moebius 在运行时不重启引擎、不丢 in-flight 请求, 动态切换 EP 与 TP。洞察: EP/TP 是同一模型的两种布局, 不是两个模型, 权重 + KV-cache 字节相同, 切换仅改变 rank 归属。利用现代高带宽 GPU 互联 (NVLink/InfiniBand), 在 decode 步骤间完成切换。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>Moebius 在 EP/TP 间运行时不重启切换, 关键设计: (1) 保持两种并行布局的 runtime resident, expert weights + KV-cache 在固定地址; (2) fused GPU-to-GPU transfer kernel, 只移动 rank 归属变更的切片; (3) decode 步骤间切换, 不需 drain in-flight 请求; (4) 切换时间 215-434ms, 显存开销仅 2.4%。在 8×H200 上服务 Qwen3-235B-A22B 验证。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>维持两种布局同时驻留显存增加 2.4% 显存开销, 对显存紧张的小模型不友好; fused transfer kernel 需要高带宽互联 (NVLink/InfiniBand), PCIe-only 部署会显著拖慢切换时间。对比固定单一布局: 不需要为不同 workload 维护多个服务实例, 节省运营复杂度; 对比纯静态 TP/EP: 在 RL rollout 跨并发边界场景下获益 1.16-1.25x。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>8×H200 + Qwen3-235B-A22B 上, Moebius 在每个操作点匹配最优静态布局, RL rollout 跨步骤胜出 1.16-1.25x。每次切换耗时 215-434ms, 显存开销仅 2.4%。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Shaoyu Wang, Yizhuo Liang, Jaeyong Song, Chong Li, Seo Jin Park → USC (University of Southern California) + Seoul National University + Point72</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-26/paper_summaries_v2_2026-06-26_02.jpg" alt="DMuon: Efficient Distributed Muon Training with Near-Adam Overhead" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.27153 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.27153" target="_blank">DMuon: Efficient Distributed Muon Training with Near-Adam Overhead</a></h3>
+    <p style="color:#ccc;">Muon 是 2024 年开始火的矩阵优化器 (跟 Adam 同一量级但几何性更好, DeepSeek-Kimi 都在用), 但它有个老问题: 分布式训练时, 每一步都要把所有权重矩阵汇总回来做 Newton-Schulz 迭代 (一种正交化算法), 通信开销巨大, 比 AdamW 多花 2 倍以上的步时间。DMuon 这篇做的就是把这个通信开销压到接近 AdamW 水平——通过把矩阵分片规则与分布式分片规则对齐, 减少重构矩阵的通信量, 实现 drop-in 模块化集成。在具身基础模型 + LLM 训练 workload 上, 端到端步时间 1.48-3.01 倍加速, optimizer step 6.85-163 倍加速。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">矩阵正交化优化器 (Muon) 比 AdamW 在 compute-optimal 预训练下 compute efficiency 高约 2x (Moonlight), Kimi-K2/DeepSeek-V4 已在生产规模使用。但 Muon 需要 Newton-Schulz 迭代, 作用于完整权重矩阵, 与现代分布式训练栈 (按 parameter shard 切分, AdamW 是 element-wise) 假设不符。Vanilla Muon 分布式步时间 &gt; 2x AdamW。DMuon 是开源分布式 Muon 实现, 集成进现有训练 pipeline 作 drop-in 模块, 端到端步时间加速 1.48-3.01x, optimizer step 加速 6.85-163x。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>DMuon 把 Muon 的矩阵正交化计算与分布式训练的 parameter sharding 规则对齐, 减少每步需要重构完整矩阵的通信次数; 通过矩阵分片重建顺序优化, 让 Newton-Schulz 迭代尽量在本地 shard 上完成; 提供 PyTorch drop-in 接口, 无需框架级修改; 同时支持 LLM 与具身基础模型训练 workload。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>对 element-wise 优化器 (AdamW) 友好的分布式架构要重新调整以适配矩阵优化器, 工程改造面广; 矩阵正交化的额外计算开销仍在 (虽然通信压缩了), 对小模型不一定有收益; MoE 模型的 expert 矩阵切分需要单独处理。DMuon 的 drop-in 集成减少框架改动, 但 PyTorch distributed 内部仍要适配。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在具身基础模型 + LLM 训练 workload 上, DMuon 端到端 step time 加速 1.48-3.01x, optimizer step 加速 6.85-163x, per-step 延迟压到接近 AdamW 水平。Code 开源在 github.com/X-Square-Robot/dmuon。</div>
+      <div class="row"><span class="author">🏢 团队：</span>X SQUARE ROBOT TEAM → X Square Robot (上海智元机器人关联团队)</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-26/paper_summaries_v2_2026-06-26_03.jpg" alt="SOLAR: AI-Powered Speed-of-Light Performance Analysis" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.26383 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.26383" target="_blank">SOLAR: AI-Powered Speed-of-Light Performance Analysis</a></h3>
+    <p style="color:#ccc;">你买了一块新 GPU, 想跑一个深度学习模型, 怎么提前知道「理论最快能跑多快, 现在的实现离这个极限还差多少」? SOL 分析 (Speed-of-Light) 就是回答这个问题的——算一个 workload 在给定硬件上的理论最短时间。问题是, 这个 SOL 上限现在还得人工算, 容易出错, 还跟不上模型迭代。SOLAR 这篇做的就是用 AI 自动算 SOL: 给你一个深度学习模型图 + 目标硬件, 它自动分析 workload 特性, 给出 SOL 理论上限 + 当前实现的优化空间, 不用手工拆 roofline 模型。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">深度学习 workload 在目标硬件上跑多快、当前实现离理论上限多远, 是软件/硬件/算法优化的核心问题。Speed-of-Light (SOL) 分析计算 workload 在给定架构上的理论最短执行时间。但推导 SOL 上限目前依赖手工, 容易出错, 与快速模型迭代脱节。SOLAR 提出自动化框架: 给定模型图 + 目标硬件, 自动分析 workload roofline, 给出 SOL bound + 优化空间。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>SOLAR 用 AI agent + 自动 roofline 分析: 输入模型图 (PyTorch/JAX/ONNX) + 目标硬件 spec; 自动识别 compute-bound vs memory-bound vs communication-bound 段; 计算每个算子的 SOL 上限 (考虑 HBM bandwidth + compute throughput + interconnect); 输出端到端 SOL bound + 每个算子的优化机会排序; 内置 NVIDIA GPU 性能模型 + 跨硬件验证。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>SOLAR 的精度取决于性能模型对真实硬件的拟合, 对小众加速器 (TPU/AWS Trainium) 精度有限; 自动分析输出需要用户解读, 不能直接给出 "加速 5x" 的具体 patch; 模型图需要完整 (没有 dynamic shape 的特殊化优化); 不替代 nsys profiling, 而是在 profiling 之前给出 "理论天花板"。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>框架集成在 NVIDIA 内部性能分析流水线, 用于指导新模型 (Megatron/Transformer Engine) 的算子实现优先级排序。论文在多个 workload 上展示了 SOL bound 与真实 profiling 的拟合度, 给出优化空间估算。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Qijing Huang, Sana Damani, Zhifan Ye, Athinagoras Skiadopoulos, Siva Kumar Sastry Hari, Jason Clemons, Sahil Modi, Jingquan Wang, Aditya Kane, Edward C Lin, Humphrey Shi, Christos Kozyrakis → NVIDIA (Stanford 背景合作)</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-26/paper_summaries_v2_2026-06-26_04.jpg" alt="SegFold: Accelerating Sparse GEMM with a Fine-Grained Dynamic Dataflow" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.26701 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.26701" target="_blank">SegFold: Accelerating Sparse GEMM with a Fine-Grained Dynamic Dataflow</a></h3>
+    <p style="color:#ccc;">稀疏矩阵乘法 (SpGEMM, 两个「大部分是 0」的大矩阵相乘) 在很多场景都关键 (图神经网络、推荐系统、稀疏 attention), 但 GPU 和现有加速器都还在用「静态数据流」(inner product / outer product / Gustavson 等固定模式), 每种模式都会牺牲一部分数据复用机会 + 强加负载平衡限制。SegFold 这篇做的就是给 SpGEMM 加「动态性」: 细粒度动态调度优化复用, 动态重映射部分完成的工作改善负载平衡, 形式化为新的数据流 Segment, 并配套设计 SegFold 加速器 (含动态内存控制器 + 合并网络)。在多种密度/矩阵大小下, 比 SOTA SpGEMM 加速器几何平均 1.95 倍加速, 比最优静态配置 5.3 倍。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">SpGEMM (稀疏矩阵-矩阵乘) 在图神经网络 / 推荐系统 / 稀疏 attention 等领域关键。现有 CPU/GPU/专用加速器依赖静态数据流 (inner product, outer product, Gustavson 等), 每种静态数据流都牺牲部分数据复用 + 强加负载平衡约束。SegFold 提出 fine-grained 动态数据流 Segment: 细粒度动态调度优化 reuse, 动态 remap 部分完成工作改善负载平衡; 配套设计 SegFold 加速器 (内存控制器识别局部 window 复用 + 合并网络动态路由到 PE)。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>Segment 数据流扩展传统 SpGEMM 数据流, 引入 dynamism: (1) 细粒度动态调度, 根据 stationary input 的局部 window 识别复用机会, 动态分配给处理单元 (PE); (2) 动态 remap 部分完成工作, 改善负载平衡; (3) 内存控制器识别 fine-grained reuse opportunities, 通过动态 work assignment 利用; (4) 合并网络路由 inputs 到合适 PE, 动态重映射 PE 工作。代码 / RTL 开源 (论文中给出)。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>Segment 数据流的动态性需要运行时调度支持, 比静态数据流硬件复杂度更高, area overhead 与功耗上升; 动态 remap 的开销对极小矩阵 (低利用率) 不明显; 配套的 SegFold 加速器需要定制 RTL, 不直接兼容 GPU 软件栈。优势在 SpGEMM workload 的常见密度区间 (10%-50% sparsity) 收益最大。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>多种 density + 矩阵大小下, SegFold 比 SOTA SpGEMM 加速器几何平均加速 1.95x, 比最优静态数据流配置加速 5.3x。证明动态数据流设计空间解锁了静态调度单独无法实现的复用 + 负载平衡收益。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Xinrui Wu, Hanyu Wang, Jason Cong, Tony Nowatzki → UCLA (University of California, Los Angeles)</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer>
+  <p>Generated by Hermes Agent · AI Infra Daily Report</p>
+  <p>https://github.com/ZenHatesCoding/ai-infra-reports</p>
+  <p>2026-06-26 12:35</p>
+</footer>
+</div>
+</body>
+</html>
