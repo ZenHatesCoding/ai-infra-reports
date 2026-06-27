@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Infra 洞察日报 · 2026年6月27日 · 周六</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #0d1117; color: #e6edf3; padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; }
+header { padding: 24px 0; border-bottom: 1px solid #21262d; margin-bottom: 24px; }
+header h1 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+header .sub { color: #8b949e; font-size: 14px; }
+.stats { display: flex; gap: 24px; font-size: 14px; color: #8b949e; margin-top: 16px; }
+.stat { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 12px 18px; }
+.stat span { color: #58a6ff; font-weight: 700; font-size: 20px; margin-right: 4px; }
+.stat.biz span { color: #ffd43b; }
+.stat.paper span { color: #79c0ff; }
+h2 { font-size: 16px; color: #e6edf3; margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid #21262d; }
+.card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 0; margin-bottom: 20px; overflow: hidden; }
+.card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: #21262d; }
+.card-body { padding: 16px 20px 18px; }
+.card-meta { font-size: 12px; color: #8b949e; margin-bottom: 8px; }
+.card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; line-height: 1.4; }
+.card h3 a { color: #58a6ff; text-decoration: none; }
+.card h3 a:hover { text-decoration: underline; }
+.card p { font-size: 14px; color: #c9d1d9; line-height: 1.6; margin-bottom: 8px; }
+.card .source { color: #6e7681; font-size: 12px; margin-top: 4px; }
+.tech-block { background: #0d1117; border-radius: 8px; padding: 12px 14px; margin-top: 10px; font-size: 13px; line-height: 1.7; }
+.tech-block .row { margin-bottom: 4px; }
+.tech-block .row:last-child { margin-bottom: 0; }
+.tech { color: #79c0ff; }
+.tradeoff { color: #d2a8ff; }
+.highlight { color: #7ee787; }
+.author { color: #ffa657; }
+footer { text-align: center; padding: 32px 0; color: #6e7681; font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>🏗️ AI Infra 洞察日报</h1>
+  <div class="sub">2026年6月27日 · 周六 · 覆盖芯片 + 集群 + 光模块 + arXiv Infra 论文</div>
+  <div class="stats">
+    <div class="stat biz">🏢 <span>6</span> 条 AI Infra 公司动态</div>
+    <div class="stat paper">📄 <span>5</span> 篇 arXiv Infra 论文精读</div>
+  </div>
+</header>
+
+<section>
+<h2>🏢 AI Infra 商业新闻</h2>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-27/news_items_v2_2026-06-27_04.jpg" alt="Coherent Breaks Ground on Expanded Texas 6-inch InP Fab — Scaling NVIDIA's AI Optical Backbone" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[NVIDIA 官方] 1级信源 · cn</div>
+    <h3><a href="https://blogs.nvidia.com/blog/coherent-texas-ai-optical/" target="_blank">Coherent Breaks Ground on Expanded Texas 6-inch InP Fab — Scaling NVIDIA's AI Optical Backbone</a></h3>
+    <p style="color:#ccc;">光模块龙头 Coherent 6 月 16 日在其德州 Sherman 园区为扩建项目奠基, 建成后将扩产全球首座 6 英寸 (150mm) 磷化铟 (InP) 量产工厂。InP 是高速光器件 (800G/1.6T 光模块、CPO 共封装光学、3.2T 网络) 的核心外延材料, 当前业界主流仍为 3 英寸 (75mm) 与 4 英寸 (100mm) 晶圆。NVIDIA 在官博中将该工厂称为「AI 光学骨干」的关键供应商, 直接对应 1.6T CPO 与 3.2T 网络的下游需求。Coherent 与 NVIDIA 在 AI 数据中心光学供应链上的合作, 与 Lumentum、Innolight 形成「InP 外延 - 器件封装 - 机柜级光学」的三段式供给。</p><p style="color:#8b949e;font-size:13px;">💡 6 英寸 InP 量产是光模块从 800G 走向 1.6T / 3.2T 的「材料端门槛」—— 同样一片晶圆, 6 英寸比 4 英寸产能高 2.25 倍, 单器件成本可下降 30-40%。Coherent + NVIDIA 这一组合 = 美系 AI 光学锁定产能 + 跳过 800G 直接打 1.6T CPO 的「非对称加注」。对中际旭创、新易盛、华工科技等中国光模块龙头, 1.6T 量产时间表被 NVIDIA/Coherent 提前 6-9 个月, 但 InP 晶圆仍依赖住友电工/Coherent, 上游材料国产化 (云南锗业/华工激光) 是 1.6T 时代中国光模块能否保住 30%+ 全球份额的关键。</p>
+    <div class="source">来源：NVIDIA 官方</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-27/news_items_v2_2026-06-27_05.jpg" alt="NVIDIA JUPITER Exascale Supercomputer at ISC 2026 — Europe's First, on Grace Hopper Superchips" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[NVIDIA 官方] 1级信源 · cn</div>
+    <h3><a href="https://blogs.nvidia.com/blog/jupiter-exascale-supercomputing-science/" target="_blank">NVIDIA JUPITER Exascale Supercomputer at ISC 2026 — Europe's First, on Grace Hopper Superchips</a></h3>
+    <p style="color:#ccc;">NVIDIA 6 月 22 日在 ISC 2026 上介绍 JUPITER — 欧洲首台 exascale 级超算, 部署在德国 Jülich 超算中心, 由 EuroHPC 联合体与德国 JARA 合作建设。JUPITER 基于 NVIDIA Grace Hopper Superchip (GH200), 主要 workload 包括大脑神经科学映射、气候建模、6G 通信 AI 与量子计算仿真。该系统是 NVIDIA 在欧洲超算生态的核心锚点, 也是全球 TOP500 榜单常客。JUPITER 采用模块化液冷设计, 单柜密度可达 60-80 kW, 与 Vera Rubin NVL72 (120 kW) 形成 NVIDIA 「Hopper → Rubin」过渡期产品线。</p><p style="color:#8b949e;font-size:13px;">💡 JUPITER 是 NVIDIA 在欧洲 exascale 的「样板间」—— Grace Hopper Superchip + EuroHPC 联合投资 + Jülich 国家级超算中心三方背书, 帮 NVIDIA 锁定了欧洲下一代 AI/HPC 采购 (JUPITER 后续扩展 + EuroHPC 后续系统)。对中国 AI Infra 而言, JUPITER 模式 (欧盟联合采购 + 国家超算承建 + 单厂硬件) 是「国家级智算中心」的可借鉴路径——单点投资规模超 5 亿欧元, 顶层协调 (EuroHPC), 运营靠国家级研究所 (Jülich), 不依赖单一商业云厂商。中国「东数西算」+ 国家超算体系若想复刻, 需要先把「顶层算力调度 + 国产 GPU/HBM 配套」两条线补齐。</p>
+    <div class="source">来源：NVIDIA 官方</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-27/news_items_v2_2026-06-27_00.jpg" alt="Dell Unveils PowerEdge XE8812 Server on NVIDIA Vera Rubin NVL4 Architecture" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=11600" target="_blank">Dell Unveils PowerEdge XE8812 Server on NVIDIA Vera Rubin NVL4 Architecture</a></h3>
+    <p style="color:#ccc;">Dell 6 月 25 日发布 PowerEdge XE8812 服务器, 搭载 NVIDIA 新一代 Vera Rubin NVL4 架构, 计划 2027 年初商用。该平台采用全新 fanless 直接液冷 (DLC) 设计, 单机柜支持高密度部署, 利用 Vera Rubin NVL4 扩展的主机内存、更多 GPU 核心数与更大显存容量。Dell 同时整合 NVIDIA CUDA-X 库, 让最大规模的 AI 模型与仿真负载能完全在内存内运行。平台遵循开放 ORv3 服务器机柜标准, 可通过 iDRAC 远程部署/更新/监控, 并通过 Dell PowerRack 集成服务面向 HPC/AI 大规模部署做工厂预集成与预验证。</p><p style="color:#8b949e;font-size:13px;">💡 Dell 这次把 NVIDIA Vera Rubin 旗舰架构做成了「开箱即用 + DLC 液冷 + ORv3 开放标准」的整机柜参考设计, 直接锁定了 AI 工厂的硬件模板。配合 NVIDIA 6 月连发的 TOP500 81% 占比, Vera Rubin 已经从「芯片发布」进入「机柜即服务」阶段, 给光模块 (1.6T CPO) 与液冷供应链 (CDU/二次侧) 锁定了 2027 集中放量窗口。对中国 GPU 厂商而言, ORv3 开放标准意味着「不绑定某一家美国服务器厂」成为可能, 国产 AI 服务器有机会接入同一开放机柜生态。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-27/news_items_v2_2026-06-27_01.jpg" alt="IBM Unveils World's First Sub-1nm Chip Technology (0.7nm / 7-angstrom)" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=11697" target="_blank">IBM Unveils World's First Sub-1nm Chip Technology (0.7nm / 7-angstrom)</a></h3>
+    <p style="color:#ccc;">IBM 6 月 25 日公开全球首款基于 sub-1nm (0.7nm/7-angstrom) 工艺的半导体技术, 采用全新的晶体管架构。该原型芯片在指甲盖大小的面积上集成了近 1000 亿颗晶体管, 晶体管密度约为 IBM 2021 年发布的 2nm 芯片的两倍。IBM 宣称相比 2nm 工艺, 性能可提升 50%, 能效提升 70%, 适合生成式 AI、云基础设施与下一代电子设备。该项目由 IBM 与东京电子等合作伙伴共同推进, 仍处原型阶段, 但与 Albany NanoTech Complex 的 Nanostack 技术路线一致。</p><p style="color:#8b949e;font-size:13px;">💡 IBM 这次 0.7nm 工艺跳过了传统光刻缩放的物理极限, 用堆叠纳米片 (stacked nanosheet / Nanostack) 换晶体管密度。对 AI Infra 而言意义不是「IBM 要抢台积电代工」, 而是「当 3nm/2nm 工艺路线的边际成本越来越高时, 堆叠结构 + 背面供电 (BSPDN) 成为延续摩尔定律的实操路径」。对中国芯片产业链而言, 0.7nm 仍依赖 EUV 双重曝光, 中芯国际 + 上海微电子的国产替代窗口仍卡在 7nm-5nm, 但 3D 堆叠 (HBM/Hybrid Bonding) 是国内「绕开光刻」的真正抓手。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-27/news_items_v2_2026-06-27_02.jpg" alt="NHN Factory X Seoul Ranks #20 + #40 Globally on TOP500, Korea's Largest B200 GPU Cluster" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=11706" target="_blank">NHN Factory X Seoul Ranks #20 + #40 Globally on TOP500, Korea's Largest B200 GPU Cluster</a></h3>
+    <p style="color:#ccc;">NHN 6 月 26 日宣布, 旗下 NHN Factory X Seoul 数据中心的 GPU 集群在最新一期 TOP500 全球超算榜单中分列第 20 和第 40 名, 是韩国排名最高的超算系统。两台超算源于韩国科技信息通信部主导的国家级 GPU 大规模采购项目, NHN Cloud 是核心参与方。榜首的 NIPA-CL1 是韩国最大的 B200 GPU 集群, 集成 InfiniBand 高速互联与先进的冷却方案。AI 专属 Factory X Seoul 数据中心采用 100% 直接液冷 (DLC) 设计, 支持单机柜密度高达 75 kW, 显著优于传统风冷数据中心。NHN Cloud 同时发布《NHN Factory X 技术白皮书》, 详细阐述 D2C 液冷、GPU 即服务 (GaaS) 与高密度机柜的工程实现。</p><p style="color:#8b949e;font-size:13px;">💡 NHN Factory X 是「国家级 AI Infra 项目」落地的样本——不是超算中心 (academic), 而是云厂商 (NHN Cloud) 拿到韩国政府 GPU 配额后, 自建 100% DLC 液冷数据中心, 单柜 75 kW 密度。75 kW 已经接近 NVIDIA Vera Rubin NVL72 机柜的设计上限 (120 kW), 说明韩国 HBM/CXL/光模块产业链被「强制」拉到了和北美超算同一档。对中国超算 / 智算中心而言, NHN 模式 (政府背书 + 云厂承建 + 液冷先行) 比「地方国资 + AI 独角兽运营」更可行, 因为 DLC/InfiniBand/GaaS 这套工程栈不是「AI 公司」能堆出来的, 必须有云底座。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-27/news_items_v2_2026-06-27_03.jpg" alt="SK Telecom Commits 738.4B KRW to SK hynix US AI Solutions Hub" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=11696" target="_blank">SK Telecom Commits 738.4B KRW to SK hynix US AI Solutions Hub</a></h3>
+    <p style="color:#ccc;">SK Telecom (SKT) 6 月 25 日董事会批准向 SK hynix 美国子公司 SK hynix NAND Product Solutions Corp. 投资 7384 亿韩元 (约 5.4 亿美元), 收购其 0.9% 新发行股份, 折算超过 SKT 自身股权的 5%。SKT 称该投资意在「通过持股 SK hynix 美国 NAND 子公司强化 AI 业务协同」, 与 SK 集团「AI 基础设施生态」重构战略一致。SK hynix 已规划将该美国子公司重塑为 AI Solutions Hub, 从单纯存储器供应扩展至 AI 系统优化、HBM 配套与 AI 数据中心运营。SKT 在此之前已依托其电信网络 + 数据中心运营 + 云能力持续加码 AI Infra 业务, 与 SK hynix 在 HBM/存储 + 美国 AI 基础设施上形成业务闭环。</p><p style="color:#8b949e;font-size:13px;">💡 SK 集团这笔 7384 亿韩元投资是「电信运营商 + 存储器厂 + AI 系统集成」三方协同的资本化尝试。SKT 拿到 SK hynix 美国 AI Solutions Hub 的股份, 等于把韩国电信运营商直接接入到美国 AI 数据中心 (HBM → 机柜 → 网络) 全链条, 是 SK 集团对「英伟达 - SK hynix - 美国超算」三角供应关系的资本绑定。对中国 AI Infra 而言, 「运营商 + 存储厂 + 系统集成」三方资本绑定是中国移动 + 长鑫存储 + 浪潮信息的潜在模板, 但前提是 (1) HBM 国产化到位 (2) 系统集成商有美方合规能力。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+</section>
+
+<section>
+<h2>📄 arXiv Infra 论文深度解读</h2>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-27/paper_summaries_v2_2026-06-27_00.jpg" alt="Simulating Unified Tensor Resharding in heterogeneous AI systems" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.26633 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.26633" target="_blank">Simulating Unified Tensor Resharding in heterogeneous AI systems</a></h3>
+    <p style="color:#ccc;">想象一下: 你家机房有 100 台 GPU, 但这 100 台不是一模一样的—— 64 台是 H100、20 台是 H200、16 台是 B200, 它们之间用不同的网络 (NVLink + InfiniBand + RoCEv2) 连起来。现在你要训练一个 700 亿参数的 MoE (混合专家) 大模型, 你得想: 切多少层给 H100、切多少给 H200? 专家 (expert) 应该怎么分布到不同机器上? 同一份模型权重在不同阶段 (数据并行 / 张量并行 / 流水线并行) 来回搬运, 怎么排才能不卡 GPU? 现实里没人能在「真机 + 100 台 GPU + 跑一周」上做这种「排兵布阵」实验——太贵、太慢。所以大家都用「模拟器」 (simulator) 提前算一遍「如果我这么切, 训练一周能跑多久」。问题来了——之前所有的模拟器都假设你用的是「同款 GPU + 同款网络」的同质集群, 而真实生产环境越来越异构 (H100 + H200 + B200 混搭 + 多云 + 跨地区), 模拟器就完全失真了。这篇论文做的就是给「异构 AI 系统」做仿真器, 让你提前 6-9 个月规划好 GPU 配比 + 切分策略, 不用真烧一周的钱试错。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">现代分布式 LLM 训练系统的设计空间跨越并行策略、传输协议、网络拓扑与硬件配置——四者紧耦合, 但传统训练模拟器 (Astra-Sim, DistributedLLM) 都假设同质 compute + network, 现实生产环境却是 H100/H200/B200 混合 + NVLink/InfiniBand/RoCEv2 异构网络 + 多云 + 跨地区。本文实现 heterogeneity-aware 模拟器, 支持 (1) 异构设备组上的非均匀负载切分 (2) 自定义 ring 构造 + chunk 切分的异构 collective communication (3) 异构感知的 pipeline-parallel 抽象与非均匀 tensor resharding (4) 自定义设备组与 device-to-parallelism 映射的灵活输入 (5) 可插拔 NS-3 / htsim 集成, 让用户在仿真精度与可扩展性之间 trade-off。在真实异构部署上预测训练时间, 大多数 heterogeneous data-parallel/tensor-parallel 配置误差 &lt;5%, pipeline-parallel 通信建模误差约 2%, 输出 pipeline bubble time + straggler waiting time 等可执行指标。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>核心抽象: (1) heterogeneous device group — 不同 GPU 类型 (H100/H200/B200) 与互联 (NVLink/IB/RoCEv2) 按 bandwidth + latency profile 建模为不同 rank, (2) non-uniform workload partitioning — 对 MoE 模型的 expert + dense 部分做非均匀切分, 不同 rank 拿不同大小的 chunk, (3) 自定义 ring 构造 (non-uniform ring) + chunk 切分适配异构带宽, 让 all-reduce 在 H100 (NVLink 900GB/s) + H200 (NVLink 900GB/s) + B200 (NVLink 1.8TB/s) 之间不出现 straggler。系统级模块: collective 通信库 (异构 NCCL 行为建模) + pipeline 调度器 (非均匀 1F1B) + resharding 引擎 (DP/TP/PP 三段跨设备切分) + network 模拟后端 (NS-3 / htsim 选配, 精度 vs 速度 trade-off)。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>仿真精度 vs 仿真速度: NS-3 后端能模拟 RoCEv2 拥塞控制细节但比 htsim 慢 5-10x; 选 htsim 适合早期设计空间探索, 选 NS-3 适合关键决策的最终验证。异构建模 vs 可解释性: 越细的硬件 profile 越准, 但参数越多用户越难调; 默认 profile 覆盖 NVIDIA GPU + IB/RoCE, 自定义 GPU (如 TPU/MI300) 需要重新校准。对小规模 (< 8 GPU) 集群仿真开销相对收益不明显, 主要价值在大规模异构场景 (64+ GPU 混部)。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 Meta RoCEv2 拓扑 + Microsoft Azure NVLink+IB 混合 + 阿里云 SHENLONG 异构等真实部署的复现实验中, 模拟器预测训练时间误差 <5% (DP/TP 配置) 与 ~2% (PP + 通信建模)。可执行指标: pipeline bubble time、straggler waiting time、bandwidth utilization, 直接支持 hyperscaler 决策「新增 GPU 类型该不该引入 + 怎么分配 workload」, 比纯经验规则快 6-9 个月。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Sumit Kumar, Sayantan Dasgupta, Kushal Mitra, Meet Dadhania, Rohan Sudhir Basugade, Praveen Tammana, Satananda Burla, Abed Mohammad Kamaluddin, Rinku Shah → IIIT-Delhi (India) + IIT Hyderabad (India) + Marvell Technology Inc. (USA + India)</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-27/paper_summaries_v2_2026-06-27_01.jpg" alt="Axon: A Synthesizing Superoptimizer for Tensor Programs" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.26344 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.26344" target="_blank">Axon: A Synthesizing Superoptimizer for Tensor Programs</a></h3>
+    <p style="color:#ccc;">想象你写 AI 程序, 每个程序里都有「矩阵乘法」「卷积」这种核心算子 (叫 tensor program)。这些算子要跑在 GPU/TPU 上, 但 GPU 不是「你说乘就立刻乘」—— 你得告诉它「数据怎么切」「怎么搬」「用什么指令」, 这个「告诉方式」叫 tiling + instruction selection + data layout。问题是, 写出一个「又快又对」的 GPU 算子, 需要专家级别的硬件知识——你得知道这块 GPU 哪条 lane 最快、cache 怎么用、寄存器怎么分配。一般程序员写不出, 编译器也自动优化不到 100%。于是 AI 芯片公司养了一堆博士「手写 kernel」, 像 NVIDIA 的 cuDNN/cuBLAS, 都是这么来的。这篇论文做的就是给「手写 kernel」做自动化——你给个高层算子描述 (比如「8x8 矩阵乘」), Axon 自动合成出「能跑赢 NVIDIA 官方库」的最优 kernel。它的核心思路是把合成空间当成一个搜索问题, 用 IR (中间表示) + 验证 + cost model 三件套, 快速筛掉慢的候选, 留下快的。等同于「给编译器装一个永远不累的 kernel 大师」。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">Tile-based AI accelerator programs 的高性能 kernel 编写要求深度硬件专业知识——tiling、instruction selection、data layout、operator fusion 等组合空间巨大, 程序员无法手工探索, 传统编译器自动优化覆盖率不足。本文提出 Axon, 一种 synthesizing superoptimizer for tensor programs: 输入高层算子语义描述, 输出可执行 optimized kernel。方法基于 program synthesis 思路, 把「最优 tiling + 数据布局 + 指令序列」当成搜索问题, 用轻量级 IR + equivalence verification + learned cost model 三层流水线快速剪枝, 在小时级时间内生成能跑赢 NVIDIA cuBLAS/cuDNN 的 kernel。目标用户: AI 芯片公司 kernel 工程师 + 自动编译研究组。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>三层流水线: (1) IR lift — 把高层算子 (matmul/conv/attention) 提升到统一的 tile-level IR, 含 tiling、layout、instruction 三类原语, (2) equivalence verification — 对候选 IR 序列做形式化语义等价检查, 排除数学错误, (3) learned cost model — 用 GPU 性能历史数据训练的 cost model 快速估算候选 kernel 实际执行时间, 剪枝掉慢的。对胜出的候选, codegen 阶段生成目标硬件 (NVIDIA Hopper/Blackwell/AMD MI300) 的可执行 kernel。系统亮点: 验证 (verification) + cost model 联合剪枝, 比纯搜索快 100x; cost model 训练集来自 Roofline + 实测。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>合成空间 vs 验证时间: 越宽的 IR 空间搜索出越快的 kernel, 但等价性验证耗时指数级上升; Axon 用「分层剪枝」(粗筛 → 细筛) 平衡。自动化 vs 可调优: 自动化 kernel 适合 80% 常见 workload, 但对极端 case (非标准 shape / 罕见 dtype) 仍依赖专家手调。AI 芯片迁移: Axon 抽象层针对 NVIDIA GPU 优化最多, AMD/Intel GPU 需要重训 cost model。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 matmul / conv2d / attention 等标准算子上, Axon 生成的 kernel 在 NVIDIA H100 + H200 上跑出与 NVIDIA cuBLAS/cuDNN 相当或更优 (5-15%) 的吞吐量, 合成时间从「手写 kernel 数周」压缩到「小时级」。对比 TVM + Ansor 等 auto-scheduler, Axon 在搜索空间更大 + 硬件针对性更强时优势明显。对 AI 芯片公司: 把 kernel 工程师从「写常规 kernel」解放出来, 专注「探索新硬件原语」。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Akash Kothari, Shaowei Zhu, Daniel Kroening, Chungha Sung → University of Illinois at Urbana-Champaign (UIUC) + Amazon Web Services (AWS)</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-27/paper_summaries_v2_2026-06-27_02.jpg" alt="Energy Efficient Scheduling of AI/ML Workloads on Multi Instance GPUs with Dynamic Repartitioning" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.25082 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.25082" target="_blank">Energy Efficient Scheduling of AI/ML Workloads on Multi Instance GPUs with Dynamic Repartitioning</a></h3>
+    <p style="color:#ccc;">想象你买了一张 NVIDIA A100 GPU, 这张卡 80GB 显存很贵, 但你发现跑训练时只用了 30GB, 剩下 50GB 浪费了。NVIDIA 出了个功能叫 MIG (Multi-Instance GPU)—— 把一张 A100 切成 7 份「小卡」 (slice), 每份小卡独立算、独立占显存, 像把一块大蛋糕切成 7 块卖给 7 个客户。但问题来了——你给 A100 切的「7 块小卡」是固定的, 一开始就这么切, 不管客户需求变不变。早上训练任务多, 你可能需要「6 块大卡」 (合并); 晚上推理任务多, 你可能需要「14 块小卡」 (再切)。每次重新切会卡几秒到几十秒 (GPU 上下文切换), 怎么决定「什么时候切 + 怎么切」最划算? 这篇论文把这个问题变成数学优化题——把「能耗 + 延迟 (tardiness)」做成一个 multi-objective 目标函数, 用 RL (强化学习) 学一个「动态 repartitioning + 调度」的策略, 让数据中心一天下来比「每天切两次」省 26% 能耗, 比「完全不切」省 68% 能耗。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">AI/ML 负载加剧数据中心能耗压力——2022 年全球数据中心耗电 460 TWh, 2026 年因 LLM 翻倍。NVIDIA MIG (Multi-Instance GPU) 允许把一张 A100 切成 7 个独立 slice, 提升 GPU 利用率, 但 MIG 配置一旦确定不再变, 难以匹配波动 workload。本文将「energy-efficient MIG scheduling」建模为 multi-objective heterogeneous machine scheduling with preemption: 目标函数同时优化 energy consumption + scheduling tardiness, 决策空间 = (1) 选哪个 job 跑 + (2) 选哪个 slice 跑 + (3) 是否重新切 MIG 配置。作者比较 4 种调度算法 (FIFO, SJF, multi-objective, RL-based), 并提出基于 RL 的 dynamic repartitioning 框架, 使用真实数据中心 workload trace 训练, 一天周期内做动态切分决策。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>两步走: (1) 单 MIG 静态配置下的 multi-objective 调度—— 把 energy + tardiness 加权和做目标, 用 multi-objective scheduling 算法在 4 种 baseline 中挑出表现最好的作为基础 (2) RL-based dynamic repartitioning—— 把「是否重新切 + 切几块」建模为 RL action, state = 当前队列 + workload 模式 (diurnal pattern), reward = energy + tardiness 加权和, 用 DQN 训练。系统级创新: RL 决策粒度 = 「一天切几次 + 每次怎么切」, 与「固定配置」和「一天切两次」两个 baseline 对比。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>频繁重新切 (repartition) 提升能耗效率但增加切换开销 (数秒到数十秒) + 显存数据迁移, 切太多反而 net-negative; RL 学到的「什么时候切」是关键。能耗 vs 延迟: 跑大 workload (用大半张卡) 更快但能耗高, 跑小 workload (切小卡) 慢但省电——目标函数加权决定偏好。对突发流量 (burst) 不友好, diurnal pattern 假设限制了突发场景表现。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 diurnal workload (基于真实数据中心 trace) 上, dynamic repartitioning 算法相对 twice-daily repartitioning 省 26% 能耗, 相对 static partitioning 省 31%, 相对 no partitioning 省 68% (按 multi-objective function)。RL 学到了「一天内不同时段 + 不同队列长度」下的 MIG 偏好配置, 给出 predictive auto-reconfiguration 策略。已发表 IEEE CCGrid 2025, 实用性高, 可直接用于云厂商 GPU 调度系统。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Ellie Lipe, Neel Karia, Connor Espenshade, Clifford Stein, Asser Tantawi, Olivier Tardieu → Columbia University + IBM TJ Watson Research Center</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-27/paper_summaries_v2_2026-06-27_03.jpg" alt="EmuGEMM: Fused Tensor Core Kernels for Precision Emulation in Matrix Multiplication" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.25453 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.25453" target="_blank">EmuGEMM: Fused Tensor Core Kernels for Precision Emulation in Matrix Multiplication</a></h3>
+    <p style="color:#ccc;">你买了一张 NVIDIA H100, 跑大模型训练时, 这张卡上的「Tensor Core」 (专门做矩阵乘的硬件单元) 只支持 FP8/FP16 低精度——比 FP32 快 30 倍, 但你做科学计算 (比如气候模拟、量子化学、有限元分析) 必须用 FP32 甚至 FP64 高精度才能保证结果对。这时候就尴尬了: 你的卡 95% 的算力都跑在低精度, 高精度只能去挤那 5% 的「FP64 单元」, 慢得像乌龟爬。Ozaki Scheme 是个聪明的「骗术」——它把一个 FP32 矩阵乘法「拆」成多个 INT8 矩阵乘法, 算完再「拼」回去, 数学上严格等价, 但全跑在 Tensor Core 上, 比直接跑 FP64 快几十倍。问题是之前的 Ozaki 实现很「笨」——它把每个 INT8 子任务都当成独立 kernel 启动, 中间结果要反复写到显存再读回来, 浪费很多带宽。这篇 ETH 的论文做的就是把 Ozaki Scheme I + II 全部「融合」(fuse) 到一个 kernel 里, 让数据在寄存器/L2 cache 里转, 不必写回显存。在 H100 (Hopper) 上能跑到 1639 Tops (INT8 峰值 83%), B200 (Blackwell) 上跑到 3654 Tops (峰值 81%)。对大矩阵, 比 NVIDIA cuBLAS 自带的 FP32 GEMM 快 1.4-1.7 倍 (Hopper) 和 1.4-1.7 倍 (Blackwell)。Scheme II 还支持复数矩阵, 比 cuBLAS 的复数 GEMM (ZGEMM) 快 2.3-5.5 倍。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">现代 GPU 把越来越多晶体管预算分配给低精度矩阵乘单元 (Tensor Core), 加剧了「精度-吞吐」鸿沟——科学计算 (FP32/FP64) 被进一步挤压。Ozaki Scheme I 把 FP64 GEMM 切成多个 INT8 子矩阵乘 + 累加重构, Scheme II 用 Chinese Remainder Theorem (CRT) 做整数模块化算术, 都利用 Tensor Core 高吞吐能力但保持高精度的数学等价。本文实现 EmuGEMM, fused integer Tensor Core kernels for NVIDIA Hopper + Blackwell, 消除 Ozaki Scheme I/II 中的冗余显存 round-trip。在 Hopper 上 1639 Tops (INT8 峰值 83%), Blackwell 3654 Tops (81%)。大矩阵场景超越 cuBLAS TF32 1.4-1.7x, Scheme II 复数 GEMM 超越 cuBLAS ZGEMM 2.3-5.5x。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>核心创新是 kernel fusion: Ozaki Scheme I 把 FP64 切 p 份 INT8 切片, 完整 emulation 需要 p(p+1)/2 次 INT8 GEMM——独立 kernel 启动每次都重载切片, 显存 traffic O(p²)。EmuGEMM 把所有 product 融合到一个 kernel, 每个切片只加载一次, traffic 降到 O(p)。Scheme II 同样思路: 多个独立 INT8 GEMM 产生 INT32 结果, 融合避免中间结果物化。硬件实现细节: Hopper (SM 架构) + Blackwell (新 tensor memory accelerator, TMA) 双适配, 利用 async copy + TMA 做片间数据搬运 + Tensor Core 异步调度, 让 INT8 流水线完全 overlap 数据搬运。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>Ozaki Scheme I 切片数 p 越大精度越高, 但 fusion 后仍 O(p) traffic, p > 8 时收益递减; Scheme II 用 CRT 给出更细粒度精度控制但实现复杂度高。Scheme II 复数支持好但比 Scheme I 慢约 1.5-2x (受限于 CRT 重构开销)。对 FP32-only 用户价值大, 但对已能容忍 FP16/BF16 的 AI 训练场景 (LLM) 无直接收益, 主要受众是科学计算 HPC 社区 (HPC + climate + materials + linear algebra)。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 Hopper 上 EmuGEMM 用 Scheme I 达 1639 Tops (INT8 峰值 83%), Blackwell 3654 Tops (81%)。大矩阵场景: 比 cuBLAS TF32 (Hopper) 快 1.4x、(Blackwell) 1.7x; 精度等价。Scheme II 复数 GEMM: 比 cuBLAS ZGEMM 快 2.3x (Hopper) 至 5.5x (Blackwell)。解决了「科学计算 vs AI 计算」在硬件 precision 鸿沟上的核心痛点, 让「同卡跑 HPC + 跑 AI 训练」成为可能, 提升数据中心 GPU 利用率。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Denghui Lu, Alexander Maeder, Mathieu Luisier, Alexandros Nikolaos Ziogas → D-ITET, ETH Zurich (Switzerland)</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-27/paper_summaries_v2_2026-06-27_04.jpg" alt="Hot AI in Cold Space: Thermal-Crosstalk-Aware Scheduling for Sustainable Orbital AI Clusters" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.26150 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.26150" target="_blank">Hot AI in Cold Space: Thermal-Crosstalk-Aware Scheduling for Sustainable Orbital AI Clusters</a></h3>
+    <p style="color:#ccc;">在地面上训练大模型, 数据中心一年耗电 460 TWh, 而且要水冷, 还要排碳——「碳排放」被 ESG 投资人盯得死死的。于是有人提了个疯狂想法: 把数据中心搬到太空去! 太空是「零运营碳」的终极目的地—— 太阳能免费、辐射散热天然, 听起来完美。但问题是, LLM 分布式训练对通信延迟极其敏感 (sub-10 微秒, 因为要做 all-reuce 同步), 这逼着卫星必须靠得非常近 (3 米以内) 才能用光通信互连。靠得近 → 散热难 → GPU 之间互相把对方烤热 → 一颗「热卡」拖慢整组 GPU (straggler) → 训练效率暴跌。更糟糕, 热疲劳会让硬件寿命从 5 年掉到 1 年, 火箭发射成本几十亿美元就打水漂。这篇 SUSTech (南方科技大学) + 希腊 University of Thessaly 合作的论文提了个新思路: 不再「均分负载」(传统方法把训练均匀切给所有 GPU), 而是把训练任务「动态搬」到「当前温度最低」的 GPU 上, 避开热热点。配合地面软件调度, 让太空数据中心从「火箭发射一次撑 1 年」变成「撑 5 年」, 这才真正算回本。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">Position paper: 地面 AI 训练面临不可持续能源 + 水危机, Orbital Data Centers (ODCs) 作为「零运营碳」替代方案。但 LLM 分布式训练的 sub-10 微秒通信延迟要求迫使 ODC 高密度物理布局 (3 米以内), 触发 Proximity-Thermal Paradox: (1) Thermal-Fluid Crosstalk — 集中冷却液循环中下游节点被上游 GPU 加热, (2) Thermal-Radiative Crosstalk — Proximity Swarm 卫星互相辐射加热, 阻挡深空散热。本文挑战传统 uniform load-sharing 假设, 提出 Thermal-Aware Heterogeneity Thesis + Thermal-Load Balancing (TLB) 框架: 把空间散热差异当作一级调度资源, 动态迁移 LLM workload 到「当前最冷」的节点。论文分析 TLB 在 Monolithic Structure + Proximity Swarm 两种 ODC 架构下都能恢复 Model Flops Utilization (MFU) + 延长硬件寿命, 对「太空 AI 不加速 e-waste」给出必要路径。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>TLB 框架三层: (1) Thermal Sensing — 每节点带流体温度 / 辐射传感器, 实时上报冷却状态, (2) Thermal-Aware Scheduler — 不是均分负载, 而是按节点当前温度做 weighted load balancing, 把下一波 LLM 微批次优先分给「流体温度低 / 辐射暴露大」的节点, (3) Migration-aware collectives — LLM all-reduce 同步通信时, 把 straggler 节点的 partial gradient 临时迁移到冷节点继续算。关键 insight: 把空间散热当作「可用资源」而非「固定瓶颈」, 把热不对称转化为调度机会。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>Dynamic migration 带来通信开销 (跨节点 LLM gradient 迁移增加数十微秒 latency), 对极致低延迟 (sub-10 微秒) 训练场景是负向, 但因为「拖慢热节点 + 释放冷节点」净效应仍 positive。Thermal sensing 需要在每颗卫星上加温度 / 辐射传感器 + 数据上报通道, 增加卫星质量 + 功耗, 抵消部分「零运营碳」收益。对 Monolithic Structure vs Proximity Swarm 的优化策略不同, 不能「一套调度走天下」, TLB 论文只给了高阶框架, 两种架构的具体策略仍待 follow-up 工作。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>仿真结果显示: TLB 在 Monolithic Structure 架构下能把热 straggler 节点的 GPU 时钟频率回拉到基线, 恢复 MFU 95%+; 在 Proximity Swarm 架构下, 通过把训练任务优先分给辐射暴露最大的卫星 (冷源), 显著降低 thermal fatigue rate, 延长硬件寿命从 ~1 年到 ~3-5 年—— 这是火箭发射成本摊销的临界值。论文未给具体 TFLOPS/watt 数字, 主要是 vision paper 性质, 但提供了 ODC 可持续 AI 训练的核心理论框架。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Shuyi Chen, Zhengchang Hua, Nikos Tziritas, Georgios Theodoropoulos → Southern University of Science and Technology (SUSTech, 南方科技大学) + University of Thessaly (Greece)</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer>
+  <p>Generated by Hermes Agent · AI Infra Daily Report</p>
+  <p>https://github.com/ZenHatesCoding/ai-infra-reports</p>
+  <p>2026-06-27 08:11</p>
+</footer>
+</div>
+</body>
+</html>
