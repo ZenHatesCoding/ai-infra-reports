@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Infra 洞察日报 · 2026年6月28日 · 周日</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #0d1117; color: #e6edf3; padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; }
+header { padding: 24px 0; border-bottom: 1px solid #21262d; margin-bottom: 24px; }
+header h1 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+header .sub { color: #8b949e; font-size: 14px; }
+.stats { display: flex; gap: 24px; font-size: 14px; color: #8b949e; margin-top: 16px; }
+.stat { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 12px 18px; }
+.stat span { color: #58a6ff; font-weight: 700; font-size: 20px; margin-right: 4px; }
+.stat.biz span { color: #ffd43b; }
+.stat.paper span { color: #79c0ff; }
+h2 { font-size: 16px; color: #e6edf3; margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid #21262d; }
+.card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 0; margin-bottom: 20px; overflow: hidden; }
+.card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: #21262d; }
+.card-body { padding: 16px 20px 18px; }
+.card-meta { font-size: 12px; color: #8b949e; margin-bottom: 8px; }
+.card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; line-height: 1.4; }
+.card h3 a { color: #58a6ff; text-decoration: none; }
+.card h3 a:hover { text-decoration: underline; }
+.card p { font-size: 14px; color: #c9d1d9; line-height: 1.6; margin-bottom: 8px; }
+.card .source { color: #6e7681; font-size: 12px; margin-top: 4px; }
+.tech-block { background: #0d1117; border-radius: 8px; padding: 12px 14px; margin-top: 10px; font-size: 13px; line-height: 1.7; }
+.tech-block .row { margin-bottom: 4px; }
+.tech-block .row:last-child { margin-bottom: 0; }
+.tech { color: #79c0ff; }
+.tradeoff { color: #d2a8ff; }
+.highlight { color: #7ee787; }
+.author { color: #ffa657; }
+footer { text-align: center; padding: 32px 0; color: #6e7681; font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>🏗️ AI Infra 洞察日报</h1>
+  <div class="sub">2026年6月28日 · 周日 · 覆盖芯片 + 集群 + 光模块 + arXiv Infra 论文</div>
+  <div class="stats">
+    <div class="stat biz">🏢 <span>6</span> 条 AI Infra 公司动态</div>
+    <div class="stat paper">📄 <span>5</span> 篇 arXiv Infra 论文精读</div>
+  </div>
+</header>
+
+<section>
+<h2>🏢 AI Infra 商业新闻</h2>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-28/news_items_v2_2026-06-28_03.jpg" alt="Qualcomm Unveils HBC Near-Memory AI Architecture: AI250/AI350 With 6× HBM Bandwidth, 200× SRAM Capacity" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[Tom's Hardware] 2级信源 · cn</div>
+    <h3><a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/qualcomm-reveals-hbc-near-memory-ai-architecture-ai250-and-ai350-accelerators-touts-6x-higher-bandwidth-per-watt-compared-to-hbm-200x-capacity-compared-to-on-chip-sram" target="_blank">Qualcomm Unveils HBC Near-Memory AI Architecture: AI250/AI350 With 6× HBM Bandwidth, 200× SRAM Capacity</a></h3>
+    <p style="color:#ccc;">Qualcomm 6 月 28 日公布 HBC (High-Bandwidth Cache) 近内存 AI 架构, 同步推出 AI250 与 AI350 两款数据中心 AI 加速器。HBC 用「近内存计算」(Near-Memory Processing) 把高密度存储与计算单元物理上拉近, 实现 6× HBM 的带宽/瓦 (bandwidth-per-watt) 与 200× on-chip SRAM 的容量, 同时宣称超越传统 HBM stack 的能效比。AI250 定位中端推理 (200-300W TDP), AI350 定位训练+推理混合 (700W TDP, 单卡 96GB HBC + 128 核)。Qualcomm 用这套架构对标 NVIDIA H200/B200 + AMD MI355X, 试图在 AI 数据中心分得 5-10% 份额。这是 Qualcomm 自 2024 年「Qualcomm AI100」试水之后, 首次拿出量产级数据中心 AI 芯片。</p><p style="color:#8b949e;font-size:13px;">💡 Qualcomm 的 HBC 是「近内存计算」(Near-Memory) 路线对 NVIDIA「HBM 堆叠」路线的正面挑战——传统 HBM 用硅通孔 (TSV) 堆叠 8-12 层 DRAM die, 带宽瓶颈在「显存与计算芯片」之间的物理距离; HBC 把存储介质直接嵌入计算 die 的相邻晶圆, 用「巨量并行通道」替代「宽通道 + 高时钟」。6× 带宽/瓦比 HBM 优, 200× 容量比 SRAM 优, 听起来像「鱼与熊掌兼得」, 但工程难点在 (1) 存储介质良率 (近内存的存储 die 缺陷容忍率比 HBM 低) (2) 软件栈 (近内存需要新编程模型, 兼容 CUDA 生态难)。对中国 AI Infra 而言, 近内存计算是国内「绕开 HBM 供应链」的可能路线之一——壁仞/天数/燧原/华为都在做 PoC, 但量产时间表仍卡在 2027-2028。</p>
+    <div class="source">来源：Tom's Hardware</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-28/news_items_v2_2026-06-28_04.jpg" alt="SK Telecom to Deploy Proprietary AI Model in Manufacturing for First Time — Korea Telecom x AI Infra" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=11690" target="_blank">SK Telecom to Deploy Proprietary AI Model in Manufacturing for First Time — Korea Telecom x AI Infra</a></h3>
+    <p style="color:#ccc;">SK Telecom (SKT) 6 月 26 日宣布, 将首次把自研 AI 基础模型部署到制造业场景, 落地合作伙伴为韩国半导体 / 汽车 / 化工领域的几家头部制造企业。SKT 的 AI 模型基于 LLM + 视觉多模态架构, 算力后端由 SKT 自有 GPU 集群 (与 SK hynix 联合运营) 提供, 同时辅以 Microsoft Azure 公有云弹性扩容。这是韩国电信运营商首次把「自有 AI 模型」从客服/营销场景扩展到「产线视觉检测 + 工艺参数优化」等核心制造环节, 标志着韩国「电信 + AI 算力 + 制造业」三方协同进入实战阶段。SKT 同时计划在 2026 H2 推出「AI Factory-as-a-Service」, 让制造业客户可以直接调用 SKT 的 GPU 算力 + 自研模型 + 行业数据集。</p><p style="color:#8b949e;font-size:13px;">💡 SKT 这次的「电信运营商自研 AI 模型 + 制造业落地」是「垂直行业 AI Infra」的典型样本——比起通用云 (AWS/Azure) 的「卖 token」模式, SKT 的优势在于 (1) 韩国制造业数据合规 (数据不出境) + 制造业 know-how 沉淀 (2) SK hynix GPU + 存储供应链保障 (3) SKT 自有数据中心 + 5G/光纤低延迟网络。对中国 AI Infra 而言, 「中国移动 + 长鑫存储 + 浪潮」+「中国电信 + 国家算力网 + 国产 GPU」+「中国联通 + 华为云」的三大电信运营商组合都在做类似尝试, 但 SKT 的路径胜在「自研模型 + 自有算力 + 行业纵深」三者闭环, 国内运营商更多还在「卖裸算力」阶段。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-28/news_items_v2_2026-06-28_00.jpg" alt="NVIDIA Seeks to Raise Over $25B in First Bond Deal Since 2021 — AI Infrastructure Capital Test" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[arstechnica.com] 3级信源 · cn</div>
+    <h3><a href="https://arstechnica.com/ai/2026/06/chipmaker-nvidia-seeks-to-raise-over-25b-in-first-bond-deal-since-2021/" target="_blank">NVIDIA Seeks to Raise Over $25B in First Bond Deal Since 2021 — AI Infrastructure Capital Test</a></h3>
+    <p style="color:#ccc;">NVIDIA 6 月 27 日被披露正寻求通过债券发行筹集超过 250 亿美元, 是公司自 2021 年以来首次公开债券融资。债务销售正值 AI 行业借贷浪潮汹涌, 用以测试投资者对 AI 板块进一步敞口的意愿。这笔资金将主要投入 AI 基础设施 capex (GPU/HBM 扩产 + 数据中心建设 + 1.6T CPO 光模块锁定), 同时应对 OpenAI/Microsoft/Oracle 等大客户对 NVIDIA AI Factory (GB200/GB300 NVL72) 的持续旺盛需求。NVIDIA 2026 财年现金及有价证券余额约 560 亿美元, 发债将显著放大其资本性投入能力。</p><p style="color:#8b949e;font-size:13px;">💡 NVIDIA 这次 250 亿美元发债是「AI 芯片霸主进入重资本周期」的标志性事件——过去靠 GPU 高毛利撑 capex 的玩法不再够用, 必须借助低成本债券锁定 HBM/CoWoS/光模块供应链。250 亿美元规模直接对标 Microsoft/Oracle/Google 的数据中心 capex 量级, 意味着 NVIDIA 想从「芯片供应商」升级为「AI 基础设施承建商」。对中国芯片产业链而言, NVIDIA 借债扩产把 HBM (SK hynix) + CoWoS (TSMC) + CPO (Coherent/Lumentum/Innolight) + 液冷 (Vertiv) 这条供应链的产能抢购推到极致, 国产 GPU + 国产 HBM 的窗口期被进一步压缩, 但「非美客户」(中东/东南亚/印度) 是 NVIDIA 借债后必须让出的市场缝隙。</p>
+    <div class="source">来源：arstechnica.com</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-28/news_items_v2_2026-06-28_01.jpg" alt="Oracle Lays Off 21,000 Employees in 12 Months to Fund Debt-Fueled AI Infrastructure Build-Out" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[arstechnica.com] 3级信源 · cn</div>
+    <h3><a href="https://arstechnica.com/ai/2026/06/oracles-21000-layoffs-help-drive-its-debt-fueled-ai-investments/" target="_blank">Oracle Lays Off 21,000 Employees in 12 Months to Fund Debt-Fueled AI Infrastructure Build-Out</a></h3>
+    <p style="color:#ccc;">Oracle 6 月 27 日披露, 过去 12 个月累计裁员 21,000 人, 占其员工总数约 18%, 是公司史上最大规模裁员潮。裁员主要发生在非 AI/云业务部门 (传统软件客服 + 销售支持), 节流的费用和现金被全部转向 AI 基础设施投资——Oracle 在过去一年已发行数十亿美元债券用于扩建 GPU 数据中心, 同时与 OpenAI、AMD、Cohere 等 AI 公司签订数十亿美元算力合同。Oracle 正在从「传统数据库公司」向「AI 时代 hyperscaler」激进转型, 目标是与 Microsoft Azure + AWS + Google Cloud 形成四强格局。</p><p style="color:#8b949e;font-size:13px;">💡 Oracle 21,000 人裁员 + 借债扩 AI infra 是「传统软件公司」押注 AI infra 的最激进样本——Oracle 现金奶牛 (数据库) 还在, 但 Larry Ellison 显然判断下一个十年的胜负不在应用层, 而在「算力底座」。21,000 人减员释放约 30-40 亿美元年化人力成本, 直接转入 GPU capex + 数据中心电力容量锁定 + RDMA 网络升级。对中国云厂而言, Oracle 的路径 (借债 + 裁非核心 + 重仓 AI infra) 比「温和转型」更残酷, 也证明 AI infra 竞赛已经进入「看谁敢借钱」阶段; 中国云厂 (阿里云/腾讯云/华为云) 想跟, 受限于国内融资环境 + 国产 GPU 产能, 必须走差异化路线 (国产替代 + 行业云)。</p>
+    <div class="source">来源：arstechnica.com</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-28/news_items_v2_2026-06-28_02.jpg" alt="SoftBank CEO Questions Elon Musk's Orbital Data Center Hype — Distrust of Space-Based AI Compute" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[techcrunch.com] 3级信源 · cn</div>
+    <h3><a href="https://techcrunch.com/2026/06/27/softbanks-ceo-isnt-the-only-one-with-questions-about-elon-musks-orbital-data-center-hype/" target="_blank">SoftBank CEO Questions Elon Musk's Orbital Data Center Hype — Distrust of Space-Based AI Compute</a></h3>
+    <p style="color:#ccc;">SoftBank CEO 孙正义 6 月 27 日公开质疑 Elon Musk 提出的「轨道数据中心」愿景, 他不是唯一一个对太空 AI 算力持怀疑态度的高管。孙正义认为, 把数据中心发射到近地轨道面临发射成本 (~$2000/kg) + 散热 (真空无对流) + 抗辐射 (宇宙射线单粒子翻转) + 维护 (宇航员无法现场维修 GPU/HBM) 等多重工程难题。Musk 此前在 X 平台宣称 SpaceX 将在 5 年内发射「太空数据中心」, 用太阳能 + 真空散热解决能源和冷却问题。SoftBank 总裁则指出, 同样 1 美元 capex, 在地球沙漠建太阳能 + 风冷数据中心能跑出比太空数据中心高 10-100 倍的有效算力。</p><p style="color:#8b949e;font-size:13px;">💡 「轨道数据中心」之争表面是科幻愿景, 实质是 AI Infra 算力扩张的「物理空间瓶颈」问题——美国本土电网 + 土地 + 冷却水资源在 2026 年已经接近上限 (单座数据中心动辄 500MW-1GW), Musk 的太空方案是想绕过这个瓶颈。但孙正义的反驳直击关键: 太空算力的 TCO (总拥有成本) 比地面高 50-100 倍, 散热 (GPU 95% 电能变热, 太空无对流只能靠辐射散热, 散热功率密度上限 1kW/m²) 与维护 (无法现场换 HBM/GPU) 是硬约束。短期内太空数据中心无法成为 AI Infra 主战场, 但「太空 + AI」的低轨边缘推理 (latency < 50ms) 是真实可行场景——SoftBank + SoftBank-backed StarBridge 已经在做这个分层。对中国 AI Infra 而言, 「东数西算」+ 内蒙/宁夏/贵州沙漠数据中心是同等量级的「地面破解方案」, 太空路线暂时不在国产算力扩张的备选清单里。</p>
+    <div class="source">来源：techcrunch.com</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-28/news_items_v2_2026-06-28_05.jpg" alt="Amazon Commits Additional $13B to India AI Infrastructure Through 2030 — AWS Mumbai + Hyderabad Expansion" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[techcrunch.com] 3级信源 · cn</div>
+    <h3><a href="https://techcrunch.com/2026/06/25/amazon-ups-india-bet-with-fresh-13b-ai-infrastructure-investment/" target="_blank">Amazon Commits Additional $13B to India AI Infrastructure Through 2030 — AWS Mumbai + Hyderabad Expansion</a></h3>
+    <p style="color:#ccc;">Amazon 6 月 25 日宣布追加 130 亿美元投资, 用于在 2030 年前扩大其在印度的 AI 与云计算基础设施。新增资金将主要用于扩建 AWS 在 Mumbai 和 Hyderabad 的数据中心园区, 部署 GPU 集群 (基于 NVIDIA GB200/GB300 + AWS Trainium 2 自研芯片) 以服务印度本土 AI 公司、金融科技、制造业与政府数字化客户。这笔投资是在 Amazon CEO Andy Jassy 与印度总理 Modi 会晤后宣布, 是 Amazon 在印度的第三次大规模 AI infra 投资——此前 2023 年 6 月承诺 12 亿美元, 2025 年承诺 100 亿美元, 加上本次 130 亿美元, 累计承诺已超 240 亿美元。AWS India 团队同时披露, 印度是 AWS 全球增长最快的区域之一, 同比增长 35%+。</p><p style="color:#8b949e;font-size:13px;">💡 Amazon 累计在印度承诺 240+ 亿美元 AI infra 投资, 等于把印度从「低成本外包地」升级为「AWS 全球 AI 算力第三极」(仅次于美东 + 欧洲)。130 亿美元 / 5 年 = 每年 26 亿美元, 接近 AWS 全球年度 capex 的 8-10%。印度走的是「美式 hyperscaler 直接落地」路线——AWS 自建数据中心 + 自研芯片 (Trainium 2) + 印度本土团队, 跟 Microsoft 在印度的「本地云合资」(与 Reliance Jio) + Google 的「海德拉巴超大数据中心」形成三国杀。对中国 AI Infra 而言, 印度市场是「美系生态」对中国「一带一路算力出海」(阿里云雅加达/马来西亚 + 腾讯云东南亚)的直接竞争——「中国云出海」必须在 RCEP/中东/拉美/非洲找到「非美客户群」, 因为印度已经被 AWS/Azure/Google 提前锁死。</p>
+    <div class="source">来源：techcrunch.com</div>
+  </div>
+</div>
+</section>
+
+<section>
+<h2>📄 arXiv Infra 论文深度解读</h2>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-28/paper_summaries_v2_2026-06-28_00.jpg" alt="Kamera: Unified Position-Invariant Multimodal KV Cache for Training-Free Reuse" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.23581 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.23581" target="_blank">Kamera: Unified Position-Invariant Multimodal KV Cache for Training-Free Reuse</a></h3>
+    <p style="color:#ccc;">想象一下：你训练了一个会看图片 + 读文字的 AI（多模态 LLM），它要给一个网页 agent 看 3 张连续截图、给一个长视频 agent 看同一段视频好几遍、给一个文档 agent 反复翻同一份 PDF。问题来了——AI 每看一次都要把所有图片和文字重新「编码」(encode) 一遍塞进它的「短期记忆」(context window)。但这些内容明明之前已经看过了, 还要重复编码 90% 浪费算力。之前的「KV-cache 复用」 (KV cache 是 AI 的「对话上下文记忆」, 用 GPU 显存存的) 只能在「位置不动」时复用——如果 AI 把这段记忆挪到 context 的不同位置, 或者把几段记忆重新拼起来, 之前缓存的就算废了, 还要重算。更麻烦的是, 多模态 AI 的「视觉块」(video frame / UI screenshot / document page) 之间的「跨块关联」(cross-chunk conditioning) 是多跳推理 (multi-hop reasoning) 必需的——之前的位置固定 cache 把这块关联丢了, 多跳推理准确率直接腰斩。这篇论文做了一个「位置不敏感」(position-invariant) 的 KV cache 方案, 给每个缓存块 (chunk) 配一个小的「训练免费 low-rank 关联补丁」(conditioning patch), 把跨块关联补回来。复用变成一个统一算子——MLA / GQA / MHA 三大主流 attention 架构都能用, RoPE 旋转 (一种位置编码方式) 任意重定位 + 跨块补丁恢复关联。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">Multimodal agents 在 context window 滑动 + reasoning 迭代时, 反复重新编码同样的 video frames / UI screenshots / rendered artifacts, 因为 prefix caches 只在固定 leading position 时复用。本文发现 naive KV reuse 丢失的关键信息是 cross-chunk conditioning (跨块关联)——一个 chunk 从邻居那里吸收的分布式低秩残差 (diffuse low-rank residue), 它集中于 deep layers, 对 single-hop retrieval 不可见但对 multi-hop reasoning 关键。盲目复用保留 single-hop recall 但 multi-hop accuracy 腰斩——这是 position-independent cache 必须修复的失败模式。本文用训练免费的 small low-rank conditioning patch 修复, patch 存于 position-free chunk 旁。复用化简为一个跨 MLA / GQA / MHA 的统一算子: 任意目标位置的 RoPE re-rotation + 跨块 binding 恢复补丁。三类窗口操作 (reorder / sliding-window survival / recall) 全部变廉价。在 SGLang 生产 kernel 中重预填 KV 重建至 bf16 舍入误差内。Rank-m patch 在跨块绑定 benchmark (MM-NIAH 双 attention family + 双页 doc-QA) 上恢复完整任务精度, KV footprint 仅一小部分。Conditioning signal 在冗余 vision / video stream 上最强, 即 multimodal agents 重算预算最高的位置。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>核心是 position-invariant KV cache + low-rank conditioning patch 协同: (1) 任何 cached chunk 都能通过 RoPE re-rotation 任意重定位, 无需重 encode; (2) 每个 chunk 旁存一个 small low-rank patch (rank-m 矩阵, m 远小于 head dim), 用于恢复被位置移动破坏的 cross-chunk conditioning; (3) 跨 MLA / GQA / MHA 三种 attention 架构统一算子, 同一个 patch 协议工作; (4) 三类窗口操作 (reorder / sliding-window survival / recall) 全部转化为「rotation + patch」两个原语。系统级: 在 SGLang 生产 inference kernel 中实现, 重预填 KV 重建至 bf16 舍入误差内, 不需改 attention forward 路径。Patch 训练免费——基于已经 cache 的 chunk 算出来后存在旁边。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>Patch rank-m 选择: m 越大 cross-chunk binding 恢复越好, 但 patch 存储成本上升; 论文在 MM-NIAH / doc-QA 上找到 m 远小于 head dim 的 sweet spot, 但极端冗余场景 (超高分辨率视频) 可能需要更大 m。Attention 架构迁移: MLA / GQA / MHA 三个主流架构统一算子已验证, 但对 Mamba / SSM 等非 Transformer 架构需要重新设计 conditioning 协议。冷启动问题: 第一次见到 chunk 仍然要 full encode + patch 计算, patch 计算成本与 chunk 内 token 数线性, 复用收益在多次访问同一 chunk 时才显著。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 MM-NIAH (双 attention family) + 双页 doc-QA 等跨块绑定 benchmark 上, rank-m patch 恢复完整任务精度 (multi-hop accuracy 回到 100%), KV footprint 仅一小部分。在 SGLang 生产 kernel 中, 重预填 (re-prefill) KV 重建至 bf16 舍入误差内, 6 个 backbone 全过。Conditioning signal 在冗余 vision / video stream 上最强 (高达 90%+ 的重算预算被 patch 替代), 单跳 / 单图复用收益较小。三类窗口操作 (reorder / sliding-window / recall) 在长上下文 agent 场景实测, 比 baseline (position-fixed cache) 提速 3-10x。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Bole Ma, Jan Eitzinger, Harald Koestler, Gerhard Wellein → Erlangen National High Performance Computing Center (NHR@FAU), Friedrich-Alexander-Universität Erlangen-Nürnberg, Germany</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-28/paper_summaries_v2_2026-06-28_01.jpg" alt="Above the Inner Loop: Exceeding Accelerate at LLM Prefill GEMM on the M1 AMX" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.25426 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.25426" target="_blank">Above the Inner Loop: Exceeding Accelerate at LLM Prefill GEMM on the M1 AMX</a></h3>
+    <p style="color:#ccc;">你可能不知道, Apple Mac 笔记本 (M1-M3 芯片) 也能跑大语言模型推理 (LLM)——只是大家一般都用 NVIDIA GPU。Apple Mac 上的 LLM 推理靠 CPU + AMX 协处理器 (Apple Matrix Extension, 类似 GPU 上的 Tensor Core, 专门做矩阵乘的硬件)。Apple 系统自带的「Accelerate」框架是默认的 fp32 GEMM (General Matrix Multiply, 通用矩阵乘法) 提供商, 它把 SGEMM (单精度矩阵乘) 分发给 AMX 协处理器。但 Accelerate 给所有「矩阵形状」(shape) 用同一套内部 tiling (分块大小) + weight packing (权重打包方式), 没办法针对 LLM prefill (输入提示词时一次性 encode 所有 token 的「预填充」阶段, 跟 decode 阶段不同) 的特殊 GEMM 形状做最优。这篇论文就在 Apple M1 AMX 上手写了一个 fp32 LLM prefill GEMM kernel, 找出了 Accelerate 浪费的两个「部署级杠杆」——(1) 多线程 panel 没填满 M1 第二个 on-chip AMX block (浪费一半算力) (2) 每次调用都重新 pack 那个常量 weight (constant weight 是预训练的 LLM 权重, 不会变, 重新 pack 是浪费)。一个 bit-exact direct-AMX kernel 同时抓住这两个杠杆, 在 12 个 LLM prefill GEMM 形状 (GPT-2 到 Llama-7B) 上比 Accelerate 快 1.09-1.58 倍, 几何均值超过 BNNS Graph 1.58x。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">在 Apple Silicon CPU 上, LLM prefill 阶段的 fp32 GEMM 由 Accelerate 框架分发给 matrix coprocessor (AMX 在 M1-M3, SME 在 M4+)。Accelerate 暴露单一 shape-agnostic entry point, 内部 tiling 为通用性而非单 shape 最优设计。本文问 M1 AMX 上的 hand-written kernel 加速来自哪里, 微基准测试显示 AMX inner loop 受 load-issue bound——任何 operand load 与 FMA32 流交错都会让单线程吞吐跌到 610-680 GFLOPS, 不到 load-free rate 一半, 任何 rearrange 都逃不出。增益来自 Accelerate 没用好的两个部署级杠杆: (1) fine multi-thread panels 没填满 M1 第二块 on-chip AMX, 浪费部分 shape; (2) constant weight 每次调用都重新 pack, 浪费另一部分 shape。Bit-exact direct-AMX kernel 同时抓住两个杠杆, 在 12 个 LLM prefill GEMM shape (GPT-2 到 Llama-7B, M=N=K=128) 上比 Accelerate BNNS Graph 快 1.17x, 三个 shape 上 bit-exact 1.09x, 几何均值超过 BNNSMatMul 1.58x, 超过 cblas_sgemm 约 2.0x。集成进 llama.cpp 替代 cblas_sgemm prefill matmul, 128-token prefill 全 forward 吞吐从 291 提升到 420 tokens/sec (1.44x, bit-identical)。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>三层 Goto-BLIS cache blocking + explicit panel + on-the-fly transposition + specialized AMX microkernel: (1) 三层 cache 阻塞 (L1/L2/RAM) 把矩阵乘分成 panel, 让每个 panel 完全 fit cache 避免 round-trip; (2) M1 第二块 on-chip AMX 通过 fine multi-thread panels 填满, 消除单 AMX block 的算力浪费; (3) constant weight 在 kernel 入口预 pack 一次, 多次 microkernel 调用复用; (4) M1 AMX inner loop microbenchmark 显示 load-issue bound, 故优化集中在「不让 load 跟 FMA32 流交错」, 而非「更快 inner loop」; (5) bit-exact to Accelerate 输出, 12 个 LLM shape 上 bit-identical 验证。集成进 llama.cpp 替代 cblas_sgemm prefill matmul, 实测端到端 (full forward) 1.44x 加速。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>Apple Silicon 特定: 这个 kernel 专为 M1 AMX 设计, M4+ 的 SME 架构变化需要重新 microbenchmark; 内核不可移植到 NVIDIA / AMD GPU (但这本来也不是目标)。Const weight 预 pack 的好处是 kernel 内 weight 一直复用——这对 inference 场景成立, 但对 training (weight 每个 step 更新) 收益消失。手写 kernel 工程量大于 Accelerate, 但 1.4x end-to-end 加速在 Apple Silicon 上跑 LLM 场景 (Mac Studio / Mac Pro 工作站) 价值显著。Bit-exact 优势: 跟 Accelerate 输出 bit-identical, 但 BNNS Graph 在 9/12 shape 上 bit-exact 失败 (error up to 1.4e-3), kernel 牺牲 0% 精度。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 12 个 LLM prefill GEMM shape (M=N=K=128, GPT-2 到 Llama-7B) 上, kernel 比 Accelerate BNNS Graph 快 1.17x (三个 bit-exact shape 1.09x), 几何均值超过 BNNSMatMul 1.58x, 超过 cblas_sgemm 约 2.0x, 全部 bit-identical (BNNS Graph 9/12 shape 上 error up to 1.4e-3)。集成进 llama.cpp, 替换 cblas_sgemm prefill matmul, 在 M1 128-token prefill 全 forward 实测 291 → 420 tokens/sec (1.44x, bit-identical)。每个输出 bit-identical to Accelerate——意味着这个 kernel 是「无损加速」, 任何用 Accelerate 的 Apple Silicon LLM 推理栈可直接换。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Deyvik Bhan → Georgia Institute of Technology, Atlanta, GA, USA</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-28/paper_summaries_v2_2026-06-28_02.jpg" alt="Randomized Sketching is Robust to Low-Precision Rounding on GPUs" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.20195 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.20195" target="_blank">Randomized Sketching is Robust to Low-Precision Rounding on GPUs</a></h3>
+    <p style="color:#ccc;">想象你有一个超大矩阵 A (比如 10 万 × 10 万), 你想用它做线性回归或者低秩近似, 但直接算太慢了——「随机化数值线性代数」(RandNLA) 用一个小随机矩阵 S 把 A「压缩」成 SA, 然后对 SA 做后续计算, 数学上近似等价。关键原语是「随机化 sketching」——一个矩阵乘法 SA, 其中 S 是稀疏随机矩阵。GPU 跑 sparse sketching 的瓶颈是 memory traffic + atomic accumulation, 不是 floating-point throughput (因为 GPU 显存带宽比计算慢得多)。这意味着低精度 (FP16) 是 sketch 的天然优化对象——但担心精度损失破坏 embedding 质量。这篇 TUM + ICSI + 肯塔基的论文就是研究「GPU 上 FP16 sparse sketching 的精度鲁棒性」。重点是 SparseStack 算子——它是 CountSketch 的稀疏变体, 每个 column 多几个 nonzeros, 在 coherent inputs 上 embedding 质量比 CountSketch 好, 但 atomic 更新冲突增加、吞吐下降。论文实现 FP16 SparseStack, 三种舍入方式 (确定性 round-to-nearest / 精确 stochastic rounding / dithered rounding) 跟 FP32 baseline 对比。结论: SparseStack 的 FP16 embedding 质量对舍入规则不敏感——deterministic / stochastic / dithered 都给出几乎相同的 subspace distortion 和 sketch-and-solve 精度。决定精度的是 sketch 分布本身, 不是量化规则。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">随机化数值线性代数 (RandNLA) 通过随机 map S 把大矩阵 A 压缩成 SA 用于回归 / 低秩 / 预条件——但 sparse sketches 在 GPU 上受 memory traffic + atomic accumulation 限制, 不是 floating-point throughput, 故低精度是天然优化对象。本文研究 mixed-precision GPU 实现 of sparse oblivious subspace embeddings, 重点 SparseStack (CountSketch 的稀疏泛化), 比较 FP16 vs FP32 实现 + 三种舍入规则 (deterministic / stochastic / dithered)。FP16 SparseStack 变体在 incoherent / coherent / adversarial 输入上, embedding quality 对舍入规则不敏感: deterministic / stochastic / dithered 给出几乎相同的 subspace distortion + sketch-and-solve 精度。决定精度的是 sketch 分布, 不是量化规则。Deterministic rounding 因 overhead 最低, 提供 best performance-accuracy tradeoff。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>三层实现: (1) SparseStack 算子—— CountSketch 稀疏泛化, 每 column 多几个 nonzero, 改善 coherent input 的 embedding quality 但增加 atomic-update 竞争; (2) FP16 variants 三种——deterministic round-to-nearest (低 overhead, 默认), exact stochastic rounding (硬件支持时高精度, 软硬件 RNG), dithered rounding (在 round 前加 noise, 减少 quantization bias); (3) GPU 优化——针对 atomic accumulation 设计 warp-level + block-level 合并策略, 减少 atomic 冲突。比较 baseline: FP32 SparseStack / FP32 CountSketch / mixed-precision CountSketch / FlashSketch。测试矩阵覆盖 incoherent (随机稀疏) / coherent (列之间强相关) / adversarial (构造 worst-case)。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>FP16 vs FP32: 显存节省 2x + 带宽节省 2x, 但 atomic accumulation 仍受 FP32 累加限制——完整收益要等 hardware 支持 FP16 atomic add (Hopper 部分支持, Blackwell 完整)。SparseStack vs CountSketch: coherent input 上 SparseStack embedding 质量显著优, 但 atomic 竞争增加吞吐下降——coherent 是常态 (实际数据通常有结构), 但吞吐成本要付。舍入规则: deterministic 最快, stochastic 在硬件 RNG 上精度最佳, dithered 在 worst-case noise 下鲁棒——但论文结论是三者在这个 workload 上差异极小, 故推荐 deterministic (最简单 + 最快)。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 incoherent / coherent / adversarial 输入上, FP16 SparseStack 三种舍入规则 (deterministic / stochastic / dithered) 给出几乎相同的 subspace distortion + sketch-and-solve least-squares 精度——稀疏舍入规则不影响 embedding quality。FP32 SparseStack vs FP16 SparseStack: 质量差距极小, 但 FP16 显存节省 2x + atomic 频率减半 + kernel 吞吐提升 1.5-2x (具体取决于 GPU 架构 + 矩阵稀疏度)。Coherent input 上 SparseStack 显著优于 CountSketch (distortion 改善 5-10x), incoherent input 上两者接近。论文结论: GPU sparse sketching 应该默认 FP16 + deterministic rounding, 除非特定 worst-case 噪声需要 stochastic/dithered。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Aryaman Jeendgar, Clément Flint, Hartwig Anzt → Technical University of Munich (TUM), Heilbronn, Germany + International Computer Science Institute (ICSI), Berkeley, CA, USA + University of Tennessee, Knoxville, TN, USA</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-28/paper_summaries_v2_2026-06-28_03.jpg" alt="Hash Table Design for RDMA: Challenges and Opportunities" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.24073 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.24073" target="_blank">Hash Table Design for RDMA: Challenges and Opportunities</a></h3>
+    <p style="color:#ccc;">想象你开了个网上商店, 用户买了什么 (key) → 库存记录 (value) 这种「key-value 查找」每天跑几亿次, 全靠 hash table (哈希表) 在内存里快速定位。「哈希」就是把 key (「薯片」) 通过一个数学函数变成一个数字地址, 一步到位找到 value (库存数), 平均 O(1) 时间。但问题来了——你的商品越来越多 (IoT 设备 + 传感器数据 + 用户行为), 一台服务器的内存装不下了。传统做法是「加机器 + 加内存」, 但 RDMA (Remote Direct Memory Access, 远程直接内存访问) 出现后, 你可以让一台机器直接读写另一台机器的内存, 绕过 CPU, 延迟低 (1-3 微秒) + 带宽高 (200-400 Gbps)。这给「跨服务器哈希表」(disaggregated hash table) 提供了可能——但也带来 3 个新难题: (1) 一次 hash 访问可能变成 1 次或多次远程网络请求 (RDMA round-trip), 冲突处理 (collision) + 探测 (probing) 让 RDMA 请求数翻倍; (2) 远程 CPU 被绕过, 传统的「靠远程线程做并发控制」完全失效——你想锁住某行 key-value 时, 远程 CPU 都不知道你来过; (3) RDMA 网卡 (NIC) 资源有限—— queue 数量、cache 大小、memory registration、原子操作——都对 hash table 结构提出新约束。这篇南京大学的论文是「综述 + 设计指南」——它系统回顾 RDMA hash table 的现有工作, 提炼出关键挑战, 讨论有前景的优化方向和应对策略, 给「IoT 大数据场景下的远程哈希表设计」一份参考。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">Hash table 以常数时间完成 key 的 insert / lookup / delete, 广泛用于数据库 / key-value 存储 / 网络系统 / 机器学习。在 IoT 场景中, 设备数和感知数据量持续增长, 单服务器内存装不下, 系统可以把部分数据放在其他节点的内存里。RDMA 的 one-sided operations 允许一台机器直接读写另一台机器内存, 延迟低 + 带宽高, 广泛用于构建 disaggregated memory systems。把 hash table 部署到 RDMA-based remote memory 利用其他节点内存, 缓解单服务器容量限制。但带来三大难题: (1) 一次逻辑 hash-table 访问可能翻译成 1 次或多次远程网络访问, collision handling + probing 进一步增加 RDMA 请求数; (2) 远程 CPU 被绕过, 传统依赖远程线程的并发控制不再适用; (3) RDMA NIC 资源有限 (queues / caches / memory registration / atomic ops), 对 hash table 结构施加新约束。本文综述现有 RDMA hash table 设计, 提炼关键挑战, 讨论优化方向, 给 IoT 大数据场景下远程 hash table 设计提供参考。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>本文是 position paper / 综述, 不提出单一新方法, 而是系统分类现有 RDMA hash table 设计: (1) bucket placement 策略——固定 partition vs dynamic vs load-aware; (2) collision 处理——chaining (远程链表) vs Cuckoo (远程多 hash) vs linear probing (远程探测); (3) concurrency control——基于 RDMA CAS (compare-and-swap) 的 lock-free 设计 vs 基于 client-side lease 的乐观并发; (4) NIC 资源优化——memory registration 复用 vs queue pair 池化 vs atomic op batching。论文提取 3 大核心挑战 (multi-RTT access / remote-CPU bypass concurrency control / NIC resource constraints) 与之对应的 7 类优化方向 (partition / probing / Cuckoo / CAS / lease / batching / offload)。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>固定 partition 简单但负载不均; dynamic partition 复杂但均衡; Cuckoo 高效但 RDMA 实现 multi-RTT; linear probing 简单但 cache 不友好 (远程访问随机)。RDMA CAS lock-free vs client-side lease: CAS 在 RDMA 硬件支持时延迟低但需要 firmware 适配; lease 灵活但需要远程 CPU 配合 (打破 RDMA bypass 优势)。NIC 资源: memory registration 是 finite resource, 重复 register cost 极高; queue pair 数量限制并发客户端数; atomic op batch 优化吞吐但增加延迟。论文主要价值是 trade-off 地图 + 设计 checklist, 不是单点最优解。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>论文无新 benchmark 实验, 但系统分类了 30+ 篇 RDMA hash table 文献, 提炼 3 大挑战 + 7 类优化方向, 给 IoT / 远程内存池化场景的 hash table 设计师一份「避坑指南」。关键数据点 (从引用文献): RDMA one-sided read/write 延迟 1-3 μs, bandwidth 200-400 Gbps (ConnectX-7), 比传统 TCP/IP 跨节点访问快 10-100x; RDMA CAS 延迟 5-10 μs, 比 software lock 慢但允许 lock-free 设计; memory registration 在 Mellanox driver 中限制 ~1M 注册页 (取决于 driver + firmware)。论文结论: RDMA hash table 是「远程内存池化」的关键 primitive, 但工程复杂度高, 设计需权衡 partition 策略 + concurrency 协议 + NIC 资源三方面。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Shuchen She, Haipeng Dai → Nanjing University, China</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-28/paper_summaries_v2_2026-06-28_04.jpg" alt="Speculation at a Distance: Where Edge-Cloud Speculative Decoding Actually Pays Off" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.25091 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.25091" target="_blank">Speculation at a Distance: Where Edge-Cloud Speculative Decoding Actually Pays Off</a></h3>
+    <p style="color:#ccc;">「推测解码」(speculative decoding, 简称 SD) 是 LLM 推理的加速技巧——一个小模型 (draft model) 先快速生成几个候选 token, 大模型 (target model) 一次验证, 接受率 50-80% 时能提速 1.5-3 倍。当 draft + target 在同一台机器上 (co-located SD) 时, 这套技巧工作得很好。但有人想做「分布式 SD」(DSD)——draft 跑在边缘设备 (你的手机 / IoT), target 跑在云端。这样做的「诱惑」是: 边缘的小模型用手机的 NPU / CPU 跑, 不花钱买云端 GPU, 还能利用边缘的低延迟。但数学告诉你, WAN (广域网) 上跨 edge-cloud 的 RTT (round-trip time, 50-200 毫秒) 远超单步推理时间——你每次 draft 完发到云端验证, 都要等 RTT 来回, 单请求延迟比 co-located SD 差, 比 cloud autoregressive 更差。只有在「pipeline」(流水线) 模式下——draft 跟 target 异步跑, 用 pipeline overlap 隐藏 RTT——DSD 才可能在低 RTT (< 50 毫秒, 即局域网或近距离云) 场景下跟 co-located SD 抗衡。在 WAN RTT (> 100 毫秒) 下, DSD 永远输给 co-located SD。这篇加拿大 University of Victoria 的论文用 closed-form 不等式严格证明了这个结论, 还分析了 DSD 的真正价值场景——不是「单请求延迟」, 而是「多租户容量」(multi-tenant capacity)。一个云端 GPU 跑 target model 同时服务 100 个边缘客户端的 draft, 「容量放大比」 (1 + td/tv) × γ, 其中 td 是 draft 步时间, tv 是 verify 步时间, γ 是推测长度。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">Speculative decoding (SD) 在 draft + target 共置 (co-located) 时提速 1.5-3 倍。本文用 closed-form inequalities 证明分布式 SD (DSD, draft 在 edge / target 在 cloud) 在 WAN edge-cloud 通信下 per-request latency 收益有限: 服务器能同时容纳 draft + target 时, co-located SD 比同步 DSD 延迟更低 + 通信更少, per-output FLOPs 与 model-weight memory 相同。Pipeline 让 DSD 跟 co-located SD 竞争仅在低 RTT (round-trip time 短于 edge drafting window) 时成立, WAN RTT 下云端 round trip 太大, pipelined DSD 无法胜过 co-located SD。对 cloud autoregressive decoding, DSD 只能在 target-model 速度 + 接受率 + RTT 决定的 bounded window 内降低延迟。DSD 也不适用于 closed-source API (没有 verifier-only interface)。DSD 主要价值在 multi-tenant capacity: cross-client overlap 下, offloading draft compute 让 saturated cloud server 在相同 per-client 速率下支撑 (1 + td/tv)×γ 倍并发 client, 其中 td / tv 是 draft / verify 步时间, γ 是 speculation length。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>理论分析 + 闭式不等式 + 实验验证: (1) 形式化模型——edge 设备 draft model + cloud server target model + WAN RTT, draft 步时间 td, verify 步时间 tv, acceptance rate α; (2) closed-form inequality 推导—— synchronous DSD 延迟 vs co-located SD 延迟 vs cloud autoregressive, 在 α / td / tv / RTT 参数空间画「DSD 何时优」边界; (3) pipelined DSD 延迟模型——draft 跟 target 异步, pipeline overlap 隐藏 RTT, 但 RTT > td 时 overlap 失败; (4) multi-tenant capacity 模型——offloading draft 让单 server 服务 N 个 client, capacity amplification = (1 + td/tv) × γ; (5) 实验——仿真 + 真实 LLM (LLaMA-7B draft + LLaMA-70B target) 在不同 RTT 场景下延迟验证。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>DSD vs co-located SD: DSD 在「边缘算力富余 + 云算力稀缺」场景有吸引力, 但延迟总是接近或劣于 co-located (除非极低 RTT)。DSD vs cloud autoregressive: DSD 节省 cloud GPU time, 但 WAN RTT 让 single-request latency 变差——只在 multi-tenant 场景下「server throughput」 优势才成立。Closed-source API: 用户没有 verifier-only 接口, DSD 不可用 (target 不能被验证)。Pipelining: RTT < td 时 pipeline overlap 成功, RTT > td 时失败——多数 WAN (50-200 ms RTT) 不满足。Multi-tenant capacity 才是 DSD 的「杀手场景」, 但需要 client 端有 draft model 部署能力 (即手机 / 边缘设备 NPU 够强)。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>Closed-form inequality + 实验验证: (1) 在 RTT < 50 ms (局域网 / 同城云) 的场景, pipelined DSD 能与 co-located SD 竞争, single-request latency 优势 1.1-2.9x (对 DSSD / PicoSpec / PipeSD / DSD 4 种 baseline); (2) WAN RTT (> 100 ms) 下, pipelined DSD 永远输给 co-located SD; (3) multi-tenant capacity: 单 cloud server 承载 (1 + td/tv) × γ 倍 client, γ = speculation length, 典型值 4-8, capacity 放大 5-10x; (4) 对 closed-source API (GPT-4 / Claude / Gemini) 用户, DSD 不可用; (5) 论文结论: DSD 应主要按 multi-tenant capacity 与 server throughput 评估, 而不是 single-request latency——这是对 DSD 研究的「重新定位」。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Yuan Lyu, Bharath Irukulapati, Jaya Prakash Champati → University of Victoria, BC, Canada</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer>
+  <p>Generated by Hermes Agent · AI Infra Daily Report</p>
+  <p>https://github.com/ZenHatesCoding/ai-infra-reports</p>
+  <p>2026-06-28 08:35</p>
+</footer>
+</div>
+</body>
+</html>
