@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Infra 洞察日报 · 2026年6月29日 · 周一</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #0d1117; color: #e6edf3; padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; }
+header { padding: 24px 0; border-bottom: 1px solid #21262d; margin-bottom: 24px; }
+header h1 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+header .sub { color: #8b949e; font-size: 14px; }
+.stats { display: flex; gap: 24px; font-size: 14px; color: #8b949e; margin-top: 16px; }
+.stat { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 12px 18px; }
+.stat span { color: #58a6ff; font-weight: 700; font-size: 20px; margin-right: 4px; }
+.stat.biz span { color: #ffd43b; }
+.stat.paper span { color: #79c0ff; }
+h2 { font-size: 16px; color: #e6edf3; margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid #21262d; }
+.card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 0; margin-bottom: 20px; overflow: hidden; }
+.card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: #21262d; }
+.card-body { padding: 16px 20px 18px; }
+.card-meta { font-size: 12px; color: #8b949e; margin-bottom: 8px; }
+.card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; line-height: 1.4; }
+.card h3 a { color: #58a6ff; text-decoration: none; }
+.card h3 a:hover { text-decoration: underline; }
+.card p { font-size: 14px; color: #c9d1d9; line-height: 1.6; margin-bottom: 8px; }
+.card .source { color: #6e7681; font-size: 12px; margin-top: 4px; }
+.tech-block { background: #0d1117; border-radius: 8px; padding: 12px 14px; margin-top: 10px; font-size: 13px; line-height: 1.7; }
+.tech-block .row { margin-bottom: 4px; }
+.tech-block .row:last-child { margin-bottom: 0; }
+.tech { color: #79c0ff; }
+.tradeoff { color: #d2a8ff; }
+.highlight { color: #7ee787; }
+.author { color: #ffa657; }
+footer { text-align: center; padding: 32px 0; color: #6e7681; font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>🏗️ AI Infra 洞察日报</h1>
+  <div class="sub">2026年6月29日 · 周一 · 覆盖芯片 + 集群 + 光模块 + arXiv Infra 论文</div>
+  <div class="stats">
+    <div class="stat biz">🏢 <span>6</span> 条 AI Infra 公司动态</div>
+    <div class="stat paper">📄 <span>5</span> 篇 arXiv Infra 论文精读</div>
+  </div>
+</header>
+
+<section>
+<h2>🏢 AI Infra 商业新闻</h2>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-29/news_items_v2_2026-06-29_05.jpg" alt="CoreWeave Launches GLM 5.2 on Inference Platform, Extends Serverless to Long-Context 1M Token Workloads" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[CoreWeave 官方] 1级信源 · cn</div>
+    <h3><a href="https://www.coreweave.com/blog/glm-5-2-now-available-on-coreweave-inference" target="_blank">CoreWeave Launches GLM 5.2 on Inference Platform, Extends Serverless to Long-Context 1M Token Workloads</a></h3>
+    <p style="color:#ccc;">CoreWeave 6/24 宣布, 智谱 GLM 5.2 模型在其 Inference 平台正式上线, 同时把 Serverless Inference (无服务器推理, 用户按 token 计费, 不需要预先预留 GPU) 能力扩展到 1M token 长上下文 (Long Context, 一次性能处理 100 万 token 的 context window) 工作负载。CoreWeave GLM 5.2 部署基于 NVIDIA Blackwell B200 GPU + 自研 Sky Compute 调度平台, 公开 benchmark 显示 GLM 5.2 在 MMLU-Pro + GSM8K + HumanEval 三大基准上比 GLM 5.1 提升 6-12%。Serverless 1M token 支持的关键技术是「Cross-Region KV Cache 同步」——长 context 请求的 KV-cache 在多个 GPU 节点间实时同步, 用户发起新 query 时不需要从头计算, 延迟从 8 秒降到 1.5 秒。</p><p style="color:#8b949e;font-size:13px;">💡 CoreWeave 拿 GLM 5.2 (中国开源大模型) 做 Serverless 1M token 推理是 AI Neocloud 行业两个趋势叠加: (1) 中国开源大模型出海, GLM / Qwen / DeepSeek 已成为全球 AI 云厂商的「默认中国模型」选项, 跟 Meta Llama 形成开源模型两大阵营; (2) 长上下文推理成为 hyperscaler/neocloud 的核心差异化能力——1M token 是 2026 年的「上下文军备竞赛」门槛, 跟 Anthropic Claude 1M + Google Gemini 1.5/2.0 Pro 1M + OpenAI GPT-5 256K 形成对标。Cross-Region KV Cache 同步技术是 PD 分离 (Prefill-Decode Disaggregation) + 跨集群调度的工业级实现, 给 arxiv 第 3 类 (跨数据中心/集群) 论文提供了真实部署场景。对国产 AI Infra: 国产 GPU (华为昇腾 + 寒武纪) 客户场景越来越需要支持 1M token 长上下文, HBM 容量 (>=80GB) + 跨节点通信 (200Gbps IB/RoCE) 成为硬指标。</p>
+    <div class="source">来源：CoreWeave 官方</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-29/news_items_v2_2026-06-29_01.jpg" alt="TEMC CNS Begins CCSS Deliveries for SK hynix's First Yongin Fab" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=11743" target="_blank">TEMC CNS Begins CCSS Deliveries for SK hynix's First Yongin Fab</a></h3>
+    <p style="color:#ccc;">韩国 The Elec 6/28 报道, 半导体设备商 TEMC CNS 已开始向 SK hynix 供应 CCSS (Central Chemical Supply System, 中央化学供应系统, 半导体 fab 必备的超纯化学品集中输送设备) —— 这是 SK hynix 龙仁 (Yongin) 半导体集群首座 fab 动工的明确信号。TEMC CNS 6/26 与 SK hynix 签订 252.489 亿韩元 (约 1850 万美元) 合同, 触发设备交付里程碑付款; 此前 12/4 TEMC 已获 483.995 亿韩元 LOI (意向书), 12/24 收 30% 预付款 145.1985 亿韩元。龙仁集群总投资规模 19 万亿韩元 (约 140 亿美元), 计划 2027 年量产 HBM4 + 1c DRAM, 是 SK hynix 应对 NVIDIA Blackwell / Rubin + AMD MI400 + Broadcom Jalapeño HBM 紧缺的核心产能。</p><p style="color:#8b949e;font-size:13px;">💡 CCSS 是 fab 动工的「先行指标」——任何 fab 在土建完成后, 第一批进场的设备就是 CCSS + 纯水系统 + 排气系统, 这三类到位 = fab 进入设备安装阶段, 距离流片 12-18 个月。SK hynix Yongin 首座 fab CCSS 启动, 意味着 HBM4 产能爬坡时间表正式锁定 2027 H1。对 AI Infra 产业链意义: (1) HBM 紧缺周期将持续到 2027 底, Micron/SK hynix/Samsung 三家 HBM 产能扩张速度跟不上 NVIDIA/AMD/Broadcom 需求增速; (2) CoWoS-L / CoWoS-S 先进封装产能同步吃紧, TSMC 在美国 Arizona Fab 21 + 台湾嘉义 AP6/AP7 加速扩产; (3) 中国长江存储/长鑫存储要追赶 HBM 难度再升一级 (DRAM + HBM + 先进封装三重壁垒)。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-29/news_items_v2_2026-06-29_02.jpg" alt="[Y-Insight] Wooriro, 'From Copper to Light' — Targeting the AI Data Center Optical Interconnection Market" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=11748" target="_blank">[Y-Insight] Wooriro, 'From Copper to Light' — Targeting the AI Data Center Optical Interconnection Market</a></h3>
+    <p style="color:#ccc;">韩国 The Elec 6/28 报道, 韩国光器件商 Wooriro (우리로, 1998 年成立, KOSDAQ 上市) 6/28 正式宣布进军 AI 数据中心光互联市场, 主打 200 Gbps-per-lane 光学探测器 + WDM (Wavelength Division Multiplexing, 波分复用) 设备。Wooriro 副总裁 Pyo Jin-goo 接受采访时表示, 当前 GPU 互连功耗已经超过 GPU 本体计算功耗, 铜缆在 10 Gbps 以上传输时发热严重, 光互联是必然方向。NVIDIA + Broadcom + Samsung 都在加速 CPO (Co-Packaged Optics, 把光模块集成进芯片封装) 商用化, 2025 年 NVIDIA 在 GTC 推出 1.6T CPO 模块, 2026 年开始 Blackwell + Rubin 平台大规模部署。Wooriro 旗舰产品是光学分路器 (splitter) + AWG (Arrayed Waveguide Gratings, 阵列波导光栅, WDM 核心器件), 现正在送样 NVIDIA / Broadcom / 韩国云厂商。</p><p style="color:#8b949e;font-size:13px;">💡 Wooriro 进入 AI 数据中心光互联市场是亚洲光模块供应链向 CPO 转型的典型案例——传统光学分路器 + AWG 业务 (FTTH 接入网为主) 增长见顶, AI GPU 互连需求爆发打开新增长极。Wooriro 的 200G/lane 探测器 + WDM 组合, 跟 Innolight (中际旭创) 800G/1.6T 光模块 + Eoptolink (新易盛) 200G/lane 探测器 + Coherent LRO/LPO 模块形成「亚洲光器件供应商组合」, 共同抢占 NVIDIA Blackwell/Rubin 1.6T/3.2T CPO 订单。对 AI Infra 产业链: CPO 2026 进入量产元年, Wooriro 这类二线供应商在 NVIDIA 主供应商 (Innolight + Coherent + Lumentum) 之外提供第二条供应链, 降低 NVIDIA 单点供应风险, 同时压制光模块均价。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-29/news_items_v2_2026-06-29_00.jpg" alt="Why Wall Street Thinks US Memory Maker Micron Is the Next Nvidia" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[techcrunch.com] 3级信源 · cn</div>
+    <h3><a href="https://techcrunch.com/2026/06/28/why-wall-street-thinks-us-memory-maker-micron-is-the-next-nvidia/" target="_blank">Why Wall Street Thinks US Memory Maker Micron Is the Next Nvidia</a></h3>
+    <p style="color:#ccc;">TechCrunch 6/28 报道, 华尔街分析师正在把 Micron (美光) 视为「下一个 NVIDIA」——核心驱动是 HBM (High Bandwidth Memory, AI GPU 必备的高速显存, 单价是普通 DRAM 5 倍以上) 紧缺周期。Micron 2026 财年 HBM 营收预期 200 亿美元, 2027 财年 300 亿美元, 几乎全部被 NVIDIA Blackwell (B200/B300) + AMD MI400 + Broadcom Jalapeño 三大 AI chip 平台锁定。Micron 同时在 Idaho (Boise 总部) + New York (Clay) 投建 1000 亿美元级 HBM 先进封装 + DRAM 产能, 是美国本土唯一能够规模化生产 HBM3e/HBM4 的厂商。</p><p style="color:#8b949e;font-size:13px;">💡 Micron 被「类 NVIDIA 化」的本质是 AI Infra 价值链从 GPU 单点向「GPU + HBM」双轮转移——HBM 在单卡成本占比从 2023 年的 8% 涨到 2026 年的 22-25%, 接近 GPU die 本体成本。一旦 Micron 把 HBM4 量产出货, 它就从「NVIDIA 上游成本项」升级为「不可替代的产能瓶颈方」, 议价权显著上升。对光模块/CPO 产业链而言, Micron 加速扩产同时意味着 HBM 4Hi/4Hi+ 堆叠 → 封装端 CoWoS-L 产能瓶颈加剧 (TSMC 2027 产能已被 NVIDIA + AMD + Broadcom 抢光), CPO/光模块 1.6T 出货窗口被进一步推后 6-9 个月。</p>
+    <div class="source">来源：techcrunch.com</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-29/news_items_v2_2026-06-29_03.jpg" alt="Netris Raises $15M Series A from a16z to Help AI Neoclouds Go Live Faster" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[techcrunch.com] 3级信源 · cn</div>
+    <h3><a href="https://techcrunch.com/2026/06/25/netris-raises-15m-series-a-from-a16z-to-help-ai-neoclouds-go-live-faster/" target="_blank">Netris Raises $15M Series A from a16z to Help AI Neoclouds Go Live Faster</a></h3>
+    <p style="color:#ccc;">TechCrunch 6/25 报道, AI Neocloud 基础设施编排平台 Netris 完成 a16z 领投 1500 万美元 A 轮融资。Netris 做的事情是「AI GPU 集群上线自动化」——把传统需要 6-12 个月 + 数千万美元 capex 的 GPU 数据中心建设, 通过 Kubernetes 原生 + GPU-as-a-Service 编排 + 自动 Site Reliability Engineering, 缩短到 4-8 周。目标客户是 CoreWeave / Lambda / Crusoe 之外的「第二梯队 AI neocloud」——区域性 GPU 云厂商 + 电信运营商 + 大型企业自建 GPU 集群, 帮助它们用 CoreWeave 80% 的运维成熟度快速上线。Netris 客户包括几家未披露的东南亚 + 中东 AI 云厂商, 单集群规模 1000-5000 张 H100/B200。</p><p style="color:#8b949e;font-size:13px;">💡 Netris 解决的是 AI Neocloud 行业的「中段能力断层」——CoreWeave/Lambda 这类第一梯队 (>$5B 融资 + 5 万+ GPU) 自研编排平台, 第二梯队 (<5000 GPU + <$500M 融资) 买不起自研团队, 用开源 K8s 又撑不住 99.95% SLA。Netris 把第一梯队的工程能力产品化下沉到第二梯队, 跟 Modal / Together / Anyscale 共享 GPU 云市场的「平台层」竞争。a16z 这轮投资背后是「AI Infra 工具层」投资逻辑——AI 算力总规模未来 3 年到 8000 亿美元, 但 90% 的 neocloud 不会自研编排, Netris 这种「AI Infra 的 Vercel」吃下中间层最大价值。对中国厂商而言, Netris 类工具是国产 AI 云 (阿里灵骏 + 百度智能云 + 商汤大装置 + 浪潮 + 联想) 出海东南亚/中东的潜在合作伙伴, 也是国产 GPU (华为昇腾 + 寒武纪 + 摩尔线程) 客户运营的关键工具。</p>
+    <div class="source">来源：techcrunch.com</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-29/news_items_v2_2026-06-29_04.jpg" alt="Databricks' Former AI Chief Thinks He Can Cut AI's Power Bill by 1,000x" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[techcrunch.com] 3级信源 · cn</div>
+    <h3><a href="https://techcrunch.com/2026/06/25/databricks-former-ai-chief-thinks-he-can-cut-ais-power-bill-by-1000x/" target="_blank">Databricks' Former AI Chief Thinks He Can Cut AI's Power Bill by 1,000x</a></h3>
+    <p style="color:#ccc;">TechCrunch 6/25 报道, Databricks 前 AI 负责人 Naveen Rao 创办的新公司 Mosaic AI Research 推出 AI 推理功耗优化方案, 声称可以把 AI 推理 power bill 降低 1000 倍。核心技术是「推理时跳过 99% 的模型计算」——通过极激进的激活稀疏化 (activation sparsity) + 动态 early-exit + 模型蒸馏组合, 让 LLM 在简单 query 上只用 0.1% 的 FLOPs 就给出同等质量答案。Rao 在 Databricks 任职期间主导了 MosaicML 收购 (2023 年 13 亿美元), 把训练成本降低 10 倍; 这次「1000x 推理功耗优化」瞄准的是 AI 数据中心最大的运营成本——电力 (占 hyperscaler 运营支出 25-40%)。</p><p style="color:#8b949e;font-size:13px;">💡 1000x 推理功耗优化是一个「上界宣言」, 实际落地可能 10-50x, 但即便 10x 也足以颠覆 AI Infra 经济学。当前一次 GPT-4 级 LLM 推理需要 0.5-3 kWh/百万 token, 占 AI 数据中心电力消耗 35%; 如果 10x 落地, 单次推理成本从 0.5 美元降到 0.05 美元, hyperscaler 电力 capex 推迟 5-7 年, 资本市场对 GPU 长期需求曲线的判断会被重写。对中国 AI Infra 产业链: (1) 国产 GPU (华为昇腾 + 寒武纪) 在推理场景有望追上国际水平, 因为推理对算力峰值要求低于训练, 对软件栈 (动态稀疏 + early-exit + 蒸馏) 要求更高——国产软件栈投入是关键; (2) 国产数据中心 (秦淮数据 + 万国数据 + 世纪互联) 电力配套 capex 节奏可以放缓, 间接利好国内 PUE 优化 (液冷 + 间接蒸发冷却 + 西部低成本电力) 公司。</p>
+    <div class="source">来源：techcrunch.com</div>
+  </div>
+</div>
+</section>
+
+<section>
+<h2>📄 arXiv Infra 论文深度解读</h2>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-29/paper_summaries_v2_2026-06-29_00.jpg" alt="TileMaxSim: IO-Aware GPU MaxSim Scoring with Dimension Tiling and Fused Producer-Consumer Kernels" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.26439 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.26439" target="_blank">TileMaxSim: IO-Aware GPU MaxSim Scoring with Dimension Tiling and Fused Producer-Consumer Kernels</a></h3>
+    <p style="color:#ccc;">想象你做电商搜索, 用户输入一句话「轻便的运动鞋」, 你要从百万商品里找出最相关的。ColBERT 这类「多向量检索」模型 (multi-vector retrieval, 每个商品 / 每段查询都用一组向量表达, 不像单向量那样压缩成一个向量) 精度最高, 但 MaxSim 算分 (对每个 query token 找最像的 doc token, 再求和) 在 GPU 上效率极低——naive 实现只用 5-18% 的 HBM 带宽, 因为它把「query 跟所有文档的相似度矩阵」(Nq × Nd 矩阵, Nq 是 query token 数, Nd 是 doc token 数) 全部展开, 但每个数字只用一次就丢。这篇论文用 Triton 手写了一族 IO-Aware kernel, 三招把带宽利用率推到 80%+: (1) 多 query SRAM tiling——把 doc embedding 一次性读进 GPU on-chip 共享内存 (shared memory, 速度比 HBM 快 30-50 倍), 累加每个 query 的最大值在寄存器 (register) 里, 每个 doc embedding 只从 HBM 读一次; (2) 维度 tiling——把 embedding 维度切成 128 一块, 解决 >128 embedding 溢出 shared memory 的问题; (3) 融合 PQ 解压+打分——product quantization (PQ, 把大向量压缩成几个小整数 + 码本) 压缩的 doc 不需要先解压再打分, 在 shared memory 里查表直接算, HBM I/O 减少 31%。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">Multi-vector retrieval models (ColBERT) achieve state-of-the-art accuracy via token-level MaxSim scoring, but existing GPU implementations leave most hardware performance unused. Naive implementations reach only 5-18% of peak HBM bandwidth because they materialize the Nq × Nd similarity matrix, wasting memory traffic on intermediate data. We present TileMaxSim, a family of IO-aware Triton kernels that close this gap via three techniques: (1) multi-query SRAM tiling that streams document embeddings through shared memory while accumulating per-query-token maxima in registers, reading each embedding from HBM exactly once; (2) dimension tiling partitioning the embedding dimension into 128-wide chunks, enabling efficient scoring for embeddings that overflow shared memory; (3) fused PQ decompression+scoring via shared-memory lookup tables. On H100 GPUs, TileMaxSim achieves 80.2% of peak HBM bandwidth (2,687 GB/s of 3,350 GB/s), approaching FlashAttention-class utilization, scores 82M documents/sec on synthetic uniform-length data (71.6M/s on MS MARCO, 70% BW utilization), yielding 220× speedup over loop-based scoring, 6.5× over fused PyTorch, 6.6-8.5× over torch.compile(max-autotune), and 469× higher throughput than WARP&#x27;s CPU engine. Drop-in ColBERTv2/PLAID replacement reduces 100K-candidate scoring latency from 268 ms to 1.2 ms (98% pipeline latency cut).</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>三层 IO-aware Triton kernel 设计: (1) SRAM 多 query tiling——文档 embedding 通过 shared memory 流式加载, 每个 query 的 max 累加在 register 里, 单次 HBM 读完成所有 query 的处理; (2) 维度 tiling——把 embedding dim 切成 128 一块, 解决大 embedding (>128) 溢出 SRAM 问题, 这块是 prior multi-vector kernel 没解决的; (3) fused PQ 解压+打分——通过 shared memory 查表对压缩 doc 直接打分, 跳过显式解压步骤, HBM I/O 减少 31%。Roofline 分析证明 kernel 是 asymptotic optimal 对 GPU memory hierarchy。Bit-exact to reference MaxSim——MS MARCO + BEIR 三个 benchmark 排序完全一致, 不损失检索质量。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>GPU 算子层 (Triton kernel) 复杂度上升, 维护成本比 PyTorch baseline 高, 但收益是 6-8x 速度 + 80% 带宽利用率。PQ fused 打分在 compression ratio 较低时收益大 (高 ratio 时查表开销吃掉一部分节省)。Multi-query tiling 在 batch query 大时收益显著, 但 batch=1 时跟 single-query kernel 收益接近。Dimension tiling 切 128 是 H100 sweet spot, 移植到 A100/H200/Blackwell B200 时需要重新测最佳 tile size。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>H100 GPU 上达到 80.2% 峰值 HBM 带宽 (2,687 / 3,350 GB/s), 接近 FlashAttention 级别利用率。MS MARCO passages 上 71.6M docs/sec (70% 带宽利用率), 合成 uniform-length 数据 82M docs/sec。相比 loop-based scoring 220x, fused PyTorch 6.5x, torch.compile (max-autotune) 6.6-8.5x, WARP CPU engine 469x。ColBERTv2/PLAID drop-in 替换, 100K 候选打分延迟 268 ms → 1.2 ms (端到端 pipeline latency 砍掉 98%)。MS MARCO + BEIR 三个 benchmark 检索 ranking bit-exact。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Ashutosh Sharma → MIT-IBM Watson AI Lab, USA</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-29/paper_summaries_v2_2026-06-29_01.jpg" alt="Load Testing for Machine Learning Model Serving Systems at Scale" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.22013 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.22013" target="_blank">Load Testing for Machine Learning Model Serving Systems at Scale</a></h3>
+    <p style="color:#ccc;">想象你是 Meta 的「推荐系统 + 排序模型」团队负责人——Meta 每天用成千上万张 GPU 给 30 亿用户跑推荐模型, 一次 SLO (Service Level Objective, 服务等级目标, 比如 P99 延迟必须 < 200ms) 失误就是生产事故。但问题是「这台 GPU 集群能扛多少 QPS」这件事一直没科学方法——要么拍脑袋写容量计划 (capacity planning), 结果低估 = 线上炸, 高估 = 几万张 GPU 闲着浪费钱。这篇 Meta 论文提出了 Vanguard 框架, 一套工业级 ML serving 容量压力测试系统, 自适应反馈驱动搜索 (类似 binary search), 实时调负载 + 加阻尼 + 容忍尖刺 + 检测收敛, 找到「在 SLO 约束下最大可持续吞吐量」。14 个工业案例研究覆盖 4 类 ML 架构 (推荐 + 排序 + 视觉 + NLP), 实测发现 ML 特定的 workload 校准能让容量估计误差从 30% 降到 2-6%, warmup 处理单独带来 22.2% 精度提升。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">ML model serving is now the dominant consumer of GPU infrastructure at technology companies, yet capacity planning remains ad hoc. Under-provisioning causes SLO violations and production incidents; over-provisioning wastes substantial GPU capex. This paper presents Vanguard, an industrial load testing framework for ML serving systems that systematically estimates serving capacity through an adaptive, feedback-driven search strategy. The approach leverages real-time performance signals with dampening, spike tolerance, and convergence detection to efficiently identify maximum sustainable throughput under SLO constraints. We evaluate Vanguard through 14 industrial case studies across 4 ML architecture classes (recommendation, ranking, vision, NLP), demonstrating that systematic load testing substantially improves GPU resource efficiency and operational reliability. Workload calibration using recorded traffic reduces estimation error from ~30% to 2-6%, while proper warmup handling yields 22.2% accuracy improvement. The paper distills six lessons and architectural guidelines for ML load testing.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>三层 Vanguard 框架: (1) Adaptive search strategy——binary-search 风格从低负载开始, 实时观测 P99 latency + QPS + GPU 利用率, 触发「升负载」(当前 SLO 满足) 或「降负载」(当前 SLO 违反), dampening 机制避免尖刺干扰; (2) ML-specific calibration——使用录制流量 (recorded traffic) 做 calibration 而非合成负载, 估计误差从 30% 降到 2-6%; (3) Warmup handling——单独处理 warmup 阶段 (模型权重加载 + CUDA kernel 编译 + cache warmup), 避免把 warmup cost 算进稳态 latency 估计, 单独带来 22.2% 精度提升。框架 + 14 个工业案例 + 6 条教训总结。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>Adaptive search 比静态 load test 慢 (单次测试 1-4 小时), 但避免「低估 + 线上炸」的成本远大于测试时间。Recorded traffic calibration 比合成流量准, 但前期录制成本高。Warmup handling 在 serving model 频繁更新 (Meta 一天部署 100+ 次) 场景价值最大, 静态部署场景收益小。Vanguard 是 Meta 内部工具, 论文开源部分框架, 完整 production 版本需要工程团队适配自家 observability stack (Prometheus + Grafana + 自定义 GPU metrics)。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>14 个工业案例 (4 类 ML 架构) 部署 Vanguard 后: (1) 容量估计误差从 30% 降到 2-6% (recorded traffic calibration); (2) Warmup handling 单独提升精度 22.2%; (3) production incidents (SLO 违规) 在部署 Vanguard 后大幅减少; (4) GPU 利用率提升 (具体数字按模型 + 集群规模不同)。六条核心教训: ML-specific design 决定容量估计准确性 / workload calibration 关键 / warmup 单独处理 / 模型大小影响预测误差 / co-location 效应 (多模型共享 GPU) 不可忽略 / 自适应搜索 + dampening 优于静态测试。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Amr S. Abdelfattah, Nakul Tirumalai, Indu Mohanan, Xiao Li, Pengchao Wang, Dinakar Dhurjati, Eric Sung → Meta Inc., Menlo Park, USA</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-29/paper_summaries_v2_2026-06-29_02.jpg" alt="Non-Uniform L2 Cache Latency Across the Streaming Multiprocessors of an NVIDIA L40" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.22588 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.22588" target="_blank">Non-Uniform L2 Cache Latency Across the Streaming Multiprocessors of an NVIDIA L40</a></h3>
+    <p style="color:#ccc;">想象你买了一张 NVIDIA L40 GPU 跑 ML——CUDA 告诉你「我有 96 MiB L2 cache」, 大家都默认 L2 是「统一的一块内存, 命中延迟都一样」(279 cycles)。但这篇论文用 turn-serialized + SM-id-resolved (streaming multiprocessor id, GPU 内每个计算单元的唯一编号) probe 测量发现这是错的——同一块 L2 cache, 不同 SM 访问的延迟竟然差 52% (222-339 cycles), 而且这个模式在物理上是稳定的、跟 AD102 GPC (Graphics Processing Cluster, GPU 物理分区) 布局对齐。原因: L2 不是一块整的, 而是「贴着多个 memory controller 的一组 slice」, SM 通过片上网络 (Network-on-Chip, NoC) 走过去, 物理距离不同 → 延迟不同。这跟之前在 V100/A100/H100 上的发现一致, 但本文是「第一次在 Ada GPU (L40/RTX 4090) 上验证」, 而且延伸到 Blackwell (RTX 5090)。重要应用: 同一物理机器, 用这个 per-SM latency map 可以作为「设备指纹」识别——单一 user-level probe 在 92% 情况下定位自己所在的 SM, 两个相同型号 L40 在 100% 情况下被区分。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">The NVIDIA L40 exposes a 96 MiB L2 cache usually modeled as one uniform pool with single hit latency. We show this is wrong at the kernel-visible granularity: L2-hit latency depends strongly and reproducibly on which physical streaming multiprocessor (SM) issues the load. A turn-serialized, SMID-resolved probe maps hit latency across all 142 SMs in one launch; the latency is not constant near 279 cycles but spans 222-339 cycles (52% range), with per-repetition noise below 0.01 cycles. An additive model L = μ + a(sm) + b(slice) explains R² = 0.87 (0.98 with one rank-1 term), and the SM term is two-fold symmetric (two halves of 72 SMs at correlation r = 0.999) following the AD102 GPC layout. Independent access patterns agree per SM at r = 1.000. The same probe on Blackwell RTX 5090 shows generalization. Read as fingerprint, a single user-level probe identifies the SM within a device at 92%, and two physically identical L40s are separated at 100% despite near-identical mean latency. As a consequence, distributing latency-bound work by the map cuts makespan by up to 11%.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>Microbenchmark + additive model + 物理 fingerprinting: (1) Turn-serialized probe——通过汇编级 microbenchmark, 每次只让一个 SM 启动一次 L2 load, 严格 turn-serialize 避免 SM 之间的并发干扰, 用 SMID (%smid 寄存器) 解析当前 SM; (2) Additive model—— L = μ + a(sm) + b(slice), a(sm) 是 SM 特定项, b(slice) 是 slice 特定项, 总 R²=0.87; (3) GPC layout 验证——a(sm) 模式呈现 two-fold 对称性, 两个 72 SM 半区 correlation r=0.999, 跟 AD102 的 GPC 物理布局对应; (4) Cross-architecture 验证——同 probe 在 Blackwell RTX 5090 上复现, 但 per-die 模式 device-specific; (5) Fingerprint 应用——把 latency map 当作 device 指纹, 单 user-level probe 92% 定位 SM, 两个 L40 100% 区分。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>Profiling cost: 跑 probe 需要 ~1-2 小时全 SM sweep, 不是 production overhead——只在初次部署 / 异构 GPU 集群调度优化时跑。Fingerprinting 风险: 如果恶意程序用这个 probe 跟踪 GPU 设备, 可能泄露硬件 identity (虽然论文强调「read own placement, not victim」, 不泄露机密)。Latency-bound work scheduling 收益 11% makespan 改善, 对 latency-sensitive serving (LLM decode) 价值高, 对 compute-bound training 收益小。Microbenchmark 特定于 Ada/Blackwell, Volta/Turing/Ampere/Hopper 行为可能不同, 论文未覆盖。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>L2 hit latency 在 142 SM 上不是常数 279 cycles, 而是 222-339 cycles (52% 范围), per-repetition noise < 0.01 cycles (确定性强)。Additive model L = μ + a(sm) + b(slice) R²=0.87, 加 rank-1 term 提升到 0.98。两个 72 SM 半区 correlation r=0.999, 严格跟随 AD102 GPC 物理布局。Blackwell RTX 5090 上 generalize, per-die pattern device-specific。Fingerprint 应用: 单 user-level probe 92% 定位 SM, 两个相同型号 L40 在 100% 情况区分 (即使 mean latency 几乎一致)。Latency-bound work 按 map 分布 makespan 减少 11%。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Faruk Alpay, Bari Baaran → Department of Computer Engineering, Bahçeşehir University, Istanbul, Turkey</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-29/paper_summaries_v2_2026-06-29_03.jpg" alt="MOCAP: Wafer-Scale-Chip-Oriented Memory-Orchestrated Chunked Pipelining Framework for Prefill-Only LLM Inference" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.22968 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.22968" target="_blank">MOCAP: Wafer-Scale-Chip-Oriented Memory-Orchestrated Chunked Pipelining Framework for Prefill-Only LLM Inference</a></h3>
+    <p style="color:#ccc;">想象你有一台 wafer-scale chip (晶圆级芯片, 整片 12 寸晶圆当一颗芯片用, 通信带宽比传统 GPU 高 10-100 倍), 要跑「LLM prefill」(把用户 100 万 token 长输入一次性编码进模型的「预填充」阶段, 跟 decode 阶段不同, 跟「先编码后生成」分两阶段对应)——你自然想把输入切成多个 chunk, 让多个设备并行处理, 用 GPipe 那种流水线并行。但 wafer-scale chip 上有三个新坑: (1) 跨 chunk 因果依赖 (causal dependency, 后一个 chunk 要看前一个 chunk 的输出) 导致 KV-cache (key-value cache, transformer attention 用的「短期记忆」缓存) 在各流水线阶段分布严重不均, 后期阶段显存爆掉, 前期阶段闲置, 可支持的 sequence 长度被卡住; (2) 后面的 chunk 因为要 attend (注意力计算) 前面的 chunk, attention 计算量递增, 流水线各阶段 latency 不均, 慢的阶段拖累整体; (3) chunk 切分 + KV cache 重分配本身的 overhead 不可忽略。这篇清华 + 上交 + 上海 AI Lab 的论文做了 MOCAP 框架, 两招: MBKR (Memory-Balanced KV Reallocation) 在流水线各阶段之间动态重分配 KV cache, 扩展可行 sequence 长度; LBCP (Latency-Balanced Chunk Partitioning) 同时考虑 attention 计算增长 + KV 重分配 cost, 平衡各 chunk 执行时间。比 GPipe 平均 latency 降 76.4%, throughput 升 3.24x, 最大支持 sequence 长度比 Terapipe 长 1.31x。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">LLMs are increasingly used in prefill-only workloads where end-to-end latency is dominated by prefill. For long-context prefill, communication overhead grows with sequence length and quickly becomes a bottleneck on conventional GPU systems, making wafer-scale chips (WSCs) a promising substrate due to high communication bandwidth and large aggregate compute/memory capacity. Partitioning long input into chunks for finer-grained pipeline parallelism is natural, but direct application on WSCs faces challenges: (1) causal dependency across chunks causes KV cache to accumulate unevenly across pipeline stages, creating severe memory imbalance and limiting feasible sequence length; (2) later chunks require more attention computation because each depends on preceding chunks, leading to chunk-level latency imbalance. We present MOCAP, a memory-orchestrated chunked pipelining framework for prefill-only LLM inference on WSCs, introducing Memory-Balanced KV Reallocation (MBKR) to alleviate memory imbalance by redistributing KV cache across pipeline stages, and Latency-Balanced Chunk Partitioning (LBCP) to balance chunk execution cost under both attention-cost growth and KV reallocation overhead. Compared with GPipe, MOCAP achieves 76.4% lower end-to-end latency and 3.24× higher throughput, extending maximum supported sequence length by up to 1.31× compared with Terapipe.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>三层 MOCAP 框架: (1) Memory-Balanced KV Reallocation (MBKR)——监测各流水线阶段 KV cache 使用情况, 动态重分配 (redistribute) KV cache 在阶段之间, 避免单阶段显存爆掉; (2) Latency-Balanced Chunk Partitioning (LBCP)——考虑 attention 计算 cost 跟 chunk 位置关系 (后置 chunk attention 更重), 同时考虑 KV 重分配 overhead, 给每个 chunk 算最佳 size 让流水线各阶段 latency 均衡; (3) Wafer-scale chip 原生优化——利用 WSC 高通信带宽 + 大 aggregate 显存, 跨阶段 KV 重分配 cost 远低于传统 GPU 系统, MBKR 在 WSC 上有效。系统级集成: 端到端流水线框架, 直接对比 GPipe (baseline chunked pipeline) + Terapipe (SOTA WSC pipeline)。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>Wafer-scale chip 特定: MOCAP 专为 WSC 设计 (高通信带宽 + 大 aggregate 显存), 移植到传统 GPU 集群时 MBKR 重分配 cost 可能超过收益, 收益变成负向。KV 重分配 frequency 跟 sequence 长度 + chunk 数耦合, 长 context (1M token) 时重分配 overhead 显著, 需要 LBCP 精细调度。Chunk size vs KV 重分配 trade-off: chunk 切得小, 流水线并行度高, 但 KV 重分配次数多; chunk 切得大, 重分配少, 但单 chunk 计算变重。WSC 目前商用化仅 Cerebras (CS-3) + Tesla Dojo (已停产), 量产成本高, 论文结果主要在模拟器或 Cerebras CS-3 上验证, 直接落地 NVIDIA Blackwell NVL72 / NVL576 等「GPU 集群式 wafer-scale」还需要工程化适配。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>对比 GPipe (baseline chunked pipeline): 端到端 latency 降低 76.4% (平均), throughput 提升 3.24x。对比 Terapipe (SOTA WSC pipeline): 最大支持 sequence 长度扩展 1.31x。LBCP 单独提升 chunk-level latency 均衡性 2-3x (具体数字取决于 sequence 长度 + chunk 数)。MBKR 单独提升显存利用率, 避免「单阶段显存瓶颈」限制 sequence 长度。两个组件协同效果 > 任一单独。WSC 实测 vs 模拟器: Cerebras CS-3 上端到端实测, 模拟器验证扩展性。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Zichuan Wang, Huizheng Wang, Yuheng Xiao, Haonan Zuo, Taiquan Wei, Jinyi Deng, Chao Li, Yang Hu, Shouyi Yin → Tsinghua University + Shanghai Jiao Tong University + Shanghai AI Laboratory, China</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-29/paper_summaries_v2_2026-06-29_04.jpg" alt="When Is a Columnar Scan Bandwidth-Bound? A Decode-Throughput Law and Its Cross-Hardware Validation" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.22423 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.22423" target="_blank">When Is a Columnar Scan Bandwidth-Bound? A Decode-Throughput Law and Its Cross-Hardware Validation</a></h3>
+    <p style="color:#ccc;">想象你做数据分析, 每天扫万亿行的列存表 (columnar table, 同一列的数据连续存在一起, 适合聚合/过滤, 跟「行存」相反)。理想情况下, 你的扫描 (scan) 应该完全受内存带宽限制——roofline floor 是「读 N 字节数据最快 T = N/β 纳秒」(β 是内存带宽), 解码 + 过滤 + 聚合都是零成本。但现实很惨: 真实 kernel 经常是「计算瓶颈」(compute-bound), 带宽闲置 50% 以上。问题是「到底在什么条件下扫描才是 bandwidth-bound」——业界缺一个预测性的答案。这篇印度 samyama.ai 的论文给了一个简洁的法则: 解码器 value throughput Tdec (每秒解码多少个 value) 本质上跟 bit-width b 无关——它由「解码布局/策略」决定, 而不是「每个 value 占多少位」。所以实际带宽利用率 f = min(1, Tdec × b / (8 × β)), 在 b = 8β/Tdec 处「decode-to-bandwidth ridge」出现——b 大于这个值带宽饱和, b 小于这个值 decode free。这个 one-parameter 法则在 x86/AVX2 + Apple M4/NEON 两台差异巨大的机器上 median error 0.027 / 0.003 准确预测, 还能 reproduce FastLanes 那个「3-bit 解码免费」现象。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">A columnar scan that decompresses, filters, and aggregates should be limited only by memory bandwidth (the roofline floor T ≥ BytesRead/β), yet real kernels are often compute-bound and leave bandwidth idle. We give a predictive answer to when a scan is bandwidth-bound. Across encodings, predicate selectivities, and two very different machines, we find that a decoder&#x27;s value throughput T_dec (values decoded per second) is essentially independent of bit-width b: it is set by the decode layout/strategy, not by how many bits each value occupies. Consequently the achieved bandwidth fraction obeys a one-parameter law f = min(1, T_dec × b / (8β)), with the compute-to-bandwidth ridge at b = 8β/T_dec. Fitting one T_dec per strategy reproduces measured bandwidth fractions with median error 0.027 on x86/AVX2 and 0.003 on a held-out Apple M4/NEON machine, and the ridge b shifts correctly with each machine&#x27;s bandwidth. Inserting FastLanes reported decode throughput reproduces its decode-is-free-at-three-bits headline as the large-T_dec limit, unifying our decoder and hand-tuned production code in one curve.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>理论 + 微基准 + cross-hardware 验证: (1) One-parameter law 推导——f = min(1, Tdec × b / (8β)), 来自 decoder throughput 与 bit-width 无关的 observation; (2) Microbenchmark 测量——为每种 decode strategy 测 Tdec (value/sec), 用 4-6 种不同 encoding + 多种 predicate selectivity; (3) Cross-hardware 验证——x86/AVX2 (Intel/AMD 服务器) + Apple M4/NEON (ARM laptop), 验证 law 在完全不同的 ISA + 内存子系统中成立; (4) Production code 验证——把 FastLanes 报告的 Tdec 代入 law, reproduce「3-bit 解码免费」observation, 证明 law 统一「我们的 decoder」和「hand-tuned production code」; (5) 两个 crossover 现象——branch-free predicate 在 mid-selectivity 区间击败 branchy (misprediction parabola), zone-map skipping 是 clustering-gated 而不是 selectivity-gated。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>Portable C decoder 速度 ~2 values/cycle, 远低于 hand-tuned SOTA——这是 baseline + model, 不是「更快 kernel」。One-parameter law 假设 decoder throughput 与 bit-width 无关——在极端情况 (例如 SIMD lane 数固定时 bit-width 大幅变化) 可能偏差, 论文实测覆盖范围足够 wide 验证假设成立。Law 适用 columnar scan + 解码 + 过滤 + 聚合——不直接覆盖其他 workload (join / aggregation alone / hash table), 适用范围有界。Cross-hardware 验证在 x86 AVX2 + Apple M4 NEON 两台——其他架构 (ARM Graviton / RISC-V / GPU) 论文未覆盖, 推测 generalize 但需要新测量。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>One-parameter law f = min(1, Tdec × b / (8β)) 在 x86/AVX2 上 median error 0.027, Apple M4/NEON 上 0.003。Decode-to-bandwidth ridge b = 8β/Tdec 跟两台机器实测吻合。FastLanes「3-bit decode free」现象 reproduce——证明 law 统一 portable decoder + hand-tuned production code。Branch-free predicate evaluation 在 mid-selectivity band 击败 branchy, 符合 (1-s) misprediction parabola 预测。Zone-map skipping 是 clustering-gated (data clustering 决定是否跳过) 而非 selectivity-gated (不是 selectivity 决定), 修正业界 folklore。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Madhulatha Mandarapu, Sandeep Kunkunuru → VaidhyaMegha Private Limited, India (samyama.ai)</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer>
+  <p>Generated by Hermes Agent · AI Infra Daily Report</p>
+  <p>https://github.com/ZenHatesCoding/ai-infra-reports</p>
+  <p>2026-06-29 07:13</p>
+</footer>
+</div>
+</body>
+</html>
