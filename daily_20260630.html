@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Infra 洞察日报 · 2026年6月30日 · 周二</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #0d1117; color: #e6edf3; padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; }
+header { padding: 24px 0; border-bottom: 1px solid #21262d; margin-bottom: 24px; }
+header h1 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+header .sub { color: #8b949e; font-size: 14px; }
+.stats { display: flex; gap: 24px; font-size: 14px; color: #8b949e; margin-top: 16px; }
+.stat { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 12px 18px; }
+.stat span { color: #58a6ff; font-weight: 700; font-size: 20px; margin-right: 4px; }
+.stat.biz span { color: #ffd43b; }
+.stat.paper span { color: #79c0ff; }
+h2 { font-size: 16px; color: #e6edf3; margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid #21262d; }
+.card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 0; margin-bottom: 20px; overflow: hidden; }
+.card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: #21262d; }
+.card-body { padding: 16px 20px 18px; }
+.card-meta { font-size: 12px; color: #8b949e; margin-bottom: 8px; }
+.card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; line-height: 1.4; }
+.card h3 a { color: #58a6ff; text-decoration: none; }
+.card h3 a:hover { text-decoration: underline; }
+.card p { font-size: 14px; color: #c9d1d9; line-height: 1.6; margin-bottom: 8px; }
+.card .source { color: #6e7681; font-size: 12px; margin-top: 4px; }
+.tech-block { background: #0d1117; border-radius: 8px; padding: 12px 14px; margin-top: 10px; font-size: 13px; line-height: 1.7; }
+.tech-block .row { margin-bottom: 4px; }
+.tech-block .row:last-child { margin-bottom: 0; }
+.tech { color: #79c0ff; }
+.tradeoff { color: #d2a8ff; }
+.highlight { color: #7ee787; }
+.author { color: #ffa657; }
+footer { text-align: center; padding: 32px 0; color: #6e7681; font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>🏗️ AI Infra 洞察日报</h1>
+  <div class="sub">2026年6月30日 · 周二 · 覆盖芯片 + 集群 + 光模块 + arXiv Infra 论文</div>
+  <div class="stats">
+    <div class="stat biz">🏢 <span>6</span> 条 AI Infra 公司动态</div>
+    <div class="stat paper">📄 <span>5</span> 篇 arXiv Infra 论文精读</div>
+  </div>
+</header>
+
+<section>
+<h2>🏢 AI Infra 商业新闻</h2>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-30/news_items_v2_2026-06-30_00.jpg" alt="Claude Meets Blackwell Ultra: Anthropic's Models Now Run on NVIDIA GB300 in Azure" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[NVIDIA 官方] 1级信源 · cn</div>
+    <h3><a href="https://blogs.nvidia.com/blog/anthropic-nvidia-gb300-blackwell-ultra-microsoft-azure/" target="_blank">Claude Meets Blackwell Ultra: Anthropic's Models Now Run on NVIDIA GB300 in Azure</a></h3>
+    <p style="color:#ccc;">NVIDIA 6/29 宣布, Anthropic 的 Claude 模型 (Opus 4 / Sonnet 4 系列) 已在 Microsoft Foundry / Azure 上基于 NVIDIA GB300 Blackwell Ultra GPU 全面上线 (GA), 面向 Azure 原生企业部署 agentic AI。底层硬件采用 GB300 NVL72 rack 系统 + NVIDIA Quantum-X800 InfiniBand 网络, 主打降低每 token 推理 TCO。同时配套发布 NVIDIA Secure Agent Workspace 参考设计, 在身份、网络访问、凭据与运行时策略受控的治理环境中运行自主 Agent, 是 2025-11 Microsoft + NVIDIA + Anthropic 三方战略合作的落地。</p><p style="color:#8b949e;font-size:13px;">💡 Anthropic Claude 跑 NVIDIA Blackwell Ultra + Azure Foundry = 全球前 3 大基础模型供应商 (OpenAI/Anthropic/Google) 都已在 GB300 / GB200 上对齐, NVIDIA 在 enterprise 推理上层实现「winner-takes-all」, 同时 Azure 绑 Microsoft Foundry 形成 'agent + GPU + cloud' 三位一体。竞争对手 AMD MI400 / Broadcom Tomahawk 5 短期拿不到 enterprise agent 推理主战场, AWS Trainium / Google TPU 仍只能在自己生态内闭环。</p>
+    <div class="source">来源：NVIDIA 官方</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-30/news_items_v2_2026-06-30_01.jpg" alt="Firefly Aerospace Operates NVIDIA Jetson in Lunar Orbit for the First Time" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[NVIDIA 官方] 1级信源 · cn</div>
+    <h3><a href="https://blogs.nvidia.com/blog/firefly-aerospace-nvidia-jetson-lunar-orbit/" target="_blank">Firefly Aerospace Operates NVIDIA Jetson in Lunar Orbit for the First Time</a></h3>
+    <p style="color:#ccc;">NVIDIA 6/29 宣布, Firefly Aerospace 的 Blue Ghost Mission 2 (计划 2026 年末发射) 将首次把 NVIDIA Jetson 边缘 AI 平台送入月球轨道, 运行 Ocula 月球成像服务。区别于 Mission 1 回传近 120GB 原始数据, Jetson 将在轨实时运行 AI 算法, 只回传高价值洞察。任务期间 Elytra 轨道器将持续运行 Jetson 处理链 5 年, 支持 NASA 资助、加州伯克利主导的远侧月面射电望远镜研究 (探测宇宙黑暗时代信号)。Firefly 是 NVIDIA Inception 成员, 总部位于德州奥斯汀。</p><p style="color:#8b949e;font-size:13px;">💡 Jetson 上月球不是营销动作——Mission 2 把 5 年 AI 处理链搬到月球轨道实时跑, 是边缘 AI (edge inference) 极端案例: 没有云、没有常维护、断网、单板要跑 5 年。这反证 NVIDIA Jetson (Orin / Thor) 在「无法连云的远程场景」里是事实标准, 直接卡死 Qualcomm IIAB + Apple Neural Engine + 国产 NPU 在 high-reliability 边缘。AI Infra 行业因此开始重估「edge AI compute」的稳定供给合约。</p>
+    <div class="source">来源：NVIDIA 官方</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-30/news_items_v2_2026-06-30_04.jpg" alt="CoreWeave's European Expansion: Powering Tomorrow's AI Innovations" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[CoreWeave 官方] 1级信源 · cn</div>
+    <h3><a href="https://www.coreweave.com/blog/coreweaves-european-expansion-lets-power-tomorrows-ai-innovations" target="_blank">CoreWeave's European Expansion: Powering Tomorrow's AI Innovations</a></h3>
+    <p style="color:#ccc;">CoreWeave 6/29 17:39 (GMT) 发布欧洲扩张计划, 目标把 neocloud 级别的 GPU 算力从北美延伸到欧洲企业客户 (GDPR / EU AI Act 合规的本地推理需求)。该计划接续 6 月初 CoreWeave 已宣布的 15+ 亿美元欧洲基础设施投资及与 Nvidia / Dell / IBM 的欧洲 HPC 合作, 主打在欧洲本土部署 NVIDIA Blackwell GPU + Quantum-2 InfiniBand 网络, 提供 sovereign AI cloud 服务, 主战场是金融、医药、汽车、媒体四类欧洲 enterprise agent 工作负载。</p><p style="color:#8b949e;font-size:13px;">💡 CoreWeave 把欧洲从『neocloud 试验场』升到『Sovereign AI 第二战场』, 直接对标 6 月初 AWS Frankfurt 扩建 + Microsoft 巴黎 AI Region + Google Belgium 扩张。三大 hyperscaler + CoreWeave 同时重压欧洲, 核心驱动是 EU AI Act 8 月正式生效后『非欧盟主体处理欧盟数据』的法律风险, 欧洲企业客户在主权 / 延迟 / 成本三方面都需要本地 neocloud。CoreWeave 没自建数据中心, 这一波扩张很大程度是云转售 + 客户上层 agent runtime, 是 neocloud 商业模式的关键 stress test。</p>
+    <div class="source">来源：CoreWeave 官方</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-30/news_items_v2_2026-06-30_02.jpg" alt="Samsung, SK to Invest 800 Trillion Won in Four Semiconductor Fabs in Southwest Korea" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=11770" target="_blank">Samsung, SK to Invest 800 Trillion Won in Four Semiconductor Fabs in Southwest Korea</a></h3>
+    <p style="color:#ccc;">韩国政府 6/29 在龙山前总统府召开『Korea 三大飞跃工程』国家说明会, 由李在明总统亲自主持, 宣布三星电子与 SK 海力士将合计投资 800 万亿韩元 (约 $518B) 在湖南地区 (西南部, 历史上半导体投资很少) 建设 4 座半导体晶圆厂; 另投入 81 万亿韩元 ($52B) 把忠清地区打造成半导体封装枢纽, 目标 5 年内把韩国 DRAM 产能翻倍。三星同步建设平泽 P5 / P6 厂; 政府将 SK 海力士龙仁投资时程提前 12 年, 龙仁国家产业园开发时程缩短 7 年。配套支援: 电力 / 水资源 / 人力生态集中。</p><p style="color:#8b949e;font-size:13px;">💡 这是后 HBM 时代全球 memory 产能最大的国家级动员——目标 5 年 DRAM 产能翻倍 + HBM 包装枢纽, 实质是响应 NVIDIA Blackwell / AMD MI400 都对 HBM4 容量需求的『memory wall』前置投资。配合 SK Group 当天同步公布的 2100 万亿韩元 (~$1.4T) 中长期路线图 (含 1100 万亿半导体 + 1000 万亿 AI 数据中心), 韩国从『memory fab country』升级成『AI infra backbone』, Micron / 长鑫存储 / Western Digital 在 HBM4 阶段被结构性挤压。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-30/news_items_v2_2026-06-30_03.jpg" alt="Avaco Highlights Low-Damage Sputtering and TGV Businesses" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=11713" target="_blank">Avaco Highlights Low-Damage Sputtering and TGV Businesses</a></h3>
+    <p style="color:#ccc;">Avaco 6/26 召开投资者关系说明会, 重点展示低损溅射 (Low-Damage Sputtering) 与玻璃通孔 TGV (Through-Glass Via) 两大新增长业务进展及下半年战略。TGV 是 AI 光通信 CPO、玻璃基板封装核心工艺, 公司同步披露全球扩张计划、美国市场策略、主要合约机会及业务组合升级路径。Avaco 表示新业务近半年市场关注度急升, 客户对接持续推进, 将继续透过 IR 活动强化市场沟通; 以既有显示设备业务为基础, 跨足半导体与 TGV 玻璃通孔市场。</p><p style="color:#8b949e;font-size:13px;">💡 Avaco 是小型厂商, 但其低损溅射 + TGV 工艺对应了 CPO + 玻璃基板 (Glass Bridge / Glass Core) 封装这两条 6 月 NVIDIA / Coherent / Corning / Lumentum 都在抢的下一代光器件路径。Avaco 当前股价已经从 1 月低位反弹 240%, 公司主动上 IR 说明会的姿态罕见——通常韩国小厂 IR 是被动响应, 这次主动开会是『技术拐点 + 需求拐点重合』的信号, AI infra 一线玩家可以参考作为『封装 / 光器件上游瓶颈』的领先指标。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-30/news_items_v2_2026-06-30_05.jpg" alt="South Korean tech giants commit over $550B to ease 'RAMageddon'" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[techcrunch.com] 3级信源 · cn</div>
+    <h3><a href="https://techcrunch.com/2026/06/29/south-korean-tech-giants-commit-over-550b-to-ease-ramageddon/" target="_blank">South Korean tech giants commit over $550B to ease 'RAMageddon'</a></h3>
+    <p style="color:#ccc;">TechCrunch 6/29 综述, 韩国『Korea 三大飞跃工程』国家投资计划横跨半导体 + AI 数据中心 + 物理 AI: memory 端 Samsung + SK hynix 共 $518B 投 4 座新 memory fab (西南部) + $52B 投 HBM 包装枢纽 (忠清); AI 数据中心端 SK / GS / Naver 三家韩科技 + 能源巨头到 2035 年共 $356B 投资 15GW AI 数据中心容量, 由 SK Telecom 主导 countrywide buildout。当天 SK Group 同步公布 2,100 万亿韩元 (~$1.4T) 中长期投资路线图 (含 1,100 万亿半导体 + 1,000 万亿 AI 数据中心)。</p><p style="color:#8b949e;font-size:13px;">💡 5500 亿美元 + 15GW + 5 年时间表——是迄今全球 AI Infra 投资规模最大的国家级整合。直接受益方是 NVIDIA (Blackwell + Rubin 长期订单)、SK hynix (HBM4 长协)、SK Telecom (数据中心 REITs), 风险方是 Micron / 长鑫 (HBM 三足被结构性抬升)。但『需求拐点 vs 政治意愿』的时间错配是深层风险——fab 4 年建设期可能恰好赶上 AI inference 价格塌缩 + memory oversupply, SK Group $1.4T 路线图能否兑现取决于 HBM4 价格是否撑得住。</p>
+    <div class="source">来源：techcrunch.com</div>
+  </div>
+</div>
+</section>
+
+<section>
+<h2>📄 arXiv Infra 论文深度解读</h2>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-30/paper_summaries_v2_2026-06-30_00.jpg" alt="DiStash: A Disaggregated Multi-Stash Transactional Key-Value Store" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.27979 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.27979" target="_blank">DiStash: A Disaggregated Multi-Stash Transactional Key-Value Store</a></h3>
+    <p style="color:#ccc;">想象一下你的数据中心就像一个大型仓库, 但仓库里同时堆着好几种「储物柜」——有的柜子是特别快但断电就丢东西的内存 (DRAM, 调饮台), 有的是没那么快但稳的固态硬盘 SSD (储物间), 还有慢但最便宜的机械硬盘 HDD (储藏室底)。AI 训练和推理时, 模型权重 (那种几十 GB 到几百 GB 的「配方本」) 一般同时放在几个柜子里, 让不同柜子做不同的事——快柜子用来频繁读, 慢柜子用来存档。这篇来自 USC + eBay 的论文解决一个非常现实的问题: 同一个数据 (比如某个 key-value 对) 在三个柜子里各存一份时, 假如今天改了 DRAM 那一份但 SSD 那份还没同步, 下次程序读 SSD 就读到老数据了——这是灾难性 bug。DiStash 这套系统干的事就是: 让一个事务 (transaction) 同时改三个柜子里的同一份数据, 保证要么全改要么全不改, 就好像柜台收银系统统一收银三个仓库的账一样。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">现代数据中心通常包含异构存储层 (DRAM/SSD/HDD/NVM), 应用程序在不同存储介质上复制或迁移数据以优化访问延迟与成本, 但使用多个独立事务性存储管理器时容易出现跨池不一致的竞态条件。本文提出 DiStash, 一个跨多种 stash 类型池的去耦合 (disaggregated) 事务 KV 存储, 通过扩展 FoundationDB 实现单事务跨多池读写同一 key-value, 支持每池独立的复制因子、ephemeral / durable 操作模式以及副本包含 / 互斥关系。在 eBay 生产负载和 microbenchmark 上量化设计权衡。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>DiStash 在 FoundationDB 之上构建, 通过对每种 stash 类型的读写操作进行单事务包装, 让原本相互独立的多个存储池具备强一致性快照语义。系统支持每池配置独立的复制因子 (以容忍 stash 故障), 并允许 stash 类型标记为「ephemeral」 (驱逐式缓存) 或「durable」 (持久化存储), 副本关系可指定为「inclusive」 (冗余复制) 或「exclusive」 (分层 tiering)。DiStash 可在数据中心内部或跨数据中心部署, 协调者使用 FoundationDB 的 watch + range read 机制做两阶段提交。每条记录 (key-value) 的每一个副本都携带版本戳, 事务提交时按 commit-order 一次性跨池写入, 任一池失败时整体回滚。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>一致性是以跨池事务延迟为代价的——任何写都需要在多个 stash 上同步完成, 即使某池是延迟较高的 HDD; 单池吞吐因此会低于独立 KV store, 但换来跨池数据强一致。开发者也需要重新设计数据 schema, 让 stash 池的角色 (ephemeral vs durable) 在应用层显式声明, 而不再使用 POSIX 文件系统的隐式假设。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 eBay 生产图查询负载上, DiStash 三池配置 (DRAM ephemeral + SSD + HDD durable) 相比基线 (FoundationDB 单独管理 HDD) 在含跨池读场景下尾延迟降低 35-52%, 跨池写入吞吐约 1.8M ops/s (单池), 弹性扩展到 8 节点时延迟基本持平, 跨池事务隔离测试 100% 通过 (无 stale read)。代码已开源: https://github.com/ebay-USC/DiStash。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Yiming Gao, Hieu Nguyen, Jun Li, Shahram Ghandeharizadeh → University of Southern California (USC); eBay Inc.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-30/paper_summaries_v2_2026-06-30_01.jpg" alt="Cluster, Route, Escalate: A Cascaded Framework for Cost-Aware LLM Serving" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.27457 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.27457" target="_blank">Cluster, Route, Escalate: A Cascaded Framework for Cost-Aware LLM Serving</a></h3>
+    <p style="color:#ccc;">假如你运营一家「问答餐厅」, 客人的问题按难易分两类: 简单的「今天天气怎么样」和复杂的「帮我写个商业计划书」。常见做法是只雇一种水平的厨师——要么招一群顶尖大厨 (每次问答都贵, 但任何问题都答好), 要么只招便宜的快餐员 (便宜但答不好难的)。这两种都浪费。这篇由都柏林三一学院 ADAPT Centre + 华为研究院合作的工作给出一个巧妙解法: 「两级流水线」。第一级先把客人问题按类型聚类 (用 K-means 把同一类问题归到一起), 每一类问题路由到「性价比最高的模型」 (比如简单类路由到小模型)。第二级做「质检升级」: 假如前面那个便宜模型回答质量不行 (用 QE quality estimator 评估), 自动把这个问题升级给强模型重新答。这样 95% 简单问题只用便宜模型就解决了, 5% 难题才找大模型。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">生产环境中 LLM 部署常被迫在准确率与成本之间二选一, 单模型策略要么过投资要么欠投资。本文提出一种两阶段级联框架: Stage 1 用 K-means 把查询聚类并按 cost-aware 路由分配到性价比最高的模型; Stage 2 引入 quality estimator (QE) 级联, 对低质响应升级到强模型, 在显式 TPOT 成本预算下仅用任务正确性标签, 实现模型池变更时无需手动调参。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>Stage 1 离线用一个可解释的超参 (cost budget C) 对历史 query 做 K-means 聚类, 学习每个 cluster 的 cost-aware routing score = Error + lambda / Cost, 在线服务时新 query 命中某 cluster 就路由到该 cluster 的最优模型 (兼顾响应延迟与错误率)。Stage 2 训练一个轻量 QE 分类器, 对 Stage 1 输出做后验评分; 低于阈值的响应连同 query 一并 escalate 到下一个强模型; QE 仅依赖 query-response pair 而非中间 token logprob, 因此可适配任何后端模型池。所有路由与 escalation 决策都写入 OpenTelemetry-style trace, 配合离线调参闭环。Cascade 终止条件由 cluster 级成本预算与全局 SLO 共同控制, 即每 token TPOT (Time Per Output Token) 上限。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>相比单模型部署显著省成本, 但代价是 QE 分类器本身需额外的推理开销 + Stage 1 K-means 聚类对长尾领域分布漂移敏感; 当 query 类型分布变化快 (如热点新闻), K-means 标签过期, 路由命中率下降; 同时 escalation 多跳会引入额外串行延迟, 对 latency-critical 场景不友好。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在标准 benchmark 上 (MMLU + GSM8K + HumanEval 子集), 级联方案保留最强模型 97-99% 的准确率, 同时 TPOT 降低约 35-55% (取决于简单 query 比例); 在混合负载中, 仅有 12-22% 的 query 被升级, 显著削减总推理成本; 离线路由超参对 15% query 分布漂移鲁棒, 无需重启服务。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Yasmin Moslem, Magdalena Kacmajor, Vasudevan Nedumpozhimana, Ammar Abbas, Solmaz Panahi, David Lynch, Zhuangzhuang Nie, Alexandros Agapitos, Aleksandar Milenovic, Hongmeng Song, Yucheng Shi, Yue Pan, Patricia Buffini, John D. Kelleher → ADAPT Centre, Trinity College Dublin; Huawei Research</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-30/paper_summaries_v2_2026-06-30_02.jpg" alt="Cache-Resident LLM Inference in GB-Scale Last-Level Caches" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.25353 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.25353" target="_blank">Cache-Resident LLM Inference in GB-Scale Last-Level Caches</a></h3>
+    <p style="color:#ccc;">想象一个超大的「菜单本」 (一个大模型的「参数」, 比如 70B 大小) 一般放在厨房仓库 (显存或主存) 里, 点单时调饮师 (CPU) 要跑到仓库把菜单本搬到调饮台 (缓存) 才能用。问题是仓库特别远, 取一趟累死了。这篇来自沙特 KAUST + 香港科技大学的工作赶上了一个新机会——最近 CPU 上堆叠出「3D 大缓存」, 一个 CPU 旁边挂的最后一层缓存 (Last-Level Cache, LLC) 可以做到 GB 级 (几个 G), 跟 GPU 显存差不多大。他们的核心思路是: 把模型权重直接搬到 LLC 里常驻 (cache-resident), 让每一层推理的算子都从 LLC 拿权重, 而「对话上下文」(KV-cache) 单独放到主存 (RAM) 里, 两边不互相挤占。这样推理时算子不用等仓库的大货车运菜单了, 算得更顺。但挑战是: 缓存太小放不下整个模型, 所以要分块轮转, 同时还要小心算子边界同步问题。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">LLM 推理瓶颈正从算术转向 memory hierarchy 上的数据移动。随着 3D 堆叠缓存技术使现代服务器 CPU 拥有 GB 级 last-level cache (LLC), 本文提出 cache-resident 执行模型, 将权重常驻算子与 attention / KV-cache 管理分离到专属资源域, 在 hierarchical-memory cluster 上实现跨节点权重共享的 LLM 推理调度。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>该工作设计 cache-resident execution model, 三层解耦: (1) weight-centric operators (矩阵乘 / 线性层) 常驻 LLC, 复用片上 bandwidth; (2) attention + KV-cache 单独放到主存, 避免挤占 LLC 容量; (3) 算子边界同步用显式 dependency graph 表示而非隐式 tensor residency。运行时调度器对权重 fragment 做动态 pinned-to-LLC, 配合 inference-aware prefetch; 同时支持 hierarchical-memory clustered 系统——节点 0 持有 layer 0-31 权重, 节点 1 持有 layer 32-63, KV-cache 在节点间 RDMA 同步, 推理时按 micro-batch 流水线调度。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>优势在于把 GPU 显存需求降到主存 + 层级缓存级, 让 CPU-only 服务器也能跑 7B-13B 模型。代价是对 attention-heavy 场景 (长上下文) KV-cache 跨节点 RDMA 同步可能成为瓶颈; cache 容量仍小于 GPU 显存, 单 batch size 受限; 同时深度流水线会引入 in-flight request 增多, 在并发用户数上升时 TTFT 反而上升, 需调 micro-batch 与 layer-pipeline 深度。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 7B-13B 参数 LLM 推理上, cache-resident 模式相比传统 CPU 推理 (权重在主存) 单 token decode 延迟降低 2.1-3.4 倍, 吞吐提升 1.8-2.5 倍; 相比 NVIDIA A100 GPU 推理, 在 batch ≤ 8 时性能打平, batch 更高时显存容量成为瓶颈。在双 socket 一致性测试中, cache coherence 失效频率低于 0.5%, 验证 LLC-resident 是生产可用方案。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Wanning Zhang, Tongzhou Gu, Marco Canini, Ceyu Xu, Jian Weng → King Abdullah University of Science and Technology (KAUST), Saudi Arabia; The Hong Kong University of Science and Technology (HKUST), Hong Kong SAR</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-30/paper_summaries_v2_2026-06-30_03.jpg" alt="Above the Inner Loop: Exceeding Accelerate at LLM Prefill GEMM on the M1 AMX" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.25426 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.25426" target="_blank">Above the Inner Loop: Exceeding Accelerate at LLM Prefill GEMM on the M1 AMX</a></h3>
+    <p style="color:#ccc;">想象一台装了 macOS 的电脑, 里面有一颗「矩阵乘法专属处理器」叫 AMX (Apple Matrix Extension), 长得像迷你 GPU, 专门用来做大矩阵相乘 (比如 LLM 推理时「预填充」阶段要把上千个 token 的 embedding 一波算完)。问题是, 系统自带的「Accelerate」框架只在 AMX 上跑了「通用配置」, 没有针对 LLM 的预填充场景做优化。这篇来自 Georgia Tech 的本科论文 (Deyvik Bhan) 仔细研究了「为什么手写 kernel 比 Accelerate 快」——答案是: 内层循环已经到硬件极限了, 没有提速空间。但有两个「调度层面」的杠杆是 Accelerate 没用上的: (1) 多线程 panel 让 M1 的第二个 AMX block 不再闲着; (2) 模型加载时一次性把权重打包好, 每次推理时不用再重新打包。把这俩组合起来, 在 12 种 LLM 预填充矩阵形状下都跑赢 Accelerate, 端到端让 llama.cpp 的预填充吞吐从 291 token/s 涨到 420 token/s (1.44 倍加速)。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">On Apple Silicon the fp32 GEMMs that dominate LLM prefill are dispatched by Accelerate to a matrix coprocessor (AMX) on the M1-M3. We ask where a hand-written kernel&#x27;s throughput over Accelerate comes from on the M1 AMX, and reach a structural conclusion: not a faster inner loop. The gain comes from two deployment-level levers Accelerate underuses: fine multi-thread panels filling the M1&#x27;s second on-chip AMX block, and pre-packing the constant weight at load. A bit-exact direct-AMX kernel using both is the fastest bit-exact fp32 GEMM path we find on the M1.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>作者以 M1 AMX 为目标架构, 用 microbenchmark 测得 AMX 内层 FMA32 流水在无 operand load 冲突时达到 load-issue bound (每秒 610-680 GFLOPS, 已是硬件上限)。然后设计两个调度层优化: (a) fine-panel multi-threading——把 K 维度切细, 让第二个 on-chip AMX block 不再空闲, 主要在 K ≥ N 的 shape 占优; (b) weight pre-packing at model load——常量权重在模型加载时一次性打包成 AMX 友好的格式, 之后每次推理不需要重新打包, 主要在 N > K 的 shape 占优。两层叠加形成的 direct-AMX kernel 使用 Goto-BLIS 风格的三级 cache blocking + 显式 B-panel 打包 + 四路 ILP 跨 4 个 AMX FMA32 bank。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>优势在于 bit-exact (结果与 Accelerate 完全一致) 且对 12 种 LLM 预填充矩阵形状 (从 GPT-2 到 Llama-7B 规模) 都稳定提升, 可直接 drop-in 替换 llama.cpp 的 cblas_sgemm 调用。代价是 kernel 仅针对 fp32 (非 fp16/bf16) 优化, 且 hand-written code 维护成本高, 苹果每代 M-series 升级 (M2/M3/M4) 都需重新参数化 panel 大小; 同时 column-panel width 调错会损失近 2x 吞吐, 需要 per-shape 自动调参。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 12 种 LLM 预填充 GEMM shape 上, 该 bit-exact AMX kernel 比 Accelerate 最快的 BNNS Graph path 平均快 1.17x (最高 shape 快 1.58x), 相比 cblas_sgemm 平均快 1.50-2.0x; 集成到 llama.cpp 替换 cblas_sgemm 后, 128-token prefill 阶段的吞吐从 291 token/s 升到 420 token/s (1.44x, bit-identical), 单核 M1 上 Llama-7B 规模推理可达 420 tok/s。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Deyvik Bhan → Georgia Institute of Technology</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-06-30/paper_summaries_v2_2026-06-30_04.jpg" alt="A Natively Blocked, Device-Resident Algebraic Multigrid GPU Path in PETSc" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.24748 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.24748" target="_blank">A Natively Blocked, Device-Resident Algebraic Multigrid GPU Path in PETSc</a></h3>
+    <p style="color:#ccc;">假如你做天气预报这种科学模拟 (有限元 + 偏微分方程), 计算核心是一个巨大的稀疏矩阵 (大部分格子都是零, 就像一个几乎空白的 Excel 表格)。这个矩阵有两种特殊结构: 格子里的非零数其实是密集的小方块 (比如 3x3 或 6x6 的密集小矩阵), 而不是单个数字。问题是 NVIDIA 官方的 cuSPARSE 库只支持「方块大小相同」的稀疏存储, 但科学家用的 AMG (代数多重网格) 算法需要细网格用 3x3 方块、粗网格用 6x6 方块——两种尺寸并存。这篇来自劳伦斯伯克利国家实验室 (LBNL) 的工作给 PETSc (科学计算界的「瑞士军刀」框架) 加了一种新的「方块存储格式」 (MATBAIJKOKKOS), 让两种方块尺寸天然混存。所有矩阵计算都跑在 GPU 上 (device-resident), 不反复搬运数据。在 A100 GPU 上跑 3D 弹性力学问题, 64 个 GPU 时粗网格矩阵重组速度提升 2.27 倍, V 循环求解提升 1.24 倍。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">Smoothed-aggregation AMG 是弹性力学等向量 PDE 离散系统主流求解器, 但其 GPU 实现一直用 scalar 稀疏矩阵格式, 浪费了向量 PDE 中天然存在的块结构。本文给 PETSc 增加 Kokkos-backed blocked matrix type (MATBAIJKOKKOS), 支持 rectangular-block kernels, 让 Galerkin 粗算子重组 (PtAP) 与 V-cycle 全程 GPU-resident 块格式操作, 无需展开到 scalar AIJ。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>核心数据结构是 MATBAIJKOKKOS——一个 PETSc 原生、Kokkos-backed 的 blocked matrix 类型, 支持矩形方块 (rows × cols, 即 bs_r × bs_c)。作者新增 MatCOOUseBlockIndices 路径, 让 COO 组装天然支持 dense bsr × bsc 块。算法侧, smoothed-aggregation AMG 的每一步 (prolongator 构建 + 粗化 + Galerkin 三重积 + V-cycle 平滑) 都直接在 block 格式上操作——没有展开到 scalar AIJ 的中间步骤。Galerkin 粗算子计算 (PtAP) 用 native blocked off-process prolongator gather 通过专属的 PetscSF 做跨进程块聚合, V-cycle 保持 device-resident block 格式。Kokkos 后端让同一份代码跑 NVIDIA / AMD / Intel GPU。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>优势是避开 scalar/AIJ 格式反复重建的开销, 把 GPU 内存占用压到 cuSPARSE 装不下的规模 (128^3 网格, 6.3M 未知量 8 GPU 上 cuSPARSE 已 OOM, blocked 格式能装)。代价是 rectangular-block 路径实现复杂度高于标准 blocked CSR, PETSc 内部多处需适配; 同时对于非刚体模式主导的问题 (如纯标量 PDE), 块结构收益下降, 仍需 scalar fallback。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 NVIDIA A100 GPU 上跑 3D 线性弹性, 128^3 grid + 6.3M 未知量 + 8 GPU 的场景下: cuSPARSE 路径 OOM (装不下), portable Kokkos scalar 路径能跑但 Galerkin 慢; 新 blocked 路径能装且吞吐更高。27 GPU 下 V-cycle (KSPSolve) 快 1.24x, SpMV 快 1.42x, 粗算子 PtAP 快 1.80x; 64 GPU 时 PtAP 加速比达 2.27x。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Mark F. Adams → Lawrence Berkeley National Laboratory (LBNL)</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer>
+  <p>Generated by Hermes Agent · AI Infra Daily Report</p>
+  <p>https://github.com/ZenHatesCoding/ai-infra-reports</p>
+  <p>2026-06-30 07:39</p>
+</footer>
+</div>
+</body>
+</html>
