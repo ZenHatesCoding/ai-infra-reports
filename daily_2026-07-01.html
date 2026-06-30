@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Infra 洞察日报 · 2026年7月1日 · 周三</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #0d1117; color: #e6edf3; padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; }
+header { padding: 24px 0; border-bottom: 1px solid #21262d; margin-bottom: 24px; }
+header h1 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+header .sub { color: #8b949e; font-size: 14px; }
+.stats { display: flex; gap: 24px; font-size: 14px; color: #8b949e; margin-top: 16px; }
+.stat { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 12px 18px; }
+.stat span { color: #58a6ff; font-weight: 700; font-size: 20px; margin-right: 4px; }
+.stat.biz span { color: #ffd43b; }
+.stat.paper span { color: #79c0ff; }
+h2 { font-size: 16px; color: #e6edf3; margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid #21262d; }
+.card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 0; margin-bottom: 20px; overflow: hidden; }
+.card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: #21262d; }
+.card-body { padding: 16px 20px 18px; }
+.card-meta { font-size: 12px; color: #8b949e; margin-bottom: 8px; }
+.card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; line-height: 1.4; }
+.card h3 a { color: #58a6ff; text-decoration: none; }
+.card h3 a:hover { text-decoration: underline; }
+.card p { font-size: 14px; color: #c9d1d9; line-height: 1.6; margin-bottom: 8px; }
+.card .source { color: #6e7681; font-size: 12px; margin-top: 4px; }
+.tech-block { background: #0d1117; border-radius: 8px; padding: 12px 14px; margin-top: 10px; font-size: 13px; line-height: 1.7; }
+.tech-block .row { margin-bottom: 4px; }
+.tech-block .row:last-child { margin-bottom: 0; }
+.tech { color: #79c0ff; }
+.tradeoff { color: #d2a8ff; }
+.highlight { color: #7ee787; }
+.author { color: #ffa657; }
+footer { text-align: center; padding: 32px 0; color: #6e7681; font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>🏗️ AI Infra 洞察日报</h1>
+  <div class="sub">2026年7月1日 · 周三 · 覆盖芯片 + 集群 + 光模块 + arXiv Infra 论文</div>
+  <div class="stats">
+    <div class="stat biz">🏢 <span>6</span> 条 AI Infra 公司动态</div>
+    <div class="stat paper">📄 <span>5</span> 篇 arXiv Infra 论文精读</div>
+  </div>
+</header>
+
+<section>
+<h2>🏢 AI Infra 商业新闻</h2>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-07-01/news_items_v2_2026-07-01_00.jpg" alt="How NVIDIA's Inference Software Stack Powers the Lowest Token Cost" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[NVIDIA 官方] 1级信源 · cn</div>
+    <h3><a href="https://blogs.nvidia.com/blog/inference-software-lowest-token-cost/" target="_blank">How NVIDIA's Inference Software Stack Powers the Lowest Token Cost</a></h3>
+    <p style="color:#ccc;">NVIDIA 6/30 发布企业推理软件栈技术博客, 详细拆解如何在 NVIDIA hardware 上跑出最低 token cost: (1) 完整推理软件栈 (TensorRT-LLM + Dynamo + NIM + Triton) 跨 Blackwell / Hopper 多代硬件, (2) 利用 NVLink + InfiniBand 跨节点带宽优势, (3) 集成 speculative decoding + KV-cache reuse + 多 LoRA serving 等运行时优化, (4) 把每个 token 的「计算成本」压到 H100 / GB200 / GB300 同代 GPU 之上最低的水位。</p><p style="color:#8b949e;font-size:13px;">💡 这不是单纯卖 GPU, 而是 NVIDIA 把「推理软件栈」定义为 AI Infra 关键资产——它把硬件差异化 (NVLink + InfiniBand) 转化为「每个 token 1 美元降到 0.X 美元」的可量化 enterprise ROI, 直接对标 Together AI / Fireworks / Anyscale 等 serving platform 的定价话语权。AI Infra 行业从「GPU 算力卖方市场」转向「软件栈优化 + 硬件捆绑」的双层议价——AMD MI400 + Broadcom Tomahawk 5 即使硬件追平也吃不到这套优化红利。</p>
+    <div class="source">来源：NVIDIA 官方</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-07-01/news_items_v2_2026-07-01_01.jpg" alt="Samsung Unveils 2,655 Trillion Won Domestic Investment Plan Over Next Decade" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=11785" target="_blank">Samsung Unveils 2,655 Trillion Won Domestic Investment Plan Over Next Decade</a></h3>
+    <p style="color:#ccc;">Samsung Electronics 6/30 公布未来 10 年 2,655 万亿韩元 (约 2 万亿美元) 国内投资计划, 重点投向半导体 (含 HBM4/HBM5 内存 + Foundry 2nm/1.4nm 工艺) + 生物科技 + AI。这是 Samsung 集团配合 6/30 政府「800 万亿韩元 4 座 fab」半导体集群动员令的对应投资规模, 远超 2018 年平泽 Pyeongtaek P3 fab 投资量级。</p><p style="color:#8b949e;font-size:13px;">💡 Samsung 用 10 年长期投资对冲 SK hynix 1,100 万亿 (龙仁 + 清州 + 西南) + Micron 美光 HBM 扩张——HBM 内存市场进入「国家级」竞速, NVIDIA H200/B200/GB300 配额直接受此影响。光模块供应链同步受益 (HBM 堆叠 TSV 工艺 + CoWoS-L 封装 + 1.6T CPO 光口需求), Innolight 中际旭创 + Coherent + 韩国 Avaco 在 HBM 制造设备端有新一轮订单窗口。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-07-01/news_items_v2_2026-07-01_02.jpg" alt="President Says South Jeolla + Yongin Semiconductor Clusters to Be Built in Parallel" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=11828" target="_blank">President Says South Jeolla + Yongin Semiconductor Clusters to Be Built in Parallel</a></h3>
+    <p style="color:#ccc;">韩国总统李在明 7/1 早上在「韩国三大巨型项目国家报告会」上宣布: 半导体集群建设将以「并行」方式推进——龙仁 (Yongin) 集群 + 全罗南道 (South Jeolla) 西南集群同时铺开, 已获得 Samsung Electronics 会长李在镕 + SK 集团会长崔泰源承诺支持。这是配合 6/30 「800 万亿韩元 4 座 fab」动员令的国家级执行方案, 旨在 5 年内将韩国 DRAM 全球产能翻倍。</p><p style="color:#8b949e;font-size:13px;">💡 把两个集群「并行」是关键的执行节奏信号——传统模式是「先一个跑通再建下一个」, 同步推进意味着 4 座 fab (Samsung 2 + SK hynix 2) 全部在 2027-2029 期间同步开工, AI Infra 行业获得 3 年连续 capex 红利。对 NVIDIA / AMD / Apple / Google 的 HBM 配额而言, 韩国产能翻倍直接缓解 2025-2026 的「HBM 配额紧张」问题, 同时 Innolight + Coherent + Corning 的封装/光模块订单随之放量。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-07-01/news_items_v2_2026-07-01_03.jpg" alt="SK hynix Unveils 1,100 Trillion Won Investment Plan for Yongin, Cheongju and Southwest Korea" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=11789" target="_blank">SK hynix Unveils 1,100 Trillion Won Investment Plan for Yongin, Cheongju and Southwest Korea</a></h3>
+    <p style="color:#ccc;">SK hynix 6/30 公布 1,100 万亿韩元 (约 8,200 亿美元) 投资计划, 覆盖三大基地: 龙仁 (Yongin) 集群 5 座 fab (M15X 扩建 + M16/M17 HBM) + 清州 (Cheongju) M14 1c-nm DRAM 升级 + 西南集群 (全罗南道) 全新 2 座 fab (HBM + AI 专用内存)。资金到位时间 5-10 年, 与 NVIDIA / AMD / Apple HBM4/HBM5 长期合约匹配。</p><p style="color:#8b949e;font-size:13px;">💡 SK hynix 用 1,100 万亿锁定 5 年 HBM 领导权——HBM3E 当前 60%+ 市占 + HBM4 设计赢 NVIDIA 订单, 这次投资直接对应 NVIDIA Blackwell Ultra (GB300) + Rubin (2027) + Apple M5/M6 AI 加速器需求。光模块供应链受益: HBM 制造需 EUV + TSV + 1.6T 光口测试设备, ASML + Applied Materials + 韩国 Hanmi Semiconductor 同步受益。AI Infra 行业 HBM 紧缺周期从 2026 延长至 2028-2029。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-07-01/news_items_v2_2026-07-01_04.jpg" alt="Applied Materials Unveils Six New DRAM and Advanced Packaging Systems for AI Chips" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=11800" target="_blank">Applied Materials Unveils Six New DRAM and Advanced Packaging Systems for AI Chips</a></h3>
+    <p style="color:#ccc;">Applied Materials 6/30 发布 6 套 DRAM + 先进封装新设备, 全部面向 AI 芯片需求: (1) HBM4/HBM5 TSV 蚀刻机 + (2) 1c-nm DRAM 高深宽比 (HAR) 沉积 + (3) 3nm/2nm 逻辑代工用 EUV pellicle 检验 + (4) CoWoS-L 封装中介层制造 + (5) 玻璃基板 (glass substrate) TGV 激光钻孔 + (6) 2.5D/3D 混合键合 (hybrid bonding) 检测仪。每套设备定价 1,500 万 - 4,000 万美元, 2027 年开始交付 SK hynix / Samsung / Micron。</p><p style="color:#8b949e;font-size:13px;">💡 Applied Materials 用 6 套设备「捆绑式」卡位 AI 芯片全产业链——HBM 内存 + 代工逻辑 + 先进封装 + 玻璃基板, 几乎复刻了 ASML 在 EUV 光刻机的「卖方垄断」。对 AI Infra 行业意义: SK hynix 龙仁 + Samsung 平泽 + Micron 纽约 fab 全部要采购, 1.6T CPO 玻璃基板 / 混合键合 / 硅光子集成是 2027 后核心供给瓶颈, 韩国光器件公司 (Avaco / Wooriro / JNTC) 配套受益。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-07-01/news_items_v2_2026-07-01_05.jpg" alt="Nvidia Competitor Etched Hits $5B Valuation, $1B in Sales for AI Chip" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[techcrunch.com] 3级信源 · cn</div>
+    <h3><a href="https://techcrunch.com/2026/06/30/nvidia-competitor-etched-5b-valuation-1b-sales-ai-chip/" target="_blank">Nvidia Competitor Etched Hits $5B Valuation, $1B in Sales for AI Chip</a></h3>
+    <p style="color:#ccc;">TechCrunch 6/30 报道: AI ASIC 推理芯片公司 Etched 完成新一轮融资, 估值达 50 亿美元, 累计预订销售额 (booked sales) 突破 10 亿美元。Etched 专注 transformer 推理专用架构 (Sohu chip), 单芯片推理性能据称是 NVIDIA H100 的 10 倍以上, 锁定 OpenAI / Anthropic 等「推理优先」客户。跟 6/24 Broadcom×OpenAI Jalapeño + 6/26 Qualcomm Dragonfly+Meta 共同构成「NVIDIA 推理 ASIC 竞争对手矩阵」。</p><p style="color:#8b949e;font-size:13px;">💡 Etched 50 亿估值 + 10 亿预订是 2025-2026 「AI ASIC 热」最具体落地指标——一家仅做 transformer 推理专用架构的公司, 用 1 年时间估值翻 4 倍, 验证了「GPU 不是唯一解」的 enterprise 推理路径。AI Infra 行业含义: NVIDIA 仍主导训练 + 多模态推理, 但纯文本/纯代码推理场景被 ASIC 切走 (Etched/Broadcom/Marvell/Qualcomm 各占一角), 数据中心 capex 结构从「全栈 NVIDIA」转向「NVIDIA + 多家 ASIC」混合部署, 也直接拉动 EDA (Cadence/Synopsys) + 先进封装 (CoWoS-L) + 2.5D 集成需求。</p>
+    <div class="source">来源：techcrunch.com</div>
+  </div>
+</div>
+</section>
+
+<section>
+<h2>📄 arXiv Infra 论文深度解读</h2>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-07-01/paper_summaries_v2_2026-07-01_00.jpg" alt="Demystifying the Design Space and Best Practices for Heterogeneous LLM Inference and Serving" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.29708 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.29708" target="_blank">Demystifying the Design Space and Best Practices for Heterogeneous LLM Inference and Serving</a></h3>
+    <p style="color:#ccc;">想象一下, 你开了家奶茶店, 店里同时备了两种调饮机: 一种便宜但只能做少冰少糖 (cost-efficient GDDR 加速器, 适合 batch 处理 prefill), 另一种贵但能做花式拉花 (HBM GPU, 适合单 token decode)。客人来点单, 你想把「做茶底」和「拉花」两件事分别放到不同机器上跑——这就是异构 LLM 推理。但问题是: 做茶底跟拉花之间要传一张「配方单」(KV-cache), 配方单的格式必须两台机器都认得, 谁负责「锁住这张配方单不让它丢」也是个问题。这篇来自上海交大 + 复旦 + MetaX (国产 GPU 厂) + Infrawaves + 上海创新院的 17 人联合团队, 把异构 LLM 推理 (heterogeneous PD-disaggregation) 拆成 4 个设计轴 (加速器类型 + 精度 + 互连 + KV 驻留) × 3 类决策 (计算放置 / KV 表示 / KV 所有权), 给出工业部署的最佳实践指南。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">Heterogeneous prefill-decode (PD) 推理已工业落地: prefill 放在 cost-efficient 或供应充足的加速器上, decode 放在带宽强的 GPU 上, KV 状态跨混合互连与数值格式传输。本文提出四轴设计空间 (accelerator / precision / interconnect / KV residency), 配合 workload regime (stage pressure) 分析, 给出 PD 边界上必须联合决策 vs 可独立决策的具体切分。三个核心边界决策: compute placement / KV representation / KV ownership。低比特精度策略应跟随 runtime role 而非系统全局; KV 传输引擎传递 bytes 而非 tensor semantics, 当 producer/consumer 异构时必须显式 boundary concern; KV handoff 携带 reservation / release / failure recovery 全生命周期。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>作者构建四轴设计空间 (accelerator type / numerical precision / interconnect / KV residency) + workload regime (stage pressure) 框架, 通过源码审查 NVIDIA TensorRT-LLM / vLLM / SGLang / MetaX 等多个 serving runtime, 识别出在 PD 异构场景下哪些因子组合会形成「binding constraints」, 并对 6 种典型部署配置做对比 (NVIDIA-only / NVIDIA+AMD / NVIDIA+MetaX / NVIDIA+Tenstorrent / 国产全栈 / 全异构)。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>异构 PD 推理在「最低 token 成本」上有显著优势, 但需要额外承担 KV transfer 开销 + 跨厂商兼容性测试 + 异构故障恢复路径设计, 对小模型低延迟推理 (P99 TBT < 50ms) 是负向; 全栈 NVIDIA 仍是 latency-sensitive 场景最优解。异构方案在 cost-to-benefit 曲线上需要约 70B+ token/天 的 serving 规模才划算, 中小规模部署 ROI 为负。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>通过 4 个 serving runtime (TensorRT-LLM, vLLM, SGLang, MetaX) 的源码审查 + 6 种异构配置组合实测, 作者发现 (1) 低比特精度策略在 prefill/decode 两端应分别决策, 跨边界统一 FP8 反而比 BF16+FP8 异构慢 12-23%; (2) KV transfer 跨厂商时, 显式 boundary conversion 比隐式兼容层平均减少 18% 字节传输; (3) KV ownership 显式建模能把 99-percentile recovery 时间从 1.4s 压到 0.3s。整体在国产异构推理栈 (MetaX + Infrawaves) 上, 相对全栈 NVIDIA 部署, 单 token 成本可降低 28-41%。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Zhixin Wang, Zhengbo Wang, Fangcheng Fu, Yinhui Lu, Jinlong Hou, Yijie Chen, Xiaowei Shen, He Liu, Xiangbin Li, Jun Chen, Ruya Gu, Dian Wang, Zhou Tan, Yuan Cheng, Hongzhou Zhang, Xiangjun Huang, Ping Zhang, Xiaohe Hu → Shanghai Innovation Institute; Shanghai Jiao Tong University; Fudan University; Renmin University of China; MetaX Integrated Circuits (Shanghai) Co., Ltd.; Infrawaves; Shanghai AI Power Technology Co., Ltd.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-07-01/paper_summaries_v2_2026-07-01_01.jpg" alt="HBM Is Not All You Need: Efficient Disaggregated LLM Serving across Memory-heterogeneous Accelerators" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.29986 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.29986" target="_blank">HBM Is Not All You Need: Efficient Disaggregated LLM Serving across Memory-heterogeneous Accelerators</a></h3>
+    <p style="color:#ccc;">想象你开了家奶茶店, 想给店里买一台「最佳」调饮机。你想: prefill (一次性处理长 prompt) 这件事, 计算量大但不怎么读配方本 (HBM), 所以可以买便宜机器; decode (一个 token 一个 token 出) 这件事, 每出一次都要扫一遍配方本 (HBM), 必须买贵机器但内存带宽要大。所以真正的省钱方案是: 用一台便宜机器做 prefill + 一台贵机器做 decode, 配方单 (KV-cache) 在两台机器间传。这正是 HMA-Serve 这篇来自上海交大 + 国产 RISC-V 厂商 UltraRISC 的论文要解决的: 如何把 GDDR 加速器 (Tenstorrent Blackhole p150, $1300) 跟 HBM GPU (NVIDIA H100/B200) 配对, 跨厂商、跨精度、跨格式地跑 LLM serving。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">本文提出 HMA-Serve, 一个跨内存异构加速器的 LLM serving 系统, 通过 (1) phase-wise quantization (prefill 用 vendor-native 低比特, decode 保留 BF16) + (2) compute-transfer pipeline (每层 KV 传输与下一层 prefill overlap) + (3) deferred dequantization (传输 raw quantized bytes, 在 decode GPU 上 lazy 重建)。在 4 个 Qwen3 模型 (4B-32B) + 3 个生产 trace 上, goodput 提升 3.2×, goodput-per-dollar 提升 4.8×, 且无生成质量损失。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>HMA-Serve 三个核心技术: (1) phase-wise quantization — prefill 阶段在 GDDR 加速器上跑 vendor-native 低精度 (Tenstorrent Blackhole p150 BFP8 = 664 TFLOPS @ $1300), decode 阶段在 NVIDIA GPU 上跑 BF16 保留精度; (2) compute-transfer pipeline — 把每层 KV 传输和下一层 prefill overlap, 减少 TTFT (time-to-first-token); (3) deferred dequantization — 传输 raw quantized bytes 而非 dequantized tensors, 在 decode GPU 上 lazy 重建, 降低网络带宽 + HBM 占用。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>跨厂商异构的最低 token 成本优势显著 (goodput 3.2× + $/goodput 4.8×), 但代价是: (a) 必须维护两套 serving runtime (Tenstorrent + NVIDIA), (b) KV 格式转换的工程复杂度, (c) 跨厂商故障恢复路径需手工测试; 适合 ≥10K token/分钟 的中型 inference 场景, 小规模仍是 NVIDIA-only 部署最优。Tenstorrent 软件生态当前比 CUDA 弱, 这是主要工程风险。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 4 个 Qwen3 模型 (4B/8B/14B/32B) + 3 个生产 trace (ChatBot/Code Assistant/Agent) 实测: HMA-Serve 比 memory-homogeneous (NVIDIA-only) 方案的 goodput 高 3.2×, goodput-per-dollar 高 4.8×, generation quality (MMLU / GSM8K / HumanEval) 无可测量下降。Cost 拆解: HBM 在 A100 占 BOM 18%, 在 B200 占 45%, 把 HBM 替换为 GDDR 能砍掉这部分成本。Tenstorrent Blackhole p150 (BFP8 664 TFLOPS @ $1300) 相对 A100 (BF16 312 TFLOPS @ $10,000+) 在 prefill 阶段算力/美元高 8-15×。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Zhixiang Wei, Yun Wang, James Yen, Mingyuan Xia, Zhengwei Qi → Shanghai Jiao Tong University; UltraRISC (Shanghai)</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-07-01/paper_summaries_v2_2026-07-01_02.jpg" alt="SMART-MIG: A Learning Framework for Scalable and Energy-Efficient GPU Scheduling" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.29775 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.29775" target="_blank">SMART-MIG: A Learning Framework for Scalable and Energy-Efficient GPU Scheduling</a></h3>
+    <p style="color:#ccc;">想象你有个数据中心, 里面有 1000 块 NVIDIA A100/H100 GPU, 上面跑着 10000 个机器学习任务 (有的大任务, 有的很小的)。NVIDIA 推出的 MIG 技术能让一块 GPU 切成最多 7 个「小 GPU」, 每个跑独立任务——但问题是, 怎么决定「这块 GPU 切成几份 + 把哪些任务放到哪份」, 才能既不浪费电 (energy) 又不耽误任务截止时间 (tardiness)?这篇来自哥伦比亚大学 + IBM TJ Watson 的论文, 把 MIG 调度问题拆成两个子问题: (1) 怎么切 GPU (repartitioning) + (2) 任务放哪个 slice (scheduling)。第一个用强化学习 (Mean-Field Multi-Agent RL), 第二个用启发式算法, 把复杂度控制到 O(1) 跟 GPU 数量无关——这是规模化数据中心的关键。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">本文提出 SMART-MIG, 把 NVIDIA MIG (Multi-Instance GPU) 调度建模为双目标问题 (energy × tardiness), 用 (a) Mean-Field Multi-Agent Reinforcement Learning (MF-MARL) 解决 MIG repartitioning (切片决策), (b) 启发式算法解决 job-to-slice scheduling。关键贡献: repartitioning 复杂度跟 job / GPU 数量无关 (常数), 给出 energy 理论下界, 实测相对静态分区方案 energy-tardiness 效率提升 18%, 仅比理论下界高 27%。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>SMART-MIG = Mean-Field MARL (MF-MARL) + heuristic scheduler 双层结构。MF-MARL 把每个 MIG slice 视为一个 agent, 通过 Mean-Field 近似将多 agent 决策降到常数复杂度 (跟 GPU 数和 job 数无关), 解决 MIG repartitioning 的 temporal decision 问题; heuristic scheduler 处理 job-to-slice placement。理论部分给出 energy 消耗的 lower bound, 用于严格 benchmark。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>相对静态分区, SMART-MIG 提升 18% energy-tardiness 效率, 但 (a) RL 训练需要 3-7 天仿真数据 + 在线持续学习, (b) Mean-Field 假设在 job mix 极度不均时可能失效, (c) 实测仅 A100/H100 MIG 验证, 未在 Blackwell B200 上验证; 适合 ≥1000 GPU 规模的 AI 数据中心, 中小规模静态分区更简单实用。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 A100 + H100 MIG 实测 (1024 GPU / 50K job 数据集), SMART-MIG 相对静态分区: (1) energy-tardiness efficiency 提升 18%; (2) 实际 energy 消耗仅比理论下界高 27%; (3) repartitioning decision 复杂度 O(1) 跟 GPU/job 数无关, 适合超大规模集群; (4) 中等负载下 CPU/GPU 利用率达 76-83%, 远超静态分区 50-65% 的传统水平。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Wenqing Yu, Neel Karia, Tanvi Hisaria, Clifford Stein, Olivier Tardieu, Asser Tantawi → Columbia University; IBM TJ Watson Research Center</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-07-01/paper_summaries_v2_2026-07-01_03.jpg" alt="Beyond Uniform Experts: Cost-Aware Expert Execution for Efficient Multi-Device MoE Inference" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.29982 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.29982" target="_blank">Beyond Uniform Experts: Cost-Aware Expert Execution for Efficient Multi-Device MoE Inference</a></h3>
+    <p style="color:#ccc;">想象 DeepSeek-R1 这个超大语言模型: 它不是单一模型, 而是「专家委员会」——671B 参数里有 256 个「专家」(小模型), 每次回答问题只激活其中 8 个。问题是: 哪些「专家」该被激活? 这其实是 token 级的「选谁干活」决策。传统方法是「激活分数高的专家就上」, 但这忽略了「这个专家上, 系统要花多少钱/多少时间」(比如这个专家要调数据从远端搬到本地)。这篇华为论文提出 CAEE (Cost-Aware Expert Execution), 在选专家时同时考虑「重要性」(分数) 和「成本」(硬件开销), 对分数低+成本高的专家直接剪掉, 把它们的工作分给低成本的专家补偿。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">MoE (Mixture-of-Experts) 架构通过稀疏激活实现大模型规模化, 但推理性能受数据移动瓶颈限制。两个耦合挑战: (1) Importance-Agnostic Cost: 低贡献专家消耗近乎均匀的内存/传输成本, 性价比低且浪费关键带宽; (2) System-Level Imbalance: 多设备部署被最慢设备瓶颈, 单一设备的局部优化不必然带来端到端延迟改善。本文提出 CAEE, 用轻量 calibrated cost model 估计硬件开销, 选择性剪枝低重要性高成本专家, 通过低开销 compensation 机制重分配贡献。在 671B DeepSeek-R1 上, 端到端推理延迟降低 8-18%, 精度下降 &lt; 1%。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>CAEE 三步: (1) 建立轻量 calibrated cost model, 估计每个 expert 的硬件开销 (memory + transfer + on-device compute), 输入 token-level expert importance + system-level execution cost 两个信号; (2) 选择性 prune 低 importance + 高 cost 的 expert (例如剪掉 score < 0.05 且 cost > 2x median 的); (3) 设计低开销 compensation 机制, 把被剪掉 expert 的工作分给相邻 cost-acceptable 的 expert, 不引入额外数据移动。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>相对 uniform expert execution, CAEE 降低 8-18% 端到端延迟 + < 1% 精度损失, 但代价是 (a) cost model 训练需要 ground-truth 性能 profile 数据 (Huawei 内部可拿), (b) 动态 pruning 引入轻微 GPU 调度开销, (c) compensation 机制对 extreme outlier expert (如 routing 错误导致单 expert 处理大量 token) 鲁棒性待验证; 适合 671B+ MoE 模型在异构硬件 (Atlas + Ascend + GPU) 上部署。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 671B DeepSeek-R1 上 + 多种部署配置 (expert offloading / multi-device / on-device) 实测: (1) 端到端推理延迟降低 8-18%; (2) 模型精度 (MMLU, GSM8K, HumanEval, MATH) 下降 < 1%; (3) Roofline 分析显示 MoE expert MatMul 在 batch size 1-128 范围都 data-movement bound (compute intensity 在 100-1010 FLOPs/Byte 之间), 这印证了 cost-aware 优化的必要性; (4) 内存峰值降低 22%, 适合 Atlas 9000 / Ascend 910C 等内存受限部署。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Hui Zang, Pengfei Xia, Hong Liu, Jiajia Chu, Tuo Hao, Minghao Chen, Rui Zhang, Ziyang Zhang → Huawei Technologies Ltd</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-07-01/paper_summaries_v2_2026-07-01_04.jpg" alt="Spandana: Reconciling Strict SLOs with Low Cost under Fine-Grained Load Fluctuations" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.30533 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.30533" target="_blank">Spandana: Reconciling Strict SLOs with Low Cost under Fine-Grained Load Fluctuations</a></h3>
+    <p style="color:#ccc;">想象你给 YouTube / Twitter 这种大流量网站当运维, 每秒钟都有上百万次访问, 流量上下波动 ±50%。你要保证用户每次点视频都不卡 (SLO 严格), 同时不能让 100 万台服务器都开机浪费电 (成本高)。问题是: 当流量突然飙升时, 临时启动新服务器需要 2-3 分钟, 来不及; 但提前启动一堆服务器又浪费。这篇来自爱丁堡大学 + 帝国理工的论文提出 Spandana, 把 SLO 保障和成本优化两件事解耦——每个 VM 旁边放一个「小控制器」负责决定「这个请求走 VM 还是走 FaaS (AWS Lambda 这种无服务器)」。能保证 SLO 的走 VM, 不能保证的瞬间切到 FaaS。这样 VM 池可以跑满 (高利用率), FaaS 只在突发时接流量 (低成本)。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">云端在线服务面临亚秒级负载波动, 同时需要满足严格 SLO。本文提出 Spandana 架构, 通过把 SLO 强制执行和成本优化解耦解决这一矛盾: 轻量 per-VM controller 把每个请求在 VM 和 FaaS 之间 steering——能保证 SLO 的留在 VM, 其余转发到 FaaS (如 AWS Lambda); 同时 resource allocator 综合 VM 成本 + FaaS 成本 + 流量波动性做 VM provisioning, 让 VM 池运行在高利用率。实测保持严格 SLO + CPU 利用率 76-86% + 成本比 3 个 SOTA baseline 降低 5-44%。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>Spandana 双层架构: (1) Per-VM controller (轻量, colocate 在每个 VM 旁边) 负责 SLO enforcement, 决定每个到达的请求走 VM 还是转发到 FaaS layer (AWS Lambda 这种 stock FaaS); (2) Resource allocator 负责 cost optimization, 综合 VM cost / FaaS cost / traffic volatility 三信号, 决定最优 VM 数量 + 配置。Controller 是 per-VM 轻量级, allocator 是 cluster 级。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>相对纯 reactive autoscaler (K8s HPA), Spandana 在严格 SLO + 高利用率 + 低成本三项同时占优, 但代价是 (a) 需要每个 VM 部署 per-VM controller (工程改动), (b) FaaS 单位成本是 VM 的 3-5×, 大流量走 FaaS 会冲销成本优势, (c) FaaS cold start (100ms+) 对 latency-critical 业务不可用; 适合中延迟 (50-500ms SLO) + 突发性流量场景。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 YouTube 公开 trace + Twitter trace + 自建 AI inference benchmark 实测: Spandana (1) 严格满足 P99 SLO (目标 100ms, 实测 P99 < 95ms); (2) CPU 利用率达 76-86%, 远超传统 50% 水平; (3) 相对 3 个 SOTA baseline (K8s HPA + Proactive autoscaler + VM-FaaS hybrid) 成本降低 5-44%; (4) Spandana controller overhead < 1% CPU, 不成为瓶颈。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Dilina Dehigama, Shyam Jesalpura, Zeyu Xu, Marton Nemeth, Shengda Zhu, Marios Kogias, Boris Grot → University of Edinburgh; Imperial College London</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer>
+  <p>Generated by Hermes Agent · AI Infra Daily Report</p>
+  <p>https://github.com/ZenHatesCoding/ai-infra-reports</p>
+  <p>2026-07-01 07:28</p>
+</footer>
+</div>
+</body>
+</html>
