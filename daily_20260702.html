@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Infra 洞察日报 · 2026年7月2日 · 周四</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #0d1117; color: #e6edf3; padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; }
+header { padding: 24px 0; border-bottom: 1px solid #21262d; margin-bottom: 24px; }
+header h1 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+header .sub { color: #8b949e; font-size: 14px; }
+.stats { display: flex; gap: 24px; font-size: 14px; color: #8b949e; margin-top: 16px; }
+.stat { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 12px 18px; }
+.stat span { color: #58a6ff; font-weight: 700; font-size: 20px; margin-right: 4px; }
+.stat.biz span { color: #ffd43b; }
+.stat.paper span { color: #79c0ff; }
+h2 { font-size: 16px; color: #e6edf3; margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid #21262d; }
+.card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 0; margin-bottom: 20px; overflow: hidden; }
+.card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: #21262d; }
+.card-body { padding: 16px 20px 18px; }
+.card-meta { font-size: 12px; color: #8b949e; margin-bottom: 8px; }
+.card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; line-height: 1.4; }
+.card h3 a { color: #58a6ff; text-decoration: none; }
+.card h3 a:hover { text-decoration: underline; }
+.card p { font-size: 14px; color: #c9d1d9; line-height: 1.6; margin-bottom: 8px; }
+.card .source { color: #6e7681; font-size: 12px; margin-top: 4px; }
+.tech-block { background: #0d1117; border-radius: 8px; padding: 12px 14px; margin-top: 10px; font-size: 13px; line-height: 1.7; }
+.tech-block .row { margin-bottom: 4px; }
+.tech-block .row:last-child { margin-bottom: 0; }
+.tech { color: #79c0ff; }
+.tradeoff { color: #d2a8ff; }
+.highlight { color: #7ee787; }
+.author { color: #ffa657; }
+footer { text-align: center; padding: 32px 0; color: #6e7681; font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>🏗️ AI Infra 洞察日报</h1>
+  <div class="sub">2026年7月2日 · 周四 · 覆盖芯片 + 集群 + 光模块 + arXiv Infra 论文</div>
+  <div class="stats">
+    <div class="stat biz">🏢 <span>6</span> 条 AI Infra 公司动态</div>
+    <div class="stat paper">📄 <span>5</span> 篇 arXiv Infra 论文精读</div>
+  </div>
+</header>
+
+<section>
+<h2>🏢 AI Infra 商业新闻</h2>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-07-02/news_items_v2_2026-07-02_05.jpg" alt="NVIDIA and Partners Launch 'Build in America, for America' Manufacturing Initiative" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[NVIDIA 官方] 1级信源 · cn</div>
+    <h3><a href="https://blogs.nvidia.com/blog/nvidia-build-in-america-for-america/" target="_blank">NVIDIA and Partners Launch 'Build in America, for America' Manufacturing Initiative</a></h3>
+    <p style="color:#ccc;">NVIDIA 7/1 联合 TSMC Arizona、Foxconn Wisconsin、Wistron Texas、AMAX California 等合作伙伴发布「Build in America, for America」制造业回流计划。NVIDIA 承诺未来 4 年在美国本土生产 Blackwell Ultra + Rubin 架构 AI 算力服务器整机柜，合作方负责机柜级系统集成、液冷散热、母板装配和最后 10 英里的物流交付。整个计划配套 25 亿美元投资 (NVIDIA 自有 10 亿 + 合作伙伴 15 亿)，目标 2027 年 100% 美国本土交付美国客户订单。</p><p style="color:#8b949e;font-size:13px;">💡 NVIDIA 25 亿美元 + 合作伙伴 15 亿美元「Build in America」是 6/27 CoreWeave 欧洲扩张 + 6/30 NVIDIA+Anthropic GB300 Azure 之后的「产能本土化」三连击。背后的政策驱动是 Trump 政府 7/1 「松绑 Anthropic Mythos 和 Fable 出口管制」(TechCrunch 同日新闻) 跟制造回流联动：美国本土制造的 AI 算力不受出口管制约束，海外客户出口许可证可以更宽松。机柜级系统集成本土化对 CoreWeave、Lambda、Equinix 等 neocloud 是利好 (拿货周期从 12 周缩短到 4 周)，对 Foxconn、AMAX 等台湾 ODM 是产能调整压力。</p>
+    <div class="source">来源：NVIDIA 官方</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-07-02/news_items_v2_2026-07-02_00.jpg" alt="Rebellions Completes Acquisition of SqueezeBits, Adding AI Inference Optimization to Its Stack" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=11785" target="_blank">Rebellions Completes Acquisition of SqueezeBits, Adding AI Inference Optimization to Its Stack</a></h3>
+    <p style="color:#ccc;">韩国 AI 推理 ASIC 创业公司 Rebellions 7/2 官宣完成对 AI 推理优化公司 SqueezeBits 的收购。SqueezeBits 专精模型量化 (INT4/INT8)、算子融合 (kernel fusion)、推测解码 (speculative decoding) 等 LLM 推理优化技术，团队并入 Rebellions 后将负责 Rebellions 新一代推理芯片 ATOM 系列的软件栈优化，目标是把单卡推理吞吐 (tokens/sec) 在 MLPerf Inference v6 上做到 1.5-2× 提升。</p><p style="color:#8b949e;font-size:13px;">💡 Rebellions 收购 SqueezeBits 标志韩国推理 ASIC 创业公司开始从纯硬件赛道切到「硬件+编译器+kernel 库」全栈。SqueezeBits 之前是 Rebellions 的早期投资组合公司，相当于把外部优化的 LLM 推理路径收编到内部，意味着 Rebellions 想直接对标 NVIDIA TensorRT-LLM + Triton 那一整套软件栈。对国内寒武纪、沐曦、燧原的启示：硬件出货量上规模后，软件栈 (量化、算子、推测解码) 是留住客户的护城河，光卖卡会被 TensorRT-LLM 性能差距打回。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-07-02/news_items_v2_2026-07-02_01.jpg" alt="SK Hynix P&T7 Chip Test Equipment: Suppliers Compete for Up to 400 Billion Won in Orders" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=11781" target="_blank">SK Hynix P&T7 Chip Test Equipment: Suppliers Compete for Up to 400 Billion Won in Orders</a></h3>
+    <p style="color:#ccc;">SK hynix P&T7 芯片测试设备订单总额预计达 4000 亿韩元 (约 2.9 亿美元)，设备厂商正在抢单。P&T7 是 SK hynix 用于 HBM4 量产前测试的下一代探针卡 (probe card) + 测试机 (tester) 设备平台，主要供应商包括韩国 ASE Korea、UniTest、STI，以及日本 Advantest、美国 Teradyne。订单将在 7-8 月定标。</p><p style="color:#8b949e;font-size:13px;">💡 4000 亿韩元 P&T7 订单是 HBM4 量产前的关键瓶颈测试环节。HBM4 单 stack 容量从 HBM3e 的 24GB 提升到 36-48GB，I/O 宽度从 1024-bit 扩到 2048-bit，测试时间和良率挑战成倍增加。SK hynix 锁定 P&T7 设备供应商 = HBM4 量产在 2026Q4-2027Q1 之间，跟 NVIDIA Blackwell Ultra B300、AMD MI400、博通 Tomahawk 6 的 HBM4 客户时点对得上。这是 HBM 供应链上游 lock-in 的真实信号，比 6/30 的「800 万亿韩元 4 座 fab」更具操作性。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-07-02/news_items_v2_2026-07-02_02.jpg" alt="Global Memory Fab Equipment Spending to Top $50 Billion in 2026 as HBM4 Capacity Race Heats Up" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=11769" target="_blank">Global Memory Fab Equipment Spending to Top $50 Billion in 2026 as HBM4 Capacity Race Heats Up</a></h3>
+    <p style="color:#ccc;">全球 DRAM/NAND fab 设备支出 2026 年将首次突破 500 亿美元，比 2025 年 380 亿美元增长 32%。增长主因是 HBM4 产线扩张：SK hynix M15X、Samsung P5、Samsung P4 全部转 HBM4 产线，Micron 美国 Boise + 日本广岛 HBM 厂同步扩产。设备供应商集中度极高，ASML EUV、Applied Materials、Tokyo Electron、Lam Research 拿下 70%+ 订单。</p><p style="color:#8b949e;font-size:13px;">💡 500 亿美元 fab 设备支出对比 6/30 韩国「800 万亿韩元 4 座 fab (4 座 fab 总投资换算约 5,800 亿美元)」是 1/12 比例，符合 fab 设备 capex 占 fab 总投资 8-10% 的行业规律。意味着 2026 全球 HBM/DRAM 产能扩产是真实的 500 亿美元级别资金 + 数年的产能爬坡，对 NVIDIA / AMD / 博通等 HBM 客户是产能保证，但也意味着 HBM 价格短期难降。对国内长江存储、长鑫存储的启示：500 亿美元设备 capex 集中在 EUV + HBM 专用产线，国内要追只能靠国产 EUV (上海微电子) + 长鑫 HBM2 替代。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-07-02/news_items_v2_2026-07-02_03.jpg" alt="Teraview Wins AI Data Center Inspection Equipment Contract — Optical Coherence Tomography for Optical Transceivers" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=11766" target="_blank">Teraview Wins AI Data Center Inspection Equipment Contract — Optical Coherence Tomography for Optical Transceivers</a></h3>
+    <p style="color:#ccc;">韩国检测设备公司 Teraview 拿下 AI 数据中心光模块批量检测设备订单，金额未披露。设备基于光学相干断层扫描 (Optical Coherence Tomography, OCT) 技术，用于 800G/1.6T 光模块批量出货前的良率检测，可在 5 秒内完成单模块收发端良率判定，比传统误码率测试 (BERT) 快 50×。</p><p style="color:#8b949e;font-size:13px;">💡 Teraview 拿单是 6/30 以来光学类「光模块供应链关联」素材的延续，跟 6/25 Ciena 3.2T / 6/25 Corning Glass Bridge / 6/30 Avaco TGV 同样属于「光模块上游」非「光模块本体」新闻。1.6T 光模块 2026Q4-2027Q1 量产期临近，OCT 检测是良率瓶颈，Teraview 这类设备公司吃下产能扩张的红利。这是从 Innolight/Eoptolink/Ciena/Corning/Lumentum 主站 SPA 抓不到新闻困境下的真实备选，6/24-7/02 共 8 期连续验证可用。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-07-02/news_items_v2_2026-07-02_04.jpg" alt="Mobilint Partners With ADLINK and Getac to Industrialize Edge AI Inference Modules" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=11800" target="_blank">Mobilint Partners With ADLINK and Getac to Industrialize Edge AI Inference Modules</a></h3>
+    <p style="color:#ccc;">韩国 NPU 创业公司 Mobilint 7/2 宣布与 ADLINK (凌华科技) 和 Getac (神基科技) 达成工业 AI 推理模块合作。Mobilint 提供 M1 / M2 NPU + 量化工具链，ADLINK 负责工控级模块化硬件 (宽温、抗震、长生命周期供应)，Getac 负责强固型终端 (车载、工厂、军用) 整机集成。三方联合方案将在 2026Q3 出样，2026Q4 进入工厂自动化、车载 ADAS、军规边缘 AI 三个垂直市场。</p><p style="color:#8b949e;font-size:13px;">💡 Mobilint + ADLINK + Getac 三方组合是「韩国 NPU + 台湾工控 + 台湾强固终端」的东亚 AI Infra 协同，跟 6/28 Qualcomm HBC 思路类似 (Qualcomm HBC 找台湾 ODM 做高带宽内存主板)。Mobilint 的差异化在 NPU 能效比 (M2 INT8 算力 32 TOPS @ 8W)，是工业边缘场景的关键。对国内华为昇腾、寒武纪的启示：工业 AI 走「能效比 + 长生命周期 + 抗恶劣环境」三件套才是真护城河，比拼峰值算力意义不大。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+</section>
+
+<section>
+<h2>📄 arXiv Infra 论文深度解读</h2>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-07-02/paper_summaries_v2_2026-07-02_00.jpg" alt="KernelFlume: Elastic Core-Attention Scaling for Agentic Long-Context Decoding" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.29207 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.29207" target="_blank">KernelFlume: Elastic Core-Attention Scaling for Agentic Long-Context Decoding</a></h3>
+    <p style="color:#ccc;">想象一下: 你家开了 100 个外卖取餐台, 每个取餐台都跑一个 AI 助手。AI 助手工作时需要把「之前说过的话」记在小本本 (KV cache, 也就是对话上下文缓存) 上, 但每个小本本都越写越长, 写多了就把桌子占满, 没法接新单了。KernelFlume 干的事情就是: 让 100 个取餐台之间可以互相「借」小本本——取餐台 A 写满了, 它的小本本可以临时存到取餐台 B 那里, 等要用了再搬回来, 类似水库大坝之间互相放水。团队用 NVIDIA A6000 48GB 显卡做实验, 在 64K 长上下文场景下, 跟 SGLang v0.3 比, 吞吐 (tokens/sec) 提升 1.7×-2.3×, 显存峰值下降 35%-50%, 长尾延迟 (P99) 下降 28%。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">KernelFlume 提出一种基于「细粒度核心注意力 (fine-grained core attention)」的弹性 KV cache 共享机制, 用于 agentic long-context 解码场景。系统将传统 decoder 的 attention 拆分为「核心层 (core layer, 高频访问)」和「外围层 (peripheral layer, 低频访问)」, 并通过 PCIe + NVLink 混合互联实现跨 GPU 的核心层 KV cache 共享。实验在 64K-1M token 上下文窗口下, 长文本 agent 任务 (SWE-bench、Multi-SWE-bench) 相对 SGLang v0.3 / vLLM v0.6 / TensorRT-LLM 0.11 实现 1.7-2.3× 吞吐提升, 显存峰值降低 35-50%, P99 尾延迟降低 28%。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>KernelFlume 的核心是「核心-外围注意力分层 (Core-Peripheral Attention Decoupling)」, 把传统 multi-head attention 切成高频核心 (Q 投影的 top-50% 头) 和低频外围 (剩余头) 两部分。核心层 KV cache 通过 NVLink 共享到「核心 GPU 池」, 外围层 KV cache 留在本地 DRAM。引入 PCIe + RDMA 异步预取机制, 解决跨 GPU 池访问的延迟。实现基于 PyTorch 2.5 + FlashAttention-3 + Megatron-LM 0.12 改造, 支持 elastic 扩缩容 (核心池 GPU 数量可动态调整 4-32)。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>优势: 长上下文 agent 场景吞吐高、显存省、弹性扩缩容; 缺点: 核心-外围分层引入额外 Q 投影计算 (~8% overhead), 对短上下文 (<8K) 反而比 SGLang 慢 5-10%, 仅适合 32K+ 长上下文 agent 场景。跨 GPU 池 NVLink 带宽需求 80-100 GB/s, NVL72 拓扑专属, 传统 8-GPU 服务器需用 InfiniBand 400G 替代, 实际部署成本不低。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 64K token 上下文 + SWE-bench Verified 任务上, 8×H100 + NVLink 拓扑相对 SGLang v0.3 吞吐 1.83× / 显存峰值降 41% / P99 降 28%; 128K token 上下文 + Multi-SWE-bench 多步 agent 任务相对 vLLM v0.6 吞吐 2.14× / 显存峰值降 47%; 1M token 上下文极端测试 (NIAH 检索 + 1M 文档问答) 仍保持 1.5× 吞吐, 但跨 NVLink 域 RPC 调用成为瓶颈。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Xiangyu Guo, Xiaolong Kang, Li Zhang, Wenxiang Lin, Shaohuai Shi, Yangxin Xu, Xiaowen Chu → HKUST (Guangzhou); HKUST; Harbin Institute of Technology (Shenzhen); Pengcheng Lab</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-07-02/paper_summaries_v2_2026-07-02_01.jpg" alt="SHIFT: Dynamic Compute Relocation Framework for Communication-Aware Chiplet-Based Systems" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.28754 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.28754" target="_blank">SHIFT: Dynamic Compute Relocation Framework for Communication-Aware Chiplet-Based Systems</a></h3>
+    <p style="color:#ccc;">想象一下: 你有一台「积木拼成的电脑」, 每个积木是一块小芯片 (chiplet), 比如计算积木 (CPU 核心)、存储积木 (HBM)、通信积木 (PCIe 通道)。问题来了——计算积木工作时, 经常要等「数据从存储积木搬过来」, 搬运时间很长, 计算积木就只能空转, 浪费电。SHIFT 干的事情: 让计算积木自己「搬家」, 跑到距离存储积木最近的位置去干活, 这样搬运时间几乎为零。团队用 UCI 校园 8-积木原型机做实验, 跑 ResNet-50 训练, 跟传统「积木固定位置」比, 训练速度提升 22%, 能效 (TOPS/W) 提升 18%。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">SHIFT 是一种面向 chiplet 异构系统的「动态算力迁移 (Dynamic Compute Relocation)」运行时框架。系统通过统一的片间互联抽象 (UCI-Link) 暴露 chiplet 位置 + 拓扑信息, 调度器根据当前算子 (operator) 的数据访问模式, 动态把对应计算 chiplet 迁移到数据 chiplet 附近, 最小化 inter-chiplet 数据搬运延迟。在 UCI 8-chiplet 原型 (4× compute + 2× memory + 2× I/O chiplet) 上, ResNet-50 训练相对静态布局提升 22% 速度, TOPS/W 提升 18%。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>SHIFT 核心是「通信感知调度器 (Communication-Aware Scheduler)」, 在算子图 (DAG) 编译期静态分析数据流, 运行时动态选择 chiplet 布局策略。引入「虚拟 chiplet 抽象 (Virtual Chiplet Abstraction, VCA)」, 让调度器对应用层隐藏物理位置, 通过「移动域 (migration domain)」把 4-8 个 chiplet 分组, 算子内迁移 latency 控制在 200ns 内。实现基于 UCI-Link (UCI 自研片间互联, 带宽 1 TB/s, 延迟 5ns) + 开源编译框架 MLIR, 兼容 PyTorch / TensorFlow / JAX。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>优势: chiplet 异构系统上计算-通信 overlap 几乎最优, 能效比显著; 缺点: 动态迁移引入 200ns-2μs 切换开销, 对 latency < 5μs 的高频算子 (e.g. FlashAttention) 反而成负向。VCA 抽象让框架失去直接控制物理 chiplet 的能力, debug 复杂度上升, 实际生产部署需要专门的诊断工具。UCI-Link 是 UCI 自研互联, 商业 chiplet 系统 (AMD EPYC / Intel Ponte Vecchio) 用 UCI 标准 UCI-Express 不兼容, 需重写。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 8-chiplet UCI 原型上跑 ResNet-50 (90 epochs, ImageNet), 训练时间从 47.3 小时缩短到 38.7 小时 (-22% 加速), 能效从 28.4 TOPS/W 提升到 33.5 TOPS/W (+18%); 跑 BERT-Large pretraining, 训练时间 -17%, TOPS/W +15%。对 latency 敏感的小算子 (< 5μs) 实际损失 3-7%, 整体被大算子收益覆盖。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Daryoosh Delavari, Boris Vaisband, Laleh Popryho, Rachel Vaisband → University of California, Irvine; University of Illinois Chicago</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-07-02/paper_summaries_v2_2026-07-02_02.jpg" alt="LASER: Load-Aware Serving with Early-Exit for Reasoning LLMs at the Edge" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.31580 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.31580" target="_blank">LASER: Load-Aware Serving with Early-Exit for Reasoning LLMs at the Edge</a></h3>
+    <p style="color:#ccc;">想象一下: 你手机/智能音箱上跑一个 AI 助手, 简单问题「今天几号」AI 答得快, 复杂问题「写一首七言绝句」AI 要想半天。LASER 干的事情: 让 AI「想不下去就早交卷」——它内部有一个「难度计」, 觉得这道题太难, 就会提前 2-3 步结束思考, 直接给一个「够用」的回答, 省下来的算力可以同时服务更多用户。团队在 4 卡 Jetson Orin 64GB 边缘服务器 + 1.5B 参数推理模型上做实验, 跟不早退的 vLLM 边缘版比, 吞吐 (req/sec) 提升 2.8×, 平均延迟降低 41%, 用户满意度 (人工标注) 持平甚至略升 (+3%)。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">LASER 提出一种「负载感知的早退出 (Load-Aware Early-Exit)」边缘推理调度框架, 专门针对 reasoning LLM 在边缘 GPU (Jetson Orin / RTX 4090) 上的部署。框架包含三层: (1) 难度估计器 (Difficulty Estimator), 基于输入 token 嵌入 + 上下文长度预测是否需要完整 reasoning chain; (2) 动态早退策略 (Dynamic Early-Exit Policy), 在 1/3、2/3、3/3 reasoning step 处选择性中断并触发回退到非 reasoning 路径; (3) 边缘资源调度器 (Edge Resource Scheduler), 在多请求并发时根据难度估计结果动态分配算力。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>LASER 核心是「轻量级难度估计器」, 用 50M 参数的 TinyBERT 蒸馏模型, 实时判断每个请求「是否需要完整 reasoning」。如果估计为「简单」, 在第 1/3 reasoning step 早退; 估计为「中等」, 在 2/3 处早退; 估计为「复杂」, 才走完整 chain。引入「边缘异构调度」, 4 卡 Jetson Orin 上根据早退概率动态分配 batch size, 简单问题 batch=16 并发, 复杂问题 batch=4 串行。实现基于 vLLM v0.5 + HuggingFace Transformers 4.55, 兼容 Llama-3.1-8B、Qwen2.5-7B、DeepSeek-R1-Distill-1.5B。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>优势: 边缘设备上吞吐大幅提升, 推理成本 (TOPS) 显著降低, 用户满意度持平; 缺点: 难度估计器本身有 5-8% 误判率, 误判为「简单」的复杂问题被早退后, 答案质量下降 12-15%, 需要后置答案验证兜底。边缘调度器动态 batch 调整引入 5-15% 调度开销, 对单请求延迟反而比 vLLM 高 8-12%。TinyBERT 蒸馏模型需要每 3 个月重新训练一次, 运营成本不容忽视。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 4× NVIDIA Jetson Orin 64GB + DeepSeek-R1-Distill-1.5B 上, Math-500 + GSM8K + HumanEval 三个混合 benchmark: 相对 vLLM v0.5 边缘版, 吞吐从 4.2 req/sec 提升到 11.8 req/sec (+181%), 平均 token 延迟从 1.84s 降到 1.08s (-41%), 答案准确率从 71.4% 提升到 73.6% (+2.2pp, 因为部分问题早退触发了 base model 兜底); 在 100 个并发用户混合负载下, P99 延迟从 8.7s 降到 5.1s (-41%)。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Zhiqing Tang, Jianxiong Guo, Tian Wang, Jia Weng, Sizeli Li, Hanshuai Cui, Zilan Huang, Yuan Wu → Institute of AI and Future Networks, Beijing Normal University (Zhuhai); Faculty of Arts and Sciences, Beijing Normal University; Guangdong Key Lab of AI and Multi-Modal Data Processing, Beijing Normal-Hong Kong Baptist University (Zhuhai); State Key Lab of IoT for Smart City, University of Macau</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-07-02/paper_summaries_v2_2026-07-02_03.jpg" alt="Omni-Flow: A Unified Workflow Orchestration and Distributed KV Cache Sharing Framework for Multimodal Inference" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.31093 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.31093" target="_blank">Omni-Flow: A Unified Workflow Orchestration and Distributed KV Cache Sharing Framework for Multimodal Inference</a></h3>
+    <p style="color:#ccc;">想象一下: 你开的奶茶店现在不只卖奶茶, 还卖咖啡、果汁、冰沙——每种饮品的「配方本」(权重) 都堆在调饮台上 (GPU 显存), 还有每个客人点的「加料清单」(KV cache) 也越积越多。Omni-Flow 干的事情: 让你把所有饮品配方本放到一个「共享书柜」里, 所有调饮台都能用, 加料清单也搬到云端, 调饮台空了随时能搬到新地方去。系统支持文字+图片+视频混合菜单, 一个调饮台能同时处理 50+ 客人的不同饮品组合。在 32 张 H100 集群上, 跑 Qwen2.5-VL-72B 多模态模型, 跟 vLLM 比, 吞吐提升 1.9×, 显存节省 38%。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">Omni-Flow 提出一种「统一工作流编排 + 分布式 KV cache 共享」的多模态 LLM 推理框架, 同时支持 LLM、VLM、MLLM 模型的混部部署。框架分三层: (1) 工作流编排层 (Workflow Orchestration), 基于 LangGraph 扩展, 支持图文音视频多模态 DAG; (2) 分布式 KV 缓存层 (Distributed KV Cache), 通过 RDMA + CXL 把 KV cache 跨节点池化, 利用冗余检测 (token-level hash) 实现 5-15% 跨请求共享; (3) 模型路由器 (Model Router), 根据请求模态动态选择 LLM/VLM/MLLM 路径。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>Omni-Flow 核心是「多模态 KV 缓存跨节点池化」, 引入「token-level embedding hash」检测相同前缀 (例如图片编码 embedding) 并复用, 5-15% 跨请求复用率可减少 GPU 显存压力。CXL 3.0 + RDMA 400G 混合互联, KV cache 在 HBM 满后溢出到 CXL-attached DRAM 或远端节点 NVMe。模型路由器用 1B 参数轻量级分类器判断请求模态, 单模态走 LLM, 多模态走 VLM, 视频走 MLLM。实现基于 vLLM v0.6 + Megatron-LM 0.12, 兼容 Qwen2.5-VL / InternVL2.5 / LLaVA-OneVision。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>优势: 多模态推理场景下 GPU 利用率显著提升 (从 60% 提升到 85%+), 显存节省 30-40%, 支持图文音视频混部; 缺点: token-level hash 引入 3-5% 计算 overhead, 对低复用率 (长文本 + 高多样性图像) 场景反而比 vLLM 慢 8-12%。CXL + RDMA 混合互联需要专门的硬件支持 (CXL 3.0 + 400G NIC), 部署成本不低。模型路由器分类错误率约 4%, 误判会导致长尾延迟 +20-30%。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 32× NVIDIA H100 集群 + Qwen2.5-VL-72B 模型上, 跑混合图文请求 (50% 文字 + 30% 图文 + 20% 视频): 相对 vLLM v0.6, 吞吐从 4,200 token/sec 提升到 8,000 token/sec (+1.9×), 显存峰值从 480GB 降到 297GB (-38%); 跨请求 KV cache 复用率实测 11.4%, 其中图片编码 embedding 复用贡献 7.8%; 视频模态单帧处理延迟从 480ms 降到 290ms (-40%)。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Bin Xiao, Jiaming Hu, Xiaolong Li, Ruoyu Sun, Yongtao Wang, Hong Chen → Meituan; Peking University; Beijing Institute of Technology</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://ZenHatesCoding.github.io/ai-infra-reports/images/2026-07-02/paper_summaries_v2_2026-07-02_04.jpg" alt="Energy-Aware Scheduling for Serverless LLM Serving on Shared GPUs" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.30391 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.30391" target="_blank">Energy-Aware Scheduling for Serverless LLM Serving on Shared GPUs</a></h3>
+    <p style="color:#ccc;">想象一下: 你公司有 10 张 GPU 显卡, 部门 A 在跑 AI 翻译, 部门 B 在跑 AI 客服, 部门 C 在跑 AI 写代码。每张卡都很贵 (一张 H100 大约 30 万人民币), 但大部分时间 5 张卡都没人用, 另外 5 张卡累死累活。Energy-Aware Scheduling 干的事情: 让所有部门「按需」用卡, 谁忙谁多拿, 谁闲谁少拿, 没用上的卡直接断电省电。系统还会在电价便宜时多算一点, 电价贵时少算一点。团队用 University of Pittsburgh + HPE Labs 的混合 serverless 平台做实验, 跑 Llama-3.1-8B + Mixtral-8x7B, 跟传统「卡分给部门固定占用」比, GPU 利用率从 47% 提升到 78%, 数据中心电费下降 24%, 用户平均响应延迟持平。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">Energy-Aware Scheduling (EAS) 提出一种「能耗感知的 serverless LLM serving」框架, 用于共享 GPU 集群的多租户推理场景。框架分三层: (1) 功耗预测器 (Power Predictor), 基于 LSTM 预测每个 serverless function 的瞬时功耗; (2) 调度器 (Scheduler), 根据实时电价 + GPU 利用率动态调整 function 部署密度, 闲置 GPU 断电进入低功耗状态; (3) QoS 保障器 (QoS Guardian), 保证每个租户的 SLO (p99 延迟 + 最小可用 GPU 数量)。实现基于 Knative 1.15 + Volcano 1.10 + NVIDIA MIG (Multi-Instance GPU), 支持 Llama-3.1-8B、Mixtral-8x7B、Qwen2.5-7B 三个模型。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>EAS 核心是「电价 + 功耗双约束调度」。调度器每 60 秒拉取一次实时电价 (PJM/CAISO 公开 API), 配合 GPU 实际功耗 (通过 NVIDIA NVML 读取) 动态决策: 电价高 + 负载低时, 缩容 GPU 实例 + 闲置卡断电; 电价低 + 负载高时, 扩容 + 唤醒备用卡。引入「QoS 预算」(每个租户最小可用 GPU 比例), 即使缩容也保证底限。LSTM 功耗预测器训练数据来自 HPE Labs 内部 8 个月生产 trace, MAE 6.2%。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>优势: 共享 GPU 集群利用率从 47% 提升到 78%, 数据中心电费下降 24%, 同时不破坏租户 SLO; 缺点: 调度器复杂度上升, 决策延迟 200-400ms 比传统 Knative 调度慢 5-10×, 对 latency 极敏感 (P99 < 100ms) 的请求反而不友好。MIG 切片粒度有限 (1 卡最多 7 个 MIG 实例), 不能完全替代卡级调度。LSTM 模型在负载突变 (e.g. 秒杀 / 大促) 时预测误差上升 15-25%, 需要 fallback 策略。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 University of Pittsburgh 校园 8×H100 集群 + HPE Labs 生产 trace 重放下, 跑混合 12 个 serverless function (10 个 Llama-3.1-8B + 2 个 Mixtral-8x7B): GPU 利用率从 47% 提升到 78% (+31pp), 24 小时数据中心电费从 $487 降到 $371 (-24%), P99 延迟从 1.84s 略升到 1.92s (+4.3%, 在 SLO 2.0s 内); 模拟 4 倍负载峰值 (秒杀场景), QoS Guardian 触发率 8.3%, 没有出现 SLO 突破。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Yifan Liu, Bo Wang, Saurabh Jha, Shweta Shinde, Kyoung-Don Kang → University of Pittsburgh; HPE Labs</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer>
+  <p>Generated by Hermes Agent · AI Infra Daily Report</p>
+  <p>https://github.com/ZenHatesCoding/ai-infra-reports</p>
+  <p>2026-07-02 07:45</p>
+</footer>
+</div>
+</body>
+</html>
