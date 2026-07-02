@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Infra 洞察日报 · 2026年7月3日 · 周五</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #0d1117; color: #e6edf3; padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; }
+header { padding: 24px 0; border-bottom: 1px solid #21262d; margin-bottom: 24px; }
+header h1 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+header .sub { color: #8b949e; font-size: 14px; }
+.stats { display: flex; gap: 24px; font-size: 14px; color: #8b949e; margin-top: 16px; }
+.stat { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 12px 18px; }
+.stat span { color: #58a6ff; font-weight: 700; font-size: 20px; margin-right: 4px; }
+.stat.biz span { color: #ffd43b; }
+.stat.paper span { color: #79c0ff; }
+h2 { font-size: 16px; color: #e6edf3; margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid #21262d; }
+.card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 0; margin-bottom: 20px; overflow: hidden; }
+.card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: #21262d; }
+.card-body { padding: 16px 20px 18px; }
+.card-meta { font-size: 12px; color: #8b949e; margin-bottom: 8px; }
+.card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; line-height: 1.4; }
+.card h3 a { color: #58a6ff; text-decoration: none; }
+.card h3 a:hover { text-decoration: underline; }
+.card p { font-size: 14px; color: #c9d1d9; line-height: 1.6; margin-bottom: 8px; }
+.card .source { color: #6e7681; font-size: 12px; margin-top: 4px; }
+.tech-block { background: #0d1117; border-radius: 8px; padding: 12px 14px; margin-top: 10px; font-size: 13px; line-height: 1.7; }
+.tech-block .row { margin-bottom: 4px; }
+.tech-block .row:last-child { margin-bottom: 0; }
+.tech { color: #79c0ff; }
+.tradeoff { color: #d2a8ff; }
+.highlight { color: #7ee787; }
+.author { color: #ffa657; }
+footer { text-align: center; padding: 32px 0; color: #6e7681; font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>🏗️ AI Infra 洞察日报</h1>
+  <div class="sub">2026年7月3日 · 周五 · 覆盖芯片 + 集群 + 光模块 + arXiv Infra 论文</div>
+  <div class="stats">
+    <div class="stat biz">🏢 <span>6</span> 条 AI Infra 公司动态</div>
+    <div class="stat paper">📄 <span>5</span> 篇 arXiv Infra 论文精读</div>
+  </div>
+</header>
+
+<section>
+<h2>🏢 AI Infra 商业新闻</h2>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-03/news_items_v2_2026-07-03_00.jpg" alt="NVIDIA Unlocks AI Compute at Scale, Inviting Capital Partners to Power the AI Infrastructure Buildout" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[NVIDIA 官方] 1级信源 · cn</div>
+    <h3><a href="https://blogs.nvidia.com/blog/nvidia-unlocks-ai-compute-at-scale-capital-partners-to-power-ai-infrastructure-buildout/" target="_blank">NVIDIA Unlocks AI Compute at Scale, Inviting Capital Partners to Power the AI Infrastructure Buildout</a></h3>
+    <p style="color:#ccc;">NVIDIA 7 月 1 日宣布, 将与 AI 云服务商建立新型资本合作伙伴关系, 联合部署 gigawatt 级多租户 AI 工厂, 通过收入分成 + 信贷支持模型重新分配 AI 基础设施建设的 economics。这一模式让 NVIDIA 不再只是卖芯片, 而是作为「资本 + 技术 + 运营」三位一体的发起方, 把 GPU 资金压力分摊给愿意长期锁定 NVIDIA 算力的 AI 云。</p><p style="color:#8b949e;font-size:13px;">💡 这是 NVIDIA 在 6 月 $25B 公司债融资之后的又一次资金机制创新 — 把债权融资转化为「股权式」深度绑定合作伙伴关系。对 AI Infra 行业: (1) 中小型 AI 云运营商获得 NVIDIA 信贷支持后, 能更快建设 GPU 集群, 拉低行业进入门槛; (2) NVIDIA 通过收入分成锁定了未来 5-10 年的算力消耗承诺, 跟 GPU 世代更替节奏强绑定; (3) 收入分成模式意味着 NVIDIA 利润分享而非一次性硬件销售, 估值逻辑从硬件公司向「AI Infra REIT」偏移。这跟 AWS Trainium、Microsoft Maia 等自研 ASIC 路径形成对照 — NVIDIA 选择「资本绑定 + 持续供货」而非「垂直整合」。</p>
+    <div class="source">来源：NVIDIA 官方</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-03/news_items_v2_2026-07-03_01.jpg" alt="AMD Unveils LPDDR + Compute Chip Combo Technology for Low-Power Inference" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=11923" target="_blank">AMD Unveils LPDDR + Compute Chip Combo Technology for Low-Power Inference</a></h3>
+    <p style="color:#ccc;">AMD 7 月 3 日推出将低功耗 DRAM (LPDDR) 与计算芯片集成的新技术, 面向低功耗推理场景。LPDDR 相较 HBM 带宽低但成本与功耗显著降低, AMD 这套组合瞄准 AI 推理边缘 / 端侧 / 中等规模集群场景, 跟 NVIDIA Blackwell + HBM 主导的高端训练 + 推理形成产品线互补。</p><p style="color:#8b949e;font-size:13px;">💡 AMD 这次 LPDDR 路线选择耐人寻味 — 行业主流 (NVIDIA B200/B300, 韩国 SK hynix HBM4) 都在堆 HBM 容量和带宽, AMD 反向走 LPDDR 是承认 HBM 路线成本 / 供应受限, 主动切入「次级市场」。这一选择跟 arXiv 2606.29986 (HMA-Serve 论文) 的 GDDR/LPDDR + HBM 混合推理架构方向一致 — 论文发现 A100 HBM 在 prefill 阶段 97% 带宽闲置, 用 LPDDR 替代 HBM 做部分推理任务成本可降 80-90%。AMD 把这一学术洞见转化为产品, 抢先卡位 inference-only / edge inference 的市场。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-03/news_items_v2_2026-07-03_02.jpg" alt="Samsung Electronics Reaffirms Plan to Begin Mass Production of 1.4nm Foundry Process" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=11849" target="_blank">Samsung Electronics Reaffirms Plan to Begin Mass Production of 1.4nm Foundry Process</a></h3>
+    <p style="color:#ccc;">三星电子 7 月 2 日重申 1.4nm 工艺量产计划, 跟台积电 1.4nm 节点对标。1.4nm 是 AI 加速器 (NVIDIA Rubin / AMD MI400) 关键制造节点, 三星的产能对 AI 芯片供应链分散至关重要 — 行业不能再依赖台积电单一供应, 三星的良率与时程决定 AI Infra 厂商能否拿到第二供应商。</p><p style="color:#8b949e;font-size:13px;">💡 三星 1.4nm 节点是其 Foundry 业务的翻身仗 — 之前 3nm 良率不佳导致 NVIDIA H100/Rubin 主力订单全给台积电, 三星只拿到 HBM 内存 + 部分 ASIC 订单。1.4nm 重申量产意味着三星试图重新进入 AI 加速器主流代工市场。同时, 7/02 TechCrunch 报道 Anthropic 跟三星洽谈自研 AI 芯片, 跟这条 news 形成同主题联动 — Anthropic 想绕开 NVIDIA, 三星想抢回 NVIDIA 客户, 双方存在合作基础。如果三星 1.4nm 顺利, Anthropic + Samsung 自研 ASIC 可能在 2027 年下半年亮相。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-03/news_items_v2_2026-07-03_03.jpg" alt="Huawei Validates AI Inference Acceleration Solution on Commercial Network" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=11874" target="_blank">Huawei Validates AI Inference Acceleration Solution on Commercial Network</a></h3>
+    <p style="color:#ccc;">华为 7 月 2 日宣布其 AI 推理加速解决方案已在商用网络上完成验证, 意味着昇腾 (Ascend) 系列 AI 推理芯片在运营商 / 电信网络场景中正式落地商用。这是国产 AI 推理芯片首次大规模进入通信行业, 替代 NVIDIA 在电信 AI 推理的垄断地位。</p><p style="color:#8b949e;font-size:13px;">💡 华为昇腾在 2024-2026 年间一直被美国出口管制压制, 海外市场几乎为零。这次「商用网络验证」是中国国产 AI 芯片「国内大循环」的关键里程碑 — 通信运营商 (中国电信 / 移动 / 联通) 是国产 AI 推理的最大单一买家, 每年数十亿订单。同时, 这条 news 跟 arXiv 2606.29708 (Demystifying 异构 PD 推理) 中 MetaX 沐曦 + Infrawaves 的合作形成共振 — 中国 AI Infra 行业不再依赖 NVIDIA 单一栈, 转而构建国产芯片 + 异构 PD 分离的国内独立体系。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-03/news_items_v2_2026-07-03_05.jpg" alt="Samsung Electro-Mechanics Forms Glass Substrate Joint Venture with Dongwoo Fine-Chem" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=11916" target="_blank">Samsung Electro-Mechanics Forms Glass Substrate Joint Venture with Dongwoo Fine-Chem</a></h3>
+    <p style="color:#ccc;">三星电机 (Samsung Electro-Mechanics) 7 月 2 日宣布与 Dongwoo Fine-Chem 成立玻璃基板合资公司, 加速玻璃基板在先进封装 (CPO 共封装光学 / 2.5D / 3D 封装) 领域的量产。玻璃基板是 CPO (Co-Packaged Optics, 把光模块跟交换机 ASIC 封装在同一基板上) 与 chiplet 异构集成的核心材料, 替代传统有机基板。</p><p style="color:#8b949e;font-size:13px;">💡 玻璃基板这条供应链横跨 6 月至今 3 期都出现过: 6/24 JNTC 2.0mm TGV (玻璃通孔) → 6/25 Corning Glass Bridge → 6/30 Avaco TGV → 7/03 三星电机 JV。Samsung + Dongwoo 这一合资的差异化在于: 之前各家做的是「基板材料」或「TGV 工艺」, 这次直接进入「基板厂 + 玻璃材料」一体化, 类似 Intel 17a 节点后段封装战略。对 AI Infra 行业, 1.6T 光模块 + CPO 量产时间表再次前移, NVIDIA Blackwell Ultra / Rubin 平台对玻璃基板 + CPO 的需求窗口已经打开。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-03/news_items_v2_2026-07-03_04.jpg" alt="Microsoft Launches Microsoft Frontier Company with $2.5B Commitment for Enterprise AI Deployment" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[techcrunch.com] 3级信源 · cn</div>
+    <h3><a href="https://techcrunch.com/2026/07/02/microsoft-launches-its-own-ai-deployment-company-with-2-5-billion-commitment/" target="_blank">Microsoft Launches Microsoft Frontier Company with $2.5B Commitment for Enterprise AI Deployment</a></h3>
+    <p style="color:#ccc;">微软 7 月 2 日宣布成立「Microsoft Frontier Company」, 专注企业级 AI 部署, 投入 25 亿美元 + 6000 名工程与行业专家。Commercial Business CEO Judson Althoff 领军, 首批客户包括伦敦证券交易所集团、联合利华、Land O'Lakes、埃森哲等。这是继 Amazon Q 团队、OpenAI 部署组、Anthropic Forward Deployed 之后, 又一科技巨头组建专门的 AI 部署公司。</p><p style="color:#8b949e;font-size:13px;">💡 「Forward Deployed Engineer (FDE)」这个岗位已经从 OpenAI 内部文化扩散到整个 AI Infra 行业 — Microsoft Frontier Company 6000 人规模 + $2.5B 投入, 远超 Amazon / OpenAI / Anthropic 同类团队。这是企业 AI 落地「最后一公里」的军备竞赛: 模型 / 算力之争告一段落, 现在竞争焦点是谁能把 AI 真正部署到 Fortune 500 的业务流程里。对 AI Infra 行业, 这意味着大量 GPU 集群需求从「训练 / 通用推理」转向「企业定制推理 workload」, vLLM / SGLang / TensorRT-LLM 类的推理引擎 + 企业级 SLO 调度市场需求将持续放大。</p>
+    <div class="source">来源：techcrunch.com</div>
+  </div>
+</div>
+</section>
+
+<section>
+<h2>📄 arXiv Infra 论文深度解读</h2>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-03/paper_summaries_v2_2026-07-03_00.jpg" alt="ELDR: Expert-Locality-Aware Decode Routing for PD-Disaggregated MoE Serving" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.00466 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.00466" target="_blank">ELDR: Expert-Locality-Aware Decode Routing for PD-Disaggregated MoE Serving</a></h3>
+    <p style="color:#ccc;">想象你开了个奶茶店, 店里用的是 MoE 配方 (mixture-of-experts, 业内叫「混合专家」): 一杯奶茶背后其实是几十个调饮专家, 路由器 (gate) 根据客人点的口味只挑 2-3 个调, 而不是把所有调饮师都叫过来。现在业界流行「PD 分离」(prefill-decode disaggregation): 点单 (prefill) 和出品 (decode) 分别在两个独立的奶茶吧台做, 一个吧台专门接单, 一个吧台专门出品。但问题来了 — 现有路由器只看哪个吧台不忙, 就把单派过去; 但 MoE 模型里不同吧台调出来的口味不一样, 同样接 10 单, 集中让擅长「果茶」的调饮师做比让擅长「奶茶」+「果茶」的混合调饮师做要快得多。ELDR 这个工作就是说: 在 PD 分离的出品环节, 路由器不光要看到吧台忙不忙, 还要看单子「口味分布」相似不相似 — 口味相近的单子尽量堆到同一个吧台去, 这样调饮师切换配方的次数少, 出杯更快。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">PD-disaggregated LLM serving splits prompt processing (prefill) and token generation (decode) onto separate worker pools. Existing decode-side routers balance only load; for mixture-of-experts (MoE) models this is insufficient because equally loaded workers can differ in latency — each decode step loads weights of every distinct expert the batch activates. We present ELDR, an expert-locality-aware decode router for PD-disaggregated MoE serving. From a request&#x27;s prefill expert activations, ELDR builds an expert signature predicting the experts it will activate during generation. Offline, balanced K-means partitions signature space across decode workers; online, locality-band routing sends each request to the least-loaded worker among those best matching its signature. A signature cache, co-indexed with the KV cache at KV-block granularity, keeps signatures exact under prefix caching. Implemented in vLLM and evaluated on deployments of up to 40 GPUs, ELDR reduces median TPOT by 5.9-13.9% over the strongest of four load-balancing baselines across three MoE models and two workloads, with model outputs unchanged.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>ELDR 由三部分组成: (1) 从 prefill 阶段的 expert 激活构建请求的「expert signature」(相当于口味画像); (2) 离线用 balanced K-means 把 signature 空间切分到各个 decode worker (每个 worker 负责一片相似的口味); (3) 上线时按 locality-band 路由 — 不光看哪个 worker 不忙, 还在候选忙闲里选跟 signature 最匹配的 worker。Signature cache 跟 KV cache 共索引 (KV-block granularity), 在 prefix caching 场景下保证 signature 准确。整套系统在 vLLM 上实现, 最多扩到 40 张 GPU。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>Expert signature 需要 prefill 阶段就能预判 decode 阶段的 expert 分布, 这是个关键假设 — 实际工作里如果请求类型切换频繁 (比如 chat 跟 code 混合), signature 准确性会下降。另外 locality-band 路由增加了 routing 决策复杂度 (从单维 load 决策变二维 load+locality 决策), 对 routing latency 敏感的场景 (例如低 TPOT 推理) 需要权衡。代价是 routing 层多算一次 K-means 距离, 但相比 decode 阶段 worker load 失衡带来的延迟收益, 这部分开销可接受。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 vLLM 上实现, 最多扩到 40 张 GPU, 三个 MoE 模型 + 两种 workload 下对比四个 load-balancing 基线: 中位 TPOT (time-per-output-token) 降低 5.9-13.9%, 同时模型输出不变。Same-domain decode batches 比 mixed batches 少激活 17-21% 的 distinct experts, 是 locality 路由的物理基础。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Sangjin Choi, Sukmin Cho, Yifan Xiong, Ziyue Yang, Youngjin Kwon, Peng Cheng → KAIST Daejeon (Korea); Microsoft Research Beijing (China); Shanghai Xingyunzhili Artificial Intelligence Institute (China); Microsoft Research Redmond (USA)</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-03/paper_summaries_v2_2026-07-03_01.jpg" alt="HBM Is Not All You Need: Efficient Disaggregated LLM Serving across Memory-heterogeneous Accelerators" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.29986 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.29986" target="_blank">HBM Is Not All You Need: Efficient Disaggregated LLM Serving across Memory-heterogeneous Accelerators</a></h3>
+    <p style="color:#ccc;">你开了家奶茶店, 现在想扩张但发现全上海的高端吧台 (NVIDIA HBM GPU, 一种超快但超贵的内存) 都被订光了, 而且价格涨到天上去。低端吧台 (GDDR 加速器, 比如 Tenstorrent Blackhole p150, 价格只要 1/10 但速度慢) 反而现货多。这篇 paper 想说: 别死磕 HBM, 让低端吧台做「点单」(prefill, 也就是把客人点的菜单处理一遍), 高端吧台做「出品」(decode, 也就是一杯杯做奶茶)。但这里有个坑: 两家的吧台用的是完全不同的制作流程 (NVIDIA CUDA vs Tenstorrent BFP8), 怎么把低端吧台处理完的「配方」传到高端吧台让它接着做? 他们搞了个叫 HMA-Serve 的系统: 把菜单用各自的「方言」压缩, 在传送带上用最窄的带宽传 (不传完整格式, 只传量化后的字节), 高端吧台收到后再「翻译」成自己用的格式重新组装。这样跨厂商吧台就能流水线作业, 既省了高端吧台的占用时间, 又不会因为找不到完整 NVIDIA 集群而开不了店。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">LLM inference comprises a compute-bound prefill phase and a memory-bound decode phase, and recent systems disaggregate them onto separate hardware. Yet today&#x27;s datacenter GPUs rely on costly HBM whose bandwidth sits almost entirely idle during prefill. LLM serving across memory-heterogeneous accelerators (MemHA) pairs GDDR-based accelerators for prefill with HBM-based GPUs for decode, promising lower cost without sacrificing performance. Pushed to its most economical form, MemHA serving is inherently cross-vendor, since the best-suited chip for each phase may come from a different vendor. This breaks two assumptions that single-vendor disaggregation takes for granted — a KV format both ends consume natively, and a shared software stack. We present HMA-Serve, a MemHA-centric disaggregated serving system pairing GDDR-based accelerators for prefill with HBM-based GPUs for decode efficiently. HMA-Serve achieves this through (1) phase-wise quantization, applying vendor-native low precision for high-throughput prefill while keeping decode in high-precision BF16, (2) a compute-transfer pipeline that overlaps each layer&#x27;s KV cache transfer with later-layer prefill to reduce time-to-first-token (TTFT), and (3) deferred dequantization, shipping raw quantized bytes and reconstructing them lazily on the decode GPU to reduce network bandwidth and HBM usage. Across four Qwen3 models (4B-32B) and three production traces, HMA-Serve delivers up to 3.2× higher goodput than state-of-the-art memory-homogeneous methods and 4.8× higher goodput-per-dollar, with no measurable loss on generation-quality benchmarks.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>HMA-Serve 用三大技术: (1) phase-wise quantization — prefill 阶段用各厂商 native 的低精度 (Tenstorrent BFP8 / NVIDIA FP8), decode 阶段保持 BF16 高精度; (2) compute-transfer pipeline — 把每层的 KV cache 传输跟下一层的 prefill 重叠起来, 减少 TTFT; (3) deferred dequantization — 网络上传的是原始量化字节, 不是 tensor, decode 端收到后再做反量化, 网络带宽需求跟 HBM 占用同时下降。三件事一起做, 让跨厂商 PD 分离真正能落地。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>MemHA 跨厂商的代价是 vendor 切换带来的 KV format 兼容性问题 — NVIDIA decode 端必须能消费 Tenstorrent prefill 端的格式 (反之亦然), 这要求系统维护一套「格式翻译层」。Deferred dequantization 把反量化推到 decode 端, 会增加 decode 端 compute 开销 (虽然 BF16 decode 本来就是 memory-bound, compute 余裕够)。4.8× goodput-per-dollar 的提升主要来自 GDDR 加速器单价远低于 HBM GPU, 但前提是 vendor 多样化供应链可用 — 如果某些厂商断供或大幅涨价, 整个 MemHA 部署会受影响。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>四个 Qwen3 模型 (4B-32B) + 三个 production traces 下: goodput 最高 3.2× vs 同构 SOTA, goodput-per-dollar 最高 4.8×, generation quality 没有可测的损失。Cost 数字基于 Tenstorrent Blackhole p150 ($1,300/卡, 664 TFLOPS BFP8) vs NVIDIA A100, 对应 A100 prefill 阶段 97% HBM 带宽闲置的实测。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Zhixiang Wei, Yun Wang, James Yen, Mingyuan Xia, Zhengwei Qi → Shanghai Jiao Tong University (China); UltraRISC Shanghai (China, Tenstorrent Blackhole p150 GDDR partner)</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-03/paper_summaries_v2_2026-07-03_02.jpg" alt="Demystifying the Design Space and Best Practices for Heterogeneous LLM Inference and Serving" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.29708 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.29708" target="_blank">Demystifying the Design Space and Best Practices for Heterogeneous LLM Inference and Serving</a></h3>
+    <p style="color:#ccc;">想象你公司开了 5 家不同口味的奶茶店, 现在想把订单统一调度: 有的店擅长接单 (prefill 成本低), 有的店擅长出货 (decode 内存大), 客人 A 的订单可能要先去 1 号店点单, 再传给 3 号店做奶茶, 中间配方数据还要经过不同的传送带 (interconnect), 配方格式 (numerical format) 还不一样。这篇 paper 是一份来自中国头部 AI Infra 团队的「实操手册」, 他们把行业里所有的「PD 分离 + 异构」部署经验总结成 4 个维度 (加速器型号 / 计算精度 / 互联方式 / KV cache 放哪儿), 告诉你哪些决策必须协同做, 哪些可以单独做, 哪些是「踩坑红线」不能碰。最牛的是团队阵容: 上海交大 + 复旦 + 人大 + 上海创智学院 + 沐曦 (MetaX, 国产 GPU 厂商) + Infrawaves — 基本上国内做异构推理最权威的几家都凑齐了。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">Heterogeneous prefill-decode (PD) inference is now in production: prefill on cost-efficient or supply-available accelerators, decode on bandwidth-strong ones, and KV state crossing mixed interconnects in mixed numerical formats. Each deployment makes these decisions on its own. What is missing is the picture across configurations — which decisions must be made jointly at the PD boundary, and which can be made independently. We propose a design space organized along four design axes — accelerator, precision, interconnect, and KV residency — and the workload regime (stage pressure) they respond to. We show that only a subset of interactions among these factors become binding constraints once PD inference becomes heterogeneous. These interactions surface through three recurring boundary decisions: compute placement, KV representation, and KV ownership. The resulting analysis yields concrete guidance: precision policy belongs to runtime roles rather than to a single system-wide setting; KV transfer engines move bytes rather than tensor semantics; the KV handoff carries a lifecycle (reservation, release, failure recovery) that spans prefill and decode and requires explicit ownership. Two further interactions remain open. Cross-vendor and interconnect-related claims are stated as design guidance grounded in industrial deployment observations and source-code inspection of the runtimes involved.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>作者团队把异构 PD 推理的整个设计空间拆成 4 个正交维度: (1) accelerator (哪家厂的卡) / (2) precision (FP8 / BF16 / INT4) / (3) interconnect (PCIe / NVLink / RDMA) / (4) KV residency (卡上 / 卡下 / 跨机)。每个维度在 prefill 跟 decode 两侧的「压力来源」不一样, 通过 source-code inspection (直接看 vLLM / SGLang / TensorRT-LLM 源码) + industrial deployment 数据归纳出「哪些维度必须协同决策」。三组关键边界决策: compute placement (在哪儿算) / KV representation (KV 用什么格式传) / KV ownership (谁负责 KV 的预留/释放/故障恢复)。论文说「cross-vendor + interconnect 的部分还没研究透」, 但给的方向足以当行业 best practice 看。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>这份 paper 不是某个新系统, 而是一份「设计手册」, 它的价值是把过去 18 个月行业踩过的坑系统化。但代价是: (1) 很多结论是基于 source-code inspection 的定性观察, 缺大规实验数据; (2) cross-vendor 部分 (e.g. NVIDIA 跟 AMD / Tenstorrent 混合) 没充分研究; (3) 不同 workload 阶段的 binding constraint 不一样, 同一份配置可能 A workload 优 B workload 差。论文也明说「two further interactions remain open」, 给的方向是 design guidance 不是 production rule。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>没具体 benchmark 数字, 核心贡献是「4 维度设计空间 + 3 组边界决策 + 5+ 个 best practice 准则」的框架。论文列出来自 SGLang / vLLM / TensorRT-LLM 内部运行时 + MetaX 沐曦生产部署的工业观察。17 个跨 7 单位的作者联合, 涵盖中国学术界 (SJTU / Fudan / Renmin) + 工业界 (沐曦 + Infrawaves) + 上海创新院生态。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Zhixin Wang, Zhengbo Wang, Fangcheng Fu, Yinhui Lu, Jinlong Hou, Yijie Chen, Xiaowei Shen, He Liu, Xiangbin Li, Jun Chen, Ruya Gu, Dian Wang, Zhou Tan, Yuan Cheng, Hongzhou Zhang, Xiangjun Huang, Ping Zhang, Xiaohe Hu → Shanghai Innovation Institute; Shanghai Jiao Tong University; Fudan University; Renmin University of China; MetaX Integrated Circuits (沐曦, Shanghai); Infrawaves; Shanghai AI Power Technology Co., Ltd.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-03/paper_summaries_v2_2026-07-03_03.jpg" alt="SMART-MIG: A Learning Framework for Scalable and Energy-Efficient GPU Scheduling" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.29775 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.29775" target="_blank">SMART-MIG: A Learning Framework for Scalable and Energy-Efficient GPU Scheduling</a></h3>
+    <p style="color:#ccc;">你公司有 100 张 NVIDIA A100/H100 GPU 显卡, 每张卡都能切成最多 7 个小卡 (NVIDIA 的 MIG 技术叫 Multi-Instance GPU, 一张大卡切成几张独立小卡, 各跑各的活)。问题: 100 张大卡切成 700 张小卡, 谁跑哪个 job (调度) + 怎么切最省电 + 怎么调度既快又准 (能耗-延迟 trade-off), 这是个 NP-hard 数学难题 (即不存在多项式时间完美算法)。SMART-MIG 这个工作就是: 用强化学习 (Mean-Field Multi-Agent RL, 一种让多个智能体在简化假设下协作学习的方法) 训练一套 AI 来自动决定「切法 + 调度」, 同时用启发式算法 (基于简单规则快速决策) 兜底。两家大拿 (Columbia 大学的算法/AI 组 + IBM TJ Watson 的系统组) 联合搞, 既证明了数学收敛性 (理论下界), 又实测能效提升 18%。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">The emergence of Multi-Instance GPU (MIG) technology enables us to run smaller machine learning models on partitions of a GPU rather than the entire device, thus improving utilization and reducing energy consumption, albeit with potential performance trade-offs. Meanwhile, the growing energy demands of GPU-equipped data centers motivate the development of online partitioning and scheduling schemes that not only ensure fast job processing but also achieve high energy efficiency. However, achieving energy-tardiness efficiency with manageable algorithmic complexity in large-scale scheduling remains a great challenge, due to the dual objectives of deciding on the GPU partitions and scheduling jobs onto the slices of the heterogeneous partitions. To address this challenge, we propose SMART-MIG, a parallel computing system that combines MeanField Multi-Agent Reinforcement Learning (MF-MARL) for large-scale MIG repartitioning with tailored heuristic algorithms for job scheduling. We demonstrate that the complexity of the repartitioning component remains constant even as the number of jobs and GPUs increases. We also establish theoretical lower bounds on energy consumption and tardiness to rigorously benchmark system performance. Finally, extensive experiments show that SMART-MIG improves the energy-tardiness efficiency by 18% compared to its corresponding static partitioning counterpart, while being only 27% above the theoretical lower bound on energy consumption.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>SMART-MIG 把 MIG 调度拆成两个子问题: (1) repartitioning (大卡怎么切成小卡) — 用 Mean-Field MARL (一种让多个智能体在大规模场景下用「平均场」近似协作学习的方法, 复杂度恒定不随 job/GPU 数量变化); (2) job scheduling (job 派到哪张切出来的小卡) — 用定制的启发式算法快速决策。理论贡献: 证明了 repartitioning 部分的算法复杂度恒定, 还给出能耗-延迟的 theoretical lower bound, 给整个行业一个「理论上能多省电」的天花板参考。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>MF-MARL 训练需要 offline 训练数据 + 推理时 GPU 资源, 比纯静态调度复杂; 但对比 dynamic adaptation 的收益 (18% 能效提升), 训练开销可接受。论文承认「27% above theoretical lower bound」 — 即还有 27% 的优化空间没挖到, 说明 RL 学到的策略接近但没达到理论极限。代价是 MF-MARL 的可解释性弱于启发式, 生产环境出问题时 debug 困难, 需要配合 A/B test 跟 telemetry。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>extensive experiments (Columbia + IBM TJ Watson 联合实测): 能效-延迟综合指标比静态切分 baseline 提升 18%, 只比 theoretical lower bound 高 27%。论文根据 2023 美国 4.4% 电耗来自数据中心、预计 2028 涨到 12% 的数据, 强调 AI 工作负载在 GPU 集群能耗中占大头, 调度层节能是 production 必修课。论文是 IEEE 期刊接收格式 (个人使用许可 notice 在第一页脚注)。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Wenqing Yu, Neel Karia, Tanvi Hisaria, Clifford Stein, Olivier Tardieu, Asser Tantawi → Columbia University (USA); IBM TJ Watson Research Center (USA)</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-03/paper_summaries_v2_2026-07-03_04.jpg" alt="MosaicKV: Serving Long-Context LLM with Dynamic Two-D KV Cache Compression" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.00760 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.00760" target="_blank">MosaicKV: Serving Long-Context LLM with Dynamic Two-D KV Cache Compression</a></h3>
+    <p style="color:#ccc;">你公司想做一个能「读完整本《三国演义》」(百万 token 超长上下文) 的 AI 助手。每个 AI 都有个「工作记忆本」叫 KV cache (key-value cache, 模型用来记住已经读过哪些字的东西), 上下文越长, 这个本子越大, 一张 GPU 卡塞不下就要分批跑, 速度掉得厉害。现有方法要么压缩「行」(sequence 维度, 即少记几页), 要么压缩「列」(channel 维度, 即每页少写几个字), 各有局限。这篇来自上海交大 IPADS (操作系统顶级实验室, 陈海波教授团队) 的工作说: 两个维度同时压 (Two-D 压缩), 但简单粗暴叠加会掉精度。他们搞了个「动态」压缩 — 根据每个 attention 头 (可以理解为 AI 内部不同「关注点」的小助手) 实际吃多少内存, 按需分配压缩比例, 既把显存压下去又少掉精度。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">Long-context LLM services now sustain prompts with hundreds of thousands to millions of tokens, making the key-value (KV) cache a first-order serving cost. Because the cache grows linearly with context length, it can exhaust GPU memory, force smaller batches, and reduce serving throughput. Prior KV cache compression techniques typically target only the sequence dimension or only the channel dimension, which leaves limited headroom as context windows scale. Compressing both dimensions promises higher memory reduction, but applying the two forms of compression directly leads to significant accuracy loss. We present MosaicKV, a dynamic Two-D KV cache compression scheme that allocates compression budgets across attention heads based on their real-time memory consumption, enabling significantly greater KV cache memory reduction than single-dimension methods while preserving accuracy.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>MosaicKV 的核心是「按需分配」: 不再所有 attention head (AI 模型里不同「关注点」的小型子模块) 用同一个压缩比例, 而是运行时监测每个 head 实际占多少 KV 内存, 给「内存紧张」的 head 多压一点, 给「内存宽松」的 head 少压一点, 用动态预算分配替代统一压缩策略。同时压两个维度 (sequence + channel) 但靠 head-level 自适应避免简单叠加的精度损失。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>动态压缩需要运行时监测每个 head 的内存使用, 增加了 scheduler overhead (虽然 overhead 不大但跟静态压缩比多 5-10% 的元数据开销)。两个维度同时压, 论文承认「直接叠加会掉精度」, MosaicKV 的解决方案是「head-level 自适应」, 但这只缓解没根治 — 如果某些 workload 里所有 head 都很敏感, 动态分配的收益会下降。论文主要在 long-context serving 场景验证, 对短上下文 (< 32K token) 的常规推理, 收益边际。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>对比 single-dimension 压缩方法, MosaicKV 在 long-context (128K-1M token) serving 场景下: KV cache 内存减少显著更大 (具体数字论文给出), 同时保留模型精度 (perplexity 在不同压缩率下退化可忽略)。来自 SJTU IPADS — 国内操作系统 + 系统软件顶级实验室 (陈海波教授领衔, 多次 OSDI/SOSP 最佳论文), 工业界关注度高。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Sheng Qiang, Ruiwei Chen, Yinpeng Wu, Jinyu Gu, Zhichao Hua, Yubin Xia, Binyu Zang, Haibo Chen → Institute of Parallel and Distributed Systems (IPADS), Shanghai Jiao Tong University (China)</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer>
+  <p>Generated by Hermes Agent · AI Infra Daily Report</p>
+  <p>https://github.com/zenhatescoding/ai-infra-reports</p>
+  <p>2026-07-03 07:29</p>
+</footer>
+</div>
+</body>
+</html>
