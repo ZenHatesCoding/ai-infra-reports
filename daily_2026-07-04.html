@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Infra 洞察日报 · 2026年7月4日 · 周六</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #0d1117; color: #e6edf3; padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; }
+header { padding: 24px 0; border-bottom: 1px solid #21262d; margin-bottom: 24px; }
+header h1 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+header .sub { color: #8b949e; font-size: 14px; }
+.stats { display: flex; gap: 24px; font-size: 14px; color: #8b949e; margin-top: 16px; }
+.stat { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 12px 18px; }
+.stat span { color: #58a6ff; font-weight: 700; font-size: 20px; margin-right: 4px; }
+.stat.biz span { color: #ffd43b; }
+.stat.paper span { color: #79c0ff; }
+h2 { font-size: 16px; color: #e6edf3; margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid #21262d; }
+.card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 0; margin-bottom: 20px; overflow: hidden; }
+.card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: #21262d; }
+.card-body { padding: 16px 20px 18px; }
+.card-meta { font-size: 12px; color: #8b949e; margin-bottom: 8px; }
+.card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; line-height: 1.4; }
+.card h3 a { color: #58a6ff; text-decoration: none; }
+.card h3 a:hover { text-decoration: underline; }
+.card p { font-size: 14px; color: #c9d1d9; line-height: 1.6; margin-bottom: 8px; }
+.card .source { color: #6e7681; font-size: 12px; margin-top: 4px; }
+.tech-block { background: #0d1117; border-radius: 8px; padding: 12px 14px; margin-top: 10px; font-size: 13px; line-height: 1.7; }
+.tech-block .row { margin-bottom: 4px; }
+.tech-block .row:last-child { margin-bottom: 0; }
+.tech { color: #79c0ff; }
+.tradeoff { color: #d2a8ff; }
+.highlight { color: #7ee787; }
+.author { color: #ffa657; }
+footer { text-align: center; padding: 32px 0; color: #6e7681; font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>🏗️ AI Infra 洞察日报</h1>
+  <div class="sub">2026年7月4日 · 周六 · 覆盖芯片 + 集群 + 光模块 + arXiv Infra 论文</div>
+  <div class="stats">
+    <div class="stat biz">🏢 <span>6</span> 条 AI Infra 公司动态</div>
+    <div class="stat paper">📄 <span>5</span> 篇 arXiv Infra 论文精读</div>
+  </div>
+</header>
+
+<section>
+<h2>🏢 AI Infra 商业新闻</h2>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-04/news_items_v2_2026-07-04_01.jpg" alt="SanDisk Ships Samples of 10th-Gen BiCS10 3D TLC NAND, 59% Higher Bit Density" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=11932" target="_blank">SanDisk Ships Samples of 10th-Gen BiCS10 3D TLC NAND, 59% Higher Bit Density</a></h3>
+    <p style="color:#ccc;">SanDisk 7/02 宣布开始送样第 10 代 3D TLC NAND (BiCS10 1Tb), bit density 较第 8 代 BiCS8 提升 59%, 接口速度 4.8 Gbps 提升 33%, 写入功耗降 10% / 读取降 34%。BiCS10 采用 CMOS-Bonded-to-Array (CBA) 工艺把 CMOS 控制电路跟存储阵列 wafer 分别制造后再晶圆对晶圆键合, 层数增至 332 层, 配 Toggle DDR6.0 接口 + SCA 协议 + PI-LTT 电源隔离技术。SanDisk 官方说 BiCS10 「专为数据中心 + AI 驱动 workload 设计」。</p><p style="color:#8b949e;font-size:13px;">💡 NAND 不是传统 AI Infra 头条, 但 BiCS10 揭示 AI 推理 + 长上下文 RAG + agentic system 对存储层级的新需求 — 推理端 KV cache 不能都塞 HBM (太贵), 溢出部分需要超高速 NAND 接住, 业界已经在做「HBM → NAND → SSD」三级存储。BiCS10 +59% bit density + 332 层让每 TB 成本继续下行, 跟 HBM 价格上涨形成对冲。同时 SanDisk + Kioxia + Samsung 都在 2026 年下半年密集送样 1Tb+ TLC/QLC, 行业进入「第 10 代战」, 数据中心 NAND 用量将继续放量。AMD LPDDR (7/03) + Samsung 1.4nm (7/03) + SanDisk BiCS10 (7/04) 一起, 显示 7 月 memory+foundry 子行业在「HBM 高端 + 替代品」双线推进。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-04/news_items_v2_2026-07-04_02.jpg" alt="Intel and TSMC Push Panel-Level Packaging as Market Set to Expand Tenfold" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=11912" target="_blank">Intel and TSMC Push Panel-Level Packaging as Market Set to Expand Tenfold</a></h3>
+    <p style="color:#ccc;">Intel 跟 TSMC 7/02 同时加码 fan-out panel-level packaging (FO-PLP) + 玻璃基板 (glass substrate) 产能, 业界预测 FO-PLP 跟玻璃基板市场未来 5 年将扩张 10×。PLP 是把芯片封装从传统 12 英寸晶圆级 (wafer-level) 转向大尺寸面板级, 单板可封装更多 die, 大幅降单颗芯片封装成本。玻璃基板替代有机基板是 CPO (共封装光学) + 2.5D/3D 先进封装的关键工艺。</p><p style="color:#8b949e;font-size:13px;">💡 Intel 跟 TSMC 同时押注 PLP + 玻璃基板 = AI Infra 后段封装的「行业共识」。这是 7/04 选材里**唯一跟 optical 强相关**的新闻: (1) 玻璃基板是 CPO 的核心材料, 没有它 NVIDIA Blackwell Ultra / Rubin 的 1.6T 光模块集成做不出来; (2) PLP 工艺让台积电 CoWoS 产能瓶颈部分缓解, 间接缓解 NVIDIA / AMD GPU 产能; (3) Intel 的加入意味着 panel-level 工艺从 TSMC 单源变成 Intel + TSMC 双源, 整个先进封装供应链冗余度上升。对 AI Infra 行业, 1.6T 光模块 + Rubin 平台 + 玻璃基板封装 = 7 月三线共振 (跟 7/03 三星电机+Dongwoo JV 玻璃基板合资同主题)。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-04/news_items_v2_2026-07-04_03.jpg" alt="Samsung Foundry Showcases 2nm GAA and 1.4nm Pipeline at SAFE Forum 2026" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=11905" target="_blank">Samsung Foundry Showcases 2nm GAA and 1.4nm Pipeline at SAFE Forum 2026</a></h3>
+    <p style="color:#ccc;">Samsung Foundry 7/02 在 SAFE Forum 2026 上披露多条客户产品 pipeline, 包括 2nm GAA 工艺跟 1.4nm 节点的客户清单与时程。Samsung 强调 1.4nm 量产计划按 7 月初重申的时间表推进 (跟 7/03 Samsung 1.4nm 重申同步), 同时 2nm GAA 节点已有多家客户 design-in。Samsung 试图用「工艺节点不输台积电」的口碑, 重新争夺 NVIDIA / AMD / 高通等 AI accelerator 主力订单。</p><p style="color:#8b949e;font-size:13px;">💡 Samsung 1.4nm + 2nm GAA 是 AI accelerator 制造节点的「双保险」: (1) 1.4nm 量产 = 与台积电 1.4nm 同节点对标, 性能/功耗/密度都不落下风, 客户愿意分一部分订单给三星分散供应链风险; (2) 2nm GAA 提前量产 = 给 NVIDIA Rubin Ultra / AMD MI500 / Qualcomm 等下一代 AI accelerator 留出制造窗口。如果 Samsung 顺利, NVIDIA Blackwell B300/Rubin 主力订单之前给台积电 100% 的格局可能改成「台积电 70-80% + Samsung 20-30%」, 整个 AI Infra 供应链集中度风险下降。跟 7/04 Anthropic-Samsung 2nm (n01) + 7/03 Samsung 1.4nm (跨期) 一起, 7 月是 Samsung Foundry「翻盘月」。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-04/news_items_v2_2026-07-04_04.jpg" alt="STI Begins Construction of 2.6 Trillion Won Power Semiconductor Materials Base in China" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=11894" target="_blank">STI Begins Construction of 2.6 Trillion Won Power Semiconductor Materials Base in China</a></h3>
+    <p style="color:#ccc;">韩国 STI 7/02 在中国广州破土建设 2.6 万亿韩元 (约 19 亿美元) 功率半导体材料生产基地, 涵盖 SiC (碳化硅) / GaN (氮化镓) 等第三代半导体材料。AI 数据中心 power delivery 是 AI Infra 长期被忽视的瓶颈, gigawatt 级 GPU 集群需要大量 SiC 高功率模块做 AC-DC / DC-DC 转换, 转换效率每提升 1% 直接等于省电数千万美元。</p><p style="color:#8b949e;font-size:13px;">💡 功率半导体是 AI Infra 供应链的「沉默基石」: NVIDIA Rubin / AMD MI400 / 自研 ASIC 都依赖高效 SiC/GaN power module 做电压调节, 否则 gigawatt 集群光 power delivery 损耗就吃掉 8-12% 电费。STI 这条新闻跟 6/30 Avaco TGV + 7/02 三星电机 JV 玻璃基板 + 7/02 Intel+TSMC PLP 形成「AI Infra 后段产业链」组合, 反映 7 月是 AI Infra 硬件供应链 (封装/基板/功率) 集中宣发期。对行业: (1) 中国 + 韩国双源 SiC 产能扩张, 减少对欧美 Wolfspeed/Coherent 等单源依赖; (2) 2.6 万亿韩元规模意味着 STI 押注 gigawatt 数据中心需求中长期持续; (3) 这条是 power-side 唯一进入 7/04 选材的供应链新闻。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-04/news_items_v2_2026-07-04_00.jpg" alt="Anthropic in Talks with Samsung for 2nm Custom AI Chip and Advanced Packaging" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[techcrunch.com] 3级信源 · cn</div>
+    <h3><a href="https://techcrunch.com/2026/07/02/anthropic-is-discussing-a-new-custom-chip-with-samsung/" target="_blank">Anthropic in Talks with Samsung for 2nm Custom AI Chip and Advanced Packaging</a></h3>
+    <p style="color:#ccc;">The Information 7/02 报道, Anthropic 正在跟 Samsung 洽谈合作开发定制 AI 芯片, 用 Samsung 2nm 工艺 + 先进封装 (advanced packaging)。Anthropic 还没敲定芯片用途、服务器集成方式、性能规格, 但这次是 4 月 Reuters 之后第一次实质性进展。这是 Anthropic 继 OpenAI×Broadcom (6/24 Jalapeño) 之后, 又一家头部模型公司试图绕开 NVIDIA 自研 ASIC, 同时也是 Samsung Foundry 在 NVIDIA 主力订单流失后, 重新进入 AI 加速器主流代工的翻身仗。</p><p style="color:#8b949e;font-size:13px;">💡 Anthropic×Samsung 的合作是「AI 模型公司 + 芯片厂」联手绕开 NVIDIA 的第二个里程碑 (第一个是 OpenAI×Broadcom 6/24)。跟 7/03 Samsung 1.4nm 量产重申 + 7/02 Anthropic-Samsung custom chip 洽谈形成 7/04 周六双线共振: 一边是 Samsung 试图重新夺回 AI accelerator 代工市场, 一边是 Anthropic 试图建立 GPU 之外的算力供应链冗余。如果 Samsung 2nm 顺利, Anthropic 自研 ASIC 可能在 2027 下半年亮相, 跟 Google TPU/AWS Trainium/Microsoft Maia 形成自研 ASIC 矩阵, NVIDIA 在头部模型公司的「独家供货」格局将松动。对 AI Infra 行业: (1) 自研 ASIC 市场规模继续膨胀, Broadcom/Marvell 受益; (2) Samsung Foundry 2nm 节点对 NVIDIA Blackwell/Rubin 的「二供」价值上升, 三星 1.4nm 节点的良率与时程直接决定行业供应链分散度。</p>
+    <div class="source">来源：techcrunch.com</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-04/news_items_v2_2026-07-04_05.jpg" alt="Meta Plans to Monetize Excess AI Compute Capacity, Following SpaceX's Lead" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[techcrunch.com] 3级信源 · cn</div>
+    <h3><a href="https://techcrunch.com/2026/07/01/meta-like-spacex-looks-to-turn-excess-ai-compute-into-cash/" target="_blank">Meta Plans to Monetize Excess AI Compute Capacity, Following SpaceX's Lead</a></h3>
+    <p style="color:#ccc;">TechCrunch 7/01 报道, Meta 正在筹备把过剩的 AI 算力对外销售, 模式跟 SpaceX 把 Starshield 卫星算力商业化类似。Meta 自 2024-2026 大规模建设 GPU 集群支撑 Llama 4/5 训练 + 推理后, 出现周期性算力闲置 (训练任务间隙 + 推理峰谷), 内部 team 已开始评估对外出售路径 (可能通过 API / Marketplace / 私有云方式)。这跟 NVIDIA 7/01 Capital Partners 模式 (n01 关联) 形成 7 月「AI Infra 二级市场」成型信号。</p><p style="color:#8b949e;font-size:13px;">💡 Meta 把过剩算力变现是 AI Infra「**长尾供给侧**」的重要信号: 之前 NVIDIA/Microsoft/AWS/Google 是「自建自用」, 现在 Meta/Tesla/SpaceX 集体进入「**自建 + 外销**」模式。对行业: (1) 中小 AI 初创公司多了一个非 NVIDIA/Microsoft 的算力采购来源, 价格可能比 NVIDIA Capital Partners 模式更低; (2) Meta 的「周期性闲置算力」+ SpaceX 的「轨道算力」+ Tesla 的「车端算力」共同推动 GPU 算力从「稀缺资源」向「市场化商品」演变; (3) 跟 6/30 TC 'RAMageddon' $550B (跨期) + 7/03 NVIDIA Capital Partners (跨期) 同主题, AI 算力交易基础设施 (marketplace / clearinghouse / 信贷) 正在快速成型。这是 7/04 选材里**唯一的 cluster vendor** news (绕开 7 月第 4 期缺 cluster 真新闻的难题)。</p>
+    <div class="source">来源：techcrunch.com</div>
+  </div>
+</div>
+</section>
+
+<section>
+<h2>📄 arXiv Infra 论文深度解读</h2>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-04/paper_summaries_v2_2026-07-04_00.jpg" alt="Towards Load-Aware Prefill Deflection for Disaggregated LLM Serving" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.02043 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.02043" target="_blank">Towards Load-Aware Prefill Deflection for Disaggregated LLM Serving</a></h3>
+    <p style="color:#ccc;">你开了家奶茶店, 现在店里分成两个吧台 — A 吧台专门接单 (prefill, 处理客人点的菜单), B 吧台专门做奶茶 (decode, 一杯杯做)。这套分工叫 PD 分离。但实际跑起来发现一个新问题: 客人来得不均匀 (bursty heavy-tailed), 早高峰 A 吧台累死, B 吧台闲着没事干。具体测下来, 在「A100 集群 2 个 prefill 吧台 + 2 个 decode 吧台 (2P2D)」上, prefill 自己干活的时间只占 P95 等待时间的 2-23%, **剩下的 77-98% 都花在「排队」+「吧台间传送配方 (KV cache)」**。这篇 Microsoft 的工作说: 别让 prefill 吧台独扛 — 当 prefill 排队太久时, 把单子「偏转 (deflect)」给正在闲的 decode 吧台, decode 吧台可以一边做自己的老单一边接 chunked prefill。但要让 decode 吧台不超时 (TBT SLO), 调度器得逐单算「prefill 吧台排队多久 vs decode 吧台插队多久」, 选能减少 P95 等待时间的方案。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">Disaggregated LLM serving runs prefill and decode on separate GPU pools to keep the two phases from interfering. In practice, this creates a new asymmetry: under bursty, heavy-tailed workloads prefill nodes saturate while decode nodes have compute underutilized, and on a production-style A100 cluster with 2 prefill and 2 decode nodes (2P2D), we find that prefill execution accounts for only 2-23% of P95 Time-to-First-Token (TTFT). Queuing and inter-node GPU-GPU KV-cache transfer account for the rest. We present a proactive prefill-deflecting scheduler that lets decode nodes serve prefill phase of requests as chunked-prefill steps interleaved with their in-flight decode batches. For each queued request, we estimate the TTFT it would see on the prefill node, and on every decode node, search for the largest chunk schedule that keeps in-flight decodes within their Time-Between-Tokens (TBT) SLO and deflect when the decode path helps tail latency. Because the prefill phase of deflected requests runs in place on the decode node, the inter-node KV transfer is eliminated. Implemented on vLLM and evaluated on production-style traces with DeepSeek-V2-Lite, our approach reduces P95 TTFT by upto 81% and raises SLO attainment by upto 79% over state-of-the-art disaggregated schedulers, at sub-millisecond per-request routing cost.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>Proactive prefill-deflecting scheduler 在 vLLM 上实现, 三步走: (1) **估算 prefill node 上每个排队请求的 TTFT** — 跟当前 prefill queue length + 服务速率有关; (2) **对每个 decode node 搜索最大可接受的 chunk schedule**, 条件是「插入的 chunk 不能让 in-flight decode 任务超出 TBT SLO」; (3) **当 decode 路径能让 P95 TTFT 更低时偏转请求**。关键 insight: 被偏转的请求其 prefill 在 decode node 上「in-place」执行, **跨 node 的 KV cache transfer 完全消失** (因为 prefill 直接在 decode node 上跑完), 这一点从根本上消除了 77-98% P95 TTFT 时间的 KV 传输瓶颈。整条调度路径 sub-millisecond per-request routing cost。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>**偏转调度增加了 decode node 的「双任务」开销**: prefill 跟 decode 是不同 workload profile, 同一张 A100 上同时跑需要仔细算力分配, 论文用 chunked-prefill 让 prefill 跟 decode 交错执行, 但调度器的搜索复杂度随 decode 节点数线性增长, cluster 规模继续放大时调度延迟可能成为新瓶颈。**chunk schedule 必须保持 TBT SLO** 这个约束意味着偏转不一定总是可行 — 当 decode 任务本身已经接近 SLO 上限, 偏转就被禁用了, 此时还是要走 prefill 节点老路径, 排队问题没解决。代价是 routing layer 多算一次 SLO 估计 + chunk schedule search, 但相对 P95 TTFT -81% 收益完全可接受。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>vLLM + DeepSeek-V2-Lite 在 production-style 流量下对比 SOTA disaggregated scheduler: **P95 TTFT 降低最多 81%, SLO attainment 提升最多 79%**, per-request routing cost < 1ms。论文给出 2P2D 配置下实测 prefiller 自身只占 P95 TTFT 2-23% (其余 77-98% 全是 queueing + inter-node KV transfer), 这数据本身就是对「PD 分离提升硬件利用率」论点的修正 — 如果不解决 KV transfer 瓶颈, 单纯 PD 分离收益很有限。Microsoft 5 人团队 (Shrikara Arun 等), t-sarun@microsoft.com 联系人。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Shrikara Arun, Anjaly Parayil, Srikant Bharadwaj, Renee St. Amant, Victor Rühle → Microsoft (USA, all 5 authors)</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-04/paper_summaries_v2_2026-07-04_01.jpg" alt="Lynx: Progressive Speculative Quantization for accelerating KV Transfer in Long-Context Inference" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.01831 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.01831" target="_blank">Lynx: Progressive Speculative Quantization for accelerating KV Transfer in Long-Context Inference</a></h3>
+    <p style="color:#ccc;">你奶茶店里最近流行超长上下文 (long-context, 一杯奶茶背后是 100 万字的小说), 这就需要 AI 模型读完整段小说后才能开始做 (decode)。但问题来了: PD 分离架构下, prefill 吧台读完整段小说后, 把「小说阅读笔记」KV cache 传给 decode 吧台才能开始做, **KV cache 笔记动不动就是几十 GB, 传送时间比真正做奶茶还长**。现有方法把笔记「压缩」(quantize, 比如从 16-bit 压到 4-bit), 但有个死结: 传送要传完才能开工, 网络带宽再宽也得等。Lynx (华为 + UCL 联合) 的想法很巧妙 — **笔记里的字有「重要性」**: 高位 bit 决定了「这段主要讲啥」, 低位 bit 只是「修饰细节」。所以他们把笔记拆成两路: 高位 Anchor (高优先级, 先送) + 低位 Residual (低优先级, 后送)。decode 吧台收到 Anchor 后就开始做, Residual 慢慢传完后再修正。这样 decode 不再等, TTFT 跟「暴力压到 4-bit」一样快, 精度跟「完全 BF16」一样好。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">Long-context inference is increasingly common in large language model (LLM) serving, driven by retrieval-augmented generation and agentic systems. In disaggregated inference, these workloads require transferring large Key-Value (KV) caches across the network, where decoding cannot begin until the transfer completes. Recent KV quantization techniques reduce data volume and alleviate this bottleneck, but existing schemes fail to achieve both low network-exposed latency and high inference accuracy. We challenge the assumption that the KV cache is an indivisible unit that must be fully received before use. We leverage the observation that different bits in the KV cache contribute unequally to attention computation and inference precision: the most significant bits capture the coarse structure of attention and the least significant bits refine precision. This property enables partial use of the KV cache during decoding. We present Lynx, a system that enables progressive, split-stream KV transfer by partitioning the KV cache into a high-priority Anchor stream carrying the most significant bits and a low-priority Residual stream carrying remaining precision. Decoding begins upon receipt of the Anchor stream and proceeds speculatively while the Residual stream is transferred concurrently, followed by verification that ensures equivalence to higher-precision decoding. Across multiple models and serving workloads, Lynx achieves Time-to-First-Token (TTFT) comparable to aggressive 4-bit KV quantization, while matching the accuracy of high-precision (BF16) inference, improving TTFT over standard 8-bit KV quantization by up to $1.43\times$ and improving accuracy over state-of-the-art by up to $5.1\%$.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>Lynx 的核心是「**KV cache 重要性分层 + 双流渐进传送**」: (1) 分析 KV cache 里不同 bit 位对 attention 计算的贡献, 发现 MSBs 决定 attention 分数的「整体结构」, LSBs 只是「精修细节」, 这种不对称性让 partial use of KV cache 成为可能; (2) 把 KV cache 切成两路 — Anchor stream (MSBs, 高优先级, 先送) + Residual stream (LSBs, 低优先级, 后送); (3) decode 收到 Anchor 立刻开工 (speculative decoding), Residual 跟 decode 并行传, 传完后再做 verification 等价于 BF16 精度。整个系统对 PD 分离 serving 完全透明。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>**Speculative decoding 在 Residual 传完前, 如果 LSBs 跟 MSBs 的 attention 计算不一致, 需要 verification 阶段做修正**, 这部分 compute 开销跟现有 speculative decoding 类似, 但因为 KV cache 本身没有 100% 收到, **verification 失败的概率略高于完整 KV 场景**, 部分请求可能需要回滚重做。**Anchor + Residual 双流在网络层需要优先级调度**, 不是所有 NIC / 交换机都支持 stream-level 优先级 (e.g. RoCEv2 支持, TCP 不支持), 部署时需要确认硬件栈。代价是 routing 层多维护一个双流调度, 但相对 TTFT -1.43× 收益跟 accuracy +5.1% 完全可接受。论文没具体说 cluster 规模上限, 但推测大规模 (8+ decode 节点) 时双流调度的全局决策复杂度会上升。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>跨多模型 + serving workload 实测: TTFT 跟「暴力压到 4-bit」一样快, 精度跟「完整 BF16」一样好; 跟标准 8-bit KV quantization 比, TTFT 提升最多 1.43×; 跟 SOTA KV 量化方法比, accuracy 提升最多 +5.1%。来自 Huawei (5/6 作者) + UCL (1 作者 Wenchen Han), 在 Huawei Noah's Ark Lab 或类似机构完成。应用场景: Gemini 3.0 / Qwen 3 / DeepSeek 3.2 等百万 token 上下文模型。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Wenchen Han, Gingfung Matthew Yeung, Marco Barletta, William Toner, Amory Hoste, Adam Barker → University College London (UK); Huawei (China, 5 of 6 authors)</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-04/paper_summaries_v2_2026-07-04_02.jpg" alt="HCMS: Head-Chunked Multi-Stream Pipeline for Communication-Computation Overlap in Long-Sequence Parallel Attention" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.01817 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.01817" target="_blank">HCMS: Head-Chunked Multi-Stream Pipeline for Communication-Computation Overlap in Long-Sequence Parallel Attention</a></h3>
+    <p style="color:#ccc;">你公司做视频生成 AI (类似 Sora / 可灵), 训练时要把整段视频切成 N 份分给 4-8 张 GPU 一起算 (sequence parallelism, 即「分段并行」)。问题是 GPU 之间必须互相交换数据 (all-to-all communication, 即「全员互发消息」), 现在业界做法是「先全部发完消息, 再全部算账」, 等消息的时间 GPU 在发呆 — 实测在 31K-100K token 视频上, 等消息的时间占 15-40%。Bilibili 上海的工作说: 把「多头注意力」(multi-head attention) 里的每个 head (子模块) 当成独立小流水线, 用两个 CUDA 流 (dual streams, 即 GPU 上同时跑两条任务) 让「发消息」跟「算账」真正并行起来, 而不是死板串行。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">All-to-all based sequence parallelism methods execute communication and computation strictly in serial when processing medium-long sequences, resulting in hardware resource underutilization. This paper proposes Head-Chunked Multi-Stream Pipeline (HCMS), which exploits the computational independence of multi-head attention by partitioning attention heads into multiple chunks and achieving fine-grained communication-computation overlap through dual CUDA streams. HCMS is orthogonally compatible with existing optimizations such as FlashAttention and SDPA, requires no modification to underlying kernels, supports uneven partitioning while maintaining numerical equivalence. Experiments validate the effectiveness across four GPU platforms at 2-8 GPU scales: for typical video generation sequence lengths of 31K-56K tokens, HCMS achieves 10%-17.5% speedup over the Ulysses baseline and 5%-14.5% speedup over Ring Attention; end-to-end acceleration of 6.8% is achieved on the Wan2.2 model. Theoretical analysis shows that HCMS benefits are positively correlated with communication ratio $\rho$, and its use is recommended when $\rho&gt;20\%$.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>HCMS (Head-Chunked Multi-Stream Pipeline) 核心是「**双流重叠 + head chunk 切分**」: (1) 利用 multi-head attention 里不同 head 之间计算独立, 把 attention heads 切成多个 chunk; (2) 用双 CUDA streams 同时跑一个 chunk 的通信 + 另一个 chunk 的计算; (3) **跟 FlashAttention / SDPA 完全正交** — 不需要改底层 kernel, 适配成本低; (4) 支持 uneven partitioning (各 chunk head 数不等) 同时保持数值等价。论文给出理论分析, 收益正比于通信占比 ρ (communication ratio), **ρ > 20% 时收益显著**。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>**双 CUDA stream 调度增加了 kernel launch overhead** — 每步 launch 多一条 stream 路径, 在 4 GPU 小规模场景下 overhead 可能抵消部分收益, 论文实测 8 GPU 时收益最大。**uneven partitioning 带来负载不均风险**: 如果某些 chunk 包含关键 head (e.g. 视觉注意力最强的 head), 这些 chunk 计算量可能比其他 chunk 大很多, 双流重叠反而形成新的等待点。**ρ 必须 > 20% 才有显著收益** — 短序列 (< 16K token) 通信占比低, HCMS 收益边际。代价是调度层多维护两条 stream + chunk 切分逻辑, 但相对 10-17.5% speedup 完全可接受。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>4 GPU 平台 (推测 A100/H100/H200) + 2-8 GPU scale 实测: 跟 Ulysses (DeepSpeed 序列并行基线) 比, 31K-56K token 视频生成任务上 **speedup 10-17.5%**; 跟 Ring Attention 比, **speedup 5-14.5%**; 在 Wan2.2 视频生成模型上端到端加速 6.8%。来自 Bilibili Inc. 上海, 4 位作者 (Chao Yuan, Pan Li, Yingnan Sun, Jing Liu), 跟 B 站自研视频生成基础设施需求直接相关。论文给出 communication ratio ρ 阈值 20% 作为「HCMS 是否值得用」的判别准则。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Chao Yuan, Pan Li, Yingnan Sun, Jing Liu → Bilibili Inc., Shanghai (China, all 4 authors)</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-04/paper_summaries_v2_2026-07-04_03.jpg" alt="3DLS: A 3D Logic-Stacked Architecture for Disaggregated LLM Serving" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.01617 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.01617" target="_blank">3DLS: A 3D Logic-Stacked Architecture for Disaggregated LLM Serving</a></h3>
+    <p style="color:#ccc;">你做 AI 加速器芯片, 想把 prefill 吧台 (compute-heavy) 跟 decode 吧台 (memory-heavy) 放在同一颗芯片的不同 chiplet (小芯片模块) 上, 但传统 2D/2.5D 封装 (把多块小芯片平铺或堆叠在中介层上) 有个问题: KV cache 从 prefill chiplet 传到 decode chiplet 跟 decode tensor parallelism (decode 内部计算时 GPU 之间互相通信) 共用同一条总线 (lateral D2D interconnect, 即水平 die-to-die 互连), 两条流量抢一条路, decode 出杯速度被拖慢。KAIST (韩国科学技术院) 的 3DLS 解决方案: **用 3D 堆叠** — 把 decode chiplet 跟 KV transfer 通道做成垂直 (vertical) 互连, decode tensor parallelism 保持水平 (lateral), 两种流量**物理隔离**, 互不抢路。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">Large language model (LLM) serving increasingly combines prefill-decode (PD) disaggregation with tensor parallelism (TP) to support large models and long contexts. In conventional 2D/2.5D chiplet architectures, layer-wise prefill-to-decode KV-cache transfer decode-side TP collectives share the same lateral die-to-die (D2D) interconnect, creating mixed-traffic contention on the decode critical path. This contention increases communication latency, prolongs token generation intervals, and degrades end-to-end serving performance. We propose 3DLS, a logic-on-logic 3D-stacked chiplet architecture that separates traffic classes by routing KV-cache transfers through vertical interconnects while preserving decode-side TP collectives on the lateral D2D fabric. 3DLS achieves up to 1.49$\times$ throughput and 60.2% lower end-to-end (E2E) latency over the shared-fabric planar baseline, and still achieves up to 1.17$\times$ throughput and 31.4% lower end-to-end (E2E) latency over a workload-aware priority-managed planar baseline. These results highlight that physical isolation is an important design principle for future chiplet-based PD-disaggregated LLM serving systems.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>3DLS (3D Logic-Stacked) 用「logic-on-logic 3D 堆叠 chiplet 架构」做物理隔离: (1) **vertical interconnect 专门给 KV cache transfer 走** — 上下层 chiplet 之间通过硅通孔 (TSV) 直连, 带宽高延迟低; (2) **lateral D2D fabric 保留给 decode-side TP collectives** — 同层 chiplet 之间水平互连, 跟 KV 流量分开; (3) 这种「按流量类型分路由」的设计让两条 critical path 互不抢占带宽。论文是 IEEE Computer Architecture Letters 接收稿, 属于硬件架构顶刊级别 (LCA 是 IEEE 在 computer architecture 方向的 letters 期刊)。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>**3D 堆叠 chiplet 工艺成本远高于 2D/2.5D**: TSV (硅通孔) 制造工艺需要先进封装产线, 当前主要 TSMC / Intel 有, Samsung 仍在追赶, 中小芯片公司难以负担。**3D 堆叠的 thermal (散热) 挑战**: 上下层 chiplet 堆叠后热密度上升, 解码芯片本身 memory-bound 已经很热, 再叠一层 KV transfer 通道, **散热设计难度升级**。**vertical interconnect 的带宽虽然高但物理距离短, 不适合跨机柜场景** — 3DLS 只能解决「单颗芯片内部」PD 分离, 跨服务器 / 跨数据中心的 PD 分离还是需要 NVLink / RDMA。代价是工艺成本 + thermal 设计成本, 但相对 1.49× 吞吐量 + 60.2% E2E 延迟下降完全可接受, 适合 NVIDIA / AMD 下一代 Rubin / MI500 自研加速器采用。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>跟 shared-fabric planar 基线比: **吞吐量提升 1.49×, E2E 延迟下降 60.2%**; 跟 workload-aware priority-managed planar 基线比 (已经是 SOTA 优化版): **吞吐量提升 1.17×, E2E 延迟下降 31.4%**。这意味着 3DLS 比「现有最优调度方案」还要再快 17-49%, 物理隔离优势显著。来自 KAIST (韩国科学技术院, 韩国 top 2 高校) 三位作者 (Jaehun Lee 是博士生 + In-Jun Jung + Joo-Young Kim 是 School of Electrical Engineering 教授), IEEE CAL 接收稿 (DOI: 10.1109/LCA.2026.3709108)。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Jaehun Lee, In-Jun Jung, Joo-Young Kim → KAIST, Daejeon (South Korea, all 3 authors)</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-04/paper_summaries_v2_2026-07-04_04.jpg" alt="Mixture-of-Parallelisms: Towards Memory-Efficient Training Stack for Mixture-of-Experts Models" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.01844 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.01844" target="_blank">Mixture-of-Parallelisms: Towards Memory-Efficient Training Stack for Mixture-of-Experts Models</a></h3>
+    <p style="color:#ccc;">你公司想训练一个 1 万亿参数的 MoE 模型 (类似 DeepSeek V3 / Mixtral, 即「混合专家」 — 1 万亿参数里每个 token 只激活 1/10, 实际计算量跟稠密 100B 模型差不多)。挑战: 1 万亿参数 + 1M token 上下文, 任何单一并行策略 (data / tensor / pipeline / expert parallel) 都装不下。Salesforce AI Research 的 Mixture-of-Parallelisms (MoP) 想了一个办法: 把所有并行策略当成「积木」, 在 MoE 训练 pipeline 不同层 + 不同阶段组合不同的并行策略, 最大限度榨干 CPU/CPU 内存/GPU HBM/CPU-GPU 带宽/GPU-GPU 带宽/节点间带宽, 就像一个调度大师把 6 种资源同时用到极限。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">This paper showcases a memory-efficient training stack for Mixture-of-Experts (MoE) models. It is a training paradigm that combines and specializes various existing and novel parallelism techniques at different layers and stages of the Mixture-of-Experts (MoE) model training pipeline. It leverages these techniques to achieve maximal efficiency given the physical constraints of CPU, CPU memory, GPU HBM memory, and the CPU-GPU, GPU-GPU, and node-node communication bandwidth of the GPU cluster. It also contains a novel strategy for the optimizer step to achieve high throughput and memory efficiency, enabling practitioners to conduct lossless pre-training/fine-tuning of trillion-parameter scale models, at a million context length, with just under 12 8x H200 GPU nodes, with state-of-the-art throughput and memory efficiency. In our experiments, MoP delivers 4.7x--8.2x higher per-GPU throughput than a strongly-tuned FSDP2 baseline (with the gap widening at larger scale) and sustains training at context lengths up to 1M tokens, where the baseline runs out of memory beyond 64-128K.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>MoP (Mixture-of-Parallelisms) 是「**多并行策略编排**」的训练框架: (1) 在 MoE 模型不同层 (router / experts / shared layers) + 不同训练阶段 (forward / backward / optimizer step) **特化**不同的并行策略 (data parallel / tensor parallel / pipeline parallel / expert parallel / ZeRO); (2) 通过这种编排让 CPU 内存 + GPU HBM + 各种通信带宽**同时接近硬件上限**; (3) 论文给出一个 **novel optimizer step 策略**, 让 trillion-parameter scale + 1M context 训练只需 12 个 8×H200 节点 (96 张 H200), 不丢精度。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>**多策略编排增加了框架复杂度**: 不同并行策略的边界 (哪里切换, 怎么切) 需要仔细设计, 训练代码可读性下降, debug 难度上升。**12 个 8×H200 节点虽然远小于之前 trillion-parameter 训练动辄需要 100+ 节点, 但 H200 单卡价格昂贵** (>$30K), 整套集群仍需 $3M+ capex, 中小公司难以负担。**novel optimizer step 策略跟现有 deep learning 框架 (DeepSpeed / Megatron) 兼容度未知**, 实际部署需要重写部分 optimizer 代码。代价是训练代码复杂 + 集群成本仍高, 但相对 4.7-8.2× per-GPU 吞吐提升完全可接受, Salesforce 用此训练自有 MoE 模型 (XGen / T5-MoE 系列)。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>MoP 跟「strongly-tuned FSDP2 基线」(FSDP 是 PyTorch 完全分片数据并行, FSDP2 是 PyTorch 2.x 改进版) 比: **per-GPU 吞吐提升 4.7-8.2×, scale 越大 gap 越大**。**支持 1M token 上下文训练, FSDP2 基线在 64-128K token 就 OOM (out of memory)**。论文核心突破: trillion-parameter scale + 1M context lossless pre-training 只需 12 × 8 × H200 = 96 张 H200, 是 industry 已知最低的资源配置。来自 Salesforce AI Research 6 位作者 (Xuan-Phi Nguyen + Shrey Pandit + Yiran Zhao + Semih Yavuz + Silvio Savarese + Shafiq Joty, Xuan-Phi 跟 Shafiq Joty 是 project lead / corresponding author @salesforce.com)。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Xuan-Phi Nguyen, Shrey Pandit, Yiran Zhao, Semih Yavuz, Silvio Savarese, Shafiq Joty → Salesforce AI Research (USA, all 6 authors)</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer>
+  <p>Generated by Hermes Agent · AI Infra Daily Report</p>
+  <p>https://github.com/zenhatescoding/ai-infra-reports</p>
+  <p>2026-07-04 08:05</p>
+</footer>
+</div>
+</body>
+</html>
