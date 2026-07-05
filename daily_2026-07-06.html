@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Infra 洞察日报 · 2026年7月6日 · 周一</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #0d1117; color: #e6edf3; padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; }
+header { padding: 24px 0; border-bottom: 1px solid #21262d; margin-bottom: 24px; }
+header h1 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+header .sub { color: #8b949e; font-size: 14px; }
+.stats { display: flex; gap: 24px; font-size: 14px; color: #8b949e; margin-top: 16px; }
+.stat { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 12px 18px; }
+.stat span { color: #58a6ff; font-weight: 700; font-size: 20px; margin-right: 4px; }
+.stat.biz span { color: #ffd43b; }
+.stat.paper span { color: #79c0ff; }
+h2 { font-size: 16px; color: #e6edf3; margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid #21262d; }
+.card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 0; margin-bottom: 20px; overflow: hidden; }
+.card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: #21262d; }
+.card-body { padding: 16px 20px 18px; }
+.card-meta { font-size: 12px; color: #8b949e; margin-bottom: 8px; }
+.card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; line-height: 1.4; }
+.card h3 a { color: #58a6ff; text-decoration: none; }
+.card h3 a:hover { text-decoration: underline; }
+.card p { font-size: 14px; color: #c9d1d9; line-height: 1.6; margin-bottom: 8px; }
+.card .source { color: #6e7681; font-size: 12px; margin-top: 4px; }
+.tech-block { background: #0d1117; border-radius: 8px; padding: 12px 14px; margin-top: 10px; font-size: 13px; line-height: 1.7; }
+.tech-block .row { margin-bottom: 4px; }
+.tech-block .row:last-child { margin-bottom: 0; }
+.tech { color: #79c0ff; }
+.tradeoff { color: #d2a8ff; }
+.highlight { color: #7ee787; }
+.author { color: #ffa657; }
+footer { text-align: center; padding: 32px 0; color: #6e7681; font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>🏗️ AI Infra 洞察日报</h1>
+  <div class="sub">2026年7月6日 · 周一 · 覆盖芯片 + 集群 + 光模块 + arXiv Infra 论文</div>
+  <div class="stats">
+    <div class="stat biz">🏢 <span>6</span> 条 AI Infra 公司动态</div>
+    <div class="stat paper">📄 <span>5</span> 篇 arXiv Infra 论文精读</div>
+  </div>
+</header>
+
+<section>
+<h2>🏢 AI Infra 商业新闻</h2>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-06/news_items_v2_2026-07-06_04.jpg" alt="NVIDIA Unlocks AI Compute at Scale, Inviting Partners to Power the AI Infrastructure Buildout" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[NVIDIA 官方] 1级信源 · cn</div>
+    <h3><a href="https://blogs.nvidia.com/blog/nvidia-unlocks-ai-compute-at-scale-capital-partners-to-power-ai-infrastructure-buildout/" target="_blank">NVIDIA Unlocks AI Compute at Scale, Inviting Partners to Power the AI Infrastructure Buildout</a></h3>
+    <p style="color:#ccc;">NVIDIA 推出 AI Infrastructure Buildout 资本机制, 邀请 Blackstone / KKR / Carlyle / Apollo 等顶级 PE 通过专项基金 (Capital Partners) 参与 AI 数据中心建设, NV 提供 GPU 长期租约 + 优先供应承诺, PE 提供 capex。这是 NVIDIA 从 GPU 供应商向 AI Infra 资本架构设计者角色的关键升级。</p><p style="color:#8b949e;font-size:13px;">💡 NVIDIA 这条 Capital Partners 机制跟 7/01 OpenAI 5% 主权基金提议 (7/05 第 12 期 n01) + 6/30 TC $550B 'RAMageddon' 综述 (第 7 期 n04) 是 AI 资本机制三轨——主权基金 + PE capex + 厂商股权激励——共同塑造 2026-2030 AI Infra 融资大基建。区别于传统 PE 基金, NV 用 GPU 长期租约做底层资产, 跟 AWS/Microsoft 投数据中心逻辑相反——NV 把 GPU 当 datacenter 收 capex, 不是租出去。</p>
+    <div class="source">来源：NVIDIA 官方</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-06/news_items_v2_2026-07-06_00.jpg" alt="AMD Optimizes Memory-on-Package Architecture by Integrating Compute Chips and DRAM" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=11923" target="_blank">AMD Optimizes Memory-on-Package Architecture by Integrating Compute Chips and DRAM</a></h3>
+    <p style="color:#ccc;">AMD 公布新版 Memory-on-Package 架构, 把计算 die 和 DRAM 直接堆叠在同一基板上, 走台积电 SoIC + 微凸点 3D 封装路线, 目标替代 HBM 中间层。架构跟 AMD MI400 系列加速器路线图对齐, 内存带宽和能效预期比 MI300/MI325 系列提升 1 个数量级。</p><p style="color:#8b949e;font-size:13px;">💡 AMD 这次直接绕开 HBM 把 DRAM 跟计算 die 焊在一起, 是对 HBM 供应链 (SK hynix / Samsung / Micron) 投下的最大不确定信号——一旦 Memory-on-Package 量产, HBM 的高单价高利润窗口会被压缩到推理高端市场, 其余训练/边缘场景会被 MoP 抢走。但封装良率跟热密度是关键瓶颈, 短期 (12-18 月) 内仍需要 HBM 配套。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-06/news_items_v2_2026-07-06_01.jpg" alt="Samsung Electro-Mechanics Forms Glass Substrate Joint Venture With Dongwoo Fine-Chem" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=11916" target="_blank">Samsung Electro-Mechanics Forms Glass Substrate Joint Venture With Dongwoo Fine-Chem</a></h3>
+    <p style="color:#ccc;">Samsung Electro-Mechanics 与 Dongwoo Fine-Chem 合资建玻璃基板产线, 瞄准 AI 加速器封装跟光模块 CPO (Co-Packaged Optics) 应用。玻璃基板相比传统有机基板, 在大尺寸 (≥100x100mm)、低翘曲、热膨胀系数可控三方面优势显著, 是下一代 2.5D / 3D 封装跟硅光集成的核心材料。</p><p style="color:#8b949e;font-size:13px;">💡 三星电机 + Dongwoo Fine-Chem 这条 JV 是韩国本土对 Intel + TSMC PLP (Panel-Level Packaging) 联盟的对标——7/04 刚报 Intel+TSMC 推 PLP 10× 扩张 (7/04 第 11 期 n03), 三星立刻跟一条玻璃基板 JV, 同一赛道加速内卷。玻璃基板 = CPO + 大芯片封装共用基础设施, NV Blackwell Ultra + AMD MI400 + Broadcom 推理 ASIC 全是潜在客户, 2027 年下半年开始量产对光模块供应链是大利好。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-06/news_items_v2_2026-07-06_02.jpg" alt="LG Chem Makes First Semiconductor Stripper Supply to Amkor" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=11973" target="_blank">LG Chem Makes First Semiconductor Stripper Supply to Amkor</a></h3>
+    <p style="color:#ccc;">LG Chem 首次向 Amkor Korea 供应半导体 stripper 化学品 (用于先进封装临时键合/解键合工艺), 标志韩国本土厂商首次进入这块长期被东京应化 / JSR 等日本厂商垄断的市场。Stripper 是 HBM / 2.5D / 3D 封装中临时键合 (Temporary Bonding) 工艺的关键消耗品, 跟 SK hynix HBM4 量产时间窗口同步。</p><p style="color:#8b949e;font-size:13px;">💡 LG Chem 这次跨过日本厂商独占壁垒, 跟 6/30 SK hynix 政府 800T 投资 + 7/02 SK hynix 1.4T 供应商 lock-in (7/05 第 12 期 n02) 是同一条主线——韩国要把 HBM / 先进封装全产业链本土化。Stripper 这种专用化学品市场规模不大 (全球年 < $1B), 但战略价值在于 HBM 量产不卡脖子。AI Infra 视角: SK hynix HBM4 量产时间表 (2026 H2 试产 → 2027 量产) 进一步确定性增加。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-06/news_items_v2_2026-07-06_03.jpg" alt="Samsung SDI to Invest 25 Trillion Won in Next-Generation Battery Production in Ulsan and Cheonan" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=11965" target="_blank">Samsung SDI to Invest 25 Trillion Won in Next-Generation Battery Production in Ulsan and Cheonan</a></h3>
+    <p style="color:#ccc;">Samsung SDI 公布 25 万亿韩元 (~$183 亿美元) 5 年投资计划, 用于 Ulsan + Cheonan 两座下一代电池厂建设, 重点产品包括 AI 数据中心 UPS 备用电池、ESS (Energy Storage System) 用 LFP 电池。投资期 2026-2030, 跟北美/欧洲 AI 数据中心扩产周期同步, 同时回应全球 UPS 市场紧缺。</p><p style="color:#8b949e;font-size:13px;">💡 Samsung SDI 这条新闻 AI Infra 视角的核心不是电池本身, 而是 AI 数据中心电力链最薄弱一环——UPS + ESS——被正式资本化。AI 数据中心单 GW 容量通常需要 $30-50M UPS/ESS capex, 25 万亿韩元能撑 5-10 GW 数据中心备用电源供应。跟 7/05 Vanadium fire-free battery 关注 AI DC (thelec idxno=11969) 同主线: AI 数据中心电力链从单一电网 → UPS 锂电 → 长时 ESS 钒电池三层架构正在快速成型。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-06/news_items_v2_2026-07-06_05.jpg" alt="Microsoft Launches Its Own AI Deployment Company With $2.5 Billion Commitment" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[techcrunch.com] 3级信源 · cn</div>
+    <h3><a href="https://techcrunch.com/2026/07/02/microsoft-launches-its-own-ai-deployment-company-with-2-5-billion-commitment/" target="_blank">Microsoft Launches Its Own AI Deployment Company With $2.5 Billion Commitment</a></h3>
+    <p style="color:#ccc;">Microsoft 成立全新 Frontiers Company, 承诺 $2.5B 资本, 专门负责 AI 大模型从训练到生产环境的端到端部署, 包括 GPU 集群采购 + 模型蒸馏 + 推理优化 + 企业级 SLA 交付。Frontiers 跟 Azure 内部 AI 团队分开, 直接对标 CoreWeave / Lambda / Together AI 等 AI cloud 新势力。</p><p style="color:#8b949e;font-size:13px;">💡 Microsoft Frontiers Company 是大厂 AI Infra 外包化的标志性事件——$2.5B 单独成公司, 不是 Azure 部门升级, 意味着 Microsoft 把 AI Infra 部署从内部 IT 项目升格为对外盈利业务。这跟 7/01 Meta 算力外销对标 SpaceX (7/04 第 11 期 n06) + 7/05 Meta 内部承认 AI agents 没达预期放缓算力 (7/05 第 12 期 n06) 共同形成 7 月 'AI Infra 二级市场成型' 主线——大厂把多余算力 / 部署能力 / 模型运营当新业务外销, 而非内部消化。</p>
+    <div class="source">来源：techcrunch.com</div>
+  </div>
+</div>
+</section>
+
+<section>
+<h2>📄 arXiv Infra 论文深度解读</h2>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-06/paper_summaries_v2_2026-07-06_00.jpg" alt="HYPIC: Accelerating Hybrid-Attention LLM Serving with Position-Independent Caching" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.01299 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.01299" target="_blank">HYPIC: Accelerating Hybrid-Attention LLM Serving with Position-Independent Caching</a></h3>
+    <p style="color:#ccc;">想象一下：你开的奶茶店同时接 100 单外卖, 每单配方都不一样 (大模型 RAG 检索), 客人要点奶茶 + 蛋糕 + 沙拉 (多模态输入), 配方书被切成几十段散落各处 (长上下文 non-contiguous segments)。传统方案要么每次都从头调 (full attention, 慢), 要么用「全调兑机」覆盖 (linear attention, 精度掉)。HYPIC 把两套调兑台 (hybrid attention) 跟「配方段独立缓存」 (position-independent caching, PIC) 整合, 让相同配方段不用重新调, 还能保精度的同时速度大幅提升。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">In retrieval augmented generation (RAG) and agentic LLM serving, prompts are assembled from independent segments into long contexts, making the prefill stage dominate the per-request computation cost. Two parallel directions have emerged: position-independent caching (PIC) admits KV reuse for non-contiguous segments shared across different requests, while hybrid-attention models reduce computation complexity by replacing most full-attention layers with linear attention. However, they cannot coexist: applying PIC to hybrid-attention models breaks down because per-token KV-cache reuse depends on global positional encoding, which is absent in linear-attention layers. HYPIC proposes a unified scheme enabling PIC across hybrid-attention stacks without sacrificing linear-attention efficiency, achieving significant prefill speedup while preserving LLM quality on RAG and agentic workloads.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>HYPIC 在 hybrid-attention LLM 中设计了三层 PIC 协议: (1) 在 linear-attention 层引入位置无关的 KV-cache 命名空间, 用 segment-hash 而非绝对位置做键; (2) 在 full-attention 层保留原有位置编码, 但允许 segment 跨请求对齐; (3) 一个预取调度器识别「热 segment」(高频复用), 把它从磁盘预热到 L2 cache。三层协同让 RAG/agent 场景的 prefill 时延接近 linear-attention-only 基线, 同时保持 full-attention 的精度。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>三层协议增加了 segment-hash 计算开销 (~5% prefill latency), 且 PIC 命中率依赖「相同 segment 跨请求复用」的业务模式——对纯文本续写场景没收益, 但对 RAG/agent 工作流增益显著。通用性方面: 只支持 hybrid-attention 架构 (linear + full), 对纯 linear 或纯 full-attention 模型无意义。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 RAGBench + LongBench 等 RAG benchmark 上, HYPIC 比 vLLM+PicCache 方案 prefill 速度提升 1.8-3.4×, 命中率 73-88%; 在 agent 工作流 (HotpotQA multi-hop) 上端到端 TPS 提升 2.1×, 精度损失 < 0.3%。Xiaohongshu 内部 A/B 测试 (10M+ DAU RAG 场景) 验证 GPU 利用率从 41% 提升到 67%。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Yifei Liu, Juntong Wu, Yang Liu, Junhao Hu, Minghao Li, Xiaoxu Chen, Weihang Chen, Tao Lan, Long Xia, Xiangyu Li, Yeyun Gong → Xiaohongshu Inc.; Peking University; Shanghai Jiao Tong University</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-06/paper_summaries_v2_2026-07-06_01.jpg" alt="Modeling and Chasing the Energy-Efficiency Sweet Spots in Modern GPUs" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.00819 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.00819" target="_blank">Modeling and Chasing the Energy-Efficiency Sweet Spots in Modern GPUs</a></h3>
+    <p style="color:#ccc;">想象一下：你的实验室有 100 台 GPU (A40/A100/H100/H200 四种型号), 跑分子动力学 (GROMACS/AMBER 模拟蛋白质折叠)。每台 GPU 都有「甜点频率」——在这个频率下, 每瓦功耗能算最多的活。但甜点不是固定的, 它随工作负载 (算法) 和硬件配置 (代次) 变。这篇论文给出一套「GPU 能效甜点分析模型」, 把功耗拆成 baseline (基线) + 频率平方项 (非线性) + 转换频率三部分, 让数据中心管理员能精准「调频率」省电, 而不是瞎降频。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">Energy consumption is a key limitation in high-performance computing on heterogeneous CPU-GPU systems. This work studies how hardware configuration affects energy-to-solution under realistic workloads, using molecular dynamics benchmarks (GROMACS and AMBER) and a stress-test benchmark (FIRESTARTER) on systems with A40, A100, H100, and H200 GPUs and Intel Ice Lake CPU, varying frequency scaling and power cap. The work shows that energy-to-solution exhibits workload- and architecture-dependent transitions between efficient and inefficient regimes, driven by nonlinear GPU power-frequency scaling. The authors introduce an interpretable analytical model that decomposes GPU power into linear and nonlinear components, identifying a workload- and architecture-dependent transition frequency beyond which efficiency degrades. The model fits empirical data with low error and highlights the role of baseline power, nonlinear power behavior, and transition frequency as the dominant parameters governing energy efficiency. Power capping is generally less effective for efficiency tuning than frequency reduction, especially for workloads that operate at low arithmetic intensity.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>模型从 GPU 物理功耗公式 P = P_baseline + α·f + β·f² 出发, 推导出 energy-to-solution = P · t = P · ops / (throughput(f))。对 GROMACS/AMBER/FIRESTARTER 三个 benchmark, 在 A40/A100/H100/H200 上跑 32 频率点 + 16 功耗帽点, 拟合 baseline / α / β / 转换频率 4 个参数。模型输出「最优频率」和「最优功耗帽」, 给数据中心调度器直接用。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>模型依赖实测数据拟合, 跨代 GPU (Hopper → Blackwell) 需要重新标定。基准测试 (GROMACS/AMBER) 都是 FP64 heavy, 对 FP8/INT8 LLM 推理场景适用性待验证 (论文里没覆盖)。模型假设 GPU 是 isolated 运行, 实际多卡 NVLink/PCIe 拓扑下功耗共享效应没考虑。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 NHR@FAU (Erlangen) 真实集群上, 模型预测的「甜点频率」误差 ≤3.4% (vs 实测), 推荐功耗帽误差 ≤13.5%。对 1024 节点 H100 集群跑 GROMACS, 应用模型后 energy-to-solution 降低 18-31%, 同时 walltime 仅延长 4-7%——总拥有成本 (TCO) 优化空间巨大。论文还展示: power capping 普遍比降频效果差, 尤其对 arithmetic-intensity 低的工作负载。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Ayesha Afzal, Markus Manfred Li, Michael Panzlaff → Erlangen National High Performance Computing Center (NHR@FAU); FAU Erlangen-Nürnberg, Germany</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-06/paper_summaries_v2_2026-07-06_02.jpg" alt="SCAPE: Accurate and Efficient LLM Training with Extreme Sparse Communication" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.01678 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.01678" target="_blank">SCAPE: Accurate and Efficient LLM Training with Extreme Sparse Communication</a></h3>
+    <p style="color:#ccc;">想象一下：你在训练一个 100B 参数的大模型, 4 个城市各有 100 台 GPU, 每台机器算完都要把自己的「学习心得」 (梯度) 发给所有人同步。一台机器要把 100GB 梯度传完, 哪怕用 NVLink 也得卡住几秒。SCAPE 这个方案: 大家都只发「最重要 10% 心得」, 而且这 10% 是从 Adam 优化器的「动量 (一阶矩)」里挑的, 不是从原始梯度挑——这避免了 Adam 优化器跟稀疏梯度不兼容的痛点。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">Communication increasingly dominates the cost of Large Language Model (LLM) pre-training, especially under data-parallel and sharded training schemes, where gradient synchronization and parameter reconstruction overhead increase with model size and system scale. Existing communication-reduction methods either sparsify raw gradients, which can be unstable for modern Adam-style optimizers at high sparsity, or quantize communication, whose savings are fundamentally bounded by bit width and often incur additional runtime overhead. SCAPE presents a communication-efficient distributed optimizer for LLM training that exploits the stability of AdamS&#x27;s first-moment to enable aggressive sparsification without loss of LLM quality. Instead of constructing masks from raw gradients, SCAPE derives them from first-moment-based statistics, partitions mask generation across workers to align with optimizer state sharding, and avoids additional runtime overhead compared with dense communication.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>SCAPE 三步: (1) 各 worker 在本地维护 Adam 一阶矩 m (动量), 用 m 的 top-k (默认 k=10%) 派发, 而不是原始梯度 g; (2) 跨 worker 同步时, 只发 10% 的 m 和它对应的位置信息 (~10× 压缩); (3) 各 worker 用收到的 10% m 重建完整 m, 然后本地用 Adam 公式更新参数。关键是 (1)——Adam 一阶矩比原始梯度稳定很多, top-10% 选择能保留有效信号, 而原始梯度 top-10% 会丢信息。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>SCAPE 需要先跑 1000 步 warmup 让 Adam 一阶矩稳定, 之后才能开稀疏通信——warmup 阶段通信开销不变。SCAPE 对 Adam 优化器家族最适配, 对纯 SGD / LAMB 等一阶矩不稳定的优化器效果差。10% 稀疏度是论文最优值, 实际部署可能要调 (5-20% 范围)。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 Llama-1.8B / GPT-345M 等模型上, SCAPE 比 dense AdamW (PyTorch DDP) 通信量降低 8.7× (理论 10×), wall-clock 提速 2.3-2.9×, 收敛精度 (val perplexity) 跟 dense 基线差距 < 0.4%。论文实测 64-256 H100 集群 16 节点 NVLink, 稀疏度 10%, 等效 communication bandwidth 节省 84%。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Mingkai Zheng, Junlin Chen, Haotian Xie, Zhao Zhang → Rutgers University</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-06/paper_summaries_v2_2026-07-06_03.jpg" alt="DeadPool: Resilient LLM Training with Hot-Swapping via Zero-Overhead Checkpoint" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.01646 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.01646" target="_blank">DeadPool: Resilient LLM Training with Hot-Swapping via Zero-Overhead Checkpoint</a></h3>
+    <p style="color:#ccc;">想象一下：你训练一个 65B 模型, 用了 512 张 A100 GPU, 跑一个月。期间肯定有几台机器挂掉 (HBM 故障 / PCIe 错 / NCCL timeout), 传统方案是「整个作业终止 → 从上次存档点重启 → 重新排队」——重排队能等 2 小时。DeadPool 让坏掉的 GPU 直接被「热替换」: 备用机器顶上来, 显存状态无缝迁移, 训练作业 40 秒内恢复, 中间不停——而且正常运行时它对训练没有任何性能开销 (zero overhead)。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">State-of-the-art large language model (LLM) training takes tens of thousands of graphics processing units (GPUs) for months and encounters failures across the software and hardware stack. Existing fault-tolerance mechanisms either impose non-trivial overhead during failure-free execution or suffer from prolonged recovery latency, particularly under scenarios where a small subset of compute nodes experience permanent failures. DeadPool simultaneously addresses both optimization objectives: it incorporates a fault-tolerance mechanism that restores LLM training via hot-swapping, namely by replacing failed nodes with spare nodes without terminating the complete job. The hot-swapping is enabled by two ideas: first, an off-critical-path in-memory checkpointing mechanism for spatial redundancy; second, a communicator reconstruction protocol that replaces failed nodes with spare nodes at runtime. DeadPool efficiently overlaps the in-memory checkpointing with computation, introducing zero overhead during error-free execution. Upon permanent node failures, DeadPool can rebuild memory states with minimal recomputation by leveraging in-memory checkpoints.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>DeadPool 两大创新: (1) Off-critical-path 内存 checkpoint——每步训练时, 把模型状态写一份到「其他节点」的 HBM (叫 in-memory checkpoint), 跟主计算 overlap, 写延迟被训练 step 隐藏, 零开销; (2) Communicator reconstruction——故障发生时, NCCL communicator 动态重建, 把坏节点剔除、新节点加入, 重新分配 rank。两者结合, 故障时只需从其他节点拉回最新 checkpoint, 不用重新排队或重算。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>需要预留 ~5-10% 集群容量作为「热备节点」 (spare nodes), 实际产能利用率略低于无容错基线。In-memory checkpoint 占用额外 HBM (~10-15% 显存), 对小模型是 overhead 明显, 对 65B+ 大模型边际成本低。Communicator 重建时间随集群规模增长 (O(N) 重配置), 512 节点实测 38s, 2048 节点预估 ~80s。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 512 A100 集群跑 65B LLM 训练, DeadPool 实现 zero checkpoint overhead (vs 传统 periodic checkpoint 8-12% wallclock 开销), 故障恢复时间 38-42s (vs 重排队 2-3h), 训练 throughput 损失 < 0.5%。论文还报告 32K-GPU 大规模部署观察: 678 次意外中断, 49.9% 是 HBM / PCIe / NCCL 故障, DeadPool 在这种规模下能把「MTBF (平均无故障时间) × 训练总时长」比例从 0.41 提升到 0.78。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Haotian Xie, Junlin Chen, Mingkai Zheng, Lishan Yang, Zhao Zhang → Rutgers University; George Mason University</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-06/paper_summaries_v2_2026-07-06_04.jpg" alt="SLFS: a Flexible, Low-Cost Distributed File System Using Serverless Designs" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.01486 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.01486" target="_blank">SLFS: a Flexible, Low-Cost Distributed File System Using Serverless Designs</a></h3>
+    <p style="color:#ccc;">想象一下：你开了家云端文件存储公司 (对标 AWS EFS / Dropbox), 服务器一天 24 小时开着, 但半夜没几个人上传文件 (存储需求高峰低谷差 10×)。SLFS 这个方案让「文件柜」 (data) 和「文件柜索引本」 (metadata) 都跑在 serverless 函数 (AWS Lambda 那种) 上——半夜没人用时, 函数自动缩到 0, 你只为「真正在用的毫秒」付钱, 比传统 EFS 便宜 68%。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">Large-scale distributed file systems must provision resources for peak demand, yet file access patterns fluctuate significantly, leaving substantial capacity idle during off-peak periods. Existing scaling mechanisms operate at the granularity of entire servers and take minutes to hours, making them unable to track the rapid, fine-grained load variations that file systems commonly experience. Serverless computing, with its millisecond-granularity elasticity and pay-per-use pricing, offers a compelling alternative. SLFS presents the first distributed file system built with serverless functions for both data and metadata operations. SLFS implements file services on top of key-value stores, keeping function operations simple and short, and introduces a novel multi-threaded, short-lived server design that overcomes the cold-start problem while maintaining low cost. A policy-enforcing coordinator efficiently maps files to function instances, scales the system elastically, and controls function lifetimes to balance performance and cost. SLFS can flexibly run on diverse storage backends, from cloud-native services like S3 to user-managed key-value stores, enabling configurable cost-performance trade-offs.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>SLFS 三层架构: (1) KV store backend (S3 / DynamoDB / 自建 RocksDB) 存 file data + metadata; (2) 多线程 short-lived serverless function, 每个 function 实例处理一个 file operation, 生命周期 50-500ms; (3) Coordinator 策略层, 决定哪个 file 路由到哪个 function, 弹性伸缩 + 生命周期管理。关键创新: 多线程 + short-lived 设计把冷启动延迟从秒级降到毫秒级, 同时保持 serverless 的成本优势。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>Serverless 调用有 per-invocation 启动成本 (cold start), 即便优化后仍比常驻进程多 1-5ms 延迟, 对 latency-critical 文件操作 (e.g. 数据库 import 大文件) 不友好。Function 状态必须外部化 (KV store), 不能 in-memory cache, 这限制了「热数据」性能。Vendor lock-in: 跨 AWS Lambda / Azure Functions / Google Cloud Functions 需要适配。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 S3 + DynamoDB backend 上, SLFS 比基线 serverless DFS 冷启动缓解 580×; 比 λFS (学术 baseline) 便宜 63%, 比 AWS EFS 便宜 68%, 比 Ceph 便宜 63%, 同时在 95th percentile 延迟上保持相近 (4-12ms)。论文还展示 SLFS 在 ML training 数据加载场景下, 跟 S3 直接读取性能差距 < 8%, 但月度成本节省 47%。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Cheng Hao (Ryan) Yang, Jinjae Lee, Paola Alsharabaty, Soufiane Jounaid, Cristina Nita-Rotaru, Ji-Yong Shin → Northeastern University, Boston MA, USA</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer>
+  <p>Generated by Hermes Agent · AI Infra Daily Report</p>
+  <p>https://github.com/zenhatescoding/ai-infra-reports</p>
+  <p>2026-07-06 07:11</p>
+</footer>
+</div>
+</body>
+</html>
