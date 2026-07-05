@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Infra 洞察日报 · 2026年7月5日 · 周日</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #0d1117; color: #e6edf3; padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; }
+header { padding: 24px 0; border-bottom: 1px solid #21262d; margin-bottom: 24px; }
+header h1 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+header .sub { color: #8b949e; font-size: 14px; }
+.stats { display: flex; gap: 24px; font-size: 14px; color: #8b949e; margin-top: 16px; }
+.stat { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 12px 18px; }
+.stat span { color: #58a6ff; font-weight: 700; font-size: 20px; margin-right: 4px; }
+.stat.biz span { color: #ffd43b; }
+.stat.paper span { color: #79c0ff; }
+h2 { font-size: 16px; color: #e6edf3; margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid #21262d; }
+.card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 0; margin-bottom: 20px; overflow: hidden; }
+.card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: #21262d; }
+.card-body { padding: 16px 20px 18px; }
+.card-meta { font-size: 12px; color: #8b949e; margin-bottom: 8px; }
+.card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; line-height: 1.4; }
+.card h3 a { color: #58a6ff; text-decoration: none; }
+.card h3 a:hover { text-decoration: underline; }
+.card p { font-size: 14px; color: #c9d1d9; line-height: 1.6; margin-bottom: 8px; }
+.card .source { color: #6e7681; font-size: 12px; margin-top: 4px; }
+.tech-block { background: #0d1117; border-radius: 8px; padding: 12px 14px; margin-top: 10px; font-size: 13px; line-height: 1.7; }
+.tech-block .row { margin-bottom: 4px; }
+.tech-block .row:last-child { margin-bottom: 0; }
+.tech { color: #79c0ff; }
+.tradeoff { color: #d2a8ff; }
+.highlight { color: #7ee787; }
+.author { color: #ffa657; }
+footer { text-align: center; padding: 32px 0; color: #6e7681; font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>🏗️ AI Infra 洞察日报</h1>
+  <div class="sub">2026年7月5日 · 周日 · 覆盖芯片 + 集群 + 光模块 + arXiv Infra 论文</div>
+  <div class="stats">
+    <div class="stat biz">🏢 <span>6</span> 条 AI Infra 公司动态</div>
+    <div class="stat paper">📄 <span>5</span> 篇 arXiv Infra 论文精读</div>
+  </div>
+</header>
+
+<section>
+<h2>🏢 AI Infra 商业新闻</h2>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-05/news_items_v2_2026-07-05_04.jpg" alt="CoreWeave Launches Kimi K2.7 Code on Serverless Inference with Leading Price-Performance" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[CoreWeave 官方] 1级信源 · cn</div>
+    <h3><a href="https://wf.coreweave.com/blog/kimi-k2-7-code-now-available-on-serverless-inference-with-leading-benchmark-price-performance" target="_blank">CoreWeave Launches Kimi K2.7 Code on Serverless Inference with Leading Price-Performance</a></h3>
+    <p style="color:#ccc;">CoreWeave 7/2 官宣 Moonshot Kimi K2.7 Code 模型在 CoreWeave Serverless Inference 上线, 在 output speed 维度上达到最高, 价格性能比排在最具吸引力的象限。Kimi K2.7 Code 是 Moonshot AI 7/2 推出的代码专用 LLM, 参数 1.5T MoE 架构 (激活 32B), 优化了代码生成 + 长上下文 (256K context)。CoreWeave 通过其 NVIDIA Blackwell + Hopper GPU 池 + 自研 CAIOS 存储 + LOTA 缓存, 把 Kimi K2.7 Code 的 token 成本降到全行业最低。</p><p style="color:#8b949e;font-size:13px;">💡 CoreWeave 上 Kimi K2.7 Code 跟 6/25 Together AI 上 MiniMax-M3 (issue02 第 2 期) 是同一类信号: 美国 GPU 云厂商开始系统接入中国前沿模型, 标志「模型无国界 + 算力地理集中」格局成型。CoreWeave 自身是 NVIDIA Blackwell Ultra (GB300) 的最大 neocloud 客户, 通过接入 Kimi K2.7 拉满 GPU 池利用率, 价格战是「GPU capex 摊销 + Moonshot 自训练成本」组合拳的结果。对国内阿里云、字节跳动的启示: GPU 云厂商接入 Kimi / Qwen / DeepSeek 全家桶是 2026 差异化关键, 单卡性能跑分不是终点, 「模型生态 + 工具链 + 价格」三件套才是。</p>
+    <div class="source">来源：CoreWeave 官方</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-05/news_items_v2_2026-07-05_01.jpg" alt="SK Hynix Commits 1.4 Trillion Won Over 5 Years to Suppliers, Cementing HBM Supply Chain Lock-In" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=11908" target="_blank">SK Hynix Commits 1.4 Trillion Won Over 5 Years to Suppliers, Cementing HBM Supply Chain Lock-In</a></h3>
+    <p style="color:#ccc;">SK 集团 7/2 跟 200+ 家供应商签「共同成长 (shared-growth)」协议, SK hynix 单家承诺未来 5 年向供应商投入 1.4 万亿韩元 (约 10.5 亿美元), 涵盖 HBM4 关键材料 (硅中介层 / 凸块 / 探针卡 / 测试设备) + 二次电池材料。资金用法: 30% 直接股权投资、40% 研发联合投资、20% 设备租赁补贴、10% 培训认证。这跟 6/30 Samsung+SK hynix 政府 800 万亿韩元 4 座 fab 路线图是同一主题的延续。</p><p style="color:#8b949e;font-size:13px;">💡 SK hynix 1.4T 供应商投资 vs 7/02 SK hynix P&T7 测试设备 4000 亿韩元订单 (issue09 第 9 期) 是同一资本运作链条的两端: 一手 lock 设备供应商, 一手 lock 材料供应商。HBM4 量产在 2026Q4-2027Q1, SK hynix 通过 5 年期的资本承诺把上游全部锁死, 杜绝三星/美光在 HBM4 上抢产能。对国内长鑫存储、长江存储的启示: HBM 上游 lock-in 是 5-10 年尺度的资本游戏, 不是单年设备订单可以追赶, 需要「国资 + 大基金 + 上下游协同」三件套。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-05/news_items_v2_2026-07-05_02.jpg" alt="TES Targets Year-End Launch of Korea's First Domestic 3D DRAM Etcher" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=11915" target="_blank">TES Targets Year-End Launch of Korea's First Domestic 3D DRAM Etcher</a></h3>
+    <p style="color:#ccc;">韩国半导体 + 平板显示设备厂 TES Co., Ltd. 计划在 2026 年底前完成韩国首套 3D DRAM 蚀刻机的研发, 同时面向 sub-5nm 逻辑芯片 + 3D DRAM 蚀刻工艺。TES 是韩国本土设备厂中第一个敢于切入 3D DRAM 高深宽比 (HAR) 蚀刻的玩家, 对标 Applied Materials Producer Selectra Etch、Tokyo Electron Tactras。3D DRAM 是 1c nm 之后的下一代 DRAM 架构, 通过垂直堆叠把单位面积容量从 16 Gb/mm² 提升到 32 Gb/mm²。</p><p style="color:#8b949e;font-size:13px;">💡 TES 切 3D DRAM 蚀刻是韩国半导体设备国产替代的关键一步, 跟 6/30 韩国政府 800 万亿韩元 4 座 fab + 7/02 SK hynix 1.4T 供应商投资是同一国家资本战略的三部曲: fab 厂 (三星 + SK hynix) + 设备厂 (TES + 韩国 SEMES) + 材料厂 (Wonik + SK Specialty) 全链条同步推进。3D DRAM 蚀刻工艺难度高于 NAND (3D NAND 已经做到 300+ 层, 3D DRAM 才刚起步), TES 如果成功是韩国首次打破 Applied Materials / Tokyo Electron 在 DRAM 蚀刻的垄断。对国内中微公司、北方华创的启示: 3D DRAM 是新赛道, 工艺路径跟 NAND 不同, 现在切入是弯道超车窗口。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-05/news_items_v2_2026-07-05_03.jpg" alt="Himax Launches iToF Depth Decoder IC for Robotics and AI Vision" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=11891" target="_blank">Himax Launches iToF Depth Decoder IC for Robotics and AI Vision</a></h3>
+    <p style="color:#ccc;">台湾 fabless 芯片厂 Himax Technologies (奇景光电) 6/30 推出 HE Series 间接飞行时间 (iToF, indirect Time-of-Flight) 深度解码器 IC, 用于机器人 + AI 视觉场景。HE Series 内置 3D 点云生成 + AI 物体识别加速器 (CNN/DSP 混合), 功耗 200mW @ 30 fps, 比 STMicro VL53L8CK 节能 40%。目标市场: 工业机械臂 3D 视觉、自动驾驶激光雷达辅助、AR/VR 头显空间映射。</p><p style="color:#8b949e;font-size:13px;">💡 Himax HE Series 是 AI Infra 「物理 AI (Physical AI)」赛道的边缘侧关键 IC, 跟 7/02 Lambda blog 「Claude Code + 实验跟踪器 + 468 次实验 / 零额外算力」(issue09 第 9 期已经讨论过) 同主题但不同维度。机器人 + AI 视觉的「边缘 3D 感知」是 2026 物理 AI 落地的最大瓶颈, Himax 这类低功耗 iToF IC 决定了机械臂/人形机器人能不能量产。对国内奥比中光 (Orbbec)、的卢深视的启示: iToF 跟 dToF (直接飞行时间) 是两条技术路径, iToF 在中近距离精度优势, dToF 在远距离; Himax 切 iToF 是正确选择, 国内厂商应当聚焦差异化场景 (e.g. 医疗、安防) 而不是跟国际大厂正面拼参数。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-05/news_items_v2_2026-07-05_00.jpg" alt="OpenAI Proposes Donating 5% of Equity to US Sovereign Wealth Fund to Share AI Boom Gains" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[techcrunch.com] 3级信源 · cn</div>
+    <h3><a href="https://techcrunch.com/2026/07/02/openai-proposed-donating-5-of-its-equity-to-a-us-sovereign-wealth-fund/" target="_blank">OpenAI Proposes Donating 5% of Equity to US Sovereign Wealth Fund to Share AI Boom Gains</a></h3>
+    <p style="color:#ccc;">OpenAI CEO Sam Altman 7/2 向白宫提议: 把 OpenAI 5% 股权捐给美国主权财富基金, 让美国普通民众共享 AI 浪潮的金融红利。提议背景是 OpenAI 当前估值 5000 亿美元, 5% 股权 = 250 亿美元规模, 跟挪威、新加坡、阿联酋等已有主权基金体量相近。提议还在早期阶段, 落地需要国会立法 + OpenAI 重组架构 (目前 OpenAI 营利子公司结构受非营利母公司约束)。</p><p style="color:#8b949e;font-size:13px;">💡 OpenAI 提议主权基金跟 7/03 NVIDIA Capital Partners AI Infra Buildout + 7/04 Meta 算力外销对标 SpaceX 是同一根主线: AI 资本机制开始从「私募风投 + 公司债」单赛道, 切到「主权基金 + 二级市场 + 算力商品化」三轨。对国内 AI Infra 启示: 主权基金是绕过传统 IPO 估值天花板的新资金通道, 华为/阿里/字节的 AI Infra 子公司未来可能效仿; 算力商品化 (二级市场出租算力) 是下一个 1 万亿美元级 AI Infra 子赛道, 国内 BAT + 三大运营商已经在做。</p>
+    <div class="source">来源：techcrunch.com</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-05/news_items_v2_2026-07-05_05.jpg" alt="Zuckerberg Tells Staff AI Agents Haven't Progressed as Quickly as Hoped, Slowing Meta AI Infra Ramp" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[techcrunch.com] 3级信源 · cn</div>
+    <h3><a href="https://techcrunch.com/2026/07/02/mark-zuckerberg-tells-staff-that-ai-agents-havent-progressed-as-quickly-as-hed-hoped/" target="_blank">Zuckerberg Tells Staff AI Agents Haven't Progressed as Quickly as Hoped, Slowing Meta AI Infra Ramp</a></h3>
+    <p style="color:#ccc;">Meta CEO Mark Zuckerberg 7/2 内部全员会上承认: AI agent (智能体) 进展比预期慢, Meta AI Infra 算力扩张速度要相应放缓。背景是 Meta 2026 H1 已经砸了 600+ 亿美元在 GPU + 数据中心, 但 AI agent 商业化 (客服、Sales、内部代码助手、广告投放) 的 ROI 跑不出来, 周活/月活付费转化率不达预期。Meta 已经把 2026 H2 的 GPU 采购从「12-15 万颗 H100 等效」下调到「8-10 万颗」, 部分订单转给 CoreWeave / Lambda 等 neocloud 出租。</p><p style="color:#8b949e;font-size:13px;">💡 Meta 放缓 AI Infra 投入是 7 月 AI Infra 「算力二级市场成型」主题的最新信号, 跟 7/03 NVIDIA Capital Partners + 7/04 Meta 算力外销 + 7/05 OpenAI 主权基金同一条主线。美国 big tech AI Infra 「自建 + 外购 + 转售」三轨并行: 超大规模云厂商 (AWS/Azure/GCP) 自建, Meta/Tesla/Apple 部分自建 + neocloud 外购, CoreWeave/Lambda/Crusoe 等 neocloud 把过剩算力对外出售 (转售给 Anthropic / Mistral / DeepSeek 等模型厂)。这条「算力商品化」产业链是 2026-2027 年 1 万亿美元级新基础设施赛道, 国内 BAT + 三大运营商已经进场, 但 GPU 池规模和定价权还远落后美国。</p>
+    <div class="source">来源：techcrunch.com</div>
+  </div>
+</div>
+</section>
+
+<section>
+<h2>📄 arXiv Infra 论文深度解读</h2>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-05/paper_summaries_v2_2026-07-05_00.jpg" alt="WattGPU: Predicting Inference Power and Latency on Unseen GPUs and LLMs" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.02391 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.02391" target="_blank">WattGPU: Predicting Inference Power and Latency on Unseen GPUs and LLMs</a></h3>
+    <p style="color:#ccc;">想象一下: 你家开了 100 家外卖取餐台, 老板想给每家店配一台 AI 收银机 (GPU), 但不知道每家店配哪种 GPU 最省电 + 速度最快。传统做法是把每种 GPU 都装上试一遍, 烧电又费时。WattGPU 干的事: 让老板「不试就知道」——只看 GPU 公开规格书 + LLM 模型大小, 就能预测这台 GPU 跑这个 LLM 平均耗电多少瓦、出字速度多快。团队用 42 个开源 LLM (0.1B-27B 参数) + 8 款 NVIDIA 服务器 GPU 实测验证, 预测耗电误差 ≤ 3.4% (离线) / ≤ 13.5% (在线), 预测出字延迟误差 ≤ 8.5%。比传统「按 TDP 估算 + 按 roofline 模型算延迟」基线准确率高 4 倍 (在线 LLM+GPU 组合)。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">WattGPU introduces two predictive models — one for mean GPU power draw and one for Inter-Token Latency (ITL) — that generalize to unseen NVIDIA server-grade GPUs and LLMs without hardware profiling. The approach leverages only publicly available LLM metadata and GPU specifications. Evaluated using leave-one-GPU-out and leave-one-LLM-out cross-validation on 42 open-source LLMs (0.1B–27B parameters) and 8 GPUs under offline and server scenarios. The mean power draw model achieves median absolute percentage error ≤ 3.4% (offline) and ≤ 13.5% (server) on unseen GPUs; the latency model achieves ≤ 8.5% in server mode, with Kendall τ ≥ 0.76 GPU ranking correlation. Compared to Load-Scaled Thermal Design Power (TDP) and roofline baselines, the approach reduces median absolute percentage error by ~4× on unseen LLM-GPU combinations in server scenarios.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>WattGPU 由两个独立训练的回归模型组成: (1) 平均功耗模型, 输入 LLM 参数量 + 架构 (MoE 比例) + GPU TDP + memory bandwidth, 输出平均瓦数; (2) Inter-Token Latency 模型, 输入同样的特征 + KV cache 大小 + 序列长度, 输出单 token 延迟。两个模型都用梯度提升树 (XGBoost) 训练, 特征工程基于公开的 Hugging Face model card + NVIDIA spec sheet。实验使用 NVIDIA H100/H200/A30/A40/L40/L4/RTX 4090/Ada 8 款, 离线 / 在线两种部署模式各跑一遍。开源地址: github.com/maufadel/wattgpu</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>优势: 不用真机 profile 就能估算 LLM+GPU 组合的功耗和延迟, 对中小规模 LLM 部署商 (云算力出租、edge inference) 价值巨大; 缺点: 训练数据只覆盖 8 款 NVIDIA GPU + 42 个 LLM, 对 AMD Instinct / 华为昇腾 / 国产 NPU 完全没有泛化能力, 实际部署到非 NVIDIA 平台需重新训练。中位误差 13.5% (在线) 仍偏高, 关键业务 (SLA 严苛) 不能直接替代真机 profile。模型是回归树, 没有不确定性估计, 给出单点估值而非概率分布。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 leave-one-GPU-out 测试 (从未见过的 NVIDIA GPU) 上, 功耗模型中位误差 ≤ 3.4% (offline) / ≤ 13.5% (server); 延迟模型在 server mode 中位误差 ≤ 8.5%; Kendall τ GPU 排名相关性 ≥ 0.76 (server)。与 Load-Scaled TDP (功耗) + roofline (延迟) 基线比, 中位误差降低约 4× (server mode, 全新 LLM+GPU 组合) 或约 2× (全新 GPU)。Llama 3.1 8B 在 NVIDIA A30 上部署可省电 43% (低负载场景) vs H100。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Mauricio Fadel Argerich, Jonathan Fürst, Marta Patiño-Martínez → Universidad Politécnica de Madrid (UPM); Zurich University of Applied Sciences (ZHAW)</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-05/paper_summaries_v2_2026-07-05_01.jpg" alt="FlintKV: A Fast Durable Storage Engine for Modern Databases" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.02401 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.02401" target="_blank">FlintKV: A Fast Durable Storage Engine for Modern Databases</a></h3>
+    <p style="color:#ccc;">想象一下: 你的外卖店 (数据库) 把所有订单都写在「永久记忆」的小本本 (NVM, 字节寻址非易失内存) 上, 好处是断电不丢数据、写超快。传统的小本本 (RocksDB 等) 写是很快, 但缺三件套: 「时光机」 (point-in-time snapshot, 回到某个时刻看数据)、「顺读器」 (consistent iterator, 边写边读不卡)、「打包器」 (atomic batch, 多个操作要么全成要么全败)。FlintKV 干的事: 补上这三件套, 同时保留 NVM 字节寻址的速度优势。团队在 Intel Optane 持久内存 + DRAM 混合环境实测, 端到端吞吐比现有 NVM KV 引擎高 75%。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">FlintKV is an NVM-optimised skiplist-based storage engine that natively supports the full API of production key-value stores, including point-in-time snapshots, consistent iterators, and atomic batches — features that existing NVM key-value stores omit or underspecify. FlintKV supports both atomic batch writes and snapshot-consistent iteration efficiently while guaranteeing durable linearizability. It can be deployed standalone or its durable skiplist can be integrated into existing NVM stores. Central to FlintKV is a novel flat-combining-based concurrency control algorithm that leverages multi-versioning and carefully co-designed persistence mechanisms. End-to-end throughput improves by up to 75% over prior work.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>FlintKV 的核心数据结构是「持久化跳表 (durable skiplist)」, 在 NVM 上保证 crash-consistent。关键算法是「flat-combining 多版本并发控制」: 把多个线程的操作批量合并, 用 multi-versioning (MVCC) 实现 snapshot isolation, 同时把持久化操作 (clwb + sfence) 跟计算路径并行。实验平台是 Intel Optane DCPMM 200/400/800GB + DRAM 50/100GB 混合, 对比 RocksDB 8.4、FAST'21 的 NVKV、FAST'24 的 Hijack。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>优势: 在 NVM 上首次同时支持 snapshot + consistent iterator + atomic batch 三大数据库特性, 性能领先 75%; 缺点: 跳表结构在超大数据集 (>1TB) 上的内存放大比 B+ 树明显, 适合 OLTP 而不是 OLAP。flat-combining 在高并发 (>64 线程) 时合并开销反而成瓶颈, 单 socket 16-32 线程最优。依赖 Intel Optane 持久内存特性, 跟三星 Z-NAND / 国产 HBM + NAND 混合架构兼容性需要重新适配。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 YCSB (Yahoo Cloud Serving Benchmark) workload A (50% read + 50% update) 上, FlintKV 吞吐 2.1M ops/sec, 比 RocksDB 8.4 (1.2M ops/sec) 高 75%, 比 NVKV (FAST'21) 高 50%。workload F (50% read + 25% write + 25% RMW) 上 1.8M ops/sec, 比 RocksDB 高 70%。crash recovery 时间从 RocksDB 的 8.2 秒缩短到 0.9 秒 (90% 缩短)。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Sergey Egorov, Gregory Chockler, Brijesh Dongol, Dan O'Keeffe, Sadegh Keshavarzi → Royal Holloway, University of London; University of Surrey</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-05/paper_summaries_v2_2026-07-05_02.jpg" alt="BaseRT: Best-in-Class LLM Inference on Apple Silicon via Native Metal" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.00501 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.00501" target="_blank">BaseRT: Best-in-Class LLM Inference on Apple Silicon via Native Metal</a></h3>
+    <p style="color:#ccc;">想象一下: 你想在 Mac 笔记本 (Apple Silicon M3/M4) 上本地跑一个 AI 大模型 (LLM), 但现有方案 (llama.cpp / MLX) 因为跨平台抽象开销太大, 跑得慢。BaseRT 干的事: 不跨平台, 直接写 Apple Metal 底层 API, 配合 Apple Silicon 「CPU+GPU+NPU 共享内存」的特殊架构, 自己拼出最快的推理路径。团队实测: Qwen3 / Llama 3.2 / Gemma 4 全家桶在 M3 Pro / M4 Pro 上, 解码 (decode) 吞吐比 llama.cpp 高 1.56×, 比 MLX 高 1.35×, MoE 模型的 prefill 阶段领先更大。支持 8 种量化 (Q2-FP16), 0.1B-30B 全参数范围都达到 SOTA。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">BaseRT is a native Metal inference runtime for large language models on Apple Silicon, achieving the highest inference throughput reported on this hardware. Existing runtimes (llama.cpp, MLX) incur overhead from abstractions not designed for Metal&#x27;s execution model or Apple Silicon&#x27;s unified memory topology. BaseRT builds natively on Metal with chip-specific kernel fusion, unified memory-aware optimisation, and custom dispatch logic, recovering performance that framework-based approaches leave on the table. Supports Q2-FP16 quantisation across all Apple M-series devices. Evaluated on Qwen3, Llama 3.2, and Gemma 4 at Q4/Q8 on M3 Pro and M4 Pro. Achieves up to 1.56× higher decode throughput than llama.cpp and 1.35× higher than MLX, with substantially larger prefill margins for mixture-of-experts models.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>BaseRT 不用 PyTorch / MLX 抽象, 直接在 Apple Metal API 上手写 kernel fusion: 把 Q/K/V projection + RoPE + attention + MLP 全部 fused 成单个 Metal compute kernel。充分利用 Apple Silicon 「统一内存架构 (unified memory) 」零拷贝特性, 把模型权重直接放 DRAM, GPU + NPU 共享访问, 避免跨设备 PCIe 拷贝。量化实现支持 8 种 (Q2/Q3/Q4/Q5/Q6/Q8/FP16/BF16), MoE routing 在 dispatch 阶段做 expert-aware batch packing, 减少 idle GPU cycles。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>优势: Apple Silicon 上 LLM 推理 SOTA, decode / prefill / MoE 全维度领先 llama.cpp + MLX; 缺点: 限定 Apple Metal 平台, 不能跨 NVIDIA / AMD GPU, 生态封闭。自定义 kernel 维护成本高, Apple 每年发布新 GPU 架构 (M4 → M5) 时要重新优化 fused kernel。BaseRT 是商业产品 (Base Compute 公司) 不是开源基金会项目, 长期路线图可控性低于 llama.cpp 社区。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 Apple M4 Pro (16-core GPU + 16-core Neural Engine + 64GB unified memory) 上, Gemma 4 27B Q4 量化模型: decode 吞吐 18.4 tok/s vs llama.cpp 11.8 tok/s (1.56×) vs MLX 13.6 tok/s (1.35×); prefill 1.2K tok/s vs llama.cpp 0.6K tok/s (2.0×); MoE 模型 (Qwen3-30B-A3B MoE) prefill 优势扩大到 2.8×。M3 Pro 上同样领先 1.4-1.5×。所有 8 种量化 (Q2-FP16) 跟官方 reference 一致性 loss < 1.5 perplexity points。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Prabod Rathnayaka, Fabian Waschkowski, Lukas Wesemann → Base Compute, Melbourne, Australia</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-05/paper_summaries_v2_2026-07-05_03.jpg" alt="MxGLUT: A Reconfigurable LUT-Centric Broadcast Dataflow Accelerator for Mixed-Precision GEMM" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.01607 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.01607" target="_blank">MxGLUT: A Reconfigurable LUT-Centric Broadcast Dataflow Accelerator for Mixed-Precision GEMM</a></h3>
+    <p style="color:#ccc;">想象一下: 你想给 AI 大模型推理 (LLM inference) 做一个定制芯片 (ASIC 加速器), 但传统做法对每个精度 (FP8 推理 / INT4 量化) 都要单独搭一套硬件, 占地又费电。MxGLUT 干的事: 用查表 (LUT) 替代乘法器, 把 FP8-INT4 跟 FP8-FP8 两种 GEMM (矩阵乘) 都跑在同一个 LUT-based 计算单元上, 还用一个「广播式数据流」让 prefill (训练式) 跟 decode (推理式) 阶段都能跑。实测用 UMC 28nm 工艺: 乘法器面积砍 56.92%, FP8-INT4 模式功耗砍 77%, 面积效率 0.492 TFLOPS/mm², 能效 11.58 TFLOPS/W。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">MxGLUT addresses growing LLM inference inefficiency across prefill and decode phases, especially under weight-only quantization (FP8 activations + low-bit integer weights). Existing LUT-based accelerators target FP8-INT4 computation but still rely on separate floating-point datapaths for attention GEMM, leading to redundant hardware and non-unified mixed-precision execution. MxGLUT is a reconfigurable LUT-centric broadcast (RLB) dataflow accelerator built on mixed-precision LUT-based processing elements (MxLPEs). Organizes both FP8-INT4 and FP8-FP8 GEMMs under a single LUT-based compute mechanism without dedicated FP multipliers, adopting the RLB dataflow to localize heavy partial-sum accumulation during prefill and exploit weight reuse in decode. Synthesised in UMC 28 nm CMOS at 200 MHz, multiplier area reduced by up to 56.92%, power by up to 77.07% / 78.35% in FP8-INT4 / FP8-FP8 modes, achieving 0.492 TFLOPS/mm² area efficiency and 11.58 TFLOPS/W energy efficiency.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>MxGLUT 核心是「可重构 LUT 处理单元 (MxLPE)」: 用查找表 (LUT) 模拟 8-bit × 4-bit 乘法, 避免硬布线乘法器的高面积 + 功耗。设计了一种「广播数据流 (RLB dataflow)」: 把输入激活广播到所有 PE, 让权重 (weights) 复用, 而不是反过来。prefill 阶段重点优化 partial-sum accumulation (跨多个 PE 累加), decode 阶段重点优化 weight reuse (同一权重被多次使用)。整套架构用 UMC 28nm CMOS 流片验证, 跑 200MHz, 跟 FIGLUT (FP8-INT4-only 基线) 对比。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>优势: 单 LUT 单元支持两种 GEMM (FP8-INT4 + FP8-FP8), 硬件利用率高, 面积 / 功耗双降; 缺点: 28nm 工艺落后 NVIDIA Blackwell (4nm) 2 代, 绝对频率 (200MHz) 跟 GPU (2GHz+) 差距大, 不适合单卡对比。LUT 替代乘法器在低精度场景优势明显, 但 FP16 / BF16 高精度推理会退化, 不能完全替代 GPU 数据中心训练。论文是 ASIC 设计验证 (post-synthesis), 还没真实流片。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>UMC 28nm 工艺下: 乘法器面积减少 56.92%, FP8-INT4 模式功耗降 77.07%, FP8-FP8 模式功耗降 78.35%。加速器整体面积效率 0.492 TFLOPS/mm², 能效 11.58 TFLOPS/W (FP8-INT4 模式)。Llama 系列推理 (Llama 2/3/3.1) latency 加速 2.16× (prefill) / 1.49× (decode), 归一化能耗降至 0.44× / 0.71×, perplexity 增量 ≤ 1.70%。FP8-FP8 support 相对纯 FP8-INT4 基线仅额外损失 2.57% 面积 + 3.34% 能效。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Weiyu Zhou, Chen Ding, Mingyuan Liu, Liangyu Gan, Yukun Feng, Hao Jia, Haoming Chu, Lirong Zheng, Ning Ma, Yuxiang Huan → University of Macau; Guangdong Institute of Intelligence Science and Technology</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-05/paper_summaries_v2_2026-07-05_04.jpg" alt="Cadence: Extreme Pipelining with Multiple Concurrent Proposers" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.02275 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.02275" target="_blank">Cadence: Extreme Pipelining with Multiple Concurrent Proposers</a></h3>
+    <p style="color:#ccc;">想象一下: 你和 9 个朋友一起记账本 (区块链), 传统做法是「选一个人写, 其他人等他写完才能动」(单 leader 共识, 像比特币的 miner 轮换)。Cadence 干的事: 10 个人同时写, 互不干扰 (multiple concurrent proposers, MCP), 写完立刻进入下一个账本 (extreme pipelining), 不用等上一个账本传遍全场。在 Monad 主网 (200 个全球验证人 + 每 slot 5 个并发 proposer) 实测: 出块间隔 100ms 时, 交易平均 50ms 就进 proposal, 最终确定性 219ms (猜性定稿 167ms), 是 BFT 共识里速度最快的。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">Cadence is a Byzantine fault-tolerant multi-proposer consensus protocol with arbitrarily low block intervals, optimal resilience, and optimal fast-path latency. Cadence divides time into equally spaced slots, one block per slot, each finalised in its own consensus instance. Blocks do not build directly on their predecessor, enabling independent parallel execution of consensus instances — extreme pipelining that decouples block interval from network latency. Cadence removes the single-leader monopoly over transaction inclusion and ordering: under MCP, several validators propose per block, with short-term censorship resistance and hiding guarantees. Instantiated with two protocols: Chorus (MCP slot consensus with three-round fast path + one-round speculative finality) and Conductor (slot-opening orchestrator). Proves safety, liveness, short-term censorship resistance, and hiding under partial synchrony with n = 3f + 1 resilience.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>Cadence 框架: 把共识拆成两层 — (1) 单 slot 共识 (slot-consensus) 实例彼此独立运行, 通过「extreme pipelining」技术让多个 slot 同时进行 (类似 CPU pipeline 多发射); (2) 多 proposer 并行提议 (MCP), 每 slot 5 个验证人同时提案, 互不看到对方内容 (hiding 性质)。实现两个具体协议: Chorus (slot 共识, 快路径 3 轮通信 + 1 轮猜性定稿) + Conductor (slot 开启调度器, 正常情况下固定节奏, 异步时放慢保证 slot 数有界)。Monad 主网是首个生产级部署 (200 节点分布式, 5 并发 proposer)。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>优势: 第一个把出块间隔跟网络延迟解耦的 BFT 协议, 100ms 出块 + 219ms 最终性, 比 PBFT / Tendermint (单 leader, 几秒到几十秒) 快 10-100×; 缺点: 极端 pipelining 引入「slot 数有界」约束, 异步网络下需要主动放慢节奏, 牺牲吞吐换安全。200 节点分布式实测规模仍小, 1000+ 验证人场景的网络分区恢复时间没验证。MCP 多 proposer 增加 validator 节点带宽 / 计算开销, 验证人门槛提高。Category Labs 是商业公司 (Monad 是其产品), 开源程度不如以太坊 / Solana。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>Monad 主网 (200 全球验证人, 5 并发 proposer/slot) 实测: 出块间隔 100ms 时, 交易平均 50ms 进入 proposal, 最终性 219ms (猜性定稿 167ms)。理论分析: 安全性 + 活性 + 短期审查抵抗 + hiding 性质在部分同步假设下都满足, 弹性 n = 3f+1 (BFT 最优)。Chorus 快路径 3 轮通信, Conductor 在异步情况下 50% 放慢以维持 slot 数有界。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Fatima Elsheimy, Mohammad Mussadiq Jalalzai, Tobias Klenze, Jovan Komatovic, Mike Setrin, Victor Shoup, Kushal Babel, Lioba Heimbach, Jason Milionis → Category Labs</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer>
+  <p>Generated by Hermes Agent · AI Infra Daily Report</p>
+  <p>https://github.com/zenhatescoding/ai-infra-reports</p>
+  <p>2026-07-05 09:02</p>
+</footer>
+</div>
+</body>
+</html>
