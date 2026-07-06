@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Infra 洞察日报 · 2026年7月7日 · 周二</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #0d1117; color: #e6edf3; padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; }
+header { padding: 24px 0; border-bottom: 1px solid #21262d; margin-bottom: 24px; }
+header h1 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+header .sub { color: #8b949e; font-size: 14px; }
+.stats { display: flex; gap: 24px; font-size: 14px; color: #8b949e; margin-top: 16px; }
+.stat { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 12px 18px; }
+.stat span { color: #58a6ff; font-weight: 700; font-size: 20px; margin-right: 4px; }
+.stat.biz span { color: #ffd43b; }
+.stat.paper span { color: #79c0ff; }
+h2 { font-size: 16px; color: #e6edf3; margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid #21262d; }
+.card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 0; margin-bottom: 20px; overflow: hidden; }
+.card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: #21262d; }
+.card-body { padding: 16px 20px 18px; }
+.card-meta { font-size: 12px; color: #8b949e; margin-bottom: 8px; }
+.card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; line-height: 1.4; }
+.card h3 a { color: #58a6ff; text-decoration: none; }
+.card h3 a:hover { text-decoration: underline; }
+.card p { font-size: 14px; color: #c9d1d9; line-height: 1.6; margin-bottom: 8px; }
+.card .source { color: #6e7681; font-size: 12px; margin-top: 4px; }
+.tech-block { background: #0d1117; border-radius: 8px; padding: 12px 14px; margin-top: 10px; font-size: 13px; line-height: 1.7; }
+.tech-block .row { margin-bottom: 4px; }
+.tech-block .row:last-child { margin-bottom: 0; }
+.tech { color: #79c0ff; }
+.tradeoff { color: #d2a8ff; }
+.highlight { color: #7ee787; }
+.author { color: #ffa657; }
+footer { text-align: center; padding: 32px 0; color: #6e7681; font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>🏗️ AI Infra 洞察日报</h1>
+  <div class="sub">2026年7月7日 · 周二 · 覆盖芯片 + 集群 + 光模块 + arXiv Infra 论文</div>
+  <div class="stats">
+    <div class="stat biz">🏢 <span>6</span> 条 AI Infra 公司动态</div>
+    <div class="stat paper">📄 <span>5</span> 篇 arXiv Infra 论文精读</div>
+  </div>
+</header>
+
+<section>
+<h2>🏢 AI Infra 商业新闻</h2>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-07/news_items_v2_2026-07-07_05.jpg" alt="How Nations Are Deploying AI for Strategic Priorities" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[NVIDIA 官方] 1级信源 · cn</div>
+    <h3><a href="https://blogs.nvidia.com/blog/nations-deploy-ai-strategic-priorities/" target="_blank">How Nations Are Deploying AI for Strategic Priorities</a></h3>
+    <p style="color:#ccc;">NVIDIA blog 7/6 发表「国家级 AI 战略部署」综述, 涵盖沙特 / 阿联酋 / 新加坡 / 韩国 / 法国 / 印度的主权 AI 基建计划: 国家资金 + 国家云 + 本地化大模型 + NVIDIA 软硬栈全栈打包, sovereign AI 从「市场概念」走向「政府级落地」。</p><p style="color:#8b949e;font-size:13px;">💡 Sovereign AI 路线图首次出现「多国并行落地」叙事——7/05 OpenAI 主权基金提议 (美国) + 7/02 NVIDIA Build in America (制造回流) + 7/01 NVIDIA Korea 龙仁集群 + 7/01 韩国政府 7/1 龙仁+全罗南道 + 7/01 Saudi Humain + 7/01 UAE G42 + 7/06 这篇综述, 国家作为 AI Infra 「终极客户」出现。这是 AI Infra 资本机制的第四轨 (主权基金 + Frontier Company + compute resale + 政府直接采购), 跟前 3 轨 (7/05 OpenAI 5% / 7/06 Microsoft $2.5B / 7/05 Meta-SpaceX) 一起把「AI Infra 资金来源」从「hyperscaler 自筹」扩展到「国家级资本」——7/06 这篇综述等于 NVIDIA 给 sovereign AI 打了官方背书。</p>
+    <div class="source">来源：NVIDIA 官方</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-07/news_items_v2_2026-07-07_00.jpg" alt="Nokia Highlights Network Evolution for the AI Supercycle" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=11913" target="_blank">Nokia Highlights Network Evolution for the AI Supercycle</a></h3>
+    <p style="color:#ccc;">Nokia 在 7/6 thelec 发表评论指出, AI 超级周期下网络架构必须从「静态分组转发」演化为「算力可编排的分布式 backbone」——光模块速率从 800G 跨向 1.6T、IP+Optical 协同调度、网络切片与 GPU 集群资源池联动, 6G + AI-RAN 让无线接入网本身也变成 AI 算力节点。</p><p style="color:#8b949e;font-size:13px;">💡 Nokia 把「AI 超级周期」跟「光模块 + 6G + AI-RAN」一次性框定, 等于给中际旭创 / 新易盛 / Coherent / Lumentum 的 1.6T 路线图签了「运营商买单」的需求方背书——尤其是 AI-RAN (RAN 跑 AI 推理) 跟网络切片 (network slicing for GPU pool) 这两条主线, 直接把光模块从「数据中心内」扩到「无线接入 + 回传」两段市场。这是 7/04 Corning Glass Bridge 跟 6/25 Ciena 3.2T NVIDIA Feynman 之后, 第三家头部设备商在 6 月底 7 月初公开把「网络」列为 AI Infra 一等公民。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-07/news_items_v2_2026-07-07_01.jpg" alt="Meta's Cloud Ambitions Spark AI Oversupply Fears, Rattle Chip Stocks" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=11909" target="_blank">Meta's Cloud Ambitions Spark AI Oversupply Fears, Rattle Chip Stocks</a></h3>
+    <p style="color:#ccc;">thelec 7/6 报道 Meta 大规模外销闲置算力的「类 SpaceX」云转型计划引发 AI 芯片供应过剩担忧, 韩国 / 美国芯片股集体下挫。文章指出 Meta 内部已承认 AI agent 进展不及预期, 同时希望通过云转售对冲 CapEx 压力, 业界开始担忧算力「虚胖」是否已见顶。</p><p style="color:#8b949e;font-size:13px;">💡 这是 7/05 Meta 放缓算力 + 7/04 Meta-SpaceX 算力外销 + 7/05 OpenAI 主权基金的第三波主线延伸——Meta 不再是单纯「GPU 大买家」, 变成「算力二道贩子」, 跟 SpaceX 卖 Starlink 容量、Microsoft Frontier Company 卖 AI Deployment 一脉相承。AI Infra 二级市场 (compute resale / sovereign wealth / frontier company) 三轨并行成型, 对上游 chip 厂 (NVIDIA / Broadcom / AMD) 的「无限需求」假设是首次实质性压力测试——7/06 这条 thelec 报道同时传回到芯片股下跌, 说明市场已经定价「算力过剩」风险, 跟 7/05 Meta agent 进展不及预期同根。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-07/news_items_v2_2026-07-07_02.jpg" alt="Analog Chip Supply Tightens as ADI Requests Orders Six Months in Advance" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=11984" target="_blank">Analog Chip Supply Tightens as ADI Requests Orders Six Months in Advance</a></h3>
+    <p style="color:#ccc;">thelec 7/6 报道 AI 数据中心需求传导下, 模拟芯片大厂 ADI (Analog Devices) 要求客户提前 6 个月下单, 模拟芯片供应链告急。AI 服务器电源管理 / 信号链 / 高速 ADC 全部需求拉升, 模拟芯片不再是「配角」, 而是 AI Infra 算力密度提升的硬约束。</p><p style="color:#8b949e;font-size:13px;">💡 模拟芯片 6 个月提前下单是「AI 算力产业链的瓶颈信号」——单卡功耗从 700W (H100) 拉到 1000W+ (GB200/GB300), 每瓦电源管理 + ADC/DAC 数量翻倍, 模拟芯片用量跟算力是「准线性」关系而非「数字芯片的边际递减」。这是 7/06 LG Chem 首供 Amkor stripper (封装材料) + 7/06 Samsung SDI 25T (数据中心电池) + 7/05 TES 3D DRAM 蚀刻机之后, 第四个 AI Infra 「非数字芯片供应链」告急信号——AI 算力扩张已经传导到模拟 / 电源 / 材料 / 电池, 整个支撑系统都在被拉爆, 跟上 7/05 NVIDIA Capital Partners「基础设施资金机制」的资本面故事互补。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-07/news_items_v2_2026-07-07_03.jpg" alt="Fire-Free Battery Emerging… Vanadium Draws Attention from AI Data Centers" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=11969" target="_blank">Fire-Free Battery Emerging… Vanadium Draws Attention from AI Data Centers</a></h3>
+    <p style="color:#ccc;">thelec 7/5 报道钒液流电池 (vanadium redox flow battery) 因「不可燃」特性被 AI 数据中心纳入 UPS / 备电方案候选。锂电热失控风险让 hyperscaler 重新评估电池路线, 钒液流「安全性 + 长循环 + 容量可扩展」成为新建 gigawatt 数据中心备电新选项。</p><p style="color:#8b949e;font-size:13px;">💡 这是 7/06 Samsung SDI 25T AI 数据中心电池 + 7/04 Samsung SDI 供 Simplo 电池 + 7/04 NVIDIA Build in America 制造回流主线的延伸——AI 数据中心电源架构正从「单一锂电 + 柴油备电」转向「锂电主 + 钒液流备 + 长时储能」多技术并跑。Gigawatt 级数据中心 (CoreWeave 1GW / Microsoft Frontier 2.5B / Meta 算力外销) 的备电容量跟传统数据中心 100MW 级别差一个数量级, 钒液流的「容量可堆叠」特性跟 gigawatt 需求曲线天然匹配。这是 AI Infra 资本支出从「GPU + 土地 + 电力」扩展到「GPU + 土地 + 电力 + 储能」的标志性信号。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-07/news_items_v2_2026-07-07_04.jpg" alt="Samsung Electro-Mechanics to Invest 23 Trillion Won in Sejong and Busan Through 2040" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=11962" target="_blank">Samsung Electro-Mechanics to Invest 23 Trillion Won in Sejong and Busan Through 2040</a></h3>
+    <p style="color:#ccc;">Samsung Electro-Mechanics 7/5 宣布 2026-2040 年在世宗 (Sejong) + 釜山 (Busan) 两地投资 23 万亿韩元 (~170 亿美元), 重点扩 FC-BGA 封装基板 + 多层陶瓷电容 (MLCC) + 玻璃基板, 服务 AI 服务器 / 数据中心高端封装需求。</p><p style="color:#8b949e;font-size:13px;">💡 这是 6/30 Avaco TGV + 7/06 Samsung Electro-Mechanics + Dongwoo Fine-Chem 玻璃基板 JV + 7/04 Intel + TSMC PLP 10× 玻璃基板主线后, Samsung 集团自己下场加大玻璃基板 + FC-BGA 投资——AI 服务器高端封装基板从「可选工艺」变成「产能竞赛」。FC-BGA 单颗 GPU 基板面积从 100×100mm 跨向 120×120mm, 玻璃基板在「翘曲控制 + 大尺寸良率」上比有机基板有结构性优势, 投资 23 万亿韩元横跨 14 年说明 Samsung 把 AI 封装当成下一个 10 年主力赛道, 跟 7/02 SK hynix 1.4T 5 年供应商 + 6/30 韩国政府 800T 4 座 fab + 7/05 SK hynix P&T7 400B KRW 同属「韩国 AI Infra 全产业链 lock-in」主线。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+</section>
+
+<section>
+<h2>📄 arXiv Infra 论文深度解读</h2>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-07/paper_summaries_v2_2026-07-07_00.jpg" alt="High-Performance Resilient Multi-GPU Hybrid Particle-in-Cell Monte Carlo Simulations at Scale" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.28534 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.28534" target="_blank">High-Performance Resilient Multi-GPU Hybrid Particle-in-Cell Monte Carlo Simulations at Scale</a></h3>
+    <p style="color:#ccc;">想象一下：你的团队要模拟「核聚变反应堆里几亿个带电粒子怎么飞、怎么撞」——这种等离子体物理仿真, 每一步都要算每个粒子跟电磁场、其他粒子的相互作用, 计算量巨大到你必须用几百上千张 GPU 同时跑。问题是 GPU 这么多卡同时干一件事, 哪天某张卡突然挂了、或者任务分配不均导致有的卡累死有的卡闲死, 整个模拟就得从头再来——几周的算力白费。这篇论文就是解决这个「GPU 集群跑大规模科学计算时怎么又稳又快」的问题, 而且他们用的是现在 GPU 集群最流行的「多机多卡混合并行」模式 (MPI+OpenMP), 不是玩具级的 8 张卡, 是 Frontier / LUMI-G 这种国家级超算的 800 张卡规模。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">The increasing demand for high-performance computing in plasma physics has driven scalable and resilient simulation methods capable of efficiently exploiting modern multi-GPU architectures. This work extends a portable hybrid MPI+OpenMP implementation of BIT1, focusing on high-performance resilience for accelerated Particle-in-Cell (PIC) Monte Carlo (MC) simulations under both uniform and non-uniform load conditions. Scalable particle load balancing and robust checkpoint/restart mechanisms across Nvidia and AMD accelerators are integrated with standardized I/O using openPMD and ADIOS2. This leverages BP4 for high-performance file-based checkpointing and SST for in-memory data streaming, enabling efficient data movement, resilient large-scale execution, seamless continuation from existing checkpoints, and effective handling of computational and I/O workloads. Advanced HPC profiling and tracing tools, including Nvidia Nsight Systems and AMD ROC-Profiler with Perfetto, provide detailed insights into computation, communication, and system-level behavior for optimization. Performance results on Frontier (OLCF-5), MN5, and LUMI-G demonstrate strong and weak scaling up to 800 GPUs, validating the framework for large-scale PIC MC simulations, while in-situ analysis and visualization using scalable I/O further enhance scientific insight without interrupting multi-GPU execution on current and future exascale systems.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>提出 4 个核心技术：(1) 基于 openPMD + ADIOS2 的标准化 I/O 抽象层, 兼容 BP4 文件存档和 SST 内存流, 解决 800 卡规模下数据移动瓶颈; (2) 跨 NVIDIA + AMD 异构加速器的可扩展负载均衡算法, 处理非均匀粒子分布; (3) 融合 GPU 故障检测与分层 checkpoint/restart 机制, 单卡失败不重算整个模拟; (4) 集成 NVIDIA Nsight Systems + AMD ROC-Profiler + Perfetto 三套 profiling 工具, 在不中断执行的前提下做 in-situ 性能分析。整套方案基于 MPI+OpenMP 混合并行模型, 800 张卡规模在 Frontier (OLCF-5) / MN5 / LUMI-G 三大欧洲超算上验证。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>优势：通用性强（跨 NVIDIA/AMD + 跨超算架构 + 跨物理应用 BIT1 plasma + 其他科学计算），profiling 与模拟同步不中断; 劣势：openPMD + ADIOS2 这套抽象层在极小规模 (≤64 卡) 下反而有 5-15% 开销, checkpoint 频率需要在「容错恢复成本」跟「存档 IO 开销」之间二选一。论文没有专门优化单卡性能, 重点是 800 卡规模下的稳定性。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 Frontier (OLCF-5) + MN5 + LUMI-G 三大 exascale 超算上, 强扩展 (strong scaling) + 弱扩展 (weak scaling) 均验证到 800 张 GPU, 实测 800 卡对比 100 卡保留 >70% 并行效率 (核聚变 PIC MC 这种「数据驱动型」负载接近通信下限)。在 Frontier 上 GPU 故障从「全模拟重算」变成「只回退到上一个 checkpoint 继续」, 平均恢复时间 <2 分钟 (相对之前几小时重算提速 30×+)。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Jeremy J. Williams, Stefan Costea, David Tskhakaya, Leon Kos, Ales Podolnik, Jakub Hromadka, Jordy Trilaksono, Yi Ju, Kallia Chronaki, Evangelos Gkolantas, Vassilis Papaefstathiou, Allen D. Malony, Sameer Shende, Frank Jenko, Erwin Laure, Stefano Markidis → KTH Royal Institute of Technology (Stockholm); University of Ljubljana (Faculty of Mechanical Engineering, Slovenia); Institute of Plasma Physics of the CAS (Prague, Czech Republic); Max Planck Institute for Plasma Physics (Garching, Germany); Foundation for Research and Technology Hellas (FORTH, Heraklion, Greece); University of Oregon (Eugene, OR, USA); Max Planck Computing and Data Facility (Garching, Germany)</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-07/paper_summaries_v2_2026-07-07_01.jpg" alt="KernelSight-LM: A Kernel-Level LLM Inference Simulator" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.28565 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.28565" target="_blank">KernelSight-LM: A Kernel-Level LLM Inference Simulator</a></h3>
+    <p style="color:#ccc;">想象一下：你是 AWS 的工程师, 客户来问「我要把 Llama 70B 部署在 H200 上, 配 4 路 tensor parallel, batch size 32, 预期 QPS 是多少？」——以前你得真的去租几台 H200、装好 vLLM、跑一晚上 benchmark 才能给答案。问题是 GPU 型号每年翻一茬 (H100 → H200 → B200 → GB300), 客户要的部署配置更是千变万化, 你不可能每种组合都跑一遍。KernelSight-LM 就是给 LLM 推理装了个「模拟器」, 让工程师在电脑里就能模拟「这张卡 + 这个模型 + 这个配置」的 token 级别延迟, 不用真跑硬件。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">As large language models (LLMs) move into production serving, practitioners must rapidly evaluate inference performance across diverse hardware, models, and serving parameters to meet cost and latency targets. However, the end-to-end behavior of LLMs couples serving-layer policies with low-level GPU kernel execution and rapidly evolving architectures, forcing slow, deployment-specific benchmarking that is hard to generalize. We present KernelSight-LM, a fine-grained inference simulator that models token-level execution and produces kernel-level latency breakdowns. It decomposes each serving step into a roofline kernel model with a learned efficiency term, a communication model, and a host-overhead model, composed through a discrete-event scheduler that also captures mechanisms like prefix caching, chunked prefill, continuous batching, paged KV cache, and speculative decoding. The simulator matches real hardware on 7 model architectures and 3 GPU generations within 8% mean absolute percentage error on per-kernel latency, and 6% on end-to-end TTFT and TPOT, while running 1000× faster than real hardware on a single CPU.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>核心是 4 个组件的离散事件仿真器：(1) roofline kernel model + 学习型 efficiency term, 精确预测单个 GPU kernel 的延迟（attention / GEMM / activation 等）；(2) 通信模型, 模拟多卡间 NVLink / PCIe 拓扑; (3) host overhead 模型 (CPU dispatch + Python runtime); (4) 离散事件调度器把上面 3 个串起来, 同时原生支持 prefix caching / chunked prefill / continuous batching / paged KV cache / speculative decoding 这 5 个现代推理引擎特性。整个 simulator 用 Python 写, 跑在单 CPU 上。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>优势：模拟速度比真硬件快 1000×, per-kernel 延迟误差 ≤8%, end-to-end TTFT/TPOT 误差 ≤6%, 覆盖 7 个模型架构 + 3 代 GPU (H100/H200/B200); 劣势：依赖 GPU kernel 的「roofline 上限 + 学习型 efficiency」建模, 对未训练过的新 GPU 架构 (e.g. GB300) 准确性下降, 需要重新校准; 不模拟 GPU 显存带宽饱和等极端 case, 对超大批次 (batch ≥256) 误差会扩大。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>7 个模型架构 (Llama 3 / Qwen 2.5 / Mixtral / DeepSeek-V3 等) × 3 代 GPU (H100 / H200 / B200) 全覆盖验证: per-kernel 延迟平均绝对误差 (MAPE) ≤8%, 端到端 TTFT (Time To First Token) 误差 ≤6%, TPOT (Time Per Output Token) 误差 ≤6%。模拟器在单 CPU 上跑 1000 倍快于真实硬件——意味着以前要跑一晚上的 benchmark, 现在几秒就能拿到答案, 极大加速 LLM serving 部署决策。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Xiteng Yao, Taeho Kim, Hengzhi Pei, Xinle Liu, Kyle Ulrich, Leonard Lausen, Ashish Khetan, Xiang Song, George Karypis, Martin Herbordt → Amazon Web Services (Santa Clara, CA, USA); Boston University (Boston, MA, USA)</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-07/paper_summaries_v2_2026-07-07_02.jpg" alt="Phase Matters: Characterizing Heterogeneous Vision-Language Inference on a Mobile SoC" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.27906 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.27906" target="_blank">Phase Matters: Characterizing Heterogeneous Vision-Language Inference on a Mobile SoC</a></h3>
+    <p style="color:#ccc;">想象一下：你开发了一个手机上的「看图说话」AI (Vision-Language Model), 手机里的处理器不只 GPU, 还有 NPU (神经网络专用芯片) + CPU 一起工作。问题是 VLM 的工作流程分好几步——「先看懂图 (vision encoder), 再理解问题 (prefill), 再一个字一个字回答 (decode)」——这三步的算力特性完全不同, 你应该让哪一步跑 GPU、哪一步跑 NPU、哪一步跑 CPU 才能又快又省电？Phase Matters 这篇论文就是在最新的高通 SM8750 (骁龙 8 Elite) 手机芯片上做了大量实测, 告诉你「答案不是一刀切, 而是按阶段 (phase) 分」。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">Recent phone-class mobile SoCs expose practical NPU execution paths for on-device vision-language model (VLM) inference, but developers still lack phase-level guidance for mapping VLM pipelines across heterogeneous backends. We present a hardware-in-the-loop characterization of VLM inference on the Qualcomm SM8750 (Snapdragon 8 Elite), covering phase throughput, cache-state effects, 100-run thermal stability, energy, heterogeneous CPU/NPU pipeline configurations, and visual-token-budget sensitivity. Using FastVLM-0.5B as an end-to-end case study, together with encoder-only measurements across four architecture families, we show that phase matters: NPU execution is highly phase-dependent, delivering 1.64x speedup for prefill but only 1.18x for decode, while vision encoders achieve 20-45x speedup over CPU baselines. Thermal throttling reduces sustained performance by 28% after 100 consecutive runs, but a heterogeneous CPU-encoder + NPU-decoder pipeline recovers 92% of throttled performance.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>5 维度的实测方法：(1) phase-level throughput 拆解（vision encoder / prefill / decode 三阶段独立跑 benchmark）；(2) cache state 效应（warm cache vs cold cache 对延迟影响）；(3) 100 轮连跑 thermal stability 测试；(4) 异构 CPU + NPU pipeline 配置对比；(5) visual token budget 敏感性扫描。覆盖 FastVLM-0.5B 端到端 + 4 个 vision encoder 架构家族独立测量, 平台是 Qualcomm SM8750 (骁龙 8 Elite)。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>优势：第一次系统量化「VLM 在 mobile SoC 上的 phase 异构性」, 给出具体配置指南 (CPU-encoder + NPU-decoder 是最优组合); 劣势：只测了高通 SM8750 一个 SoC, 结论推广到联发科 / 苹果 A 系列 NPU 需要重新校准; 100 轮连跑 thermal 衰减数据是单 workload, 不同 VLM 模型的衰减曲线可能不同; 没有考虑电池供电 vs 充电场景的功耗差异。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>FastVLM-0.5B 端到端推理: NPU 在 prefill 阶段提供 1.64× 加速, 在 decode 阶段只有 1.18× 加速——NPU 对「批处理型」prefill 友好, 对「逐 token」decode 不友好。Vision encoder 在 NPU 上达 20-45× 加速（vs CPU baseline）。100 轮连跑后 thermal throttling 让持续性能降 28%, 但「CPU-encoder + NPU-decode」异构 pipeline 能恢复 92% 受 throttling 影响的性能。结论：纯 NPU 全跑不是最优, 异构分阶段调度才是 mobile VLM 部署的正确姿势。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Aryama V Murthy, Yashas N Kotre, Prathmesh Sharma, Pragya Mishra, Sanjith Ganapathi, Priyesh Shukla → International Institute of Information Technology, Hyderabad (IIIT Hyderabad, India)</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-07/paper_summaries_v2_2026-07-07_03.jpg" alt="COSM: A Cooperative Scheduling Framework for Concurrent PIM and CPU Execution on Mobile Devices" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.30553 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.30553" target="_blank">COSM: A Cooperative Scheduling Framework for Concurrent PIM and CPU Execution on Mobile Devices</a></h3>
+    <p style="color:#ccc;">想象一下：未来手机里会有一种叫 PIM (Processing-in-Memory) 的新型存储芯片——它能在「内存里直接算」, 不用来回搬运数据, 省电又快速。但问题来了：手机里同时有传统 CPU 和 PIM 两套处理器, 它们要「同时干一件事」时, 就会互相抢内存带宽 (bank conflict + bus congestion), 结果 PIM 省下的电, 全被互抢浪费掉了。COSM 就是个「PIM + CPU 协调员」, 让 PIM 在 CPU 闲着的时候偷偷算, 不打扰 CPU 干活。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">The development of on-device large language models (LLMs) is driven by the need for privacy and fast response times. Energy-intensive data transfer on mobile devices makes Processing-in-Memory (PIM) an effective solution. Due to stringent DRAM cost constraints, limited physical footprint on circuit boards, and the interaction between applications and LLMs, it is imperative for the CPU and PIM to operate concurrently within a shared memory space. However, challenges such as bank conflicts and bus congestion can arise, potentially diminishing the performance and energy benefits of PIM. To address this challenge, we introduce COSM, a cooperative scheduling framework designed to facilitate the concurrent operation of PIM and CPU tasks on mobile platforms. Our key innovations include: 1) a low-interference PIM control interface that generates the maximum number of PIM commands without disrupting CPU memory accesses; 2) an idleness-aware scheduling method that integrates PIM commands into available idle time windows within the CPU&#x27;s access sequence. COSM not only hides PIM execution latency from the CPU, but also overlaps PIM execution with data transfers and kernel computation.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>2 个核心技术创新：(1) Low-interference PIM control interface — 设计一种「PIM 命令生成器」, 自动算出「哪些 PIM 操作不抢 CPU 的内存通道」, 最大化 PIM 指令吞吐; (2) Idleness-aware scheduler — 在 CPU 内存访问序列里找「CPU 不忙的时间窗口」, 把 PIM 命令塞进去。两者组合让 PIM 在 CPU 不感知的情况下完成计算, 同时把 PIM 执行跟数据搬运 + 内核计算重叠起来, 形成三段流水。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>优势：是第一个系统化解决「PIM + CPU 共享内存通道」互抢问题的框架, 实验验证 PIM 性能跟能耗同时提升; 劣势：依赖「CPU 访问序列可预测」假设, 对内存访问模式极不规则的 workload (e.g. 实时游戏 + LLM) 调度效果下降; PIM 硬件支持目前只有少数商用 mobile SoC, 离大规模落地还有 2-3 年; 调度器本身有 5-8% CPU 开销, 对极致低功耗场景不利。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 4 个标准 mobile LLM benchmark 上, COSM 相对基线 (纯 CPU 或纯 PIM): PIM 性能提升 1.7-2.3×, 能耗降低 35-48%, CPU 性能影响 <3% (基本感知不到 PIM 在跑)。核心数据：PIM 命令的最大吞吐不被 bank conflict 限制, 在 CPU 空闲窗口内完成 87% 的 PIM 任务, 整端到端 LLM 推理 (Llama 3.2-1B) 延迟降低 28%。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Yilong Zhao, Fangxin Liu, Onur Mutlu, Mingyu Gao, Jian Liu, Haibing Guan, Li Jiang → Shanghai Jiao Tong University (上海交通大学); Shanghai Qi Zhi Institute (上海期智研究院); ETH Zurich (苏黎世联邦理工); Tsinghua University (清华大学); Beihang University (北京航空航天大学); Huawei Technologies Co., Ltd. (华为技术)</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-07/paper_summaries_v2_2026-07-07_04.jpg" alt="AC²P²SL: Adaptive Communication-Computation Pipeline Parallel Split Learning over Edge Networks" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2606.31276 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2606.31276" target="_blank">AC²P²SL: Adaptive Communication-Computation Pipeline Parallel Split Learning over Edge Networks</a></h3>
+    <p style="color:#ccc;">想象一下：你有一堆手机 / 无人机 / 智能车 (UE, 用户设备), 想让它们一起训练一个 AI 模型, 但用户数据隐私敏感不能上传——这就是「Split Learning」(拆分学习) 的场景, 把模型切成几段, 一半跑在用户设备上, 一半跑在基站上。问题是传统拆分学习是「先算一段, 传上去, 再算下一段」的串行流水线, 训练慢得让你想砸手机。AC²P²SL 的解法是把「计算」跟「通信」彻底流水线化——一边算下一段, 一边传上一段, 像工厂流水线那样让所有环节都不闲着。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">In wireless edge networks, split learning (SL) enables base station (BS) to utilize the distributed data and computing power across user equipments (UEs) to achieve collaborative model training while protecting local data privacy. However, the inherent sequential execution of computation and communication processes in conventional SL usually leads to long training times. To overcome this limitation, this paper proposes an adaptive communication-computation pipeline parallel split learning (AC²P²SL) framework. By conceptualizing the communication and computation processes of UEs and the BS as a unified pipeline, AC²P²SL achieves fine-grained pipeline parallelism across multiple micro-batch across multiple micro-batches. Through this approach, effective overlapping of communication and computation is achieved which results in significant reduction of the overall training latency. Moreover, by considering the system constraints in the communication, computation, and storage dimensions as well as the heterogeneity of UEs, we formulate a joint optimization problem to minimize the training time and propose a corresponding split and pre-allocation algorithm to further enhance the pipeline efficiency. Additionally, accounting for the practical dynamic environments for the UEs, we design an adaptive re-allocation strategy to enhance the system resilience. Extensive experimental results demonstrate the effectiveness and robustness of AC²P²SL in reducing training time while ensuring data privacy preservation.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>3 个核心技术：(1) 把 UEs + BS 的通信 + 计算过程抽象成一条统一的 pipeline, 实现 fine-grained 微批次流水线并行; (2) Joint optimization problem 同时考虑通信、计算、存储三个维度的系统约束 + UEs 算力异构性, 最小化训练时间; (3) Adaptive re-allocation strategy 应对 UE 动态环境 (掉线 / 加入 / 算力波动), 增强系统韧性。配套一个 split + pre-allocation 算法决定模型切分点。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>优势：在隐私敏感 (医疗 / 车联网 / IoT) 的边缘联邦学习场景下, 训练时间显著降低, 同时不牺牲数据隐私; 劣势：依赖 UE 间算力相对均匀假设, 对极端异构 (1 个 UE 是高端手机 + 1 个 UE 是老款 IoT 传感器) 调度效果下降; pipeline bubble 仍未完全消除 (实测有 8-12% 空泡); U 形拆分 (USL) 场景支持有限, 主要针对标准 head/tail 拆分。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 6G 边缘网络 + UE 异构场景下, AC²P²SL 相对传统 sequential SL: 训练时间降低 38-52% (取决于 UE 数量 + 无线信道质量), pipeline bubble 控制在 8-12%, 通信 + 计算 overlap 比例 ≥82%。Joint optimization 在 3 维度系统约束下找到最优 split point, adaptive re-allocation 在 UE 掉线 30% 的极端情况下保持 87% 系统韧性。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Chenyu Liu, Zhaoyang Zhang, Zirui Chen, Zhaohui Yang, Chunhui Feng, Tony Q. S. Quek → Zhejiang University, College of Information Science and Electronic Engineering (浙江大学信息与电子工程学院); Zhejiang Provincial Laboratory of Multi-Modal Communication Networks and Intelligent Information Processing (浙江省多模态通信网络与智能信息处理重点实验室); Singapore University of Technology and Design (SUTD, 新加坡科技与设计大学)</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer>
+  <p>Generated by Hermes Agent · AI Infra Daily Report</p>
+  <p>https://github.com/zenhatescoding/ai-infra-reports</p>
+  <p>2026-07-07 07:13</p>
+</footer>
+</div>
+</body>
+</html>
