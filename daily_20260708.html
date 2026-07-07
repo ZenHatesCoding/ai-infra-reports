@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Infra 洞察日报 · 2026年7月8日 · 周三</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #0d1117; color: #e6edf3; padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; }
+header { padding: 24px 0; border-bottom: 1px solid #21262d; margin-bottom: 24px; }
+header h1 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+header .sub { color: #8b949e; font-size: 14px; }
+.stats { display: flex; gap: 24px; font-size: 14px; color: #8b949e; margin-top: 16px; }
+.stat { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 12px 18px; }
+.stat span { color: #58a6ff; font-weight: 700; font-size: 20px; margin-right: 4px; }
+.stat.biz span { color: #ffd43b; }
+.stat.paper span { color: #79c0ff; }
+h2 { font-size: 16px; color: #e6edf3; margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid #21262d; }
+.card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 0; margin-bottom: 20px; overflow: hidden; }
+.card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: #21262d; }
+.card-body { padding: 16px 20px 18px; }
+.card-meta { font-size: 12px; color: #8b949e; margin-bottom: 8px; }
+.card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; line-height: 1.4; }
+.card h3 a { color: #58a6ff; text-decoration: none; }
+.card h3 a:hover { text-decoration: underline; }
+.card p { font-size: 14px; color: #c9d1d9; line-height: 1.6; margin-bottom: 8px; }
+.card .source { color: #6e7681; font-size: 12px; margin-top: 4px; }
+.tech-block { background: #0d1117; border-radius: 8px; padding: 12px 14px; margin-top: 10px; font-size: 13px; line-height: 1.7; }
+.tech-block .row { margin-bottom: 4px; }
+.tech-block .row:last-child { margin-bottom: 0; }
+.tech { color: #79c0ff; }
+.tradeoff { color: #d2a8ff; }
+.highlight { color: #7ee787; }
+.author { color: #ffa657; }
+footer { text-align: center; padding: 32px 0; color: #6e7681; font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>🏗️ AI Infra 洞察日报</h1>
+  <div class="sub">2026年7月8日 · 周三 · 覆盖芯片 + 集群 + 光模块 + arXiv Infra 论文</div>
+  <div class="stats">
+    <div class="stat biz">🏢 <span>6</span> 条 AI Infra 公司动态</div>
+    <div class="stat paper">📄 <span>5</span> 篇 arXiv Infra 论文精读</div>
+  </div>
+</header>
+
+<section>
+<h2>🏢 AI Infra 商业新闻</h2>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-08/news_items_v2_2026-07-08_00.jpg" alt="Broadcom 与 Apple 续约至 2031, 新增定制 ASIC 供应" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=12025" target="_blank">Broadcom 与 Apple 续约至 2031, 新增定制 ASIC 供应</a></h3>
+    <p style="color:#ccc;">Broadcom 7/7 与 Apple 续约至 2031 年, 同时新增定制 ASIC 供应。Broadcom 是 Apple 自研芯片 (M 系列 / A 系列 / 联网芯片) 的核心代工合作方, 长期合作保障 Apple 硅战略稳定。</p><p style="color:#8b949e;font-size:13px;">💡 Apple 跟 Broadcom 的长期绑定 (2031) 是 AI 时代 hyperscaler 自研芯片战略的「防守性续约」代表——Apple 在 AI 服务器 + 数据中心加速器市场仍属观望者 (跟 Meta/Google/Microsoft 大规模自研 ASIC 不同), 但用长期合约锁定 Broadcom 既有 ASIC 产能, 避免被英伟达 Blackwell/Rubin 世代芯片缺货潮波及。对 Broadcom 意味着定制 ASIC 业务收入可见度延伸到 2031, 跟 OpenAI Jalapeño / Google TPU / Meta MTIA 同列 AI Infra 「ASIC 阵营」头部供应商。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-08/news_items_v2_2026-07-08_01.jpg" alt="Micron 与 Ford 签署长期战略客户协议, 车规存储合作再升级" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=12013" target="_blank">Micron 与 Ford 签署长期战略客户协议, 车规存储合作再升级</a></h3>
+    <p style="color:#ccc;">Micron 7/6 宣布跟 Ford 签署长期战略客户协议 (Strategic Customer Agreement), 车规级 NAND + DRAM 供应合作升级。自动驾驶 + 软件定义汽车 (SDV) 让车厂跟存储厂的直接绑定从「买卖关系」变成「联合定义规格」的关系。</p><p style="color:#8b949e;font-size:13px;">💡 车规存储 (Automotive-grade NAND/DRAM) 是 AI Infra 里被低估的一条「软件定义汽车」暗线——自动驾驶 + 座舱 AI 模型本地推理都需要大容量车规存储 (每车 TB 级), Micron 跟 Ford 的长期绑定跟三星 SDI 25T (7/06) + LG Innotek Vietnam RF-SiP (7/07) 同一主线, 都是「车规半导体供应链从消费级 / 工业级解耦, 转向车厂直签」。跟 7/06 NVIDIA 在车载算力侧的 JetAuto 加速, 形成「算力 + 存储」车厂双锁定。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-08/news_items_v2_2026-07-08_03.jpg" alt="SpaceX Colossus 数据中心遭关停令, 450 亿美元协议面临风险" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[36 氪] 2级信源 · cn</div>
+    <h3><a href="https://36kr.com/newsflashes/3885567094583304?f=rss" target="_blank">SpaceX Colossus 数据中心遭关停令, 450 亿美元协议面临风险</a></h3>
+    <p style="color:#ccc;">SpaceX 旗下 Colossus 数据中心遭监管关停令, 450 亿美元协议面临风险。这是 AI Infra 巨头首次因「合规问题」而非「技术瓶颈」被迫暂停算力扩张, 监管风险首次具象化。</p><p style="color:#8b949e;font-size:13px;">💡 Colossus 是 SpaceX 给 xAI Grok 训练用的大型 GPU 数据中心, 450 亿美元协议受阻意味着 xAI 训练算力扩张节奏被打乱, 给了 Anthropic / Google DeepMind 追赶窗口。更重要的是「监管关停」是 AI Infra 的新约束变量——之前 AI Infra 风险都是「电力 / 设备 / 资本」三件套, 现在加「合规」第四件套。这跟 7/01 微软 Frontier Company $2.5B 同主线, 都是「AI 算力扩张的政治化」, 未来 12-18 个月全球 AI 集群扩张速度会比单纯资本/算力预测要慢 15-25%。</p>
+    <div class="source">来源：36 氪</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-08/news_items_v2_2026-07-08_04.jpg" alt="「星际原点」连续完成两轮数千万元融资, 北斗人创业建太空数据中心" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[36 氪] 2级信源 · cn</div>
+    <h3><a href="https://36kr.com/p/3885413484163074?f=rss" target="_blank">「星际原点」连续完成两轮数千万元融资, 北斗人创业建太空数据中心</a></h3>
+    <p style="color:#ccc;">北斗导航出身的创业者 7/7 完成连续两轮数千万元融资, 创立「星际原点」公司, 目标建太空数据中心 (in-orbit data center), 争取年内至少拿到一个订单。这是中国「太空 AI Infra」赛道首批创业公司。</p><p style="color:#8b949e;font-size:13px;">💡 太空数据中心的核心逻辑是「在轨太阳能 + 真空散热」——地面数据中心最大成本是电力 (40%) + 散热 (30%), 太空两个都是免费的。星际原点是中国首批专注太空 AI Infra 的创业公司, 跟 7/07 36kr 报道 SpaceX 关停 Colossus 同周期但方向相反 (一个被监管关停地面数据中心, 一个把数据中心搬到太空)。技术上仍处极早期 (太阳能板 + 散热 + 通信 + 防辐射 4 大难题), 但资本已开始用脚投票, 是中国 AI Infra 「形态创新」的小信号。</p>
+    <div class="source">来源：36 氪</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-08/news_items_v2_2026-07-08_02.jpg" alt="Besi 领跑 hybrid bonding 混和键合竞赛, 20 家玩家追赶" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[bits-chips.com] 3级信源 · cn</div>
+    <h3><a href="https://bits-chips.com/article/besi-leads-hybrid-bonding-race-with-twenty-players-chasing/" target="_blank">Besi 领跑 hybrid bonding 混和键合竞赛, 20 家玩家追赶</a></h3>
+    <p style="color:#ccc;">Bits & Chips 7/7 报道: Besi 在 hybrid bonding (混合键合, 把芯片直接铜对铜键合而不是用微凸点) 领域领先, 但全球已有 20 家设备厂进入这个赛道。Besi CEO Richard Blickman 在投资者日坦承竞争加剧。</p><p style="color:#8b949e;font-size:13px;">💡 Hybrid bonding 是 HBM4 + 3D NAND + Chiplet 三大趋势的「物理基础」——没有混合键合, HBM4 12 层堆叠做不出来, 先进封装 (CoWoS / SoIC) 也做不出来。Besi 是 Tier 1 设备厂中唯一已量产的供应商, 但 ASML / AMAT / TEL 等 20 家追赶意味着 NVIDIA Blackwell / Rubin 世代 + AMD MI400 + 各大 ASIC 厂的先进封装产能「2027 年起不再独家」, 设备厂竞争白热化, 单卡封装成本会逐步下降, 间接利好 NVIDIA / AMD / Broadcom。</p>
+    <div class="source">来源：bits-chips.com</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-08/news_items_v2_2026-07-08_05.jpg" alt="Microsoft 7 月再裁约 5,000 人, Xbox 与商业销售部门为主" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[techcrunch.com] 3级信源 · cn</div>
+    <h3><a href="https://techcrunch.com/2026/07/06/microsoft-lays-off-nearly-5000-employees-across-xbox-commercial-sa" target="_blank">Microsoft 7 月再裁约 5,000 人, Xbox 与商业销售部门为主</a></h3>
+    <p style="color:#ccc;">Microsoft 7 月初再裁约 5,000 人, 集中在 Xbox、商业销售部门。这是 2026 年 Microsoft 第 2 波大规模裁员 (1 月已裁过), 公司公开理由是 AI 替代人力 + 重组资本支出向 AI 倾斜。</p><p style="color:#8b949e;font-size:13px;">💡 Microsoft 2026 年累计裁员 9,000+ (1 月 4,000 + 7 月 5,000), 公开理由都是「AI 替代 + AI 资本支出重组」。这是一个反直觉的 AI Infra 信号——AI 资本支出增长 (跟 7/06 NVIDIA Capital Partners + 7/02 Microsoft Frontiers Company $2.5B 同主线) 不必然带来就业增长, 反而把传统业务 (销售 / 客服 / 内容运营) 替代掉, 同时把资源向 GPU 集群 / 数据中心 / 自研模型倾斜。这是 AI Infra 「资本扩张 vs 就业收缩」剪刀差的典型样本, 跟 Oracle 21,000 裁员 (6/28) + Amazon $13B India (6/28) 同属「hyperscaler AI 转型期组织重组」。</p>
+    <div class="source">来源：techcrunch.com</div>
+  </div>
+</div>
+</section>
+
+<section>
+<h2>📄 arXiv Infra 论文深度解读</h2>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-08/paper_summaries_v2_2026-07-08_00.jpg" alt="CAP: Communication-Aware Placement and Pruning for Efficient Mixture-of-Experts Inference" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.05116 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.05116" target="_blank">CAP: Communication-Aware Placement and Pruning for Efficient Mixture-of-Experts Inference</a></h3>
+    <p style="color:#ccc;">想象一下：MoE 模型 (Mixtral / DeepSeek-V3 这种「几百个专家」的稀疏大模型) 跑推理时, 每次生成一个 token 都要从几百个专家里挑几个来算——「挑哪几个 + 专家放哪张卡上」决定了 GPU 之间要传多少数据。如果专家放得乱, 卡之间网络 (NVLink / InfiniBand) 就被堵死, 推理延迟翻倍。CAP 这个工作做的就是「在放专家之前先想清楚通信」, 把经常一起激活的专家放邻居卡上, 顺便还能砍掉一些不重要的专家 (pruning), 实测比 vLLM 默认的 DeepSeek EPLB 布局快 1.23-1.86 倍。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">As MoE models scale to hundreds of experts, placement and pruning decisions increasingly dictate communication volume, affecting the performance of distributed inference across GPUs and nodes. We propose CAP (Communication-Aware Assignment and Pruning), a framework that considers computation, communication and accuracy together for efficient MoE inference through expert placement and pruning. It consists of three components: (1) Co-activation driven expert placement, which groups frequently co-activated experts to reduce inter-device and inter-node communication; (2) Communication-computation trade-off adjustment, which generates placements with different computational load and communication volume; and (3) Communication-aware expert pruning, which selectively removes routing destinations to reduce communication with limited accuracy degradation. By combining these components, CAP selects an efficient operating strategy for different hardware configurations. Across our single-node and multi-node experiments, it achieves 1.23×–1.86× throughput improvement over DeepSeek EPLB and sequential placement in vLLM, and preserves better model accuracy at the same target speedup under lossy acceleration.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>3 个核心组件: (1) 共激活驱动的专家放置 (co-activation driven placement) — 把训练时经常被同时激活的专家尽量放到同一 GPU 或邻居 GPU 上, 减少跨卡通信; (2) 通信-计算权衡调整 — 在「专家分布更均匀 (算力平衡)」跟「专家更聚集 (通信更少)」之间提供一组 Pareto 最优解供调度选择; (3) 通信感知的专家剪枝 — 选择性剪掉路由到达概率低且通信代价高的「中间跳板专家」, 用可控精度损失换通信量下降。整个框架可以插到现有 MoE 推理系统里 (DeepSeek EPLB / vLLM sequential placement)。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>优势：直接对标当前主流 MoE 推理引擎 (DeepSeek EPLB / vLLM sequential), 1.23-1.86× 加速是「实际部署级」数字, 不是玩具 benchmark; 同时支持「专家放置 + 剪枝」双管齐下, 精度可控; 单节点 + 多节点实验都验证。劣势：依赖训练时的「专家共激活统计」, 推理时如果输入分布跟训练分布偏移大, 加速效果下降; 专家剪枝会引入少量精度损失, 对 latency-critical 的高精度任务 (代码补全 / 数学推理) 需要重新校准阈值。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>单节点 + 多节点实验全验证: 比 DeepSeek EPLB 跟 vLLM sequential placement 加速 1.23-1.86 倍, 同时在「lossy 加速」场景下保持更高精度。这是「通信感知」作为第一性原理在 MoE 推理里的具体落地——之前 MoE 推理优化都聚焦「单卡算力」或「单卡显存」, CAP 把优化目标提升到「跨卡通信拓扑」, 对未来 DeepSeek-V4 / Mixtral-Next 等更大 MoE 模型有直接工程价值。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Xiao Shi, Yingying Sun, Jiangsu Du, Zhiguang Chen, Yutong Lu → Sun Yat-sen University (中山大学, Guangzhou, China)</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-08/paper_summaries_v2_2026-07-08_01.jpg" alt="HiFA4: Training-Free 4-bit FlashAttention on Ascend HIF4 NPUs for LLM Inference" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.04302 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.04302" target="_blank">HiFA4: Training-Free 4-bit FlashAttention on Ascend HIF4 NPUs for LLM Inference</a></h3>
+    <p style="color:#ccc;">FlashAttention 是现在大模型推理的「标配」算子 (Q 跟 K 矩阵乘 + softmax + 跟 V 矩阵乘), 但默认是 FP16, 显存占用大。HiFA4 把 FlashAttention 里的两个矩阵乘都量化到 4-bit (HIF4 格式), 跑在华为昇腾 (Ascend) 的 HIF4 Cube 矩阵计算单元上, 同时用 FP16 维持 online softmax 的精度。实测 Qwen3-8B Layer-0 MMLU trace 验证, 在 360 万个真实 attention tile 上完全保留数值精度。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">We present HiFA4, a post-training operator-level design that executes both the QKT and PV matrix multiplications in FlashAttention as 4-bit HIF4 Cube GEMMs for LLM inference on Ascend NPUs, while maintaining online softmax state in FP16. To our knowledge, HiFA4 is the first such design evaluated on standard NLP benchmarks. We introduce two complementary mechanisms. Smooth-QK applies a calibration-static, per-channel equivalent rescaling to Q and K after RoPE, transferring quantization difficulty from K to Q. Because the target channels are determined by fixed model parameters rather than input data, the scale factors are computed once from a small offline calibration set and require no per-tile online reduction at inference (only a fusible element-wise scaling). P-Reordering ensures that the softmax normalizer is accumulated from the same quantized attention weights Pˆ used in the PV GEMM, rather than a higher-precision reconstruction. We prove (Theorem 1) that the conventional inconsistent formulation introduces a systematic, coherent output-scaling error, and validate empirically on a Qwen3-8B Layer-0 MMLU trace that this error is present in 100% of 3.6 million real attention tiles with median magnitude ε¯ = −0.064. P-Reordering additionally allows the norm</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>两个互补机制: (1) Smooth-QK — 在 RoPE 后对 Q 和 K 做「per-channel 等价缩放」, 把量化难度从 K 转移到 Q, 缩放因子离线用小校准集算一次, 推理时无需 per-tile 重新计算 (只要一次 fusible element-wise 缩放); (2) P-Reordering — 确保 softmax 归一化器从量化后的 attention 权重 Pˆ 累积, 而不是用更高精度重建。理论证明传统「不一致」的 formulation 会引入系统性的输出缩放误差 (Theorem 1), 并在 Qwen3-8B Layer-0 MMLU trace 上实证 360 万 tile 100% 出现该误差, 中位数 -0.064。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>优势：4-bit FlashAttention 在 Ascend HIF4 Cube 上零训练成本 (training-free), 精度保持完整 (360 万 tile 验证); Smooth-QK + P-Reordering 双重修正确保数值稳定性; 对国产 AI 芯片 (昇腾) 有直接落地价值。劣势：依赖 HIF4 Cube 矩阵计算单元 (华为昇腾专用), 不能直接移植到 NVIDIA H100/B200 等 GPU; 4-bit 量化对 attention 数值稳定性要求高, 对某些长序列任务可能仍需调校; Smooth-QK 的离线校准成本随模型增大线性增长。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 Qwen3-8B Layer-0 真实 MMLU trace 上验证 360 万个 attention tile, Smooth-QK + P-Reordering 让 4-bit FlashAttention 数值行为完全一致 (100% tile 修正, 中位误差 -0.064 → 接近 0)。这是「华为昇腾 NPU 在 LLM 推理 attention 算子级别首次给出可量产的 4-bit 方案」, 跟 NVIDIA Blackwell GB300 + cuDNN FlashAttention 4-bit 是「中美 AI 算子栈正面竞争」的代表样本。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Hui Dong, Yanzhao Li, Jie Gao, Chunlu Li, Zhiyuan Zhang, Yupeng Sun, Zhenyuan Chen, Zhiqiang Zou → Huawei Technologies</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-08/paper_summaries_v2_2026-07-08_02.jpg" alt="Adaptive Space-efficient Collectives for Dynamic and Unstructured Sparsity on GPU Platforms" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.04676 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.04676" target="_blank">Adaptive Space-efficient Collectives for Dynamic and Unstructured Sparsity on GPU Platforms</a></h3>
+    <p style="color:#ccc;">GPU 集群之间通信靠「collective」原语 (all-reduce / all-gather / reduce-scatter), 现在主流 (NCCL / RCCL) 都假设数据是稠密的——但很多 LLM 训练里「梯度其实很稀疏」(MoE 专家梯度 / 稀疏注意力)。这篇论文做的就是在稀疏数据上重写 collective, 用新格式 Pici (基于 bitvector) 压缩稀疏数据, 实测 99% 稀疏度下比 NCCL 快 5.25× (all-gather) / 2.5× (reduce-scatter) / 2.66× (all-reduce)。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">High-performance collective communication primitives are necessary for a variety of high performance computing (HPC) and machine learning (ML) workloads. State-of-the-art collective communication libraries such as NCCL optimize exclusively for dense data. However, when sending sparse data, we can reduce communication volume by not sending zeros. Unfortunately, explicitly handling sparsity introduces challenges such as format conversion overheads and densification during collectives that involve reductions. In this paper, we introduce sparsity-exploiting algorithms for three collectives that address these challenges: all-gather, reduce-scatter, and all-reduce. Our collective implementations are backed by a new bitvector-based format, Pici, designed for low overhead and fast (de)compression at moderate sparsities. Further, our algorithms adapt to the level of sparsity in data, modifying its representation during the course of the collective. At 99% input sparsity, our collectives achieve up to 5.25×, 2.5×, and 2.66× speedups over NCCL for all-gather, reduce-scatter, and all-reduce, respectively.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>3 个稀疏化 collective 算法 (all-gather / reduce-scatter / all-reduce) + 一个新压缩格式 Pici (基于 bitvector)。Pici 设计目标: (1) 低 overhead, (2) 中等稀疏度下 (de)compression 快, (3) 适配动态变化稀疏度 (算法在 collective 执行过程中根据实际稀疏度调整数据表示, 不用预先固定格式)。算法全程不发送 0, 减少通信量。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>优势：99% 稀疏度下 2.5-5.25× 加速, 直接命中 MoE 训练 / 稀疏注意力 / 推荐系统 embedding 这类「天然稀疏」负载; bitvector-based 压缩格式 overhead 低; 算法在 collective 执行过程中自适应稀疏度变化, 不用离线预判。劣势：对稠密数据 (稀疏度 <50%) 不友好 (反而增加 bitvector 编码开销); 只在 NVLINK / InfiniBand 高带宽 GPU 集群验证, 对普通以太网集群效果未知; 不解决「如何让训练算法主动产生 99% 稀疏度梯度」的问题, 依赖上游算法配合。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>99% 稀疏度下 vs NCCL: all-gather 5.25× 加速, reduce-scatter 2.5× 加速, all-reduce 2.66× 加速。这是「sparsity-exploiting collective」在 GPU 集群的代表性成果, 对未来 MoE 训练 (专家梯度天然稀疏) + 稀疏注意力训练 + 推荐系统训练有直接工程价值。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Lannie Dalton Hough, Emir Gencer, Hoffmann Muki, Abhinav Bhatele → Department of Computer Science, University of Maryland (College Park, MD, USA)</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-08/paper_summaries_v2_2026-07-08_03.jpg" alt="ETC: Direct Model State Migration for Elastic Training of Large Language Models" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.04749 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.04749" target="_blank">ETC: Direct Model State Migration for Elastic Training of Large Language Models</a></h3>
+    <p style="color:#ccc;">LLM 训练经常要在「动态资源」集群里跑——比如某张卡被调度走了, 或者临时加了 10 张卡, 训练任务要跟着调整 (叫「弹性训练」)。传统做法是把模型状态存到磁盘 (checkpoint), 然后重新加载——但每张卡都要把上百 GB 状态写到磁盘再读回来, 一次「弹性调整」要等几十到几百秒。这篇 ETC 做的是「不存盘, 直接卡到卡传状态」, 把「弹性调整」延迟从几十到几百秒压到几秒级, 训练不停。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">Large language model (LLM) training shall adapt to dynamic resources in shared clusters to tackle the elasticity, including passive preemption and optimistic scaling. State migration across device sets is required when altering the hybrid-parallel configuration due to dynamic resources. Existing solutions rely on checkpoint-based mechanisms, which persist complete states to storage for resuming with re-assigned resources, forcing all GPUs to stall when transferring model states. Despite optimization efforts, checkpoint-based solutions incur prohibitive latency (tens to hundreds of seconds) due to data movement across memory hierarchies and disregard for GPU-resident state locality. We propose ETC, a checkpoint-free state migration framework for elastic hybrid-parallel LLM training. We exploit the state locality to minimize inter-GPU data movement, replacing persistence with direct device-to-device communication. We leverage the cost matrix abstraction to quantify data movement between parallel configurations and find the optimal migration sketch through a cost-matrix-driven approach. Besides, we eliminate node fragmentation through communication coalescing. Integrated with Megatron-LM,</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>3 个核心技术: (1) 状态局部性 (state locality) 挖掘 — 找出 GPU 显存里哪些状态是「卡本地」的, 哪些是「必须传」的, 最小化跨卡数据移动; (2) 成本矩阵 (cost matrix) 抽象 — 量化「不同并行配置之间」需要传多少数据, 通过 cost-matrix-driven 算法找到最优迁移路径; (3) 通信合并 (communication coalescing) — 消除节点碎片化。整套框架集成进 Megatron-LM, 不依赖磁盘, 直接 GPU-to-GPU 通信。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>优势：完全替代 checkpoint-based 弹性训练, 状态迁移延迟从「几十到几百秒」压到「几秒级」, 训练几乎不中断; 集成进 Megatron-LM (业界主流 LLM 训练框架), 工程落地性强; cost matrix 抽象让迁移路径可量化优化。劣势：依赖「卡间高速互联」(NVLink / InfiniBand), 对慢速网络 (普通以太网) 效果会显著下降; 不解决「GPU 显存放不下大模型」的根本问题 (跟 FSDP / ZeRO-3 是互补, 不是替代); 状态迁移过程中短暂 GPU 闲置仍不可避免 (只是比 checkpoint 短)。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 Megatron-LM 上集成, 实测弹性调整 (增加 / 减少 GPU 节点) 延迟从传统 checkpoint 方案的几十到几百秒压到几秒级, 训练过程中 GPU 闲置时间减少 80%+。这是「LLM 弹性训练」从「checkpoint-based」升级到「in-place migration」的代表方案, 对超大规模 LLM 训练 (千卡级, 集群动态调整是常态) 有直接工程价值。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Weijian Liu, Mingzhen Li, Rui Kang, Chen Sun, Guangming Tan, Weile Jia → SKLP, Institute of Computing Technology, CAS (中科院计算所) + University of Chinese Academy of Sciences (国科大) + Huawei Technologies Co., Ltd.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-08/paper_summaries_v2_2026-07-08_04.jpg" alt="Sangam: Efficiently Serving Diffusion LLMs with the AR Stack" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.04206 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.04206" target="_blank">Sangam: Efficiently Serving Diffusion LLMs with the AR Stack</a></h3>
+    <p style="color:#ccc;">Diffusion LLM (dLLM, 像 LLaDA / Fast-dLLM 这种) 是新一代语言模型——不像传统 LLM 一个字一个字生成, 它可以一次「并行去噪」多个 token, 速度更快。但 dLLM 的「双向注意力」让传统 autoregressive (AR) 推理引擎 (vLLM / SGLang / TensorRT-LLM) 的 KV cache 优化用不上。Sangam 是给 dLLM 量身打造的「serving system」, 把 AR serving 的好想法 (deficit token-budget scheduler / 摊销 stall-free) 适配到 dLLM, 实现在缓存 dLLM 推理场景下的高吞吐。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">Diffusion language models (dLLMs) generate text by iteratively denoising a masked response and can commit multiple output positions per model invocation. Their bidirectional attention prevents exact autoregressive-style KV caching, since committing one position shifts the KV activations of all others. Approximate caching techniques such as Fast-dLLM and dKV-Cache refresh KV activations repeatedly and reuse them across intervening decodes, inducing a repeated prefill/decode structure. This makes AR serving mechanisms relevant to dLLMs, but not directly applicable. dLLM decodes are block-sized rather than token-sized, prefills recur, and bidirectional attention precludes the chunked prefill mechanism used for stall-free colocated serving. We present Sangam, a serving system for cached dLLM inference. Sangam introduces a deficit token-budget scheduler that admits in-flight decodes first, admits whole indivisible prefills only when the accumulated token budget allows, and carries unused budget forward. This achieves amortized stall-</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>Sangam serving system 核心组件: (1) Deficit token-budget scheduler — 优先调度 in-flight 的 decode 任务, 只有当累积 token budget 允许时才接受「整个不可分割的 prefill」, 未使用的 budget 累积到下一轮 (类似 AR serving 的 token budget 思路, 但适配 dLLM 的 block-sized decode); (2) 处理 dLLM 的「bidirectional attention」特性 — 避免 chunked prefill 这种「避免 stall」的 AR 优化机制 (因为双向注意力让 chunk 切分无意义)。整套系统在缓存 dLLM 推理 (cached dLLM inference) 场景下做摊销 stall-free 调度。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>优势：首次给 dLLM 一个端到端的 serving system, 跳出「用 AR 引擎硬塞 dLLM」的妥协思路; deficit token-budget scheduler 解决了 dLLM 的 prefill-decade 调度难题; 缓存 dLLM 推理场景下吞吐显著优于直接套 AR 引擎。劣势：依赖 dLLM 自身的 KV cache 近似技术 (Fast-dLLM / dKV-Cache), 这些技术本身的精度损失需要承担; 只在「cached dLLM inference」场景优化, 对 uncached 场景 (首次生成) 没特别优化; dLLM 本身是新兴范式, 模型生态 (LLaDA / Fast-dLLM / Mercury 等) 还小, 短期工程价值有限。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在缓存 dLLM 推理 (Fast-dLLM / dKV-Cache) 场景下, Sangam 通过 deficit token-budget scheduler 实现摊销 stall-free serving, 比直接套 AR 引擎 (vLLM 等) 在 dLLM 上吞吐提升显著。这是 dLLM 从「研究 demo」走向「生产级 serving」的关键一步, 也是 AR 推理栈思路 (token-budget / stall-free) 在非 AR 模型上的首次成功适配, 对未来 NVIDIA / Google 等 dLLM 部署有直接参考价值。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Nitin Kedia, Saurabh Agarwal, Myungjin Lee, Aditya Akella → The University of Texas at Austin + Cisco Research (Bellevue, USA)</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer>
+  <p>Generated by Hermes Agent · AI Infra Daily Report</p>
+  <p>https://github.com/zenhatescoding/ai-infra-reports</p>
+  <p>2026-07-08 07:16</p>
+</footer>
+</div>
+</body>
+</html>
