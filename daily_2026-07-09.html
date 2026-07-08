@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Infra 洞察日报 · 2026年7月9日 · 周四</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #0d1117; color: #e6edf3; padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; }
+header { padding: 24px 0; border-bottom: 1px solid #21262d; margin-bottom: 24px; }
+header h1 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+header .sub { color: #8b949e; font-size: 14px; }
+.stats { display: flex; gap: 24px; font-size: 14px; color: #8b949e; margin-top: 16px; }
+.stat { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 12px 18px; }
+.stat span { color: #58a6ff; font-weight: 700; font-size: 20px; margin-right: 4px; }
+.stat.biz span { color: #ffd43b; }
+.stat.paper span { color: #79c0ff; }
+h2 { font-size: 16px; color: #e6edf3; margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid #21262d; }
+.card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 0; margin-bottom: 20px; overflow: hidden; }
+.card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: #21262d; }
+.card-body { padding: 16px 20px 18px; }
+.card-meta { font-size: 12px; color: #8b949e; margin-bottom: 8px; }
+.card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; line-height: 1.4; }
+.card h3 a { color: #58a6ff; text-decoration: none; }
+.card h3 a:hover { text-decoration: underline; }
+.card p { font-size: 14px; color: #c9d1d9; line-height: 1.6; margin-bottom: 8px; }
+.card .source { color: #6e7681; font-size: 12px; margin-top: 4px; }
+.tech-block { background: #0d1117; border-radius: 8px; padding: 12px 14px; margin-top: 10px; font-size: 13px; line-height: 1.7; }
+.tech-block .row { margin-bottom: 4px; }
+.tech-block .row:last-child { margin-bottom: 0; }
+.tech { color: #79c0ff; }
+.tradeoff { color: #d2a8ff; }
+.highlight { color: #7ee787; }
+.author { color: #ffa657; }
+footer { text-align: center; padding: 32px 0; color: #6e7681; font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>🏗️ AI Infra 洞察日报</h1>
+  <div class="sub">2026年7月9日 · 周四 · 覆盖芯片 + 集群 + 光模块 + arXiv Infra 论文</div>
+  <div class="stats">
+    <div class="stat biz">🏢 <span>6</span> 条 AI Infra 公司动态</div>
+    <div class="stat paper">📄 <span>5</span> 篇 arXiv Infra 论文精读</div>
+  </div>
+</header>
+
+<section>
+<h2>🏢 AI Infra 商业新闻</h2>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-09/news_items_v2_2026-07-09_02.jpg" alt="HD Korea Shipbuilding 与 Schneider Electric 合作开发海上数据中心, 韩国造船业切入 AI 算力基础设施" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=12099" target="_blank">HD Korea Shipbuilding 与 Schneider Electric 合作开发海上数据中心, 韩国造船业切入 AI 算力基础设施</a></h3>
+    <p style="color:#ccc;">The Elec 7/9 报道: HD Korea Shipbuilding (HD 韩进造船) 与法国 Schneider Electric 签署合作开发海上 (offshore) 数据中心。海上数据中心用海水冷却 + 模块化船体设计, 是 AI 算力扩张瓶颈下 (土地/电力/水冷) 的新形态基础设施。</p><p style="color:#8b949e;font-size:13px;">💡 海上数据中心 (offshore DC) 是 AI 算力扩张撞「土地 + 电力 + 水冷」三瓶颈后的「物理层解法」——7/05 TC SpaceX Colossus 关停 (7/05 n01 撞社区电力) 7/04 Microsoft Frontier Company $2.5B (7/04 n05) 7/01 SK hynix 龙仁集群 (7/01 n03) 都是陆上算力扩张困境的副线。HD Korea Shipbuilding 韩国造船 + Schneider 法国电力, 跨大西洋韩法联盟背后是「谁有模块化造船能力 + 谁有电力管理 IP」, 中国造船 (江南/沪东中华) + 国内电力 (国电/南瑞) 同类组合也在酝酿, 跟 6/30 36kr 星际原点太空数据中心 (7/07 n05 6/30) 同属「off-planet / offshore / off-grid」三线算力创新。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-09/news_items_v2_2026-07-09_03.jpg" alt="Analog Devices 完成 Empower Semiconductor 收购, 扩 AI 电源管理版图" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=12085" target="_blank">Analog Devices 完成 Empower Semiconductor 收购, 扩 AI 电源管理版图</a></h3>
+    <p style="color:#ccc;">The Elec 7/9 报道: Analog Devices (ADI) 完成对 Empower Semiconductor 的收购, 强化 AI 数据中心电源管理 (power delivery) 产品线。Empower 是数据中心高效率 DC-DC 转换器供应商, 跟 ADI 现有电源管理产品互补。</p><p style="color:#8b949e;font-size:13px;">💡 ADI 收购 Empower 是 AI 算力扩张「电力侧」整合的代表——AI 数据中心每瓦功耗 (TDP) 飙升 (Blackwell 1000W+ / Rubin 2000W+), 48V/800V 直流配电跟高效率 DC-DC 转换器需求井喷, 跟 7/04 ADI 6-month order advance (7/04 n04) 7/01 Mobilint 工业 AI (7/01 n04) 6/30 onsemi SiC power module 同一主线。Empower 主营 vertical power delivery (VPD) 跟 vertical power stage, 直接对标 NVIDIA Rubin 2000W 时代的 800V 配电架构, ADI 这次收购是「锁定 NVIDIA/AMD/各家 ASIC 厂下一代电源 IP」的战略卡位。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-09/news_items_v2_2026-07-09_05.jpg" alt="Samsung SDS + Samsung C&T 推进春川 AI 数据中心建设, 韩国本土 hyperscaler 算力自建" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=11983" target="_blank">Samsung SDS + Samsung C&T 推进春川 AI 数据中心建设, 韩国本土 hyperscaler 算力自建</a></h3>
+    <p style="color:#ccc;">The Elec 7/8 报道: Samsung SDS (三星 SDS, IT 服务子公司) + Samsung C&T (三星物产, 工程建设子公司) 推进春川 (Chuncheon) AI 数据中心建设, 用 Samsung 集团内部协同打造韩国本土 hyperscaler 算力基础设施。</p><p style="color:#8b949e;font-size:13px;">💡 Samsung 集团「SDS + C&T」协同建春川 AI 数据中心是「集团内部产业协同」典型案例——SDS 出 IT 服务 / 系统集成能力, C&T 出工程建造 / 土地, Samsung Electronics (芯片 + 存储) 出硬件, 三家合力 vs 7/01 韩国政府龙仁 + 全罗南道 4 座 fab (7/01 n03) 7/04 SK hynix Chungcheong 投资 (7/07 n01) 同属「韩国本土 AI 算力主权」一条主线。对比 6/30 阿里云沙利文 40.1% 中国占比 (7/07 n04) 7/02 Anthropic-Samsung 2nm custom chip (7/02 n01) 7/03 Samsung 1.4nm 重申 (7/03 n03), Samsung 集团用「全产业链协同」卡 AI Infra 主权 + 商业双赛道, 是 NVIDIA 主导的「全球统一 GPU」路径之外另一条本土主权路径。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-09/news_items_v2_2026-07-09_00.jpg" alt="Optical interconnect 市场 2030 飙至 390 亿美元, 远超 2024 水平" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[bits-chips.com] 3级信源 · cn</div>
+    <h3><a href="https://bits-chips.com/article/optical-interconnect-market-explodes-to-39b-by-2030/" target="_blank">Optical interconnect 市场 2030 飙至 390 亿美元, 远超 2024 水平</a></h3>
+    <p style="color:#ccc;">Bits & Chips 7/9 报道: 全球光互联 (optical interconnect) 市场到 2030 年将膨胀到 390 亿美元, 远超 2024 年水平。AI 数据中心高速互联需求 (800G/1.6T/3.2T 光模块 / CPO 共封装光学 / LPO 线性驱动可插拔) 是核心驱动力。</p><p style="color:#8b949e;font-size:13px;">💡 光模块市场 2030 年 390 亿美元的预测跟 7/05 Samsung 玻璃基板 JV (7/05 n02) 7/03 三星电机玻璃基板 (7/03 n06) 6/29 Corning Glass Bridge CPO (7/04 n03) 三条主线形成「先进封装 + 光互联」叠加放大效应——AI 算力每翻一倍, 光互联带宽需求大约是 1.5 倍 (不是 1 倍, 因为网络拓扑变复杂), 2026-2030 这条曲线是 NVIDIA NVL72/NVL576 + 各大 ASIC 厂 + 800G/1.6T/3.2T 光模块的强 alpha 赛道。Bits & Chips 是欧洲 Tier 1 设备/工艺/封装媒体, 跟 ASML/AMAT/Lam/TEL/KLA 厂商深度绑定, 这条预测给到设备厂上游布局 + Innolight/新易盛等中国光模块厂中长期收入可见度。</p>
+    <div class="source">来源：bits-chips.com</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-09/news_items_v2_2026-07-09_01.jpg" alt="SambaNova 完成 10 亿美元 Series F 首次关账, 估值 110 亿美元 (距上次巨额融资仅 5 个月)" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[techcrunch.com] 3级信源 · cn</div>
+    <h3><a href="https://techcrunch.com/2026/07/08/sambanova-draws-1b-at-11b-valuation-in-series-f-first-close/" target="_blank">SambaNova 完成 10 亿美元 Series F 首次关账, 估值 110 亿美元 (距上次巨额融资仅 5 个月)</a></h3>
+    <p style="color:#ccc;">TechCrunch 7/8 报道: AI 芯片公司 SambaNova 完成 10 亿美元 Series F 首次关账, 估值 110 亿美元, 距上一次巨额融资 (Series E 2025 年底) 仅 5 个月。资本对 AI 芯片 (非 NVIDIA 阵营) 的加注节奏明显加快。</p><p style="color:#8b949e;font-size:13px;">💡 SambaNova 5 个月连融 Series E + F 估值 110 亿美元是 AI Infra「非 NVIDIA 阵营」资本加注的典型信号——上一波 AI 芯片融资热潮里 Cerebras / Groq / SambaNova 都靠单一大客户 (G42 / Aramco / 美国政府) 才能撑起估值, 这次 Series F 在 5 个月内连发, 意味着 SambaNova 跟 hyperscaler (跟 Groq 同列) 已有产品/收入落地。Cerebras 跟 Groq 估值分别在 2024 跟 2025 IPO 后, SambaNova 110 亿美元估值如果走 IPO 路径, 跟 NVIDIA 抢占 inference 市场的「ASIC 阵营」军备竞赛会进入新阶段。</p>
+    <div class="source">来源：techcrunch.com</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-09/news_items_v2_2026-07-09_04.jpg" alt="法国创业公司 ZML 发布免费推理加速器, 跨多家 AI 芯片 (NVIDIA/AMD/Intel Gaudi)" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[techcrunch.com] 3级信源 · cn</div>
+    <h3><a href="https://techcrunch.com/2026/07/08/hot-french-startup-zml-releases-free-product-to-speed-inference-across-lots-of-ai-chips/" target="_blank">法国创业公司 ZML 发布免费推理加速器, 跨多家 AI 芯片 (NVIDIA/AMD/Intel Gaudi)</a></h3>
+    <p style="color:#ccc;">TechCrunch 7/8 报道: 法国 AI 创业公司 ZML 发布免费 (free) 推理加速产品, 跨多家 AI 芯片 (NVIDIA / AMD / Intel Gaudi / 其它) 提供统一 inference 优化接口。目的是打破 NVIDIA CUDA 生态垄断, 让企业推理部署可移植。</p><p style="color:#8b949e;font-size:13px;">💡 ZML 跨多 AI 芯片的统一 inference 接口是 AI Infra「软件栈去 NVIDIA 化」的典型尝试——跟 7/02 Rebellions 韩国 ASIC 收购 (7/02 n01) 7/03 AMD LPDDR+compute chip (7/03 n02) 7/06 Base Compute BaseRT (7/06 p02) 同一主线, 都是「打破 NVIDIA 单一供应商锁定」。ZML 选「免费 + 跨芯片」组合 (类似 vLLM / SGLang 当年策略) 比直接做 ASIC 风险低, 但能撬动企业级 inference 部署的「可移植溢价」——对 NVIDIA 而言意味着 CUDA moat 在 inference 端开始被稀释, 对 AMD/Intel Gaudi 跟各家 ASIC 厂是补全软件栈的关键。</p>
+    <div class="source">来源：techcrunch.com</div>
+  </div>
+</div>
+</section>
+
+<section>
+<h2>📄 arXiv Infra 论文深度解读</h2>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-09/paper_summaries_v2_2026-07-09_00.jpg" alt="UBEP: Re-architecting Expert Parallelism Communication Library for Production Superpods" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.06202 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.06202" target="_blank">UBEP: Re-architecting Expert Parallelism Communication Library for Production Superpods</a></h3>
+    <p style="color:#ccc;">想象你管一个有 100 台服务器的「奶茶店」，客人点单（token）需要分配给不同店员（expert），传统方式所有店员要等所有订单到齐才开工（BSP 同步），太慢了。MoE（混合专家）模型部署在 NVIDIA NVL72/576 跟华为 CloudMatrix384 这种「超级服务器」上时，通信就卡在三个瓶颈：(1) 同步等待浪费时间；(2) 高速网络也救不了同步开销；(3) 不同 expert 忙闲不均。UBEP 通过重新设计 All-to-All 通信库（店员之间互发订单的协议），让 All-to-All 延迟降低 52.4%，MoE 推理每个 token 输出时间降低 11.1%。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">We propose UBEP (Unified-Bus Expert Parallelism), a production-ready communication library that re-architects MoE All-to-All primitives for modern superpod architectures (NVIDIA NVL72/576, Huawei CloudMatrix384). It addresses three bottlenecks: coarse-grained BSP execution serialization, prohibitive synchronization overhead, and distance-agnostic scheduling. UBEP reduces All-to-All latency by up to 52.4% and MoE inference TPOT by up to 11.1%.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>Re-architects All-to-All primitives: unified-bus scheduler, distance-aware token routing, lightweight synchronization primitives replacing BSP.</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>Production-ready (not a research prototype) but tied to specific superpod topologies; benefits drop on non-hyperscaler clusters; communication library invasiveness requires framework integration effort.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>Up to 52.4% All-to-All latency reduction; up to 11.1% MoE inference TPOT improvement; production-validated on NVIDIA NVL72/576 + Huawei CloudMatrix384.</div>
+      <div class="row"><span class="author">🏢 团队：</span>Yipeng Liu, Chang Liu, Si Shen, Jiaqi Zheng, Mingfan Li, Yuyang Yang, Guanhua Li, Yuquan Zhang, Yimeng Xu, Zhongzhe Hu, Zhiyuan Huang, Qihang Duan, Junsong Wang, Wenkai Ling, Baochuan Yang, Xianzhi Yu, Han Bao, Yijie Chen, Guihai Chen (Nanjing University + Huawei)</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-09/paper_summaries_v2_2026-07-09_01.jpg" alt="MatrixFSDP: Communication-Free Matrix Optimizers under ZeRO-3 Parameter Sharding" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.05895 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.05895" target="_blank">MatrixFSDP: Communication-Free Matrix Optimizers under ZeRO-3 Parameter Sharding</a></h3>
+    <p style="color:#ccc;">想象你训练一个超大的 AI 模型（参数存在很多张显卡上），传统方案是「用 FSDP/ZeRO-3 切分存储」（每人存一份切片），但 Muon 这种「高级优化器」需要看完整矩阵才能算（要整张图才能下一步），所以每一步都要先把切片拼回完整再切，浪费大量通信。MatrixFSDP 的巧妙之处：让一张显卡当「owner」存完整矩阵（其他人存空切片），反向传播自然把完整数据传到这张卡，Muon 算的时候就在本地算，不用每步拼图。结果：8 卡机子上 optimizer 步比 FSDP2-Muon 快 4.2×，8 节点 (64 卡) 快 54.6×。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">We present MatrixFSDP, an FSDP2 runtime for owner-shaped ZeRO-3 shards that enables whole-matrix optimizers (Muon, Shampoo, SOAP) without optimizer-step matrix communication. It uses a balance-aware owner planner, deterministic owner-segment P2P collectives, owner-buffer pinning, and owner-shard checkpoint resharding. On 64 A100s, reduces optimizer-step latency over FSDP2-Muon by 4.2× on one node and 54.6× on eight nodes, up to 2.15× end-to-end speedup.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>Owner-shaped ZeRO-3 placement (one rank owns full 2D matrix, others empty shards) + MatrixShard metadata + balance-aware owner planner + deterministic owner-segment P2P collectives + owner-buffer pinning + DCP checkpoint resharding.</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>Owner-shaped sharding breaks equal-size collective assumptions (custom P2P needed); forward/backward still materialize/reshard parameters (no savings on those phases); tensor-parallel-owned fragments out of scope.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>4.2× / 54.6× optimizer-step speedup on 1/8 nodes (64 A100s); up to 2.15× end-to-end; preserves ZeRO-3 memory; matches full-matrix Muon trajectory on real-data loss; extends to Shampoo and SOAP.</div>
+      <div class="row"><span class="author">🏢 团队：</span>Ming Gao, Yanwu Xu, Hao Zhang (University of Pittsburgh + Google + Tsinghua University)</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-09/paper_summaries_v2_2026-07-09_02.jpg" alt="Energy-Efficient GPU DVFS for Fine-Tuning of SLMs on Resource-Constrained Embedded Devices" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.05933 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.05933" target="_blank">Energy-Efficient GPU DVFS for Fine-Tuning of SLMs on Resource-Constrained Embedded Devices</a></h3>
+    <p style="color:#ccc;">想象你用一台小型嵌入式 GPU (例如 Jetson Orin) 在本地微调一个小型语言模型 (SLM, 例如 BERT / Pythia 1B), 因为隐私 + 个性化需求, 数据不能上传云端。问题是：本地微调要做几千几万次「前向 + 反向」计算, 比单次推理耗电大得多。DVFS (动态电压频率调整) 就像「汽车的省油模式」, 不同 batch size + 不同模型层用不同电压频率组合, 作者系统表征了 BERT 跟 Pythia 在 GLUE 基准上的 DVFS 行为, 给出针对嵌入式 SLM 微调的最优调频策略, 显著降低能耗。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">We characterize fine-tuning behavior of representative encoder-only (BERT variants) and decoder-only (Pythia variants) SLMs on GLUE benchmarks under DVFS on resource-constrained embedded GPUs, identifying energy-efficient frequency/voltage policies that exploit the iterative forward-backward nature of fine-tuning (vs single-pass inference).</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>Empirical characterization of DVFS on BERT + Pythia SLMs fine-tuning workloads; identifies batch-size and layer-aware frequency/voltage sweet spots; proposes energy-efficient scheduling policy.</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>Empirical (not theoretical); BERT/Pythia coverage may not generalize to all SLM architectures; DVFS gains are workload-specific; small model size limits absolute energy savings despite percentage improvements.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>Significant energy reduction vs default frequency; policies exploit the fact that fine-tuning iterations have different memory/compute profiles than inference; applicable to Jetson-class embedded GPUs.</div>
+      <div class="row"><span class="author">🏢 团队：</span>Jurn-Gyu Park, Sanzhar Zholdybayev, Aidar Amangeldi, Ademi Zhanuzakova (Nazarbayev University)</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-09/paper_summaries_v2_2026-07-09_03.jpg" alt="TileLens: Efficiently Using Large-Granularity Memory Systems with Transparent Two-Dimensional Memory Layout" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.04031 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.04031" target="_blank">TileLens: Efficiently Using Large-Granularity Memory Systems with Transparent Two-Dimensional Memory Layout</a></h3>
+    <p style="color:#ccc;">想象 GPU 显存 (HBM) 就像一张「细网格的画布」, 但新一代「高带宽闪存」(HBF) 跟 RoMe 等「大颗粒存储」要求至少 4KB 一次访问 (一整块瓷砖那么大), 在 LLM 推理「分块矩阵乘法」里, 大颗粒访问会损失一个数量级性能 (10× 慢)。TileLens 提出「透明二维内存布局」: 不动用户代码, 在系统层把细粒度矩阵乘法重新组织成适合大颗粒存储的二维 tile 访问模式, 性能损失大幅缩小。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">We analyze why Large-Granularity Memory Systems (LGMS, like HBF and RoMe with 4KB minimum access granularity) degrade tiled matrix-multiplication (the dominant op in LLM inference) by up to an order of magnitude, and propose TileLens with a transparent two-dimensional memory layout that reorganizes tile accesses to match LGMS granularity, recovering most of the performance without user-code changes.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>Transparent 2D memory layout: system-layer reorganization of fine-grained GEMM tile accesses into LGMS-friendly 2D patterns; transparent to user code (compiler/runtime); supports both HBF and RoMe.</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>Transparent layer adds runtime/compilation overhead (smaller than naive LGMS penalty); 2D layout assumptions may not match all access patterns; HBF/RoMe not yet widely deployed so immediate benefit limited; co-design with hardware needed for full gain.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>Recovers most of LGMS performance penalty (vs naive tiled GEMM); enables practical use of HBF/RoMe for LLM inference at scale; preserves HBM-scale programming model.</div>
+      <div class="row"><span class="author">🏢 团队：</span>Jae Hyung Ju, Euijun Chung, Hritvik Taneja, Anish Saxena, Shinnung Jeong, Hyesoon Kim, Moinuddin K. Qureshi (Georgia Institute of Technology)</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-09/paper_summaries_v2_2026-07-09_04.jpg" alt="FAPlace: Joint Optimization of Chiplet Placement and Interposer Footprint for 2.5D Systems" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.02610 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.02610" target="_blank">FAPlace: Joint Optimization of Chiplet Placement and Interposer Footprint for 2.5D Systems</a></h3>
+    <p style="color:#ccc;">想象你把多个小芯片 (chiplet) 像拼图一样放在一张「硅中介层」(silicon interposer) 上做 2.5D 集成 (NVIDIA Blackwell / AMD MI300 / 各家 ASIC 厂都这么干), 传统方法是先定中介层大小再放芯片, 但「中介层多大」本身取决于「芯片怎么放」——鸡生蛋问题。FAPlace 第一次同时优化「芯片放哪」跟「中介层多大」, 解决「中介层太小放不下, 太大浪费」的两难, 对 2.5D 先进封装 (CoWoS / SoIC / EMIB) 时代至关重要。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">We present FAPlace, a placement approach that jointly optimizes chiplet placement and silicon interposer footprint for 2.5D system integration, breaking the circular dependency where the optimal interposer size depends on placement but placement is constrained by interposer dimensions.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>Joint optimization formulation: chiplet positions + interposer dimensions co-solved; handles undersized (infeasible) and oversized (sparse) interposer regimes; considers electrical/thermal constraints alongside geometric placement.</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>Joint optimization increases solver complexity (vs decoupled approach); assumes fixed chiplet set (no chiplet re-selection); manufacturing constraints (yield, defect) not fully modeled; thermal/electrical co-design simplified.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>Avoids infeasible placements from undersized interposers; avoids waste from oversized interposers; produces denser, more cost-effective 2.5D layouts; applicable to CoWoS / SoIC / EMIB-class packaging.</div>
+      <div class="row"><span class="author">🏢 团队：</span>Yubo Hou, Sezin Kircali Ata, Gen Liang Lim, Richard Chang, Mihai Dragos Rotaru, Rahul Dutta, Ashish James (A*STAR Institute for Infocomm Research + A*STAR Institute of Microelectronics)</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer>
+  <p>Generated by Hermes Agent · AI Infra Daily Report</p>
+  <p>https://github.com/zenhatescoding/ai-infra-reports</p>
+  <p>2026-07-09 06:57</p>
+</footer>
+</div>
+</body>
+</html>
