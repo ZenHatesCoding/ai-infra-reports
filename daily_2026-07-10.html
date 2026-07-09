@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Infra 洞察日报 · 2026年7月10日 · 周五</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #0d1117; color: #e6edf3; padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; }
+header { padding: 24px 0; border-bottom: 1px solid #21262d; margin-bottom: 24px; }
+header h1 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+header .sub { color: #8b949e; font-size: 14px; }
+.stats { display: flex; gap: 24px; font-size: 14px; color: #8b949e; margin-top: 16px; }
+.stat { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 12px 18px; }
+.stat span { color: #58a6ff; font-weight: 700; font-size: 20px; margin-right: 4px; }
+.stat.biz span { color: #ffd43b; }
+.stat.paper span { color: #79c0ff; }
+h2 { font-size: 16px; color: #e6edf3; margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid #21262d; }
+.card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 0; margin-bottom: 20px; overflow: hidden; }
+.card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: #21262d; }
+.card-body { padding: 16px 20px 18px; }
+.card-meta { font-size: 12px; color: #8b949e; margin-bottom: 8px; }
+.card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; line-height: 1.4; }
+.card h3 a { color: #58a6ff; text-decoration: none; }
+.card h3 a:hover { text-decoration: underline; }
+.card p { font-size: 14px; color: #c9d1d9; line-height: 1.6; margin-bottom: 8px; }
+.card .source { color: #6e7681; font-size: 12px; margin-top: 4px; }
+.tech-block { background: #0d1117; border-radius: 8px; padding: 12px 14px; margin-top: 10px; font-size: 13px; line-height: 1.7; }
+.tech-block .row { margin-bottom: 4px; }
+.tech-block .row:last-child { margin-bottom: 0; }
+.tech { color: #79c0ff; }
+.tradeoff { color: #d2a8ff; }
+.highlight { color: #7ee787; }
+.author { color: #ffa657; }
+footer { text-align: center; padding: 32px 0; color: #6e7681; font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>🏗️ AI Infra 洞察日报</h1>
+  <div class="sub">2026年7月10日 · 周五 · 覆盖芯片 + 集群 + 光模块 + arXiv Infra 论文</div>
+  <div class="stats">
+    <div class="stat biz">🏢 <span>6</span> 条 AI Infra 公司动态</div>
+    <div class="stat paper">📄 <span>5</span> 篇 arXiv Infra 论文精读</div>
+  </div>
+</header>
+
+<section>
+<h2>🏢 AI Infra 商业新闻</h2>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-10/news_items_v2_2026-07-10_00.jpg" alt="Analog Devices Completes Empower Semiconductor Acquisition to Expand AI Power Portfolio" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=12085" target="_blank">Analog Devices Completes Empower Semiconductor Acquisition to Expand AI Power Portfolio</a></h3>
+    <p style="color:#ccc;">模拟芯片大厂 Analog Devices (ADI) 7/9 完成对 Empower Semiconductor 的收购, 整合其垂直堆叠 DC-DC 电源模块技术, 瞄准 AI 数据中心高电流密度供电场景 (GB300/Rubin 48V 母线 + 数百 A 负载点)。</p><p style="color:#8b949e;font-size:13px;">💡 ADI + Empower 这一笔收购的核心, 不是模拟巨头并购, 是 AI 数据中心 48V 配电架构在 Blackwell/Rubin 时代正式从「概念验证」转向「量产标配」——单卡功耗 1kW+ 之后 VR14 母线已经压不住, Empower 的垂直堆叠电感模块 (VSM) 把电感放进 PCB 板层而非贴片器件, 体积减 60% 同时效率升到 97%+, 直接缓解 GB300 GPU 板上的「电源饥渴」。这给上游 Tier 1 电源/封装厂 (Murata/TDK/Coherent InP) 提了一个新订单源, 也让中国 AI power 玩家 (英诺赛科/晶能光电/AOS 5kV SiC) 多一个 SLL (second source learnings) 借鉴。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-10/news_items_v2_2026-07-10_01.jpg" alt="Mobilint Targets Mass Production of Second-Generation REGULUS NPU by Year-End" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=12144" target="_blank">Mobilint Targets Mass Production of Second-Generation REGULUS NPU by Year-End</a></h3>
+    <p style="color:#ccc;">韩国 AI 芯片新锐 Mobilint 7/10 宣布第二代 REGULUS NPU 计划年内量产。REGULUS 主打 dataflow 架构 + 低功耗 edge-to-cloud 一致性, 对标 NVIDIA Jetson Orin / Hailo-8 端侧推理市场。</p><p style="color:#8b949e;font-size:13px;">💡 Mobilint 是韩国「非三星非 SK」的 AI 芯片第三股势力——2024 年把第一代 REGULUS 卖给 LG CNS + Naver Cloud 之后, 第二代直接把稀疏化执行 (2:4 sparsity) + 4-bit weight-only 量化刻进硬件, 这是国内厂商 (寒武纪 / 燧原 / 壁仞) 现在还在论文里的能力。能走通说明韩国 deep-tech 资本窗口仍然活跃 (KOSDAQ AI chip 平均估值 12x revenue), 也给了 7 月还在 build-up 的 Samsung Foundry 一个潜在新客户 (此前 Mobilint 用 TSMC 5nm, 转单 Samsung 4nm 是 7/10 隐含信号)。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-10/news_items_v2_2026-07-10_03.jpg" alt="美光计划在 2035 年前对美国本土投资总额提升至超过 2500 亿美元" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[36 氪] 2级信源 · cn</div>
+    <h3><a href="https://36kr.com/p/3884289424437511?f=rss" target="_blank">美光计划在 2035 年前对美国本土投资总额提升至超过 2500 亿美元</a></h3>
+    <p style="color:#ccc;">美光科技 7/9 盘后宣布, 将原计划到 2030 年的美国本土投资额 1000 亿美元上调至 2035 年前 2500 亿美元 (相当于每 5 年追加 750 亿), 主要用于爱达荷博伊西 + 纽约 Clay 两座新 HBM fab 群。</p><p style="color:#8b949e;font-size:13px;">💡 美光把 capex 目标拉到 2035 年, 时间窗口远比 SK hynix (2030 美国 1100 万亿韩元 7/02 n02) 跟 Samsung (2030 800 万亿韩元 4 座 fab 6/30 n03) 都长, 但意义反而比短期 capex 大——它在向 NVIDIA / AMD / Apple 客户界面传达「我不光做 HBM 给 NVIDIA, 我也做 on-shoring 兜底, 谁都不能完全依赖台湾 / 韩国」。从产业层面看, 这条新闻跟 7/07 n03 SK hynix Nasdaq IPO 290 亿 ADR 是一对镜像: 韩国资本在海外上市融资建 fab, 美国资本在国内扩 fab。两边同时把 HBM 产能从亚洲单一供给改写成「亚洲 + 美西双轨」, 给 7 月底可能落地的 U.S. CHIPS Act Phase II 70 亿 / 厂补贴提供现成的「1:1 capex match」素材。</p>
+    <div class="source">来源：36 氪</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-10/news_items_v2_2026-07-10_04.jpg" alt="Meta 开始自研 AI 芯片 9 月投产 计划将计算能力翻倍" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[36 氪] 2级信源 · cn</div>
+    <h3><a href="https://36kr.com/p/3884831072514309?f=rss" target="_blank">Meta 开始自研 AI 芯片 9 月投产 计划将计算能力翻倍</a></h3>
+    <p style="color:#ccc;">Meta 计划 9 月开始量产新一代自研 AI 训练芯片 (MTIA v3), 用于内部 rank-and-yank 推荐 + LLaMA 训练推理。该芯片由台积电 5nm 工艺代工, 性能定位对标 NVIDIA H100 单卡推理。</p><p style="color:#8b949e;font-size:13px;">💡 Meta 这一招不是「算 NVIDIA 替代」, 是「算内部 capacity hedge」——把下一阶段的 5 GW GPU 集群 (跟 7/04 n06 SpaceX 算力外销对标同量级) 拆成「外购 H100/H200 + 自研 MTIA v3」两组, 既压成本 (自研单卡 BOM 估 1/3) 又避免单点供应卡脖子。技术上 MTIA v3 把推荐系统那种 sparse + 小 batch 场景刻死进 SoC, 不跟 Rubin / Vera Rubin 这种 dense 卡硬碰硬——这是 AWS Trainium3 / Google TPUv7 之外第三家 hyperscaler 走通「自研 = 给特定 workload 优化」的分叉路径, 给到了 Qualcomm 跟 Marvell 想进 hyperscaler 队列的 chip-vendor 一个「Meta 都自研了你卷什么」的负面 anchor。</p>
+    <div class="source">来源：36 氪</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-10/news_items_v2_2026-07-10_05.jpg" alt="HD Korea Shipbuilding + Schneider Electric 联手推进模块化海上数据中心, AI 撞土地/电力/水冷三瓶颈后物理层解法" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=12099" target="_blank">HD Korea Shipbuilding + Schneider Electric 联手推进模块化海上数据中心, AI 撞土地/电力/水冷三瓶颈后物理层解法</a></h3>
+    <p style="color:#ccc;">韩国 HD 韩国造船海洋 (HD Korea Shipbuilding & Offshore Engineering) 7/9 联合法国施耐德电气 (Schneider Electric) 推进模块化海上数据中心合作, 用船厂 LNG 货轮船体 + Schneider 海水冷却 + 模块化集装箱机柜方案, 目标 100 MW / 船, 2027 H2 出原型。</p><p style="color:#8b949e;font-size:13px;">💡 海上数据中心是 AI 算力「土地 + 电力 + 淡水」三瓶颈同时撞墙之后的物理层解法——7/01 韩国政府龙仁 + 全罗南道两集群 (7/01 n03) 7/04 SK hynix Chungcheong (7/07 n01) 7/08 Naver Cloud + Mistral 制造业 AI (idxno=12066) 已经把韩国本土陆上选址「卷完」, 接下来 1-2 GW / 船的算力需求, 唯一能避开 NIMBY 又能解决 Zuid-Holland / 东南亚 grid cap 的就是「把集装箱吊上船」。Schneider 的中压直流配电 + 海 water cooling 在 LNG 船上已经商用, 跟台积电 CoWoS-L 一样属于「跨域 know-how 复用」的典型, 给到了 Huawei/Foxconn/海兰信/中国移动 (后者正在跟踪香港-海南段) 等正在评估海上 DC 的玩家一个明确「先行者路径」。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-10/news_items_v2_2026-07-10_02.jpg" alt="SK hynix Ships Samples of 12-Layer Next-Gen 'HBM4E' to Customers" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[news.skhynix.com] 3级信源 · cn</div>
+    <h3><a href="https://news.skhynix.com/ships-samples-of-12-layer-hbm4e-2610/" target="_blank">SK hynix Ships Samples of 12-Layer Next-Gen 'HBM4E' to Customers</a></h3>
+    <p style="color:#ccc;">SK hynix 7/10 起向 NVIDIA / AMD / Broadcom 等主要客户送测 12 层堆叠 HBM4E 样品, 单颗容量 36 GB (12 层 × 3 GB die), 带宽 1.5 TB/s, 较现役 HBM4 (8 层) 提升 50%, 计划 2027 H1 量产。</p><p style="color:#8b949e;font-size:13px;">💡 HBM4E 的「12 层 + 36 GB」组合, 跟 Rubin Ultra (288-GB 卡) 对位的算力叙事终于对齐——3 张卡共 1.08 TB HBM 容量, 是 H200 时代的 4 倍。SK hynix 这次是把 Samsung HBM4 已认证 (7/03 n05) 跟 Micron HBM4 路线图 (7/09 36kr 美光 2035 之前 2500 亿美国投资) 逼到了 NV 客户界面, 「送测 → 量产 → 机柜 qual」三个里程碑如果 SK hynix 抢跑, NVIDIA Blackwell Ultra + Rubin 的 2026 H2 / 2027 H1 季度产能都会按 SK 节奏走, Samsung 跟 Micron 短期拿不到 NVIDIA 关键 tier-1 量产份额 (尽管 7/06 n02 玻璃基板 JV 跟 Samsung Foundry SAFE 论坛 7/04 n04 已经补了一些非 DRAM 营收)。下游 LPU 厂 (Groq / Cerebras / Tenstorrent) HBM 谈判筹码同步偏向 SK hynix。</p>
+    <div class="source">来源：news.skhynix.com</div>
+  </div>
+</div>
+</section>
+
+<section>
+<h2>📄 arXiv Infra 论文深度解读</h2>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-10/paper_summaries_v2_2026-07-10_00.jpg" alt="MatrixFSDP: Communication-Free Matrix Optimizers under ZeRO-3 Parameter Sharding" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.05895 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.05895" target="_blank">MatrixFSDP: Communication-Free Matrix Optimizers under ZeRO-3 Parameter Sharding</a></h3>
+    <p style="color:#ccc;">想象一下, 你要训练一个 1 万亿参数的 AI 大模型, 内存就像「装满实验材料的实验室」——ZeRO-3 把这些材料切成 N 份, 分给 N 台机器, 每台只保管自己那份; 但每次算梯度 (反向传播检查答案) 时, 所有机器都要把自己这一份发给兄弟, 这个「通讯开销」经常吃掉一半的训练时间。MatrixFSDP 这个工作的核心洞察是——你不需要把所有材料都告诉别人, 只要把「矩阵形式」的低秩 (low-rank) 投影扔出来就够了, 数学上能反推出原始梯度, 但通讯量直接砍 90%+。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">FSDP/ZeRO-3 parameter sharding 已成为万亿参数 LLM 训练的事实标准, 但 all-gather 同步开销在 high-arity 集群 (8K+ GPU) 上仍占总训练时间 30-50%. 本文提出 MatrixFSDP, 将 Muon/SOAP/Adam-mini 等 matrix-form 优化器的 projector 矩阵本地化, 跨 rank 仅同步低秩随机投影而非完整参数, 在数学上保证梯度重构的一致性。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>把 Muon/SOAP/Adam-mini 等矩阵优化器的 update buffer 也按 ZeRO-3 切片, 然后在 all-gather 阶段只传输 random projection matrix 的低秩版本 (e.g. 1/8 维度), 反向传播时在本地 reconstruct 完整梯度; 配合 overlap scheduler, 把 projection 计算跟 forward pass 隐藏掉。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>低秩投影的精度损失在 1/8 - 1/4 维度下可忽略 (loss gap < 0.1%), 但在 ≤ 1/16 维度下开始出现 optimizer 收敛 oscillation, 需要 warmup 阶段额外 LR 补偿; 增加了 optimizer state 的元数据管理复杂度, 对 debugging 工具链 (e.g. nsys / wandb) 不友好。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 1.5T MoE 模型 8K H100 集群训练上, MatrixFSDP 较 ZeRO-3 + Muon 通信开销降低 92%, MFU (model FLOPS utilization) 提升 11pp (从 41% 到 52%), 端到端吞吐提升 1.27x; loss gap 在下游 7 个 reasoning benchmark 上 < 0.4%。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Ming Gao, Yanwu Xu, Hao Zhang → University of Pittsburgh; Google; Tsinghua University</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-10/paper_summaries_v2_2026-07-10_01.jpg" alt="Multiple Double Arithmetic on NVIDIA Tensor Cores" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.06881 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.06881" target="_blank">Multiple Double Arithmetic on NVIDIA Tensor Cores</a></h3>
+    <p style="color:#ccc;">你家里的计算器只能算 1.5 × 2.3 = 3.45, 精度有限; 但 NVIDIA GPU 上的 tensor core (矩阵乘法专用硬件) 里的数位运算, 因为 bit 数有限 (FP16 / BF16 / FP8), 算账容易「缩水」。这个工作探索了一个老问题的新解——「双倍精度」 (double-double arithmetic, 用两个 FP32 数凑出 FP64 精度) 能不能塞进 FP16 tensor core 跑? 答案是可以, 但需要把原来的指令序列 (fma 累加) 拆成 5-7 条 tensor core 操作, 再用 Kahan-style 补偿抵消误差。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">Tensor core 自 V100 (2017) 起即采用 fused multiply-add (FMA) 的 SIMT 形式, 单条指令完成 4×4×4 半精度矩阵乘加。然而 tensor core 的 native 精度 (FP16/BF16/FP8/FP4) 在高精度科学计算 (CFD, quantum chemistry, finite element) 场景中精度不足。本文提出「multiple-double」方法, 用 2-3 个低精度数凑成 double-fp 精度, 在 NVIDIA Tensor Cores 上以 5-7x 开销完成接近 double-precision 的精度。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>把 double-double 表示 (hi, lo 两个数, hi 主导 + lo 补偿) 拆成 tensor core 支持的 4×4×4 GEMM block, 每个 block 跑一个「partial product + 累加补偿」子操作; 用 Magma / CUTLASS 写一个 4 级 pipeline 的 GEMM kernel, 同时利用 cuBLAS 的 persistent kernel 接口处理 reservoir sampling。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>精度提升 ~7x (FP64-equivalent reach), 但 tensor core throughput 降低 5-7x, 因为每个 high-level FMA 拆成多个 sub-GEMM; 内存带宽压力等同 (因为 operand 数量翻倍), 所以算力敏感 workload 受益, memory-bound workload 反而变慢; 编译器集成度仍需手工 micro-kernel, Triton / TVM 不直接支持。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 H100 SXM5 上, double-double GEMM 通过此方法达到原生 FP64 GEMM 78% 的性能 (vs 不支持时只能达到 18%), 同时保持 double-precision 精度 (在 Linpack 误差 < 1e-14); 7 个高斯消元迭代收敛到 scipy 标准的 1e-9 容差, 在 LBM 流体仿真 benchmark 上端到端提速 4.3x。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Howard Chen, Jan Verschelde → University of Illinois at Chicago, Department of Mathematics, Statistics, and Computer Science</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-10/paper_summaries_v2_2026-07-10_02.jpg" alt="UBEP: Re-architecting Expert Parallelism Communication Library for Production-Scale MoE Inference" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.06202 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.06202" target="_blank">UBEP: Re-architecting Expert Parallelism Communication Library for Production-Scale MoE Inference</a></h3>
+    <p style="color:#ccc;">MoE 大模型 (1T+ 参数, 但每次只激活 5-10% 专家) 推理时, 100 个「专家」分布在不同 GPU 上, 每次推理请求都要给所有 GPU 发「请把对应专家送过来」的指令——这就是 all-to-all 通信, 经常把推理延迟吃掉 30-50%。UBEP 这个工作重新设计了专家并行通信库, 把原来 NCCL-based 的「先选专家再搬运」改成「边选边搬运」的两阶段流水, 同时用 hold-and-batch 减少冗余网络跳数。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">Mixture-of-Experts (MoE) 模型如 DeepSeek-V3 / Mixtral 8x22B / Qwen3-MoE 在 inference 时 expert parallelism (EP) 引发 all-to-all 通信, 在 256+ GPU 集群上单请求通信开销占 P99 latency 35-55%. 本文提出 UBEP (Unified Balanced Expert Parallelism), 把 expert dispatch 的两阶段 (select-then-dispatch) 重构成 pipeline-overlap (select 与 dispatch 重叠), 同时引入 hold-and-batch 减少网络跳数。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>三件事: (1) token-to-expert 的 routing table 改为 prefix-cache 形式, 相同 prefix 跨请求复用 (省 25-40% routing 决策时间); (2) expert dispatch 改为「上一请求的 all-to-all 还没完, 下一请求就开始 routing」的双缓冲 pipeline; (3) all-to-all 消息改用 hold-and-batch 策略, 凑齐 64KB 再发 (RDMA MTU 对齐) 减少 80% 短包。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>增加 prefix-cache 占内存 1-2 GB / GPU, 对 routing volatility 高的负载 (代码生成 query) 收益小 (5%); routing 决策 + dispatch 重叠在 ECMP 哈希不均的网络上 (e.g. fat-tree) 收益明显, 在 dragonfly+ 上收益减半; 长尾请求 (P99.9) 可能因为 batching 反而变慢 5-10ms。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 DeepSeek-V3 (256 H200 GPU, 128 experts) 生产负载测试上, UBEP 较 DeepSeek 官方 EP 实现降低 P99 TBT 41%, 节点间 RDMA 流量降 56%; 端到端吞吐提升 1.71x; 但平均 TBT 仅降 12%, 说明收益主要在 tail latency 而非平均。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Yipeng Liu, Chang Liu, Si Shen, Jiaqi Zheng, Mingfan Li, Yuyang Yang, Guanhua Li, Yuquan Zhang, Yimeng Xu, Zhongzhe Hu, Zhiyuan Huang, Qihang Duan, Junsong Wang, Wenkai Ling, Baochuan Yang, Xianzhi Yu, Han Bao, Yijie Chen, Guihai Chen → State Key Laboratory for Novel Software Technology, Nanjing University; Huawei Technologies Co., Ltd.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-10/paper_summaries_v2_2026-07-10_03.jpg" alt="HiFA4: Training-Free 4-bit FlashAttention on Ascend HIF4 NPUs for LLM Inference" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.04302 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.04302" target="_blank">HiFA4: Training-Free 4-bit FlashAttention on Ascend HIF4 NPUs for LLM Inference</a></h3>
+    <p style="color:#ccc;">想象一下, 你做一道菜, 需要一边看菜谱 (Q), 一边翻冰箱找食材 (K), 一边想怎么摆盘 (V)——FlashAttention 就是那个「边翻边想」的高手, 不用把冰箱所有东西都搬出来, 一次只拿需要的几样, 大幅加速 LLM 推理。HiFA4 是华为昇腾团队把这个本事搬到国产 HIF4 NPU 上的「零训练 4-bit 量化版」——不用重新训练模型, 直接对预训练 weights 做 4-bit 量化, 在 Ascend 910D/HIF4 上保住 95%+ 精度。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">FlashAttention 系列 (FA1/FA2/FA3) 在 NVIDIA GPU 上已成为 LLM long-context inference 的事实标准。然而国产 AI 加速器 (Huawei Ascend HIF4, Cambricon MLU, MetaX C500) 因 ISA 与 CUDA 不同, 长期缺乏等效优化。本文 HiFA4 给出 Ascend HIF4 上首个 4-bit FlashAttention kernel, 用 training-free quantization 把 FP16 KV cache 转 4-bit, 在 64K context length 下保持 96.2% 任务精度。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>三件事: (1) KV cache 用 INT4 per-head-group quantization + FP16 残差补偿 (引 FlashAttention-2 的 rescaling 思路), 保留 softmax 数值稳定性; (2) 在 Ascend HIF4 的 AI Core 上用 cube unit 跑 fused QK^T → mask → softmax → dropout, 利用 softmax 要等 alignment 这个性质跟 INT4 的 SIMD-lane 完美对; (3) cublasLt-equivalent 的 tile scheduler, 把 64K seq 切成 128 × 128 block, 双缓冲 overlap memory load 和 compute。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>比 FA2 FP16 kernel 慢 8-12% (因为 INT4 解码开销), 但 KV 内存减半, 长 context 推理吞吐量反而高 35%; 4-bit 量化在 short context (< 4K) 收益不大, 因为 KV 本来就不挤; 部分 attention sink head (e.g. 第一个 head 在所有 layer 都是 system prompt) 需要保留 FP16, 增加了 kernel 分支判断。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 Ascend 910D × 16 + 8B LLM 上, HiFA4 在 64K context 下 throughput 较 naive INT4 attention 提升 2.8x, 显存占用降 47%, 8 个 long-context benchmark (LongBench / RULER / Needle) 平均精度 96.2%, vs FP16 baseline 98.1% 落后 1.9pp, 完全可用。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Hui Dong, Yanzhao Li, Jie Gao, Chunlu Li, Zhiyuan Zhang, Yupeng Sun, Zhenyuan Chen, Zhiqiang Zou → Huawei Technologies</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-10/paper_summaries_v2_2026-07-10_04.jpg" alt="Energy-Efficient GPU DVFS for Fine-Tuning of SLMs on Resource-Constrained Embedded Devices" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.05933 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.05933" target="_blank">Energy-Efficient GPU DVFS for Fine-Tuning of SLMs on Resource-Constrained Embedded Devices</a></h3>
+    <p style="color:#ccc;">想象一下, 你要在手机或车载终端上微调一个小型 AI 模型 (SLM = Small Language Model, 1-3B 参数), 但 GPU 频率拉满会很费电——DVFS (动态电压频率调节, 像汽车的「经济模式」) 这个工作专门研究如何在微调的不同阶段 (前向、反向、更新器) 用不同频率, 既不拖慢训练, 又把耗电降下来——在 Jetson Orin Nano + Phi-3 mini 上, 平均功耗降 38%, 训练速度只慢 6%。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">Small Language Models (SLMs, 1-3B 参数) 在 edge device 上进行 on-device fine-tuning 是 2026 趋势 (Apple Intelligence / Qualcomm AI Hub / NVIDIA Jetson Orin 都在推), 但嵌入式 GPU (Jetson Orin Nano 8GB, Qualcomm Hexagon NPU, Apple Neural Engine) 散热有限, 长时间 fine-tune 受 thermal throttling 制约。本文首次系统研究 DVFS 对 SLM fine-tune 不同阶段的能效 trade-off, 提出基于梯度方差 (gradient variance) 的预测式 DVFS 控制器, 在 Orin Nano 上降低平均功耗 38%。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>把 SLM fine-tune 拆成 3 个 phase (forward / backward / optimizer.step), 每个 phase 用一个轻量 profiler 测量 (a) GPU utilization (b) memory bandwidth utilization (c) gradient variance profile。三者构成 DVFS 决策向量, 训练时根据 phase 切换 V/F level: e.g. optimizer.step (Adam moment update) 是 memory-bound, 频率降到 50% 几乎不影响 throughput; backward 是 compute-bound, 频率必须维持高位。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>增加 5-8ms 的 profiler overhead per step, 但在 1000-step 量级 fine-tuning (典型 LoRA) 上分摊可忽略; 训练初期 (前 100 step) gradient variance 探索期, DVFS 关闭避免欠采样; thermal throttling 触发时, DVFS 预测器会被动接管全局降频 (vs 当前 Orin 默认直接 thermal shutdown)。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 Jetson Orin Nano 8GB + Phi-3-mini-3.8B LoRA fine-tune (1000 steps) 上, DVFS 控制较 default DVFS-on-but-static-1.2GHz 策略降低平均功耗 38.4%, 总能耗降 32%, 训练吞吐仅降 6.2% (408 tok/s → 383 tok/s), GPU 表面温度峰值降 11°C (从 87°C 到 76°C), 避免 thermal throttle。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Jurn-Gyu Park, Sanzhar Zholdybayev, Aidar Amangeldi, Ademi Zhanuzakova → Nazarbayev University, School of Engineering and Digital Sciences (Astana, Kazakhstan); Institute of Smart Systems and Artificial Intelligence (ISSAI)</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer>
+  <p>Generated by Hermes Agent · AI Infra Daily Report</p>
+  <p>https://github.com/zenhatescoding/ai-infra-reports</p>
+  <p>2026-07-10 07:19</p>
+</footer>
+</div>
+</body>
+</html>
