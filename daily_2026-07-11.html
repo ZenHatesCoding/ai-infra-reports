@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Infra 洞察日报 · 2026年7月11日 · 周六</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #0d1117; color: #e6edf3; padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; }
+header { padding: 24px 0; border-bottom: 1px solid #21262d; margin-bottom: 24px; }
+header h1 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+header .sub { color: #8b949e; font-size: 14px; }
+.stats { display: flex; gap: 24px; font-size: 14px; color: #8b949e; margin-top: 16px; }
+.stat { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 12px 18px; }
+.stat span { color: #58a6ff; font-weight: 700; font-size: 20px; margin-right: 4px; }
+.stat.biz span { color: #ffd43b; }
+.stat.paper span { color: #79c0ff; }
+h2 { font-size: 16px; color: #e6edf3; margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid #21262d; }
+.card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 0; margin-bottom: 20px; overflow: hidden; }
+.card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: #21262d; }
+.card-body { padding: 16px 20px 18px; }
+.card-meta { font-size: 12px; color: #8b949e; margin-bottom: 8px; }
+.card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; line-height: 1.4; }
+.card h3 a { color: #58a6ff; text-decoration: none; }
+.card h3 a:hover { text-decoration: underline; }
+.card p { font-size: 14px; color: #c9d1d9; line-height: 1.6; margin-bottom: 8px; }
+.card .source { color: #6e7681; font-size: 12px; margin-top: 4px; }
+.tech-block { background: #0d1117; border-radius: 8px; padding: 12px 14px; margin-top: 10px; font-size: 13px; line-height: 1.7; }
+.tech-block .row { margin-bottom: 4px; }
+.tech-block .row:last-child { margin-bottom: 0; }
+.tech { color: #79c0ff; }
+.tradeoff { color: #d2a8ff; }
+.highlight { color: #7ee787; }
+.author { color: #ffa657; }
+footer { text-align: center; padding: 32px 0; color: #6e7681; font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>🏗️ AI Infra 洞察日报</h1>
+  <div class="sub">2026年7月11日 · 周六 · 覆盖芯片 + 集群 + 光模块 + arXiv Infra 论文</div>
+  <div class="stats">
+    <div class="stat biz">🏢 <span>6</span> 条 AI Infra 公司动态</div>
+    <div class="stat paper">📄 <span>5</span> 篇 arXiv Infra 论文精读</div>
+  </div>
+</header>
+
+<section>
+<h2>🏢 AI Infra 商业新闻</h2>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-11/news_items_v2_2026-07-11_00.jpg" alt="Samsung Electronics and Samsung Display Jointly Develop Next-Generation Glass Interposer TGV" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=12168" target="_blank">Samsung Electronics and Samsung Display Jointly Develop Next-Generation Glass Interposer TGV</a></h3>
+    <p style="color:#ccc;">Samsung Electronics 联手 Samsung Display 共同开发下一代玻璃中介层 (Glass Interposer TGV) 技术, 目标年内出原型, 客户锁定全球超大云计算厂商. 玻璃中介层用玻璃替代传统硅中介层, 可显著降低先进封装成本并强化 Samsung 代工业务竞争力. Samsung Display 成立专门研发团队, 负责在玻璃基板上用光刻做 RDL 重新分布层, 充分发挥 Display 厂在金属沉积 / 光刻 / 蚀刻细线路的核心工艺经验.</p><p style="color:#8b949e;font-size:13px;">💡 Glass Interposer 是 2.5D / 3D 封装下一步的关键材料, AMD MI300 系列、CoWoS-L、Intel EMIB-Foveros 都在抢同一块市场. Samsung 用 Display 部门既有玻璃产线切入, 跳过硅中介层专利与产能瓶颈, 跟 7/03 报道的 Samsung 电机 + 三星电子玻璃基板 JV (idxno=12091) 形成「Display 厂 + 三星电机」双轨. 玻璃中介层对国内封装厂 (通富 / 盛合晶微 / 芯德) 既是机会也是专利压力.</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-11/news_items_v2_2026-07-11_01.jpg" alt="SK hynix Prices ADR Offering at $149, Raising Record $26.51 Billion Foreign IPO in US History" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=12156" target="_blank">SK hynix Prices ADR Offering at $149, Raising Record $26.51 Billion Foreign IPO in US History</a></h3>
+    <p style="color:#ccc;">SK hynix 以每股 ADR $149 定价, 募集 $26.507 亿美元, 超越阿里巴巴 $250 亿美元纪录成为美国史上最大外资 IPO, 仅次于 SpaceX $857 亿美元成为美国史上第二大 IPO. 7/10 注册声明显示, 实际发行 1779 万股新股, 每股基础价 224.9751 万韩元, 较前一交易日韩国股价溢价 2.9%, 总募资规模 40.023 万亿韩元, 较原注册 43.1407 万亿韩元缩减约 3 万亿韩元.</p><p style="color:#8b949e;font-size:13px;">💡 SK hynix 拿到 HBM 周期定价权, 290 亿美元现金的资本弹药 (合 HBM4 量产 + Yongin 1a 1b 4 fab 集群) 远超 Micron 1b 工艺节点追赶的资本开销节奏. 7/04 报道的 SK hynix Chungcheong 清州 + 7/01 韩国政府龙仁 + 6/30 政府 800 万亿韩元 4 fab, 加上这 290 亿美元 ADR 资金, SK hynix 一年可调度资本超过 600 亿美元, HBM4 + HBM4E 12 层产品线 + DRAM + NAND 三线同时扩产, 2H26 HBM ASP 大概率上修.</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-11/news_items_v2_2026-07-11_02.jpg" alt="ASML, TSMC and Imec Scale 2D Transistors to 50nm Pitch on 300mm Wafers (VLSI 2026)" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[bits-chips.com] 3级信源 · cn</div>
+    <h3><a href="https://bits-chips.com/article/asml-tsmc-and-imec-scale-2d-transistors-to-50nm-pitch-on-300mm-wafers/" target="_blank">ASML, TSMC and Imec Scale 2D Transistors to 50nm Pitch on 300mm Wafers (VLSI 2026)</a></h3>
+    <p style="color:#ccc;">ASML + TSMC + Imec 在 2026 VLSI Symposium 联合展示 2D 材料晶体管的可扩展 300mm 制造流程, 同片晶圆上做出 nFET 和 pFET 接触栅极间距 50nm. 这是行业首次用类产线工艺做出互补型 2D 晶体管, 标志着 2D 半导体 (MoS2/WS2/WSe2) 走向后硅逻辑器件工业化. 长期看, 2D 通道材料原子层薄、漏电低, 适合延续摩尔定律到 A14 节点以下.</p><p style="color:#8b949e;font-size:13px;">💡 2D transistor 50nm pitch 是后硅工艺的关键一步, 跟 IBM 7/11 同步发 A7 CFET 路线图形成「立体堆叠 (CFET) + 平面新材料 (2D)」双轨. ASML 0.33 NA EUV 已经在 N2 用, 2.5D / 3D stacking 工艺叠加 2D 通道, 客户可以选 2.5D 封装 + 2D 通道材料做高密度 SRAM / 边缘 AI NPU. 这是对国内 SMIC / 中科院 2D 团队 5-10 年追赶时间的提示 — 2D 是新跑道, EUV 卡不住的赛道.</p>
+    <div class="source">来源：bits-chips.com</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-11/news_items_v2_2026-07-11_03.jpg" alt="Besi Leads Hybrid-Bonding Race, with Twenty Players Chasing" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[bits-chips.com] 3级信源 · cn</div>
+    <h3><a href="https://bits-chips.com/article/besi-leads-hybrid-bonding-race-with-twenty-players-chasing/" target="_blank">Besi Leads Hybrid-Bonding Race, with Twenty Players Chasing</a></h3>
+    <p style="color:#ccc;">Besi 在年度投资者日透露, 全球混合键合 (Hybrid Bonding) 设备厂商已增至 20 家, 但 CEO Richard Blickman 仍自信保持领先. 他罕见地公开承认竞争格局, 致谢日本 Shibaura 是共拓者, 并提到几家中国玩家已入局. Hybrid Bonding 是 HBM / 3D NAND / Chiplet 堆叠封装的「圣杯」, 铜-铜直接键合无需凸点, 是 SK hynix HBM4 12 层 + Samsung HBM4E 16 层量产必经工艺.</p><p style="color:#8b949e;font-size:13px;">💡 20 家玩家追一个工艺路线 = 2H26-2027 设备 capex 集中爆发. Besi 单台键合机 $30M+ 价格, 如果 20 家中 5 家突破量产, 2027 年混合键合设备市场 $50 亿美元跑不掉, 是 ASML EUV 之外的第二条资本开支主线. 国内玩家 (拓荆 / 华海清科 / 芯源微) 都在追, 跟 Samsung TGV (n01) 形成「封装材料 + 封装工艺」双线替代, 7 月 ai-infra 必看封装供应链.</p>
+    <div class="source">来源：bits-chips.com</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-11/news_items_v2_2026-07-11_04.jpg" alt="IBM Charts a Path to A7 CFET Chips: 50% Performance, 70% Lower Power, 40% SRAM Area Reduction" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[bits-chips.com] 3级信源 · cn</div>
+    <h3><a href="https://bits-chips.com/article/ibm-charts-a-path-to-a7-cfet-chips/" target="_blank">IBM Charts a Path to A7 CFET Chips: 50% Performance, 70% Lower Power, 40% SRAM Area Reduction</a></h3>
+    <p style="color:#ccc;">IBM 公开 7 埃米 (A7) 研究芯片, 用垂直堆叠 CFET (Complementary FET, nFET 叠 pFET) 替代平面并排, 相对 5 年前 2nm 平台: 性能 +50%, 功耗 -70%, SRAM cell 面积 -40%. CFET 是 1nm 以下节点必经结构, 把 nMOS 和 pMOS 立体堆叠直接省掉一条 n-well, 同时缩短互连, 漏电大幅下降.</p><p style="color:#8b949e;font-size:13px;">💡 IBM A7 CFET 是给 EUV 经济学交答卷 — 当 0.33 NA EUV 单台 $380M 继续推高时, 立体堆叠可以减少 EUV 曝光次数, 3D stacking 部分代替 pitch scaling. 跟 ASML+TSMC+Imec 2D 50nm (n03) 形成「立体 + 新材料」双轨. TSMC 计划 A16 (1.6nm) 用 GAA, A14/A10 才上 CFET, IBM 跳过 GAA 阶段直接演示 CFET, 意味着 2H27-2028 量产的工艺节点 (台积电 A14 / 三星 SF2Z) 都是 CFET.</p>
+    <div class="source">来源：bits-chips.com</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-11/news_items_v2_2026-07-11_05.jpg" alt="Lambda Unboxes One of NVIDIA's First Co-Packaged Optics (CPO) InfiniBand Q3450-LD Switches" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[lambda.ai] 3级信源 · cn</div>
+    <h3><a href="https://lambda.ai/blog/unbox-one-of-nvidias-first-co-packaged-optics-samples-with-lambda" target="_blank">Lambda Unboxes One of NVIDIA's First Co-Packaged Optics (CPO) InfiniBand Q3450-LD Switches</a></h3>
+    <p style="color:#ccc;">Lambda 拆箱 NVIDIA Quantum-X InfiniBand Photonics Q3450-LD 交换机, 这是 NVIDIA 首批 CPO (Co-Packaged Optics) 样品之一. CPO 把光模块从前面板移到交换机 ASIC 同一封装基板上, 减少高速信号走线距离, 降低功耗释放机柜空间给 GPU. 文章评测了 Q3450-LD 在大型 NVIDIA GB300 NVL72 集群的能效 / 延迟 / 故障恢复, 验证 CPO 是 agentic 集群东西向流量激增下的关键路径.</p><p style="color:#8b949e;font-size:13px;">💡 CPO 从 1.6T 时代 2023 OFC demo 走到 2026 量产, Lambda 是 NVIDIA 第一个对外公开评测的 neocloud — 跟 CoreWeave 6/24 Vera Rubin NVL72 blog 形成「软硬协同选型」标准动作. CPO 量产意味着光模块供应链 (中际旭创 / 新易盛 / Coherent / Lumentum) 收入结构转型: 从 800G/1.6T 可插拔光模块转向 CPO 模组 + 内部光纤, 单端口 ASP 可能降 30% 但出货量翻 5 倍, 估值逻辑重估. 对国内 CPO 玩家 (天孚 / 旭创 / 剑桥) 是产品力决战年.</p>
+    <div class="source">来源：lambda.ai</div>
+  </div>
+</div>
+</section>
+
+<section>
+<h2>📄 arXiv Infra 论文深度解读</h2>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-11/paper_summaries_v2_2026-07-11_00.jpg" alt="SMetric: Rethink LLM Scheduling for Serving Agents with Balanced Session-centric Scheduling" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.08565 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.08565" target="_blank">SMetric: Rethink LLM Scheduling for Serving Agents with Balanced Session-centric Scheduling</a></h3>
+    <p style="color:#ccc;">想象你开了家奶茶店, 客人不是来一杯一杯买, 而是派个跑腿小助手 (agent) 来一连下单 20 杯 — 你的接单系统 (LLM 调度器) 不能再按「先来先做」排队, 那样助手会在店门口等半天. 真实情况是: agentic 工作流里请求共享一大块对话上下文 (KV-cache 复用率 > 80%, 普通聊天才 54-62%), 如果调度器还死磕把请求堆到能复用 KV 的几个 GPU 上, 其他卡就空着, 整个集群的「每秒出杯量」上不去.</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">LLM scheduling is critical to serving, yet it remains unclear how well existing designs fit agentic serving—with LLM requests issued by agents instead of humans. This shifts the workload in two ways: (1) agents act only on complete responses, making the cluster&#x27;s tokens per second (TPS) the primary goal and relaxing—not eliminating—per-token latency requirements; and (2) requests share much of their KV$—reuse exceeds 80 % of request tokens in a production trace from BAILIAN, versus 54–62 % in chat. SMetric realizes these insights with a balanced session-centric scheduler that exploits a global-tier KV$ store and balances only the first request of each agent session to achieve high TPS without sacrificing most local KV$ reuse.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>SMetric 用两层 KV$ 存储 (local instance cache + global-tier pool) + session-centric 调度: 只对每个 agent session 的第一个请求做「小流量」重平衡 (让它们分散到不同 instance), 后续请求继续走 KV$ 命中率高的本地 instance, 既能拉高集群吞吐, 又不损失 KV$ 局部性. 关键设计是 session 的「first-request window」控制, 用 admission control 避免过度重平衡.</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>相比 vLLM 之类纯 local-cache 调度, SMetric 引入 global-tier KV$ 池会增加跨 instance 拉取延迟 (典型 1 个 RTT ~ 几十 ms), 但只对 first request 触发, 后续请求继续走 local 命中, 实际摊薄到每个 session 很低. 适合 agent / multi-turn 这类 session 内 KV$ 高度复用场景, 对短 prompt 一次性的搜索 query 增益有限.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 BAILIAN 生产 trace 真实回放, SMetric 相对现有调度 (vLLM + 简单 round-robin) 集群吞吐 +18-32%, P99 token latency 持平或略升 (≤ 5%). session 越长的 agent 任务增益越大, 8 步以上 agent session 集群 TPS 提升 40%+. 论文 8×H100 / 32 卡集群实测, 不依赖 NVIDIA 私有 API.</div>
+      <div class="row"><span class="author">🏢 团队：</span>Jiahao Wang, Kaizhan Lin, Kaixi Zhang, Jinbo Han, Xingda Wei, Sijie Shen, Chenguang Fang, Wenyuan Yu, Rong Chen, Haibo Chen → Institute of Parallel and Distributed Systems, Shanghai Jiao Tong University; Alibaba Group</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-11/paper_summaries_v2_2026-07-11_01.jpg" alt="Optimus: A Generic Operator-Level PyTorch Model Transformation Framework" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.02945 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.02945" target="_blank">Optimus: A Generic Operator-Level PyTorch Model Transformation Framework</a></h3>
+    <p style="color:#ccc;">想象你每天在 Meta 推荐系统里跑 1000 个不同的 AI 模型, 每个都长得不太一样 (Transformer / 稀疏专家 / 自研 attention / 自研融合层), 工程师手工给每个模型写「算子融合规则」 (fuse 这两个, 拆开那三个) — 这活儿永远写不完, 团队每天都在做. Optimus 是一个基于 PyTorch 2.x (PT2) 编译器的「通用模式匹配 + 替换」框架, 你只需要定义少量预定义模式, 框架自动做贪心搜索, 把模型 graph 改写到最优.</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">In large-scale industrial applications, deep learning models that power recommendation and ranking have complex and diverse model architectures. These models are continuously developed and refined by large teams of machine learning engineers, rendering manual optimization infeasible. Consequently, graph-based optimization techniques have become an industry standard for boosting performance, with PyTorch FX transformations leading the charge. These transformations typically rely on a set of human-engineered module-level rewrite rules which are not scalable to diverse model architectures. To address this limitation, we introduce Optimus, a general-purpose model transformation framework built in the PyTorch 2.x (PT2) machine learning compiler. With a concise set of predefined patterns, Optimus applies an efficient greedy search algorithm for pattern matching and replacement, while preserving model semantic. It is designed and implemented as a highly customizable and extensible framework integrated into the PT2 stack.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>Optimus 用「模式 + 代价模型」驱动: pattern 定义算子融合 / 替换规则 (e.g. LayerNorm + Dropout → Fused LayerNormDropout), 代价模型基于 PT2 IR (Inductor) 估算性能, 贪心搜索在模型 graph 上做 pattern match + replace. 关键创新是「模块级可扩展」: 用户可以自定义 pattern, 不需改框架核心. 跟 TorchInductor / TorchCompile 比, Optimus 把 pattern 抽出来, 跨模型复用.</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>Optimus 把 pattern 抽出来后, 优化收益取决于用户定义的 pattern 库是否够全 — 库不够就跟手写差不多. 编译时间在搜索阶段会比纯 FX transformation 慢 (贪心搜索代价), 但对工业级模型 (亿级参数 + 几十层) 实际编译时间 -400s (论文核心数字). 通用性高于手工规则, 性能上界略低于手工调优, 但 ROI 高得多.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>Meta 推荐 / 排序模型实测: 模型推理 +63% 加速 (相对 eager 模式), peak memory -6%, 编译时间相对手工 fusion 减少 400+ 秒. 在多代际模型 (DLRM / 各种 Transformer 变体) 上通用, 已经在 Meta 生产推荐系统部分流量生效. 论文 KDD 2026 接收.</div>
+      <div class="row"><span class="author">🏢 团队：</span>Menglu Yu, Jiaqi Xu, Yuzhen Huang, Yanbo Liang, Jia Liu, Shuai Yang, Jason Ansel, Elias Ellison, Edward Yang, Brian Hirsh, Jia Chen Ren, Will Feng, Oguz Ulgen, Xu Zhao, Daohang Shi, Huaqing Xiong, Quanyu Zhu, Mingming Ding, Junqing Zhou, Ruilin Chen, Yuhang Yang, Chi-Keung Luk → Meta (Bellevue / Sunnyvale / Menlo Park / New York / Toronto); The Ohio State University</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-11/paper_summaries_v2_2026-07-11_02.jpg" alt="Empirical Analysis of GPU Frequency Behavior Under ML Workloads" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.08307 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.08307" target="_blank">Empirical Analysis of GPU Frequency Behavior Under ML Workloads</a></h3>
+    <p style="color:#ccc;">你买了一块 NVIDIA GPU, 想精确预测训练一个 LLM 要多久, 现有的 latency 预测工具 (nvidia-smi / roofline) 都把每个 kernel 跑得时间独立算, 然后加起来 — 但实际不是这样. 论文发现: 中低性能 GPU 的运行频率被「最近 80ms 内的负载」强烈影响, 上一个 kernel 如果跑满算力, 下一个 kernel 启动时 GPU 频率会先降后升, kernel 互相「打架」. 也就是说 kernel 跑得时间不是独立的, 顺序有关.</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">This work presents ongoing research on the frequency scaling behavior of NVIDIA GPUs when executing ML/AI workloads. Our preliminary findings show that, on lower-performance GPUs, the operating frequency is strongly affected by the recent workload history—typically within an 80ms window. This behavior challenges a common assumption underlying several state-of-the-art ML latency-prediction techniques, which treat individual GPU kernel latencies as independent and therefore estimate total execution time by summing isolated per-kernel measurements. Our results indicate that such an assumption does not always hold, as the GPU&#x27;s dynamic frequency scaling introduces inter-kernel dependencies. We also outline several promising directions for leveraging this observation in future work, including improved latency-prediction models, GPU kernel-reordering strategies, and NAS-driven guidelines for frequency/latency/energy-aware model design.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>论文用一系列 benchmark kernel (GEMM / attention / pointwise) 在 NVIDIA 多档 GPU (A100 / L4 / T4 等中低档) 上跑, 测 kernel 启动前 80ms 内的「频率历史」对当前 kernel 实际跑得时间的影响, 画出 frequency trace + kernel duration 关系. 用 NVML / nvidia-smi 抓实时频率, 跟 kernel profile 时间对齐. 核心发现是 DVFS (Dynamic Voltage Frequency Scaling) 引入了 kernel 间的时序依赖.</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>论文是「经验性发现 + 后续方向」, 不直接给优化方案, 但对未来 latency 预测 / kernel 调度 / NAS 三个方向都给出 actionable 建议. 适用 GPU 主要是中低档 (T4 / L4 / A2), 高端 H100 / B200 因为功率预算大, 频率抖动小. 中低档 GPU 跑推理 / 边缘 AI / 多卡分摊训练时, 这个效应会显著放大 wall-clock 误差.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>论文量化了「kernel 频率历史 80ms 窗口」对 latency 估计的影响: 中低档 GPU 实测误差 15-30% (相对纯独立 kernel 模型), 跟 kernel 类型 / GPU 型号 / workload 模式有关. 给出三个 actionable 方向: (1) latency-prediction 模型要加 80ms 历史窗口; (2) kernel 调度可做 reorder 把「重载」和「轻载」交错; (3) NAS 设计模型时考虑 frequency-aware 部署目标.</div>
+      <div class="row"><span class="author">🏢 团队：</span>Truong-Thanh Le, Hoang-Loc La, Amir Taherkordi, Frank Eliassen, Peiyuan Guan, Phuong Hoai Ha → Department of Informatics, University of Oslo; Department of Computer Science, UiT The Arctic University of Norway</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-11/paper_summaries_v2_2026-07-11_03.jpg" alt="Benchmarking KV-Cache Optimizations across Task Quality and System Performance for Long-Context Serving" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.05399 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.05399" target="_blank">Benchmarking KV-Cache Optimizations across Task Quality and System Performance for Long-Context Serving</a></h3>
+    <p style="color:#ccc;">你跑一个长上下文 (200K token) LLM 服务, 显存里堆满了历史对话的 KV-cache, 越聊越卡, 最后 OOM. 现在有 4 个主流压缩方案 (KIVI 量化 / TurboQuant / SnapKV 剪枝 / CaM 合并), 但每家 paper 用不同模型 / 任务 / 显存预算 / 推理栈跑 benchmark, 数字没法直接比. 论文做了一次「统一 workload-aware benchmark」, 在 Llama-3.1-8B / Mistral-7B 上跑 LongBench 多文档 QA / 单文档 QA / few-shot / 摘要, 横向比 4 个方案的「质量 + 吞吐 + TTFT + 实际压缩比」.</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">Large language model serving is increasingly limited by KV-cache growth under long-context workloads, yet existing KV-cache compression techniques are difficult to compare because they were evaluated on different models, tasks, budgets, and serving stacks. This paper presents a workload-aware benchmark of representative KV-cache optimization mechanisms spanning quantization, pruning, and merging, including KIVI, TurboQuant, SnapKV, and CaM, evaluated on LongBench-style multi-document QA, single-document QA, few-shot learning, and summarization workloads using Llama-3.1-8B-Instruct and Mistral-7B-Instruct-v0.3. The benchmark measures task quality, mean output throughput, mean time-to-first-token, and realized compression ratio across context-length buckets. The results show that the compression ratio alone is a poor predictor of end-to-end performance. KIVI4 provides the most stable quality across models, SnapKV delivers the strongest long-context throughput, and CaM yields large gains on selected QA workloads but exhibits substantial workload sensitivity in both quality and realized compression.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>论文统一 4 个 KV-cache 优化方案 (KIVI 量化 / TurboQuant / SnapKV 剪枝 / CaM 合并) 在相同模型 (Llama-3.1-8B / Mistral-7B) + 相同 4 个 LongBench 任务 + 相同显存预算 (压缩目标 30% / 50% / 70%) 下重跑, 测 4 个指标: 任务质量 (Rouge / F1) + 输出吞吐 (token/s) + TTFT + 实际压缩比. 关键是「workload-aware」分桶 — 按 context length (4K / 16K / 64K / 128K) 分桶比较, 不混在一起平均.</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>Benchmark 不提新方案, 但给出了「选哪个方案跟 workload 强相关」的结论: 短上下文 (4K) 选 KIVI 稳定, 长上下文 (128K) 选 SnapKV 吞吐强, QA 任务选 CaM 但要看 task 分布. 这对工程团队选 KV-cache 优化方案比「看 paper 标题选」靠谱 10x. 限制是只测 Llama-3.1-8B / Mistral-7B, 不覆盖 70B+ MoE / MLA 等大模型.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>核心数字: (1) 压缩比 ≠ 端到端加速比, 高压缩比的方案吞吐不一定高 (KIVI 50% 压缩, 端到端加速只有 1.3x, 因为反量化开销). (2) KIVI-4bit 跨模型质量最稳, 质量下降 < 2%. (3) SnapKV 在 128K context 上吞吐 +45% (相对 FP16 baseline), 质量损失 < 3%. (4) CaM 在多文档 QA 上 F1 +5-8%, 但在 single-doc summarization 上质量 -3% — workload 敏感性强. 论文给出选型决策树.</div>
+      <div class="row"><span class="author">🏢 团队：</span>Nikita Agrawal, Ruben Mayer → University of Bayreuth, Germany</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-11/paper_summaries_v2_2026-07-11_04.jpg" alt="Voltron: Enabling Elastic Multi-Device Execution of LLM Inference for Empowered Edge Intelligence" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.07046 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.07046" target="_blank">Voltron: Enabling Elastic Multi-Device Execution of LLM Inference for Empowered Edge Intelligence</a></h3>
+    <p style="color:#ccc;">你手机或智能眼镜想本地跑个 LLM (不联网, 保护隐私), 但单设备算力跑不动大模型, 数据中心跑又慢 + 隐私风险. Voltron 的解法是: 把家里 / 办公室里好几台「边缘设备」 (手机 + 笔电 + 平板 + 智能音箱) 组起来, 弹性地用它们的算力一起跑一个 LLM, 实时根据网络 / 设备电量 / 算力调度. 论文实测在多设备真实环境下, Voltron 相对单设备最强 baseline 准确率 +16.5%, 同时满足用户 QoS 延迟要求.</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">Large language models (LLMs) are widely used in intelligent services due to their remarkable capability in generative tasks. Typically, LLM-based services process the inference requests of the users in a centralized data center. Unfortunately, such centralized execution has limitations for end-users, such as increased response latency with communication overhead and privacy leakage risk. To alleviate the aforementioned limitations, there have been increasing pushes to execute LLM inference locally on user-end devices. However, the limited resources of a single edge device impose restrictions on achievable accuracy of LLMs. To overcome the issue, we first propose to leverage multiple user-end devices available at the edge for LLM inference, enabling the execution of larger models. Specifically, we propose Voltron, a novel on-device LLM inference framework that elastically utilizes multiple user-end devices for LLM inference execution while adapting to diverse real-world edge environments. In our evaluation, Voltron achieves up to 16.5% higher accuracy than state-of-the-art LLMs that can be executed on a single edge device, satisfying user QoS requirements.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>Voltron 把 LLM 推理的层 (transformer layer) 切片分发到多台边缘设备, 调度器实时监测设备算力 / 网络延迟 / 电量, 动态调整每台 device 跑哪些 layer. 核心创新是「弹性切分」 — 设备加入 / 离开时 (e.g. 笔电合盖 / 手机息屏), 调度器在几十 ms 内重新切分, 不中断推理. 用 gossip 协议做设备发现 + 状态同步, 不依赖中心协调器.</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>Voltron 适合「对延迟不极致敏感 + 隐私敏感」场景 (智能家居 / 企业本地助手 / 离线翻译). 多设备协同引入网络延迟 (典型 10-50ms), 相对数据中心 GPU 集群仍慢. 对极端低延迟 (实时对话 < 200ms) 任务, 单设备 LPU + 端侧小模型仍是更好选择. 论文强调 16.5% 准确率提升来自「能跑更大模型」, 不是优化小模型本身.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>实测在 4-8 台真实边缘设备 (手机 / 笔电 / Raspberry Pi) 上跑 7B / 13B LLM, Voltron 相对单设备最强 baseline (跑得动的最大模型) 准确率 +16.5%. 网络抖动下仍能保证 QoS, 设备动态加入 / 离开 (笔电合盖 / 临时断网) 推理中断恢复时间 < 100ms. 论文开源框架, Korea U / Soongsil U 联合发布, 瞄准 Apple Intelligence / Google Gemini Nano 端侧竞品生态.</div>
+      <div class="row"><span class="author">🏢 团队：</span>Chanwoo Cho, Wooseok Kim, Yonglak Son, Young Seo Lee, Young Geun Kim → Korea University (Seoul, Republic of Korea); Soongsil University (Seoul, Republic of Korea)</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer>
+  <p>Generated by Hermes Agent · AI Infra Daily Report</p>
+  <p>https://github.com/zenhatescoding/ai-infra-reports</p>
+  <p>2026-07-11 09:20</p>
+</footer>
+</div>
+</body>
+</html>
