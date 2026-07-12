@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Infra 洞察日报 · 2026年7月13日 · 周一</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #0d1117; color: #e6edf3; padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; }
+header { padding: 24px 0; border-bottom: 1px solid #21262d; margin-bottom: 24px; }
+header h1 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+header .sub { color: #8b949e; font-size: 14px; }
+.stats { display: flex; gap: 24px; font-size: 14px; color: #8b949e; margin-top: 16px; }
+.stat { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 12px 18px; }
+.stat span { color: #58a6ff; font-weight: 700; font-size: 20px; margin-right: 4px; }
+.stat.biz span { color: #ffd43b; }
+.stat.paper span { color: #79c0ff; }
+h2 { font-size: 16px; color: #e6edf3; margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid #21262d; }
+.card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 0; margin-bottom: 20px; overflow: hidden; }
+.card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: #21262d; }
+.card-body { padding: 16px 20px 18px; }
+.card-meta { font-size: 12px; color: #8b949e; margin-bottom: 8px; }
+.card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; line-height: 1.4; }
+.card h3 a { color: #58a6ff; text-decoration: none; }
+.card h3 a:hover { text-decoration: underline; }
+.card p { font-size: 14px; color: #c9d1d9; line-height: 1.6; margin-bottom: 8px; }
+.card .source { color: #6e7681; font-size: 12px; margin-top: 4px; }
+.tech-block { background: #0d1117; border-radius: 8px; padding: 12px 14px; margin-top: 10px; font-size: 13px; line-height: 1.7; }
+.tech-block .row { margin-bottom: 4px; }
+.tech-block .row:last-child { margin-bottom: 0; }
+.tech { color: #79c0ff; }
+.tradeoff { color: #d2a8ff; }
+.highlight { color: #7ee787; }
+.author { color: #ffa657; }
+footer { text-align: center; padding: 32px 0; color: #6e7681; font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>🏗️ AI Infra 洞察日报</h1>
+  <div class="sub">2026年7月13日 · 周一 · 覆盖芯片 + 集群 + 光模块 + arXiv Infra 论文</div>
+  <div class="stats">
+    <div class="stat biz">🏢 <span>6</span> 条 AI Infra 公司动态</div>
+    <div class="stat paper">📄 <span>5</span> 篇 arXiv Infra 论文精读</div>
+  </div>
+</header>
+
+<section>
+<h2>🏢 AI Infra 商业新闻</h2>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-13/news_items_v2_2026-07-13_02.jpg" alt="NVIDIA Nemotron Achieves Benchmark-Leading Performance With LangChain Deep Agent" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[NVIDIA 官方] 1级信源 · cn</div>
+    <h3><a href="https://blogs.nvidia.com/blog/nemotron-langchain-agents-open-stack/" target="_blank">NVIDIA Nemotron Achieves Benchmark-Leading Performance With LangChain Deep Agent</a></h3>
+    <p style="color:#ccc;">NVIDIA Nemotron 模型配合 LangChain Deep Agent 在 agentic 推理 benchmark 上达 SOTA, 证明 NVIDIA 不只卖 GPU, 全栈 agentic 推理软件栈正在成型。</p><p style="color:#8b949e;font-size:13px;">💡 NVIDIA 这篇 7/08 Nemotron + LangChain Deep Agent 看似「模型 + agent」软件层面, 实际是「agentic 推理」的标准路径争夺。之前 NVIDIA 卖 GPU, 客户买完自己写 vLLM/SGLang/TensorRT-LLM; 现在 NVIDIA 直接下场做「agent benchmark SOTA」, 等于说「推理软件栈我自己定义」——这是把 GPU 厂商从「硬件供应商」变成「全栈 SaaS 推理平台」的拐点, 跟 7/06 NVIDIA Build in America 是同一条主线: 硬件卖给客户之外, 再让软件栈定义产品。</p>
+    <div class="source">来源：NVIDIA 官方</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-13/news_items_v2_2026-07-13_04.jpg" alt="1-5 月中国云计算设备、半导体设备出口累计同比 +114.4% / +91.5%" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[36 氪] 2级信源 · cn</div>
+    <h3><a href="https://36kr.com/newsflashes/3892797787208449" target="_blank">1-5 月中国云计算设备、半导体设备出口累计同比 +114.4% / +91.5%</a></h3>
+    <p style="color:#ccc;">中国 1-5 月云计算设备出口同比 +114.4%, 半导体设备 +91.5%, 是中国 AI Infra 算力供应链外销持续发力的硬数据, 跟 7/09 美光 2035 前 2500 亿美国投资形成「中美双向扩 capex」镜像。</p><p style="color:#8b949e;font-size:13px;">💡 中国大陆 1-5 月云计算设备出口同比 +114.4% / 半导体设备 +91.5%, 这个数字的真实信号是「中国 AI Infra 产业的 capex 主战场已经从内部自用转向出口变现」。过去谈中国 AI Infra 默认是「买 GPU 建大模型」, 现在出口数据意味着云整机 + 半导体设备两条腿同时外销——跟 7/09 美光 2035 前 2500 亿美国投资形成「中美 AI Infra 双向扩 capex」的镜像, 中美供应链脱钩但都在加速。</p>
+    <div class="source">来源：36 氪</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-13/news_items_v2_2026-07-13_00.jpg" alt="Meta plans $9.17bn gigawatt-scale data center in Alberta, Canada" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[datacenterdynamics.com] 3级信源 · cn</div>
+    <h3><a href="https://www.datacenterdynamics.com/en/news/meta-plans-917bn-gigawatt-scale-data-center-in-alberta-canada/" target="_blank">Meta plans $9.17bn gigawatt-scale data center in Alberta, Canada</a></h3>
+    <p style="color:#ccc;">Meta 计划投资 91.7 亿美元在加拿大 Alberta 建 gigawatt 级 AI 数据中心, 选址北美新能源富集区, 是其 2026 美国建 in America 之后北美扩张的又一个大动作。</p><p style="color:#8b949e;font-size:13px;">💡 Meta 这 91.7 亿砸进加拿大 Alberta, 不是简单「北美再开一个园」。Alberta 是北美少数 gigawatt 级清洁能源 + 土地 + 电网冗余全齐的州, 等于把 Meta 美国本土 gigawatt DC「复制一份跨国版」。跨境 capex 跟「新能源就近 + 电网友好」路径同时打开, 北美 AI Infra 的能源地图就从美国州际拼图扩展成北美地图——这跟 Meta 6/24 NVL72 Vera Rubin 时代「自建 capex 顶替云的运营商」一脉相承。</p>
+    <div class="source">来源：datacenterdynamics.com</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-13/news_items_v2_2026-07-13_01.jpg" alt="TeraWulf seeks $3.5bn funding for data center build-out for Anthropic" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[datacenterdynamics.com] 3级信源 · cn</div>
+    <h3><a href="https://www.datacenterdynamics.com/en/news/terawulf-seeks-35bn-in-funding-for-construction-of-data-center-for-anthropic/" target="_blank">TeraWulf seeks $3.5bn funding for data center build-out for Anthropic</a></h3>
+    <p style="color:#ccc;">比特币矿场转型 AI Infra 的 TeraWulf 寻求 35 亿美元融资, 给 Anthropic 专用建 gigawatt 级 AI 数据中心, 是 neocloud 跟 LLM 厂锁定专属算力的代表性案例。</p><p style="color:#8b949e;font-size:13px;">💡 TeraWulf 这一笔 35 亿融资, 跟一般 neocloud 不一样在于「矿场 → AI Infra 资产端」一步到位的转型。AI 训练 capex 1 GW 要 80-100 亿美元, TeraWulf 拿 35 亿只是「地皮 + 矿机厂房改 DC」那一节, 把原本波动型算力（比特币哈希率电价敏感）转成 LLM 厂可预测锁定的算力, 实际上等于是把矿电变成「Anthropic 私域 capex」, 这是 neocloud 跟 LLM 厂纵向 lock-in 的新模板。</p>
+    <div class="source">来源：datacenterdynamics.com</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-13/news_items_v2_2026-07-13_03.jpg" alt="Lightpath to provide fiber infrastructure for two new hyperscale data center campuses" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[datacenterdynamics.com] 3级信源 · cn</div>
+    <h3><a href="https://www.datacenterdynamics.com/en/news/lightpath-to-provide-fiber-infrastructure-for-two-new-hyperscale-data-center-campuses/" target="_blank">Lightpath to provide fiber infrastructure for two new hyperscale data center campuses</a></h3>
+    <p style="color:#ccc;">Lightpath 拿到两个新 hyperscale DC 园区的光纤基础设施合同, 把 dark fiber + 光互联直接接到 DC 内, 是中部美国 AI Infra 互联链路的关键补给。</p><p style="color:#8b949e;font-size:13px;">💡 Lightpath 这次拿到两个 hyperscale DC 园区的 dark fiber 合同, 关键点不是「光纤拉多长」, 而是「运营商直接成为 AI Infra 的一线供应商」。gigawatt 级园区出现后, 园区之间的 DC traffic 性质从「服务器机柜内 LAN」升级到「跨园区 metro」, 传统电信运营商突然变成 AI Infra 链路的命门——这跟 7/03 起 Lambda 收 NVIDIA Quantum-X CPO 开关、Innolight/Eoptolink 做 1.6T 同属一波「算力外延到光互联」的主线。</p>
+    <div class="source">来源：datacenterdynamics.com</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-13/news_items_v2_2026-07-13_05.jpg" alt="Scaleway acquires HPC specialist Qarnot to expand cloud platform" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[datacenterdynamics.com] 3级信源 · cn</div>
+    <h3><a href="https://www.datacenterdynamics.com/en/news/scaleway-acquires-hpc-specialist-qarnot-to-expand-cloud-platform/" target="_blank">Scaleway acquires HPC specialist Qarnot to expand cloud platform</a></h3>
+    <p style="color:#ccc;">法国云厂 Scaleway 收购 HPC 专家 Qarnot, 把 boiler room HPC 资产并入欧洲云平台, 是欧洲本土 AI Infra「收购 + 整合」路径的代表案例。</p><p style="color:#8b949e;font-size:13px;">💡 Scaleway 收购 Qarnot 的关键不是「技术融合」, 是「欧洲 AI Infra 自给路径」成型。Qarnot 的 boiler room HPC（用分布式加热锅炉房跑计算）过去主打个位特殊场景, 现在被法国本土云平台 Scaleway 整编, 等于欧洲第一次有本土云厂能用本土 HPC 资产对抗英伟达 + AWS——这条主线跟 7/09 EQT 收 Copia Power（欧洲私募 + DC 能源）「欧洲自给自足」连成一片, 欧洲 AI Infra 的去美化加速。</p>
+    <div class="source">来源：datacenterdynamics.com</div>
+  </div>
+</div>
+</section>
+
+<section>
+<h2>📄 arXiv Infra 论文深度解读</h2>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-13/paper_summaries_v2_2026-07-13_00.jpg" alt="Is Your NPU Ready for LLMs? Dissecting the Hidden Efficiency Bottlenecks in Mobile LLM Inference" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.05475 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.05475" target="_blank">Is Your NPU Ready for LLMs? Dissecting the Hidden Efficiency Bottlenecks in Mobile LLM Inference</a></h3>
+    <p style="color:#ccc;">这篇论文像「手机跑大模型的体检报告」——把 5 个主流框架 (llama.cpp / GENIE 等) 和 3 种芯片后端 (CPU / GPU / NPU) 都拉出来做对照, 还顺手发明了 PowerBench 工具, 能精确到「每次解码预填到底耗了多少电」。结果发现: NPU 在「预填」（把开头整段长文本塞进去）时跑得贼快, 但在「逐字生成」（一个字一个字往后说）时反而被 CPU 吊打——根本原因是 NPU 喜欢「大块固定形状」的运算, 而解码每次只算一点点, 拼不起来。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">We present the first comprehensive, cross-layer measurement study of mobile LLM inference, uniquely spanning five mainstream frameworks (e.g., llama.cpp, GENIE) and three hardware backends (CPU, GPU, NPU). We develop PowerBench, a fine-grained profiling tool providing the first backend-specific energy attribution. Three critical insights: (1) framework-induced performance gaps are substantially amplified on NPUs, reaching up to 10× using custom operators due to divergent offloading and quantization strategies; (2) we identify a distinct phase split where NPUs excel at compute-bound prefilling, while CPUs outperform all other backends in memory-bound decoding, driven by the NPU preference for large fixed-shape workloads conflicting with the small-kernel dynamic nature of decoding; (3) backend-specific profiling uncovers substantial scheduling headroom missed by prior device-level measurements.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>PowerBench profile tool + cross-framework (llama.cpp/GENIE/etc.) × cross-backend (CPU/GPU/NPU) measurement × 7 models × 5 frameworks × 3 backends, with backend-specific energy attribution. Decoupled prefill vs decode paths, energy decomposition, scheduling headroom analysis.</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>Profiling only mobile backends (CPU/GPU/NPU) excludes cloud accelerators (TPU/NVIDIA H100). PowerBench requires kernel-level hooks not available on all commercial NPUs. The phase split insight assumes fixed-shape decode behaviour that may shift with speculative decoding adoption.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>(1) Framework-induced gaps amplified up to 10× on NPUs vs custom operators. (2) NPUs excel at compute-bound prefilling, CPUs dominate memory-bound decoding. (3) Backend-aware scheduling yields significant headroom over device-level static allocation. Cross-layer insight: hardware-software coupling must move beyond device-level benchmarking.</div>
+      <div class="row"><span class="author">🏢 团队：</span>Guanyu Cai, Ruiming Tian, Lang Yang, Zhouhong Ren, Jinliang Yuan, Lingkun Li, Jiliang Wang → Tsinghua University + Beijing Jiaotong University</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-13/paper_summaries_v2_2026-07-13_01.jpg" alt="CTA-Pipelining: A Latency-Oriented Spatial Scaling Method for Multi-GPU Systems" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.07862 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.07862" target="_blank">CTA-Pipelining: A Latency-Oriented Spatial Scaling Method for Multi-GPU Systems</a></h3>
+    <p style="color:#ccc;">这篇论文提出了叫「CTA 流水线」的并行招式, 专治「多 GPU 共享内存, 但软件还把 GPU 当远端节点用」的低效毛病。具体来说：把 GPU 间的依赖关系拆到 Cooperative Thread Array 这个最细的并行单元上, 让不同的 GPU 在同一个时刻跑不同「接力棒」的 kernel, 而不是等前一颗 GPU 跑完下一颗才开工。实验用的是 8 卡 H200 和 B200, 在 2 层 GEMM（模拟 MLP 操作）上延迟比 micro-batching 降 31.8%, 比 Tensor Parallelism 降 29.6%。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">We introduce CTA-pipelining, an execution paradigm designed to exploit shared-memory multi-GPU systems. As a latency-oriented spatial scaling technique, CTA-pipelining leverages dependencies at the Cooperative Thread Array level, enabling concurrent execution of dependent kernels across GPUs. We demonstrate its capability using CUTLASS, cuBLAS, and NCCL libraries on 8-GPU H200 and B200 systems. Results show on 2-layer GEMM (representing the MLP operation) CTA-pipelining reduces latency by up to 31.8% compared to micro-batching, and 29.6% compared to TP. It can also be combined with TP as an orthogonal scaling dimension to further push the latency boundary.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>CTA-level dependency tracking + CUTLASS/cuBLAS/NCCL kernel modifications + shared-memory multi-GPU scheduling. Evaluated on 8-GPU NVIDIA H200 and B200 nodes. Comparison baselines: micro-batching, Tensor Parallelism (TP).</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>Requires shared-memory coherent interconnect (NVLink/NVSwitch), not applicable to cross-node multi-GPU. CTA-level dependency tracking adds implementation complexity vs standard NVSHMEM. Demo limited to 2-layer MLP GEMM; benefit magnitude on larger transformer blocks (8-16 layers) needs further study. Only evaluated on NVIDIA stack—portability to AMD/Intel shared-memory platforms unclear.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>31.8% latency reduction vs micro-batching on 2-layer MLP-GEMM. 29.6% reduction vs Tensor Parallelism. Composable with TP for further gains. Validates that shared-memory coherent interconnects (NVLink/NVSwitch) can be exploited at finer granularity than typical NVSHMEM-style distributed programming patterns.</div>
+      <div class="row"><span class="author">🏢 团队：</span>Tingkai Liu, Muralidhar Andoorveedu, Sanjoy Das, Sanjay Patel, Volodymyr Kindratenko → University of Illinois Urbana-Champaign + NVIDIA Corporation</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-13/paper_summaries_v2_2026-07-13_02.jpg" alt="GPU-Accelerated Effective Resistance Analysis for 3D IC Power Delivery Network" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.05818 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.05818" target="_blank">GPU-Accelerated Effective Resistance Analysis for 3D IC Power Delivery Network</a></h3>
+    <p style="color:#ccc;">这篇浙江大学的论文把 3D 集成电路 (3D IC) 的电源分配网络 (PDN) 设计的「电阻分析」搬上了 GPU。原本用 CPU 直接求解, 又慢又吃内存; 现在用 GPU 加速, 速度比传统方法提升 5 到 6 个数量级, 而且最大值误差和平均值误差都在可接受范围内。3D IC 是当前 Chiplet / HBM / 先进封装的关键路径, PDN 设计不过关就爆 IR Drop。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">We propose a GPU-accelerated framework for accurate effective resistance analysis on early-stage 3D IC Power Delivery Networks (PDNs). The proposed framework achieves a speedup of 5 to 6 orders of magnitude compared to the conventional direct solver, while maintaining negligible deviations in both maximum and average relative errors. The method addresses the challenge of TSV (through-silicon via) planning for reliable PDNs, where ill-planned TSVs cause unevenly distributed effective resistance and consequently severe IR drop.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>GPU-parallel sparse linear solver + effective resistance decomposition on 3D IC mesh network. Validated against direct CPU solver baseline. Tested on multiple 3D IC benchmark designs with varying TSV counts and stack configurations.</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>Effective resistance is one of several PDN metrics (IR drop, electromigration, thermal)—paper does not address multi-objective optimization. GPU memory consumption for very large 3D stacks (16+ tiers) needs verification. Industrial EDA tool integration path not specified (commercial tools use different solver paradigms).</div>
+      <div class="row"><span class="highlight">📊 效果：</span>5 to 6 orders of magnitude speedup over conventional direct solver. Negligible deviation in both maximum and average relative error. Enables early-stage TSV planning for PDNs that was previously intractable due to runtime constraints.</div>
+      <div class="row"><span class="author">🏢 团队：</span>Jingchao Hu, Cheng Zhuo, Zhou Jin → Zhejiang University, College of Integrated Circuit</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-13/paper_summaries_v2_2026-07-13_03.jpg" alt="Sangam: Efficiently Serving Diffusion LLMs with the AR Stack" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.04206 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.04206" target="_blank">Sangam: Efficiently Serving Diffusion LLMs with the AR Stack</a></h3>
+    <p style="color:#ccc;">这篇论文 (UT Austin + Cisco Research) 解决的是「Diffusion 大语言模型（dLLM）怎么在生产环境跑」。dLLM 不是传统一句一句往外蹦, 而是「一段同时蹦好几个字」, 所以 KV cache 的老办法（每次只算一个字并把之前的缓存起来）玩不转。作者发明了 Sangam 系统, 用一个「deficit token-budget scheduler」, 让正在生成的部分优先跑, 等凑够整块预算才塞进 prefilling, 还能把剩下的预算存到下一轮用。实验证明跨 PD（prefill/decode）分离场景下也能避免饿死。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">Diffusion language models (dLLMs) generate text by iteratively denoising a masked response and can commit multiple output positions per model invocation. Their bidirectional attention prevents exact autoregressive-style KV caching, since committing one position shifts the KV activations of all others. We present Sangam, a serving system for cached dLLM inference. Sangam introduces a deficit token-budget scheduler that admits in-flight decodes first, admits whole indivisible prefills only when the accumulated token budget allows, and carries unused budget forward to achieve amortized stall-free scheduling. Disaggregated serving avoids prefill-decode interference but suffers from prefill/decode resource partitioning problem; Sangam adopts hybrid serving strategy, overflowing prefills onto decode workers to relieve prefill under-provisioning, and uses the same deficit-budget scheduler to protect those workers&#x27; decodes from the overflow.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>Deficit token-budget scheduler (admit in-flight decodes first, carry unused budget forward) + disaggregated prefill/decode serving + hybrid overflow strategy (route excess prefills to decode workers) using the same scheduler for decode protection. Implemented on cached dLLM inference engine.</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>Specifically designed for cached dLLM inference—transfer to non-cached dLLM serving is not addressed. Hybrid overflow introduces decode-side prefill interference that the paper admits requires further mitigation. Deficit-budget scheduler assumes workload can be characterized a priori; highly bursty traffic may need different admission control.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>Achieves amortized stall-free scheduling under varying load. Hybrid strategy overcomes prefill/decode resource partitioning (a key bottleneck in pure disaggregated serving). Validates that AR-style serving mechanisms can be adapted to dLLMs through deficit budgeting rather than exact autoregressive compatibility.</div>
+      <div class="row"><span class="author">🏢 团队：</span>Nitin Kedia, Saurabh Agarwal, Myungjin Lee, Aditya Akella → The University of Texas at Austin + Cisco Research</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-13/paper_summaries_v2_2026-07-13_04.jpg" alt="Communication-Aware Placement and Pruning for Efficient Mixture-of-Experts Inference" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.05116 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.05116" target="_blank">Communication-Aware Placement and Pruning for Efficient Mixture-of-Experts Inference</a></h3>
+    <p style="color:#ccc;">这篇中山大学的工作解决「MoE 大模型推理时, 怎么排专家 + 删专家才不卡」。MoE 模型动辄几百个专家, 每次 forward 要把 token 路由到不同专家, GPU 之间就会因为专家分散「跑断腿」。CAP 框架做了三件事：(1) 把经常被同时激活的专家放一块儿, 减少跨 GPU / 跨节点通信; (2) 给出不同「算力 vs 通信」权衡点, 让用户挑; (3) 选不重要的专家删掉一些 routing 路径, 速度基本不掉。实验比 DeepSeek EPLB 和 vLLM 默认 placement 都快, 单节点和多节点都提升 1.23× 到 1.86×。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">We propose CAP (Communication-Aware Assignment and Pruning), a framework that considers computation, communication and accuracy together for efficient MoE inference through expert placement and pruning. Three components: (1) Co-activation driven expert placement groups frequently co-activated experts to reduce inter-device and inter-node communication; (2) Communication-computation trade-off adjustment generates placements with different computational load and communication volume; (3) Communication-aware expert pruning selectively removes routing destinations to reduce communication with limited accuracy degradation. Across single-node and multi-node experiments, CAP achieves 1.23×–1.86× throughput improvement over DeepSeek EPLB and sequential placement in vLLM, and preserves better model accuracy at the same target speedup under lossy scenarios.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>Co-activation mining from routing traces + communication-aware placement optimization + selective expert pruning with controlled accuracy loss. Implemented as a placement/pruning layer integrated with vLLM and DeepSeek EPLB. Evaluated on single-node and multi-node MoE inference across multiple model scales.</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>Co-activation mining requires offline routing trace collection; placement cannot adapt online to distribution shifts. Pruning introduces accuracy cost that may be unacceptable for high-stakes inference (medical/legal). Comparison baselines limited to DeepSeek EPLB and vLLM; not yet tested against Megatron-Core or other production MoE schedulers.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>1.23×–1.86× throughput improvement over DeepSeek EPLB and sequential placement in vLLM across single-node and multi-node settings. Better accuracy preservation at equivalent speedup under lossy pruning. Demonstrates that expert placement + pruning can be co-optimized rather than treated separately.</div>
+      <div class="row"><span class="author">🏢 团队：</span>Xiao Shi, Yingying Sun, Jiangsu Du, Zhiguang Chen, Yutong Lu → Sun Yat-sen University, Guangzhou</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer>
+  <p>Generated by Hermes Agent · AI Infra Daily Report</p>
+  <p>https://github.com/zenhatescoding/ai-infra-reports</p>
+  <p>2026-07-13 07:34</p>
+</footer>
+</div>
+</body>
+</html>
