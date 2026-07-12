@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Infra 洞察日报 · 2026年7月12日 · 周日</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #0d1117; color: #e6edf3; padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; }
+header { padding: 24px 0; border-bottom: 1px solid #21262d; margin-bottom: 24px; }
+header h1 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+header .sub { color: #8b949e; font-size: 14px; }
+.stats { display: flex; gap: 24px; font-size: 14px; color: #8b949e; margin-top: 16px; }
+.stat { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 12px 18px; }
+.stat span { color: #58a6ff; font-weight: 700; font-size: 20px; margin-right: 4px; }
+.stat.biz span { color: #ffd43b; }
+.stat.paper span { color: #79c0ff; }
+h2 { font-size: 16px; color: #e6edf3; margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid #21262d; }
+.card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 0; margin-bottom: 20px; overflow: hidden; }
+.card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: #21262d; }
+.card-body { padding: 16px 20px 18px; }
+.card-meta { font-size: 12px; color: #8b949e; margin-bottom: 8px; }
+.card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; line-height: 1.4; }
+.card h3 a { color: #58a6ff; text-decoration: none; }
+.card h3 a:hover { text-decoration: underline; }
+.card p { font-size: 14px; color: #c9d1d9; line-height: 1.6; margin-bottom: 8px; }
+.card .source { color: #6e7681; font-size: 12px; margin-top: 4px; }
+.tech-block { background: #0d1117; border-radius: 8px; padding: 12px 14px; margin-top: 10px; font-size: 13px; line-height: 1.7; }
+.tech-block .row { margin-bottom: 4px; }
+.tech-block .row:last-child { margin-bottom: 0; }
+.tech { color: #79c0ff; }
+.tradeoff { color: #d2a8ff; }
+.highlight { color: #7ee787; }
+.author { color: #ffa657; }
+footer { text-align: center; padding: 32px 0; color: #6e7681; font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>🏗️ AI Infra 洞察日报</h1>
+  <div class="sub">2026年7月12日 · 周日 · 覆盖芯片 + 集群 + 光模块 + arXiv Infra 论文</div>
+  <div class="stats">
+    <div class="stat biz">🏢 <span>6</span> 条 AI Infra 公司动态</div>
+    <div class="stat paper">📄 <span>5</span> 篇 arXiv Infra 论文精读</div>
+  </div>
+</header>
+
+<section>
+<h2>🏢 AI Infra 商业新闻</h2>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-12/news_items_v2_2026-07-12_01.jpg" alt="NVIDIA 推「Vera」最高单线程 CPU：为 agentic AI 时代重定义 CPU 关键路径" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[NVIDIA 官方] 1级信源 · cn</div>
+    <h3><a href="https://blogs.nvidia.com/blog/nvidia-vera-max-single-threaded-cpu-at-scale/" target="_blank">NVIDIA 推「Vera」最高单线程 CPU：为 agentic AI 时代重定义 CPU 关键路径</a></h3>
+    <p style="color:#ccc;">NVIDIA 提出「最高单线程性能 CPU（max single-threaded CPU at scale）」这一新品类，专为 agentic AI 时代打造的 Vera CPU。NVIDIA 的观点是：在一个 agent 系统里，CPU 才是推理、响应时延和学习的关键路径——真正执行模型指令的是 CPU，包括工具调用（tool calling）、代码执行、数据处理和 KV-cache 管理。CPU 跑工具跑得越快，agent 完成任务就越快。Vera 因此不追求堆核心数，而是把单线程峰值性能拉满，配合 Grace-Vera 一体化架构和 GPU 协同，服务于 agent 的低时延闭环。</p><p style="color:#8b949e;font-size:13px;">💡 这是 NVIDIA 把「CPU 也是 AI 基础设施一等公民」讲明白的一次定位——过去几年焦点全在 GPU 算力，但 agentic 工作负载里大量时间花在工具调用、代码执行这些 CPU 密集环节上，单线程慢就成了整条推理链的瓶颈。Vera 走「少核高频」而非「多核堆叠」的反主流路线，直接对标 agent 场景下的响应时延。这也解释了为什么 NVIDIA 在 GB200/GB300 里坚持自研 Grace/Vera CPU 而不是外购——它要把 CPU-GPU 关键路径的时延完全握在自己手里。</p>
+    <div class="source">来源：NVIDIA 官方</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-12/news_items_v2_2026-07-12_03.jpg" alt="CoreWeave × nTop：32 小时跑完 1 万次大涡模拟，提前 4 年命中 NASA CFD 2030 目标" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[CoreWeave 官方] 1级信源 · cn</div>
+    <h3><a href="https://www.coreweave.com/blog/10000-les-simulations-in-32-hours-ntop-and-coreweave-hit-nasas-cfd-2030-target" target="_blank">CoreWeave × nTop：32 小时跑完 1 万次大涡模拟，提前 4 年命中 NASA CFD 2030 目标</a></h3>
+    <p style="color:#ccc;">CoreWeave 的物理 AI 团队与工程仿真公司 nTop 合作，在 32 小时内完成了对一架无人机（UAV）机翼的 1 万次大涡模拟（Large-Eddy Simulation, LES），提前 4 年命中了 NASA「CFD 2030 愿景」里设定的一个高难度阶段目标。大涡模拟是计算流体力学里最吃算力的一类方法，要解析湍流的大尺度涡结构，传统上单次就要跑很久，1 万次批量扫参数在过去几乎不可想象。CoreWeave 提供 GPU 云算力底座，nTop 提供仿真工作流，两者结合把「设计-仿真-迭代」的周期从月级压到小时级。</p><p style="color:#8b949e;font-size:13px;">💡 这条新闻的看点是「AI 云正在吃下传统 HPC 仿真的高端负载」——大涡模拟一直是超算中心的专属领地，现在被 GPU 云用规模化并行硬啃下来，说明 neocloud 不只是跑大模型训练/推理，也能接工程仿真这类 FP64/混合精度的科学计算单子。这跟 n01 曙光8000「超智融合」是同一个趋势的两面：一边是国产超算往智算靠，一边是 AI 云往超算负载扩张。对 CoreWeave 这类专用 GPU 云来说，切入 CAE/CFD 工业仿真市场是继 AI 训练之后的第二增长曲线。</p>
+    <div class="source">来源：CoreWeave 官方</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-12/news_items_v2_2026-07-12_00.jpg" alt="中科曙光「曙光8000（登峰）」全国产 AI 超集群落成，接入全国一体化算力网" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[量子位] 2级信源 · cn</div>
+    <h3><a href="https://www.qbitai.com/2026/07/447902.html" target="_blank">中科曙光「曙光8000（登峰）」全国产 AI 超集群落成，接入全国一体化算力网</a></h3>
+    <p style="color:#ccc;">7 月 10 日郑州，中科曙光宣布全国产 AI 超级集群「曙光8000（登峰）」正式落成，并依托国家超算互联网同步接入全国一体化算力网。这套系统主打「原生超智融合」——同一套硬件既能扛住 FP64 双精度的科学计算任务，也能跑满万亿参数大模型的训练需求，直接解决当前算力中心「能跑大模型的跑不了科学计算、能跑科学计算的训不动大模型」的割裂尴尬。曙光强调网络、存储、散热、调度四大子系统都做了国产化协同设计，规模每上一个量级系统复杂度就指数翻倍，全栈自研是把复杂度压下来的关键。</p><p style="color:#8b949e;font-size:13px;">💡 这是中国首个公开宣称落成的十万卡级别全国产超集群，象征意义大于单点性能——它把 GPU、互联、存储、散热、调度全链路国产化跑通，验证了不依赖 NVIDIA/CUDA 生态也能搭起万亿参数训练底座。跟 7/04 报道的韩国政府 fab 集群、7/01 龙仁集群路线不同，曙光走的是「超算+智算融合」路线，接入国家一体化算力网意味着算力可以像水电一样跨地域调度。对国产 GPU（沐曦/寒武纪/华为昇腾）和国产互联生态是一次规模化验证机会，也给「十万卡时代」定了个可复制的系统工程样板。</p>
+    <div class="source">来源：量子位</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-12/news_items_v2_2026-07-12_04.jpg" alt="三星量产首款 PCIe 6.0 企业级 SSD PM1763：4nm 主控 + 九代 V-NAND，1.4 秒传完 70B 大模型" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=12062" target="_blank">三星量产首款 PCIe 6.0 企业级 SSD PM1763：4nm 主控 + 九代 V-NAND，1.4 秒传完 70B 大模型</a></h3>
+    <p style="color:#ccc;">三星电子 7 月 8 日宣布量产其首款基于 PCIe 6.0 的企业级固态硬盘 PM1763。这是首款把三星第九代 V-NAND 与全新 4 纳米 PCIe 6.0 主控结合的 SSD，支持 NVMe 2.1 规范，专为 AI 数据中心和服务器基础设施设计，提供 4TB / 8TB / 16TB 容量。PCIe 6.0 采用 PAM4 四电平脉冲幅度调制信号，带宽比 PCIe 5.0 翻倍。PM1763 的顺序读写性能达到前代 PM1753 的两倍，16TB 型号顺序读写速度高达 28,400 MB/s——足以在约 1.4 秒内传完一个 40GB 的大模型（以 Meta Llama 3 70B 为例）。</p><p style="color:#8b949e;font-size:13px;">💡 存储往往是 AI 基础设施里被忽视的一环，但在大模型加载、KV-cache 落盘、checkpoint 读写这些场景里，SSD 带宽直接决定 GPU 会不会「饿着」。PCIe 6.0 用 PAM4 把带宽翻倍，跟光互联走 PAM4、HBM 走高带宽是同一个信号密度升级的大方向。三星用自研 4nm 主控 + 九代 V-NAND 抢下 PCIe 6.0 企业 SSD 首发，卡位的是 AI 服务器「近存储」市场——1.4 秒传完 70B 模型意味着模型热切换、多租户按需加载的时延瓶颈被大幅压缩，对推理服务化（serving）的弹性调度是实打实的底座升级。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-12/news_items_v2_2026-07-12_05.jpg" alt="Naintech 联手 BARO AI 开发智能 CDU：热电控温 + 液冷混合，切入 AI 数据中心散热" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=12103" target="_blank">Naintech 联手 BARO AI 开发智能 CDU：热电控温 + 液冷混合，切入 AI 数据中心散热</a></h3>
+    <p style="color:#ccc;">Naintech 7 月 8 日宣布将与 BARO AI 联合开发面向 AI 数据中心的散热方案，核心是一款智能冷却液分配单元（CDU, Coolant Distribution Unit）。这款智能 CDU 负责控制供给服务器的冷却液温度和流量，通过融入 Naintech 的热电控温（thermoelectric control）技术，系统能实时探测发热区域并更高效地分配冷却资源。两家公司还计划把 Naintech 的局部散热技术与 BARO AI 的液冷 AI 服务器平台结合，商业化一套混合式散热方案。Naintech CEO 表示公司的热电方案从材料到整机全部自研，目标是成为全球 AI 数据中心市场的关键供应商。</p><p style="color:#8b949e;font-size:13px;">💡 随着单机柜功率密度冲到几十上百千瓦，散热已经从「配套」变成「限制 GPU 上架密度」的硬约束——液冷是共识，但精细化的流量/温度分配才是下一个竞争点。Naintech 的智能 CDU 用热电控温做「按发热区域动态分配冷却资源」，本质是把散热从粗放的整机柜液冷升级到「哪里热往哪里补」的闭环控制，跟 7/09 报道的韩国数据中心散热布局呼应。这也说明 AI 基础设施的价值链正在往「电、冷、网」这些配套基础设施延伸，散热供应商正在从幕后走到台前，成为 neocloud 和 hyperscaler 招标里的独立标的。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-12/news_items_v2_2026-07-12_02.jpg" alt="ASML 携手 TNO 建光子芯片试产线：6 英寸磷化铟晶圆迈向量产规模" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[bits-chips.com] 3级信源 · cn</div>
+    <h3><a href="https://bits-chips.com/article/asml-partners-with-tno-on-photonic-chip-pilot-line/" target="_blank">ASML 携手 TNO 建光子芯片试产线：6 英寸磷化铟晶圆迈向量产规模</a></h3>
+    <p style="color:#ccc;">光刻巨头 ASML 与荷兰应用科学研究组织 TNO 达成战略合作，共建 TNO 的「光子芯片试产线（Photonic Chip Pilot Line）」。ASML 将把 i-line 和 DUV 光刻设备投入这条产线，用于跟 TNO 的联合研发、共享研发以及客户演示。产线投产后将支持在 6 英寸晶圆上量产磷化铟（InP）光子芯片——6 英寸被视为工业化采用的关键规模门槛。该项目跟 PITC（光子集成技术中心）现有工作互补，TNO、埃因霍温理工大学等机构一直在推进 InP 光子集成量产化。</p><p style="color:#8b949e;font-size:13px;">💡 这是把光子芯片（硅光/InP）从实验室推向大规模制造的关键一步，直接关系到 CPO（共封装光学）和 AI 数据中心光互联的成本曲线。磷化铟是高速光收发器和激光器的核心衬底，6 英寸量产意味着 200G/lane 及以上光引擎的产能和良率有望上台阶。ASML 把成熟 DUV 光刻搬进光子试产线，等于用逻辑芯片的制造工艺经验去攻光子集成的规模化难题，跟 6/29 报道的 Wooriro「铜转光」、7/10 光互联市场 2030 飙至 390 亿美元的主线呼应——光互联供应链正从器件走向晶圆级制造。</p>
+    <div class="source">来源：bits-chips.com</div>
+  </div>
+</div>
+</section>
+
+<section>
+<h2>📄 arXiv Infra 论文深度解读</h2>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-12/paper_summaries_v2_2026-07-12_00.jpg" alt="On the Limitations of Non-GPU AI Accelerators for Large-Model Inference: A Field Study of MoE and Multimodal Serving on Huawei Ascend" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.08215 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.08215" target="_blank">On the Limitations of Non-GPU AI Accelerators for Large-Model Inference: A Field Study of MoE and Multimodal Serving on Huawei Ascend</a></h3>
+    <p style="color:#ccc;">很多人想用「非 GPU 的 AI 加速器」（比如华为昇腾）来替代 NVIDIA GPU 跑大模型，因为便宜、好买、供货稳。但真把重活儿从成熟的 CUDA 生态搬过去，到底要踩多少坑？没人写清楚过。这篇论文就是一份「搬家实录」：作者在一台 16 卡华为昇腾 910 系统上，用 CANN 软件栈和 vLLM-Ascend 引擎，实打实部署了两个大负载——一个是用 W8A8 量化的 MoE 大模型 DeepSeek-V4-Flash（约 300GB）当「AI 裁判」给二十个前沿大模型打分，另一个是约 540GB 的多模态医疗视觉-语言基准。结论很硬核：为了让这俩负载稳定跑起来，作者给厂商的推理插件打了 12 个源码级补丁，还被迫关掉好几个高吞吐特性来保数值正确性，另外加了一堆应对反复出现的设备级故障的运维保护。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">Non-GPU AI accelerators are increasingly adopted as alternatives to general-purpose GPUs for large-model inference, but the real engineering cost of migrating demanding workloads beyond CUDA remains poorly documented. We present a field study of deploying two large inference workloads on a 16-device Huawei Ascend 910 system using CANN and vLLM-Ascend: an LLM-as-a-judge safety and alignment evaluation pipeline based on a W8A8 MoE judge model, DeepSeek-V4-Flash, and a multimodal medical vision-language benchmark based on DeepSeek-V4-Flash-Vision for MMMU and MMMU-Pro. Making these workloads reliable required twelve source-level patches to the vendor inference plugin, disabling several high-throughput features to preserve numerical correctness, and adding operational safeguards for recurring device-level failures. We summarize the main platform limitations across eight categories.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>作者把两个真实生产级推理负载（W8A8 MoE 裁判模型 + 多模态视觉-语言模型）部署到 16 卡昇腾 910 集群，用 CANN + vLLM-Ascend 栈。为了跑通，对厂商推理插件打了 12 个源码级补丁，关掉部分高吞吐优化以保数值正确，并加设备级故障的运维保护。最后把观察到的平台限制归纳成 8 大类（算子覆盖不全、数值精度问题、内存管理、故障恢复等）。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>非 GPU 加速器换来的是供货和成本优势，但代价是工程迁移成本极高——12 个源码补丁 + 关高吞吐特性保正确性，意味着账面峰值算力和实际可用吞吐之间有巨大落差。对追求快速上线、依赖成熟 CUDA 算子库的团队不友好；对有强工程团队、愿意深度改栈、且对供应链自主可控有硬需求的场景（如国产化替代）才划算。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>这是一份负面为主的实测报告：为让 300GB MoE 裁判 + 540GB 多模态模型在昇腾 910 上稳定服务，需要 12 处源码补丁、禁用多项高吞吐特性、并处理反复出现的设备级故障。论文把限制系统性归纳成 8 类，为想迁移到非 GPU 加速器的团队提供了一份罕见的「真实工程成本」参照。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Zheng Yu → School of Data Science, The Chinese University of Hong Kong, Shenzhen (香港中文大学深圳)</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-12/paper_summaries_v2_2026-07-12_01.jpg" alt="BrownoutMoE: Structure-Aware Expert Grouping for Efficient and Accurate LLM Web-based Services" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.04164 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.04164" target="_blank">BrownoutMoE: Structure-Aware Expert Grouping for Efficient and Accurate LLM Web-based Services</a></h3>
+    <p style="color:#ccc;">MoE（混合专家）大模型有个「偏科」毛病：几百个专家里，只有少数几个「热门专家」处理了绝大部分请求，剩下一堆「冷门专家」几乎没人用。这就像开了 100 个窗口的银行，客人全挤在 3 个窗口前排队，另外 97 个窗口的柜员干瞪眼——GPU 算力被白白浪费。以前的系统只在「运行时」想办法（比如优化调度、通信重叠、算子融合），但从来不动专家本身的组织结构。BrownoutMoE 换了个思路：既然专家使用这么不均衡，那干脆按「结构」重新给专家分组，把冷热专家重新打包，让 GPU 的并行度用满。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">Mixture-of-Experts (MoE) large language models (LLMs) are increasingly deployed in Web-facing services, where inference must be both accurate and responsive under bursty demand. Although MoE models improve parameter efficiency through sparse expert activation, efficient MoE inference remains challenging in practice. A major reason is the highly imbalanced expert access pattern during inference: a few hot experts process most routed tokens, while many cold experts are rarely activated, leaving GPU parallelism underutilized. Existing systems mainly optimize runtime execution, such as scheduling, communication overlap, and kernel fusion, but usually preserve the original expert organization and therefore do not address the structural inefficiency caused by fragmented expert usage. We present BrownoutMoE, a structure-aware optimization framework for efficient and accurate MoE inference.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>BrownoutMoE 是「结构感知」的 MoE 推理优化框架：不改运行时调度，而是分析专家访问模式，把冷热专家做结构化重分组（expert grouping），减少碎片化的专家激活。借用电力系统「brownout（有序降载）」的思想，在负载突增时对专家做结构级别的优雅降级，既保持精度又提升 GPU 并行利用率。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>结构级重分组能显著提升 GPU 利用率，但引入了「分组策略是否匹配真实请求分布」的依赖——分组基于历史访问模式，如果线上流量分布突变（比如新任务类型涌入），分组收益会打折。相比纯运行时优化，BrownoutMoE 需要额外的离线分析和模型改造，但换来的是结构性而非补丁式的效率提升。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>针对 Web 服务场景下的突发流量，BrownoutMoE 通过结构感知的专家分组，在保持推理精度的同时显著改善了 GPU 并行利用率，解决了热门专家挤爆、冷门专家闲置导致的结构性低效。适合部署 MoE 大模型的在线服务，尤其是请求分布不均、需要在精度和响应速度间取平衡的 Web-facing 场景。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Yi Ding, Minxian Xu, Zhengxin Fang, Kejiang Ye, Chengzhong Xu → Shenzhen Institutes of Advanced Technology, CAS (中科院深圳先进院); University of Chinese Academy of Sciences; Victoria University of Wellington; State Key Lab of IoTSC, University of Macau</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-12/paper_summaries_v2_2026-07-12_02.jpg" alt="Adaptive Space-efficient Collectives for Dynamic and Unstructured Sparsity on GPU Platforms" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.04676 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.04676" target="_blank">Adaptive Space-efficient Collectives for Dynamic and Unstructured Sparsity on GPU Platforms</a></h3>
+    <p style="color:#ccc;">多卡训练大模型时，GPU 之间要频繁「对答案」——把各自算的梯度汇总（all-reduce）、分发（all-gather）等，这类操作叫「集合通信」。现在最主流的通信库 NCCL 只会按「稠密数据」传，也就是不管数据里有多少个 0，全都原样发出去。但很多 ML 数据其实特别稀疏（大部分是 0），如果能只传非 0 值，就能省下大量带宽。问题是处理稀疏数据本身有开销（格式转换、汇总时又要还原成稠密）。这篇论文设计了一套「会看数据稀不稀疏、动态调整」的集合通信算法，配一个叫 Pici 的紧凑位向量格式，专门在中等稀疏度下低开销地压缩解压。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">High-performance collective communication primitives are necessary for a variety of high performance computing (HPC) and machine learning (ML) workloads. State-of-the-art collective communication libraries such as NCCL optimize exclusively for dense data. However, when sending sparse data, we can reduce communication volume by not sending zeros. Unfortunately, explicitly handling sparsity introduces challenges such as format conversion overheads and densification during collectives that involve reductions. In this paper, we introduce sparsity-exploiting algorithms for three collectives that address these challenges: all-gather, reduce-scatter, and all-reduce. Our collective implementations are backed by a new bitvector-based format, Pici, designed for low overhead and fast (de)compression at moderate sparsities. Further, our algorithms adapt to the level of sparsity in data, modifying its representation during the course of the collective.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>论文为三种集合通信原语（all-gather、reduce-scatter、all-reduce）设计了利用稀疏性的算法，底层用新的位向量格式 Pici，做到低开销、快速压缩/解压。算法能自适应数据稀疏度，在通信过程中动态改变数据表示——稀疏时压缩传输，需要归约时再高效展开，避免了传统稀疏处理的格式转换和稠密化开销。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>只在数据「中等到高稀疏度」时才有净收益：数据太稠密时压缩/解压的开销会抵消省下的带宽。论文报告 99% 输入稀疏度下 all-gather 提速 5.25×，但低稀疏场景可能不如直接用 NCCL 稠密路径。适合稀疏梯度、稀疏 embedding、剪枝模型等场景，通用稠密训练收益有限。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 99% 输入稀疏度下，相比 NCCL，Pici 支撑的集合通信在 all-gather / reduce-scatter / all-reduce 上分别取得约 5.25×、2.5×、2.66× 的加速。算法能自适应稀疏度动态调整表示，为稀疏 ML/HPC 工作负载提供了一条比稠密 NCCL 更省带宽的多卡通信路径。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Lannie Dalton Hough, Emir Gencer, Hoffmann Muki, Abhinav Bhatele → Department of Computer Science, University of Maryland, College Park (马里兰大学学院市分校)</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-12/paper_summaries_v2_2026-07-12_03.jpg" alt="Collate: Collaborative Neural Network Learning for Latency-Critical Edge Systems" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.08013 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.08013" target="_blank">Collate: Collaborative Neural Network Learning for Latency-Critical Edge Systems</a></h3>
+    <p style="color:#ccc;">联邦学习（FL）让很多设备一起训练一个模型，各自的数据不用交出去，既扩大了训练数据又保护了隐私。但真部署到「实时边缘系统」上就有个大麻烦：各家设备性能天差地别（有的手机快、有的传感器慢），这种「设备异构」会严重拖累最后推理出来的模型效果。以前的联邦学习优化都盯着「训练效率」，却没人管「推理速度」——尤其当边缘设备有严格的时延限制时（比如必须 50ms 内出结果）。Collate 这套框架就是同时照顾多个边缘系统各自的时延要求：给每个设备量身定做模型结构，快设备用大模型、慢设备用小模型，但只用一次训练过程就能把这些不同结构的本地模型聚合起来。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">Federated Learning (FL) empowers multiple clients to collaboratively learn a model, enlarging the training data of each client for high accuracy while protecting data privacy. However, when deploying FL in real-time edge systems, the heterogeneity of devices among systems has a severe impact on the performance of the inferred model. Existing optimizations on FL focus on improving the training efficiency but fail to speed up inference, especially when there is a latency constraint. In this work, we propose Collate, a novel training framework that collaboratively learns heterogeneous models to meet the latency constraints of multiple edge systems simultaneously. We design a dynamic zeroizing-recovering method to adjust each local model architecture for high accuracy under its latency constraint. A proto-corrected federated aggregation scheme is also introduced to aggregate all heterogeneous local models.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>Collate 提出两项核心技术：(1) 动态置零-恢复（zeroizing-recovering）方法，根据每个设备的时延约束动态调整本地模型结构（临时置零部分结构以满足时延，再恢复以保精度）；(2) 原型校正的联邦聚合（proto-corrected federated aggregation），能把不同结构的异构本地模型在一次训练过程里聚合起来，同时满足各系统的时延约束。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>为满足时延约束对慢设备的模型做结构裁剪，会牺牲这些设备本地的部分精度；Collate 用原型校正聚合来补偿，但异构程度极高（设备性能差 10× 以上）时聚合难度和精度损失都会上升。相比统一模型的联邦学习，Collate 换来了对时延敏感边缘场景的适配能力，代价是训练框架和聚合逻辑更复杂。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>Collate 让多个时延约束各异的边缘系统能同时协同训练，通过动态结构调整 + 原型校正聚合，在满足各自时延约束的前提下保持了较高的推理精度，解决了传统联邦学习「只优化训练效率、不管推理时延」的痛点。适合工业物联网、制造现场等设备异构且有硬实时要求的边缘 AI 部署（HP-NTU 数字制造实验室背景）。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Shuo Huai, Di Liu, Hao Kong, Xiangzhong Luo, Weichen Liu, Ravi Subramaniam, Christian Makaya, Qian Lin → School of Computer Science and Engineering, Nanyang Technological University (南洋理工大学) & HP-NTU Digital Manufacturing Corporate Lab; HP Inc., Palo Alto</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-12/paper_summaries_v2_2026-07-12_04.jpg" alt="Direct Model State Migration for Elastic Training of Large Language Models (ETC)" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.04749 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.04749" target="_blank">Direct Model State Migration for Elastic Training of Large Language Models (ETC)</a></h3>
+    <p style="color:#ccc;">在共享 GPU 集群里训练大模型，资源是会「变来变去」的：可能你的卡突然被更高优先级任务抢走（抢占），也可能临时给你多分几张卡（扩容）。每次资源变化，模型的「并行切分方式」就得跟着改，这时候得把模型状态从旧的一组卡搬到新的一组卡上。现在的做法都靠「存 checkpoint」——先把完整状态写到硬盘，再重新读出来恢复，这就逼着所有 GPU 都停下来干等，慢的时候要等几十到几百秒。这篇论文提出 ETC，一套「免 checkpoint」的状态迁移框架：不走硬盘，直接让 GPU 之间点对点（peer-to-peer）传数据，充分利用「状态本来就在某些卡上」这个局部性，把要搬的数据量降到最低。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:13px;color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">Large language model (LLM) training shall adapt to dynamic resources in shared clusters to tackle the elasticity, including passive preemption and optimistic scaling. State migration across device sets is required when altering the hybrid-parallel configuration due to dynamic resources. Existing solutions rely on checkpoint-based mechanisms, which persist complete states to storage for resuming with re-assigned resources, forcing all GPUs to stall when transferring model states. Despite optimization efforts, checkpoint-based solutions incur prohibitive latency due to data movement across memory hierarchies. We propose ETC, a checkpoint-free state migration framework for elastic hybrid-parallel LLM training. We exploit the state locality to minimize inter-GPU data movement, replacing storage persistence with direct peer-to-peer communication. Besides, we eliminate node fragmentation.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>ETC 是「免 checkpoint」的弹性混合并行训练状态迁移框架：(1) 利用状态局部性（state locality）最小化 GPU 间数据搬运——尽量让状态留在原卡上，只搬必须搬的部分；(2) 用直接的 peer-to-peer 通信替代「写硬盘再读回」的持久化路径；(3) 用代价矩阵抽象来规划最优迁移方案，并消除节点碎片化（node fragmentation）。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>免 checkpoint 的 P2P 直传大幅降低了迁移时延，但代价是放弃了 checkpoint 天然的容错能力——迁移过程中若某张卡崩溃，没有落盘的完整快照可回滚。ETC 适合频繁弹性伸缩、抢占的共享集群（迁移频繁，时延收益大），对稳定独占集群（很少迁移、更看重容错）收益有限。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>相比 checkpoint 迁移（需几十到几百秒、所有 GPU 停等），ETC 用状态局部性 + P2P 直传把弹性训练的状态迁移时延大幅压低，避免了跨内存层级的数据搬运和全局停等，并消除了节点碎片化。为共享集群里频繁遭遇抢占/扩容的大模型训练提供了一条低停顿的弹性伸缩路径（中科院计算所 + 华为背景）。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Weijian Liu, Mingzhen Li, Rui Kang, Chen Sun, Guangming Tan, Weile Jia → SKLP, Institute of Computing Technology, CAS (中科院计算所); University of Chinese Academy of Sciences; Huawei Technologies</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer>
+  <p>Generated by Hermes Agent · AI Infra Daily Report</p>
+  <p>https://github.com/zenhatescoding/ai-infra-reports</p>
+  <p>2026-07-12 10:11</p>
+</footer>
+</div>
+</body>
+</html>
