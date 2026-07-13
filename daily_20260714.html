@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Infra 洞察日报 · 2026年7月14日 · 周二</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --base-font-size: 14px; }
+body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #0d1117; color: #e6edf3; padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; }
+header { padding: 24px 0; border-bottom: 1px solid #21262d; margin-bottom: 24px; }
+header h1 { font-size: calc(var(--base-font-size) * 1.71); font-weight: 700; margin-bottom: 8px; }
+header .sub { color: #8b949e; font-size: var(--base-font-size); }
+.stats { display: flex; gap: 24px; font-size: var(--base-font-size); color: #8b949e; margin-top: 16px; }
+.stat { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 12px 18px; }
+.stat span { color: #58a6ff; font-weight: 700; font-size: calc(var(--base-font-size) * 1.43); margin-right: 4px; }
+.stat.biz span { color: #ffd43b; }
+.stat.paper span { color: #79c0ff; }
+h2 { font-size: calc(var(--base-font-size) * 1.14); color: #e6edf3; margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid #21262d; }
+.card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 0; margin-bottom: 20px; overflow: hidden; }
+.card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: #21262d; }
+.card-body { padding: 16px 20px 18px; }
+.card-meta { font-size: calc(var(--base-font-size) * 0.86); color: #8b949e; margin-bottom: 8px; }
+.card h3 { font-size: calc(var(--base-font-size) * 1.14); font-weight: 600; margin-bottom: 8px; line-height: 1.4; }
+.card h3 a { color: #58a6ff; text-decoration: none; }
+.card h3 a:hover { text-decoration: underline; }
+.card p { font-size: var(--base-font-size); color: #c9d1d9; line-height: 1.6; margin-bottom: 8px; }
+.card .source { color: #6e7681; font-size: calc(var(--base-font-size) * 0.86); margin-top: 4px; }
+.tech-block { background: #0d1117; border-radius: 8px; padding: 12px 14px; margin-top: 10px; font-size: calc(var(--base-font-size) * 0.93); line-height: 1.7; }
+.tech-block .row { margin-bottom: 4px; }
+.tech-block .row:last-child { margin-bottom: 0; }
+.tech { color: #79c0ff; }
+.tradeoff { color: #d2a8ff; }
+.highlight { color: #7ee787; }
+.author { color: #ffa657; }
+footer { text-align: center; padding: 32px 0; color: #6e7681; font-size: calc(var(--base-font-size) * 0.86); }
+/* 7/13 升级: 字号调节 toolbar + 浮动滑块 (电脑端始终展开, 移动端折叠成按钮) */
+.font-toolbar { position: fixed; top: 16px; right: 16px; z-index: 9999; background: rgba(22, 27, 34, 0.92); backdrop-filter: blur(8px); border: 1px solid #30363d; border-radius: 10px; padding: 8px 12px; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+.font-toolbar .label { color: #8b949e; font-size: 12px; white-space: nowrap; user-select: none; }
+.font-toolbar input[type=range] { width: 110px; accent-color: #58a6ff; cursor: pointer; }
+.font-toolbar .value { color: #58a6ff; font-size: 12px; font-weight: 600; min-width: 36px; text-align: right; font-variant-numeric: tabular-nums; }
+.font-toolbar .reset { background: transparent; border: 1px solid #30363d; color: #8b949e; border-radius: 6px; padding: 2px 8px; font-size: 11px; cursor: pointer; }
+.font-toolbar .reset:hover { color: #e6edf3; border-color: #58a6ff; }
+.font-toolbar .toggle { display: none; background: #58a6ff; color: #0d1117; border: none; border-radius: 50%; width: 36px; height: 36px; font-size: 18px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+.font-toolbar .panel { display: flex; align-items: center; gap: 8px; }
+@media (max-width: 640px) { .font-toolbar { top: auto; bottom: 16px; right: 16px; padding: 0; background: transparent; border: none; box-shadow: none; backdrop-filter: none; } .font-toolbar .toggle { display: flex; align-items: center; justify-content: center; } .font-toolbar .panel { display: none; position: fixed; bottom: 60px; right: 16px; background: rgba(22, 27, 34, 0.96); backdrop-filter: blur(8px); border: 1px solid #30363d; border-radius: 10px; padding: 10px 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.4); } .font-toolbar.open .panel { display: flex; } }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+
+  <div class="sub">2026年7月14日 · 周二 · 覆盖芯片 + 集群 + 光模块 + arXiv Infra 论文</div>
+  <div class="stats">
+    <div class="stat biz">🏢 <span>6</span> 条 AI Infra 公司动态</div>
+    <div class="stat paper">📄 <span>5</span> 篇 arXiv Infra 论文精读</div>
+  </div>
+</header>
+
+<section>
+<h2>🏢 AI Infra 商业新闻</h2>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-14/news_items_v2_2026-07-14_00.jpg" alt="Samsung Wins Tesla AI5 Chip for 2nm Production" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=12216" target="_blank">Samsung Wins Tesla AI5 Chip for 2nm Production</a></h3>
+    <p style="color:#ccc;">Samsung Electronics 代工部门 7/14 完成 Tesla 下一代 AI5 自动驾驶芯片的 tape-out, 准备在 2nm 工艺节点量产。AI5 是 Tesla HW5 平台的 AI 推理核心, 承接 HW4 的 FSD 计算任务, 单芯片算力需求据传为 HW4 的 5-10 倍。Samsung Foundry 把 AI5 视为 2nm 节点第一颗 design-win, 跟 Exynos 2600 并列优先投产。</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 Samsung 用 Tesla AI5 把 2nm 节点首颗 design-win 抢到手里, 直接挑战 TSMC 在先进制程的垄断——AI5 单笔订单虽然规模不如 Apple A 系列或 NVIDIA GB300, 但「自动驾驶 + AI 推理 + 2nm」三标签叠加, 把 Samsung Foundry 的 2nm 良率与产能信号给市场。AI Infra 上, Tesla 自研 ASIC 路线 (HW5 AI5) 跟 NVIDIA Thor + 高通 Ride 同列, 车端 AI 推理正复制云端「GPU+自研 NPU」双轨格局, 车端光模块 + HBM 需求将形成第三增长极。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-14/news_items_v2_2026-07-14_01.jpg" alt="JNTC Signs TGV Glass Substrate Commercialization Agreement With TOPPAN" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=12218" target="_blank">JNTC Signs TGV Glass Substrate Commercialization Agreement With TOPPAN</a></h3>
+    <p style="color:#ccc;">韩国 JNTC 7/13 跟日本 TOPPAN Holdings 签 TGV (Through Glass Via) 玻璃基板商业化协议。TGV 玻璃基板用激光在玻璃上打微孔做垂直电气互联, 替代传统硅 TSV (Through Silicon Via), 跟 CoWoS-L / 玻璃中介层路线直接竞争。JNTC 提供 TGV 工艺, TOPPAN 提供大面积玻璃面板与印刷电路工艺, 目标 2.5D / 3D 先进封装。</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 TGV 是光模块封装路线的关键拐点——Samsung 三星电机 + SK hynix + Intel + TOPPAN 都在投玻璃基板, 跟传统 CoWoS (TSMC) 的硅中介层分庭抗礼。如果 TGV 良率追上硅 TSV, AI Infra 端的 HBM 堆叠 + 大芯片 (NVIDIA Rubin / AMD MI400) 成本结构会再下一城, Innolight / Eoptolink / Coherent 等光模块厂的玻璃基板供应链直接受益。这是 7 月第二条玻璃基板进展, 行业方向明确。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-14/news_items_v2_2026-07-14_02.jpg" alt="Nextin Wins Additional HBM Inspection Equipment Order, Expands Global Customer Base" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=12213" target="_blank">Nextin Wins Additional HBM Inspection Equipment Order, Expands Global Customer Base</a></h3>
+    <p style="color:#ccc;">韩国 Nextin 7/14 拿下新一笔 HBM 检测设备订单, 客户范围扩大, 累计 HBM 工艺检测设备订单已覆盖 SK hynix / Samsung / Micron 三家。Nextin 的 HBM 检测设备能识别堆叠 TSV 通孔缺陷 + 键合界面裂纹, 是 HBM4 12 层堆叠工艺良率提升的关键瓶颈设备。</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 HBM 12 层堆叠进入良率战关键期, 设备端的检测能力直接决定量产速度——Nextin 这单意味着 SK hynix HBM4 12 层堆叠 + Samsung HBM4E 准备进入大规模量产节奏。AI Infra 上, GB300 / GB300 NVL72 + Vera Rubin NVL4 的 HBM 配额释放速度, 直接看这类「堆叠检测」设备的出货量。光模块供应链同步, HBM 良率提升会让 CoWoS-L / TGV 中介层产能压力缓解。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-14/news_items_v2_2026-07-14_03.jpg" alt="SK hynix Expands Supplier Base for Hafnium High-k Precursors Used in DRAM" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=12207" target="_blank">SK hynix Expands Supplier Base for Hafnium High-k Precursors Used in DRAM</a></h3>
+    <p style="color:#ccc;">SK hynix 7/14 扩大 DRAM 电容工艺用的高 k 介质前驱体 (Hafnium-based high-k precursor) 供应商阵容。Hafnium 高 k 介质是 1bnm 以下 DRAM 节点 (D1b / D0a) 维持电容性能的关键材料, 之前高度依赖单一进口源。SK hynix 这次扩源是为 1bnm 以下 DRAM + HBM4 base die 量产锁材料。</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 Hafnium 高 k 前驱体的「扩源」动作看似材料小事, 实际是 SK hynix 在 DRAM 工艺节点往 1bnm 以下推进的关键信号——HBM4 base die 用 1bnm DRAM 工艺, 这条供应链备好意味着 HBM4 12 层堆叠的 base die 量产路径打通。AI Infra 角度, SK hynix HBM4 产能释放节奏直接决定 NVIDIA GB300 / Vera Rubin 的 GPU 配 HBM 配额, 同时影响 HBM4E 12 层堆叠能否跟上 AMD MI400 / 自研 ASIC 客户。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-14/news_items_v2_2026-07-14_04.jpg" alt="LS ELECTRIC, Infineon Partner to Develop DC Power Technologies for AI Data Centers" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=12204" target="_blank">LS ELECTRIC, Infineon Partner to Develop DC Power Technologies for AI Data Centers</a></h3>
+    <p style="color:#ccc;">韩国 LS ELECTRIC 7/13 宣布跟德国 Infineon Technologies 联合开发 AI 数据中心用直流 (DC) 电力技术, 重点攻 800V HVDC (High Voltage DC) 配电 + 48V 母线两级转换架构。Infineon 提供 SiC 功率半导体 + 隔离栅极驱动器, LS ELECTRIC 提供韩国本土数据中心系统集成, 目标解决 GB300 单机柜 1200W + Vera Rubin 单机柜 2300W 的电力密度瓶颈。</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 AI 数据中心供电架构从传统 400V AC 走向 800V HVDC, 是 GB300 / Rubin 这种单机柜 2000W+ 时代的硬刚需——Infineon SiC 功率器件 + LS ELECTRIC 系统集成, 跟 STMicroelectronics 跟 Schneider / Vertiv 路线直接对标, 整个 power semiconductor + DC-DC 转换器链条会复制 NVIDIA GPU 供应链的「设计锁定期长 + 配额续约」模式。AI Infra 上, power delivery 是被低估的瓶颈, 谁解决 800V HVDC 谁拿到 GB300/Rubin 时代的「电力侧」入场券。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-14/news_items_v2_2026-07-14_05.jpg" alt="Hugging Face CEO: Companies Are Done Renting Their AI Compute" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[techcrunch.com] 3级信源 · cn</div>
+    <h3><a href="https://techcrunch.com/2026/07/13/hugging-face-ceo-on-why-companies-are-done-renting-their-ai/" target="_blank">Hugging Face CEO: Companies Are Done Renting Their AI Compute</a></h3>
+    <p style="color:#ccc;">Hugging Face CEO Clem Delangue 7/13 受访表示, 企业客户正从「租赁 GPU 跑 AI」转向「自建 AI 集群跑开源模型」, 核心驱动是 (1) OpenAI / Anthropic 闭源 API 价格持续上涨, (2) 开源模型 (Llama 4 / Mistral / DeepSeek V4) 质量逼近闭源, (3) 自建集群 12-18 月 TCO 比 API 划算。HF 的企业客户咨询量 Q2 比 Q1 翻倍, Dell + Lambda + Crusoe 私有集群订单激增。</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 「Done renting AI」是 AI Infra 集群市场的根本性转折——Dell PowerEdge XE9712 + Lambda 1B senior secured credit facility (7/3) + Crusoe 200MW 数据中心扩建都在接这一波订单。HF 作为开源 AI 生态枢纽, 它的企业客户动态是 cluster 需求最直接的领先指标——Q2 订单翻倍意味着 2026 H2 企业自建 AI 集群会形成「H100 / GB200 二手 + 新 GB300 混合部署」浪潮, CoreWeave / Lambda 这种 colocation 跟 hyperscaler 之间的中间层服务商迎来最大窗口期, 但前提是能抢到 GPU 配额。</p>
+    <div class="source">来源：techcrunch.com</div>
+  </div>
+</div>
+</section>
+
+<section>
+<h2>📄 arXiv Infra 论文深度解读</h2>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-14/paper_summaries_v2_2026-07-14_00.jpg" alt="STEEL: Sparsity-Aware Fused Attention for Energy-Efficient Long-Sequence Inference on AMD XDNA NPU" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.09385 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.09385" target="_blank">STEEL: Sparsity-Aware Fused Attention for Energy-Efficient Long-Sequence Inference on AMD XDNA NPU</a></h3>
+    <p style="color:#ccc;">想象你买了个笔记本, 想让里面的 AI 助手快速处理长对话——但笔记本里那个 NPU (神经处理单元, 专为 AI 加速的小芯片) 跑长文本时会卡顿, 因为传统注意力算法没有针对 NPU 的特殊架构优化。AMD 跟 ETH 苏黎世 + 博洛尼亚大学团队做的 STEEL, 是首个开源的「针对 XDNA NPU 的 FlashAttention」实现。它把「预先读全文找关联 (prefill)」这部分重写成一种叫 dataflow 的并行执行方式, 充分利用 NPU 的空间并行 (即多计算单元同时跑); 同时针对「带因果遮罩 (causal mask, 让 AI 不能偷看未来词)」导致的负载不均, 用「感知稀疏 (sparsity-aware)」的流水线排布解决——简单说就是把不需要计算的位置跳过, 让 NPU 的工作更均衡。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:calc(var(--base-font-size) * 0.93);color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">STEEL is the first open-source FlashAttention implementation targeting XDNA-like NPUs in laptop SoCs. It introduces a dataflow formulation of prefill attention that exploits spatial parallelism and on-chip memory, plus a sparsity-aware pipeline placement that mitigates causal-mask-induced load imbalance, reducing synchronization overhead and improving utilization on the NPU array.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>Dataflow-formulated prefill attention kernel + causal-mask sparsity-aware NPU pipeline placement, exported as open-source codebase.</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>Restricted to XDNA-like NPU architecture; benefits depend on sparsity pattern of attention workload; prefill-only optimization (decode path not covered).</div>
+      <div class="row"><span class="highlight">📊 效果：</span>On XDNA NPU, STEEL reaches higher energy efficiency than cloud-offloading baseline; first open FlashAttention implementation for XDNA-like NPUs.</div>
+      <div class="row"><span class="author">🏢 团队：</span>Victor J.B. Jung, Gagandeep Singh, Joseph Melber, Kristof Denolf, Francesco Conti, Luca Benini → AMD Research and Advanced Development (RAD); ETH Zürich; University of Bologna</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-14/paper_summaries_v2_2026-07-14_01.jpg" alt="StreamDQ: Near-Memory Weight DeQuantization in Custom HBM for Scalable AI Inference Acceleration" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.08993 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.08993" target="_blank">StreamDQ: Near-Memory Weight DeQuantization in Custom HBM for Scalable AI Inference Acceleration</a></h3>
+    <p style="color:#ccc;">大模型越来越胖, 一个 700 亿参数的模型要占 140GB 显存, 通常会用「量化 (quantization)」压缩到 4-bit 或 8-bit——但还原 (dequantization) 时, GPU 的 CUDA 核心要去算, 反而成为瓶颈。SK Hynix 团队把「解量化」硬件直接做进了 HBM (高带宽内存) 的底层 (base die)——这是 HBM 内部的一个逻辑层, 跟 DRAM 堆叠分开, 原本只负责数据传输。StreamDQ 在 base die 里加了「解量化块 (Dequantization Block, DQB)」, 数据从 DRAM 出来时已经还原成 GPU 能直接用的格式, 省掉了 GPU 反复搬运 + 解码的开销。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:calc(var(--base-font-size) * 0.93);color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">StreamDQ proposes lightweight DeQuantization Blocks (DQBs) embedded in the base die of HBM stacks, enabling on-the-fly weight-only dequantization. By relocating dequantization from GPU CUDA cores to the memory subsystem, StreamDQ eliminates instruction overhead, on-chip traffic, and pipeline stalls in weight-only quantization inference workloads at cloud scale.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>Embedded DeQuantization Blocks (DQB) in HBM base die, performing inline dequantization during data transfer to GPU.</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>Custom HBM stack requires SK Hynix base-die redesign; only benefits weight-only quantization inference (not training or non-quantized models).</div>
+      <div class="row"><span class="highlight">📊 效果：</span>Reduces on-chip traffic and pipeline stalls; accelerates high-throughput large-batch LLM serving in cloud-scale inference scenarios.</div>
+      <div class="row"><span class="author">🏢 团队：</span>Minki Jeong, Daegun Yoon, Soohong Ahn, Seungyong Lee, Nameun Kang, Hyeonseok Ju, Ieryung Park, Joonseop Sim, Youngpyo Joo, Hoshik Kim → SK Hynix</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-14/paper_summaries_v2_2026-07-14_02.jpg" alt="Attention to Detail: Evaluating Energy, Performance, and Accuracy Trade-offs Across vLLM Configurations" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.09172 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.09172" target="_blank">Attention to Detail: Evaluating Energy, Performance, and Accuracy Trade-offs Across vLLM Configurations</a></h3>
+    <p style="color:#ccc;">vLLM 是现在最流行的 LLM 推理引擎, 里面有很多「开关」可以调——比如用哪种注意力算子 (PagedAttention / FlashAttention / XFormers)、要不要开启 prefix caching (记住同一段对话开头的处理结果以避免重复算)、要不要分块做 prefill (把长输入切成小段逐段处理)。法国 Lille 大学 + 阿姆斯特丹自由大学 + 波尔多大学做了 9000 次实验跑 93,600 个测量点, 看这些开关怎么影响「耗电多少」「回答多快」「答案对不对」。结论是: 注意力类型和 prefix caching 对能耗影响最大, chunked prefill 影响最小; 不同任务的最优配置差别很大, 没有「一刀切」配置。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:calc(var(--base-font-size) * 0.93);color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">A controlled study of 3 vLLM configuration options (attention kernel type, prefix caching, chunked prefill) across 5 open-weight LLMs and 5 inference tasks, totaling 9000 runs and 93600 measurements. Analyzes main effects and interactions of energy, latency, and accuracy.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>Full-factorial controlled experiment of 3 vLLM config options × 5 LLMs × 5 tasks = 9000 runs, 93600 measures.</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>Limited to 5 open-weight LLMs and 5 inference tasks; results may not generalize to larger models or production traffic patterns.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>Attention kernel type and prefix caching dominate energy/performance trade-offs; chunked prefill has marginal impact; optimal config is task-dependent.</div>
+      <div class="row"><span class="author">🏢 团队：</span>Nada Zine, Tristan Coignion, Vincenzo Stoico, Ivano Malavolta, Clément Quinton, Romain Rouvoy, Patricia Lago → Univ. Lille, CNRS, Inria, IUF; Univ. Bordeaux, CNRS, LaBRI; Vrije Universiteit Amsterdam</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-14/paper_summaries_v2_2026-07-14_03.jpg" alt="EcoKube: Simulating Carbon-Aware Scheduling Policies in Heterogeneous Edge-Cloud Environments" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.09318 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.09318" target="_blank">EcoKube: Simulating Carbon-Aware Scheduling Policies in Heterogeneous Edge-Cloud Environments</a></h3>
+    <p style="color:#ccc;">AI 训练 + 推理现在耗电惊人, 全球数据中心年用电量已超 2%。问题是: 各地电网的「碳强度 (carbon intensity)」实时不同 (风电场白天碳强度低、火电厂晚上碳强度高), 数据中心 PUE (电能使用效率) 也参差不齐, 不同地点 + 不同时间把任务调度过去能省很多碳。阿姆斯特丹大学做了 EcoKube 仿真框架, 模拟「边缘 + 云」混合环境下的碳感知调度策略——简单说就是「碳排放低的地方 + 碳强度低的时间段优先跑任务」。它跟 Kubernetes 默认调度器 + KEIDS + TOPSIS/KCSS 三个基线策略对比, 提供一致的评估环境。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:calc(var(--base-font-size) * 0.93);color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">EcoKube is a configurable simulation framework for reproducible evaluation of sustainability-aware scheduling policies in heterogeneous edge-cloud environments. It models time-varying grid carbon intensity, site PUE, and heterogeneous hardware, and is evaluated against Kubernetes default, KEIDS, and TOPSIS/KCSS baselines.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>Event-driven deterministic simulator + policy hooks + heterogeneity-aware reference policy (EcoKube).</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>Simulation-based (not production deployment); carbon models depend on grid + PUE assumptions that vary by region; does not capture dynamic hardware heterogeneity.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>Enables reproducible comparison of carbon-aware schedulers; reference policy outperforms Kubernetes default, KEIDS, TOPSIS/KCSS on synthetic batch workloads.</div>
+      <div class="row"><span class="author">🏢 团队：</span>Gonçalo Ferreira, Shashikant Ilager → University of Amsterdam</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-14/paper_summaries_v2_2026-07-14_04.jpg" alt="Accelerating GPU Inference of Large Language Models with Moderately Unstructured Sparse Weight Matrices" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.08786 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.08786" target="_blank">Accelerating GPU Inference of Large Language Models with Moderately Unstructured Sparse Weight Matrices</a></h3>
+    <p style="color:#ccc;">想给大模型「剪枝 (pruning)」——就是把不重要的权重砍掉来加速推理, 但又想保持质量, 通常只能剪掉 50% 左右的「中等稀疏度」。问题是这个程度的稀疏, 现有的 GPU 稀疏矩阵乘法 (SpMM) 内核反而跑得比稠密矩阵还慢——因为稀疏数据的存储和访问开销抵消了计算节省。新加坡国立大学 + 浙大团队设计了一种三层矩阵存储格式: (1) 稀疏 TC 层用 NVIDIA 的稀疏 Tensor Core (GPU 里专门算矩阵乘的硬件); (2) Slot-Filling 层做「差分距离压缩」+ 低开销片上解码; (3) Residual 层保证计算结果精确。它是第一个在 50% 中等稀疏度下超越稠密矩阵乘法的 GPU 实现。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:calc(var(--base-font-size) * 0.93);color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">Proposes a three-layer matrix storage format combining (i) Sparse-TC layer using NVIDIA sparse tensor cores, (ii) Slot-Filling layer with parallel differential distance compression and low-cost on-chip decoding, (iii) lightweight Residual layer ensuring correctness. Designs a SpMM kernel jointly using sparse tensor cores and CUDA cores with overlapped memory access.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>Sparse-TC + Slot-Filling + Residual three-layer storage format + SpMM kernel co-using sparse tensor cores and CUDA cores with overlapped compute-memory pipeline.</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>Limited to ~50% sparsity (higher sparsity reduces accuracy); requires NVIDIA sparse tensor core support (Hopper+); Slot-Filling decoding adds on-chip complexity.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>First GPU kernel that outperforms dense matrix multiplication at ~50% moderate unstructured sparsity for LLM inference.</div>
+      <div class="row"><span class="author">🏢 团队：</span>Tao Lu, Haoyu Wang, Zonghui Wang, Keshen Xiang, Jiaheng Zhang, Wenzhi Chen → National University of Singapore; Zhejiang University</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer>
+  <p>Generated by Hermes Agent · AI Infra Daily Report</p>
+  <p>https://github.com/zenhatescoding/ai-infra-reports</p>
+  <p>2026-07-14 07:32</p>
+</footer>
+</div>
+
+<div class="font-toolbar" id="fontToolbar" role="region" aria-label="字号调节">
+  <button class="toggle" id="fontToggle" aria-label="打开字号调节" title="字号">A</button>
+  <div class="panel">
+    <span class="label">字号</span>
+    <input type="range" id="fontSlider" min="12" max="22" step="0.5" value="14" aria-label="字号滑块" />
+    <span class="value" id="fontValue">14px</span>
+    <button class="reset" id="fontReset" aria-label="重置字号" title="重置 14px">↺</button>
+  </div>
+</div>
+<script>
+(function() {
+  const STORAGE_KEY = "ai-infra-font-scale";
+  const DEFAULT_SIZE = 14;
+  const toolbar = document.getElementById("fontToolbar");
+  const toggle = document.getElementById("fontToggle");
+  const slider = document.getElementById("fontSlider");
+  const valueEl = document.getElementById("fontValue");
+  const resetBtn = document.getElementById("fontReset");
+  if (!toolbar || !slider) return;
+  function apply(size) {
+    const v = Math.max(12, Math.min(22, parseFloat(size) || DEFAULT_SIZE));
+    document.documentElement.style.setProperty("--base-font-size", v + "px");
+    slider.value = v;
+    valueEl.textContent = v + "px";
+  }
+  function save(size) { try { localStorage.setItem(STORAGE_KEY, String(size)); } catch (e) {} }
+  function load() { try { const v = localStorage.getItem(STORAGE_KEY); return v ? parseFloat(v) : DEFAULT_SIZE; } catch (e) { return DEFAULT_SIZE; } }
+  apply(load());
+  slider.addEventListener("input", function() { const v = parseFloat(slider.value); apply(v); save(v); });
+  resetBtn.addEventListener("click", function() { apply(DEFAULT_SIZE); save(DEFAULT_SIZE); });
+  toggle.addEventListener("click", function(e) { e.stopPropagation(); toolbar.classList.toggle("open"); });
+  document.addEventListener("click", function(e) { if (window.innerWidth <= 640 && toolbar.classList.contains("open") && !toolbar.contains(e.target)) toolbar.classList.remove("open"); });
+  window.addEventListener("storage", function(e) { if (e.key === STORAGE_KEY && e.newValue) apply(parseFloat(e.newValue)); });
+})();
+</script>
+</body>
+</html>
