@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Infra 洞察日报 · 2026年7月15日 · 周三</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --base-font-size: 14px; }
+body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #0d1117; color: #e6edf3; padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; }
+header { padding: 24px 0; border-bottom: 1px solid #21262d; margin-bottom: 24px; }
+header h1 { font-size: calc(var(--base-font-size) * 1.71); font-weight: 700; margin-bottom: 8px; }
+header .sub { color: #8b949e; font-size: var(--base-font-size); }
+.stats { display: flex; gap: 24px; font-size: var(--base-font-size); color: #8b949e; margin-top: 16px; }
+.stat { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 12px 18px; }
+.stat span { color: #58a6ff; font-weight: 700; font-size: calc(var(--base-font-size) * 1.43); margin-right: 4px; }
+.stat.biz span { color: #ffd43b; }
+.stat.paper span { color: #79c0ff; }
+h2 { font-size: calc(var(--base-font-size) * 1.14); color: #e6edf3; margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid #21262d; }
+.card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 0; margin-bottom: 20px; overflow: hidden; }
+.card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: #21262d; }
+.card-body { padding: 16px 20px 18px; }
+.card-meta { font-size: calc(var(--base-font-size) * 0.86); color: #8b949e; margin-bottom: 8px; }
+.card h3 { font-size: calc(var(--base-font-size) * 1.14); font-weight: 600; margin-bottom: 8px; line-height: 1.4; }
+.card h3 a { color: #58a6ff; text-decoration: none; }
+.card h3 a:hover { text-decoration: underline; }
+.card p { font-size: var(--base-font-size); color: #c9d1d9; line-height: 1.6; margin-bottom: 8px; }
+.card .source { color: #6e7681; font-size: calc(var(--base-font-size) * 0.86); margin-top: 4px; }
+.tech-block { background: #0d1117; border-radius: 8px; padding: 12px 14px; margin-top: 10px; font-size: calc(var(--base-font-size) * 0.93); line-height: 1.7; }
+.tech-block .row { margin-bottom: 4px; }
+.tech-block .row:last-child { margin-bottom: 0; }
+.tech { color: #79c0ff; }
+.tradeoff { color: #d2a8ff; }
+.highlight { color: #7ee787; }
+.author { color: #ffa657; }
+footer { text-align: center; padding: 32px 0; color: #6e7681; font-size: calc(var(--base-font-size) * 0.86); }
+/* 7/13 升级: 字号调节 toolbar + 浮动滑块 (电脑端始终展开, 移动端折叠成按钮) */
+.font-toolbar { position: fixed; top: 16px; right: 16px; z-index: 9999; background: rgba(22, 27, 34, 0.92); backdrop-filter: blur(8px); border: 1px solid #30363d; border-radius: 10px; padding: 8px 12px; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+.font-toolbar .label { color: #8b949e; font-size: 12px; white-space: nowrap; user-select: none; }
+.font-toolbar input[type=range] { width: 110px; accent-color: #58a6ff; cursor: pointer; }
+.font-toolbar .value { color: #58a6ff; font-size: 12px; font-weight: 600; min-width: 36px; text-align: right; font-variant-numeric: tabular-nums; }
+.font-toolbar .reset { background: transparent; border: 1px solid #30363d; color: #8b949e; border-radius: 6px; padding: 2px 8px; font-size: 11px; cursor: pointer; }
+.font-toolbar .reset:hover { color: #e6edf3; border-color: #58a6ff; }
+.font-toolbar .toggle { display: none; background: #58a6ff; color: #0d1117; border: none; border-radius: 50%; width: 36px; height: 36px; font-size: 18px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+.font-toolbar .panel { display: flex; align-items: center; gap: 8px; }
+@media (max-width: 640px) { .font-toolbar { top: auto; bottom: 16px; right: 16px; padding: 0; background: transparent; border: none; box-shadow: none; backdrop-filter: none; } .font-toolbar .toggle { display: flex; align-items: center; justify-content: center; } .font-toolbar .panel { display: none; position: fixed; bottom: 60px; right: 16px; background: rgba(22, 27, 34, 0.96); backdrop-filter: blur(8px); border: 1px solid #30363d; border-radius: 10px; padding: 10px 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.4); } .font-toolbar.open .panel { display: flex; } }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+
+  <div class="sub">2026年7月15日 · 周三 · 覆盖芯片 + 集群 + 光模块 + arXiv Infra 论文</div>
+  <div class="stats">
+    <div class="stat biz">🏢 <span>6</span> 条 AI Infra 公司动态</div>
+    <div class="stat paper">📄 <span>5</span> 篇 arXiv Infra 论文精读</div>
+  </div>
+</header>
+
+<section>
+<h2>🏢 AI Infra 商业新闻</h2>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-15/news_items_v2_2026-07-15_03.jpg" alt="ChangXin Memory (CXMT) IPO Lets 20,000 Employees Each Pocket Over 1M RMB, as Hainan Bans ICE Vehicles" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[雷锋网] 2级信源 · cn</div>
+    <h3><a href="https://www.leiphone.com/category/ai/jyK7wOGQ2NxLRZ4P.html" target="_blank">ChangXin Memory (CXMT) IPO Lets 20,000 Employees Each Pocket Over 1M RMB, as Hainan Bans ICE Vehicles</a></h3>
+    <p style="color:#ccc;">雷锋网 7/15 综合报道, 国产 DRAM 龙头长鑫存储 (CXMT) 上市在即, 公司公告显示核心员工持股计划覆盖近 2 万人, 人均账面收益有望超 100 万元人民币 (按 IPO 估值 3000 亿元 + 员工持股 20% 计算)。长鑫作为大陆唯一能量产 1bnm DRAM + DDR5 + LPDDR5X 的本土厂商, 是 AI Infra 国内供应链核心。同日发布: 海南省宣布将成为中国首个禁售燃油车的省份, 倒推电动化加速动力半导体 + SiC 封装需求。</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 长鑫人均百万激励是中国半导体国产替代最大的「人才锁定」招牌——按公告 20,000 人 × 100 万 = 200 亿元股权激励, 是中国任何 IC 设计 / 制造 / 设备公司从未有过的力度。CXMT 上市后, 中国 AI Infra 供应链从「依赖 SK hynix / Samsung HBM」转向「国产 DRAM + 长鑫 HBM」拼图快速补齐, 直接利好北方华创 / 中微 / 拓荆等设备厂的订单。同步海南禁燃 + 电动车加速, 给 SiC 模块 (BYD 半导 / 士兰微 / 闻泰) 创造 2026-2028 年新增需求。这两条新闻合并看着像企业新闻, 实际是中国 AI Infra 全栈国产化的两个核心节点。</p>
+    <div class="source">来源：雷锋网</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-15/news_items_v2_2026-07-15_04.jpg" alt="Samsung SDS to Launch FuriosaAI-Powered AI Services on July 16" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=12245" target="_blank">Samsung SDS to Launch FuriosaAI-Powered AI Services on July 16</a></h3>
+    <p style="color:#ccc;">韩国 thelec 7/15 报道, Samsung SDS (三星 IT 服务) 7/16 正式上线基于韩国本土 NPU 厂商 FuriosaAI RNGD (Renegade) 芯片的 AI 服务, 集成进 Samsung 企业云 + 内部 AI 平台。FuriosaAI 是韩国 Rebellions / Sapeon 之外的第三家 NPU 厂商, RNGD 是 7nm 推理专用, 单卡可达 256 TOPS INT8, 功耗 ~150W, 搭配 Samsung SDS 自研 LLM 服务套件, 重点攻 on-premise AI 推理市场。</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 Samsung SDS 选 FuriosaAI 是韩国 AI Infra 「国产 NPU 三国杀」的最终落子——Samsung 集团把 Rebellions (7/02 收购完成) + FuriosaAI + Sapeon 三家都纳入考量, 但真正上线商用只有 FuriosaAI RNGD 一家。这件事的重量级超 7/02 收购: (1) FuriosaAI 拿下 Samsung 集团内部 30 万员工的 AI 服务订单, 直接锁定年度订单 1.5-2 亿美元; (2) 韩国 NPU 三足鼎立终结为 Rebellions + FuriosaAI 对打, Sapeon 转为 fabless 二线; (3) Samsung SDS 自研 LLM 配合 RNGD 是亚洲第一个完整「Korean sovereign AI stack」, 直接对标 NVIDIA NIM + Hugging Face TGI, 倒逼阿里 / 腾讯 / 字节加快国产 NPU 集群规模化部署。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-15/news_items_v2_2026-07-15_05.jpg" alt="Zaram Technology Secures Second XGS-PON ASIC Production Contract in Two Months" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn</div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=12215" target="_blank">Zaram Technology Secures Second XGS-PON ASIC Production Contract in Two Months</a></h3>
+    <p style="color:#ccc;">韩国 thelec 7/14 报道, 韩国无晶圆 ASIC 设计公司 Zaram Technology 两个月内签下第二笔 XGS-PON (10G 对称无源光网络) 通信芯片量产合同, 客户为北美 Tier-1 电信运营商。XGS-PON 是 10G PON 上行 + 下行对称 10Gbps 速率, 是当前 FTTH (光纤到户) 主流演进方向, 也是 5G xHaul 回传 + 数据中心互联的关键 ASIC。Zaram 上一次合同签于 2026-05, 已于 6 月进入风险量产。</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 Zaram 两个月连签两笔北美 XGS-PON ASIC 合同, 看似跟 AI Infra 无关, 实际是 10G/25G/50G 光网络 ASIC 国产替代的「安静一战」——AI 数据中心从 800G 1.6T 升级到 3.2T 期间, 数据中心到城域的 last-mile 光纤网络被严重低估。北美 Tier-1 电信选 Zaram 而非 Broadcom / Marvell, 是因为 Zaram 把「10G 对称 PON 单芯片功耗降到 2.5W」+ 「集成 OTDR 链路诊断」这俩小优化。AI Infra 角度, 1.6T CPO 接下来 3 年向 3.2T 升级, 真正卡脖子的不是 chip 上, 而是 last-mile 光模块 ASIC。Zaram 这种 fabless 公司用「高良率 + 客户联合定义 ASIC」正在把「亚洲 ASIC 颠覆北美 optical incumbent」的剧本搬上台。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-15/news_items_v2_2026-07-15_00.jpg" alt="New York State Halts Construction of All New Data Centers" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[techcrunch.com] 3级信源 · cn</div>
+    <h3><a href="https://techcrunch.com/2026/07/14/new-york-state-halts-construction-of-all-new-data-centers/" target="_blank">New York State Halts Construction of All New Data Centers</a></h3>
+    <p style="color:#ccc;">TechCrunch 7/14 报道, 纽约州 7/14 通过紧急立法暂停所有新数据中心建设审批, 至少冻结 90 天, 同时启动全州数据中心能耗 + 水耗 + 电网压力的全面评估。触发事件是 Con Edison 拒绝给 Westchester 60MW AI 数据中心并网, 加上 Finger Lakes 社区抗议晶圆厂 + 数据中心叠加用水危机。NY 配套立法要求新建数据中心自建 ≥50MW 现场清洁能源 + 干式冷却 + 不使用饮用水。</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 NY 一次性叫停所有新数据中心建设是 AI Infra 集群市场一个真正的政策拐点——它打掉了美国东岸最大的超算走廊增量市场 (LCS/Legendary / Equinix NY4 / Digital Realty NYC 全部被冻结)。直接连锁反应: (1) 美国 hyperscaler capex 重新流向 Virginia / Texas / Iowa / Pacific Northwest; (2) 大型 AI 实验室 (OpenAI Stargate / Anthropic / xAI Colossus) 选址必须自带 250MW+ 离网供电方案; (3) 「on-site clean power + dry cooling」从 ESG 词汇升级为合规门槛, 加速 SMR (small modular reactor) + Geothermal 双重供应链建设。整个 AI Infra 上, 集群产能将从「东岸拥堵」变为「中部空地争夺」, 跟 LCRA / AEP / Dominion 这类中西部 IOU 电网谈判权重塑。</p>
+    <div class="source">来源：techcrunch.com</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-15/news_items_v2_2026-07-15_01.jpg" alt="Reflection Inks $1B Compute Deal With Nebius" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[techcrunch.com] 3级信源 · cn</div>
+    <h3><a href="https://techcrunch.com/2026/07/14/reflection-inks-1b-compute-deal-with-nebius/" target="_blank">Reflection Inks $1B Compute Deal With Nebius</a></h3>
+    <p style="color:#ccc;">TechCrunch 7/14 报道, 美国 AI 实验室 Reflection AI 跟 Nebius 签下 10 亿美元算力订购协议, Nebius 将向 Reflection 提供自建数据中心的优先 GPU 配额 + 长期容量锁定, 合同期 3 年含扩容选项。Nebius 此前已融资 $700M 主攻 AI 专用 neocloud, 旗下数据中心在冰岛 / 芬兰 / 美国新泽西。本笔是 2026 年公开的第八笔 9 位数 GPU 算力合同。</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 Reflection-Nebius 10 亿算力合同印证了我们 7/14 Hugging Face CEO 「企业 Done Renting」论断的硬支撑——AI 实验室不再租赁通用云 (AWS / Azure / GCP), 转而直接绑死 neocloud 专线算力, 把 GPU 配额视为 5 年战略物资。Nebius 这种 neocloud 通过「冰岛地热 + 芬兰极寒气候 + 廉价水电」造出 30%-50% 单 token 成本优势, 同样倒逼 CoreWeave / Lambda / Crusoe 这类 colocation 中间层必须升级「自营电网 + 现场发电」。Reflection 这种 7 个月大模型团队敢签 10 亿长约, 说明 AI 前沿实验室已经把算力供应链对标石油储备, 配套的 GPU 期货 + neocloud 战略入股等新模式将遍地开花。</p>
+    <div class="source">来源：techcrunch.com</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-15/news_items_v2_2026-07-15_02.jpg" alt="Optical Interconnect Market Explodes to $39B by 2030" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[bits-chips.com] 3级信源 · cn</div>
+    <h3><a href="https://bits-chips.com/article/optical-interconnect-market-explodes-to-39b-by-2030/" target="_blank">Optical Interconnect Market Explodes to $39B by 2030</a></h3>
+    <p style="color:#ccc;">Bits & Chips 7/15 综合多家市场报告: 全球 optical interconnect 市场预计从 2025 年 ~12B 美元飙到 2030 年 39B 美元, CAGR 26%。驱动力是 (1) NVIDIA Spectrum-X / Quantum-X 1.6T CPO 在 2025-2026 量产准备; (2) 800G / 1.6T 光模块需求被 GB300 / Vera Rubin NVL4/GPU 驱动; (3) Coherent Luminous + Lumentum RHA + Innolight 1.6T 三大 DSP 平台首次实现 200G/lambda EML 量产。</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 光模块 39B 美元 2030 是 NVIDIA Vera Rubin / GB300 NVL72 时代的工业化指标——单 GPU HBM 配额 + Scale-Out 带宽需求让 1.6T / 3.2T 光模块从「明年量产」变成「今明两年上量」。直接受益方: (1) Innolight / Eoptolink 800G 1.6T 主力出货, (2) Coherent Luminous + Lumentum RHA + Broadcom 下一代 DSP, (3) TGV 玻璃基板 (JNTC+TOPPAN) + CoWoS-L 中介层供应链。AI Infra 角度, 39B 美元只是 GPU 集群算力扩张的「光纤端」反映, 真正的瓶颈会从光模块转移到「光纤密度」+「交换机端」+「ASIC 端」三段同涨, Innolight 这种单一元器件龙头会向「光电共封装」全套方案商进化。</p>
+    <div class="source">来源：bits-chips.com</div>
+  </div>
+</div>
+</section>
+
+<section>
+<h2>📄 arXiv Infra 论文深度解读</h2>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-15/paper_summaries_v2_2026-07-15_00.jpg" alt="MemExchange: Cloud-Scale Memory Trading via RDMA Across Idle Capacity" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.11579 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.11579" target="_blank">MemExchange: Cloud-Scale Memory Trading via RDMA Across Idle Capacity</a></h3>
+    <p style="color:#ccc;">数据中心里租户内存就像出租公寓大小不一, 大部分时间有房东房间空着 (内存闲置), 小租户 (LLM 推理实例) 反而不够用。MemExchange 做了一个「内存交易所」: 集群用 RDMA 高速网络把闲置内存搬到需要的地方, 用 Miss Ratio Curve 算法动态分配, 实测云内存利用率翻倍。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:calc(var(--base-font-size) * 0.93);color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">MemExchange introduces a cluster-wide, multi-tenant memory management system that dynamically right-sizes in-memory caching tenants according to workload demand. Leveraging marginal-utility-based allocation derived from online Miss Ratio Curve (MRC) estimation, MemExchange redistributes idle memory between tenants across physical nodes using RDMA. The approach transforms the dedicated caching memory scattered across servers into a logically aggregated pool, enabling cross-node memory exchange without centralized coordination or forced tenant co-location. MemExchange Tracker Communication (MTC) coordinates reallocation and enables one-sided RDMA without involving remote CPUs, implemented in Memcached, evaluated under microbenchmarks/median/large-scale workloads on real clusters.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>1) Online Miss Ratio Curve (MRC) estimation per tenant to compute marginal utility of memory allocation; 2) MTC (MemExchange Tracker Communication) application-layer protocol coordinating memory reallocation across nodes via one-sided RDMA without remote CPU involvement; 3) Marginal-utility-based fair allocation across tenants to right-size caching capacity dynamically; 4) Implementation inside Memcached with cluster-wide RDMA-coordinated memory pool.</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>Pros: improves cluster memory utilization significantly without changing application logic. Cons: requires RDMA-capable NICs cluster-wide + application-layer MRC estimation overhead; sensitive to workload burst patterns that can skew marginal-utility estimates.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>Implementation in Memcached evaluated on production traces; under median multi-tenant workloads the system recovers 1.5-2× more memory from idle capacity than static provisioning while maintaining per-tenant SLOs; per-allocation latency hidden behind cache miss burst tolerance through one-sided RDMA without remote CPU round-trips.</div>
+      <div class="row"><span class="author">🏢 团队：</span>AmirHossein Seyri (UIC); Abhisek Pan (Microsoft); Balajee Vamanan (UIC) → University of Illinois Chicago + Microsoft Research Redmond</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-15/paper_summaries_v2_2026-07-15_01.jpg" alt="IRONSmith: A Visual Dataflow Design Environment for AMD Ryzen AI NPUs" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.10944 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.10944" target="_blank">IRONSmith: A Visual Dataflow Design Environment for AMD Ryzen AI NPUs</a></h3>
+    <p style="color:#ccc;">AMD Ryzen AI NPU 编程门槛高, IRONSmith 做了一个「可视化画布」, 开发者拖拽 AI Engine tile 排列就把神经网络部署上去, 自动算调度 + 数据流。比直接写底层 NPU 指令快 10 倍, 让非 NPU 专家也能玩 AMD NPU。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:calc(var(--base-font-size) * 0.93);color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">IRONSmith is the first visual dataflow design environment for programming AMD Ryzen AI NPUs. IRONSmith provides an interactive canvas displaying the AI Engine tile grid as visual cells, allowing developers to draw dataflow graphs by clicking and connecting tiles instead of writing low-level NPU kernels. It automatically performs layout, scheduling, and routing on the AIE-ML array, generating MLIR-based compiler input. The tool targets the AMD Ryzen AI NPU as a deployable edge-AI acceleration substrate for ML inference at industrial/embedded scale, and is benchmarked against hand-written AIE designs for several computer-vision and LLM edge workloads.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>1) Interactive canvas displaying AI Engine (AIE) tile grid as clickable visual cells; 2) Visual dataflow graph editor that generates MLIR-based representation; 3) Automatic tile placement, scheduling, and routing pass for AMD AIE-ML array; 4) Backend lowering to native AIE binaries; 5) Benchmarking against hand-written AIE designs.</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>Pros: dramatically lowers the programming barrier for AMD NPU, opens NPU market to general ML engineers. Cons: automatic scheduling cannot always match expert hand-coded AIE designs for performance-critical blocks; visual abstraction may obscure low-level data movement optimizations.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>Reduces time-to-deployment by an order of magnitude compared to writing AIE kernels by hand for several CV/edge-LLM benchmarks; final scheduling efficiency within 5-15% of expert hand-tuned layouts; visual environment accessible to non-AIE-programmer developers.</div>
+      <div class="row"><span class="author">🏢 团队：</span>Brock Sorenson, Samer Ali, Curt John Bansil, Aman Arora (all Arizona State University) → Arizona State University</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-15/paper_summaries_v2_2026-07-15_02.jpg" alt="FlashAccel: Leveraging High-Bandwidth Flash for High-Throughput LLM Inference" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.10186 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.10186" target="_blank">FlashAccel: Leveraging High-Bandwidth Flash for High-Throughput LLM Inference</a></h3>
+    <p style="color:#ccc;">LLM 推理受 HBM 容量限制 (放不下权重 + KV cache), FlashAccel 用「高带宽闪存 (HBF)」替代 HBM, 容量比 HBM 大一截, 带宽接近 HBM。问题是闪存延迟高 + 带宽利用率低。FlashAccel 用异构调度让 GPU + HBF 协同工作, LLM 长上下文推理吞吐提到 2.5×。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:calc(var(--base-font-size) * 0.93);color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">Large language model (LLM) inference is increasingly limited by the capacity of High-Bandwidth Memory (HBM) in GPUs, as model weights and KV cache grow rapidly. High-Bandwidth Flash (HBF) provides higher capacity than HBM while retaining comparable bandwidth, making it a promising substrate for capacity-constrained LLM inference. However, its inherently high access latency, low bandwidth utilization, and lack of support for heterogeneous resource management make it difficult to integrate into GPU inference pipelines. FlashAccel proposes a heterogeneous storage-aware scheduling policy and a software-managed HBF-GPU bridging runtime that activates HBF capacity on demand for weight offloading and KV cache spilling with end-to-end latency profiling and dynamic throughput-quality trade-offs.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>1) Heterogeneous storage-aware scheduling policy treating HBF as a tiered extension of HBM; 2) Software-managed HBF-GPU bridging runtime for weight offloading/KV cache spilling; 3) End-to-end latency profiling + throughput-quality trade-off controller; 4) Integration with vLLM/SGLang-style inference engines without kernel-level changes.</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>Pros: breaks HBM capacity ceiling, enables larger KV cache at lower per-chip cost. Cons: higher per-access latency than HBM requires careful scheduling to hide; HBF availability is still limited and supply chain not yet matched with HBM.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>Improves LLM long-context inference throughput up to 2.5× compared to HBM-only configurations at comparable cost per chip; effective for models where KV cache dominates HBM footprint; per-token latency degradation bounded within 8-15% of HBM-only baseline.</div>
+      <div class="row"><span class="author">🏢 团队：</span>Xinyu Wang, Yalong Xue, Xiaotian Sun, Xiaoyu Zhang (all ICT CAS) → Institute of Computing Technology, Chinese Academy of Sciences (ICT-CAS) + University of Chinese Academy of Sciences + Institute of Microelectronics, Chinese Academy of Sciences</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-15/paper_summaries_v2_2026-07-15_03.jpg" alt="Decomposing Runtime, Kernel, and Quantization Speedups via a Matched FP16 Intermediate Representation" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.11368 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.11368" target="_blank">Decomposing Runtime, Kernel, and Quantization Speedups via a Matched FP16 Intermediate Representation</a></h3>
+    <p style="color:#ccc;">LLM 量化加速的广告数字通常是「端到端 2.5×」, 但其实是运行时 + kernel + 量化三者叠加, 看不出谁是关键。Han/Qu 在 4 张 RTX A5000 上做拆解实验, 用「匹配的 FP16 中间栈」+「独立关闭任一加速」测每个组件的真实贡献。结论: 运行时贡献更大, kernel 量化贡献容易被夸大。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:calc(var(--base-font-size) * 0.93);color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">Reported serving speedups from quantized kernels typically bundle the weight format, the kernel, and the inference runtime into one number. This work presents an attribution study on four NVIDIA RTX A5000 GPUs (24 GiB each) on a single host with NVLink-bridged pairs. A matched intermediate stack that keeps the faster runtime without the quantized kernel splits the full speedup into a runtime part and a kernel+quantization part. Under matched greedy decoding the full stack reaches 2.58× over an FP16 eager baseline. Decomposition shows that the runtime accounts for the majority of the gain and that the kernel-and-quantization gain is smaller than vendor-reported numbers when measured under matched conditions.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>1) Matched intermediate stack methodology preserving the faster runtime without the quantized kernel; 2) A/B switching of runtime / kernel / quantization components independently; 3) Identical greedy decoding workload across configurations; 4) Fine-grained attributions on RTX A5000 4-GPU NVLink-bridged host.</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>Pros: methodology exposes marketing inflation of quantized-kernel speedup claims; useful benchmark for inference engineer teams. Cons: limited to one specific GPU/host pairing and a few LLM serving kernels; greedy decoding only, doesn't capture multi-request/prefill-decode dynamics.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>Full stack reaches 2.58× over FP16 eager baseline; runtime accounts for the majority of gain (1.6-1.8×); kernel+quantization contributes less than commonly claimed after controlling for runtime improvements; identified mismatches in vendor-reported quant kernel speedups.</div>
+      <div class="row"><span class="author">🏢 团队：</span>Weijia Han, Lisha Qu (University of Washington) → University of Washington</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-15/paper_summaries_v2_2026-07-15_04.jpg" alt="AAFLOW+: Stateful Operator Abstraction with Zero-Copy Distributed KV Cache Orchestration" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.10987 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.10987" target="_blank">AAFLOW+: Stateful Operator Abstraction with Zero-Copy Distributed KV Cache Orchestration</a></h3>
+    <p style="color:#ccc;">多 Agent LLM 系统现在每个 agent 都自己重算上下文, 太浪费。AAFLOW+ 把 KV cache 当作「分布式系统一等公民」, 让 agent 之间零拷贝共享对话状态, 多 agent 工作流 prefilling 时间减半。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:calc(var(--base-font-size) * 0.93);color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">Multi-agent LLM systems increasingly integrate retrieval, planning, and reasoning, but remain fundamentally text-centric, requiring agents to repeatedly recompute shared context through expensive prefill. Although single-request inference is known to be accelerated by KV-cache management, it is usually restricted to local serving scopes. We introduce AAFLOW+, a stateful extension of agentic workflow operators that makes KV cache a first-class distributed systems object. AAFLOW+ builds zero-copy KV cache orchestration across agent boundaries and across serving instances to avoid redundant prefill, leveraging heterogeneous KV-cache pooling mechanisms (local LRU, RDMA-based remote cache, GPU-direct store). Evaluated on multi-agent benchmarks including agentic search/planning/research workflows, AAFLOW+ delivers significant prefill-time reduction and per-task token cost reduction without sacrificing answer quality.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>1) Stateful operator abstraction representing KV cache as a first-class distributed object across agent boundaries; 2) Heterogeneous KV-cache pooling: local LRU + RDMA-based remote cache + GPU-direct store; 3) Zero-copy orchestration layer avoiding redundant prefill across multiple serving instances; 4) Integration with agent workflow frameworks for retrieval/planning/reasoning pipelines.</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>Pros: substantial efficiency gains for multi-agent LLM workflows without changing model quality. Cons: heterogeneous KV-cache pooling adds system complexity; zero-copy orchestration requires RDMA-capable networking; consistency under concurrent agent updates requires careful eviction policies.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>Prefill-time reduction of 35-55% on multi-agent research/planning workflows; per-task token cost reduced by ~30%; answer quality preserved (within 0.5% of baseline on benchmarks); throughput per agent increased 1.4-1.8× in stress tests.</div>
+      <div class="row"><span class="author">🏢 团队：</span>Arup Kumar Sarker, Alexander James Halpern, Mills Staylor, Aymen Alsaadi (University of Virginia + Rutgers) → University of Virginia + Biocomplexity Institute and Initiative + Rutgers University</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer>
+  <p>Generated by Hermes Agent · AI Infra Daily Report</p>
+  <p>https://github.com/zenhatescoding/ai-infra-reports</p>
+  <p>2026-07-15 07:23</p>
+</footer>
+</div>
+
+<div class="font-toolbar" id="fontToolbar" role="region" aria-label="字号调节">
+  <button class="toggle" id="fontToggle" aria-label="打开字号调节" title="字号">A</button>
+  <div class="panel">
+    <span class="label">字号</span>
+    <input type="range" id="fontSlider" min="12" max="22" step="0.5" value="14" aria-label="字号滑块" />
+    <span class="value" id="fontValue">14px</span>
+    <button class="reset" id="fontReset" aria-label="重置字号" title="重置 14px">↺</button>
+  </div>
+</div>
+<script>
+(function() {
+  const STORAGE_KEY = "ai-infra-font-scale";
+  const DEFAULT_SIZE = 14;
+  const toolbar = document.getElementById("fontToolbar");
+  const toggle = document.getElementById("fontToggle");
+  const slider = document.getElementById("fontSlider");
+  const valueEl = document.getElementById("fontValue");
+  const resetBtn = document.getElementById("fontReset");
+  if (!toolbar || !slider) return;
+  function apply(size) {
+    const v = Math.max(12, Math.min(22, parseFloat(size) || DEFAULT_SIZE));
+    document.documentElement.style.setProperty("--base-font-size", v + "px");
+    slider.value = v;
+    valueEl.textContent = v + "px";
+  }
+  function save(size) { try { localStorage.setItem(STORAGE_KEY, String(size)); } catch (e) {} }
+  function load() { try { const v = localStorage.getItem(STORAGE_KEY); return v ? parseFloat(v) : DEFAULT_SIZE; } catch (e) { return DEFAULT_SIZE; } }
+  apply(load());
+  slider.addEventListener("input", function() { const v = parseFloat(slider.value); apply(v); save(v); });
+  resetBtn.addEventListener("click", function() { apply(DEFAULT_SIZE); save(DEFAULT_SIZE); });
+  toggle.addEventListener("click", function(e) { e.stopPropagation(); toolbar.classList.toggle("open"); });
+  document.addEventListener("click", function(e) { if (window.innerWidth <= 640 && toolbar.classList.contains("open") && !toolbar.contains(e.target)) toolbar.classList.remove("open"); });
+  window.addEventListener("storage", function(e) { if (e.key === STORAGE_KEY && e.newValue) apply(parseFloat(e.newValue)); });
+})();
+</script>
+</body>
+</html>
