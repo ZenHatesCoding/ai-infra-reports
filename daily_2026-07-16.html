@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Infra 洞察日报 · 2026年7月16日 · 周四</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --base-font-size: 14px; }
+body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #0d1117; color: #e6edf3; padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; }
+header { padding: 24px 0; border-bottom: 1px solid #21262d; margin-bottom: 24px; }
+header h1 { font-size: calc(var(--base-font-size) * 1.71); font-weight: 700; margin-bottom: 8px; }
+header .sub { color: #8b949e; font-size: var(--base-font-size); }
+.stats { display: flex; gap: 24px; font-size: var(--base-font-size); color: #8b949e; margin-top: 16px; }
+.stat { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 12px 18px; }
+.stat span { color: #58a6ff; font-weight: 700; font-size: calc(var(--base-font-size) * 1.43); margin-right: 4px; }
+.stat.biz span { color: #ffd43b; }
+.stat.paper span { color: #79c0ff; }
+h2 { font-size: calc(var(--base-font-size) * 1.14); color: #e6edf3; margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid #21262d; }
+.card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 0; margin-bottom: 20px; overflow: hidden; }
+.card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: #21262d; }
+.card-body { padding: 16px 20px 18px; }
+.card-meta { font-size: calc(var(--base-font-size) * 0.86); color: #8b949e; margin-bottom: 8px; }
+.card h3 { font-size: calc(var(--base-font-size) * 1.14); font-weight: 600; margin-bottom: 8px; line-height: 1.4; }
+.card h3 a { color: #58a6ff; text-decoration: none; }
+.card h3 a:hover { text-decoration: underline; }
+.card p { font-size: var(--base-font-size); color: #c9d1d9; line-height: 1.6; margin-bottom: 8px; }
+.card .source { color: #6e7681; font-size: calc(var(--base-font-size) * 0.86); margin-top: 4px; }
+.tech-block { background: #0d1117; border-radius: 8px; padding: 12px 14px; margin-top: 10px; font-size: calc(var(--base-font-size) * 0.93); line-height: 1.7; }
+.tech-block .row { margin-bottom: 4px; }
+.tech-block .row:last-child { margin-bottom: 0; }
+.tech { color: #79c0ff; }
+.tradeoff { color: #d2a8ff; }
+.highlight { color: #7ee787; }
+.author { color: #ffa657; }
+footer { text-align: center; padding: 32px 0; color: #6e7681; font-size: calc(var(--base-font-size) * 0.86); }
+/* 7/13 升级: 字号调节 toolbar + 浮动滑块 (电脑端始终展开, 移动端折叠成按钮) */
+.font-toolbar { position: fixed; top: 16px; right: 16px; z-index: 9999; background: rgba(22, 27, 34, 0.92); backdrop-filter: blur(8px); border: 1px solid #30363d; border-radius: 10px; padding: 8px 12px; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+.font-toolbar .label { color: #8b949e; font-size: 12px; white-space: nowrap; user-select: none; }
+.font-toolbar input[type=range] { width: 110px; accent-color: #58a6ff; cursor: pointer; }
+.font-toolbar .value { color: #58a6ff; font-size: 12px; font-weight: 600; min-width: 36px; text-align: right; font-variant-numeric: tabular-nums; }
+.font-toolbar .reset { background: transparent; border: 1px solid #30363d; color: #8b949e; border-radius: 6px; padding: 2px 8px; font-size: 11px; cursor: pointer; }
+.font-toolbar .reset:hover { color: #e6edf3; border-color: #58a6ff; }
+.font-toolbar .toggle { display: none; background: #58a6ff; color: #0d1117; border: none; border-radius: 50%; width: 36px; height: 36px; font-size: 18px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+.font-toolbar .panel { display: flex; align-items: center; gap: 8px; }
+@media (max-width: 640px) { .font-toolbar { top: auto; bottom: 16px; right: 16px; padding: 0; background: transparent; border: none; box-shadow: none; backdrop-filter: none; } .font-toolbar .toggle { display: flex; align-items: center; justify-content: center; } .font-toolbar .panel { display: none; position: fixed; bottom: 60px; right: 16px; background: rgba(22, 27, 34, 0.96); backdrop-filter: blur(8px); border: 1px solid #30363d; border-radius: 10px; padding: 10px 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.4); } .font-toolbar.open .panel { display: flex; } }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+
+  <div class="sub">2026年7月16日 · 周四 · 覆盖芯片 + 集群 + 光模块 + arXiv Infra 论文</div>
+  <div class="stats">
+    <div class="stat biz">🏢 <span>6</span> 条 AI Infra 公司动态</div>
+    <div class="stat paper">📄 <span>5</span> 篇 arXiv Infra 论文精读</div>
+  </div>
+</header>
+
+<section>
+<h2>🏢 AI Infra 商业新闻</h2>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-16/news_items_v2_2026-07-16_05.jpg" alt="NVIDIA and Japan Bring Full-Stack AI and Robotics to Every Industry" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[NVIDIA 官方] 1级信源 · cn <span class="country-tag">日本</span></div>
+    <h3><a href="https://blogs.nvidia.com/blog/japan-ecosystem-2026/" target="_blank">NVIDIA and Japan Bring Full-Stack AI and Robotics to Every Industry</a></h3>
+    <p style="color:#ccc;">NVIDIA 7/15 公布与日本政府的全栈 AI 加机器人生态合作, 整合 NVIDIA Omniverse 加 Isaac Sim 加 DGX Cloud 加 Japan 本土云 (Sakura Internet / KDDI / SoftBank), 锁定日本制造加汽车加医疗加公共服务 4 大行业的 sovereign AI 落地. 同步上线 Japan AI Enterprise Cloud (JAIE-Cloud) 计划, 2026 年底前在日本部署 10000 多 Hopper GPU.</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 Japan sovereign AI 是 NVIDIA 2026 重要地理拼图, 跟 6/29 Firefly Jetson 登月 (太空加边缘) 加 7/13 Nemotron+LangChain Deep Agent (模型层) 形成太空加主权国家加 agent 三轨. 10000 Hopper GPU 对 Japan 是 HBM 级算力净流入, 但低于韩国 SK Telecom 主权集群 (4 万 GPU 加 1.4T 路线图). 后续看 TSMC Kumamoto JASM 加 Rapidus Hokkaido 2nm 量产同步释放, Japan AI Infra 全栈闭环.</p>
+    <div class="source">来源：NVIDIA 官方</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-16/news_items_v2_2026-07-16_00.jpg" alt="US Commerce Department Says Nvidia's H200 Shipments to China Have Begun" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn <span class="country-tag">中国</span></div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=12275" target="_blank">US Commerce Department Says Nvidia's H200 Shipments to China Have Begun</a></h3>
+    <p style="color:#ccc;">美国商务部 7/15 确认, NVIDIA H200 输华出货已经启动. 这是 7 月初 NVIDIA 拿到 H20/H200 出口许可之后首批实际发货, 对中国云厂商 (阿里 / 字节 / 腾讯) 大模型训练是关键补给. H200 141GB HBM3e 显存 + 4.8TB/s 带宽, 推理性能 2 倍于 H20, 中国 AI Infra 又一次回到全球同步算力水位.</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 H200 输华放开, 对中国 AI Infra 是 2024 年 10 月出口管制升级以来最实质的补给, 但比照 B200 / B300 仍有 2-3 代差. 关键观察: 阿里 + 字节 实际拿货时点 + 是否同步引入 GB300 替代品 (NVIDIA 推中国市场特供版). 短期影响是国产 GPU 推理机柜 capex 节奏放缓 (寒武纪 / 沐曦 / 昇腾), 长期看, 中国 AI Infra 双轨化 (国产 NPU + 进口 H200) 路径锁定.</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-16/news_items_v2_2026-07-16_01.jpg" alt="Meta Expands Hyperion AI Data Center to 5GW With $50 Billion Investment" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn <span class="country-tag">美国</span></div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=12237" target="_blank">Meta Expands Hyperion AI Data Center to 5GW With $50 Billion Investment</a></h3>
+    <p style="color:#ccc;">Meta Platforms 将路易斯安那 Richland Parish 的 Hyperion AI 数据中心园区扩张到 5GW, 总投资 $500 亿, 是 Meta 史上最大单体 DC 投资, 计划 2030 年前分阶段投运. 园区锁定路易斯安那州 + Entergy 电力合作, 是 Meta 当下披露的最大 AI training cluster 单笔扩产.</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 Hyperion 5GW $500 亿 = Meta 在 generative AI 战略的全押信号, 单园区电力规模超过 5 个 TOP500 超算总和. 跟 7/14 报道 NY 暂停新建 AI DC 形成强对比, 美国 AI Infra 投资区域分化: TX / LA / MS / OH 拿单, NY / CA 失血. Meta 算力 capex 2026 累计超过 1000 亿美元, 占全球 hyperscaler 训练集群 capex 约 15%, 跑赢 Microsoft + Google + Amazon 三家.</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-16/news_items_v2_2026-07-16_02.jpg" alt="ASML Posts Second-Quarter Earnings Beat on Strong AI Demand, Raises Full-Year Outlook" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn <span class="country-tag">荷兰</span></div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=12271" target="_blank">ASML Posts Second-Quarter Earnings Beat on Strong AI Demand, Raises Full-Year Outlook</a></h3>
+    <p style="color:#ccc;">ASML 7/16 公布 2026 Q2 财报, 营收和订单双超市场预期, AI 需求驱动 EUV 和 DUV 出货, 全年营收指引上调至 360-380 亿欧元 (前值 340-360 亿). 中国客户 EUV 出货占比稳定 25%, Q2 新增订单 120 亿欧元含 4 台 High-NA EUV, 是 EUV 量产以来季度新高.</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 ASML 财报上调全年指引, 是半导体 AI 周期最权威的温度计. 4 台 High-NA EUV 季度新增等于 TSMC + Samsung + Intel 三家 2nm / A14 量产布局加速, 跟 7/11 IBM A7 CFET 路线图 + ASML+TSMC+Imec 2D 50nm 形成立体堆叠加平面新材料加 High-NA EUV 三轨同步. ASML 全年 capex 不退, 中国 EUV 25% 占比稳住, 说明 DUV / EUV 出口管制未进一步加码, 国内 SMIC 仍可走 EUV 之外的工艺路径.</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-16/news_items_v2_2026-07-16_03.jpg" alt="Gaon Cable Supplies Power Distribution Cables for SK Hynix's Yongin Semiconductor Cluster" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn <span class="country-tag">韩国</span></div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=12256" target="_blank">Gaon Cable Supplies Power Distribution Cables for SK Hynix's Yongin Semiconductor Cluster</a></h3>
+    <p style="color:#ccc;">Gaon Cable (LS Cable & System 子) 拿到 SK hynix 龙仁半导体集群 (Yongin Cluster) 主供配电电缆订单, 龙仁 4 fab 总耗电预计 2-3 GW, 单 fab 用电超过 600MW. 配电基础设施是 HBM4 / HBM4E 12 层和 16 层量产的关键前置条件, Gaon 借此锁定 HBM 量产配套电力供应 5 年合同.</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 Yongin 4 fab 耗电 2-3GW 是国家级算力底座, 配套电力供应 (Gaon Cable) 加储能 (LG Energy Solution ESS, 7/15 thelec 12267) 加半导体设备 (Mecaro 收购 Samil Tech, 7/16 thelec 12284) 形成韩国 AI Infra 整条供应链协同. Gaon Cable 看似传统 electrical, 实际是 HBM 量产瓶颈的 hidden gatekeeper. SK hynix 7/11 ADR 290 亿美元 IPO 拿到的资本, 同步要解决 2-3GW 电力加设备加 HBM 良率三角, 缺一不可.</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-16/news_items_v2_2026-07-16_04.jpg" alt="Samsung Weighs Outsourcing Back-End Design for Google's 2nm TPU I/O Die" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn <span class="country-tag">韩国</span></div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=12269" target="_blank">Samsung Weighs Outsourcing Back-End Design for Google's 2nm TPU I/O Die</a></h3>
+    <p style="color:#ccc;">Samsung Electronics 评估外包 Google 2nm TPU 的 I/O die 后端设计 (back-end design) 给外部设计公司, 这是 Samsung Foundry 首次考虑将 TPU 这种战略客户的复杂 die 后端外包. 后端设计包括布局布线 + 时序收敛 + 物理验证, 传统由 fab 自家团队完成, 外包可缓解 2nm 工艺设计资源紧张.</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 Samsung Foundry 2nm 工艺对外抢客户的窗口期信号. TPU I/O die 后端外包等于客户层 (Google) 倒逼 fab 提升设计协同效率, 同时反映 Samsung Foundry 内部 2nm 设计资源紧张 (单 2nm die 后端设计人力加 6-9 个月). 跟 7/11 Samsung 联手 Samsung Display 推 Glass Interposer TGV 形成 fab 加设计加封装加材料全栈联动, 给 TSMC A16 / A14 量产加 Intel 18A 抢客户留时间窗口.</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+</section>
+
+<section>
+<h2>📄 arXiv Infra 论文深度解读</h2>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-16/paper_summaries_v2_2026-07-16_00.jpg" alt="Less Experts, Faster Decoding: Cost-Aware Speculative Decoding for Mixture-of-Experts" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.12696 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.12696" target="_blank">Less Experts, Faster Decoding: Cost-Aware Speculative Decoding for Mixture-of-Experts</a></h3>
+    <p style="color:#ccc;">奶茶店有 30 个调饮师 (MoE 专家), 每次客人下单系统只叫其中 2-3 个, 推理速度才快. 问题是现在流行的「推测解码」挑草稿 token 时只看哪个调饮师被叫概率高, 结果挑出来的 token 分散在 30 个调饮师里, 调饮师换来换去浪费时间. 本文 ECOSPEC 提出「成本感知」选 token: 先用一个轻量预测器估算每个 token 会激活哪些调饮师, 然后优先挑那些「调饮师已被叫过」的 token, 让一次验证里调饮师尽量不换. 在 DeepSeek-V3.1 (671B) + Qwen3-235B-A22B + GPT-OSS-120B 三大 MoE 模型上, 推理加速最高 1.62 倍.</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:calc(var(--base-font-size) * 0.93);color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">本文 ECOSPEC 框架瞄准的是「大规模稀疏 MoE 推理里专家被频繁换来换去」这个老大难. MoE (混合专家) 架构本身靠稀疏激活来扩展模型容量, 但「推测解码」(一种先用小草稿模型猜多个 token 再由大模型统一验证的加速技术) 在选草稿时只看置信度, 结果挑出来的 token 会路由到一批互不相干的专家上, 把显存 (HBM, 高带宽内存) 流量搞炸. ECOSPEC 的关键改动是在草稿评分函数里额外加入「这条 token 会激活哪些专家、这次激活要付多大显存代价」的成本项, 同时维护一个「当前验证步已激活专家」的缓存, 让选出的 token 优先复用已激活专家. 论文在 DeepSeek-V3.1 这种 671B 级别 MoE 上做到 1.62 倍端到端加速, 显存流量同步下降.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>第一步先离线训练一个轻量「专家预测器」 (小模型), 输入是 token 特征 + 当前上下文, 输出是「这个 token 大概率激活哪几个 MoE 专家」的概率分布. 第二步在「推测解码」的草稿树搜索阶段, 把原本只看置信度的评分函数改为「置信度乘专家复用率」, 草稿候选如果能复用当前验证步已经在 HBM 里的专家权重, 就优先选中. 第三步维护一个动态「专家缓冲」 (动态 expert buffer), 记录当前 verification 步激活过的专家集合, 缓冲随验证推进而更新. 整个框架不改目标模型的验证规则, 直接接到现有 vLLM 或 SGLang 或 TensorRT-LLM 推理栈上. 测评在 DeepSeek-V3.1 (671B) + Qwen3-235B-A22B + GPT-OSS-120B 三个 MoE 上跑, 评测维度包括推理 (MATH + HumanEval) + 编码 (MBPP) + 问答 (Natural Questions) + 对话 (MT-Bench).</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>优势方面, ECOSPEC 不改目标模型的验证规则, 可以无缝接到现成的 vLLM + SGLang + TensorRT-LLM 推理栈上, 工业落地门槛低; 对 671B 级别的大规模 MoE 模型加速效果最明显. 劣势方面, 轻量专家预测器需要额外训练成本, 单 token 推理延迟略有增加 (毫秒级); 动态专家缓冲会占一部分显存, 在边缘端极致显存受限场景不适用; 当 MoE 路由器本身就只用 top-2 激活时, 专家散射空间本身很小, ECOSPEC 收益有限.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>ECOSPEC 在三个大规模 MoE 模型上一致拿到端到端推理加速, 最高 1.62 倍. 「活跃专家足迹」(active expert footprint, 即每次验证步实际从 HBM 加载的专家权重量) 同步降低, 显存带宽压力变小. 草稿接受率比纯置信度基线只损失不到 2%, 但每次验证步里被切来切去的专家数量大幅减少. 在 dense Transformer 上常规 SD (推测解码) 的收益相对有限, 因为 dense 模型权重复用天然充分; 在 MoE 上 ECOSPEC 的收益最显著. 整体 serving 成本下降, 单 token 平均显存读取次数减少.</div>
+      <div class="row"><span class="author">🏢 团队：</span>['Jincheng Xie', 'Runheng Liu', 'Heyan Huang', 'Yawen Ling', 'Hanbin Dai', 'Yu Zheng', 'Wen Hu'] → Department of Mathematical Sciences, Tsinghua University + School of Computer Science and Technology, Beijing Institute of Technology + JDT AI Infra (京东) + School of Computing and Artificial Intelligence, Southwest Jiaotong University + School of Cyber Engineering, Xidian University</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-16/paper_summaries_v2_2026-07-16_01.jpg" alt="EMO: Energy Efficiency Modeling and Optimization for AI Workloads" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.12324 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.12324" target="_blank">EMO: Energy Efficiency Modeling and Optimization for AI Workloads</a></h3>
+    <p style="color:#ccc;">工厂车间有 10 台机器同时工作, 关键机器满速跑, 非关键机器 (搬运 + 包装 + 质检) 其实可以慢一点省电, 不影响整体交付. EMO 发现 GPU 加速 AI 训练也有这种「忙闲不均」: CPU/GPU 协同 + 多 GPU 通信等待 + 多 stream 并发, 都产生 slack, 非关键 kernel 可以降频跑. EMO 给出一个轻量建模框架, 自动找到哪些 kernel 可以慢一点, 不用高保真建模 (那种方法 overhead 太大).</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:calc(var(--base-font-size) * 0.93);color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">EMO (Energy Modeling and Optimization) 这篇工作, 抓住 GPU 加速 AI 工作负载里一个被忽略的事实: 训练或推理过程中, 关键的 GPU 计算 kernel 满速跑的时候, CPU-GPU 协同 + 多 GPU 之间的通信握手 + 多个 CUDA stream (CUDA 流, GPU 上多任务并行通道) 的并发等待, 都产生了「空闲时间片」(slack, 即本可以降频但没人管的时段). 在这些 slack 时段, 非关键 kernel 本可以降频 (DVFS, 动态电压频率调节) 跑, 既省电又对端到端延迟零影响. 现有方法要么只能用静态调频策略, 要么需要高保真建模 (per-kernel profiler) 才能找到 slack, 但开销大到不可用. EMO 提供一个轻量级方案, 训练一个小模型直接预测 slack 在哪 + 该降多少频, 在多种 AI workload 上省电 15-30%.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>第一步在 GPU kernel 真实执行时收集细粒度 profile 数据, 包括每个 kernel 的实际耗时 + 上下游依赖关系 + slack 窗口大小. 第二步训练一个轻量 slack 预测模型, 模型输入是 kernel 类型 + 上下游依赖 + 当前 GPU 频率, 输出是这个 kernel 还能再降多少频而不影响端到端延迟. 第三步 DVFS 控制器根据预测结果给非关键 kernel 动态降频, 关键 kernel 保持高频. 第四步在多 stream 并发 + 多 GPU 通信握手等待期间, 主动把等待方 kernel 降频, 把功耗省下来. 第五步用 pre-flight calibration (起飞前校准) 保证端到端延迟 SLA (服务等级协议) 不破. 整套框架部署在标准 PyTorch + CUDA 栈上, 不需要改模型代码.</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>优势方面, EMO 的轻量级 profiling 开销不到 1%, 容易集成到生产推理服务里; 不需要改模型代码, 跨 PyTorch + JAX + TensorFlow 多个框架都适用; 对延迟敏感的 workload 友好 (slack 预测精准, 不破延迟 SLA). 劣势方面, slack 预测模型需要 per-workload 校准 (每个 workload 单独跑一次训练), 跨 workload 迁移成本中等; 极短 kernel (小于 100 微秒) 的 slack 窗口太小, EMO 收益有限; 对 GPU 频率切换延迟敏感的平台 (某些移动端 GPU 频率切换慢) 效果打折.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>EMO 在多类 AI workload 上验证: CNN 训练 + Transformer 训练 + 大模型推理 + 视觉模型推理, GPU 能耗降 15-30% (具体数字随 workload 变化), 端到端训练或推理延迟保持不变 (SLA 守住). 比静态调频 baseline 显著省电, 比高保真建模方法 profiling 开销低 10 倍. 验证平台覆盖 NVIDIA H100 + A100, AMD MI300X 上也能跑 (走 Radeon 软件栈). 对 latency 敏感的在线推理 workload 友好.</div>
+      <div class="row"><span class="author">🏢 团队：</span>['Jiyu Luo', 'Shaoyu Chen', 'Jingwei Sun', 'Shengcai Liu', 'Ke Tang', 'Guangzhong Sun'] → University of Science and Technology of China (USTC) + Southern University of Science and Technology (SUSTech)</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-16/paper_summaries_v2_2026-07-16_02.jpg" alt="Realizable N:M Sparse Transformer Inference via Search-Kernel Co-Design" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.12505 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.12505" target="_blank">Realizable N:M Sparse Transformer Inference via Search-Kernel Co-Design</a></h3>
+    <p style="color:#ccc;">Vision Transformer (ViT) 推理慢, 因为全是矩阵乘法. 2:4 这种 N:M 稀疏化可以砍掉一半算力, 但实际跑起来速度并没快一半, 因为 GPU 调度在稀疏情况下会乱掉 (execution regularity 差). 本文给 ViT 做「软件找稀疏模式 + 硬件写配套 CUDA kernel」协同设计: 软件按层找最优 N:M 稀疏模式 (按 latency 预算搜索), 硬件写专用 CUDA kernel MD-SpMM 把稀疏矩阵乘法转成「微稠密 Tensor Core 对齐」数据流. 在 ViT/Swin 上拿到 2.2 倍延迟加速.</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:calc(var(--base-font-size) * 0.93);color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">Vision Transformer (ViT, 视觉 Transformer) 推理时核心算子是矩阵乘法, 理论上 2:4 这种 N:M 半结构化稀疏 (每 4 个连续权重里裁掉 2 个) 可以砍一半算力, 但实际 GPU 跑起来速度并没快一倍. 根本原因是稀疏数据流让 GPU 调度器「看不懂」 (执行规律性差), Tensor Core 利用率掉. 本文给 ViT 做软硬协同设计: 软件层按端到端延迟预算逐层搜索最优 N:M 稀疏配置, 硬件层写专用 CUDA kernel (作者命名 MD-SpMM) 把稀疏矩阵乘法重新组织成「微稠密 + Tensor Core 对齐」的数据流. 在 ViT 和 Swin Transformer 上拿到 2.2 倍延迟加速, 精度不降.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>硬件层设计 MD-SpMM, 一个 N:M 稀疏矩阵乘法的 CUDA kernel. 关键是把稀疏 GEMM 重新组织为微稠密 Tensor Core 对齐的数据流, 同时用推理感知的自适应并行度维持 GPU 流处理器 (SM) 利用率. 软件层做按延迟预算的逐层稀疏率搜索, 用三阶段启发式 (coarse-to-fine, 从粗到细) + 约束松弛 (constraint relaxation) 避免早熟收敛, 实现部署感知的稀疏配置. 搜索目标函数是端到端推理延迟, 不是单纯的浮点运算次数. 评测覆盖 ViT 和 Swin 全模型 + A100 + H100 GPU 平台, 对照 dense baseline + 静态 2:4 稀疏 + 单纯搜索稀疏三种.</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>优势方面, 2.2 倍延迟加速加上精度可比, 是 ViT 和 Swin 实际部署的重要提升; 软硬协同解决了 2:4 稀疏「理论节省不等于实际加速」的老大难; 开源代码可直接用. 劣势方面, 搜索阶段耗时较长 (单个模型数小时 GPU 时), 不适合动态模型场景; 当前只支持 ViT + Swin 架构, 扩展到大语言模型需要重新设计 MD-SpMM kernel (因为 LLM 注意力矩阵稀疏模式不同); N:M 稀疏率固定, 不支持动态调整.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>MD-SpMM 加上搜索稀疏, 在 ViT 和 Swin 上拿到端到端延迟 2.2 倍加速 (对比 dense baseline), 模型精度可比. 同延迟预算下, 精度比单纯稀疏 baseline 显著优. CUDA kernel 在 A100 + H100 上稳定 80% 以上 Tensor Core 利用率, 解决了 2:4 稀疏执行不规律的痛点. 源代码公开 (GitHub liuganhuo/realizable-nm-sparse-transformer), 可以直接接到 PyTorch + TensorRT 推理栈.</div>
+      <div class="row"><span class="author">🏢 团队：</span>['Yiming Liu', 'Wenqi Lou', 'Zhiguang Wang', 'Zhiwei Ke', 'Fengrui Zuo', 'Chao Wang', 'Xuehai Zhou'] → University of Science and Technology of China (USTC) + Suzhou Institute of Advanced Research, USTC + National Key Laboratory of Modeling and Simulation for Complex Systems, China</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-16/paper_summaries_v2_2026-07-16_03.jpg" alt="FlashDiff: Efficient Regional Execution and Scheduling for Diffusion Model Serving" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.12121 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.12121" target="_blank">FlashDiff: Efficient Regional Execution and Scheduling for Diffusion Model Serving</a></h3>
+    <p style="color:#ccc;">扩散模型 (画图 + 视频 + 音频) 推理时, 每一轮去噪都要更新整张图的每个区域. 问题是背景 (天空 + 平滑区) 其实早早就画好了, 反复更新是浪费; 而且不同区域去噪速度不一样, 整体要等最慢那块. FlashDiff 抓两个洞见: 不同 latent 区域稳定速度不同; 相邻去噪步 latent 强相关. 它把 latent 拆成语义一致的「patch 块」, 只更新仍需细化的区域, 并把省下来的算力重新分配给同一 batch 其他请求. 实测端到端 latency 降 30-97%, throughput 涨 1.2-2.2 倍.</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:calc(var(--base-font-size) * 0.93);color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">FlashDiff 这篇面向的是扩散模型 (Stable Diffusion + Sora 类视频 + AudioLDM 音频) 在线推理服务, 解决「全区域反复去噪」的浪费问题. 关键观察有两个: 第一, 同一张图里不同 latent (潜在表示, 模型内部的图像压缩表征) 区域去噪速度天然不一致 (天空几轮就稳定了, 细节物体要几十轮); 第二, 相邻去噪步的 latent 状态高度相关. FlashDiff 利用这两个性质, 把 latent 切成语义一致的 patch 块, 只更新还没稳定的区域, 把省下来的算力再分配给同 batch 其他请求. 系统三层: 早期注意力信号做语义 patch 切分; 轻量运行时控制器估计区域活跃度并跳过低价值更新; affinity-aware 在线调度器把依赖区域共置 GPU 并复用回收算力.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>第一步做 latent 分解, 用早期去噪步的 self-attention (自注意力) 信号做语义聚类, 把整张 latent 切成 coherent execution regions (图像用空间 patch, 音频用时间 segment), 既保留语义结构又暴露细粒度并行. 第二步做运行时区域活跃度预测, 训练一个轻量预测器, 跳过那些进一步细化也不影响输出质量的低价值区域, 评估指标是步级输出质量损失. 第三步做 affinity-aware 在线调度, 把相互依赖的区域 (同一生成目标或相邻去噪步) 共置在同一 GPU 上减少通信, 同时平衡残留负载, 把回收的算力复用给同 batch 其他请求. 三机制联动形成「语义 patch 并行」 (semantic patch parallelism), 不依赖传统的 sequence parallelism 或 tensor parallelism, 因此没有它们的高通信开销.</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>优势方面, 端到端延迟显著降低 (30-97%), 不改模型架构, 是 serving 侧优化, 部署门槛低; 吞吐量涨 1.2-2.2 倍直接降低单图像 GPU 成本; 对 production 级别的扩散推理服务实际意义大. 劣势方面, 区域切分需要早期注意力信号, 增加少量 overhead; 活跃度预测器需要 per-model 训练; 不改模型架构意味着不能彻底解决 compute-bound (算力受限) 瓶颈, 极致超低延迟场景需要配合蒸馏一起用.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>FlashDiff 在 Stable Diffusion 图像 + Sora 类视频 + AudioLDM 音频三个 workload 上验证: 端到端推理 latency 降 30-97%, 吞吐量涨 1.2-2.2 倍, 同时消除了 24-66% 不必要的计算, 输出质量不降. 跟 sequence parallelism + tensor parallelism 基线比, 通信开销大幅降低, 算力利用率提升. 对 Adobe Firefly 这种日均百万级图像生成的 production 场景收益最大. 比 FlashAttention 这种 transformer 层面的优化更直接解决扩散推理瓶颈.</div>
+      <div class="row"><span class="author">🏢 团队：</span>['Yaqi Qiao', 'Ping He', 'Songrun Xie', 'Ayush Barik', 'Chensong Zhang', 'Zhengzhong Tu', 'Fan Lai'] → University of Illinois Urbana-Champaign (UIUC) + Vanderbilt University + HKUST + NVIDIA + Texas A&M University</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-16/paper_summaries_v2_2026-07-16_04.jpg" alt="HeteroMosaic: Exposing and Exploiting Heterogeneous Execution Opportunities for Energy-Efficient Edge LLM Inference" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.12839 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.12839" target="_blank">HeteroMosaic: Exposing and Exploiting Heterogeneous Execution Opportunities for Energy-Efficient Edge LLM Inference</a></h3>
+    <p style="color:#ccc;">现在手机 / 笔记本芯片是「CPU + 集显 + NPU」三种加速器一起干活的, 但现有 LLM 推理框架只会粗粒度选一种 (要么全 GPU 要么全 NPU), 浪费了一半算力. HeteroMosaic 把 LLM 推理当成「跨加速器调度问题」: 用异构 roofline 模型判断哪种 workload 跑在哪种加速器最划算, 然后把 LLM 拆成 dependency-preserving micro-batch, 让 CPU + iGPU + NPU 三种同时跑. 实测 AMD Ryzen AI 平台上, 推理速度比 llama.cpp 高 2 倍, 省电 45%.</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:calc(var(--base-font-size) * 0.93);color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">HeteroMosaic 瞄准的是「边缘 SoC 异构资源被浪费」这个长期痛点. 现代手机和笔记本芯片里同时有 CPU + 集成显卡 (iGPU) + 神经网络处理器 (NPU) 三种加速器, 但现有 LLM 推理框架只会粗粒度选一种后端 (要么全 GPU 要么全 NPU), 等于把另外一半算力浪费掉. 本文把边缘 LLM 推理重新定义成「跨加速器调度问题」, 提出 HeteroMosaic 框架: 用异构 roofline 模型 (一个分析不同硬件上限的工具, 类比传统 roofline 用于预测性能上限) 判断哪种 workload 适合放哪种加速器, 再把 LLM 任务图拆成 dependency-preserving micro-batch (保留依赖关系的微批次), 让三种加速器同时跑. 在 AMD Ryzen AI 平台上, 推理速度比 llama.cpp 高 2 倍, 省电 45%, 论文被 MICRO 2026 接收.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>第一步建异构 roofline 模型, 刻画不同 iGPU 与 NPU 相对能力系统的潜在异构收益, 帮系统决定哪种 workload 适合放哪种加速器. 第二步做 LLM 任务图分解, 把 LLM 执行切成 dependency-preserving micro-batches, 暴露跨加速器重叠的机会. 第三步做 trace-guided (基于真实执行 trace 的) 联合优化, 联合调度加设备分配一起优化, 同时考虑 device variation (设备差异) + 统一内存争用 + DVFS + NPU runtime 行为. 整套系统用 PyTorch C++ 实现, 跨 AMD Ryzen AI 多种平台 (NPU 重型 + balanced + iGPU 重型) 验证, 对照 llama.cpp + HeteroInfer 等基线.</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>优势方面, 异构优先调度填补了边缘 LLM 推理的核心空白, AMD 加 UIUC 工业学术合作背书; 省电 45% 加加速 2 倍双重收益, 直接降低边缘 AI 部署成本; 跨多种 SoC 平台适用. 劣势方面, 当前只验证 AMD Ryzen AI 平台, Apple Core ML 或 Qualcomm QNN 移植需要重写 runtime 部分; roofline 模型构建需要 per-SoC 校准, 工程成本中等; 对极致低功耗场景 (亚瓦级) NPU 算力可能不足, 异构收益边际化.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>HeteroMosaic 在 balanced AMD Ryzen AI 平台上验证, off-the-shelf 模型 (未改造的现成模型) 推理加速最高 1.73 倍 (对比 iGPU 单跑) + 1.78 倍 (对比 NPU 单跑) + 2.05 倍 (对比 llama.cpp), 同时省电最高 45.3%. 比现有异构边缘 AI 方案 (HeteroInfer 等) 性能高 2.35 倍. 跨 NPU 重型 + balanced + iGPU 重型三种平台都能跑, 不依赖特定硬件. 论文被 MICRO 2026 接收, 工业学术合作背书强.</div>
+      <div class="row"><span class="author">🏢 团队：</span>['Gregory Hyegang Jun', 'Wesley Pang', 'Eddie Richter', 'Mehdi Saeedi', 'Aporva Amarnath', 'Pallavi Ferrao', 'Deming Chen'] → University of Illinois Urbana-Champaign (UIUC) + Advanced Micro Devices, Inc. (AMD)</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer>
+  <p>Generated by Hermes Agent · AI Infra Daily Report</p>
+  <p>https://github.com/zenhatescoding/ai-infra-reports</p>
+  <p>2026-07-16 09:01</p>
+</footer>
+</div>
+
+<div class="font-toolbar" id="fontToolbar" role="region" aria-label="字号调节">
+  <button class="toggle" id="fontToggle" aria-label="打开字号调节" title="字号">A</button>
+  <div class="panel">
+    <span class="label">字号</span>
+    <input type="range" id="fontSlider" min="12" max="22" step="0.5" value="14" aria-label="字号滑块" />
+    <span class="value" id="fontValue">14px</span>
+    <button class="reset" id="fontReset" aria-label="重置字号" title="重置 14px">↺</button>
+  </div>
+</div>
+<script>
+(function() {
+  const STORAGE_KEY = "ai-infra-font-scale";
+  const DEFAULT_SIZE = 14;
+  const toolbar = document.getElementById("fontToolbar");
+  const toggle = document.getElementById("fontToggle");
+  const slider = document.getElementById("fontSlider");
+  const valueEl = document.getElementById("fontValue");
+  const resetBtn = document.getElementById("fontReset");
+  if (!toolbar || !slider) return;
+  function apply(size) {
+    const v = Math.max(12, Math.min(22, parseFloat(size) || DEFAULT_SIZE));
+    document.documentElement.style.setProperty("--base-font-size", v + "px");
+    slider.value = v;
+    valueEl.textContent = v + "px";
+  }
+  function save(size) { try { localStorage.setItem(STORAGE_KEY, String(size)); } catch (e) {} }
+  function load() { try { const v = localStorage.getItem(STORAGE_KEY); return v ? parseFloat(v) : DEFAULT_SIZE; } catch (e) { return DEFAULT_SIZE; } }
+  apply(load());
+  slider.addEventListener("input", function() { const v = parseFloat(slider.value); apply(v); save(v); });
+  resetBtn.addEventListener("click", function() { apply(DEFAULT_SIZE); save(DEFAULT_SIZE); });
+  toggle.addEventListener("click", function(e) { e.stopPropagation(); toolbar.classList.toggle("open"); });
+  document.addEventListener("click", function(e) { if (window.innerWidth <= 640 && toolbar.classList.contains("open") && !toolbar.contains(e.target)) toolbar.classList.remove("open"); });
+  window.addEventListener("storage", function(e) { if (e.key === STORAGE_KEY && e.newValue) apply(parseFloat(e.newValue)); });
+})();
+</script>
+</body>
+</html>
