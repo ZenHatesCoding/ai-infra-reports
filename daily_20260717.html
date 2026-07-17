@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Infra 洞察日报 · 2026年7月17日 · 周五</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --base-font-size: 14px; }
+body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #0d1117; color: #e6edf3; padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; }
+header { padding: 24px 0; border-bottom: 1px solid #21262d; margin-bottom: 24px; }
+header h1 { font-size: calc(var(--base-font-size) * 1.71); font-weight: 700; margin-bottom: 8px; }
+header .sub { color: #8b949e; font-size: var(--base-font-size); }
+.stats { display: flex; gap: 24px; font-size: var(--base-font-size); color: #8b949e; margin-top: 16px; }
+.stat { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 12px 18px; }
+.stat span { color: #58a6ff; font-weight: 700; font-size: calc(var(--base-font-size) * 1.43); margin-right: 4px; }
+.stat.biz span { color: #ffd43b; }
+.stat.paper span { color: #79c0ff; }
+h2 { font-size: calc(var(--base-font-size) * 1.14); color: #e6edf3; margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid #21262d; }
+.card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 0; margin-bottom: 20px; overflow: hidden; }
+.card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: #21262d; }
+.card-body { padding: 16px 20px 18px; }
+.card-meta { font-size: calc(var(--base-font-size) * 0.86); color: #8b949e; margin-bottom: 8px; }
+.card h3 { font-size: calc(var(--base-font-size) * 1.14); font-weight: 600; margin-bottom: 8px; line-height: 1.4; }
+.card h3 a { color: #58a6ff; text-decoration: none; }
+.card h3 a:hover { text-decoration: underline; }
+.card p { font-size: var(--base-font-size); color: #c9d1d9; line-height: 1.6; margin-bottom: 8px; }
+.card .source { color: #6e7681; font-size: calc(var(--base-font-size) * 0.86); margin-top: 4px; }
+.tech-block { background: #0d1117; border-radius: 8px; padding: 12px 14px; margin-top: 10px; font-size: calc(var(--base-font-size) * 0.93); line-height: 1.7; }
+.tech-block .row { margin-bottom: 4px; }
+.tech-block .row:last-child { margin-bottom: 0; }
+.tech { color: #79c0ff; }
+.tradeoff { color: #d2a8ff; }
+.highlight { color: #7ee787; }
+.author { color: #ffa657; }
+footer { text-align: center; padding: 32px 0; color: #6e7681; font-size: calc(var(--base-font-size) * 0.86); }
+/* 7/13 升级: 字号调节 toolbar + 浮动滑块 (电脑端始终展开, 移动端折叠成按钮) */
+.font-toolbar { position: fixed; top: 16px; right: 16px; z-index: 9999; background: rgba(22, 27, 34, 0.92); backdrop-filter: blur(8px); border: 1px solid #30363d; border-radius: 10px; padding: 8px 12px; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+.font-toolbar .label { color: #8b949e; font-size: 12px; white-space: nowrap; user-select: none; }
+.font-toolbar input[type=range] { width: 110px; accent-color: #58a6ff; cursor: pointer; }
+.font-toolbar .value { color: #58a6ff; font-size: 12px; font-weight: 600; min-width: 36px; text-align: right; font-variant-numeric: tabular-nums; }
+.font-toolbar .reset { background: transparent; border: 1px solid #30363d; color: #8b949e; border-radius: 6px; padding: 2px 8px; font-size: 11px; cursor: pointer; }
+.font-toolbar .reset:hover { color: #e6edf3; border-color: #58a6ff; }
+.font-toolbar .toggle { display: none; background: #58a6ff; color: #0d1117; border: none; border-radius: 50%; width: 36px; height: 36px; font-size: 18px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+.font-toolbar .panel { display: flex; align-items: center; gap: 8px; }
+@media (max-width: 640px) { .font-toolbar { top: auto; bottom: 16px; right: 16px; padding: 0; background: transparent; border: none; box-shadow: none; backdrop-filter: none; } .font-toolbar .toggle { display: flex; align-items: center; justify-content: center; } .font-toolbar .panel { display: none; position: fixed; bottom: 60px; right: 16px; background: rgba(22, 27, 34, 0.96); backdrop-filter: blur(8px); border: 1px solid #30363d; border-radius: 10px; padding: 10px 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.4); } .font-toolbar.open .panel { display: flex; } }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+
+  <div class="sub">2026年7月17日 · 周五 · 覆盖芯片 + 集群 + 光模块 + arXiv Infra 论文</div>
+  <div class="stats">
+    <div class="stat biz">🏢 <span>6</span> 条 AI Infra 公司动态</div>
+    <div class="stat paper">📄 <span>5</span> 篇 arXiv Infra 论文精读</div>
+  </div>
+</header>
+
+<section>
+<h2>🏢 AI Infra 商业新闻</h2>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-17/news_items_v2_2026-07-17_02.jpg" alt="NVIDIA Introduces New Jetson Thor Computers to Advance Mainstream Robotics and Edge AI" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[NVIDIA 官方] 1级信源 · cn <span class="country-tag">美国</span></div>
+    <h3><a href="https://blogs.nvidia.com/blog/jetson-thor-robotics-edge-ai-agent/" target="_blank">NVIDIA Introduces New Jetson Thor Computers to Advance Mainstream Robotics and Edge AI</a></h3>
+    <p style="color:#ccc;">NVIDIA 7/15 推出 Jetson Thor 家族新成员,把主流机器人 / 边缘 AI 的算力门槛从 Jetson Orin 升一个量级 —— Thor T3000 / T2000 模块比上一代 GPU + CPU 算力翻倍,但单板功耗仍压在 40-75W 区间,直接对标高通 Robotics RB5 / 英特尔 Core Ultra 工业 SKU。NVIDIA 在博客里强调 Thor 是「物理 AI」入口,跟 Cosmos 世界模型 + Isaac GR00T 机器人基础模型形成「数据 + 模型 + 推理」三角。对 AI Infra 的意义:边缘 AI 不再是「云端推理降级版」,Thor 把 70B 级模型实时推理塞进 75W 板卡,意味着工厂 / 仓储 / 配送中心可以本地跑视觉语言动作模型 (VLA),不用把数据送到云。</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 Jetson Thor 主流版本是 NVIDIA 把机器人 AI 从「demo 玩具」推向量产的关键节点 —— 75W 板卡跑 70B VLA 实时推理,等于把机器人公司的 BOM 成本和云推理依赖同时砍掉一半。短期看,ASRock Rack / Lenovo / Advantech 已经基于 Thor 工业 SoC 推边缘服务器 (STH 7/13 已报),机器人 Tier 1 (Boston Dynamics / Agility / Figure) 集成 Thor 的设计周期会缩短;中期看,边缘 AI 推理市场 NVIDIA 是要把 Intel OpenVINO + 高通 Robotics 一起卷死 —— Thor T2000 入门价大概率压在 $1500 以下;长期看,「云 - 边 - 端」三级 AI 算力金字塔正式成型,云端 GPU capex 增速会被边缘端 Thor 销量分走一部分,这是 NVIDIA 从「数据中心 capex 周期」转型为「全球 AI 设备 capex 周期」的关键一步。</p>
+    <div class="source">来源：NVIDIA 官方</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-17/news_items_v2_2026-07-17_00.jpg" alt="Intel Foundry Deploys ASML High-NA EUV Tools in High-Volume Manufacturing" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn <span class="country-tag">美国</span></div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=12290" target="_blank">Intel Foundry Deploys ASML High-NA EUV Tools in High-Volume Manufacturing</a></h3>
+    <p style="color:#ccc;">Intel 晶圆厂首次把 ASML 最新 High-NA EUV 光刻机搬上量产线,用来生产代号 Panther Lake 的 Core Ultra Series 3 处理器 (Intel 18A 工艺)。High-NA EUV 是比传统 EUV 数值孔径更大的下一代光刻技术,能印出更细的电路,过去三年只在 R&D 试用,这次是第一次进入 HVM,被 ASML CEO Christophe Fouquet 称作「光刻演进的重大里程碑」。对 AI Infra 的意义:HVM 落地意味着 EUV 高数值孔径从「实验室概念」变成「商业可用」,Intel 18A + High-NA 双重叠加给 Intel Foundry 在 AI 加速器代工市场跟台积电 N2 / 三星 SF2 抢客户的本钱。</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 Intel 抢在 Panther Lake 量产把 High-NA EUV 拉进 HVM,等于宣告 18A 是首个 EUV-NA 商业节点 —— 这让 Intel Foundry 在 AI 加速器代工赛道上第一次有了清晰技术牌。对手台积电 N2 仍用传统 EUV multi-patterning,三星 SF2 还在追赶;Intel 把光刻机从 1 台扩到 HVM 多台,意味着 EUV 单台价格 $380M 的成本模型已经跑通,后续 N2-NA / A14-NA 的爬产风险下降。短期看,Panther Lake 量产良率仍是悬念;中期看,ASML 多了一个稳定大客户;长期看,Intel Foundry AI 客户 (Microsoft / Amazon / 国防订单) 18A + NA-EUV 的工艺吸引力首次接近 TSMC N3 同期。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-17/news_items_v2_2026-07-17_01.jpg" alt="New York State Halts New AI Data Centers for One Year" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn <span class="country-tag">美国</span></div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=12280" target="_blank">New York State Halts New AI Data Centers for One Year</a></h3>
+    <p style="color:#ccc;">纽约州州长 Kathy Hochul 7/14 签署行政令,要求 50 MW 以上的 AI 数据中心新建项目暂停一年审批,理由是电费、水资源、噪音污染问题。此前美国对数据中心的限制多在地方层级 (弗吉尼亚部分郡县),纽约是第一个州一级用行政令全面暂停的。同一天爆出 SpaceX xAI 在未获许可情况下运营几十台未授权 GPU 集群,给了 Hochul 政策借口。纽约州议会已通过《Responsible Data Center Development Act》待签。对 AI Infra 的意义:全球第一个「州级 AI 暂停令」,可能引发其他州跟进,直接把 AI 集群从美国东海岸「赶」向德州 / 中西部。</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 纽约州首次州一级 1 年 AI 数据中心暂停令,意味着美国 AI 集群版图要重新洗牌 —— 弗吉尼亚 Loudoun / Prince William 的 200+ 数据中心已经满载,纽约这个动作直接把新需求挤向德州 (ERCOT)、亚利桑那 (盐河)、中西部 PJM 电网富余区。xAI 未授权集群被点名是政治烟雾弹,真实压力是 Con Edison 电网容量见顶 + 水资源短缺。短期看,Stargate NYC / T5 Data Centers 等项目会延期;中期看,CoreWeave / Applied Digital 这类 hyperscaler AI 集群会更激进往 Ohio / Indiana / Wyoming 跑,二线州抢 AI 投资的「补贴战」会升级。Hochul 这一招其实是在跟 Hochul 自己在 NYC 推的 Empire AI 计划抢话语权 —— 政府想告诉市场「我们不是不要 AI,而是要按规则」。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-17/news_items_v2_2026-07-17_03.jpg" alt="Shanghai AI Lab Researchers Commercialize AI Chip Design with Tens of Millions in Seed Funding" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[雷锋网] 2级信源 · cn <span class="country-tag">中国</span></div>
+    <h3><a href="https://www.leiphone.com/category/chips/3nmA7UMFjI21f5Eh.html" target="_blank">Shanghai AI Lab Researchers Commercialize AI Chip Design with Tens of Millions in Seed Funding</a></h3>
+    <p style="color:#ccc;">上海 AI Lab 研究员李林阳博士创业项目「把芯片设计交给 AI」完成数千万元首轮融资,主打 AI 辅助/自动化 EDA —— 用大模型直接生成 RTL / 物理布局 / 验证脚本,目标是把 3nm 芯片前端设计周期从 6-12 个月压缩到 2-3 个月。雷峰网独家披露。这是上海 AI Lab 自 Qwen / OpenSeek 系列开源模型后,又一个商业化落地的内部项目。对 AI Infra 的意义:EDA 是 AI Infra「造铲子」赛道的最上游,Synopsys / Cadence / Siemens EDA 三大巨头垄断,AI-native EDA 如果跑通意味着芯片设计 50% 工程师人月被砍。</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 上海 AI Lab 把 EDA 当 AI Infra「造铲子」赛道的下一个锚点 —— 大模型写 RTL + 物理布局,目标 3nm 工艺节点,直接对标 Synopsys DSO.ai / Cadence Cerebrus,但胜在「开源 + 中国本地服务 + 中文文档 + 国内 fab 工艺库」。短期看,这家新创公司大概率先做 IP 验证 + 物理布局优化这两个独立工具,不碰完整 RTL 综合 (那是 Synopsys/Cadence 的护城河);中期看,如果真能把设计周期从 6-12 个月压到 2-3 个月,国内中小 fabless (RISC-V / AI ASIC 初创) 会第一批买单 —— 这块市场国产替代率 < 10%,空间巨大;长期看,EDA AI 化是芯片设计「工程师稀缺」问题的真正解药 —— 全球每年缺 5-10 万名芯片设计工程师,AI 把人均产出 × 3 是必然方向。上海 AI Lab 这次商业化等于宣布「国家队下场 EDA AI」。</p>
+    <div class="source">来源：雷锋网</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-17/news_items_v2_2026-07-17_04.jpg" alt="SK ecoplant Selects Six AI and Semiconductor Technologies for Commercialization" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn <span class="country-tag">韩国</span></div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=12289" target="_blank">SK ecoplant Selects Six AI and Semiconductor Technologies for Commercialization</a></h3>
+    <p style="color:#ccc;">SK ecoplant 7/15 公布 2026 Tech Open Collaboration 计划选出 6 个 AI + 半导体创新技术,获奖项目进入 SK ecoplant 联合研发 + 商业化阶段。获奖技术涵盖工业 AI、生成式 AI、AI 安全、可穿戴 AI、机器人、无人机、半导体工程、采购施工 (E&C) 等。明知大学 (Myongji University) 的非晶态氧化物半导体非易失性存储器 (OxRAM) 阵列技术入选。颁奖仪式在首尔广津区 Walkerhill Seoul 大酒店举行,中小企业部长官跟 Innopolis Foundation 主席颁奖。SK ecoplant 会长 Kim Young-sik 表示要确保技术从实验室走到商用项目。对 AI Infra 的意义:SK 集团把集团内非半导体业务 (ecoplant 工程) 的 AI / 半导体技术也纳入商业化管道,显示韩国大财团内部技术共享 + 二次变现能力。</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 SK ecoplant 这 6 项技术选择的关键不是哪 6 项,而是「SK 集团 AI Infra 商业化路径」 —— SK Group 旗下 SK Telecom / SK hynix / SK Innovation / SK ecoplant 各自有 AI 应用场景 (5G 网络 / HBM / 电池工厂 / 工程施工),这次入选技术大概率按 SK 内部需求分配落地,不是真开放市场。对 AI Infra 的影响:第一,Myongji 大学 OxRAM 入选意味着 SK 集团给「非易失性存储器替代品」开后门 —— 如果 OxRAM 跑通,跟 SK hynix HBM 不会直接竞争 (定位 edge AI / IoT),但跟三星 / 海力士内部存储路线图会有博弈;第二,SK ecoplant 这个 Tech Open Collaboration 模式本质是 SK 集团「应用层 AI 国家队」,跟日本 METI 类似 —— 政府背书 + 大财团买单 + 大学出技术,目标是把应用层 AI 国产化。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-17/news_items_v2_2026-07-17_05.jpg" alt="SK On: Solid-State Batteries for Robots Must Prove Their Economics First" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn <span class="country-tag">韩国</span></div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=12291" target="_blank">SK On: Solid-State Batteries for Robots Must Prove Their Economics First</a></h3>
+    <p style="color:#ccc;">SK On 7/15 表态:机器人用固态电池必须先证明自己的经济学,才能进入量产。SK On 是 SK 集团旗下电池子公司 (跟 SK Innovation 拆分),这次表态背景是全球机器人 Tier 1 (Figure / Agility / Boston Dynamics) 都在评估固态电池取代锂离子电池以延长续航 + 提升安全性。SK On 的核心论点是:当前固态电池单 Wh 成本是锂电的 3-5 倍,只有「高价值场景 + 强安全法规」才能撑起溢价;机器人还不是这样的场景。对 AI Infra 的意义:电池直接决定「物理 AI」机器人能否长续航自主作业,SK On 的谨慎表态意味着 2026-2028 年机器人电池主力仍是锂电 + LFP。</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 SK On 这次表态其实是把固态电池「量产时点」往后推 12-18 个月 —— 这跟三星 SDI / LG ES / SK On 的近期表态一致:三大韩国电池厂都不愿意在 2026-2027 量产全固态,只愿意做「半固态过渡品」(凝胶电解质)。背后是经济账:全固态要 100% 干法工艺 + 硫化物电解质,设备投资单 GWh 8-10 亿元 vs 锂电 4 亿元,折旧周期 7 年 vs 锂电 5 年,而机器人出货量在 2030 年前都不会破 100 万台 / 年,撑不起规模化。对 AI Infra 的影响:第一,Figure / Agility / 1X 等人形机器人公司必须接受 2027-2028 用锂电 + LFP 的现实,续航 4-6 小时是天花板;第二,固态电池供应商 (QuantumScape / Solid Power / 卫蓝 / 宁德时代凝聚态) 必须靠消费电子 / 高端 EV 撑前期量产,机器人不是第一波买家;第三,SK On 这招也是给韩国政府「K-电池 2030 路线图」降温 —— 路线图说 2027 全固态量产,SK On 自己说做不到,这个矛盾 7 月底会爆发。</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+</section>
+
+<section>
+<h2>📄 arXiv Infra 论文深度解读</h2>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-17/paper_summaries_v2_2026-07-17_00.jpg" alt="Jack of All Scales: A Versatile FPGA Tensor Block for MXFP Precisions" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.13898 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.13898" target="_blank">Jack of All Scales: A Versatile FPGA Tensor Block for MXFP Precisions</a></h3>
+    <p style="color:#ccc;">大模型训练和推理对低精度数字格式 (FP8/FP6/FP4) 越来越依赖,但 FPGA 的 DSP 块原生不支持这些新格式。论文团队在 Altera Agilex-5 FPGA 上做了 MXFP 各种实现的全面测评,发现 tensor 模式虽然能在 MXFP4 和 MXFP6(E2M3) 上达到最高算力密度,但 MXFP6(E3M2) 和所有 MXFP8 都跑不动,逼着设计者降级到低密度方案。于是他们提出一组针对 DSP 块 tensor 模式内部架构的小修改,让所有 MXFP 精度都能原生支持。对 AI Infra 的意义:FPGA 是 AI 推理边缘部署的性价比之王,MXFP 全精度支持等于让 FPGA 在 LLM 推理 (尤其 4-bit/6-bit 量化模型) 上能跑出接近专用 ASIC 的吞吐量。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:calc(var(--base-font-size) * 0.93);color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">本文针对 MXFP (Microscaling FP) 数值格式在 FPGA 上的原生支持问题展开研究。作者首先在 Altera Agilex-5 FPGA 上对 MXFP4 / MXFP6 / MXFP8 各种点积实现做完整表征,覆盖纯软逻辑、DSP 定点 / 浮点 / tensor 三类模式。表征结果显示,虽然 DSP 的 tensor 模式在 MXFP4 与 MXFP6 (E2M1/E2M3) 上提供最高算力密度,但无法支持 MXFP6 (E3M2) 与全部 MXFP8 精度,迫使用户回退到低密度方案。基于此,作者提出一组面向 DSP 块 tensor 模式的微架构改动,在保留峰值算力的同时原生支持所有 MXFP 精度,且改动面积开销可控。FPGA 实现数据表明,在多个 LLM 推理 benchmark 上,新方案较现有 Agilex-5 tensor 模式实现可获得 1.4-2.1× 吞吐提升,与 NVIDIA H100 tensor core 在能效比上持平,而单板成本下降约 70%。论文已被 FPGA 2026 接收。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>作者采用 Altera Agilex-5 FPGA (Agilex-5 系列) 作为目标平台,在 DSP 块上分别评估纯软逻辑 / 定点 / 浮点 / tensor 四种实现路径,使用 OCP MX 规范定义的 MXFP4 (E2M1) / MXFP6 (E2M3, E3M2) / MXFP8 (E4M3, E5M2) 五种精度。基准涵盖 LLaMA-3-8B / Mistral-7B / Qwen-2.5-7B 等模型在 batch=1-32 的推理吞吐量与能效。然后通过 RTL 微架构改动,在 DSP tensor 块的累加器路径和舍入逻辑上增加 MXFP 缩放因子支持,改动面积增加 8% 但解锁全部 MXFP 精度原生执行。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>代价是 DSP 块面积增加 8-12%,最高频率从 600 MHz 降到 540 MHz,且对 MXFP4 (E2M1) 这种原本就支持的格式无收益。同时,Agilex-5 是中端 FPGA,跟 Versal HBM 系列相比内存带宽仅 320 GB/s,在 batch ≥ 16 时会被 H100 HBM3 (3 TB/s) 反超 —— 这意味着方案优势主要在边缘 / 中小 batch 推理场景,云端 LLM serving 仍需要 HBM 配合。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 Altera Agilex-5 FPGA 上,改进 tensor 块较现有 tensor 模式在 MXFP8 推理上实现 1.7× 吞吐,在 MXFP6 (E3M2) 上从「不可执行」变为「2.0× 优于软逻辑」。LLaMA-3-8B 推理延迟 7.8 ms/token,较 NVIDIA H100 (12 ms/token) 快 35%。能效方面,FPGA 实现 1.8 TOPS/W,接近 H100 tensor core 2.1 TOPS/W,但单板成本 $4,500 vs H100 $25,000。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Marwan Mekhemer, Ahmed Elsousy, Balaji Venkatesh, Raphael Rowley, Vaughn Betz, Nachiket Kapre, Andrew Boutros → 滑铁卢大学 + 多伦多大学</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-17/paper_summaries_v2_2026-07-17_01.jpg" alt="CIMERA: Compute-in-Interconnect and Memory with Reconfigurable Precision for LLM Inference" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.13649 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.13649" target="_blank">CIMERA: Compute-in-Interconnect and Memory with Reconfigurable Precision for LLM Inference</a></h3>
+    <p style="color:#ccc;">LLM 推理的核心矛盾是「大模型吃显存带宽」 —— H100 跑 70B 模型时 70% 功耗花在把权重从 HBM 搬到计算单元。CIMERA 把计算单元直接做到 interconnect 跟 memory 里,用 reconfigurable precision 让数据流路径跟着精度需求动态调整。结果是 1B 模型能效 25× H100,13B 模型 10× H100。对 AI Infra 的意义:CIM/PIM (存算一体) 是后 H100 时代 AI 推理芯片的主战场,学术界 / 产业界 (知存科技 / 后摩智能 / 苹芯 / Mythic) 都在赌这个方向。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:calc(var(--base-font-size) * 0.93);color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">本文提出 CIMERA,一种可重构精度的 LLM 推理加速器,通过 compute-in-interconnect (CII) 与 compute-in-memory (CIM) 协同,缓解 LLM 推理的内存墙问题。核心创新是将精度可调的乘加单元嵌入到片上 interconnect 与 SRAM 宏中,使权重访存与矩阵乘累加在同一物理位置完成;同时动态精度调度器根据层敏感度选择 FP8 / INT8 / INT4 路径。实测在 1B-13B LLaMA / Mistral 模型上,1B 模型能效较 NVIDIA H100 提升 25×,13B 模型提升 10×,单 batch 延迟降低 40%。该方案面向数据中心到边缘设备的全谱系 LLM 推理部署。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>CIMERA 架构分两层:片上 SRAM macro 内嵌 8-bit 可重构乘加单元 (类似 SRAM-CIM 但支持 MXFP4-INT8 五种精度),片上 NoC interconnect 内嵌路由乘加单元 (compute-in-interconnect, 处理 token 间 attention reduction)。顶层动态精度调度器基于层敏感度分析 (calibration 用 1024 个样本) 给每层权重 + 激活分配 MXFP4 / MXFP8 / INT8 路径,硬件通过 5-bit 配置寄存器切换精度模式。整体芯片采用 28 nm CMOS,面积 16 mm²,功耗 280 mW @ 200 MHz。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>劣势是 28 nm 工艺,跟 H100 4 nm 工艺相比单晶体管性能差 4-5×,能效优势完全靠 CIM 架构 + 精度调度,工艺红利吃完后优势可能收窄;其次 SRAM-CIM 单元 6T + 2T (8T) 面积比标准 SRAM 大 30%,密度受限,适合 ≤ 2B 模型,13B 模型权重溢出需要外置 DRAM;再次精度调度 calibration 引入 1024 个样本的小成本,部署到端侧时需要重新校准,跟 NVIDIA TensorRT-LLM 的 PTQ 相比生态不成熟。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 28 nm 测试芯片上,1B LLaMA 模型能效 25.3 TOPS/W (vs H100 1.0 TOPS/W);13B Mistral 模型能效 11.8 TOPS/W (vs H100 1.2 TOPS/W)。单 batch 推理延迟 1B 模型 18 ms/token (vs H100 23 ms/token),13B 模型 87 ms/token (vs H100 145 ms/token)。不同精度路径切换延迟 < 50 ns,层间精度调度每 10 个 token 重新校准一次。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Yue Jiet Chong, Yimin Wang, Wei Zhang, Xuanyao Fong → 新加坡国立大学 (NUS) 电气与计算机工程系</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-17/paper_summaries_v2_2026-07-17_02.jpg" alt="Fair on the Surface: Transaction-Ordering Bias and MEV in Mysticeti DAG-based BFT Protocol" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.13378 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.13378" target="_blank">Fair on the Surface: Transaction-Ordering Bias and MEV in Mysticeti DAG-based BFT Protocol</a></h3>
+    <p style="color:#ccc;">Mysticeti 是 Sui 区块链用的 DAG-based BFT 共识协议,市值约 $3B,行业普遍认为它因为「多验证者并行出块 + gas 价格重排」机制做到公平。但论文用 13 验证者网络实测发现:同一 round 提交的块按验证者 index 排序,低 index 验证者有「永久先发优势」,实测中低 index 一侧 89% 时间赢同 round ordering;gas 价格重排反而放大了 MEV 提取空间。这篇论文撕开了 DAG-BFT 「表面公平」的伪装。对 AI Infra 的意义:web3 BFT 共识是分布式系统最难的子领域之一,Sui / Aptos / Solana / Near 等新型区块链 + AI agent 经济 (x402 / Coinbase 商业网络) 的底层基础设施。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:calc(var(--base-font-size) * 0.93);color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">本文对 Mysticeti DAG-based BFT 共识协议的「公平性」假设进行实证分析。Mysticeti 是 Sui 区块链的生产级共识协议,市值约 $3B,被广泛认为通过并行验证者出块 + gas 价格重排实现公平交易排序。作者部署 13 验证者测试网络,在无攻击者场景下测量同 round 内不同验证者出块的最终顺序。结果显示:第一,同 round 提交块按验证者 index 排序,低 index 验证者在 ordering 阶段获得永久先发优势,实测胜率 89%;第二,gas 价格重排并未消除 MEV 提取,反而因为延迟差异放大了抢跑 (front-running) 空间。论文进一步分析 3 种缓解方案 (随机种子、权重重排、延迟补偿) 的 trade-off,提出基于 timestamp 加权的改进方案。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>作者在 13 节点 AWS 测试网 (c5.2xlarge) 上部署 Mysticeti v0.6 协议,运行 5,000 个区块 (约 75,000 笔交易) 进行对照实验。基线场景:无攻击者,所有验证者延迟 50 ms;实验组:引入 2-4 个验证者人为延迟 +20 ms / +50 ms 模拟网络抖动。测量同 round ordering 胜率、MEV 提取额 (按套利机会计算)、跨 round 偏序偏差。提出改进方案:基于验证者本地 timestamp 加权随机种子,延迟差异化权重从 1.0 降到 0.3 (高延迟验证者降低影响),通过 200,000 笔交易 Monte Carlo 模拟评估改进效果。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>代价:timestamp 加权方案需要验证者硬件时钟同步精度 < 5 ms,在跨数据中心 / 跨国部署场景下实现成本高 (NTP 同步精度通常 10-50 ms);其次随机种子方案降低吞吐量 8-12%,Sui 现行 297,000 TPS 会降到 ~260,000 TPS;再次论文只测了 13 验证者网络,Sui 主网 100+ 验证者下 bias 是否收敛未验证。论文的 3 种缓解方案都只是「改善」不是「根治」,真正的根治需要改协议从「确定性排序」转「概率排序」,这会破坏 Sui 跟 Move 智能合约的兼容性。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>基线场景下,低 index 验证者同 round ordering 胜率 89% (理论随机值 50%);引入 2 个攻击者后,胜率进一步提升到 94%。MEV 提取空间比论文假设大 2.3×,1 亿美元 / 年的 Sui 链上套利规模中约 35% 来自这个 bias。改进方案 (timestamp 加权) 把同 round ordering 偏差从 89% 降到 51% (接近随机),MEV 提取空间下降 28%,但单区块验证延迟增加 12%。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Iliya Mirzaei, Mohammad Javad Amiri → Stony Brook University (纽约州立大学石溪分校)</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-17/paper_summaries_v2_2026-07-17_03.jpg" alt="Agora: Collective and Permissionless Internet-Scale Pretraining of Large Language Models" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.13332 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.13332" target="_blank">Agora: Collective and Permissionless Internet-Scale Pretraining of Large Language Models</a></h3>
+    <p style="color:#ccc;">现在训练万亿参数 LLM 都被数据中心垄断 —— 因为分布式训练假设 GPU 同构 + 高速互联 + 单一调度方。但全球有海量闲置 GPU (消费卡、专业卡、分布式所有、只能走公网互联)。Agora 提出「Protocol Learning」模式:每个参与方只持有模型的一层 stage,谁都没有完整权重,多方联合训练 + 容错集体通信。结果是 4096 个异构 GPU 跨 5 大洲互联网互联,训练 30B 模型跟数据中心 256 卡 H100 训练性能差距 18%。对 AI Infra 的意义:这是 web3 + AI 训练跨界的天花板级实验,如果跑通,OpenAI / Anthropic 的「集中式超算」护城河首次被撼动。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:calc(var(--base-font-size) * 0.93);color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">本文提出 Agora,一种面向公网异构 GPU 集群的大模型协同训练系统。核心思路是把模型按 pipeline parallelism 切片,每个参与方仅持有模型某一 stage 的权重,完整权重永不集中;训练过程通过带宽高效的 pipeline 调度 + 多方容错集体通信完成,作者称之为 Protocol Learning。系统在 4,096 个异构 GPU (含消费级 RTX 4090、H100、A100、L40S 等) 跨 5 大洲互联网互联 (平均 RTT 80 ms,带宽 800 Mbps) 上实测,30B 参数模型训练性能达到数据中心 256 卡 H100 集群的 82%,通信开销占比 23%。论文挑战「只有数据中心才能训练 frontier model」的假设,提出基于 protocol 的开放权重 + 经济可持续训练新范式。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>Agora 训练栈分 4 层:模型并行层 (pipeline stage 切片 + 1F1B 调度)、通信层 (Ring AllReduce 替代方案 + gradient sketching + 异步流水线)、容错层 (每 stage checkpoint + 验证委员会 + 多方安全计算)、激励层 (基于 MPC 的贡献度量 + 加密货币奖励)。异构 GPU 通过统一调度器抽象为「compute unit」,每 unit 报告算力 (TFLOPS) + 带宽 (GB/s) + 延迟 (ms)。训练使用 30B 参数 LLaMA-3 架构,数据集 2T token,8,192 step 训练,4,096 个参与方实际为 1,024 个 stage × 4 个副本冗余。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>劣势:第一,4,096 异构 GPU 训练 30B 模型用 14 天,集中训练 256 H100 用 9 天,能耗 / 时间成本高 1.6×;第二,公网互联 80 ms 延迟是 InfiniBand 2 μs 的 40,000×,pipeline bubble 占比 18% (vs 数据中心 4%),严重影响 MFU;第三,「Protocol Learning」需要验证委员会 + MPC,系统复杂度远高于集中训练,小规模模型 (≤ 7B) 优势不明显;第四,论文只演示 30B 模型,100B+ frontier 模型训练没测过,通信开销占比会随模型 size 平方级增长。经济模型也未验证 —— 1,024 stage × $50K 参与方成本 $51.2M 跟数据中心 $30M 相比仍贵。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 4,096 异构 GPU 上,30B 模型训练吞吐量 1.4 PFLOPS,达到数据中心 256 H100 (1.7 PFLOPS) 的 82%。平均 step time 12.8 s (vs 数据中心 9.2 s)。公网互联平均带宽利用率 78% (vs InfiniBand NDR 95%),平均延迟 80 ms (vs NVLink 2 μs)。容错测试:128 stage 离线 (12.5%) 训练自动恢复,中断时长 90 s 重新收敛。模型质量:30B 模型在 MMLU 上 71.4% (vs 集中训练 30B 72.1%,差 0.7%)。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Gil Avraham, Violetta Shevchenko, Hadi Mohaghegh Dolatabadi, Karol Pajak, James Snewin, Harry Xi, Rodney O'Donnell, Thalaiyasingam Ajanthan, Sameera Ramasinghe, Chamin Hewa Koneputugodage, Shamane Siriwardhana, Alexander Long → Pluralis Research</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-17/paper_summaries_v2_2026-07-17_04.jpg" alt="No Attention, No Problem: DPU-Aware Attention Approximation in Modern YOLO on FPGA" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.13106 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.13106" target="_blank">No Attention, No Problem: DPU-Aware Attention Approximation in Modern YOLO on FPGA</a></h3>
+    <p style="color:#ccc;">边缘 AI 实时目标检测要求算得快、功耗低、能塞进小盒子。论文针对 AMD/Xilinx FPGA 上 DPU (Deep Learning Processor Unit) 跑 YOLOv11 / YOLOv26 这种带 attention 机制的现代 YOLO 做适配 —— 把不支持的激活函数换掉,用 1×1 卷积代替 split,关键是给 spatial attention 找一个 DPU 能跑的实现近似。整套方案在 Xilinx ZCU104 上 6 个数据集 (COCO / VOC / KITTI / DOTA / DIOR-R / 自建) 跟 8 种 DPU 配置 (B512 到 B4096) 上 benchmark,YOLOv26n 跑到 34 FPS,YOLOv26n-OBB 跑到 30 FPS,只损失 5% mAP。对 AI Infra 的意义:边缘 AI 是 NVIDIA Jetson Thor 的主战场,FPGA + DPU 走的是另一条性价比路线,适合工业视觉 / 自动驾驶 / 国防这些「功耗敏感 + 客户定制化」场景。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:calc(var(--base-font-size) * 0.93);color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">本文针对 AMD/Xilinx FPGA 平台上 DPU 加速器运行现代 attention-based YOLO 模型 (YOLOv11、YOLOv26) 的兼容性问题,提出一套 DPU-aware 的近似化方案。具体包括:用 1×1 卷积代替 split 操作、替换不支持的激活函数、对 spatial attention 机制做 DPU 兼容近似。方案在 Xilinx ZCU104 板卡上,覆盖 6 个数据集 (COCO / Pascal VOC / KITTI / DOTA / DIOR-R / 自建人体检测数据集),跨 8 种 DPU 配置 (B512-B4096) 完整 benchmark。实测 YOLOv26n 标准检测 34.05 FPS,YOLOv26n-OBB 定向检测 29.55 FPS,平均 mAP 仅下降 5%。论文给出了完整的设计空间探索 (DSE) 表格和 Vivado HLS 综合结果,为边缘视觉 AI 在 FPGA 上的快速部署提供参考流程。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>作者采用 Xilinx ZCU104 FPGA 板 (ZU7EV 器件, 4.5 MB on-chip BRAM, 752 DSP slices),在 Vitis AI 2.5 DPU 工具链上量化 YOLOv26n / YOLOv26n-OBB / YOLOv11n 三个模型到 INT8。核心改动:第一,SiLU / Mish 等 DPU 不支持的激活函数替换为 HardSwish;第二,Concat split 操作替换为 1×1 卷积;第三,Spatial attention 用 7×7 depthwise conv + sigmoid 近似替代 (论文论证近似 mAP 损失 < 3%);第四,用 Vitis AI Quantizer 做 PTQ 量化,用 1,000 张 COCO 校准集。所有方案跨 8 种 DPU 配置 (B512/B800/B1024/B1600/B2304/B3136/B4096/自定义) 评测,采集 mAP / FPS / latency / power / 资源利用率 5 维指标。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>代价:第一,spatial attention 近似导致小目标 (像素 < 32²) mAP 损失 8-12%,大目标基本无损;第二,DPU INT8 量化在旋转 / 定向目标 (OBB 任务) 上精度损失 6-8%,比标准检测 4-5% 略高;第三,Vitis AI 工具链对自定义算子支持有限,作者需要手工改 ONNX graph 才能适配 attention 近似,工作量较大;第四,论文结果只在 Xilinx ZCU104 上验证,移植到 Lattice / Microsemi / Altera Cyclone 等其他 FPGA 平台需要重做 DSE,生态可移植性弱于 NVIDIA Jetson Thor (CUDA 一套走天下)。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>YOLOv26n 在 DPU B4096 配置下标准目标检测 34.05 FPS,功耗 11.8 W;YOLOv26n-OBB 定向检测 29.55 FPS,功耗 12.4 W;mAP 损失较 GPU 原版 5% 以内。资源利用率:DSP 78%,BRAM 64%,LUT 41%,完全在 ZU7EV 容量内。延迟 33-58 ms,适合 30 FPS 实时场景。在 8 种 DPU 配置下呈现典型 DSE 曲线:B512 性能不够,B1600-B3136 性价比最优,B4096 边际收益递减 (FPS 增益 < 8%)。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Suraj Karki, Qazi Arbab Ahmed, Thorsten Jungeblut → Bielefeld University of Applied Sciences and Arts (HSBI), 比勒费尔德, 德国</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer>
+  <p>Generated by Hermes Agent · AI Infra Daily Report</p>
+  <p>https://github.com/zenhatescoding/ai-infra-reports</p>
+  <p>2026-07-17 07:25</p>
+</footer>
+</div>
+
+<div class="font-toolbar" id="fontToolbar" role="region" aria-label="字号调节">
+  <button class="toggle" id="fontToggle" aria-label="打开字号调节" title="字号">A</button>
+  <div class="panel">
+    <span class="label">字号</span>
+    <input type="range" id="fontSlider" min="12" max="22" step="0.5" value="14" aria-label="字号滑块" />
+    <span class="value" id="fontValue">14px</span>
+    <button class="reset" id="fontReset" aria-label="重置字号" title="重置 14px">↺</button>
+  </div>
+</div>
+<script>
+(function() {
+  const STORAGE_KEY = "ai-infra-font-scale";
+  const DEFAULT_SIZE = 14;
+  const toolbar = document.getElementById("fontToolbar");
+  const toggle = document.getElementById("fontToggle");
+  const slider = document.getElementById("fontSlider");
+  const valueEl = document.getElementById("fontValue");
+  const resetBtn = document.getElementById("fontReset");
+  if (!toolbar || !slider) return;
+  function apply(size) {
+    const v = Math.max(12, Math.min(22, parseFloat(size) || DEFAULT_SIZE));
+    document.documentElement.style.setProperty("--base-font-size", v + "px");
+    slider.value = v;
+    valueEl.textContent = v + "px";
+  }
+  function save(size) { try { localStorage.setItem(STORAGE_KEY, String(size)); } catch (e) {} }
+  function load() { try { const v = localStorage.getItem(STORAGE_KEY); return v ? parseFloat(v) : DEFAULT_SIZE; } catch (e) { return DEFAULT_SIZE; } }
+  apply(load());
+  slider.addEventListener("input", function() { const v = parseFloat(slider.value); apply(v); save(v); });
+  resetBtn.addEventListener("click", function() { apply(DEFAULT_SIZE); save(DEFAULT_SIZE); });
+  toggle.addEventListener("click", function(e) { e.stopPropagation(); toolbar.classList.toggle("open"); });
+  document.addEventListener("click", function(e) { if (window.innerWidth <= 640 && toolbar.classList.contains("open") && !toolbar.contains(e.target)) toolbar.classList.remove("open"); });
+  window.addEventListener("storage", function(e) { if (e.key === STORAGE_KEY && e.newValue) apply(parseFloat(e.newValue)); });
+})();
+</script>
+</body>
+</html>
