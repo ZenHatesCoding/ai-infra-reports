@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Infra 洞察日报 · 2026年7月18日 · 周六</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --base-font-size: 14px; }
+body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #0d1117; color: #e6edf3; padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; }
+header { padding: 24px 0; border-bottom: 1px solid #21262d; margin-bottom: 24px; }
+header h1 { font-size: calc(var(--base-font-size) * 1.71); font-weight: 700; margin-bottom: 8px; }
+header .sub { color: #8b949e; font-size: var(--base-font-size); }
+.stats { display: flex; gap: 24px; font-size: var(--base-font-size); color: #8b949e; margin-top: 16px; }
+.stat { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 12px 18px; }
+.stat span { color: #58a6ff; font-weight: 700; font-size: calc(var(--base-font-size) * 1.43); margin-right: 4px; }
+.stat.biz span { color: #ffd43b; }
+.stat.paper span { color: #79c0ff; }
+h2 { font-size: calc(var(--base-font-size) * 1.14); color: #e6edf3; margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid #21262d; }
+.card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 0; margin-bottom: 20px; overflow: hidden; }
+.card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: #21262d; }
+.card-body { padding: 16px 20px 18px; }
+.card-meta { font-size: calc(var(--base-font-size) * 0.86); color: #8b949e; margin-bottom: 8px; }
+.card h3 { font-size: calc(var(--base-font-size) * 1.14); font-weight: 600; margin-bottom: 8px; line-height: 1.4; }
+.card h3 a { color: #58a6ff; text-decoration: none; }
+.card h3 a:hover { text-decoration: underline; }
+.card p { font-size: var(--base-font-size); color: #c9d1d9; line-height: 1.6; margin-bottom: 8px; }
+.card .source { color: #6e7681; font-size: calc(var(--base-font-size) * 0.86); margin-top: 4px; }
+.tech-block { background: #0d1117; border-radius: 8px; padding: 12px 14px; margin-top: 10px; font-size: calc(var(--base-font-size) * 0.93); line-height: 1.7; }
+.tech-block .row { margin-bottom: 4px; }
+.tech-block .row:last-child { margin-bottom: 0; }
+.tech { color: #79c0ff; }
+.tradeoff { color: #d2a8ff; }
+.highlight { color: #7ee787; }
+.author { color: #ffa657; }
+footer { text-align: center; padding: 32px 0; color: #6e7681; font-size: calc(var(--base-font-size) * 0.86); }
+/* 7/13 升级: 字号调节 toolbar + 浮动滑块 (电脑端始终展开, 移动端折叠成按钮) */
+.font-toolbar { position: fixed; top: 16px; right: 16px; z-index: 9999; background: rgba(22, 27, 34, 0.92); backdrop-filter: blur(8px); border: 1px solid #30363d; border-radius: 10px; padding: 8px 12px; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+.font-toolbar .label { color: #8b949e; font-size: 12px; white-space: nowrap; user-select: none; }
+.font-toolbar input[type=range] { width: 110px; accent-color: #58a6ff; cursor: pointer; }
+.font-toolbar .value { color: #58a6ff; font-size: 12px; font-weight: 600; min-width: 36px; text-align: right; font-variant-numeric: tabular-nums; }
+.font-toolbar .reset { background: transparent; border: 1px solid #30363d; color: #8b949e; border-radius: 6px; padding: 2px 8px; font-size: 11px; cursor: pointer; }
+.font-toolbar .reset:hover { color: #e6edf3; border-color: #58a6ff; }
+.font-toolbar .toggle { display: none; background: #58a6ff; color: #0d1117; border: none; border-radius: 50%; width: 36px; height: 36px; font-size: 18px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+.font-toolbar .panel { display: flex; align-items: center; gap: 8px; }
+@media (max-width: 640px) { .font-toolbar { top: auto; bottom: 16px; right: 16px; padding: 0; background: transparent; border: none; box-shadow: none; backdrop-filter: none; } .font-toolbar .toggle { display: flex; align-items: center; justify-content: center; } .font-toolbar .panel { display: none; position: fixed; bottom: 60px; right: 16px; background: rgba(22, 27, 34, 0.96); backdrop-filter: blur(8px); border: 1px solid #30363d; border-radius: 10px; padding: 10px 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.4); } .font-toolbar.open .panel { display: flex; } }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+
+  <div class="sub">2026年7月18日 · 周六 · 覆盖芯片 + 集群 + 光模块 + arXiv Infra 论文</div>
+  <div class="stats">
+    <div class="stat biz">🏢 <span>6</span> 条 AI Infra 公司动态</div>
+    <div class="stat paper">📄 <span>5</span> 篇 arXiv Infra 论文精读</div>
+  </div>
+</header>
+
+<section>
+<h2>🏢 AI Infra 商业新闻</h2>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-18/news_items_v2_2026-07-18_00.jpg" alt="NVIDIA Vera Rubin Maximizes Intelligence per Dollar for Post-Training Workloads — a Key Metric for Agentic AI" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[NVIDIA 官方] 1级信源 · cn <span class="country-tag">美国</span></div>
+    <h3><a href="https://blogs.nvidia.com/blog/nvidia-vera-rubin-post-training-intelligence-per-dollar/" target="_blank">NVIDIA Vera Rubin Maximizes Intelligence per Dollar for Post-Training Workloads — a Key Metric for Agentic AI</a></h3>
+    <p style="color:#ccc;">NVIDIA 7/17 发布 Vera Rubin 平台 Post-Training 白皮书, 提出 agentic AI 时代「intelligence per dollar」取代传统训练 throughput 成为新指标——post-training 是个不停运转的循环, 每次生产环境出问题都触发一轮新 RL 训练, 训练和推理交替驱动算力需求。Vera Rubin 用 72-GPU NVL72 域 + 全栈协同设计, 把每个 token 的 forward/backward 算力拉到极限。</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 NVIDIA 把 Post-Training 重新定义成 agentic AI 的核心 workload——这意味着推理软件栈和训练软件栈被强制收敛到同一物理平台, Vera Rubin NVL72 的 72-GPU 域会成为 post-training 的事实标准域大小。光模块供应链跟着吃一波: 72-GPU 域要求 NVLink scale-up 跟以前 Hopper 8-GPU 域相比网络密度提升 9 倍, 1.6T CPO 出货窗口再被推后。竞争对手 AMD MI400 跟 Broadcom Tomahawk 6 需要在「post-training intelligence per dollar」上追赶, 不然 NVIDIA 的话语权会从 training 一路延伸到 post-training 全栈。</p>
+    <div class="source">来源：NVIDIA 官方</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-18/news_items_v2_2026-07-18_01.jpg" alt="Japan Government, Industrial Leaders and NVIDIA Launch the World's First National AI Infrastructure with Noetra" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[NVIDIA 官方] 1级信源 · cn <span class="country-tag">日本</span></div>
+    <h3><a href="https://nvidianews.nvidia.com/news/japan-government-industrial-leaders-and-nvidia-launch-the-worlds-first-national-ai-infrastructure" target="_blank">Japan Government, Industrial Leaders and NVIDIA Launch the World's First National AI Infrastructure with Noetra</a></h3>
+    <p style="color:#ccc;">日本 7/15 启动全球首个国家级 AI Infra 战略——新创公司 Noetra 部署 NVIDIA Vera Rubin AI Factory, 13,750 颗 Vera CPU + 27,500 颗 Rubin GPU (约 382 个 NVL72 机柜), 用 NVIDIA DSX 平台 + Spectrum-X 以太网组网, 服务日本「FRONTia Project」(多模态基础模型 + AI Robotics + Physical AI)。预训练权重开放给本国模型开发者。</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 这是日本第一次以国家级 AI Infra 战略级别部署, 而不是单一公司采购——FRONTia Project 把政府 / 工业 / 学术三方拉到同一物理平台上。日本选择 Vera Rubin (Hopper 下一代) 而非 Grace Blackwell, 等于跳过 GB200 / GB300 直接押注 Rubin, 给美国出口管制背景下的东亚 AI Infra 路径定了一个新范式。Spectrum-X 以太网而非 InfiniBand, 印证 NVIDIA 想把 Ethernet 推到 AI fabric 主流——这对 Mellanox 老牌 InfiniBand 厂商 + Arista 等 Ethernet 玩家都是直接压力。Noetra 这种国家级 PIC 模式可能成为其他中等主权国家 (UK / 韩国 / 沙特) 复刻的样板。</p>
+    <div class="source">来源：NVIDIA 官方</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-18/news_items_v2_2026-07-18_03.jpg" alt="中科天塔星载激光通信终端智能产线正式投产, 一期年产能 600 套" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[36 氪] 2级信源 · cn <span class="country-tag">中国</span></div>
+    <h3><a href="https://36kr.com/p/3899439565325953" target="_blank">中科天塔星载激光通信终端智能产线正式投产, 一期年产能 600 套</a></h3>
+    <p style="color:#ccc;">中科天塔 7/16 在西安曲率引擎光子制造园投产国内首条星载激光通信终端智能产线, 一期年产能 600 套, 计划 2027 年提升到千套以上。产线覆盖零部件装调到空间环境模拟 + 自动化检测全流程, 终端速率 5-100Gbps, 可适配不同低轨卫星星座。</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 星载激光通信终端从科研样机走向智能产线量产, 标志着中国卫星互联网进入「硬件基建先行」阶段——低轨星座 (GW + 千帆) 的数据回传瓶颈被激光终端解决, 单星带宽从微波的几百 Mbps 跳到 100Gbps。这条产线 600 套/年对应国内未来 2-3 年 GW 星座 + 千帆星座的部署节奏。同时给地面光模块厂商 (光迅 / 华工 / 中际旭创) 提示了一个新的 optical 客户面: 卫星侧空间激光终端 + 地面侧 HBM/GPU 数据中心, 两条腿走路。</p>
+    <div class="source">来源：36 氪</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-18/news_items_v2_2026-07-18_04.jpg" alt="东方算芯推出国内首颗软件定义近存计算 3D AI 芯片 DF1000, 128 卡集群已稳定运行" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[雷锋网] 2级信源 · cn <span class="country-tag">中国</span></div>
+    <h3><a href="https://www.leiphone.com/category/chips/Y7ghB3uOJbHaNTyi.html" target="_blank">东方算芯推出国内首颗软件定义近存计算 3D AI 芯片 DF1000, 128 卡集群已稳定运行</a></h3>
+    <p style="color:#ccc;">东方算芯 7 月首届产品发布会推出 DF1000——国内首颗软件定义近存计算 (Software-Defined Near-Memory Computing) 3D AI 芯片, 全国产供应链完成流片 + 制造, 128 卡集群在真实业务场景稳定运行, 全栈软件生态同步搭建。香港工程院院士郑光廷指出, AI 受物理世界 (能源 / 制造 / 供应链) 约束, 软件定义近存计算是绕开 HBM / 制程依赖的差异化路径。</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 DF1000 选「软件定义近存计算」3D 堆叠路线, 而不是「不追制程 / 不靠 HBM」宣传话术——这是中国 AI 芯片公司第一次把 compute-near-memory (CNM) 跟 3D 堆叠绑到一起做产品级方案。如果 128 卡集群实测能稳定, 等于在中国 AI Infra 供应链上多了一个不被 NVIDIA HBM / CoWoS 限制的备选——对国内大模型公司 (字节 / 阿里 / 腾讯) 来说, 多一个非 NV 路径就少一分被卡脖子的风险。但软件生态才是真正的护城河, DF1000 要追上 CUDA 生态至少 3-5 年。</p>
+    <div class="source">来源：雷锋网</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-18/news_items_v2_2026-07-18_05.jpg" alt="英特尔与 Google Cloud 宣布深化战略合作, 部署 Gemini Enterprise 加速全公司数字化转型" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[36 氪] 2级信源 · cn <span class="country-tag">美国</span></div>
+    <h3><a href="https://36kr.com/p/3896564485572489" target="_blank">英特尔与 Google Cloud 宣布深化战略合作, 部署 Gemini Enterprise 加速全公司数字化转型</a></h3>
+    <p style="color:#ccc;">英特尔 7/17 宣布跟 Google Cloud 深化多年战略合作——部署 Gemini Enterprise 跟 Google Cloud, 用 Gemini 驱动的生成式 AI 加速英特尔全球员工的日常工作, 重点强化工程 / 供应链 / 企业运营三大工作流。Google Cloud 的可扩展基础设施作为底座。</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 这次合作看似是企业 IT 升级, 实质是 Intel + Google 的「CPU + Cloud + LLM」三方捆绑: Intel 把自己定位成 AI Infra 的 CPU 编排层 (而不是跟 NVIDIA 拼 GPU), Google Cloud 提供可扩展底座, Gemini Enterprise 提供应用层。这印证了 Intel Foundry CEO Lip-Bu Tan 6 月在 Computex 提出的「Rackscale AI Infrastructure for Inference and Agentic Workloads」策略——Intel 想在 AI Infra 价值链里守住 CPU + 系统层, 把 GPU 战场让给 NVIDIA + AMD, 自己押 inference + agentic workload。Google 给 Intel 的 contract 量级决定 Intel 在 AI Infra 里的实际位置。</p>
+    <div class="source">来源：36 氪</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-18/news_items_v2_2026-07-18_02.jpg" alt="Why your Kubernetes scheduler can't handle AI workloads" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[lambda.ai] 3级信源 · cn <span class="country-tag">美国</span></div>
+    <h3><a href="https://lambda.ai/blog/why-your-kubernetes-scheduler-cant-handle-ai-workloads" target="_blank">Why your Kubernetes scheduler can't handle AI workloads</a></h3>
+    <p style="color:#ccc;">Lambda 工程团队 7/16 发布 K8s 调度深度分析, 指出 kube-scheduler 默认不开 gang-scheduling, 多机分布式训练一启动就撞死锁——4 张 GPU 被占着等队友, 整个集群卡死。同时 kube-scheduler 没有 multi-node fabric 拓扑感知, 看不出哪台机器的 NVLink 连哪台——AI workload 跑在普通 K8s 上等于是用 Excel 跑神经网络。</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 Lambda 这篇文章不是产品宣传, 是技术债警报——市面上 90% 的企业 K8s 集群调度 AI 训练时都在浪费 30-50% GPU 周期。Volcano / Kueue / Argo 这些 gang-scheduling 插件不是 optional, 是 AI 时代的 baseline。这个问题被开源社区低估, 给了 NVIDIA Run:ai 收购后整合调度栈 + Lambda 自己的 1-Click Cluster 产品直接商业机会。Anyscale (Ray on K8s) 跟 Snowflake Cortex 这类 AI Infra 玩家都会被卷进来重新做 scheduler。</p>
+    <div class="source">来源：lambda.ai</div>
+  </div>
+</div>
+</section>
+
+<section>
+<h2>📄 arXiv Infra 论文深度解读</h2>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-18/paper_summaries_v2_2026-07-18_00.jpg" alt="The Cost and Network Limits of Space-Based AI Compute" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.14172 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.14172" target="_blank">The Cost and Network Limits of Space-Based AI Compute</a></h3>
+    <p style="color:#ccc;">想象一下:你开了一家数据中心, 但电力、散热、土地都不够用了。Starcloud 这家创业公司去年发了个白皮书, 说把数据中心搬到近地轨道 (LEO) 上去——太阳能便宜, 太空天然散热, 几乎可以无限扩展。听起来很美好对吧? 这篇来自荷兰埃因霍温理工大学的论文把账算清楚了:LEO 推理可能行得通, 但训练前沿大模型不行。问题出在「网络」——地面上用的是 Clos 网络 (数据中心内部一种分层布线方式, 上下行带宽大且稳定), 太空中得换成激光卫星间链路的 mesh 网络 (像渔网一样点对点连), 性能差距巨大。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:calc(var(--base-font-size) * 0.93);color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">本文评估 LEO (近地轨道) 大规模 AI 数据中心能否成为地面设施的成本有效替代方案。从发射成本、发电、散热、辐射、大气再入以及计算网络性能六个维度对比轨道与地面系统。核心区分点是从地面 Clos 网络切换到基于激光星间链路的太空 mesh 网络。基于 bisection bandwidth (二分带宽, 即网络任意切成两半时穿过切口的最大带宽)、bisection intensity (单位体积内的二分带宽密度) 和 roofline-style 模型 (评估算力上限与带宽关系) 的分析显示, LEO 推理可行, 但在轨道训练前沿规模 LLM 不太可能与地面数据中心竞争。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>采用 roofline 分析 + bisection bandwidth / bisection intensity 网络建模 + 跨域对比 (发射成本 / 太阳能 / 辐射散热 / 激光 mesh 网络 vs Clos), 把 LEO 推理和 LEO 训练分别建模, 给出网络带宽受限下的 frontier-scale 训练 vs 推理能力上限。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>LEO 推理可以享受太阳能 + 被动辐射散热的红利, 弥补 mesh 网络的带宽劣势;但 frontier-scale 训练需要 all-reduce (分布式训练中同步梯度的通信操作) 等高扇出通信模式, mesh 网络的 bisection intensity 远低于 Clos, 直接拖累训练吞吐量。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>论文给出量化结论: LEO 推理经济可行 (受 mesh 网络 bisection 影响可控), frontier LLM 训练在 LEO 不具成本竞争力——给 Starcloud 这类创业公司的「轨道 AI 数据中心」愿景提供了冷静的网络视角。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Kees van Berkel → Technical University Eindhoven, Dept. of Math. & Computer Science</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-18/paper_summaries_v2_2026-07-18_01.jpg" alt="LongStraw: Long-Context RL Beyond 2M Tokens under a Fixed GPU Budget" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.14952 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.14952" target="_blank">LongStraw: Long-Context RL Beyond 2M Tokens under a Fixed GPU Budget</a></h3>
+    <p style="color:#ccc;">想象你训练一个 AI 助手, 助手在跑长任务时要记住前面所有对话和工具调用结果 (上下文几百万 token), 但训练时显存装不下——这就是今天 RL post-training 撞的天花板。复旦大学 + MindLab 团队提出 LongStraw:不重复算整段历史, 只重算短回复分支, 把显存从「全历史」压到「必要状态」。在固定 GPU 预算下把 RL post-training 推到 2M tokens 上下文, 用 Group Relative Policy Optimization (GRPO, 一种 RL 算法, 通过对比同一 prompt 下多个回答的相对好坏来更新策略) 跑通。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:calc(var(--base-font-size) * 0.93);color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">推理上下文长度即将达到百万 token, 但 RL post-training 仍停留在 256K tokens 以下, 依赖部署时的长度泛化。这一差距对 AI agent 尤其关键, 因为 agent 的观察、工具输出、文档和历史决策会随长轨迹累积。LongStraw 是一个架构感知的执行栈, 在固定 GPU 预算下支持百万 token 的 RL post-training, 实例化在 GRPO 上。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>三个核心 trick: (1) 对共享 prompt 只评估一次不反向传播 (no autograd); (2) 只保留后续 token 需要的 model-specific 状态, 不保留整段历史; (3) 短回复分支在 autograd (自动微分, PyTorch 等框架的核心, 自动计算梯度) 下一次一个重放, 显存占用与回复长度解耦。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>重放分支会增加少量重复计算, 但显存占用从 O(整段历史) 降到 O(单条回复)——在 GPU 显存吃紧时换计算次数, 对长上下文 RL 是必要 trade-off。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>LongStraw 在固定 GPU 预算下跑通 2M token RL post-training, agent 长轨迹任务 (观察 / 工具 / 决策累积) 不再撞显存墙——给 agentic AI 时代的 RL 后训练打开了实际可行的工程路径。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Changhai Zhou, Kieran Liu, Yuhua Zhou, Qian Qiao, Jun Gao, Harry Zhang, Irvine Lu, Nolan Ho, Lucian Li, Andrew Lei, Cleon Cheng, Steven Chiang, Yihang Zeng, Di Zhang, Rio Yang, Kaijie Chen, Andrew Chen, Pony Ma, Weizhong Zhang, Cheng Jin → MindLab; Fudan University</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-18/paper_summaries_v2_2026-07-18_02.jpg" alt="Byte-Exact KV-State Grafting Turns a Frozen Small Model into a Verified-Knowledge Flywheel" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.14431 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.14431" target="_blank">Byte-Exact KV-State Grafting Turns a Frozen Small Model into a Verified-Knowledge Flywheel</a></h3>
+    <p style="color:#ccc;">想象你有一个 12B 参数的小模型, 想让它「突然变聪明」但又不想重新训练——传统方法就是砸钱买更多 GPU 训更大的模型。这家叫 Corbenic AI 的小公司提出一个完全不同的招数:把验证过的知识以「字节级精确的 KV-state」(KV-cache 就是模型推理时的「对话记忆」, 记录前面所有 token 的中间计算结果) 形式「嫁接」回冻结的小模型——不碰权重不换 GPU, 模型就变聪明了。嫁接后输出 logit (模型最后一层输出的原始分数, 决定下一个 token 是什么) 跟重新计算 byte-for-byte 完全一致 (SHA-256 哈希相等), KL 散度 (衡量两个概率分布差异的指标, 0 表示完全一样) 0, 50 次采样 argmax (取概率最大的选项) 完全一致。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:calc(var(--base-font-size) * 0.93);color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">针对 LLM 能力差距的传统方案是训更大的模型, 速度 / 成本差距的方案是买更多加速器。本文提出一种既不碰权重也不动加速器预算的方案: 把 12B 冻结模型通过字节级精确的 KV-state 嫁接变成一个 verified-knowledge flywheel (飞轮, 持续累积知识的正反馈循环), 同时变得更聪明和更便宜。知识以 byte-exact KV-state 一次性存入, 之后通过「嫁接」恢复到新的推理上下文。恢复是 bit-exact 的: 在固定确定性配置下, 嫁接后的 logit 与重新计算 byte-for-byte 一致。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>把 verified knowledge (已验证的知识) 序列化成 byte-exact KV-state 一次性存入; 推理时, 在固定 deterministic (确定性, 每次运行结果完全相同) 配置下把 KV-state 嫁接到 frozen 12B 模型的 fresh context (新会话上下文) 中。论文证明 own-position graft (嫁接到原位置) 是 byte-exact 唯一操作点。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>嫁接不碰权重不增 GPU, 部署成本极低; 但 own-position 嫁接限制其作为通用机制——不能自由把 KV-state 移到别的位置 (会产生 residual error, 残差误差, 因为模型对浮点位置敏感), 限制了其作为通用 KV-state market 的可能。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>50 次采样 100% argmax 吻合, SHA-256 相等, KL 散度 0——给了工程界一个「不需要重训也能升级模型」的具体路径, 对知识密集型垂直应用 (法律 / 医疗 / 金融) 特别有吸引力。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Sietse Schelpe → Corbenic AI</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-18/paper_summaries_v2_2026-07-18_03.jpg" alt="ExaGEMM: Exploration Framework for CPU-Driven ML Inference via Associative In-Register Computing for Low-Bit GEMM" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.14622 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.14622" target="_blank">ExaGEMM: Exploration Framework for CPU-Driven ML Inference via Associative In-Register Computing for Low-Bit GEMM</a></h3>
+    <p style="color:#ccc;">想象你买了个普通 CPU 想跑 AI 推理, 但 1/2/4-bit 这种超低精度 GEMM (矩阵乘法, AI 推理的核心运算) 在 CPU 上跑得跟蜗牛一样。加州大学尔湾分校 (UCI) 团队提出 ExaGEMM:把低精度 GEMM 做成「寄存器内查表」(LUT, Look-Up Table) 执行, 用 SIMD (Single Instruction Multiple Data, 单条指令处理多个数据, CPU 的并行加速指令集) 现有数据通路做表生成和累加, 唯一新硬件是 in-register select/feed (寄存器内选择 / 馈送) 机制。同时给出 analytical model (分析模型, 用数学公式预测性能) + gem5 (CPU 仿真器) + gem5 patches + GEMM kernels 全套验证。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:calc(var(--base-font-size) * 0.93);color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">低比特 GEMM 越来越成为 ML 推理核心, 但 1/2/4-bit 这种超低精度在传统 CPU 上跑不动。实际部署跨越 1/2/4-bit 权重 + 各种激活精度的碎片化区间, 各自可行性 / 复用机会 / 支持成本在固定 SIMD + 寄存器文件预算下差别巨大——CPU 支持选型成为 first-class 设计问题。ExaGEMM 是一个 workload-aware (负载感知) 的 codesign (软硬协同设计) 和探索框架, 通过寄存器驻留 LUT 执行实现 CPU-native 低比特 GEMM。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>exploit SIMD 数据通路已经能做表生成 + 累加; co-explore 参数化 kernels + 轻量 SIMD ISA support (SIMD 指令集扩展); 用 register feasibility (寄存器适配性) / compute cost (算力成本) / memory traffic (内存流量) / hardware overhead (硬件开销) 的 analytical model 在仿真前 prune (剪枝, 砍掉不合理选项) 99.2% 候选; 选 non-dominated (帕累托最优, 各项指标都没有被其他选项严格占优) 支持点生成 ISA spec + gem5 patches + GEMM kernels。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>用 LUT 走寄存器内执行比纯软件快 13.29 倍, 但 LUT 占寄存器文件空间, 大 kernel 会增加 register pressure (寄存器压力, 即寄存器不够用的紧张程度); ISA 扩展轻量但需要 CPU 厂商采纳——商业化路径比学术更陡。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>相比纯软件 baseline (基线, 对比基准方案) latency 提升 13.29× (13.29 倍加速), prune 99.2% 候选不损失 Pareto front (帕累托前沿, 最优解集合)——给 CPU-only AI 推理 (边缘 / 隐私 / 成本敏感场景) 一个被认真工程化的方法学。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Hyunwoo Oh, Suyeon Jang, Hanning Chen, Sanggeon Yun, Ryozo Masukawa, Mohsen Imani → University of California, Irvine</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-18/paper_summaries_v2_2026-07-18_04.jpg" alt="Don't Predict, Prioritize: Rethinking GPU Reliability Assessment" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.15115 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.15115" target="_blank">Don't Predict, Prioritize: Rethinking GPU Reliability Assessment</a></h3>
+    <p style="color:#ccc;">想象你运营一个 1000 张 GPU 的大集群, 一天坏一张就够你头疼——同步分布式训练一遇到 GPU 故障, 整个 job 都会卡住。传统运维思路是「预测」哪张 GPU 什么时候坏, 但中科院计算所 + StepFun + 清华的联合团队用生产集群 telemetry (遥测数据, 即机器运行时自动上报的状态日志) 数据告诉你: GPU 故障时间本身是 stochastic (随机的), 准确预测具体哪天坏是 inherently difficult (天生就难)。论文给出新方向——别预测, 排优先级: 把「最容易出问题的 GPU 类型 / 节点类型 / 时间段」先排好, 然后针对性做防御。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:calc(var(--base-font-size) * 0.93);color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">GPU 可靠性是现代大规模 AI Infra 的关键瓶颈, 单一节点故障就能破坏同步训练 job 并造成重大财务损失。虽然预测性维护在其他硬件领域广泛使用, 本文证明准确预测 GPU 故障具体时间本质上困难——通过对生产集群 telemetry 数据的深入分析, 发现主要 GPU 故障 (包括 DBE 即双比特错误, 是内存硬件最严重的错误类型 / GPU Lost events) 表现出强随机性和低信号。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>对生产集群 GPU telemetry 做 in-depth 分析 (DBE / GPU Lost 等 major failure modes); 证明预测具体时点 inherently difficult; 提出「prioritize over predict」的新策略——按 GPU 类型 / 节点角色 / 时段风险排序, 把运维资源投到最容易出问题的子集。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>放弃「预测哪天坏」转向「排序哪类容易坏」, 牺牲精确性换可操作性——运维从「不可能的精确预测」变成「可行的高 ROI (投资回报率) 防御」, 对大规模 GPU 集群 (万卡级) 的实际运维更友好。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>论文基于生产集群实测数据, 给出 major failure modes 的 stochasticity (随机性) + low signal 证据, 并把 GPU reliability 重定义成「优先级排序」问题——给大规模 GPU 集群运维一个新的方法论。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Difeng Ma, Changhua Pei, Yuanwei Lu, Quan Zhou, Zexin Wang, Yibo Zhu, Daxin Jiang, Dan Pei, Jingjing Li, Gaogang Xie → Computer Network Information Center, Chinese Academy of Sciences; StepFun; Tsinghua University</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer>
+  <p>Generated by Hermes Agent · AI Infra Daily Report</p>
+  <p>https://github.com/zenhatescoding/ai-infra-reports</p>
+  <p>2026-07-18 12:59</p>
+</footer>
+</div>
+
+<div class="font-toolbar" id="fontToolbar" role="region" aria-label="字号调节">
+  <button class="toggle" id="fontToggle" aria-label="打开字号调节" title="字号">A</button>
+  <div class="panel">
+    <span class="label">字号</span>
+    <input type="range" id="fontSlider" min="12" max="22" step="0.5" value="14" aria-label="字号滑块" />
+    <span class="value" id="fontValue">14px</span>
+    <button class="reset" id="fontReset" aria-label="重置字号" title="重置 14px">↺</button>
+  </div>
+</div>
+<script>
+(function() {
+  const STORAGE_KEY = "ai-infra-font-scale";
+  const DEFAULT_SIZE = 14;
+  const toolbar = document.getElementById("fontToolbar");
+  const toggle = document.getElementById("fontToggle");
+  const slider = document.getElementById("fontSlider");
+  const valueEl = document.getElementById("fontValue");
+  const resetBtn = document.getElementById("fontReset");
+  if (!toolbar || !slider) return;
+  function apply(size) {
+    const v = Math.max(12, Math.min(22, parseFloat(size) || DEFAULT_SIZE));
+    document.documentElement.style.setProperty("--base-font-size", v + "px");
+    slider.value = v;
+    valueEl.textContent = v + "px";
+  }
+  function save(size) { try { localStorage.setItem(STORAGE_KEY, String(size)); } catch (e) {} }
+  function load() { try { const v = localStorage.getItem(STORAGE_KEY); return v ? parseFloat(v) : DEFAULT_SIZE; } catch (e) { return DEFAULT_SIZE; } }
+  apply(load());
+  slider.addEventListener("input", function() { const v = parseFloat(slider.value); apply(v); save(v); });
+  resetBtn.addEventListener("click", function() { apply(DEFAULT_SIZE); save(DEFAULT_SIZE); });
+  toggle.addEventListener("click", function(e) { e.stopPropagation(); toolbar.classList.toggle("open"); });
+  document.addEventListener("click", function(e) { if (window.innerWidth <= 640 && toolbar.classList.contains("open") && !toolbar.contains(e.target)) toolbar.classList.remove("open"); });
+  window.addEventListener("storage", function(e) { if (e.key === STORAGE_KEY && e.newValue) apply(parseFloat(e.newValue)); });
+})();
+</script>
+</body>
+</html>
