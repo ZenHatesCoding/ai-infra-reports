@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Infra 洞察日报 · 2026年7月21日 · 周二</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --base-font-size: 14px; }
+body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #0d1117; color: #e6edf3; padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; }
+header { padding: 24px 0; border-bottom: 1px solid #21262d; margin-bottom: 24px; }
+header h1 { font-size: calc(var(--base-font-size) * 1.71); font-weight: 700; margin-bottom: 8px; }
+header .sub { color: #8b949e; font-size: var(--base-font-size); }
+.stats { display: flex; gap: 24px; font-size: var(--base-font-size); color: #8b949e; margin-top: 16px; }
+.stat { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 12px 18px; }
+.stat span { color: #58a6ff; font-weight: 700; font-size: calc(var(--base-font-size) * 1.43); margin-right: 4px; }
+.stat.biz span { color: #ffd43b; }
+.stat.paper span { color: #79c0ff; }
+h2 { font-size: calc(var(--base-font-size) * 1.14); color: #e6edf3; margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid #21262d; }
+.card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 0; margin-bottom: 20px; overflow: hidden; }
+.card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: #21262d; }
+.card-body { padding: 16px 20px 18px; }
+.card-meta { font-size: calc(var(--base-font-size) * 0.86); color: #8b949e; margin-bottom: 8px; }
+.card h3 { font-size: calc(var(--base-font-size) * 1.14); font-weight: 600; margin-bottom: 8px; line-height: 1.4; }
+.card h3 a { color: #58a6ff; text-decoration: none; }
+.card h3 a:hover { text-decoration: underline; }
+.card p { font-size: var(--base-font-size); color: #c9d1d9; line-height: 1.6; margin-bottom: 8px; }
+.card .source { color: #6e7681; font-size: calc(var(--base-font-size) * 0.86); margin-top: 4px; }
+.tech-block { background: #0d1117; border-radius: 8px; padding: 12px 14px; margin-top: 10px; font-size: calc(var(--base-font-size) * 0.93); line-height: 1.7; }
+.tech-block .row { margin-bottom: 4px; }
+.tech-block .row:last-child { margin-bottom: 0; }
+.tech { color: #79c0ff; }
+.tradeoff { color: #d2a8ff; }
+.highlight { color: #7ee787; }
+.author { color: #ffa657; }
+footer { text-align: center; padding: 32px 0; color: #6e7681; font-size: calc(var(--base-font-size) * 0.86); }
+/* 7/13 升级: 字号调节 toolbar + 浮动滑块 (电脑端始终展开, 移动端折叠成按钮) */
+.font-toolbar { position: fixed; top: 16px; right: 16px; z-index: 9999; background: rgba(22, 27, 34, 0.92); backdrop-filter: blur(8px); border: 1px solid #30363d; border-radius: 10px; padding: 8px 12px; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+.font-toolbar .label { color: #8b949e; font-size: 12px; white-space: nowrap; user-select: none; }
+.font-toolbar input[type=range] { width: 110px; accent-color: #58a6ff; cursor: pointer; }
+.font-toolbar .value { color: #58a6ff; font-size: 12px; font-weight: 600; min-width: 36px; text-align: right; font-variant-numeric: tabular-nums; }
+.font-toolbar .reset { background: transparent; border: 1px solid #30363d; color: #8b949e; border-radius: 6px; padding: 2px 8px; font-size: 11px; cursor: pointer; }
+.font-toolbar .reset:hover { color: #e6edf3; border-color: #58a6ff; }
+.font-toolbar .toggle { display: none; background: #58a6ff; color: #0d1117; border: none; border-radius: 50%; width: 36px; height: 36px; font-size: 18px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+.font-toolbar .panel { display: flex; align-items: center; gap: 8px; }
+@media (max-width: 640px) { .font-toolbar { top: auto; bottom: 16px; right: 16px; padding: 0; background: transparent; border: none; box-shadow: none; backdrop-filter: none; } .font-toolbar .toggle { display: flex; align-items: center; justify-content: center; } .font-toolbar .panel { display: none; position: fixed; bottom: 60px; right: 16px; background: rgba(22, 27, 34, 0.96); backdrop-filter: blur(8px); border: 1px solid #30363d; border-radius: 10px; padding: 10px 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.4); } .font-toolbar.open .panel { display: flex; } }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+
+  <div class="sub">2026年7月21日 · 周二 · 覆盖芯片 + 集群 + 光模块 + arXiv Infra 论文</div>
+  <div class="stats">
+    <div class="stat biz">🏢 <span>6</span> 条 AI Infra 公司动态</div>
+    <div class="stat paper">📄 <span>5</span> 篇 arXiv Infra 论文精读</div>
+  </div>
+</header>
+
+<section>
+<h2>🏢 AI Infra 商业新闻</h2>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-21/news_items_v2_2026-07-21_00.jpg" alt="Bristol-Myers Squibb Building Life Science's Most Advanced AI Factory on NVIDIA Vera Rubin" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[NVIDIA 官方] 1级信源 · cn <span class="country-tag">美国</span></div>
+    <h3><a href="https://blogs.nvidia.com/blog/bristol-myers-squibb-building-life-science-industrys-most-advanced-ai-factory-on-nvidia-vera-rubin/" target="_blank">Bristol-Myers Squibb Building Life Science's Most Advanced AI Factory on NVIDIA Vera Rubin</a></h3>
+    <p style="color:#ccc;">美国制药巨头 Bristol-Myers Squibb (BMS) 在 NVIDIA Vera Rubin 平台上建生命科学行业最先进 AI Factory, 把生成式 AI 用于药物发现、临床试验优化与生产制造。这是 Vera Rubin (Rubin GPU + Vera CPU) 自 GTC 2026 亮相以来首个制药行业超大规模 AI Factory 落地, 也是 NVIDIA 把 Vera Rubin 从「互联网大厂 / 国家级 AI Infra」扩展到「受监管行业 (生命科学) AI Infra」的标杆案例。</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 BMS 这张单等于是 NVIDIA Vera Rubin 在「受监管行业」的第一个 anchor tenant, 跟此前互联网 (Meta / xAI) 与国家级 (日本 Noetra) AI Factory 形成第三类客户群。意义在于: 一是 Vera Rubin 路线图被生命科学行业背书, NVIDIA 在 B200 / GB200 / Rubin 世代交替时不用再担心受监管行业 (医药 / 金融 / 政府) 上 Rubin 比 Blackwell 慢; 二是 NVIDIA 把「AI Factory」从互联网工作负载 (inference-heavy / 长上下文) 重新定位到「科学计算 + 受监管工作负载」(化合物的 diffusion / 数字孪生 / 临床试验仿真), 单卡需求 (HBM 容量 + FP4/FP8 精度 + 确定性) 跟互联网推理不同, 推动 Rubin SKU 进一步分化; 三是「AI for science」从过去的 GPU 公益算力 (DOE / NSF) 升级到商业 anchor, 中国 / 欧洲主权 AI 算力买家会跟着仿照; 四是 Vera Rubin 量产时间表锁定, CoWoS-L 产能 / HBM4 供应 / 液冷供应链 (CDU / 浸没式) 跟着上量, 整个 Rubin 上下游 (TSMC 3nm / SK hynix HBM4 / 液冷设备 / Innolight 1.6T) 都被锁单。</p>
+    <div class="source">来源：NVIDIA 官方</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-21/news_items_v2_2026-07-21_04.jpg" alt="Japan Government, Industrial Leaders and NVIDIA Launch the World's First National AI Infrastructure" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[NVIDIA 官方] 1级信源 · cn <span class="country-tag">日本</span></div>
+    <h3><a href="https://nvidianews.nvidia.com/news/japan-government-industrial-leaders-and-nvidia-launch-the-worlds-first-national-ai-infrastructure" target="_blank">Japan Government, Industrial Leaders and NVIDIA Launch the World's First National AI Infrastructure</a></h3>
+    <p style="color:#ccc;">日本政府、产业界领袖与 NVIDIA 共同启动「全球首个国家级 AI 基础设施」, 由日本新成立的 Noetra Corp. 主导, 部署 NVIDIA Vera Rubin AI Factory, 规模为 13,750 颗 NVIDIA Vera CPU + 27,500 颗 NVIDIA Rubin GPU。这是 NVIDIA 第一次明确把 Vera Rubin 平台作为「国家级 AI Infra」的参考架构, 也是日本继 7/16 日本 AI Infra 周 (NVIDIA + 日本三大运营商) 之后的最大单一 AI 算力部署。</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 日本国家级 AI Infra (Noetra 13,750 Vera CPU + 27,500 Rubin GPU) 是 2026 年全球国家级 AI Infra 标杆: 一是单项目 27,500 Rubin GPU 是 Rubin 量产前最大的 anchor order, 直接推动 CoWoS-L 产能 / HBM4 供应 / Vera CPU 封装吃紧, NVIDIA Rubin 量产时间表被锁定; 二是日本「国家级 AI Infra」模式 (政府引导 + 产业基金 + 单一技术供应商) 会被新加坡 / 韩国 / 阿联酋 / 沙特仿照, 韩国 7/01 龙仁 + 全罗南道 + 7/04 SK hynix Chungcheong 之后下一个 anchor 可能是 K-AI Factory; 三是日本本土 AI Infra 供应链 (Innolight 日本子公司 / 昭和电工光模块 / 住友金属液冷 / 东京电子先进封装) 同步受益, 日本从「NVIDIA 客户」升级为「NVIDIA + 日本供应链联合体」; 四是「日本 + 印度 + 中东」三地国家级 AI Infra 是 2026 下半年 NVIDIA 海外最大增量, 中国国家级 AI Infra 算力买家 (中国电信 / 中国移动) 转向国产替代窗口被压缩; 五是 Noetra Corp. 这个新名字值得长期跟踪, 跟 JIC (日本产业革新投资机构) 的关系决定日本国家级 AI Infra 后续资金 / 算力分配机制。</p>
+    <div class="source">来源：NVIDIA 官方</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-21/news_items_v2_2026-07-21_01.jpg" alt="微软与 AMD 扩大合作, 将在 Azure 部署下一代 AI 芯片" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[36 氪] 2级信源 · cn <span class="country-tag">美国</span></div>
+    <h3><a href="https://www.36kr.com/" target="_blank">微软与 AMD 扩大合作, 将在 Azure 部署下一代 AI 芯片</a></h3>
+    <p style="color:#ccc;">微软与 AMD 扩大战略合作, 将在 Azure 云数据中心部署 AMD 下一代 AI 芯片 (具体型号未披露, 业界推测为 MI400 系列或定制变种), 用于扩展 Azure AI 算力供给, 减少对单一供应商 (NVIDIA) 的依赖。这是微软在 Azure AI 基础设施上首次明确把 AMD 提到「下一代主力 AI 芯片」级别, 跟 MI300X 时代只是「小规模补充」完全不同。</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 微软这次表态等于直接把 AMD 列为 Azure AI 算力的「双核」之一, 跟在 Google Cloud (TPU + Trillium / AMD MI300X) 跟 Meta (自研 MTIA + AMD MI300X) 的「双源」策略同步。对 AI Infra 影响: 一是 Azure OpenAI / Copilot / Phi 模型的训练 / 推理可能从纯 NVIDIA 转向 NVIDIA + AMD 混合, MI400 系列要直接对标 NVIDIA Rubin NVL72, 微软成为第一个明确背书的大客户; 二是 HBM 供应 (三星 / SK hynix / 美光) 在 MI400 上量后会分走原本属于 NVIDIA 的一杯羹, 2027 HBM4 / HBM4E 紧供给会进一步加剧; 三是 AMD ROCm 软件栈要承接 Azure 级别 SLA, 这对 ROCm 生态 (Triton / PyTorch / vLLM) 是「被逼到墙角」的成人礼; 四是 NVIDIA 在 Azure 市场份额短期被压制, 但 6/24 第 1 期 Intel + Google 合作 + 7/21 微软 + AMD 合作 = AI 算力买家全面去 NVIDIA 化, NVIDIA 必须靠 NVL36/NVL72/NVL576 rack-scale 集成度守住头部市场; 五是中国 Azure (由世纪互联运营) 是否同步引入 AMD 加速器是后续观察点, 对国产 GPU 替代窗口是利好 (微软 + AMD 联手, 国产 GPU 反而有差异化空间)。</p>
+    <div class="source">来源：36 氪</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-21/news_items_v2_2026-07-21_02.jpg" alt="新易盛: 预计下半年订单交付情况仍处于快速增长阶段, 1.6T 光模块预计 Q3/Q4 起放量节奏进一步加快" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[36 氪] 2级信源 · cn <span class="country-tag">中国</span></div>
+    <h3><a href="https://www.36kr.com/newsflashes" target="_blank">新易盛: 预计下半年订单交付情况仍处于快速增长阶段, 1.6T 光模块预计 Q3/Q4 起放量节奏进一步加快</a></h3>
+    <p style="color:#ccc;">新易盛 (Eoptolink) 在 7/21 投资者关系活动中明确表示, 预计 2026 下半年订单交付仍处于快速增长阶段, 1.6T 光模块预计 Q3/Q4 起放量节奏进一步加快, 公司光模块产能扩张持续推进。这是 7/14 第 20 期新易盛 H1 净利预增 78%-103% 后续, 公司首次把 1.6T 时间表 (Q3/Q4) 明确化, 标志 1.6T 从「样品 / 头部客户试用」进入「批量交付」阶段。</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 新易盛明确 1.6T Q3/Q4 放量的意义在于: 一是国内光模块双雄 (中际旭创 + 新易盛) 同步跨过 1.6T 量产门槛, NVIDIA Rubin NVL576 (单 rack 576 GPU 配 1.6T/3.2T 光模块) 跟 AMD MI400 rack-scale 都需要 1.6T 配套, 2026 H2 全球 1.6T 订单 80% 集中在中际 + 新易盛 + 天孚通信; 二是 1.6T 上量带动上游光器件 (EML / CW laser / 硅光 / DSP) 同步吃紧, 国产光器件厂 (源杰科技 / 长光华芯 / 仕佳光子) 进入业绩兑现期; 三是 CPO (共封装光学) 路线依然受质疑 (7/21 罗博特科明确未获客户 CPO 延迟消息), LPO / 1.6T 传统 pluggable 仍是 2026-2027 主流, 新易盛跟中际旭创在 1.6T 阶段继续保持领先; 四是光模块供应链 (PCB / 高速连接器 / 外壳 / 散热) 全面国产替代, 长三角 + 珠三角光通信集群进入 18-24 个月产能扩张期; 五是 NVIDIA Feynman (1.6T -> 3.2T 升级) 时间表敲定后, 2027 1.6T 出货量预期 2026 全年 5 倍以上, 整个光通信板块估值锚 (PE 30-50x) 重新被市场认可。</p>
+    <div class="source">来源：36 氪</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-21/news_items_v2_2026-07-21_03.jpg" alt="Kimi K3 上线 48 小时: 模型爆火, GPU 爆肝, 会员停售" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[量子位] 2级信源 · cn <span class="country-tag">中国</span></div>
+    <h3><a href="https://www.qbitai.com/2026/07/455179.html" target="_blank">Kimi K3 上线 48 小时: 模型爆火, GPU 爆肝, 会员停售</a></h3>
+    <p style="color:#ccc;">月之暗面 (Moonshot AI) 7/19 推出新一代旗舰模型 Kimi K3, 全球首个开源 3 万亿参数级模型, 上线 48 小时后宣布暂停 C 端新用户订阅 (会员「停售」), 前端代码竞技场得分 1679 直接超越 GPT-5.6 Sol / Fable5 排名第一。Kimi K3 爆火直接导致推理算力 (GPU) 严重吃紧, 月之暗面不得不暂停新会员以控制服务质量。</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 Kimi K3 「会员停售」是国产开源大模型第一次因为「GPU 撑不住」而主动关闭 C 端入口, 暴露国产 LLM 推理算力供给瓶颈。对 AI Infra 影响: 一是 3 万亿参数级开源模型上量后, 单卡推理 (H100/H200/国产替代) 算力吃紧, 月之暗面必须用 MoE + PD 分离 + 推测解码 (EAGLE / Medusa) 才能压住单请求成本; 二是国产 GPU (寒武纪 / 沐曦 / 壁仞 / 昇腾) 适配 MoE 大模型推理是当务之急, 当前 ROCm / 寒武纪 MLU / 沐曦 MACA 生态对 3 万亿 MoE 还没成熟, 月之暗面可能短期用 NVIDIA + 国产混合方案; 三是「开源 3 万亿」标志着开源模型跟闭源 (GPT-5 / Claude 4) 差距进一步缩小, 但代价是把 GPU 算力供给问题公开化, 后续 DeepSeek V5 / Qwen 4 / 智谱 GLM 6 上线都可能撞同坑; 四是「推理算力变现」比「训练算力烧钱」更受关注, 智算云 (GMI Cloud / 腾讯云 ADP 4.0 / 阿里云灵骏) 的推理调度 (PD 分离 / 动态 batching / KV cache 量化) 商业价值被市场重估; 五是国产 HBM (长鑫存储 / 长江存储) 配套压力同步上升, 单卡 12-Hi / 16-Hi HBM4 需求是 2027 长鑫融资关键叙事。</p>
+    <div class="source">来源：量子位</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-21/news_items_v2_2026-07-21_05.jpg" alt="博顿光电完成超亿元 B+ 轮融资, 离子束装备已批量导入光通信 / 核聚变 / 量子计算头部客户" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[量子位] 2级信源 · cn <span class="country-tag">中国</span></div>
+    <h3><a href="https://www.36kr.com/newsflashes" target="_blank">博顿光电完成超亿元 B+ 轮融资, 离子束装备已批量导入光通信 / 核聚变 / 量子计算头部客户</a></h3>
+    <p style="color:#ccc;">中山博顿光电科技 (国家级「专精特新」小巨人) 完成超亿元 B+ 轮融资, 毅达资本 / 中信建投资本 / 达武创投领投, 资金用于引进高端人才、研发新产品、产能建设。博顿光电是国产自主可控离子源与离子束超精密工艺设备厂商, 产品已批量导入光通信 (光模块 / 硅光 / CPO)、核聚变 (等离子体注入)、量子计算 (离子阱量子比特加工) 等头部客户。</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 博顿光电是「AI Infra 产业链上游」被低估的典型: 一是离子束工艺 (离子注入 / 离子刻蚀 / 离子抛光) 是半导体 + 光通信 + 量子计算三大行业的共性核心设备, 长期被美国 AMAT / Axcelis / Varian 等垄断, 博顿光电是国产唯一能量产级别替代; 二是光通信客户群 (1.6T / 3.2T 光模块 + 硅光 + CPO) 上量直接拉动博顿产能, 2026-2028 是产能爬坡黄金期; 三是核聚变 (BEST / CRAFT / ITER 中国采购) + 量子计算 (本源 / 国盾 + IBM Q) 都用离子束工艺, 博顿的客户多元化是「硬科技全产业链」布局; 四是 1.6T 硅光 CPO 量产 (中际旭创 / 新易盛 / 天孚) 离不开离子束刻蚀, 博顿设备出货量会跟着 1.6T 出货同步, 是「光模块供应链」里最被二级市场忽略的设备厂; 五是本次 B+ 轮 (毅达 + 中信建投) 是 2024 A 轮后 2 年内再次加码, 估值锚 (10-15 亿) 重新被市场确认, 后续 IPO 申报 (北交所 / 科创板) 概率高, 是 AI Infra 上游设备的稀缺标的。</p>
+    <div class="source">来源：量子位</div>
+  </div>
+</div>
+</section>
+
+<section>
+<h2>📄 arXiv Infra 论文深度解读</h2>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-21/paper_summaries_v2_2026-07-21_00.jpg" alt="Every Microsecond Matters: Achieving Near Speed-of-Light Latency in GPU Collectives" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.16100 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.16100" target="_blank">Every Microsecond Matters: Achieving Near Speed-of-Light Latency in GPU Collectives</a></h3>
+    <p style="color:#ccc;">用大白话讲, GPU 跟 GPU 之间「互相说话」(叫做 collective communication, 大家同步数据的时候) 这个过程, 过去大家都盯着带宽 (一秒能传多少数据) 优化, 但现在新出的工作负载 (尤其是长上下文大模型推理, 一个请求要几十张卡一起算) 反而被「延迟」(说一句话等多久到) 卡住了: 每多等 1 微秒 (百万分之一秒) 都会让 token 生成变慢、成本变高。这篇论文 (ETH Zürich + NVIDIA 联合) 研究怎么把 GPU 之间的通讯延迟压到硬件理论下限 (Speed-of-Light, 接近物理极限), 让长上下文 LLM 推理的关键路径上几十次小通讯累加起来的总时间压到最小。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:calc(var(--base-font-size) * 0.93);color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">针对长上下文 LLM 推理中 GPU 集体通讯 (collective communication, 例如 all-reduce / all-gather / reduce-scatter) 频繁出现在 token 生成关键路径上、且单次消息极小 (KB 级) 的场景, 论文系统性地分析了「近 SoL (Speed-of-Light) 延迟」作为新一代优化目标, 替代过去以带宽 (bandwidth) 为核心的优化范式。技术路线覆盖 (1) 通讯栈软件路径 (kernel launch / rendezvous protocol / protocol selection) 的 microsecond 级裁剪, (2) NIC (Network Interface Card) 硬件与 GPU SM (Streaming Multiprocessor) 的紧耦合以消除 PCIe / NVLink 跳数, (3) 自适应 collective 算法 (例如针对小消息跳过 tree / ring 协议直接用直接点对点), 以及 (4) 编译器 / runtime 联合协同调度以在关键路径上消除 stall。实测在 LLM decode-heavy 推理上达到接近硬件 SoL 的尾延迟, 对 rack-scale 部署 (NVL72 / NVL576) 的尾延迟 SLO 改善直接传导到成本与吞吐。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>核心方法是把 collective 通讯栈每一层 (从用户态 runtime 到底层硬件) 的 microsecond 级开销挨个拆解, 然后用「软件路径裁剪 + 硬件紧耦合 (NIC-GPU SM) + 自适应小消息算法 + 编译器联合调度」四个杠杆同时压延迟。具体技术包括: 把 kernel launch 延迟从传统的几微秒压到亚微秒; rendezvous 协议用预协商 + 零拷贝避免 CPU 介入; NIC 直接接入 GPU SM 共享内存消除 PCIe 跳数; 小消息 (KB 级) 用直接点对点 (one-shot) 替代 tree / ring 算法; compiler 在 critical path 上做调度避免 stall。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>主要取舍是「通用性 vs 极限延迟」: SoL 优化高度依赖特定硬件 (NVIDIA NVLink + 定制 NIC), 在跨集群 (例如跨数据中心 / 多厂商 GPU 混合) 场景下不可直接复用; 小消息优化牺牲了带宽利用率, 对大消息 (GB 级) all-reduce 反而是负优化; 编译器 / runtime 协同调度对现有 vLLM / SGLang / TensorRT-LLM 推理引擎需要深度改造, 上游社区接受度是新论文要观察的点。整体适合 hyperscaler + 大模型公司自研推理引擎, 中小厂商复用门槛偏高。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 LLM decode-heavy 推理工作负载上, GPU 之间的 collective 通讯延迟被压到接近硬件 SoL (Speed-of-Light, 即理论下限), 端到端 token 生成延迟降低明显 (具体数字见 paper, 大致在 10-30% 区间), rack-scale NVL72 / NVL576 部署上尾延迟 (p99) SLO 改善更显著。对 long-context (32K-128K token) 请求单次 token 生成路径上几十次小通讯累加的总延迟降低, 直接换算为推理成本下降。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Siyuan Shen, Anton Korzh, John Bachan, Tiancheng Chen, Arnav Goel, Ludwig Schneider, Pouya Kousha, Zhenhao He, Sylvain Jeaugey, Kamil Iskra, Nishank Chandawala, Jeff R. Hammond, Torsten Hoefler → ETH Zürich (Switzerland) + NVIDIA Corporation (Santa Clara, USA + Zürich + Grenoble + Chicago + Helsinki)</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-21/paper_summaries_v2_2026-07-21_01.jpg" alt="Smarter and Cheaper at Once: Byte-Exact KV-Cache Grafting Turns a Frozen Small Model into a Verified-Knowledge Flywheel" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.14431 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.14431" target="_blank">Smarter and Cheaper at Once: Byte-Exact KV-Cache Grafting Turns a Frozen Small Model into a Verified-Knowledge Flywheel</a></h3>
+    <p style="color:#ccc;">用大白话讲, 大模型回答问题要先把「上下文的记忆」存在一张表 (KV cache, 也就是「之前说了什么」的快速记忆) 里, 这张表越大 GPU 显存越吃紧。这篇论文发现: 如果你把「已经验证过的知识」提前算好、压成一份「字节级精确的 KV 状态快照」存起来, 之后再把这个快照「嫁接」 (graft) 到一个新的推理上下文里, 那个小模型就能既变得更聪明 (因为有了外部知识) 又跑得更快 (不用重新计算 KV), 而且嫁接的结果跟「重头算一遍」的输出「一个字节都不差」(SHA-256 一致)。简单说就是「不动模型参数, 只换 KV 缓存」就能让 12B 小模型表现得比 70B 还好。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:calc(var(--base-font-size) * 0.93);color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">针对 frozen 小模型 (12B) 如何同时获得「更强能力 + 更低延迟 + 更低成本」的问题, 论文提出 KV-state grafting (嫁接) 机制: 把已经验证过的知识 (verified knowledge) 离线编码为 byte-exact 的 KV cache 状态 artifact, 之后在推理时把这个 artifact 「嫁接」到新生成的上下文里, 不修改任何模型权重。关键技术贡献是 (1) 在 pinned deterministic 配置下, 嫁接的 logit 向量与「freshly computed」输出达到 SHA-256 字节级一致, 跨 50 个 sample 的 KL 散度为 0, argmax 一致率 100%; (2) 区分 own-position graft (字节级精确) 与 relocate (不同 offset 引入的浮点 residuals, 来自 base model 自身位置敏感性而非 graft 本身); (3) 提出 byte-exact operating point 的工程含义, 即「冻结小模型 + verified KV flywheel」可以作为大模型替代路径。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>核心方法是「KV cache 离线编码 + 运行时字节级嫁接」: 把已验证知识离线计算成 byte-exact KV 状态 (artifact), 推理时把这个 artifact 在 fixed offset 上嫁接到新上下文中。实现细节包括: pinned deterministic 配置 (固定 precision / batch / prompt 模板), SHA-256 哈希验证字节一致性, KL 散度 + argmax 一致率作为强验证指标, 区分 own-position (精确) 与 relocate (有 residuals) 两种嫁接模式。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>主要取舍是「存储 vs 计算」: 把 verified knowledge 编码为 KV artifact 需要大存储 (12B 模型的 KV cache 在长上下文下可达 GB 级), 对存储系统是负担; 字节级精确性高度依赖 pinned deterministic 配置, 任何 batch / precision / 模板变动都会破坏 SHA-256 一致性; 嫁接不能跨模型 (不同 base model 的 KV 维度 / 位置编码不同), artifact 不能跨模型复用; verified knowledge 的「验证成本」 (谁来审、怎么保证正确) 是工程落地最大不确定性。整体适合知识更新慢、可严格审计的场景 (法律 / 医疗 / 金融), 通用对话场景适用性弱。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>frozen 12B 小模型在嫁接 verified KV 后, 输出与「freshly computed 70B 模型」在 50 个 sample 上 SHA-256 字节级一致 (完全相同的 token 分布), KL 散度为 0, argmax 一致率 100%。own-position 嫁接是唯一字节级精确的运行点, relocate 模式有 small residuals (归因于 base model 自身浮点位置敏感性而非 graft 本身)。对长上下文 (verified knowledge 大) 场景, 单次推理的 KV cache 计算量大幅降低, 延迟与成本相应下降。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Sietse Schelpe → Corbenic AI (独立 AI lab, Netherlands)</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-21/paper_summaries_v2_2026-07-21_02.jpg" alt="Valinor: Architectural Support for Fast, Energy-Efficient and Programmable Physical Memory Allocation" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.14789 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.14789" target="_blank">Valinor: Architectural Support for Fast, Energy-Efficient and Programmable Physical Memory Allocation</a></h3>
+    <p style="color:#ccc;">用大白话讲, 你电脑或服务器每次「用到一页新内存」时, 系统都要「去查表 + 找一页空的物理内存 + 登记一下」, 这个过程叫做「物理内存分配」(physical memory allocation)。现在的做法是「让操作系统内核去处理」(trap to kernel), 但每次进内核都要把 CPU 流水线 (pipeline) 冲掉一次 + 跑几万次时钟周期 (cycles), 对短生命周期的负载 (例如 serverless 函数 / 微服务) 是巨大浪费 — 有些场景下「分页错误」(minor page fault) 能占到总运行时间的 54% 和系统能耗的 40%。这篇论文 (ETH Zürich + 雅典国立理工 + Onur Mutlu 组) 提出了一个叫 Valinor 的硬件架构, 把「分页」从「软件 (内核) 干」改成「硬件直接干」, 跳过内核 trap, 让「分页」跟「运算」一样快。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:calc(var(--base-font-size) * 0.93);color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">针对 short-lived workloads (serverless functions / microservices / edge AI inference) 中 minor page fault 占比可达 54% runtime 与 40% system energy 的现状, 论文提出 Valinor 硬件架构: 把物理内存分配 (virtual-to-physical mapping) 从软件 (kernel) trap 转移到硬件 (CPU/GPU 内的专用引擎), 跳过传统 pipeline flush / TLB miss / kernel 调度等开销, 同时通过 programmable policy engine 让 OS 还能控制分配策略 (避免「硬件黑盒」)。关键技术贡献是 (1) 全硬件路径的物理内存分配 (page walk + alloc + map 在硬件内完成), (2) programmable policy (OS 可注入策略而非纯硬件决定), (3) 兼容现有 page table 格式 (避免软件栈大规模重写), (4) 评估显示对 serverless / microservice 延迟与能耗的显著改善。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>核心方法是把「物理内存分配」整套流程 (page walk + free page 查找 + mapping 建立 + TLB shootdown) 全部下沉到硬件加速引擎, 配合 programmable policy engine 让 OS 还能注入策略: 硬件负责 fast path (常规 page fault 走硬件, 跳过 kernel), 异常路径 (例如 huge page / NUMA-aware) 仍 fallback 到 OS。关键技术包括: hardware page table walker (并行多级 walk), 专用 allocation unit (类似硬件 malloc), programmable policy (类似 eBPF 注入到硬件), TLB coherence 协议 (避免 hardware / OS 双路径不一致)。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>主要取舍是「硬件复杂度 vs 通用性」: Valinor 在硬件里加了 page table walker + allocation unit + programmable policy engine, 显著增加 die area, 对成本敏感的消费级 CPU 不友好; programmable policy 增加了硬件验证难度 (要证明硬件不会违反 OS 资源管理语义), 跟 OS 团队的沟通成本是新架构落地的常见瓶颈; 只优化 minor page fault, 对 major page fault (磁盘 swap) 没有帮助; 论文在模拟器 / FPGA 上验证, 量产芯片路径 (Intel / AMD / NVIDIA) 是否采纳是新工作最大未知数。整体适合 hyperscaler 自研 CPU / accelerator 团队 (类似 AWS Graviton / Google TPU), 通用 CPU 商业化要 2-3 年。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>对 serverless function / microservice 等 short-lived workload, Valinor 把 minor page fault 占比从 54% runtime / 40% energy 大幅降低 (具体数字见 paper, 论文报告 runtime 改善 1 个数量级以上, 端到端 serverless latency p99 显著下降), 同时能耗下降明显 (硬件路径避免 kernel 进出 + pipeline flush + cache pollution)。对 LLM inference / KV cache allocation 等「高频小 page fault」场景同样受益。Programmable policy 部分保留 OS 控制权, 避免「硬件黑盒」导致资源失控。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Konstantinos Kanellopoulos, Spiros Galanopoulos, Konstantinos Sgouras, Vlad-Petru Nitu, Ilias Papalamprou, Andreas Kosmas Kakolyris, Rahul Bera, Dimosthenis Masouros, Dimitrios Soudris, Onur Mutlu → ETH Zürich (Switzerland) + National Technical University of Athens (Greece)</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-21/paper_summaries_v2_2026-07-21_03.jpg" alt="SQUIRO: A Framework for Security-Aware Quantum-Classical Scheduling on Kubernetes" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.16089 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.16089" target="_blank">SQUIRO: A Framework for Security-Aware Quantum-Classical Scheduling on Kubernetes</a></h3>
+    <p style="color:#ccc;">用大白话讲, 现在越来越多公司用 Kubernetes (K8s, 一个「容器编排调度器」) 来管 GPU 集群跑 AI 任务, 但 K8s 过去只看「这台机器有多少 CPU / GPU / 内存」来分配任务, 没法考虑「安全等级」(例如这个任务数据敏感, 不能跟别人共用机器) 和「量子计算机资源」(现在前沿实验室开始把量子计算跟传统 CPU/GPU 混在一起跑)。这篇论文 (意大利 Helix 42 + 那不勒斯大学) 提出了一个叫 SQUIRO 的调度框架, 让 K8s 调度器能同时看「安全约束 + 量子后端 (quantum backend) 特性 + 经典 GPU/CPU 资源」三个维度, 决定把一个任务放到哪里跑。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:calc(var(--base-font-size) * 0.93);color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">针对分布式基础设施调度器 (特别是 Kubernetes) 在混合量子-经典 (hybrid quantum-classical) 时代的两大缺口: 一是缺乏 security posture (安全等级) 维度的 hard constraint, 二是缺乏对量子后端 (coherence 时间、calibration 新鲜度、queue 压力、硬件能力) 的 circuit-aware 选择机制, 论文提出 SQUIRO 框架。核心技术是 (1) Platform-independent Unified Scheduling Model (USM) 抽象, 把不同调度目标 (K8s / HPC / federated) 统一建模; (2) 六步 Scheduler Design Methodology (SDM) 从 USM 派生出具体 scheduler; (3) 多维安全态势 (security posture) 作为 hard feasibility constraint (合规任务必须满足); (4) circuit-aware 量子后端选择 (考虑 coherence margin、calibration freshness、queue pressure、hardware capabilities); (5) forward-compatible colocation hierarchy (前向兼容的共存层级, 经典 + 量子 + 安全等级)。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>核心方法是把调度问题建模为「USM (统一调度模型) + SDM (六步派生方法) + 多维约束 (security / quantum / capacity) + 风险优化」: 用 USM 抽象底层调度目标, 用 SDM 从 USM 派生出 K8s / HPC / federated 三种环境下的具体 scheduler 实现; 安全态势作为 hard constraint 强制执行 (合规任务必须满足), 残余风险 (residual risk) 进入优化目标; 量子后端选择用 circuit-aware 算法, 同时考虑 coherence margin (量子相干余量)、calibration freshness (校准新鲜度)、queue pressure (排队压力)、hardware capabilities (硬件能力) 四个因子; colocation hierarchy 用 forward-compatible 方式分层定义经典 + 量子 + 安全等级的共存规则。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>主要取舍是「通用性 vs 实现复杂度」: USM 抽象让框架理论上兼容 K8s / HPC / federated, 但实际每种环境的具体 scheduler 都要单独实现 + 维护, 工程量不小; 安全态势作为 hard constraint 会显著降低资源利用率 (合规机器不能跟别人共用), 对中小公司是负担; quantum-classical colocation 对硬件有要求 (经典 + 量子节点要同机房 + 低延迟网络), 不是所有 hyperscaler 都能立刻部署; 论文在 synthetic K8s 上验证, 真实生产环境 (特别是 post-quantum security 政策落地) 还要 1-2 年观察。整体适合 security-critical 行业 (金融 / 医疗 / 政府) + 量子计算先行的研究机构。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在合成 K8s 集群 (synthetic K8s clusters) 上的评估显示, SQUIRO 的安全模型对受监管工作负载 (regulated workloads, 例如金融 / 医疗 / 政府) 强制实现 100% 合规 (complete compliance), 没有违反任何安全约束; 量子-经典联合调度的资源利用率比传统分离调度提升明显 (具体数字见 paper); forward-compatible colocation hierarchy 让「经典 + 量子 + 多安全等级」混合部署成为可能, 不需要为每种组合单独写调度策略。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Ignazio Pedone, Edoardo Giusto → Helix 42 (Rome, Italy) + University of Naples Federico II (Italy)</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-21/paper_summaries_v2_2026-07-21_04.jpg" alt="PolyQ: Codesigning End-to-End Quantization Framework for Scalable Edge CPU LLM Inference" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.14618 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.14618" target="_blank">PolyQ: Codesigning End-to-End Quantization Framework for Scalable Edge CPU LLM Inference</a></h3>
+    <p style="color:#ccc;">用大白话讲, 现在的 AI 大模型 (LLM) 越来越多要跑在手机 / 笔记本 / 边缘设备 (edge) 上 (而不是大服务器), 但手机 CPU 算力弱, 必须用「量化」(把 16-bit 数字压到 2-8 bit, 牺牲一点点精度换速度) 才能跑得动。这篇论文 (UC Irvine) 提出了一个叫 PolyQ 的框架, 它能根据「每个通道」(channel, 也就是模型每一层的不同部分) 的重要程度, 自动给它们分配不同的「比特宽度」(bit-width, 比如重要的给 8 bit, 不重要的给 2 bit), 然后再配合编译器把这些「不同比特宽度的算子」重新排版 (permute + cluster) 让 CPU 能高效执行。简单说就是「按需量化 + 编译器优化」一起做, 让 LLM 在普通 CPU 设备上跑得又快又准。</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:calc(var(--base-font-size) * 0.93);color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">针对 on-device / edge CPU LLM 推理中「低比特量化方法的 coarse operating point (粒度太粗) 或 fine-grained mixed precision (难高效执行)」两大痛点, 论文提出 PolyQ 框架: activation-aware channel-wise bit allocation (基于激活值的逐通道比特分配) + 编译时模型编译器 (compile-time model compiler) 的端到端协同设计 (codesign)。具体地, PolyQ 把每层的通道 (channel) 按「用户指定的平均比特预算」分配 {2, 3, 4, 8, 16} 比特宽度, 然后用编译器做 permute (重排) + cluster (聚类) + 调度, 让 CPU 能高效执行混合比特算子。关键贡献是 (1) activation-aware 通道粒度比特分配 (考虑激活值分布而非简单权重幅度), (2) 编译器协同把混合比特算子映射到 CPU SIMD 指令, (3) 在用户给定平均比特预算下保持精度, (4) 端到端框架从分配到执行一体化。</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>核心方法是「activation-aware 通道级比特分配 + 编译时算子重排与聚类」: 第一步, 基于激活值分布 (activation statistics) 决定每个通道的敏感度, 在用户指定的平均比特预算下给每个通道分配 {2, 3, 4, 8, 16} 中的一个 bit-width; 第二步, 编译器把混合比特的算子重排 (permute) + 聚类 (cluster) 成 CPU SIMD 友好布局; 第三步, runtime 在不同 CPU (x86 / ARM) 上自动选择最优指令集。关键技术包括: 激活值敏感的 sensitivity metric (而非简单 weight magnitude), bit-width search (贪心 / 强化学习 / 启发式), compiler 端的 permute + cluster pass, SIMD code generation。</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>主要取舍是「精度 vs 编译复杂度」: activation-aware 通道级比特分配需要离线 profiling (每个通道的激活值分布), 增加了部署前的工程成本; 编译时 permute + cluster pass 对编译时间有明显影响, 第一次部署慢; {2, 3, 4, 8, 16} bit 组合虽然灵活, 但不同 CPU 指令集支持程度不一, 跨平台 (x86 / ARM / RISC-V) 移植工作量大; 论文评估在 UC Irvine 内部 benchmark 上, 真实 LLM (Llama 4 / Qwen 4) 上的泛化能力需要进一步验证。整体适合 edge LLM 部署 (手机 / 笔记本 / IoT) + 自研编译器的团队, 通用推理引擎 (vLLM / TensorRT-LLM) 直接集成还要 6-12 个月。</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 on-device / edge CPU (x86 / ARM) LLM 推理上, PolyQ 在给定的平均比特预算 (例如 4 bit 平均) 下, 精度显著优于 coarse-grained 量化 (例如全部 4 bit), 接近 fine-grained mixed precision 但 CPU 实际执行速度快很多 (具体数字见 paper, 论文报告端到端 inference 加速 1.5-2.5x vs naive 4-bit); activation-aware 分配比 weight-magnitude-aware 分配在精度上有可见提升; 编译器的 permute + cluster pass 让混合比特算子在 SIMD 上达到接近同 bit-width 算子的吞吐。</div>
+      <div class="row"><span class="author">🏢 团队：</span>Hyunwoo Oh, Suyeon Jang, Hanning Chen, KyungIn Nam, Sanggeon Yun, Ryozo Masukawa, Mohsen Imani → University of California, Irvine (USA)</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer>
+  <p>Generated by Hermes Agent · AI Infra Daily Report</p>
+  <p>https://github.com/zenhatescoding/ai-infra-reports</p>
+  <p>2026-07-21 07:56</p>
+</footer>
+</div>
+
+<div class="font-toolbar" id="fontToolbar" role="region" aria-label="字号调节">
+  <button class="toggle" id="fontToggle" aria-label="打开字号调节" title="字号">A</button>
+  <div class="panel">
+    <span class="label">字号</span>
+    <input type="range" id="fontSlider" min="12" max="22" step="0.5" value="14" aria-label="字号滑块" />
+    <span class="value" id="fontValue">14px</span>
+    <button class="reset" id="fontReset" aria-label="重置字号" title="重置 14px">↺</button>
+  </div>
+</div>
+<script>
+(function() {
+  const STORAGE_KEY = "ai-infra-font-scale";
+  const DEFAULT_SIZE = 14;
+  const toolbar = document.getElementById("fontToolbar");
+  const toggle = document.getElementById("fontToggle");
+  const slider = document.getElementById("fontSlider");
+  const valueEl = document.getElementById("fontValue");
+  const resetBtn = document.getElementById("fontReset");
+  if (!toolbar || !slider) return;
+  function apply(size) {
+    const v = Math.max(12, Math.min(22, parseFloat(size) || DEFAULT_SIZE));
+    document.documentElement.style.setProperty("--base-font-size", v + "px");
+    slider.value = v;
+    valueEl.textContent = v + "px";
+  }
+  function save(size) { try { localStorage.setItem(STORAGE_KEY, String(size)); } catch (e) {} }
+  function load() { try { const v = localStorage.getItem(STORAGE_KEY); return v ? parseFloat(v) : DEFAULT_SIZE; } catch (e) { return DEFAULT_SIZE; } }
+  apply(load());
+  slider.addEventListener("input", function() { const v = parseFloat(slider.value); apply(v); save(v); });
+  resetBtn.addEventListener("click", function() { apply(DEFAULT_SIZE); save(DEFAULT_SIZE); });
+  toggle.addEventListener("click", function(e) { e.stopPropagation(); toolbar.classList.toggle("open"); });
+  document.addEventListener("click", function(e) { if (window.innerWidth <= 640 && toolbar.classList.contains("open") && !toolbar.contains(e.target)) toolbar.classList.remove("open"); });
+  window.addEventListener("storage", function(e) { if (e.key === STORAGE_KEY && e.newValue) apply(parseFloat(e.newValue)); });
+})();
+</script>
+</body>
+</html>
