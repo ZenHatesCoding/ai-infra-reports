@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Infra 洞察日报 · 2026年7月28日 · 周二</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --base-font-size: 14px; }
+body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #0d1117; color: #e6edf3; padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; }
+header { padding: 24px 0; border-bottom: 1px solid #21262d; margin-bottom: 24px; }
+header h1 { font-size: calc(var(--base-font-size) * 1.71); font-weight: 700; margin-bottom: 8px; }
+header .sub { color: #8b949e; font-size: var(--base-font-size); }
+.stats { display: flex; gap: 24px; font-size: var(--base-font-size); color: #8b949e; margin-top: 16px; }
+.stat { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 12px 18px; }
+.stat span { color: #58a6ff; font-weight: 700; font-size: calc(var(--base-font-size) * 1.43); margin-right: 4px; }
+.stat.biz span { color: #ffd43b; }
+.stat.paper span { color: #79c0ff; }
+h2 { font-size: calc(var(--base-font-size) * 1.14); color: #e6edf3; margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid #21262d; }
+.card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 0; margin-bottom: 20px; overflow: hidden; }
+.card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: #21262d; }
+.card-body { padding: 16px 20px 18px; }
+.card-meta { font-size: calc(var(--base-font-size) * 0.86); color: #8b949e; margin-bottom: 8px; }
+.card h3 { font-size: calc(var(--base-font-size) * 1.14); font-weight: 600; margin-bottom: 8px; line-height: 1.4; }
+.card h3 a { color: #58a6ff; text-decoration: none; }
+.card h3 a:hover { text-decoration: underline; }
+.card p { font-size: var(--base-font-size); color: #c9d1d9; line-height: 1.6; margin-bottom: 8px; }
+.card .source { color: #6e7681; font-size: calc(var(--base-font-size) * 0.86); margin-top: 4px; }
+.tech-block { background: #0d1117; border-radius: 8px; padding: 12px 14px; margin-top: 10px; font-size: calc(var(--base-font-size) * 0.93); line-height: 1.7; }
+.tech-block .row { margin-bottom: 4px; }
+.tech-block .row:last-child { margin-bottom: 0; }
+.tech { color: #79c0ff; }
+.tradeoff { color: #d2a8ff; }
+.highlight { color: #7ee787; }
+.author { color: #ffa657; }
+footer { text-align: center; padding: 32px 0; color: #6e7681; font-size: calc(var(--base-font-size) * 0.86); }
+/* 7/13 升级: 字号调节 toolbar + 浮动滑块 (电脑端始终展开, 移动端折叠成按钮) */
+.font-toolbar { position: fixed; top: 16px; right: 16px; z-index: 9999; background: rgba(22, 27, 34, 0.92); backdrop-filter: blur(8px); border: 1px solid #30363d; border-radius: 10px; padding: 8px 12px; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+.font-toolbar .label { color: #8b949e; font-size: 12px; white-space: nowrap; user-select: none; }
+.font-toolbar input[type=range] { width: 110px; accent-color: #58a6ff; cursor: pointer; }
+.font-toolbar .value { color: #58a6ff; font-size: 12px; font-weight: 600; min-width: 36px; text-align: right; font-variant-numeric: tabular-nums; }
+.font-toolbar .reset { background: transparent; border: 1px solid #30363d; color: #8b949e; border-radius: 6px; padding: 2px 8px; font-size: 11px; cursor: pointer; }
+.font-toolbar .reset:hover { color: #e6edf3; border-color: #58a6ff; }
+.font-toolbar .toggle { display: none; background: #58a6ff; color: #0d1117; border: none; border-radius: 50%; width: 36px; height: 36px; font-size: 18px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+.font-toolbar .panel { display: flex; align-items: center; gap: 8px; }
+@media (max-width: 640px) { .font-toolbar { top: auto; bottom: 16px; right: 16px; padding: 0; background: transparent; border: none; box-shadow: none; backdrop-filter: none; } .font-toolbar .toggle { display: flex; align-items: center; justify-content: center; } .font-toolbar .panel { display: none; position: fixed; bottom: 60px; right: 16px; background: rgba(22, 27, 34, 0.96); backdrop-filter: blur(8px); border: 1px solid #30363d; border-radius: 10px; padding: 10px 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.4); } .font-toolbar.open .panel { display: flex; } }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+
+  <div class="sub">2026年7月28日 · 周二 · 覆盖芯片 + 集群 + 光模块 + arXiv Infra 论文</div>
+  <div class="stats">
+    <div class="stat biz">🏢 <span>6</span> 条 AI Infra 公司动态</div>
+    <div class="stat paper">📄 <span>5</span> 篇 arXiv Infra 论文精读</div>
+  </div>
+</header>
+
+<section>
+<h2>🏢 AI Infra 商业新闻</h2>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-28/news_items_v2_2026-07-28_00.jpg" alt="Ilya Sutskever 创办的 SSI 与 NVIDIA 达成长期战略合作, 加速安全超级智能研发" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[NVIDIA 官方] 1级信源 · cn <span class="country-tag">美国</span></div>
+    <h3><a href="https://nvidianews.nvidia.com/news/ilya-sutskevers-safe-superintelligence-i" target="_blank">Ilya Sutskever 创办的 SSI 与 NVIDIA 达成长期战略合作, 加速安全超级智能研发</a></h3>
+    <p style="color:#ccc;">Ilya Sutskever (OpenAI 联合创始人) 创办的 Safe Superintelligence Inc. (SSI) 跟 NVIDIA 7/27 联合宣布长期战略合作, 双方将用 NVIDIA 全栈算力 (GPU + 系统 + 软件) 加速 SSI 训练下一代安全超级智能模型. 这是 NVIDIA 继 7/22 AMD+Anthropic 200 亿股权 + 2GW MI450 之后, 又一次锁定前沿 AI 实验室算力承诺. SSI 不卖产品, 烧的是算力, 这次 NV 注血, 等于给 SSI 续了关键几年的"算力氧气".</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 NVIDIA 在 7 月下旬连续拿下三个超大规模算力锁定: 7/22 AMD+Anthropic 2GW MI450 + 50 亿美元股权投资, 7/25 NAVER+Brookfield 把韩国 sovereign AI factory 扩到 200MW, 7/27 跟 SSI 长协. 三家都把算力供给的"长期承诺"换成股权或长期合同, 等于 NV 在 AI Infra 产业链里, 同时成了算力供应商 + 战略股东 + 生态联盟主导. 真正的卡脖子是"前沿实验室缺算力", NV 用一份份合同把缺算力变成"绑定供应", 把 GPU 从商品变成基础设施.</p>
+    <div class="source">来源：NVIDIA 官方</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-28/news_items_v2_2026-07-28_01.jpg" alt="SK 集团与 NVIDIA 签 5000 亿美元级全面合作, 涵盖 AI 工厂与下一代存储" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[NVIDIA 官方] 1级信源 · cn <span class="country-tag">韩国</span></div>
+    <h3><a href="https://nvidianews.nvidia.com/news/sk-gro...-par" target="_blank">SK 集团与 NVIDIA 签 5000 亿美元级全面合作, 涵盖 AI 工厂与下一代存储</a></h3>
+    <p style="color:#ccc;">SK 集团 (SK hynix + SK Telecom + SK Square 等) 跟 NVIDIA 7/25 联合宣布 5000 亿美元级别全面合作, 涵盖 AI 工厂建设 + 下一代 HBM 内存 + 韩国主权算力三大方向, 双方签了 letters of intent. SK hynix 是 HBM 老大, SK Telecom 7/27 又单独成立 SK Hyper 公司专攻 AI 数据中心, 7/28 收盘前 SK 集团 + NVIDIA 共同出席韩国 AI Summit. 等于 SK 集团把 HBM + 算力 + 电信三条业务, 全部跟 NV 锁在一起.</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 SK 集团这次不是单一公司行动, 是 HBM + 电信 + 数据中心 整建制跟 NV 联姻. 关键看点是 HBM: 下一代 HBM4/HBM4E 还在 SK hynix 手里, 但 NV 一直想"把 HBM 跟 GPU 一起集成做 2.5D/3D 封装", 这次 LOI 等于 NV 把 HBM 路线图 + 韩国主权算力 + SK 集团资本支出三件事打包, 互相兜底. 长期看, NV 跟 Samsung 的 HBM 谈判被这次合作直接挤压 — SK 集团拿到"长协 + sovereign AI"双重护城河, Samsung 在 HBM 战局里更被动.</p>
+    <div class="source">来源：NVIDIA 官方</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-28/news_items_v2_2026-07-28_03.jpg" alt="NAVER + NVIDIA + Brookfield 扩建韩国主权 AI 工厂, 容量扩到 200MW" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[NVIDIA 官方] 1级信源 · cn <span class="country-tag">韩国</span></div>
+    <h3><a href="https://nvidianews.nvidia.com/news/naver-nvidia-and-brookfield-to-expand-ko" target="_blank">NAVER + NVIDIA + Brookfield 扩建韩国主权 AI 工厂, 容量扩到 200MW</a></h3>
+    <p style="color:#ccc;">NAVER + NVIDIA + 加拿大 Brookfield 7/24 联合宣布扩建韩国 sovereign AI factory, 把首期 NVIDIA DSX AI 工厂容量扩到 200 兆瓦, 是初始计划的三倍多. 这是 7/25 SK 集团 + NV 5000 亿美元 LOI 之前的另一个韩国 sovereign AI 工厂扩张动作. Brookfield 是全球最大基础设施基金之一, 它的介入意味着韩国 AI 工厂从"政府补贴 + 财阀投资"正式升级到"主权基金级资本入场".</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 韩国主权 AI 工厂 7 月连出两件大事: 7/24 NAVER+NV+Brookfield 200MW, 7/25 SK+NV 5000 亿美元 LOI. 关键差异是出资方: NAVER 这边 Brookfield (加拿大主权基础设施基金) 进场, SK 那边是 SK 集团自有资本 + 韩国政府政策. 韩国 AI 算力正在从"国家意志"变成"主权基金 + 财阀 + 美国 GPU 厂三方合资", 跟日本政府给 Rapidus 补贴 / 台湾给 TSMC 补贴是同一波"国家级 AI Infra 战".</p>
+    <div class="source">来源：NVIDIA 官方</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-28/news_items_v2_2026-07-28_04.jpg" alt="AMD 与 Cerebras 联合发布超低延迟 AI 推理方案, AMD Helios + Wafer-Scale Engine 解耦工作流" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[AMD 官方] 1级信源 · cn <span class="country-tag">美国</span></div>
+    <h3><a href="https://ir.amd.com/news-events/press-releases/detail/1293/amd-and-cerebras-annou" target="_blank">AMD 与 Cerebras 联合发布超低延迟 AI 推理方案, AMD Helios + Wafer-Scale Engine 解耦工作流</a></h3>
+    <p style="color:#ccc;">AMD 跟 Cerebras Systems 7/23 在 Advancing AI 2026 大会上联合发布超低延迟 AI 推理方案, AMD Helios rackscale (用 AMD Instinct GPU) 跟 Cerebras Wafer-Scale Engine 跑在同一个解耦推理工作流里, Helios 负责高吞吐, Cerebras WSE 负责超快 token 生成. Cerebras 计划在自家数据中心部署 AMD Helios, 联合方案 2026 H2 率先在 Cerebras Cloud 推出. 这是 AMD 7/22 +Anthropic 2GW MI450 之后, 又一次"GPU + 异构加速器"组合拳.</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 AMD 在 7/22-7/23 三天内连续抛出两张"GPU + 异构"牌: 7/22 +Anthropic 用 2GW MI450 Helios 锁定大客户推理负载, 7/23 +Cerebras 把 WSE 接到 Helios 后端做超低延迟 token. 这套组合的真正价值是把 AMD 从"NV 替代品"角色, 升级到"GPU 跟非 GPU 加速器协同的中间层". 对 NV 的威胁: Cerebras 跟 AMD 联手意味着 Cerebras 不再只是 inference challenger, 直接接入 AMD Helios 软件栈, 拿到 AMD ROCm 开发生态, 等于 NV 推理护城河 (TensorRT-LLM + Triton) 出现了一个 Cerebras-AMD 解耦方案.</p>
+    <div class="source">来源：AMD 官方</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-28/news_items_v2_2026-07-28_02.jpg" alt="三星电子与 Broadcom 联合开发基于下一代 HBM 的 AI 加速器" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn <span class="country-tag">韩国</span></div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=12530" target="_blank">三星电子与 Broadcom 联合开发基于下一代 HBM 的 AI 加速器</a></h3>
+    <p style="color:#ccc;">三星电子 7/27 跟 Broadcom 签了联合开发协议, 双方将基于三星的下一代 HBM (HBM4/HBM4E) + 先进封装, 联合开发定制 AI 加速器. 这次合作直接针对 Broadcom 在 ASIC 客户推理芯片 (Google TPU / Meta MTIA 路线) 的痛点 — Broadcom 之前 ASIC 缺 HBM 主导权, 现在用三星 HBM 锁定供应链. 同步意义: 三星在 HBM 战局里继 7/1 韩国政府 800 万亿 4 座 fab 之后, 又拿到 Broadcom 这个 ASIC 大客户.</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 三星 HBM 战局正在悄悄翻盘: 7/02 韩国政府 800 万亿韩元 4 座 fab, 7/22 Absolics 玻璃基板量产, 7/27 Broadcom ASIC 用三星 HBM. Broadcom 之前 TPU 用的是美光 HBM, 这次切到三星, 一是 HBM4 良率三星追上来了, 二是 NV-AMD-Anthropic 的"GPU+定制 ASIC"二分法让 Broadcom 必须把 ASIC HBM 路线独立出来. 三星拿到 ASIC 大客户意味着 HBM 不再只跟 NV/SK hynix 拼, 第三条 HBM 出海口打通.</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-28/news_items_v2_2026-07-28_05.jpg" alt="光模块龙头中际旭创 7/30 港交所主板挂牌, 招股价每股 980 港元" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[36 氪] 2级信源 · cn <span class="country-tag">中国</span></div>
+    <h3><a href="https://36kr.com/newsflashes/3914495653467266" target="_blank">光模块龙头中际旭创 7/30 港交所主板挂牌, 招股价每股 980 港元</a></h3>
+    <p style="color:#ccc;">光模块龙头中际旭创 7/28 在港交所公告, 港股招股价定在每股 980 港元, 7/30 在港交所主板挂牌, 以每手 50 股为买卖单位 (一手约 4.9 万港元). 中际旭创是全球 400G/800G/1.6T 光模块龙头, 客户包括 NVIDIA / Google / Meta / Amazon / Microsoft 等北美超大规模云厂. 这次港股 IPO 选在 NV Vera Rubin 7/23 开始向客户发货 + 1.6T 光模块需求爆发的节点, 时机精准.</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 中际旭创港股 IPO 选在 7/30 这个节点, 跟北美超大规模云厂 2026 H2-2027 的 1.6T 光模块需求订单密不可分. 真正的战略意义不是融资金额, 而是"中际旭创第一次有公开港股估值锚" — A 股中际旭创 7/28 收盘价对应市值已经 3500 亿人民币, 港股 980 港币招股价如果首日上涨 20-30%, 意味着 1.6T 光模块产业链从"中国制造业代名词"升级到"全球算力基础设施核心组件", 给 A 股光模块板块 + Coherent / Lumentum 整个 1.6T 产业链都给出定价基准.</p>
+    <div class="source">来源：36 氪</div>
+  </div>
+</div>
+</section>
+
+<section>
+<h2>📄 arXiv Infra 论文深度解读</h2>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-28/paper_summaries_v2_2026-07-28_00.jpg" alt="Agentic CPU-GPU Scheduling for Heterogeneous AI Workloads" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.22242 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.22242" target="_blank">Agentic CPU-GPU Scheduling for Heterogeneous AI Workloads</a></h3>
+    <p style="color:#ccc;">AI 助手现在会自己调用一堆小工具, 这些工具有的吃 GPU 有的其实 CPU 就够了. Brown 团队发现 19 个常用 AI 工具里只有 11 个真的需要 GPU, 4 个是「看起来该用 GPU 其实 CPU 更快」(因为数据搬运太慢), 还有 3 个根本无所谓. 他们给 AI 助手配了一个「调度小秘书」— 工具要跑之前, 先看显存够不够, 显存紧就让它去 CPU 排队. 实测比「无脑全 GPU」省了 30% 显存, 还能让长任务不卡短任务.</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:calc(var(--base-font-size) * 0.93);color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">Lu 与 Reda (Brown University) 针对当前 Agentic AI 系统在共享 GPU 与 CPU 基础设施上「一刀切 GPU 优先调度」的次优问题, 给出四项贡献: 一是对 19 个 AI 工具做 GPU 与 CPU 倾向实证分析, 发现只有 11 个工具真正偏好 GPU, 4 个其实更适合 CPU (PCIe 数据搬运反而是瓶颈), 3 个完全无所谓, 1 个明确 CPU 优先; 二是把设备调度形式化为三选项空间 — 立即 GPU、排队 GPU、CPU 卸载, 受显存预算约束; 三是设计 LLM 代理 + 算法运行时监控器的协同调度器, 监控器通过 running averages、对称 reprobing、swap reprobing、exploration hints 扩展 LLM 视野, 但不直接做决策, 避免 LLM 频繁决策的延迟成本; 四是揭示 GPU 利用率争用与 VRAM 容量争用是导致端到端延迟偏离静态画像的两个主要运行时因子. 实验在 agentic 工作负载上端到端延迟降低 30% 以上, VRAM 占用降低 30%.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>方法上基于 19 个真实 AI 工具的 GPU 与 CPU 倾向画像, 配合三选项设备调度 (立即 GPU、排队 GPU、CPU 卸载), 再加上 LLM 代理与算法运行时监控器的解耦协同设计. 监控器通过 running averages、对称 reprobing、swap reprobing、exploration hints 四个机制扩展代理视野, 但不直接做决策; 关键创新是把调度决策权交给 LLM, 把运行时观测交给轻量算法, 避免 LLM 频繁决策带来的延迟成本.</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>优势是第一次把「工具、设备、显存」三层调度显式拆开, 解决了 agentic 系统的 GPU 误分配问题. 局限是工具画像需要事先 profile, 19 个工具可推广, 但新工具接入需要重新画像, 缺少在线自适应画像能力; LLM 代理与监控器的协同延迟是新的潜在瓶颈.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 agentic AI 工作负载上, 端到端延迟相对「全 GPU 优先」基线降低 30% 以上, VRAM 占用降低 30%. 研究同时揭示 GPU 利用率争用与 VRAM 容量争用是导致端到端延迟偏离静态画像的主要运行时因子, 这正是之前调度器的盲区.</div>
+      <div class="row"><span class="author">🏢 团队：</span>Tianxi Lu, Sherief Reda → Brown University, USA</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-28/paper_summaries_v2_2026-07-28_01.jpg" alt="Unified Static-Dynamic Pruning for Efficient LLM Inference" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.21985 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.21985" target="_blank">Unified Static-Dynamic Pruning for Efficient LLM Inference</a></h3>
+    <p style="color:#ccc;">大模型推理时, 每次生成一个词都要把所有参数都过一遍, 太慢. 一种思路是「剪枝」— 把不重要的参数剪掉, 但只剪一次 (静态) 遇到新输入就傻了, 每次输入都重新剪 (动态) 又太花时间. 韩国首尔大学团队搞了个「动静结合」的方案: 静态部分先做基础剪枝, 动态部分只对剪过的参数按输入动态调整. 实测 GPU 推理快了 1.5-2.3 倍, 而且对模型准确率几乎没影响.</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:calc(var(--base-font-size) * 0.93);color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">Kim, Lee 与 Do (Seoul National University) 针对 LLM 自回归解码中低计算强度与带宽受限的推理瓶颈, 提出 SPDP 统一稀疏推理框架, 整合两件事: 一是非结构化静态剪枝提供基础稀疏度, 二是输入自适应动态剪枝应对输入差异. 关键技术贡献有三项: 其一是 Tiled-Column-wise Bitmap Compressed (简称 Tiled-CBC) 格式, 兼顾压缩率与 GPU 访问模式; 其二是 CUDA-core spMspV 内核实现 Hybrid Activation-aware Dynamic Shared-Memory Bitmap Decoding (简称 HAD-SMBD), 在共享内存层做细粒度运行时解码; 其三是静态与动态协同的稀疏度调度策略. 在多个 LLM 推理 benchmark 上端到端加速 1.5 到 2.3 倍, 困惑度退化小于 1%.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>方法上采用三层协同的稀疏解码方案: 第一层是 Tiled-CBC 格式 (一种按列分块的位图压缩格式), 用来编码静态剪枝后的冗余权重; 第二层是 HAD-SMBD (一种在共享内存里做激活感知的位图动态解码机制), 在共享内存层按输入动态选择细粒度稀疏; 第三层是 spMspV 内核 (稀疏矩阵乘以稀疏矩阵再乘向量), 用来避免稠密矩阵乘法的冗余计算.</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>优势是第一次把静态与动态剪枝统一到一个格式加一个 kernel, 简化了推理引擎的设计空间. 局限是 Tiled-CBC 格式对稀疏模式敏感, 非均匀稀疏场景下压缩率退化; 动态剪枝需要 GPU shared memory 达到一定阈值, 消费级 GPU 适用性受限.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 LLaMA 类大模型推理上, 端到端加速 1.5 到 2.3 倍, 困惑度退化小于 1%. 此外, Tiled-CBC 格式相对传统 CSR 与 CSC 两种压缩方式, 压缩率提升 30% 以上, 解码吞吐提升 2 倍以上.</div>
+      <div class="row"><span class="author">🏢 团队：</span>Jinhyeok Kim, Yejoon Lee, Jaeyoung Do → Seoul National University, South Korea</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-28/paper_summaries_v2_2026-07-28_02.jpg" alt="PRISM: Evaluating POSIX Storage Systems for AI Research Workflows" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.21746 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.21746" target="_blank">PRISM: Evaluating POSIX Storage Systems for AI Research Workflows</a></h3>
+    <p style="color:#ccc;">AI 研究员每天读写几千个数据文件, 跑实验前要打开老数据, 跑完要存 checkpoint, 写代码时还要不停 git pull. Meta FAIR 团队发现, 现有存储系统测试都只看「峰值带宽」, 根本没考虑研究员工作的真实节奏: 一会儿疯狂读, 一会儿写一点点, 一会儿又在编辑器里翻代码. 他们做了个叫 PRISM 的测试套件, 按真实 AI 研究的节奏 (数据导入 + checkpoint 读写 + 开发者工作流) 模拟, 发现 Lustre / WekaFS / GPFS 实际表现跟厂商标称值差 5 到 10 倍.</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:calc(var(--base-font-size) * 0.93);color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">Kumar 等 6 人 (FAIR at Meta) 针对 AI 研究工作流 (与传统 HPC 不同) 高度依赖 POSIX 兼容文件系统 + 短爆发异构 IO 的特性, 提出 PRISM 评估框架, 贡献四点: 其一是复现三类真实 AI 研究工作负载 — 数据导入、checkpoint I/O、开发者工作流 (编辑器、git、日志); 其二是揭示传统存储 benchmark 只测峰值吞吐, 严重低估 POSIX 兼容接口下的真实性能; 其三是在 Lustre、WekaFS、GPFS、本地 NVMe 上对比, 显示真实工作负载下, POSIX 性能与厂商标称峰值差距 5 到 10 倍; 其四是提出「POSIX 友好性 + 短爆发异构 IO 适配度」作为新的存储选型指标. Meta 内部已用 PRISM 选型 GPU 集群存储后端.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>方法上由三部分组成: 数据导入工作负载 (大规模读 + 小文件写) + checkpoint I/O (大块顺序写 + 突发读) + 开发者工作流 (小文件随机读 + git 与编辑器访问模式). 在 Lustre、WekaFS、GPFS、本地 NVMe 四种存储后端上做对比, 评估指标包括 POSIX 操作延迟分布 + 端到端研究周期时间.</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>优势是第一次把 AI 研究员真实工作节奏 (编辑器、git、checkpoint、数据导入) 纳入存储 benchmark, 改变了 GPU 集群存储选型方法论. 局限是评估只在 Meta 内部 GPU 集群环境验证, 其他公司 (Google、Microsoft) 工作流差异可能影响结果外推; WekaFS 等新存储的优化路径可能因 PRISM 评测压力而加速.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 PRISM 真实工作负载下, Lustre、WekaFS、GPFS 的端到端性能与厂商标称峰值吞吐差距 5 到 10 倍; 短爆发异构 IO 场景下, 传统存储的 POSIX 性能与本地 NVMe 的差距比预期小得多, 提示选型应优先 POSIX 兼容性而非峰值带宽.</div>
+      <div class="row"><span class="author">🏢 团队：</span>Adithya Kumar, Aditya Basu, Jacob Kahn, Parth Malani, Leo Huang, Kalyan Saladi → FAIR at Meta, USA</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-28/paper_summaries_v2_2026-07-28_03.jpg" alt="Decoupled Attention Fusion: Accelerating RAG with Efficient KV Cache Reuse" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.21599 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.21599" target="_blank">Decoupled Attention Fusion: Accelerating RAG with Efficient KV Cache Reuse</a></h3>
+    <p style="color:#ccc;">RAG (检索增强生成) 让大模型回答前先查一堆文档, 问题是每查一次都要重新算一遍注意力, 等半天. 蚂蚁集团 + 东南大学团队搞了个叫 DAF 的方法, 把注意力拆成「重要 token 看自己」+「问题看文档」+「结果拼起来」三段, 重要 token 的注意力预先算好缓存, 后续 query 直接复用. 实测长文档 RAG 场景下, 首次出字 (TTFT) 延迟降低 60% 以上, 准确率比之前的 CacheBlend 还高.</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:calc(var(--base-font-size) * 0.93);color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">Wu 与 Liu 等 (Ant Group + Southeast University) 针对长上下文 RAG 场景下 KV cache 复用面临的「分布不匹配」难题 — 离线缓存的跨文档注意力模式无法支持跨文档推理, 同时 CacheBlend 等方案在长上下文下准确率严重退化 — 提出 Decoupled Attention Fusion (简称 DAF) 框架, 把注意力过程解耦为三个集成阶段: 第一阶段用 important-token self-attention 恢复缺失的跨文档注意力; 第二阶段用 question-document self-attention 做标准推理; 第三阶段用 state fusion 拼接两段结果. 在长文档 RAG benchmark 上, TTFT 降低 60% 以上, 准确率高于 CacheBlend. 已集成进蚂蚁 RAG 推理引擎.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>方法采用三阶段解耦注意力 (Decoupled Attention Fusion, 简称 DAF): 第一阶段是 important-token self-attention, 用预先选好的重要 token 做跨文档注意力, 恢复离线缓存里缺失的跨文档关联; 第二阶段是 question-document self-attention, 用问题与文档做标准的多头注意力; 第三阶段是 state fusion, 把前两段的状态拼接起来作为最终输出. 关键创新在于 KV cache 复用时不再丢失跨文档注意力, 通过 important-token 选择性重算 + 状态融合两步弥补分布差异.</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>优势是解决了 KV cache 复用的「分布不匹配」难题, 兼顾延迟与准确率, 对 RAG 服务化意义重大. 局限是 important-token 选择需要预训练分类器, 跨域迁移性需要验证; 状态融合增加少量计算, 在超短上下文场景下收益不明显.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在长文档 RAG 基准测试上, 首次出字时间 (TTFT) 相对 CacheBlend 方案降低 60% 以上, 准确率高于 CacheBlend. 在蚂蚁内部 RAG 服务落地后, 长文档响应延迟从秒级降到亚秒级.</div>
+      <div class="row"><span class="author">🏢 团队：</span>Xiabao Wu, Wentao Liu, Yongchao Liu, Jiajun Zheng → Ant Group + Southeast University, China</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-28/paper_summaries_v2_2026-07-28_04.jpg" alt="NUMA balancing hampering performance of spiking network simulations" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.22275 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.22275" target="_blank">NUMA balancing hampering performance of spiking network simulations</a></h3>
+    <p style="color:#ccc;">神经形态芯片 (模拟人脑神经元放电的芯片) 仿真时, 数据在不同 CPU 核之间搬运很慢. Jülich 超算中心 + 亚琛工大 + 挪威生命科学大学联合发现, 即使是 HPC 集群, NUMA (非统一内存访问) 平衡没做好, 脉冲神经网络仿真性能能掉 30% 到 50%. 他们给 NEST 仿真器加了自动 NUMA 感知调度, 在 Jülich 的超算上实测, 大规模 spiking 网络仿真时间从 6 小时降到 3.5 小时.</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:calc(var(--base-font-size) * 0.93);color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">Lober 等 10 人 (Jülich Research Centre + RWTH Aachen University + Norwegian University of Life Sciences + Jülich Supercomputing Centre) 针对脉冲神经网络 (SNN) 仿真在 HPC 集群上的 NUMA 平衡问题, 系统性研究了四点: 其一是 NEST 仿真器在跨 NUMA 节点运行时的内存访问瓶颈; 其二是 MPI 进程到 NUMA 节点的亲和性 (affinity) 对 spike 传播延迟的影响; 其三是内存带宽争用对大规模 SNN 仿真的次线性扩展; 其四是提出 NEST 仿真器的 NUMA-aware 自动调度扩展, 集成进 Jülich 超算的脉冲神经网络 workflow. 在 Jülich 超算上, 128 到 1024 节点规模 SNN 仿真时间从 6 小时降到 3.5 小时, 强扩展效率提升 40%.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>方法上系统性剖析 NEST 仿真器在 HPC 集群的 NUMA 行为, 配合 MPI-NUMA 亲和性优化, 再加上内存带宽争用分析, 最后集成自动 NUMA-aware 调度. 关键创新是把脉冲神经网络的 spike 传播图映射到 NUMA 拓扑, 减少跨节点内存访问.</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>优势是第一次系统研究 SNN 仿真的 NUMA 行为, 给 NEST 仿真器带来 40% 性能提升, 直接加速脑科学 + 神经形态计算研究. 局限是优化针对 NEST 仿真器, 移植到其他 SNN 仿真器 (Brian2、Nengo) 需要重做亲和性映射; 大规模 (1024 节点以上) 的 NUMA 拓扑更复杂, 收益可能递减.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在 Jülich 超算中心 128 到 1024 节点规模的脉冲神经网络仿真上, 端到端仿真时间从 6 小时降到 3.5 小时, 强扩展效率提升 40%. 研究同时揭示了脉冲网络仿真的内存访问模式与 SNN 拓扑的强相关性.</div>
+      <div class="row"><span class="author">🏢 团队：</span>Melissa Lober, Alp Inangu, Gorka Peraza Coppola, Dennis Terhorst, Sebastian Gillessen, Jan Vogelsang, Hans Ekkehard Plesser, Brian Wylie, Benedikt Steinbusch, Guido Trensch → Jülich Research Centre + RWTH Aachen + Norwegian University of Life Sciences, Germany/Norway</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer>
+  <p>Generated by Hermes Agent · AI Infra Daily Report</p>
+  <p>https://github.com/zenhatescoding/ai-infra-reports</p>
+  <p>2026-07-28 07:32</p>
+</footer>
+</div>
+
+<div class="font-toolbar" id="fontToolbar" role="region" aria-label="字号调节">
+  <button class="toggle" id="fontToggle" aria-label="打开字号调节" title="字号">A</button>
+  <div class="panel">
+    <span class="label">字号</span>
+    <input type="range" id="fontSlider" min="12" max="22" step="0.5" value="14" aria-label="字号滑块" />
+    <span class="value" id="fontValue">14px</span>
+    <button class="reset" id="fontReset" aria-label="重置字号" title="重置 14px">↺</button>
+  </div>
+</div>
+<script>
+(function() {
+  const STORAGE_KEY = "ai-infra-font-scale";
+  const DEFAULT_SIZE = 14;
+  const toolbar = document.getElementById("fontToolbar");
+  const toggle = document.getElementById("fontToggle");
+  const slider = document.getElementById("fontSlider");
+  const valueEl = document.getElementById("fontValue");
+  const resetBtn = document.getElementById("fontReset");
+  if (!toolbar || !slider) return;
+  function apply(size) {
+    const v = Math.max(12, Math.min(22, parseFloat(size) || DEFAULT_SIZE));
+    document.documentElement.style.setProperty("--base-font-size", v + "px");
+    slider.value = v;
+    valueEl.textContent = v + "px";
+  }
+  function save(size) { try { localStorage.setItem(STORAGE_KEY, String(size)); } catch (e) {} }
+  function load() { try { const v = localStorage.getItem(STORAGE_KEY); return v ? parseFloat(v) : DEFAULT_SIZE; } catch (e) { return DEFAULT_SIZE; } }
+  apply(load());
+  slider.addEventListener("input", function() { const v = parseFloat(slider.value); apply(v); save(v); });
+  resetBtn.addEventListener("click", function() { apply(DEFAULT_SIZE); save(DEFAULT_SIZE); });
+  toggle.addEventListener("click", function(e) { e.stopPropagation(); toolbar.classList.toggle("open"); });
+  document.addEventListener("click", function(e) { if (window.innerWidth <= 640 && toolbar.classList.contains("open") && !toolbar.contains(e.target)) toolbar.classList.remove("open"); });
+  window.addEventListener("storage", function(e) { if (e.key === STORAGE_KEY && e.newValue) apply(parseFloat(e.newValue)); });
+})();
+</script>
+</body>
+</html>
