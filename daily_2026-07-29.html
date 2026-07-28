@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Infra 洞察日报 · 2026年7月29日 · 周三</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --base-font-size: 14px; }
+body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #0d1117; color: #e6edf3; padding: 20px; }
+.container { max-width: 900px; margin: 0 auto; }
+header { padding: 24px 0; border-bottom: 1px solid #21262d; margin-bottom: 24px; }
+header h1 { font-size: calc(var(--base-font-size) * 1.71); font-weight: 700; margin-bottom: 8px; }
+header .sub { color: #8b949e; font-size: var(--base-font-size); }
+.stats { display: flex; gap: 24px; font-size: var(--base-font-size); color: #8b949e; margin-top: 16px; }
+.stat { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 12px 18px; }
+.stat span { color: #58a6ff; font-weight: 700; font-size: calc(var(--base-font-size) * 1.43); margin-right: 4px; }
+.stat.biz span { color: #ffd43b; }
+.stat.paper span { color: #79c0ff; }
+h2 { font-size: calc(var(--base-font-size) * 1.14); color: #e6edf3; margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid #21262d; }
+.card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 0; margin-bottom: 20px; overflow: hidden; }
+.card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: #21262d; }
+.card-body { padding: 16px 20px 18px; }
+.card-meta { font-size: calc(var(--base-font-size) * 0.86); color: #8b949e; margin-bottom: 8px; }
+.card h3 { font-size: calc(var(--base-font-size) * 1.14); font-weight: 600; margin-bottom: 8px; line-height: 1.4; }
+.card h3 a { color: #58a6ff; text-decoration: none; }
+.card h3 a:hover { text-decoration: underline; }
+.card p { font-size: var(--base-font-size); color: #c9d1d9; line-height: 1.6; margin-bottom: 8px; }
+.card .source { color: #6e7681; font-size: calc(var(--base-font-size) * 0.86); margin-top: 4px; }
+.tech-block { background: #0d1117; border-radius: 8px; padding: 12px 14px; margin-top: 10px; font-size: calc(var(--base-font-size) * 0.93); line-height: 1.7; }
+.tech-block .row { margin-bottom: 4px; }
+.tech-block .row:last-child { margin-bottom: 0; }
+.tech { color: #79c0ff; }
+.tradeoff { color: #d2a8ff; }
+.highlight { color: #7ee787; }
+.author { color: #ffa657; }
+footer { text-align: center; padding: 32px 0; color: #6e7681; font-size: calc(var(--base-font-size) * 0.86); }
+/* 7/13 升级: 字号调节 toolbar + 浮动滑块 (电脑端始终展开, 移动端折叠成按钮) */
+.font-toolbar { position: fixed; top: 16px; right: 16px; z-index: 9999; background: rgba(22, 27, 34, 0.92); backdrop-filter: blur(8px); border: 1px solid #30363d; border-radius: 10px; padding: 8px 12px; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+.font-toolbar .label { color: #8b949e; font-size: 12px; white-space: nowrap; user-select: none; }
+.font-toolbar input[type=range] { width: 110px; accent-color: #58a6ff; cursor: pointer; }
+.font-toolbar .value { color: #58a6ff; font-size: 12px; font-weight: 600; min-width: 36px; text-align: right; font-variant-numeric: tabular-nums; }
+.font-toolbar .reset { background: transparent; border: 1px solid #30363d; color: #8b949e; border-radius: 6px; padding: 2px 8px; font-size: 11px; cursor: pointer; }
+.font-toolbar .reset:hover { color: #e6edf3; border-color: #58a6ff; }
+.font-toolbar .toggle { display: none; background: #58a6ff; color: #0d1117; border: none; border-radius: 50%; width: 36px; height: 36px; font-size: 18px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+.font-toolbar .panel { display: flex; align-items: center; gap: 8px; }
+@media (max-width: 640px) { .font-toolbar { top: auto; bottom: 16px; right: 16px; padding: 0; background: transparent; border: none; box-shadow: none; backdrop-filter: none; } .font-toolbar .toggle { display: flex; align-items: center; justify-content: center; } .font-toolbar .panel { display: none; position: fixed; bottom: 60px; right: 16px; background: rgba(22, 27, 34, 0.96); backdrop-filter: blur(8px); border: 1px solid #30363d; border-radius: 10px; padding: 10px 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.4); } .font-toolbar.open .panel { display: flex; } }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+
+  <div class="sub">2026年7月29日 · 周三 · 覆盖芯片 + 集群 + 光模块 + arXiv Infra 论文</div>
+  <div class="stats">
+    <div class="stat biz">🏢 <span>6</span> 条 AI Infra 公司动态</div>
+    <div class="stat paper">📄 <span>5</span> 篇 arXiv Infra 论文精读</div>
+  </div>
+</header>
+
+<section>
+<h2>🏢 AI Infra 商业新闻</h2>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-29/news_items_v2_2026-07-29_00.jpg" alt="AMD 在 Advancing AI 2026 大会推出 Agentic AI 全栈计算方案" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[AMD 官方] 1级信源 · cn <span class="country-tag">美国</span></div>
+    <h3><a href="https://ir.amd.com/news-events/press-releases/detail/1294/aai-2026-amd-delivers-full-stack-compute-for-the-agentic-ai-era" target="_blank">AMD 在 Advancing AI 2026 大会推出 Agentic AI 全栈计算方案</a></h3>
+    <p style="color:#ccc;">AMD 7/23 在 Advancing AI 2026 (AAI 2026) 大会发布 Agentic AI era 的全栈计算方案, 涵盖 AMD Instinct GPU + EPYC CPU + ROCm + Pensando 网络 + Ryzen AI PC. 跟以前 GPU 单点突破不同, 这次 AMD 直接打"全栈 + 网络"包, 目标就是 OpenAI/Anthropic 都在部署的 agentic multi-agent 高强度推理场景. 同台 AMD 跟 Cerebras 也联合发布超低延迟 AI 推理方案 (已 7/28 第 30 期 n05 用过).</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 AMD 这次是打"GPU+CPU+NIC+ROCm 全栈旗号"切入 NVIDIA 一直独家卡着的"全栈 AI Infra 供应商"位. 跟 7/22 AMD+Anthropic 2GW MI450 战略合作打头阵, 这次 AAI 2026 是把"全栈方案"硬件+RAG 一起带到台前. 短期看 NP 网络 + EPYC 拉抬 AMD 数据中心 ASP, 长期看 ROCm 软件栈跟 CUDA 真正平起平坐还要 2-3 代, Agentic AI 工作负载主要还得跑 GPU, AMD 的牌还是 GPU + 全栈新公式.</p>
+    <div class="source">来源：AMD 官方</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-29/news_items_v2_2026-07-29_04.jpg" alt="NVIDIA 内部 EDA 工作流全面采用 Vera CPU, 提速 1.5 倍加速下一代 GPU/CPU 设计" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[NVIDIA 官方] 1级信源 · cn <span class="country-tag">美国</span></div>
+    <h3><a href="https://blogs.nvidia.com/blog/vera-cpu-eda/" target="_blank">NVIDIA 内部 EDA 工作流全面采用 Vera CPU, 提速 1.5 倍加速下一代 GPU/CPU 设计</a></h3>
+    <p style="color:#ccc;">NVIDIA 7/27 宣布内部 EDA (芯片设计自动化) 工作流全面部署自研 Vera CPU (88 颗 Olympus 核心 + LPDDR5X + 第二代 NVIDIA Scalable Coherent Fabric), 跟 Cadence Jasper 形式验证 + Synopsys VCS 功能仿真两类核心 EDA 工作负载实测提速 1.5 倍. NVIDIA 用 Vera CPU 跑自家下一代 GPU + CPU 设计. 这是 Vera CPU 第一次在 EDA 这种 compute-bound + latency-sensitive 场景下打标杆, 也是 NVIDIA "GPU 设计 + CPU 设计"内部吃自家狗粮的明确信号.</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 意义在于"用 NVIDIA 自家 CPU 设计 NVIDIA 下一代 GPU". 一是验证 Vera CPU 的 per-core 性能跟 DDR 带宽 (关键 EDA 工作负载需要 fast single core + 大内存带宽), 二是 NVIDIA 把设计工具链跟自研 IP 深度耦合, 类比 Apple 用 Mac 自家 iPhone 设计工具. 跟 7/24 第 27 期 NV Open Secure AI Alliance + 7/16 第 23 期 n02 Japan AI Infra 同方向, 都是 NV 把"基础设施主导权"从上层往下做的策略: 上层是 AI 训练 / 推理, 下层是芯片设计工具, NV 想把每一层都用自己的.</p>
+    <div class="source">来源：NVIDIA 官方</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-29/news_items_v2_2026-07-29_01.jpg" alt="Meta 与贝莱德 (BlackRock) 达成战略合作, 将在德州 El Paso 开发超大规模数据中心园区" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[36 氪] 2级信源 · cn <span class="country-tag">美国</span></div>
+    <h3><a href="https://36kr.com/p/3913321294369924?f=rss" target="_blank">Meta 与贝莱德 (BlackRock) 达成战略合作, 将在德州 El Paso 开发超大规模数据中心园区</a></h3>
+    <p style="color:#ccc;">Meta 7/28 跟贝莱德 (BlackRock) 联合宣布战略合作, 双方将在德州 El Paso 共同开发大型数据中心园区. BlackRock 是全球最大资管公司 (管理规模 10+ 万亿美元), 这是 BlackRock 第一次直接下场搞 AI 数据中心开发, 等于把 AI Infra 当成跟"超大规模电力 + 园区土地 + 网络"绑定的另类资产来投. 这次跟 7/01 TC 的 Meta 把过剩算力对标 SpaceX (7/04 第 11 期 n06 用过) 是同一逻辑: Meta 的 GPU 是真的过剩, 多余算力要外销/合资变现.</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 Meta + BlackRock 联手搞 AI 数据中心园区, 是 7/01 第 8 期 n06 Meta 学 SpaceX 卖过剩算力的资本动作版. 跟以往 hyperscaler 自建园区的"AWS-Google-Microsoft 自家筹钱"模式不同, 这里请外部资管拿"土地 + 电力 + 长期算力合同"打包成 ABS 类资产, 解决 hyperscaler 自建 100% 资本支出顶不住的天花板. 短期看 BlackRock 推 AI Infra 资产证券化, 长期看"算力 = 网络级别基础设施"是新的基础设施投资级别, 等于把"AI Infra"从 capex 资产变成 yield-bearing 资产.</p>
+    <div class="source">来源：36 氪</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-29/news_items_v2_2026-07-29_02.jpg" alt="韩国 AI 芯片新势力 FuriosaAI 推出 16 卡 PCIe 加速器的 AI 服务器" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn <span class="country-tag">韩国</span></div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=12614" target="_blank">韩国 AI 芯片新势力 FuriosaAI 推出 16 卡 PCIe 加速器的 AI 服务器</a></h3>
+    <p style="color:#ccc;">FuriosaAI (韩国 AI 加速器新势力, Rebellions 同类竞争对手) 7/28 宣布正在研发搭载 16 个 PCIe 加速器插槽的 AI 服务器. 这是韩国 NPU / AI ASIC 公司首次公开自家"16 卡 PCIe server form factor"规格, 直接对标 NVIDIA NVL72 / HGX H200 rack-scale. 与 Rebellions 卖给三星 / 韩国 LLM 的服务型路线不同, FuriosaAI 走"通用 PCIe 加速卡 + 大规模多卡互联"的硬件厂路线.</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 韩国 AI Infra 7 月的"NVIDIA + Samsung + SK + Broadcom"四方全部在锁定超大规模算力 (7/22 NV-SSI, 7/25 SK-5000 亿, 7/27 三星-Broadcom ASIC, 7/24 NAVER-200MW), 唯独韩国本土 AI ASIC 厂在夹缝里走难路. FuriosaAI 这次推 16 卡 PCIe 路线, 是想用"form factor 标准化 + 跟 NVIDIA HGX 同场"的方式拿到政府/企业订单. 风险点: PCIe form factor 比 NVLink 互联带宽差一个数量级, 想做 LLM 训练很难, 但做 agent 推理 / 推荐系统 / RAG 是够用的.</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-29/news_items_v2_2026-07-29_05.jpg" alt="韩国 YEST 拿下 FO-PLP 玻璃基板固化设备订单, 客户为中国先进封装厂" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[The Elec] 2级信源 · cn <span class="country-tag">韩国</span></div>
+    <h3><a href="https://www.thelec.net/news/articleView.html?idxno=12598" target="_blank">韩国 YEST 拿下 FO-PLP 玻璃基板固化设备订单, 客户为中国先进封装厂</a></h3>
+    <p style="color:#ccc;">韩国设备厂 YEST 7/28 公告拿到 FO-PLP (扇出面板级封装) 玻璃基板固化设备的订单, 客户是中国 advanced packaging 公司. 这次出货给中国客户有 2 个特殊点: 一是 FO-PLP 是面板级封装路线的下一站, 不需要晶圆厂改造产线, 直接用面板就能做 2.5D/3D 封装, 跟 TSMC CoWoS / Intel PLP 路线竞争; 二是玻璃基板是做 CPO 光模块 / 下一代 AI 加速器底材的关键, 这等于 AI 算力 + 光模块两条赛道都用的同一根底材. 7/03 第 10 期 n06 三星电机 Dongwoo Fine-Chem 玻璃基板 JV (用过) 是跟 7/04 第 11 期 n03 Intel+TSMC PLP 10× 同主线, 这次是 FO-PLP 跟 PLP 互补.</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 YEST 是韩国做 UV/热固化设备的细分龙头, 这次 FO-PLP 玻璃基板固化设备被中国客户采用 = 韩国设备厂借中国先进封装跳板拿到下一代封装市场入场券. 整条线上面板级封装 (PLP) 跟扇出面板级封装 (FO-PLP) 是先进封装的下一站: 不需要晶圆厂就能做 2.5D/3D, 跟 7/11 第 17 期 n04 ASML TSMC Imec 2D 50nm pitch 跟 7/27 Broadcom 用三星 HBM + 先进封装做 AI ASIC 全部同方向. 玻璃基板又是 CPO 光模块 + 下一代 chip 底材的交叉点, 一举三得.</p>
+    <div class="source">来源：The Elec</div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-29/news_items_v2_2026-07-29_03.jpg" alt="TSMC 将 2026 年全年资本支出上调至 640 亿美元, 先进制程与先进封装双线扩张" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">[bits-chips.com (Bits & Chips, NL)] 3级信源 · cn <span class="country-tag">中国台湾</span></div>
+    <h3><a href="https://bits-chips.com/article/tsmc-raises-2026-capex-to-as-much-as-64b/" target="_blank">TSMC 将 2026 年全年资本支出上调至 640 亿美元, 先进制程与先进封装双线扩张</a></h3>
+    <p style="color:#ccc;">台积电 (TSMC) 7/27 把 2026 全年资本支出区间上调至最高 640 亿美元 (从此前指引高区间上修), 创 TSMC 史上年度 capex 新高. 增量主要指向 3nm/2nm 先进制程扩产 + CoWoS / SoIC 先进封装产线 + Arizona 第二期 fab. 这跟 7/27 ASML 宣布的"先进制程工具价格上调"正好对上: TSMC 跟 ASML 一起把先进制程的供给曲线往上拉. 与 6/26 第 3 期 n06 Oracle×AWS 跨云 Exadata (用过) 是同一主线, 都是 hyperscaler 倒逼代工厂提 capex.</p><p style="color:#8b949e;font-size:calc(var(--base-font-size) * 0.93);">💡 640 亿美元 capex 换算成 3nm wafer 等价产能是每月新增 25K-30K wpm, 主要填 NVIDIA Blackwell / Rubin + AMD MI400 + Apple M6 + Google TPU v7 + Qualcomm Snapdragon X3 的订单缺口. 配套的 CoWoS / SoIC 先进封装 capex 也上调, 跟 7/02 第 9 期 n02 SK hynix P&T7 400B KRW + 7/04 第 11 期 n03 Intel+TSMC PLP 10× + 7/03 第 10 期 n06 三星电机玻璃基板 + 7/11 第 17 期 n04 ASML TSMC Imec 2D 50nm 同一方向联动, 整条先进封装产业链都在把 capex 拉爆. 这是为 AI 算力爆量的物理级投资.</p>
+    <div class="source">来源：bits-chips.com (Bits & Chips, NL)</div>
+  </div>
+</div>
+</section>
+
+<section>
+<h2>📄 arXiv Infra 论文深度解读</h2>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-29/paper_summaries_v2_2026-07-29_00.jpg" alt="FusionML: Prefill, Not Decode — Mechanism and Boundaries of CPU+GPU Co-Execution on Unified-Memory Apple Silicon" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.22785 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.22785" target="_blank">FusionML: Prefill, Not Decode — Mechanism and Boundaries of CPU+GPU Co-Execution on Unified-Memory Apple Silicon</a></h3>
+    <p style="color:#ccc;">Apple Silicon 把 CPU/GPU/Neural Engine 用统一内存架构 (unified memory) 拼在一起, 一个 transformer 的算子 (matmul 的若干行) 能不能同时让 CPU 跟 GPU 一起算? 之前几次尝试要么没效果, 要么数据精度被混了, 看起来"白干". 这篇 paper 抓到真凶: MLX 的 lazy-graph scheduler 一旦发现"CPU-stream 要吃的输入还没在 GPU 上 materialize"就直接串行化, 一个本来 1.38 倍快的 row-split matmul 在 lazy graph 里反而变成 0.66 倍. FusionML 改成"per-layer + contention-aware"的 CPU+GPU 行拆分, Llama decoder-block prefill 实测加速 1.15-1.38 倍; 真打 Qwen2.5-7B 端到端, time-to-first-token 也提速 1.18-1.25 倍, 而且输出 token 跟 decode 吞吐完全不变. 同时把 decode / ANE / 精度匹配训练这几条死路清楚量化了, 给出 FusionML 在哪些场景"别上"的边界.</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:calc(var(--base-font-size) * 0.93);color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">Apple Silicon 统一内存架构上跨 CPU/GPU 共执行 transformer prefill 的方案. 作者发现 MLX lazy-graph 调度器在 CPU 操作输入未物化时强制串行, 是之前工作失败的根因. FusionML 通过在每层 eager-materialization 边界 + contention-aware row split ratio, 把&quot;per-layer CPU+GPU row 拆分&quot;做到了&quot;无回归 + 1.18-1.25 倍 TTFT 提速&quot;的水平. 5 个 Apple Silicon 芯片 (M1/M2/M3 Pro/M4/M4 Pro) 都能拿到这个提速, 7B checkpoint 输出 token-identical. 同时给出明确的方法边界: decode 不会受益 (带宽共享限制), 精度匹配训练会掉 (0.86-0.97 倍), ANE 因 dispatch overhead 排除.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>作者给的是三层叠加的修复方案. 第一层: 在跨 CPU 与 GPU 流之间插入 eager materialization 边界, 把那个因为惰性求值图 (lazy graph) 而被隐式串行化的路径彻底切断, 让 CPU 与 GPU 之间真的能并行跑, 不会再被调度器悄悄拉回串行. 第二层: 用按形状 (per-shape) 测出来的 contention-aware 切分比例, 而不是按"单独跑 CPU 或单独跑 GPU"的理论峰值去盲选切分点. 第三层: 引入一个 runtime gate, 内含 probation 试用 + 周期性重新探测 + 滞后三段逻辑, 把 baseline 单跑模式当作 gate 的一个分支, 任何带来的提速低于 1.18 倍阈值的方案自动降级回 baseline. 整套方案配套一个严格的复现验证协议, 模型权重 / prefill 配置 / chip 尺寸全部公开, 让社区能在多颗芯片上复现同一组数字.</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>收益的边界比看起来要硬. 共享内存带宽把 decode 阶段直接挡在门外, 精度匹配的训练也是反向吃亏, ANE 因为操作系统层面的 dispatch 开销太大, 在逐层 (per-layer) 粒度下基本不可用. runtime gate 在内存压力大的时候会变成自伤 — 它不断去探测替代模式, 而探测动作本身会把当前正在跑的那个模式的工作集挤出去, 等于好心办坏事. 实操经验: 跨 CPU 加 GPU 共执行必须先把 eager 边界立稳, 不能假定惰性求值图会帮你调度, 这是多次失败案例总结下来的核心教训.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>在五颗芯片 (苹果 M1 / M2 / M3 Pro / M4 / M4 Pro) 上跑 Llama 形状的 decoder-block prefill, 加速幅度落在 1.15 倍到 1.38 倍之间, 而且串到 32 个 block 的完整深度后这个加速幅度不变. 用真 70 亿参数的 Qwen2.5-7B checkpoint 端到端跑, 首 token 时间 (TTFT) 提速 1.18 到 1.25 倍, 同时输出的 token 跟单跑 GPU 时 token-identical, decode 阶段的吞吐也完全不变. 失败场景也被严格量化: 解码阶段 (decode) 因为跟 prefill 共用内存带宽所以不吃这套提速; 精度匹配的微调训练 (precision-matched training) 在五颗芯片上反而掉到 0.86 到 0.97 倍; 神经网络引擎 (Apple Neural Engine, ANE) 因为 dispatch overhead 被排除; 在内存压力大的情况下 runtime gate 自身的探测会把当前 mode 的工作集挤出缓存.</div>
+      <div class="row"><span class="author">🏢 团队：</span>Om Mohite → Independent Researcher, Mumbai, India</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-29/paper_summaries_v2_2026-07-29_01.jpg" alt="X-Stage: An Overlooked Pipeline Stage for Communication–Computation Overlap in DiT Inference" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.23264 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.23264" target="_blank">X-Stage: An Overlooked Pipeline Stage for Communication–Computation Overlap in DiT Inference</a></h3>
+    <p style="color:#ccc;">分布式 Diffusion Transformer (DiT) 推理里, GPU kernel 自己发起跟其他 GPU 的 remote store (把数据直接写到对端内存里) 跟本地的 Tensor Core 计算能不能同时跑? 之前做法一般调度 "什么时候发" + "什么时候收"两步, 但没人管"发完之后, 远端还没看完之前, 发送方还能往前推多少". 8 GPU 节点实测: 短促的 remote-store 突发, 发送方能接着算; 但高频持续的注入会耗尽 outstanding capacity, 反过来顶住后面要发的请求 — 这就叫 backpressure. X-Stage 抓住这个被忽略的"发完之后等远端可见"中间阶段, 用一个三参 Burst–Gap 模型 (backpressure-free issue time + effective drain rate + outstanding capacity) 直接预测 issue 开销跟回压触发时机. 真实收益: DeepGEMM MegaMoE kernel 用 84 组配置测下来, geometric-mean 1.18 倍 / 最大 1.62 倍 kernel 加速; Ulysses sequence-parallel attention 通过 tile-granular 融合 post-attention All-to-All + FlashAttention, FlashAttention-3/4 sender-visible 峰值 1.43 / 1.42 倍加速.</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:calc(var(--base-font-size) * 0.93);color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">提出&quot;X-Stage&quot;作为 comm-compute overlap 里被现有系统忽略的&quot;post-issue, pre-remote-completion&quot;中间阶段. 8-GPU 节点上 NV 新一代架构实测给出 1.18 倍 (MegaMoE) / 1.43 倍 (FlashAttention-3) 加速. 三参 Burst–Gap 模型量化 backpressure 触发, 引导 kernel fusion 设计: 把 DeepGEMM MegaMoE 的 Linear-1/Linear-2 跨 expert wave 交错, Ulysses All-to-All tile-granular 跟 FlashAttention 后半部分融合, 都把计算插在两轮 remote-store 突发之间.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>作者一共做了四步. 第一步: 把"X-Stage"建模成三个参数. 第一个参数是无回压情况下连续发起远程写所需时间 (t_free); 第二个参数是远端实际把数据取走的速率 (drain_rate); 第三个参数是节点上能同时挂起的远程写条目上限 (outstanding capacity). 第二步: Burst-Gap 模型, 突发远程写长度小于 t_free 时基本无回压, 一旦突发长度超过 t_free 就把后续 burst 整体往后推, 给远端留出消化时间. 第三步: 两类 kernel fusion 设计. 第一类是 DeepGEMM 框架下的 MegaMoE, 把 Linear-1 和 Linear-2 两段计算交错放在两个远程写突发之间, 既隐藏了写延迟又不让回压形成. 第二类是把 Ulysses 序列并行的 All-to-All 跟 FlashAttention 在瓦片粒度融合, 让输出瓦片的主人提前发远程写, 不需要单独的通信 warp 或 SM 单元. 第四步: 在 84 组 MegaMoE 配置加多个 FlashAttention 版本上做实测.</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>X-Stage 不是免费的午餐. 短促突发的远程写没问题, 一旦变成持续高频注入触发回压, 之前定好的整段调度表全部要重排. 真实部署里, 突发检测加模式切换必须有回调钩子接到 runtime 里去, 跟"随便插一句 device-initiated remote store 就能 overlap"那种简单做法完全不在一个复杂度级别. 调度器的可观测性必须跟得上, 否则发现 backpressure 时已经晚了.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>DeepGEMM MegaMoE kernel 在 84 组配置上的几何平均加速是 1.18 倍, 最大加速 1.62 倍, 比 Expert-Wave baseline 实测都赢. Ulysses 序列并行加上 FlashAttention-3 后, 发送方视角最大提速 1.43 倍; 配上 FlashAttention-4 最大提速 1.42 倍. 把序列拉长以后, 整体稳态运行时间逐步向"只跑 FlashAttention 本身"的理论下限靠拢, 说明这套做法把通信延迟真的藏进了计算里.</div>
+      <div class="row"><span class="author">🏢 团队：</span>Jianwen Xian, Zhiyuan Xu, Yuchen Li, Ziliang Lai, Kang He, Zhen Huang, Aichen Feng, Jinyan Chen, Yilin Zhang, Qinqin Chen, Chengru Song → KlingAI Research + Tsinghua University + NVIDIA</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-29/paper_summaries_v2_2026-07-29_02.jpg" alt="Denial of Deadline: Network-Driven Accuracy Collapse in Distributed Inference Pipelines" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.24692 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.24692" target="_blank">Denial of Deadline: Network-Driven Accuracy Collapse in Distributed Inference Pipelines</a></h3>
+    <p style="color:#ccc;">现代 edge-cloud AI 推理通常这么干: 简单请求本地小模型"快路径"秒回, 难请求丢到云上更大模型"慢路径"拿高准头结果, 协调层做"router 路由 + merger 合并". 这篇 paper 第一作者是 Tavori, 通讯作者之一 Ion Stoica (UC Berkeley RISELab) 直接下场打"攻击面": bad guy 拿合法请求凑出 Yo-Yo 突发 (一会儿 100 倍 burst, 一会儿 0), 把 cloud autoscaling / edge gateway / 远端 HBM 的共享资源全顶满, 让慢路径用户在 deadline 之后才拿到结果. merger 直接丢掉迟到的"高质量协助", fast path 还能秒回 — 表面上服务可用, 实际慢路径精度全部白扔, 这就是"accuracy collapse". 实测在 edge-cloud 自动驾驶双层 multi-object tracking 管道里: 约 4000 个 burst 请求把慢路径 p99 延迟从 92 ms 顶到 2 秒, Object Tracking 精度平均下降 7.0 HOTA; 攻击视频段不一样, 不同类别衰退 2.0-18.7 HOTA 不等. 直接呼吁攻/防都要加到 routing + merging + admission control + 资源隔离的协议栈上.</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:calc(var(--base-font-size) * 0.93);color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">fast-path + slow-path + coordination layer 的分布式推理被 IoT 突发 &quot;Yo-Yo&quot; 攻击打爆&quot;accuracy collapse&quot;问题. 作者通过 edge-cloud 自动驾驶 pipeline 实测量化: 慢路径 p99 延迟从 92 ms 拉到 2 秒, MOT 精度下降 7.0 HOTA (不同类 2.0-18.7), 缓解依赖 routing + merging + 资源隔离. 新攻击面: 共享 slow-path 资源 (edge link, gateway, cloud autoscaling 限流) 都成了&quot;网络拉胯推动精度崩溃&quot;的杠杆.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>作者一共做了四步. 第一步是把整套推理架构形式化成三段: 快路径 (fast path, 端侧小模型秒级响应), 慢路径 (slow path, 云端大模型或高算力后端算出更准结果), 还有协调层 (coordination layer, 拆出 router 路由决策 + merger 合并决策两个职能). 第二步是攻击建模: 攻击者只控制合法请求的内容和时间, 凑出 Yo-Yo 突发 (一会儿 100 倍突发流量, 一会儿 0 流量), 把 cloud autoscaling 瓶颈、edge 网关、远端高带宽内存这些共享资源全部打满, 让慢路径的请求超出合并端设定的期限 (deadline). 第三步是仿真层面用 burst 请求触发资源争用, 推到 merger deadline 之外. 第四步是把整套机制放进真实的边云两层多目标跟踪 (multi-object tracking) 管道里实测, 用 HOTA 指标 (Higher Order Tracking Accuracy, 同时衡量检测 + 关联的综合跟踪精度) 作为准确度量化标准.</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>传统的防御思路 (监控端点可用性, 拉防火墙) 完全抓不到这个问题. 服务可用度高, 用户看着一切正常, 但实际慢路径的精度被偷偷消耗掉. 真正能缓解这类问题必须在路由准入控制 (admission control) + 慢路径资源隔离 + 合并器严格 deadline 执行这几层都加上防护, 但每多一层防护都会增加尾部延迟成本. 实际部署的 AI Infra 服务很难白嫖这一整套保护, 要么花钱, 要么承担精度波动.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>大约 4000 个突发形状的请求把慢路径的尾延迟 (p99 percentile latency) 从 92 毫秒硬拉到 2 秒. 多目标跟踪精度平均下降 7.0 HOTA, 不同攻击视频段差异很大, 衰退范围在 2.0 到 18.7 HOTA 之间. 数据集中罕见类别 (比如停止标志) 几乎损失掉攻击前一半的预测准确率. 整篇论文的实证显示: 边云多层共享慢路径资源构成了新型攻击面, 端点可用性指标完全抓不到这种精度崩溃.</div>
+      <div class="row"><span class="author">🏢 团队：</span>Jhonatan Tavori, Gur-Eyal Sela, Ion Stoica, Gil Zussman → Columbia University + UC Berkeley</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-29/paper_summaries_v2_2026-07-29_03.jpg" alt="Libra: Taming Attention Workload Skew in Long-Context LLM Training with Bounded Sequence Pool" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.23250 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.23250" target="_blank">Libra: Taming Attention Workload Skew in Long-Context LLM Training with Bounded Sequence Pool</a></h3>
+    <p style="color:#ccc;">长上下文 LLM 训练有个老问题: 每个 sample 拿固定 token 数塞进 packed sequence, 对 attention (它的开销跟"序列长平方"成正比) 来说完全不均衡 — 一个长文档跟 100 个短句拼起来, attention 工作量能差一个数量级. 整条训练 pipeline 的瓶颈卡在最长序列, GPU 大部分 cycle 在等最长那条做完. Libra 是中国科学院 / 阿里 / NUS 团队给的方法: 把序列拉到一个"bounded sequence pool"里, 按 attention length (实际平方 cost) 而不是 token count 去平衡, 用 bounded-pool 策略保证 attention 短板不超 1.5x. 公开实验: normalized cluster throughput 接近 ideal linear scaling (16x 集群 vs 单卡), 跟当下常用的 sequence packing baseline 比结束时间缩短数个 epoch.</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:calc(var(--base-font-size) * 0.93);color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">Bounded sequence pool + 按 attention-cost 而不是 token-count 平衡, 解决 packed-sequence training 里 attention 工作量长尾不平衡. 来自 UCAS + 阿里 + NUS 的训练 infra 团队, normalized cluster throughput 跑到 ideal linear scaling (16 卡 vs 单卡), 解决长上下文训练里被最长序列卡 GPU 的老问题.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>作者一共做了四步. 第一步是把平衡单位从"token 数量"换成"注意力开销的代价"(实际就是样本序列长度的平方和), 让 packing 不再按字数均衡而按算力均衡. 第二步是引入 bounded sequence pool 这个核心抽象, 池子里最长跟最短的 attention cost ratio 严格控制在 1.5 倍以内, 杜绝一个超长序列拖垮全卡的场景. 第三步是把训练调度、数据预取、池子刷新这一整套流水线同步调整, 不是简单改个 sampling distribution 就完事. 第四步是用真实 16 卡集群做长上下文预训练实测, 跟当下常用的 sequence packing baseline 做严格对照.</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>Bounded sequence pool 选那个 1.5 倍的 attention cost 上限本身是个取舍点. 选得太严 (1.3 倍以下) packing 收益直接缩水; 选得太松 (2 倍以上) 长尾问题又冒头, 等于没解决问题. 真实部署必须根据模型特性用自动调参工具搜最优值, 不能直接抄一个默认值. 此外这套方案要重写训练数据加载器 (dataloader), 不是简单在调度器里挂个钩子就能完成, 改造成本跟现有训练代码库强相关.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>归一化的集群吞吐量 (normalized cluster throughput) 跑到了接近理想线性扩展的水平, 16 卡集群对比单卡的吞吐比基本贴近 16 倍理论值, 比 sequence-packing baseline 改善显著. 长上下文训练每个 epoch 完成时间跟现有最优基线相比缩短明显, 短序列所在的 GPU 不再被最长那条序列的 stall 拖累. 整张图表基本跟理想线性扩展那条参考线贴合.</div>
+      <div class="row"><span class="author">🏢 团队：</span>Yan Wang, Xiulong Yuan, Kaiming Yang, Jiaxuan Peng, Pengju Lu, Mingzhen Li, Zhipeng Zhang, Chang Si, Zhixiang Ruan, Hongqing Chen, Linlang Jiang, Siyu Wang, Langshi Chen, Rui Men, Man Yuan, Guangming Tan, Yong Li, Weile Jia, Jingren Zhou → University of Chinese Academy of Sciences (UCAS) + Alibaba Group + National University of Singapore (NUS)</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <img src="https://zenhatescoding.github.io/ai-infra-reports/images/2026-07-29/paper_summaries_v2_2026-07-29_04.jpg" alt="SpecBox: Speculative Sandbox Scheduling for Efficient LLM Agent Serving" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:12px;display:block;" loading="lazy" onerror="this.style.display='none'" />
+  <div class="card-body">
+    <div class="card-meta">arXiv:2607.23933 · 论文精读</div>
+    <h3><a href="https://arxiv.org/abs/2607.23933" target="_blank">SpecBox: Speculative Sandbox Scheduling for Efficient LLM Agent Serving</a></h3>
+    <p style="color:#ccc;">新一代 LLM agent 通过 Model Context Protocol (MCP) 启一堆独立 sandbox 跑外部工具 (代码执行 / 浏览器 / 数据库). 当前"pre-warm 长期预留 sandbox"浪费内存, "lazy on-demand 启动"冷启动秒级延迟. SpecBox 思路: 在 LLM 还在出 token 的时候用 keyword matching + 语义 embedding 推下一个 sandbox 要什么工具, 用 sandbox 依赖图"预先把下一次 sandbox 拉起来 + 切好工具栈". 同时开两条旁路: 一是语义缓存剪掉重复 sandbox 调用 (用户跑过的同一个 SQL 不再启 sandbox), 二是 out-of-band shared-memory 通道走 zero-copy artifact transfer (不绕常规 network stack). 高并发多轮 agent trace 实测: P99 端到端延迟降 2.9 倍, 峰值内存比"长留 sandbox"省 45.9%.</p>
+    <details style="margin-top:6px;margin-bottom:10px;font-size:calc(var(--base-font-size) * 0.93);color:#8b949e;"><summary style="cursor:pointer;user-select:none;">📖 专业版问题讲解 (展开)</summary><div style="margin-top:8px;padding:10px 12px;background:#0d1117;border-left:3px solid #58a6ff;border-radius:4px;line-height:1.6;">LLM agent 跑 MCP 外部 sandbox 时的 speculative 调度. Beihang + Leeds + Sydney 团队. 实测 P99 E2E latency 降 2.9x, peak memory 减 45.9% vs long-lived sandbox. 关键点是&quot;speculative prewarm + 语义 cache + shared-memory bypass&quot;三件套, 解决 agent tooling 调度的 tail latency 跟内存浪费问题.</div></details>
+    <div class="tech-block">
+      <div class="row"><span class="tech">⚙️ 方法：</span>作者给了四招组合拳. 第一招叫投机性 sandbox 预热: 在模型生成 token 的过程中, 系统同时跑关键词匹配加流式语义嵌入, 提前判断下一个 sandbox 大概要跑什么工具, 把 sandbox 的引导流程 (拉镜像、加载文件系统、配命名空间、握手 runtime) 跟模型推理完全 overlap 起来, 不再是模型停下来等工具准备. 第二招是上下文相关的随机预取: 系统维护一张 sandbox 依赖关系图, 用概率方式预测接下来几步会切到哪个 sandbox, 把预热时间窗从一步延伸到多步. 第三招是语义结果缓存, 把用户反复调用的同一个工具调用结果缓存起来, 直接复用而不再起一个新的 sandbox. 第四招是 out-of-band 共享内存传输通道, sandbox 之间传数据走零拷贝路径, 不绕常规网络栈.</div>
+      <div class="row"><span class="tradeoff">⚖️ 取舍：</span>投机性预取本质上是在赌下一步的依赖关系, 赌错了就是浪费 — 启动了根本用不上的 sandbox. 实操里这套机制对常见 agent 模式友好, 命中率高的"热门工具栈"回本快; 但长尾冷门工具占比高的场景, 预热收益会下降. 另外 out-of-band 共享内存通道假定 sandbox-host 之间共享内存, 跨物理主机部署时这套零拷贝路径就不成立, 要重新设计跨主机的传输层.</div>
+      <div class="row"><span class="highlight">📊 效果：</span>高并发多轮的 agent trace 实测下来, P99 端到端延迟比"按需启 sandbox"基线降 2.9 倍; 跟"永久预留 sandbox"基线比, 峰值内存消耗降低 45.9%. 多轮 agent 切换时, sandbox 引导跟大模型 token 生成全程并行不互卡, GPU 不再被工具启动延迟阻塞.</div>
+      <div class="row"><span class="author">🏢 团队：</span>Yihui Zhang, Tianyu Wo, Jinghao Wang, Xiaoyang Sun, Menghao Zhang, Cangzhou Yuan, Li Li, Chunming Hu, Albert Y. Zomaya, Renyu Yang → Beihang University + University of Leeds + The University of Sydney</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer>
+  <p>Generated by Hermes Agent · AI Infra Daily Report</p>
+  <p>https://github.com/zenhatescoding/ai-infra-reports</p>
+  <p>2026-07-29 07:02</p>
+</footer>
+</div>
+
+<div class="font-toolbar" id="fontToolbar" role="region" aria-label="字号调节">
+  <button class="toggle" id="fontToggle" aria-label="打开字号调节" title="字号">A</button>
+  <div class="panel">
+    <span class="label">字号</span>
+    <input type="range" id="fontSlider" min="12" max="22" step="0.5" value="14" aria-label="字号滑块" />
+    <span class="value" id="fontValue">14px</span>
+    <button class="reset" id="fontReset" aria-label="重置字号" title="重置 14px">↺</button>
+  </div>
+</div>
+<script>
+(function() {
+  const STORAGE_KEY = "ai-infra-font-scale";
+  const DEFAULT_SIZE = 14;
+  const toolbar = document.getElementById("fontToolbar");
+  const toggle = document.getElementById("fontToggle");
+  const slider = document.getElementById("fontSlider");
+  const valueEl = document.getElementById("fontValue");
+  const resetBtn = document.getElementById("fontReset");
+  if (!toolbar || !slider) return;
+  function apply(size) {
+    const v = Math.max(12, Math.min(22, parseFloat(size) || DEFAULT_SIZE));
+    document.documentElement.style.setProperty("--base-font-size", v + "px");
+    slider.value = v;
+    valueEl.textContent = v + "px";
+  }
+  function save(size) { try { localStorage.setItem(STORAGE_KEY, String(size)); } catch (e) {} }
+  function load() { try { const v = localStorage.getItem(STORAGE_KEY); return v ? parseFloat(v) : DEFAULT_SIZE; } catch (e) { return DEFAULT_SIZE; } }
+  apply(load());
+  slider.addEventListener("input", function() { const v = parseFloat(slider.value); apply(v); save(v); });
+  resetBtn.addEventListener("click", function() { apply(DEFAULT_SIZE); save(DEFAULT_SIZE); });
+  toggle.addEventListener("click", function(e) { e.stopPropagation(); toolbar.classList.toggle("open"); });
+  document.addEventListener("click", function(e) { if (window.innerWidth <= 640 && toolbar.classList.contains("open") && !toolbar.contains(e.target)) toolbar.classList.remove("open"); });
+  window.addEventListener("storage", function(e) { if (e.key === STORAGE_KEY && e.newValue) apply(parseFloat(e.newValue)); });
+})();
+</script>
+</body>
+</html>
